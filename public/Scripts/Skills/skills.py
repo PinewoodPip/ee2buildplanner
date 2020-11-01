@@ -1,0 +1,387 @@
+import re
+import json
+
+REMOVE_HTML_FORMATTING = True
+REMOVE_SOURCE_INFUSIONS_TEXT = False
+
+# todo show applied effects
+# fix gag order damage
+
+newDefRegex = re.compile('new entry "(.*)"')
+paramRegex = re.compile('data "(.*)" "(.*)"')
+usingSearch = re.compile('using "(.*)"')
+
+statusDocs = ["Potion_vanilla.txt", "Status_CONSUME_vanilla.txt", "Status_HEALING_vanilla.txt", "Status_GUARDIAN_ANGEL_vanilla.txt", "Status_ACTIVE_DEFENSE_vanilla.txt", "Potion.txt", "Status_HEAL.txt", "Status_ACTIVE_DEFENSE.txt", "Status_HEALING.txt", "Status_CONSUME.txt"]
+potions = {}
+potion = None
+
+potionTypes = [
+    "Potion.txt",
+    "Status_ACTIVE_DEFENSE.txt",
+    "Status_BLIND.txt",
+    "Status_CHALLENGE.txt",
+    "Status_CHARMED.txt",
+    "Status_CONSUME.txt",
+    "Status_DAMAGE.txt",
+    "Status_DAMAGE_ON_MOVE.txt",
+    "Status_DEACTIVATED.txt",
+    "Status_DECAYING_TOUCH.txt",
+    "Status_DEMONIC_BARGAIN.txt",
+    "Status_DISARMED.txt",
+    "Status_EFFECT.txt",
+    "Status_EXTRA_TURN.txt",
+    "Status_FEAR.txt",
+    "Status_FLOATING.txt",
+    "Status_GUARDIAN_ANGEL.txt",
+    "Status_HEAL.txt",
+    "Status_HEAL_SHARING.txt",
+    "Status_HEAL_SHARING_CASTER.txt",
+    "Status_HEALING.txt",
+    "Status_INCAPACITATED.txt",
+    "Status_INVISIBLE.txt",
+    "Status_KNOCKED_DOWN.txt",
+    "Status_MUTED.txt",
+    "Status_PLAY_DEAD.txt",
+    "Status_POLYMORPHED.txt",
+    "Status_SPARK.txt",
+    "Status_STANCE.txt",
+    "Status_THROWN.txt",
+    "Weapon.txt",
+]
+
+folders = ["Larian", "Amer"]
+
+for folder in folders:
+    for doc in potionTypes:
+        try:
+            d = open("Data/" + folder + "/" + doc)
+        except:
+            print(folder + " has no file " + doc)
+            continue
+
+        potionId = None
+        for line in d.readlines():
+            if newDefRegex.search(line):
+                search = newDefRegex.search(line).groups()
+
+                potions[search[0]] = {"id": search[0]}
+                potionId = search[0]
+            elif paramRegex.search(line):
+                search = paramRegex.search(line).groups()
+                potions[potionId][search[0]] = search[1]
+            elif usingSearch.search(line):
+                search = usingSearch.search(line).groups()
+                potions[potionId]["parent"] = search[0]
+
+                for key in potions[search[0]]:
+                    if key != "id":
+                        potions[potionId][key] = potions[search[0]][key]
+
+relevantParams = [
+    "id",
+    "SkillType",
+    "Ability",
+    "ActionPoints",
+    "Cooldown",
+    "Icon",
+    "DisplayNameRef",
+    "DescriptionRef",
+    "MemorizationRequirements",
+    "Stealth",
+    "UseWeaponDamage",
+    "UseWeaponProperties",
+    "Damage Multiplier",
+    "Damage Range",
+    "DamageType",
+
+    # debug
+    "StatsDescriptionParams",
+    "ExplodeRadius", # for some reason removing this breaks a few spell descs ???
+]
+
+# these parameters will have a "m" added at the end of their value in skill descriptions
+parametersWithDistance = [
+    "Range", "AreaRadius", "ExplodeRadius", "HitRadius", "MaxDistance", "TargetRadius"
+]
+
+skillTypes = [
+    "Skill_Cone.txt",
+    "Skill_Dome.txt",
+    "Skill_Jump.txt",
+    "Skill_MultiStrike.txt",
+    "Skill_Projectile.txt",
+    "Skill_ProjectileStrike.txt",
+    "Skill_Quake.txt",
+    "Skill_Rain.txt",
+    "Skill_Rush.txt",
+    "Skill_Shout.txt",
+    "Skill_Storm.txt",
+    "Skill_Summon.txt",
+    "Skill_Target.txt",
+    "Skill_Teleportation.txt",
+    "Skill_Tornado.txt",
+    "Skill_Wall.txt",
+    "Skill_Zone.txt",
+]
+
+bannedStrings = [
+    "Empowered",
+    "Polymorph",
+    "_Move",
+    "Bane",
+    # "Artifact",
+    
+    # vanilla leftovers
+    "SmokeCover",
+    "MassCorpseExplosion",
+    "MassCleanseWounds",
+    "MassCryotherapy",
+    "SpiritForm",
+
+    # incarnate
+    "IncarnateVault",
+    "IncarnateFreeFall",
+    "IncarnateNetherswap",
+    "IncarnateTerrifyingCruelty",
+    "IncarnateGagOrder",
+
+    # hmm why are these not tagged as enemy?
+    "Summon_EnemyShamblingMound_Caster",
+    "Summon_EnemyShamblingMound_Ranger",
+    "Summon_EnemyShamblingMound_Melee"
+
+    # technical
+    "NexusMeditate",
+    "META",
+    "TEST",
+    "Infus_",
+    "Infusion",
+    "SCRIPT",
+]
+
+# todo filter out skills with empowered in name
+
+def format(string, params):
+    ind = 1
+    for x in params:
+        if x == None:
+            x = "[REPLACE]"
+        string = string.replace("[" + str(ind) + "]", x)
+        ind += 1
+    return string
+
+def hasBannedString(string):
+    for x in bannedStrings:
+        if x in string:
+            return True
+    return False
+
+def prettifySkillDescription(string):
+    if not REMOVE_HTML_FORMATTING:
+        return string
+    # filter out the initial formatting tag, and replace the br one with newline character
+    string = descRegex.search(value).groupdict()["FullText"]
+    string = value.replace("<br>", "\n")
+
+    # next, filter out inner formatting tags
+    newVal = ""
+    pause = False
+    for char in string:
+        if char == "<": # if a formatting tag starts, wait until it ends
+            pause = True
+        elif char == ">":
+            pause = False
+        elif not pause: # if we're not in a formatting tag, add the character
+            newVal += char
+
+    if REMOVE_SOURCE_INFUSIONS_TEXT:
+        newVal = newVal.split("\n\nSource Infusions:")[0]
+
+    return newVal
+
+def replaceParamsInDescription(skill):
+    if "DescriptionRef" not in skill.keys():
+        return None
+
+    desc = skill["DescriptionRef"]
+    # params = skill["allParams"]
+    params = skill
+
+    if "StatsDescriptionParams" in params.keys():
+        paramDefs = params["StatsDescriptionParams"]
+        paramList = []
+        p = {"sourceType": "", "source": "", "param": "", "temp": ""}
+
+        # todo nested references
+        # might be easier to just go in reverse?
+        for char in paramDefs:
+            if char == ":":
+                if p["source"] != "":
+                    p["sourceType"] = p["source"]
+                    p["source"] = p["temp"]
+                    p["temp"] = ""
+                else:
+                    p["source"] = p["temp"]
+                    p["temp"] = ""
+            elif char == ";":
+                p["param"] = p["temp"]
+                if p["sourceType"] == "":
+                    p["sourceType"] = "Skill"
+                paramList.append(p)
+                p = {"sourceType": "", "source": "", "param": "", "temp": ""}
+            else:
+                p["temp"] += char
+        if p["temp"] != "":
+            p["param"] = p["temp"]
+            paramList.append(p)
+
+        print(paramList)
+        realValues = []
+        for x in paramList:
+            source = x["source"]
+            sourceType = x["sourceType"]
+            realSource = None
+            param = x["param"]
+            valid = False
+
+            if x["sourceType"] == "Skill" or x["sourceType"] == "":
+                if source == "":
+                    realSource = skill
+                    valid = True
+                else:
+                    if source in allSkills.keys():
+                        realSource = allSkills[source]
+                        valid = True
+            elif sourceType == "StatusData" or sourceType == "Potion" or sourceType == "Weapon":
+                realSource = potions[source]
+                valid = True
+
+            if valid:
+                # remove spaces. property entries have spaces but formatting params do not
+                param = param.replace(" ", "")
+                # wtf does this do kamil ^, isnt this useless
+
+                # special cases
+                if param == "Damage":
+                    # todo dmg range
+                    damage = ""
+
+                    if "Damage Multiplier" in realSource.keys():
+                        damage += realSource["Damage Multiplier"]
+                    else:
+                        damage += "(UNKNOWN)"
+
+                    # if skill uses weapon damage it wont have damagetype
+                    if ("DamageType" in realSource.keys() and (realSource["DamageType"] == "Magic" or realSource["DamageType"] == "Corrosive")):
+                        if realSource["DamageType"] == "Magic":
+                            damage = "(" + realSource["Damage Multiplier"] + "% Damage) Magic Armor"
+                        else:
+                            damage = "(" + realSource["Damage Multiplier"] + "% Damage) Physical Armor"
+                    elif "UseWeaponDamage" in realSource.keys() and realSource["UseWeaponDamage"] == "Yes":
+                        damage += "% Weapon Damage"
+                    else:
+                        damage += "% "
+
+                        if "DamageType" in realSource.keys():
+                            damage += realSource["DamageType"] + " Damage"
+                        else:
+                            damage += "UNKNOWN DAMAGE TYPE"
+                    realValues.append(damage)
+                elif param == "HealAmount":
+                    if realSource["HealType"] == "Percentage":
+                        baseString = "[1]% [2]"
+                    else:
+                        baseString = "([1] Qualifier) [2]"
+                    
+                    healType = realSource["HealStat"]
+                    if healType == "PhysicalArmor":
+                        healType = "Physical Armor"
+                    elif healType == "MagicArmor":
+                        healType = "Magic Armor"
+
+                    baseString = format(baseString, [realSource["HealValue"], healType])
+                    realValues.append(baseString)
+
+                elif param in parametersWithDistance and param in realSource.keys():
+                    realValues.append(realSource[param] + "m")
+
+                elif param == "Armor":
+                    realValues.append("(" + realSource[param] + " Qualifier) Armor")
+                elif param == "StealthDamageMultiplier":
+                    realValues.append(realSource["Stealth Damage Multiplier"])
+                elif param == "DistanceDamageMultiplier":
+                    realValues.append(realSource["Distance Damage Multiplier"])
+                else:
+                    if param in realSource.keys():
+                        realValues.append(realSource[param])
+            else:
+                # firebrand etc doesnt work
+                realValues.append(None)
+
+        print(realValues)
+        return format(desc, realValues)
+    return desc
+
+skills = {}
+allSkills = {} # actually has all skills
+currentSkill = None
+ignore = False
+descRegex = re.compile('<font size=\'19\'>(?P<FullText>.*)</font>')
+
+for folder in folders:
+    for skillType in skillTypes:
+        try:
+            data = open("Data/" + folder + "/" + skillType)
+        except:
+            print(folder + " has no file " + skillType)
+            continue
+        lineCount = 1
+        for line in data.readlines():
+            if (newDefRegex.search(line)):
+                search = newDefRegex.search(line).groups()
+
+                if currentSkill != None:
+                    allSkills[currentSkill["id"]] = currentSkill
+
+                currentSkill = {"id": search[0], "allParams": {}}
+                
+            elif usingSearch.search(line):
+                search = usingSearch.search(line)
+                baseSkillId = search.groups()[0]
+
+                for key in allSkills[baseSkillId]:
+                    if key != "id":
+                        currentSkill[key] = allSkills[baseSkillId][key]
+
+            elif (paramRegex.search(line)):
+                paramSearch = paramRegex.search(line)
+                param = paramSearch.groups()[0]
+                value = paramSearch.groups()[1]
+
+                # filter out formatting from descriptions
+                if param == "DescriptionRef":
+                    if descRegex.search(value) != None:
+                        value = prettifySkillDescription(value)
+
+                currentSkill[param] = value
+
+            lineCount += 1
+
+# remove irrelevant skills and params
+relevantSkills = {}
+for x in allSkills:
+    allSkills[x]["DescriptionRef"] = replaceParamsInDescription(allSkills[x])
+
+    keysToPop = []
+    for key in allSkills[x]:
+        if key not in relevantParams:
+            keysToPop.append(key)
+    for z in keysToPop:
+        allSkills[x].pop(z)
+
+    if not hasBannedString(x):
+        relevantSkills[x] = allSkills[x]
+
+output = json.dumps(relevantSkills, indent=2)
+with open("Output/skills.json", "w") as f:
+    f.write(output)

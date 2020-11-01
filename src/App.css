@@ -2,6 +2,50 @@
   text-align: center;
 }
 
+.flexbox-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flexbox-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.tabbed-container-inner {
+  
+}
+
+.character-profile {
+  width: 300px;
+}
+
+.name-edit-container {
+  min-width: 100px;
+}
+
+.name-edit-container Text {
+  overflow: hidden;
+}
+
+.name-edit {
+  width: 25px;
+  height: 25px;
+}
+
+.portrait {
+  width: 100px;
+  height: 150px;
+  border: 1px black solid;
+}
+
+.box {
+  border: 1px black solid;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
