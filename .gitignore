@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+/public/Scripts/Icons/Amer
+/public/Scripts/Icons/Larian
+/public/Scripts/Icons/All
+
 # testing
 /coverage
 
