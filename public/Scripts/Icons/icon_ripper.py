@@ -5,9 +5,11 @@ AMER = "AMER_Icons_Master.png"
 AMER_LSX = "AMER_Icons_Master.lsx"
 LARIAN = "Ability_Skill_Status_Icons.png"
 LARIAN_LSX = "Ability_Skill_Status_Icons.lsx"
+TALENTS_AND_ABILITIES = "talentsAndAbilities.png"
+TALENTS_AND_ABILITIES_LSX = "talentsAndAbilities.lsx"
 
-img = Image.open(AMER)
-data = open(AMER_LSX)
+img = Image.open(TALENTS_AND_ABILITIES)
+data = open(TALENTS_AND_ABILITIES_LSX)
 pixel = 0.0004882825 # this is how much % of the width or height a pixel is. Used to figure out pixel values of each icon from its UV mapping
 # it is the first U1 value in the lsx times 2, because the UV seems to reference the center of a pixel
 
@@ -42,7 +44,7 @@ for x in search:
     cropped = img.crop(region)
 
     print(region)
-    cropped.save("Amer/" + iconData["Id"] + ".png")
+    cropped.save("Output/" + iconData["Id"] + ".png")
     
     iteration += 1
     # if iteration > 7:

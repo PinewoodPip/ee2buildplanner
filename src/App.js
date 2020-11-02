@@ -1,21 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { MainInterface } from "./components.js"
+import { MainInterface, SkillBook } from "./components.js"
 import * as miscData from "./miscData.js"
 const axios = require('axios').default;
 
 // class for holding data and misc functions related to the EE game
 class Game {
-  data = {
-    skills: null,
-    artifacts: null,
-    races: miscData.races,
-    origins: {
+  skills = null
+  artifacts = null
+  races = miscData.races
+  origins = {
 
-    },
   }
+
   ascension = new Ascension()
+  images = {
+    
+  }
+  mappings = miscData.idToImageMappings
+
+  getImage(id) {
+    if (id == "unknown" || id == null || id == undefined) {
+      return this.images.icons["Action_Identify.png"].default
+    }
+
+    let file = id + ".png"
+    if (Object.keys(this.images.icons).includes(file))
+      return this.images.icons[file].default
+    else {
+      console.log("Missing icon: " + file)
+      return null
+    }
+  }
 
   render() {this.app.forceUpdate()}
 }
@@ -33,15 +50,18 @@ function importAll(r) {
 }
 
 // object with all images
-const images = {
-  icons: importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/)),
-}
+// const images = {
+//   icons: importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/)),
+// }
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       ready: false,
+      popup: "skillbook",
+      skillbookCategory: "Air",
+
       physique: {
         race: "human",
         gender: "male",
@@ -64,6 +84,8 @@ class App extends React.Component {
     ]
     let promises = []
 
+    game.images.icons = importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/))
+
     for (let x = 0; x < requests.length; x++) {
       promises.push(axios.get(requests[x]))
     }
@@ -79,13 +101,28 @@ class App extends React.Component {
       .catch((error) => {
         throw error;
     });
+
+    console.log(game.images.icons)
+    console.log(game.images.icons["AMER_DoS1_LOOT_PhilosopherStone_A.png"].default)
   }
+
+  closePopupPanel() {this.setState({popup: null})}
 
   render() {
     // only start rendering once all data has been fetched
     if (this.state.ready) {
+
+      let popups = {
+        "skillbook": <SkillBook app={this}/>
+      }
+      let popup = null
+      if (this.state.popup != null) {
+        popup = <Popup element={popups[this.state.popup]}/>
+      }
+
       return (
         <div className="App">
+          {popup}
           <MainInterface app={this}/>
         </div>
       );
@@ -94,6 +131,16 @@ class App extends React.Component {
       return <div/>
     }
   }
+}
+
+function Popup(props) {
+  return (
+    <div className="popup-cover">
+      <div className="pop-up-parent popup-box">
+        {props.element}
+      </div>
+    </div>
+  )
 }
 
 export var game = new Game()

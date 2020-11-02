@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.dds
 
 /public/Scripts/Icons/Amer
 /public/Scripts/Icons/Larian

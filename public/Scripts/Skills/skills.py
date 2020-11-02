@@ -3,6 +3,7 @@ import json
 
 REMOVE_HTML_FORMATTING = True
 REMOVE_SOURCE_INFUSIONS_TEXT = False
+SORT_BY_ABILITY = True
 
 # todo show applied effects
 # fix gag order damage
@@ -94,6 +95,8 @@ relevantParams = [
     "Damage Range",
     "DamageType",
 
+    "IsEnemySkill",
+
     # debug
     "StatsDescriptionParams",
     "ExplodeRadius", # for some reason removing this breaks a few spell descs ???
@@ -129,6 +132,8 @@ bannedStrings = [
     "Polymorph",
     "_Move",
     "Bane",
+    "Enemy",
+    "Target_Quest_PermanentSoulMate",
     # "Artifact",
     
     # vanilla leftovers
@@ -137,26 +142,57 @@ bannedStrings = [
     "MassCleanseWounds",
     "MassCryotherapy",
     "SpiritForm",
+    "MassBreathingBubbles",
+    "FlamingSkin",
+    "IceSkin",
+    "JellyfishSkin",
+    "PoisonousSkin",
+    "DeployMassTraps",
+    "VampiricHungerAura",
+    "BlessedSmokeCloud",
+    "MasterOfSparks",
+    "Storm_Blood",
+    "Storm_Lightning",
+    "Shout_VenomousAura",
+    "Shout_OilyCarapace",
+    "Shout_MassOilyCarapace",
+    "Target_Enrage",
+    "Shout_Taunt",
+    "Shout_Cryotherapy",
+    "ProjectileStrike_HailAttack",
+    "Projectile_PyroclasticEruption",
+    "Projectile_DustBlast",
+    "EvasiveAura",
+    "Shout_BreathingBubble",
+    "Target_MassSabotage",
 
-    # incarnate
+    # incarnate / summon
     "IncarnateVault",
     "IncarnateFreeFall",
     "IncarnateNetherswap",
     "IncarnateTerrifyingCruelty",
     "IncarnateGagOrder",
+    "SlugSparkingSwings",
 
     # hmm why are these not tagged as enemy?
     "Summon_EnemyShamblingMound_Caster",
     "Summon_EnemyShamblingMound_Ranger",
-    "Summon_EnemyShamblingMound_Melee"
+    "Summon_EnemyShamblingMound_Melee",
+
+    "InsectShockingTouch",
+
 
     # technical
     "NexusMeditate",
     "META",
     "TEST",
     "Infus_",
+    "Infus",
     "Infusion",
     "SCRIPT",
+    "Debug",
+    "Dummy",
+    "NULLSKILL",
 ]
 
 # todo filter out skills with empowered in name
@@ -179,6 +215,10 @@ def hasBannedString(string):
 def prettifySkillDescription(string):
     if not REMOVE_HTML_FORMATTING:
         return string
+
+    # AHHHH THIS INCONSISTENCY IS KILLING ME
+    string = string.replace("Aerothurge", "Aerotheurge")
+    
     # filter out the initial formatting tag, and replace the br one with newline character
     string = descRegex.search(value).groupdict()["FullText"]
     string = value.replace("<br>", "\n")
@@ -372,15 +412,27 @@ relevantSkills = {}
 for x in allSkills:
     allSkills[x]["DescriptionRef"] = replaceParamsInDescription(allSkills[x])
 
-    keysToPop = []
-    for key in allSkills[x]:
-        if key not in relevantParams:
-            keysToPop.append(key)
-    for z in keysToPop:
-        allSkills[x].pop(z)
-
-    if not hasBannedString(x):
+    if not hasBannedString(x) and ("IsEnemySkill" not in allSkills[x].keys() or allSkills[x]["IsEnemySkill"] != "Yes"):
         relevantSkills[x] = allSkills[x]
+
+        keysToPop = []
+        for key in relevantSkills[x]:
+            if key not in relevantParams:
+                keysToPop.append(key)
+        for z in keysToPop:
+            relevantSkills[x].pop(z)
+
+
+if SORT_BY_ABILITY:
+    sort = {}
+    for x in relevantSkills:
+        skill = relevantSkills[x]
+        if "Ability" in skill.keys() and skill["Ability"] != "None":
+            if skill["Ability"] in sort.keys():
+                sort[skill["Ability"]][skill["id"]] = skill
+            else:
+                sort[skill["Ability"]] = {skill["id"]: skill}
+    relevantSkills["sorted"] = sort
 
 output = json.dumps(relevantSkills, indent=2)
 with open("Output/skills.json", "w") as f:

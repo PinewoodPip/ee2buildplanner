@@ -15,8 +15,80 @@
   justify-content: space-evenly;
 }
 
+.flexbox-wrap {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
+}
+
+.flex-align-start {
+  justify-content: flex-start !important;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-align-end {
+  justify-content: flex-end !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-align-space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-reverse-row {
+  flex-direction: row-reverse;
+}
+
+.text {
+  /* line-height: 10px; */
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 .tabbed-container-inner {
   
+}
+
+/* elements */
+
+.icon {
+  border: 1px darkslategray solid;
+}
+
+.skill-icon {
+  /* border: 3px darkslategray solid; */
+}
+
+.skill-icon:hover {
+  /* background-color: brown; */
+  outline: 2px rgb(40, 87, 40) solid;
+  background-color: rgb(40, 87, 40);
+  /* border-color: red; */
+}
+
+.skill-icon:hover img {
+  /* filter: brightness(150%); */
+}
+
+.skillbook {
+  width: 900px;
+  height: 450px
+}
+
+.skillbook-category {
+  width: 150px
+}
+.skillbook-category:hover {
+  filter: brightness(110%);
+  background-color: whitesmoke;
+  outline: 1px grey solid;
 }
 
 .character-profile {
@@ -41,6 +113,59 @@
   height: 150px;
   border: 1px black solid;
 }
+
+.skill-listing {
+  width: 700px;
+  height: 300px;
+}
+
+/* TEXT */
+.text-small {
+  font-size: 70%;
+}
+
+/*  */
+
+.popup-cover {
+  position: fixed;
+  padding:0;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background:rgba(150, 216, 207, 0.5);
+  z-index: 998;
+}
+
+.pop-up-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.popup-box {
+  z-index: 999;
+  /* background-color: gray; */
+  border: 1px black solid;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+/* .popup-box {
+  z-index: 999;
+  background-color: gray;
+  border: 1px black solid;
+  width: 550px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+} */
 
 .box {
   border: 1px black solid;

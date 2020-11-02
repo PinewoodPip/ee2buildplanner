@@ -1,0 +1,13 @@
+-- Skillbook
+- Hide special skills like the origins summons
+- Highlight currently selected category
+- skill tooltips
+- better formatting for skill descs
+- push title/close button to the top of the container
+X show game's names for abilities in sidebar
+
+-- General
+- close button
+- rip game UI buttons
+- add margin to the main interface
+- top bar
