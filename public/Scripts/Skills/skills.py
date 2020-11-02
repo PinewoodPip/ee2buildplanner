@@ -4,6 +4,8 @@ import json
 REMOVE_HTML_FORMATTING = True
 REMOVE_SOURCE_INFUSIONS_TEXT = False
 SORT_BY_ABILITY = True
+REMOVE_TIERED_EFFECT_HINT = True
+CUSTOM_HIGHLIGHTING = True
 
 # todo show applied effects
 # fix gag order damage
@@ -215,12 +217,10 @@ def hasBannedString(string):
 def prettifySkillDescription(string):
     if not REMOVE_HTML_FORMATTING:
         return string
-
-    # AHHHH THIS INCONSISTENCY IS KILLING ME
-    string = string.replace("Aerothurge", "Aerotheurge")
     
     # filter out the initial formatting tag, and replace the br one with newline character
     string = descRegex.search(value).groupdict()["FullText"]
+
     string = value.replace("<br>", "\n")
 
     # next, filter out inner formatting tags
@@ -234,10 +234,58 @@ def prettifySkillDescription(string):
         elif not pause: # if we're not in a formatting tag, add the character
             newVal += char
 
+    # AHHHH THIS INCONSISTENCY IS KILLING ME
+    newVal = newVal.replace("Aerothurge", "Aerotheurge")
+
     if REMOVE_SOURCE_INFUSIONS_TEXT:
         newVal = newVal.split("\n\nSource Infusions:")[0]
 
-    return newVal
+    if REMOVE_TIERED_EFFECT_HINT:
+        newVal = newVal.replace("\n\nTiered statuses apply up to tier 3 and reduce resistances; see your journal for a full description.", "")
+        newVal = newVal.replace("\nTiered statuses apply up to tier 3 and reduce resistances; see your journal for a full description.", "")
+
+        newVal = newVal.replace("\nSubjugated III consumes 7 Battered:\nTarget suffers damage when attacking this status' owner, making it less likely to do so; reduces AP recovery.", "")
+        newVal = newVal.replace("\nVulnerable III consumes 7 Battered:\nTarget is easier to Batter or Harry, and suffers damage from healing.", "")
+        newVal = newVal.replace("\nAtaxia III consumes 7 Battered:\nTarget slowed and is Disarmed.", "")
+        newVal = newVal.replace("\nTerrified III consumes 7 Harried:\nTarget loses attack of opportunity and spends AP fleeing.", "")
+        newVal = newVal.replace("\nDazzled III consumes 7 Harried:\nTarget has reduced accuracy, dodge, and is Blinded.", "")
+        newVal = newVal.replace("\nSlowed III consumes 7 Harried:\nTarget has reduced movement and AP recovery.", "")
+        newVal = newVal.replace("\nSquelched III consumes 7 Harried:\nTarget loses AP when using movement skills and is Silenced.", "")
+        newVal = newVal.replace("\nWeakened III consumes 7 Battered:\nTarget's damage is reduced.", "")
+
+    return (newVal)
+
+def highlightKeywords(string):
+
+    colorHighlighting = {
+        "Pyrokinetic": "text-pyro",
+        "Geomancer": "text-geo",
+        "Aerotheurge": "text-aero",
+        "Hydrosophist": "text-water",
+        "Warfare": "text-warfare",
+        "Huntsman": "text-huntsman",
+        "Polymorph": "text-poly",
+        "Summoning": "text-summon",
+        "Scoundrel": "text-rogue",
+        "Necromancer": "text-necro",
+
+        "Earth Damage": "text-dmg-earth",
+        "Fire Damage": "text-dmg-fire",
+        "Water Damage": "text-dmg-water",
+        "Air Damage": "text-dmg-air",
+        "Physical Damage": "text-dmg-phys",
+        "Piercing Damage": "text-dmg-pierce",
+        "Physical Armor": "text-dmg-armor-phys",
+        "Magic Armor": "text-dmg-armor-magic",
+        "Weapon Damage": "text-dmg-phys",
+    }
+
+    newString = string
+
+    for key in colorHighlighting:
+        newString = newString.replace(key, "<span class='" + colorHighlighting[key] + "'>" + key + "</span>")
+
+    return newString
 
 def replaceParamsInDescription(skill):
     if "DescriptionRef" not in skill.keys():
@@ -359,8 +407,8 @@ def replaceParamsInDescription(skill):
                 realValues.append(None)
 
         print(realValues)
-        return format(desc, realValues)
-    return desc
+        return highlightKeywords(format(desc, realValues))
+    return highlightKeywords(desc)
 
 skills = {}
 allSkills = {} # actually has all skills

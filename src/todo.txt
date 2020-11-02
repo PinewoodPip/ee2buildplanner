@@ -1,9 +1,11 @@
 -- Skillbook
 - Hide special skills like the origins summons
 - Highlight currently selected category
-- skill tooltips
-- better formatting for skill descs
+- add ap and reqs to skill tooltips
+X better formatting for skill descs
 - push title/close button to the top of the container
+- fix text for skills that use weapon dmg but change the type
+- fix ruptured tendos damage
 X show game's names for abilities in sidebar
 
 -- General

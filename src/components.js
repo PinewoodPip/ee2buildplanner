@@ -23,33 +23,55 @@ function SkillTooltip(props) {
 	let ability = game.mappings.abilityNames[skill.Ability]
 
 	if (desc.length > 1) {
-		if (skill.id == "Cone_GroundSmash") {
-			// console.log(desc[1].split("):"))
-			console.log(`3 (requires 9 ${ability}):`)
-			console.log(skill.DescriptionRef.split(`3 (requires 9 ${ability}):`))
-			// .split(`3 (requires 9 ${skill.Ability}):`)[0]
-		}
 		desc = [
 			desc[0],
 		]
 
+		let colorHighlighting = {
+			"Pyrokinetic": "text-pyro",
+        "Geomancer": "text-geo",
+        "Aerotheurge": "text-aero",
+        "Hydrosophist": "text-water",
+        "Warfare": "text-warfare",
+        "Huntsman": "text-huntsman",
+        "Polymorph": "text-poly",
+        "Summoning": "text-summon",
+        "Scoundrel": "text-rogue",
+        "Necromancer": "text-necro",
+
+        "Earth Damage": "text-dmg-earth",
+        "Fire Damage": "text-dmg-fire",
+        "Water Damage": "text-dmg-water",
+        "Air Damage": "text-dmg-air",
+        "Physical Damage": "text-dmg-phys",
+        "Piercing Damage": "text-dmg-pierce",
+        "Physical Armor": "text-dmg-armor-phys",
+        "Magic Armor": "text-dmg-armor-magic",
+        "Weapon Damage": "text-dmg-phys",
+		}
+
+		// 2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):
+
 		let infusionText = [
 			skill.DescriptionRef.split(`1:`)[1],
-			skill.DescriptionRef.split(`2 (requires 5 ${ability}):`)[1],
-			skill.DescriptionRef.split(`3 (requires 9 ${ability}):`)[1],
+			skill.DescriptionRef.split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[1],
+			skill.DescriptionRef.split(`3 (requires 9 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[1],
 		]
 
-		console.log(skill.DescriptionRef.split(`2 (requires 5 ${ability}):`))
-		// console.log(infusionText)
+		console.log(skill.DescriptionRef.split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`))
 
 		if (infusionText[0] != undefined) {
-			infusionText[0] = infusionText[0].split(`2 (requires 5 ${ability}):`)[0]
+			infusionText[0] = infusionText[0].split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[0]
 		}
 		if (infusionText[1] != undefined) {
-			infusionText[1] = infusionText[1].split(`3 (requires 9 ${ability}):`)[0]
+			infusionText[1] = infusionText[1].split(`3 (requires 9 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[0]
 		}
 	
-		let prefixes = ["◊: ", "◊◊: ", "◊◊◊: "]
+		let prefixes = [
+			"<span class='text-si-symbol'>♦</span>: ",
+			"<span class='text-si-symbol'>♦♦</span>: ",
+			"<span class='text-si-symbol'>♦♦♦</span>: "
+		]
 	
 		for (let x in infusionText) {
 			if (infusionText[x] != undefined) {
@@ -57,10 +79,14 @@ function SkillTooltip(props) {
 			}
 		}
 	}
+	var parser = require('html-react-parser');
 
 	let realDesc = []
 	for (let x in desc) {
-		realDesc.push(<Text key={x} text={desc[x]}/>)
+		// realDesc.push(React.createElement("div", {}, desc[x]))
+		realDesc.push(parser("<p>" + desc[x] + "</p>"))
+		console.log(desc[x])
+		// realDesc.push(<Text key={x} text={desc[x]}/>)
 	}
 
 	let tooltip = <div className="flexbox-vertical">
@@ -69,7 +95,9 @@ function SkillTooltip(props) {
 
 		<div style={{height: "10px"}}/>
 
-		{realDesc}
+		<div className="text-si">
+			{realDesc}
+		</div>
 	</div>
 	return (
 		<Tooltip content={tooltip} placement="right">

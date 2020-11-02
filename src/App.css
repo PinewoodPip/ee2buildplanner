@@ -124,6 +124,32 @@
   font-size: 70%;
 }
 
+.text-si {
+  text-align: left;
+}
+
+.text-si-symbol {color: rgb(102, 174, 241)}
+
+.text-pyro {color: rgb(245, 68, 68)}
+.text-geo {color: rgb(110, 77, 28)}
+.text-aero {color: rgb(125, 127, 243)}
+.text-water {color: rgb(53, 201, 238)}
+.text-warfare {color: rgb(175, 104, 104)}
+.text-huntsman {color: rgb(73, 180, 82)}
+.text-poly {color: rgb(207, 199, 90)}
+.text-summon {color: rgb(175, 140, 255)}
+.text-rogue {color: rgb(165, 137, 137)}
+.text-necro {color: rgb(116, 88, 111)}
+
+.text-dmg-armor-magic {color: rgb(76, 200, 216)}
+.text-dmg-armor-phys {color: rgb(153, 152, 152)}
+.text-dmg-phys {color: rgb(168, 168, 168)}
+.text-dmg-pierce {color: rgb(223, 96, 96)}
+.text-dmg-air {color:rgb(125, 127, 243)}
+.text-dmg-water {color: rgb(53, 201, 238)}
+.text-dmg-fire {color: rgb(245, 68, 68)}
+.text-dmg-earth {color: rgb(110, 77, 28)}
+
 /*  */
 
 .popup-cover {
