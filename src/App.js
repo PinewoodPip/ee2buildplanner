@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import { MainInterface, SkillBook } from "./components.js"
 import * as miscData from "./miscData.js"
+import update from 'immutability-helper';
 const axios = require('axios').default;
 
 // class for holding data and misc functions related to the EE game
@@ -49,11 +50,6 @@ function importAll(r) {
   return images;
 }
 
-// object with all images
-// const images = {
-//   icons: importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/)),
-// }
-
 class App extends React.Component {
   constructor() {
     super()
@@ -63,13 +59,26 @@ class App extends React.Component {
       skillbookCategory: "Air",
 
       physique: {
-        race: "human",
-        gender: "male",
+        race: "lizard",
+        gender: "female",
         lifeType: "alive",
       },
       name: "Lindsay Lohan",
       skills: [],
       artifacts: [],
+      skillAbilities: {
+        "Warrior": 0,
+        "Water": 0,
+        "Earth": 0,
+        "Death": 0,
+        "Rogue": 0,
+        "Ranger": 0,
+        "Fire": 0,
+        "Summoning": 0,
+        "Air": 0,
+        // "Source": 0,
+        "Polymorph": 0,
+      }
     }
   }
 

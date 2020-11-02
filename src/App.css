@@ -15,6 +15,13 @@
   justify-content: space-evenly;
 }
 
+.flexbox-horizontal-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
 .flexbox-wrap {
   display: flex;
   align-items: center;
@@ -38,6 +45,10 @@
   width: 100%;
 }
 
+.flex-align-centered {
+  justify-content: center;
+}
+
 .flex-align-space-evenly {
   justify-content: space-evenly;
 }
@@ -56,7 +67,31 @@
   
 }
 
+.unselectable {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
 /* elements */
+
+.top-bar {
+  height: 50px;
+  width: 100%;
+  background-color: lightslategray;
+}
+
+.si-button {
+  width: 25px;
+  height: 20px;
+  text-align: center;
+}
+
+.skill-abilities {
+  width: 200px;
+  height: 500px;
+}
 
 .icon {
   border: 1px darkslategray solid;
@@ -64,6 +99,11 @@
 
 .skill-icon {
   /* border: 3px darkslategray solid; */
+}
+
+.skill-selected {
+  outline: 2px lightseagreen solid;
+  background-color: lightseagreen;
 }
 
 .skill-icon:hover {
@@ -91,8 +131,23 @@
   outline: 1px grey solid;
 }
 
+.chosen {
+  /* background-color: lightgreen; */
+  outline: 1px black solid;
+}
+
+.highlighted-bg {
+  background-color: rgb(115, 219, 214);
+}
+
 .character-profile {
   width: 300px;
+}
+
+.skills {
+  border: 1px solid black;
+  width: 500px;
+  height: 100%;
 }
 
 .name-edit-container {

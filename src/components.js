@@ -2,7 +2,8 @@ import React from 'react';
 import { game } from "./App.js"
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import _ from "underscore"
+import _ from "underscore";
+import update from 'immutability-helper';
 
 export class Tooltip extends React.Component {
 	render() {
@@ -29,36 +30,32 @@ function SkillTooltip(props) {
 
 		let colorHighlighting = {
 			"Pyrokinetic": "text-pyro",
-        "Geomancer": "text-geo",
-        "Aerotheurge": "text-aero",
-        "Hydrosophist": "text-water",
-        "Warfare": "text-warfare",
-        "Huntsman": "text-huntsman",
-        "Polymorph": "text-poly",
-        "Summoning": "text-summon",
-        "Scoundrel": "text-rogue",
-        "Necromancer": "text-necro",
+			"Geomancer": "text-geo",
+			"Aerotheurge": "text-aero",
+			"Hydrosophist": "text-water",
+			"Warfare": "text-warfare",
+			"Huntsman": "text-huntsman",
+			"Polymorph": "text-poly",
+			"Summoning": "text-summon",
+			"Scoundrel": "text-rogue",
+			"Necromancer": "text-necro",
 
-        "Earth Damage": "text-dmg-earth",
-        "Fire Damage": "text-dmg-fire",
-        "Water Damage": "text-dmg-water",
-        "Air Damage": "text-dmg-air",
-        "Physical Damage": "text-dmg-phys",
-        "Piercing Damage": "text-dmg-pierce",
-        "Physical Armor": "text-dmg-armor-phys",
-        "Magic Armor": "text-dmg-armor-magic",
-        "Weapon Damage": "text-dmg-phys",
+			"Earth Damage": "text-dmg-earth",
+			"Fire Damage": "text-dmg-fire",
+			"Water Damage": "text-dmg-water",
+			"Air Damage": "text-dmg-air",
+			"Physical Damage": "text-dmg-phys",
+			"Piercing Damage": "text-dmg-pierce",
+			"Physical Armor": "text-dmg-armor-phys",
+			"Magic Armor": "text-dmg-armor-magic",
+			"Weapon Damage": "text-dmg-phys",
 		}
-
-		// 2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):
 
 		let infusionText = [
 			skill.DescriptionRef.split(`1:`)[1],
 			skill.DescriptionRef.split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[1],
 			skill.DescriptionRef.split(`3 (requires 9 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[1],
 		]
-
-		console.log(skill.DescriptionRef.split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`))
 
 		if (infusionText[0] != undefined) {
 			infusionText[0] = infusionText[0].split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[0]
@@ -85,7 +82,6 @@ function SkillTooltip(props) {
 	for (let x in desc) {
 		// realDesc.push(React.createElement("div", {}, desc[x]))
 		realDesc.push(parser("<p>" + desc[x] + "</p>"))
-		console.log(desc[x])
 		// realDesc.push(<Text key={x} text={desc[x]}/>)
 	}
 
@@ -176,14 +172,6 @@ function CharacterNameEditButton(props) {
 	)
 }
 
-function ClosePanelButton(props) {
-	return (
-		<div className="name-edit box" onClick={()=>{props.app.closePopupPanel()}}>
-
-		</div>
-	)
-}
-
 function Icon(props) {
 	let className = (props.className != undefined) ? props.className : "icon"
 	let style = (props.style != undefined) ? props.style : {}
@@ -198,9 +186,10 @@ function Icon(props) {
 
 function SkillBookAbilityCategory(props) {
 	let func = () => {props.app.setState({skillbookCategory: props.category})}
+	let className = (props.app.state.skillbookCategory == props.category) ? "chosen" : ""
 
 	return (
-		<div className="flexbox-horizontal flex-align-start skillbook-category" onClick={func}>
+		<div className={"flexbox-horizontal flex-align-start skillbook-category " + className} onClick={func}>
 			<Icon img={game.getImage(game.mappings.abilities[props.category])} size="32px"/>
 			<div style={{width: "15px"}}/>
 			<Text text={game.mappings.abilityNames[props.category]}/>
@@ -208,13 +197,96 @@ function SkillBookAbilityCategory(props) {
 	)
 }
 
+class SkillAbilities extends React.Component {
+	SI_Levels = [
+		"◊",
+		"♦",
+		"♦♦",
+		"♦♦♦",
+	]
+
+	hasAnyRelevantSkill(category) {
+		for (let x in this.props.app.state.skills) {
+			let skill = game.skills[this.props.app.state.skills[x]]
+			if (skill.Ability == category)
+				return true
+		}
+		return false
+	}
+
+	cycleLevel(category) {
+		let currentLevel = this.props.app.state.skillAbilities[category]
+		let newLevel;
+
+		// treat the current level as being higher if the user has a relevant skill in this category (SI level 1 has no requirements)
+		if (currentLevel == 0 && this.hasAnyRelevantSkill(category))
+			currentLevel = 1
+
+		// loop back to first index after going through all the states
+		newLevel = (currentLevel + 1 > 3) ? 0 : currentLevel + 1
+
+		let newObj = _.clone(this.props.app.state.skillAbilities)
+		newObj[category] = newLevel
+
+		this.props.app.setState({skillAbilities: newObj})
+	}
+
+	render() {
+		let skillAbilities = []
+		for (let x in game.skills.sorted) {
+			if (x == "Source")
+				continue
+			let level = this.SI_Levels[this.props.app.state.skillAbilities[x]]
+
+			console.log(this.props.app.state.skillAbilities[x])
+			if (this.props.app.state.skillAbilities[x] == 0 && this.hasAnyRelevantSkill(x)) {
+				level = this.SI_Levels[1];
+				console.log(level)
+			}
+
+			let button = <div className="si-button unselectable" onClick={this.cycleLevel.bind(this, x)}>
+				<Text text={level}/>
+			</div>
+
+			let className = (this.hasAnyRelevantSkill(x) || this.props.app.state.skillAbilities[x] > 0) ? "highlighted-bg" : ""
+
+			skillAbilities.push(<div className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
+				<Icon img={game.getImage(game.mappings.abilities[x])} size="32px"/>
+				<Text text={game.mappings.abilityNames[x]} className="flex-grow"/>
+				{button}
+			</div>)
+		}
+
+		return <Container className="flexbox-vertical skill-abilities">
+			<Text text={"Skill Abilities"}/>
+			{skillAbilities}
+		</Container>
+	}
+}
+
 class Skill extends React.Component {
+	toggleSkill() {
+		let skills = this.props.app.state.skills.slice()
+		let id = this.props.data.id
+
+		if (skills.includes(id)) {
+			skills = skills.filter((x) => {return x != id})
+		}
+		else {
+			skills.push(id)
+		}
+
+		this.props.app.setState({skills: skills})
+	}
+
 	render() {
 		let img = game.getImage(this.props.data.Icon)
-		let func = () => {console.log(this.props.data.id)}
+		let highlight = this.props.highlight != "false"
+		
+		let className = (this.props.app.state.skills.includes(this.props.data.id) && highlight) ? "skill-selected" : ""
 
 		return <SkillTooltip data={this.props.data}>
-			<Icon img={img} className="skill-icon" size={"64px"} onClick={func} style={this.props.style}>
+			<Icon img={img} className={"skill-icon " + className} size={"64px"} onClick={this.toggleSkill.bind(this)} style={this.props.style}>
 
 			</Icon>
 		</SkillTooltip>
@@ -230,14 +302,14 @@ export function SkillBook(props) {
 	let skills = []
 	for (let x in game.skills.sorted[props.app.state.skillbookCategory]) {
 		let skill = game.skills.sorted[props.app.state.skillbookCategory][x]
-		skills.push(<Skill key={x} data={skill}/>)
+		skills.push(<Skill key={x} data={skill} app={props.app}/>)
 	}
 
 	return (
 		<Container className="flexbox-vertical skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width">
 				<Text text={"Skillbook"} className={"flex-grow"}/>
-				<ClosePanelButton app={props.app}/>
+				<Icon img={game.getImage("statIcons_DecayingTouch")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 			<div className="flexbox-horizontal">
 				<div className="flexbox-vertical">
@@ -264,10 +336,52 @@ function CharacterRace(props) {
 	</div>)
 }
 
+function TopBar(props) {
+	return (
+		<div className="top-bar">
+
+		</div>
+	)
+}
+
+class Skills extends React.Component {
+	openSkillBook() {
+		this.props.app.setState({popup: "skillbook"})
+	}
+
+	render() {
+		let skills = []
+		for (let x in this.props.app.state.skills) {
+			let skill = game.skills[this.props.app.state.skills[x]]
+			skills.push(<Skill data={skill} app={this.props.app} highlight="false"/>)
+		}
+
+		// button to add more skills, opening the skillbook
+		skills.push(<Icon img={game.getImage("statIcons_Regenerate")} size="64px" onClick={this.openSkillBook.bind(this)}/>)
+
+		return (
+			<Container className="skills">
+				<div className="flexbox-horizontal-list" style={{margin: "10px"}}>
+					{skills}
+				</div>
+			</Container>
+		)
+	}
+}
+
 export class MainInterface extends React.Component {
 	render() {
 		return <div>
-			<CharacterProfile app={this.props.app}/>
+			<TopBar app={this.props.app}/>
+			<div style={{margin: "25px"}}>
+				<div className="flexbox-horizontal flex-align-centered" style={{height: "150px"}}>
+					<CharacterProfile app={this.props.app}/>
+					<Skills app={this.props.app}/>
+				</div>
+				<div className="flexbox-horizontal flex-align-start">
+					<SkillAbilities app={this.props.app}/>
+				</div>
+			</div>
 		</div>
 	}
 }

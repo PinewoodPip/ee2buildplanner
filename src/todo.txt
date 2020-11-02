@@ -6,10 +6,24 @@ X better formatting for skill descs
 - push title/close button to the top of the container
 - fix text for skills that use weapon dmg but change the type
 - fix ruptured tendos damage
-X show game's names for abilities in sidebar
+X show game's names for abilities in sidebar\
+- underline "pay up to x ap" and "pay x more ap"
 
 -- General
+- panel showing chosen skills
 - close button
 - rip game UI buttons
 - add margin to the main interface
 - top bar
+- import unselectable css
+- escape key to close popups
+
+-- Skill sheet
+- skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
+- make rhombe highlighted if you have any skill in the category
+
+-- Top bar
+- name of the app
+- save/load buttons
+- featured builds gallery
+- options (like turning off formatting)
