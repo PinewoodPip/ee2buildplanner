@@ -7,12 +7,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
 }
 
 .flexbox-horizontal {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .flexbox-horizontal-list {
@@ -31,6 +33,7 @@
 
 .flex-align-start {
   justify-content: flex-start !important;
+  /* align-items: flex-start; */
 }
 
 .flex-grow {
@@ -42,7 +45,11 @@
 }
 
 .full-width {
-  width: 100%;
+  width: 90%;
+}
+
+.lateral-margin {
+  margin: 0 10px 0 10px
 }
 
 .flex-align-centered {
@@ -50,7 +57,11 @@
 }
 
 .flex-align-space-evenly {
-  justify-content: space-evenly;
+  justify-content: space-evenly !important;
+}
+
+.flex-align-space-between {
+  justify-content: space-between !important;
 }
 
 .flex-reverse-row {
@@ -138,7 +149,8 @@
 
 .skillbook {
   width: 900px;
-  height: 450px
+  height: 450px;
+  background-color: whitesmoke;
 }
 
 .ascension {

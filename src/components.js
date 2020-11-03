@@ -151,7 +151,7 @@ function Portrait(props) {
 }
 
 export function Text(props) {
-	return <p className={"text " + props.className}>{props.text}</p>
+	return <p className={"text " + props.className} onClick={props.onClick}>{props.text}</p>
 }
 
 function CharacterName(props) {
@@ -298,7 +298,7 @@ class Skill extends React.Component {
 
 function AscensionFamilyButton(props) {
 	return (
-		<div className="flexbox-horizontal">
+		<div className="flexbox-horizontal" onClick={()=>{props.app.setState({currentFamily: props.family.toLowerCase()})}}>
 			<Text text={props.family}/>
 		</div>
 	)
@@ -310,11 +310,37 @@ export function AscensionPopup(props) {
 		familyButtons.push(<AscensionFamilyButton key={x} family={x} app={props.app}/>)
 	}
 
-	// let skills = []
-	// for (let x in game.skills.sorted[props.app.state.skillbookCategory]) {
-	// 	let skill = game.skills.sorted[props.app.state.skillbookCategory][x]
-	// 	skills.push(<Skill key={x} data={skill} app={props.app}/>)
-	// }
+	function changeCurrentlyViewedAspect(asp) {
+		let obj = {currentlyViewedAspect: {family: props.app.state.currentFamily, id: asp.id, nodes: []}}
+
+		for (let x in game.ascension.aspects[props.app.state.currentFamily][asp.id].nodes) {
+			obj.currentlyViewedAspect.nodes.push(null)
+		}
+
+		props.app.setState(obj)
+	}
+
+	function addAspect() {
+		var cloneDeep = require('lodash.clonedeep');
+		let currentlyViewed = props.app.state.currentlyViewedAspect
+		let asps = cloneDeep(props.app.state.aspects)
+		asps.push({
+			family: currentlyViewed.family,
+			id: currentlyViewed.id,
+			nodes: currentlyViewed.nodes,
+		})
+		props.app.setState({aspects: asps})
+	}
+
+	let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
+
+	let asps = []
+	for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
+		let asp = game.ascension.aspects[props.app.state.currentFamily][x]
+		asps.push(<div onClick={() => {changeCurrentlyViewedAspect(asp)}}>
+			<Text text={asp.name}/>
+		</div>)
+	}
 
 	return (
 		<Container className="flexbox-vertical skillbook">
@@ -322,12 +348,18 @@ export function AscensionPopup(props) {
 				<Text text={"Ascension"} className={"flex-grow"}/>
 				<Icon img={game.getImage("statIcons_DecayingTouch")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
-			<div className="flexbox-horizontal">
-				<div className="flexbox-vertical">
+			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin">
+				<div className="flexbox-vertical flex-align-start">
 					{familyButtons}
 				</div>
-				<div className="flexbox-wrap skill-listing">
-					{/* {skills} */}
+				<div className="flexbox-vertical aspect-listing">
+					{asps}
+				</div>
+				<div className="flexbox-vertical">
+					{currentAspect}
+					<div onClick={() => {addAspect()}}>
+						<Text text={"Add aspect"}/>
+					</div>
 				</div>
 			</div>
 		</Container>
@@ -417,7 +449,7 @@ function Aspect(props) {
 
 	return (
 		<Tooltip content={tooltip} placement="right">
-			<Text text={info.name}/>
+			<Text text={info.name} onClick={props.onClick}/>
 		</Tooltip>
 	)
 }
@@ -437,14 +469,16 @@ export function RightClickMenu(props) {
 }
 
 class Ascension extends React.Component {
+	changeCurrentAspect(asp) {
+		this.props.app.setState({selectedAspect: this.props.app.state.aspects.indexOf(asp)})
+	}
+
 	render() {
 		let aspects = []
 		for (let x in this.props.app.state.aspects) {
 			let asp = this.props.app.state.aspects[x]
 
-			// let info = game.ascension.getAspect(asp)
-
-			aspects.push(<Aspect data={asp} app={this.props.app}/>)
+			aspects.push(<Aspect data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
 		}
 
 		let currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { MainInterface, SkillBook, Text, RightClickMenu } from "./components.js"
+import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup } from "./components.js"
 import * as miscData from "./miscData.js"
 import update from 'immutability-helper';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
@@ -72,28 +72,49 @@ class Ascension {
     return info;
   }
 
-  changeSubNode(asp, node, newSub) {
+  // this is too messy
+  changeSubNode(asp, node, newSub, mode="edit") {
     let index = this.app.state.aspects.indexOf(asp)
-    var cloneDeep = require('lodash.clonedeep');
-    let state = cloneDeep(this.app.state.aspects)
 
-    state[index].nodes[node] = newSub
+    if (mode == "edit") {
+      var cloneDeep = require('lodash.clonedeep');
+      let state = cloneDeep(this.app.state.aspects)
 
-    this.app.setState({aspects: state})
+      state[index].nodes[node] = newSub
+
+      this.app.setState({aspects: state})
+    }
+    else if (mode == "preview-edit") {
+      var cloneDeep = require('lodash.clonedeep');
+      let state = cloneDeep(this.app.state.currentlyViewedAspect)
+
+      state.nodes[node] = parseInt(newSub)
+
+      this.app.setState({currentlyViewedAspect: state})
+    }
   }
 
-  getAspectElement(asp, interactive=false) {
+  getAspectElement(asp, interactive=false, mode="edit") {
+    if (asp.id == null)
+      return null;
+
 		let tooltip = []
 		let nasp = game.ascension.getAspect(asp)
 
 		tooltip.push(<Text key={Math.random()} text={nasp.name}/>)
 
-		console.log(nasp)
 		for (let x in nasp.nodesText) {
       let parentIndex = (parseInt(x)+1)
       let subIndex = (parseInt(nasp.nodesText[x].subNodeIndex)+1)
       let parentText = `Node ${parentIndex}: ${nasp.nodesText[x].parent}`
-      let subNodeText = `Node ${parentIndex}.${subIndex}: ${nasp.nodesText[x].subNode}`
+
+      let subNodeText;
+      if (nasp.nodesText[x].subNodeIndex != null) {
+        subNodeText = `Node ${parentIndex}.${subIndex}: ${nasp.nodesText[x].subNode}`
+      }
+      else {
+        subNodeText = `Node ${parentIndex}.X: Any`
+      }
 
       tooltip.push(<hr/>)
       
@@ -114,7 +135,7 @@ class Ascension {
 
         for (let z in ref.nodesText[x].subNodes) {
           subNodeOptions.push(
-            <div className="context-option" onClick={() => {this.changeSubNode(asp, x, z)}}>
+            <div className="context-option" onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
               <Text text={ref.nodesText[x].subNodes[z]}/>
             </div>)
           
@@ -149,9 +170,11 @@ class App extends React.Component {
     super()
     this.state = {
       ready: false,
-      popup: "skillbook",
+      popup: "ascension",
       skillbookCategory: "Air",
       selectedAspect: 0,
+      currentFamily: "force",
+      currentlyViewedAspect: {family: null, id: null, nodes: []},
 
       physique: {
         race: "lizard",
@@ -219,9 +242,6 @@ class App extends React.Component {
       .catch((error) => {
         throw error;
     });
-
-    console.log(game.images.icons)
-    console.log(game.images.icons["AMER_DoS1_LOOT_PhilosopherStone_A.png"].default)
   }
 
   closePopupPanel() {this.setState({popup: null})}
@@ -231,7 +251,8 @@ class App extends React.Component {
     if (this.state.ready) {
 
       let popups = {
-        "skillbook": <SkillBook app={this}/>
+        "skillbook": <SkillBook app={this}/>,
+        "ascension": <AscensionPopup app={this}/>
       }
       let popup = null
       if (this.state.popup != null) {
