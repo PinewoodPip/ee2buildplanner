@@ -35,8 +35,8 @@ X make rhombe highlighted if you have any skill in the category
 - options (like turning off formatting)
 
 -- Ascension
-- truncate long node descs
-- popup showing all the options
+X truncate long node descs
+X popup showing all the options
 X tab showing your aspects
 - tab showing all your keywords
 X show node index before the text
@@ -45,3 +45,4 @@ X add right click menu to change nodes
 X add "any" option for subnodes
 X prevent adding an asp twice
 - rclick to remove asps
+- emb bopnuses from tier 2s

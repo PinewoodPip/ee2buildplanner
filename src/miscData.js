@@ -121,7 +121,7 @@ export const idToImageMappings = {
 		"Presence": "AMER_UI_Ascension_Keyword_Presence",
 		"Prosperity": "AMER_UI_Ascension_Keyword_Prosperity", // kekw
 		"Purity": "AMER_UI_Ascension_Keyword_Purity",
-		"Purity": "AMER_UI_Ascension_Keyword_Purity",
+		"Occultist": "AMER_UI_Ascension_Keyword_Bane",
 		"Vitality Void": "AMER_UI_Ascension_Keyword_VitalityVoid",
 		"Violent Strike": "AMER_UI_Ascension_Keyword_ViolentStrike",
 		"Volatile Armor": "AMER_UI_Ascension_Keyword_VolatileArmor",

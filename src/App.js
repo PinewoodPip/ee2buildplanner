@@ -44,6 +44,75 @@ class Ascension {
   aspects;
   app;
 
+  get meetsRequirements() {
+    let reqs = this.getTotalRequirements()
+    let rews = this.getTotalRewards()
+
+    for (let x in reqs) {
+      if (rews[x] < reqs[x])
+        return false
+    }
+
+    return true
+  }
+
+  getTotalRequirements() {
+    let asps = []
+    let reqs = {
+      force: 0,
+      entropy: 0,
+      form: 0,
+      inertia: 0,
+      life: 0,
+    }
+
+    for (let x in this.app.state.aspects) {
+      asps.push(this.getReferenceById(this.app.state.aspects[x].id))
+    }
+
+    for (let x in asps) {
+      for (let z in asps[x].requirements) {
+        let amount = asps[x].requirements[z]
+        if (amount > reqs[z])
+          reqs[z] = amount
+      }
+    }
+
+    return reqs;
+  }
+
+  getTotalRewards() {
+    let asps = []
+    let rews = {
+      force: 0,
+      entropy: 0,
+      form: 0,
+      inertia: 0,
+      life: 0,
+    }
+
+    for (let x in this.app.state.aspects) {
+      asps.push(this.getReferenceById(this.app.state.aspects[x].id))
+    }
+
+    for (let x in asps) {
+      for (let z in asps[x].rewards) {
+        let amount = asps[x].rewards[z]
+        rews[z] += amount
+      }
+    }
+
+    return rews;
+  }
+
+  getRequirements(id) {
+    return this.getReferenceById(id).requirements;
+  }
+
+  getRewards(id) {
+    return this.getReferenceById(id).rewards;
+  }
+
   // get the json info of an aspect by id
   getReferenceById(id) {
     for (let x in this.aspects) {
@@ -90,11 +159,12 @@ class Ascension {
     return false
   }
 
-  // [cool ascension-related methods go here]
+  // get the data realted to an aspect, from ascension.json
   getAspectReference(asp) {
     return this.aspects[asp.family][asp.id]
   }
 
+  // get some text listing the chosen subnodes of an aspect in the build
   getAspect(asp) {
     let info = {}
     let ref = this.aspects[asp.family][asp.id]

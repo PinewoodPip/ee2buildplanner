@@ -92,6 +92,45 @@ hr {
   
 }
 
+/* embodiments */
+.embodiment {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid;
+  margin: 5px;
+}
+
+.embodiment p {
+  margin: 0;
+  text-align: center;
+}
+
+.force {
+  border-color: red;
+}
+
+.entropy {
+  border-color: purple;
+}
+
+.form {
+  border-color: green;
+}
+
+.inertia {
+  border-color: #114f9c;
+}
+
+.life {
+  border-color: #baae00;
+}
+
+.reqs-unmet {
+  background-color: rgb(250, 160, 160);
+}
+/*  */
+
 .context-menu {
   background-color: lightslategray;
   min-width: 150px;

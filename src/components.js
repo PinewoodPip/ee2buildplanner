@@ -504,6 +504,24 @@ export function RightClickMenu(props) {
 	)
 }
 
+function Embodiments(props) {
+	let embs = []
+	for (let x in props.amounts) {
+		embs.push(<Embodiment type={x} amount={props.amounts[x]}/>)
+	}
+	return <div className="flexbox-horizontal flex-align-centered" style={{width: "unset"}}>
+		{embs}
+	</div>
+}
+
+function Embodiment(props) {
+	return (
+	<div className={"embodiment " + props.type}>
+	<p>{props.amount}</p>
+	</div>
+	)
+}
+
 class Ascension extends React.Component {
 	changeCurrentAspect(asp) {
 		this.props.app.setState({selectedAspect: this.props.app.state.aspects.indexOf(asp)})
@@ -521,6 +539,8 @@ class Ascension extends React.Component {
 		if (this.props.app.state.selectedAspect != null)
 			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
 
+		let reqsUnmetClass = (game.ascension.meetsRequirements) ? "" : "reqs-unmet"
+
 		return <Container>
 			<div className="flexbox-horizontal">
 				<div className="flexbox-vertical ascension flex-align-start">
@@ -530,6 +550,16 @@ class Ascension extends React.Component {
 					{aspects}
 
 					<hr/>
+
+					<div className={"flexbox-horizontal flex-align-centered " + reqsUnmetClass}>
+						<Text text={"Reqs:"} style={{textAlign: "right"}}/>
+						<Embodiments amounts={game.ascension.getTotalRequirements()}/>
+					</div>
+					<div className="flexbox-horizontal flex-align-centered">
+						<Text text={"Rewards:"} style={{textAlign: "right"}}/>
+						<Embodiments amounts={game.ascension.getTotalRewards()}/>
+					</div>
+
 					<div onClick={() => {this.props.app.setState({popup: "ascension"})}}>
 						<Text text={"Add aspect..."}/>
 					</div>
