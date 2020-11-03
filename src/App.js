@@ -144,8 +144,8 @@ class Ascension {
 
         tooltip.push(
           <RightClickMenu id={id}>
-          {subNodeOptions}
-        </RightClickMenu>)
+            {subNodeOptions}
+          </RightClickMenu>)
       }
       else {
         tooltip.push(<Text key={Math.random()} text={parentText}/>)
@@ -275,7 +275,7 @@ class App extends React.Component {
 function Popup(props) {
   return (
     <div className="popup-cover">
-      <div className="pop-up-parent popup-box">
+      <div className="pop-up-parent">
         {props.element}
       </div>
     </div>
