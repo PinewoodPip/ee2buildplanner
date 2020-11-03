@@ -99,14 +99,19 @@ for line in f.readlines():
             text = prettifyDescription(search["text"])
 
             if search["id"] not in ascensions[search["family"]].keys():
-                ascensions[search["family"]][search["id"]] = {"id": search["id"], "name": text, "nodes": []}
+                ascensions[search["family"]][search["id"]] = {"id": search["id"], "name": text, "nodes": [], "nodesText": []}
             
             if reg == "nodes":
-                # ascensions[search["family"]][search["id"]]["nodes"].append({"parent": text, "subNodes": []})
+                # text
+                ascensions[search["family"]][search["id"]]["nodesText"].append({"parent": text, "subNodes": []})
+
                 ascensions[search["family"]][search["id"]]["nodes"].append({"parent": [], "subNodes": []})
                 interpreted = True
             elif reg == "subNode":
                 # ascensions[search["family"]][search["id"]]["nodes"][int(search["index"])]["subNodes"].append(text)
+
+                # text
+                ascensions[search["family"]][search["id"]]["nodesText"][int(search["index"])]["subNodes"].append(text)
                 pass
             else:
                 ascensions[search["family"]][search["id"]][reg] = text

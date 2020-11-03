@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { MainInterface, SkillBook } from "./components.js"
+import { MainInterface, SkillBook, Text, RightClickMenu } from "./components.js"
 import * as miscData from "./miscData.js"
 import update from 'immutability-helper';
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+
 const axios = require('axios').default;
 
 // class for holding data and misc functions related to the EE game
@@ -40,8 +42,100 @@ class Game {
 
 class Ascension {
   aspects;
+  app;
 
   // [cool ascension-related methods go here]
+  getAspectReference(asp) {
+    return this.aspects[asp.family][asp.id]
+  }
+
+  getAspect(asp) {
+    let info = {}
+    let ref = this.aspects[asp.family][asp.id]
+
+    info.name = ref.name;
+    info.nodesText = []
+    // info.subNodeIndexes = []
+    
+    for (let x in asp.nodes) {
+      let nodeSubIndex = asp.nodes[x]
+      let node = {parent: null, subNode: null, subNodeIndex: null,}
+      
+      node.parent = ref.nodesText[x].parent
+
+      node.subNode = ref.nodesText[x].subNodes[nodeSubIndex]
+      node.subNodeIndex = nodeSubIndex
+
+      info.nodesText.push(node)
+    }
+
+    return info;
+  }
+
+  changeSubNode(asp, node, newSub) {
+    let index = this.app.state.aspects.indexOf(asp)
+    var cloneDeep = require('lodash.clonedeep');
+    let state = cloneDeep(this.app.state.aspects)
+
+    state[index].nodes[node] = newSub
+
+    this.app.setState({aspects: state})
+  }
+
+  getAspectElement(asp, interactive=false) {
+		let tooltip = []
+		let nasp = game.ascension.getAspect(asp)
+
+		tooltip.push(<Text key={Math.random()} text={nasp.name}/>)
+
+		console.log(nasp)
+		for (let x in nasp.nodesText) {
+      let parentIndex = (parseInt(x)+1)
+      let subIndex = (parseInt(nasp.nodesText[x].subNodeIndex)+1)
+      let parentText = `Node ${parentIndex}: ${nasp.nodesText[x].parent}`
+      let subNodeText = `Node ${parentIndex}.${subIndex}: ${nasp.nodesText[x].subNode}`
+
+      tooltip.push(<hr/>)
+      
+      if (interactive) {
+        let id = Math.random()
+
+        tooltip.push(
+          <ContextMenuTrigger id={id}>
+            <Text key={Math.random()} text={parentText}/>
+            <Text key={Math.random()} text={subNodeText}/>
+          </ContextMenuTrigger>)
+
+        let subNodeOptions = []
+        let ref = game.ascension.getAspectReference(asp)
+
+        // header
+        subNodeOptions.push(<Text className="context-header" text={"Choose a subnode:"}/>)
+
+        for (let z in ref.nodesText[x].subNodes) {
+          subNodeOptions.push(
+            <div className="context-option" onClick={() => {this.changeSubNode(asp, x, z)}}>
+              <Text text={ref.nodesText[x].subNodes[z]}/>
+            </div>)
+          
+          // subNodeOptions.push(<hr/>)
+        }
+
+        tooltip.push(
+          <RightClickMenu id={id}>
+          {subNodeOptions}
+        </RightClickMenu>)
+      }
+      else {
+        tooltip.push(<Text key={Math.random()} text={parentText}/>)
+			  tooltip.push(<Text key={Math.random()} text={subNodeText}/>)
+      }
+		}
+
+		return <div>
+			{tooltip}
+		</div>;
+	}
 }
 
 function importAll(r) {
@@ -57,6 +151,7 @@ class App extends React.Component {
       ready: false,
       popup: "skillbook",
       skillbookCategory: "Air",
+      selectedAspect: 0,
 
       physique: {
         race: "lizard",
@@ -78,7 +173,20 @@ class App extends React.Component {
         "Air": 0,
         // "Source": 0,
         "Polymorph": 0,
-      }
+      },
+      aspects: [
+        {
+          family: "force",
+          id: "TheFalcon",
+          nodes: [
+            0,
+            2,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
     }
   }
 
@@ -104,6 +212,7 @@ class App extends React.Component {
         game.artifacts = responses[0].data
         game.ascension.aspects = responses[1].data
         game.skills = responses[2].data
+        game.ascension.app = this
 
         this.setState({ready: true})
       }.bind(this))

@@ -67,6 +67,25 @@
   
 }
 
+.context-menu {
+  background-color: lightslategray;
+  min-width: 150px;
+  min-height: 70px;
+}
+
+.context-option {
+  padding: 5px;
+}
+
+.context-header {
+  padding: 5px;
+}
+
+.context-option:hover {
+  background-color: lightseagreen;
+  outline: 1px solid black;
+}
+
 .unselectable {
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -120,6 +139,15 @@
 .skillbook {
   width: 900px;
   height: 450px
+}
+
+.ascension {
+  width: 500px;
+  height: 500px
+}
+
+.aspect-preview {
+  width: 300px;
 }
 
 .skillbook-category {

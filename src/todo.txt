@@ -8,6 +8,7 @@ X better formatting for skill descs
 - fix ruptured tendos damage
 X show game's names for abilities in sidebar\
 - underline "pay up to x ap" and "pay x more ap"
+- button to add skills should be faded out until you hover over it
 
 -- General
 - panel showing chosen skills
@@ -17,13 +18,26 @@ X show game's names for abilities in sidebar\
 - top bar
 - import unselectable css
 - escape key to close popups
+- search bars
 
 -- Skill sheet
-- skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
-- make rhombe highlighted if you have any skill in the category
+X skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
+X make rhombe highlighted if you have any skill in the category
+- combat abilities
+- show bonuses from ascensions
+- clicking on a skill name should open the skillbook
 
 -- Top bar
 - name of the app
 - save/load buttons
 - featured builds gallery
 - options (like turning off formatting)
+
+-- Ascension
+- popup showing all the options
+- tab showing your aspects
+- tab showing all your keywords
+- show node index before the text
+- add right click menu to change nodes
+- in the asc name display icons of keywords contained in chosen subnodes
+- add "any" option for subnodes

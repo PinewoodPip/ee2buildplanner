@@ -4,6 +4,7 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import _ from "underscore";
 import update from 'immutability-helper';
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 export class Tooltip extends React.Component {
 	render() {
@@ -16,6 +17,22 @@ export class Tooltip extends React.Component {
 		  </Tippy>
 		)
 	}
+}
+
+// function ContextMenu(props) {
+// 	return (
+// 		<MenuProvider id={props.id}>
+// 			{props.children}
+// 		</MenuProvider>
+// 	)
+// }
+
+function ContextMenuContents(props) {
+	return (
+		<ContextMenu id={props.id}>
+			{props.children}
+		</ContextMenu>
+	)
 }
 
 function SkillTooltip(props) {
@@ -39,16 +56,6 @@ function SkillTooltip(props) {
 			"Summoning": "text-summon",
 			"Scoundrel": "text-rogue",
 			"Necromancer": "text-necro",
-
-			"Earth Damage": "text-dmg-earth",
-			"Fire Damage": "text-dmg-fire",
-			"Water Damage": "text-dmg-water",
-			"Air Damage": "text-dmg-air",
-			"Physical Damage": "text-dmg-phys",
-			"Piercing Damage": "text-dmg-pierce",
-			"Physical Armor": "text-dmg-armor-phys",
-			"Magic Armor": "text-dmg-armor-magic",
-			"Weapon Damage": "text-dmg-phys",
 		}
 
 		let infusionText = [
@@ -80,9 +87,7 @@ function SkillTooltip(props) {
 
 	let realDesc = []
 	for (let x in desc) {
-		// realDesc.push(React.createElement("div", {}, desc[x]))
-		realDesc.push(parser("<p>" + desc[x] + "</p>"))
-		// realDesc.push(<Text key={x} text={desc[x]}/>)
+		realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
 	}
 
 	let tooltip = <div className="flexbox-vertical">
@@ -145,7 +150,7 @@ function Portrait(props) {
 	)
 }
 
-function Text(props) {
+export function Text(props) {
 	return <p className={"text " + props.className}>{props.text}</p>
 }
 
@@ -238,10 +243,8 @@ class SkillAbilities extends React.Component {
 				continue
 			let level = this.SI_Levels[this.props.app.state.skillAbilities[x]]
 
-			console.log(this.props.app.state.skillAbilities[x])
 			if (this.props.app.state.skillAbilities[x] == 0 && this.hasAnyRelevantSkill(x)) {
 				level = this.SI_Levels[1];
-				console.log(level)
 			}
 
 			let button = <div className="si-button unselectable" onClick={this.cycleLevel.bind(this, x)}>
@@ -291,6 +294,44 @@ class Skill extends React.Component {
 			</Icon>
 		</SkillTooltip>
 	}
+}
+
+function AscensionFamilyButton(props) {
+	return (
+		<div className="flexbox-horizontal">
+			<Text text={props.family}/>
+		</div>
+	)
+}
+
+export function AscensionPopup(props) {
+	let familyButtons = []
+	for (let x in game.ascension.aspects) {
+		familyButtons.push(<AscensionFamilyButton key={x} family={x} app={props.app}/>)
+	}
+
+	// let skills = []
+	// for (let x in game.skills.sorted[props.app.state.skillbookCategory]) {
+	// 	let skill = game.skills.sorted[props.app.state.skillbookCategory][x]
+	// 	skills.push(<Skill key={x} data={skill} app={props.app}/>)
+	// }
+
+	return (
+		<Container className="flexbox-vertical skillbook">
+			<div className="flexbox-horizontal flex-align-end full-width">
+				<Text text={"Ascension"} className={"flex-grow"}/>
+				<Icon img={game.getImage("statIcons_DecayingTouch")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+			</div>
+			<div className="flexbox-horizontal">
+				<div className="flexbox-vertical">
+					{familyButtons}
+				</div>
+				<div className="flexbox-wrap skill-listing">
+					{/* {skills} */}
+				</div>
+			</div>
+		</Container>
+	)
 }
 
 export function SkillBook(props) {
@@ -353,7 +394,7 @@ class Skills extends React.Component {
 		let skills = []
 		for (let x in this.props.app.state.skills) {
 			let skill = game.skills[this.props.app.state.skills[x]]
-			skills.push(<Skill data={skill} app={this.props.app} highlight="false"/>)
+			skills.push(<Skill key={x} data={skill} app={this.props.app} highlight="false"/>)
 		}
 
 		// button to add more skills, opening the skillbook
@@ -369,6 +410,58 @@ class Skills extends React.Component {
 	}
 }
 
+function Aspect(props) {
+	let asp = props.data
+	let tooltip = game.ascension.getAspectElement(asp)
+	let info = game.ascension.getAspect(asp)
+
+	return (
+		<Tooltip content={tooltip} placement="right">
+			<Text text={info.name}/>
+		</Tooltip>
+	)
+}
+
+export function RightClickMenu(props) {
+	let items = []
+	for (let x in props.children) {
+		items.push(<MenuItem>{props.children[x]}</MenuItem>)
+	}
+	return (
+		<ContextMenu id={props.id} hideOnLeave={true}>
+			<div className="context-menu">
+				{items}
+			</div>
+		</ContextMenu>
+	)
+}
+
+class Ascension extends React.Component {
+	render() {
+		let aspects = []
+		for (let x in this.props.app.state.aspects) {
+			let asp = this.props.app.state.aspects[x]
+
+			// let info = game.ascension.getAspect(asp)
+
+			aspects.push(<Aspect data={asp} app={this.props.app}/>)
+		}
+
+		let currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
+
+		return <Container>
+			<div className="flexbox-horizontal">
+				<div className="flexbox-vertical ascension">
+					{aspects}
+				</div>
+					<div className="aspect-preview flex-grow">
+						{currentAspect}
+					</div>
+			</div>
+		</Container>
+	}
+}
+
 export class MainInterface extends React.Component {
 	render() {
 		return <div>
@@ -380,6 +473,7 @@ export class MainInterface extends React.Component {
 				</div>
 				<div className="flexbox-horizontal flex-align-start">
 					<SkillAbilities app={this.props.app}/>
+					<Ascension app={this.props.app}/>
 				</div>
 			</div>
 		</div>
