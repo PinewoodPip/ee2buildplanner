@@ -19,7 +19,7 @@ ascensionDataParsers = {
 
     "flexStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_FlexStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", ".*", "(?P<stat>.*)", (?P<value>.*)\);'), # no idea if the "stat" part is relevant to take into account
 
-    "extendedStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_ExtendedStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<stat>.*)", "(?P<subStat>.*)", "", "", (?P<value>.*)\);'),
+    "extendedStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_ExtendedStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<stat>.*)", "(?P<subStat>.*)", "(?P<subSubStat>.*)", "(?P<subSubSubStat>.*)", (?P<value>.*)\);'),
 
     "containedKeywords": re.compile('DB_AMER_UI_Ascension_NodeCluster_Node_Keyword\(".*", "(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)", "(?P<keyword>.*)"\);'),
 
@@ -222,7 +222,7 @@ for line in ascData.readlines():
                 
 
             elif key == "extendedStat":
-                n.append({"type": "extendedStat", "id": search["stat"] + "_" + search["subStat"], "value": float(value)})
+                n.append({"type": "extendedStat", "id": search["stat"] + "_" + search["subStat"] + "_" + search["subSubStat"] + "_" + search["subSubSubStat"], "value": float(value)})
                 
             elif key == "embReward":
                 n.append({"type": "embodimentReward", "id": search["emb"], "value": float(value)})

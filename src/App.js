@@ -142,7 +142,7 @@ class Ascension {
 
       if (node.containedKeywords != undefined) {
         for (let z in node.containedKeywords) {
-          let keyword = node.containedKeywords[z]
+          let keyword = node.containedKeywords[z].replace(" ", "")
           if (!keywords.includes(keyword))
             keywords.push(keyword)
         }

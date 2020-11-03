@@ -464,7 +464,9 @@ class Skills extends React.Component {
 function Keyword(props) {
 	let className = props.faded == true ? "faded-out" : "keyword"
 	return (
-		<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.getImage(game.mappings.keywords[props.keyword])}/>
+		<Tooltip content={<Text text={game.mappings.keywordNames[props.keyword]}/>}>
+			<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.getImage(game.mappings.keywords[props.keyword])}/>
+		</Tooltip>
 	)
 }
 
