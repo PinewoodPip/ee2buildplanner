@@ -8,6 +8,7 @@
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .flexbox-horizontal {
@@ -149,7 +150,7 @@
 
 .skillbook {
   width: 900px;
-  height: 450px;
+  height: 500px;
   background-color: whitesmoke;
 }
 
@@ -158,8 +159,19 @@
   height: 500px
 }
 
+/* div {height: 100%;} */
+
+.aspect-name-bg {
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0px;
+}
+
 .aspect-preview {
   width: 300px;
+  height: 500px;
+  /* overflow: scroll; */
+  overflow-y: scroll;
 }
 
 .skillbook-category {

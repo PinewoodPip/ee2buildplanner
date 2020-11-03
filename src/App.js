@@ -44,6 +44,22 @@ class Ascension {
   aspects;
   app;
 
+  getBuildAspectById(id) {
+    for (let x in this.app.state.aspects) {
+      if (this.app.state.aspects[x].id == id)
+        return this.app.state.aspects[x]
+    }
+    return null
+  }
+
+  hasAspect(asp) {
+    for (let x in this.app.state.aspects) {
+      if (this.app.state.aspects[x].id == asp.id)
+        return true
+    }
+    return false
+  }
+
   // [cool ascension-related methods go here]
   getAspectReference(asp) {
     return this.aspects[asp.family][asp.id]
@@ -88,7 +104,7 @@ class Ascension {
       var cloneDeep = require('lodash.clonedeep');
       let state = cloneDeep(this.app.state.currentlyViewedAspect)
 
-      state.nodes[node] = parseInt(newSub)
+      state.nodes[node] = newSub
 
       this.app.setState({currentlyViewedAspect: state})
     }
@@ -98,10 +114,17 @@ class Ascension {
     if (asp.id == null)
       return null;
 
+    // if user ahs this aspect, override behaviour so edits done to the asp in the popup are reflected in the build
+    if (game.ascension.hasAspect(asp)) {
+      mode = "edit";
+      asp = game.ascension.getBuildAspectById(asp.id)
+    }
+
 		let tooltip = []
 		let nasp = game.ascension.getAspect(asp)
 
-		tooltip.push(<Text key={Math.random()} text={nasp.name}/>)
+		tooltip.push(<div className="aspect-name-bg"><Text key={Math.random()} className="" text={nasp.name}/>
+      </div>)
 
 		for (let x in nasp.nodesText) {
       let parentIndex = (parseInt(x)+1)
@@ -133,6 +156,11 @@ class Ascension {
         // header
         subNodeOptions.push(<Text className="context-header" text={"Choose a subnode:"}/>)
 
+        // "any" option
+        subNodeOptions.push(<div className="context-option" onClick={() => {this.changeSubNode(asp, x, null, mode)}}>
+        <Text text={"Any"}/>
+      </div>)
+
         for (let z in ref.nodesText[x].subNodes) {
           subNodeOptions.push(
             <div className="context-option" onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
@@ -153,7 +181,7 @@ class Ascension {
       }
 		}
 
-		return <div>
+		return <div style={{position: "relative"}}>
 			{tooltip}
 		</div>;
 	}

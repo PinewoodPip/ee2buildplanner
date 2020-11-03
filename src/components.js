@@ -238,6 +238,8 @@ class SkillAbilities extends React.Component {
 
 	render() {
 		let skillAbilities = []
+		let openSkillbookFunc = function(category){this.props.app.setState({popup: "skillbook", skillbookCategory: category})}.bind(this)
+
 		for (let x in game.skills.sorted) {
 			if (x == "Source")
 				continue
@@ -254,8 +256,8 @@ class SkillAbilities extends React.Component {
 			let className = (this.hasAnyRelevantSkill(x) || this.props.app.state.skillAbilities[x] > 0) ? "highlighted-bg" : ""
 
 			skillAbilities.push(<div className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
-				<Icon img={game.getImage(game.mappings.abilities[x])} size="32px"/>
-				<Text text={game.mappings.abilityNames[x]} className="flex-grow"/>
+				<Icon img={game.getImage(game.mappings.abilities[x])} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
+				<Text text={game.mappings.abilityNames[x]} className="flex-grow" onClick={()=>{openSkillbookFunc(x)}}/>
 				{button}
 			</div>)
 		}
@@ -311,10 +313,16 @@ export function AscensionPopup(props) {
 	}
 
 	function changeCurrentlyViewedAspect(asp) {
-		let obj = {currentlyViewedAspect: {family: props.app.state.currentFamily, id: asp.id, nodes: []}}
+		let obj;
+		if (game.ascension.hasAspect(asp)) {
+			obj = {currentlyViewedAspect: game.ascension.getBuildAspectById(asp.id)}
+		}
+		else {
+			obj = {currentlyViewedAspect: {family: props.app.state.currentFamily, id: asp.id, nodes: []}}
 
-		for (let x in game.ascension.aspects[props.app.state.currentFamily][asp.id].nodes) {
-			obj.currentlyViewedAspect.nodes.push(null)
+			for (let x in game.ascension.aspects[props.app.state.currentFamily][asp.id].nodes) {
+				obj.currentlyViewedAspect.nodes.push(null)
+			}
 		}
 
 		props.app.setState(obj)
@@ -323,13 +331,20 @@ export function AscensionPopup(props) {
 	function addAspect() {
 		var cloneDeep = require('lodash.clonedeep');
 		let currentlyViewed = props.app.state.currentlyViewedAspect
+
+		// just close the interface if this asp is already in the build
+		if (game.ascension.hasAspect(currentlyViewed)) {
+			props.app.setState({popup: null})
+			return;
+		}
+
 		let asps = cloneDeep(props.app.state.aspects)
 		asps.push({
 			family: currentlyViewed.family,
 			id: currentlyViewed.id,
 			nodes: currentlyViewed.nodes,
 		})
-		props.app.setState({aspects: asps})
+		props.app.setState({aspects: asps, popup: null})
 	}
 
 	let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
@@ -348,14 +363,14 @@ export function AscensionPopup(props) {
 				<Text text={"Ascension"} className={"flex-grow"}/>
 				<Icon img={game.getImage("statIcons_DecayingTouch")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
-			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin">
+			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
 				<div className="flexbox-vertical flex-align-start">
 					{familyButtons}
 				</div>
 				<div className="flexbox-vertical aspect-listing">
 					{asps}
 				</div>
-				<div className="flexbox-vertical">
+				<div className="flexbox-vertical aspect-preview">
 					{currentAspect}
 					<div onClick={() => {addAspect()}}>
 						<Text text={"Add aspect"}/>
@@ -487,8 +502,11 @@ class Ascension extends React.Component {
 			<div className="flexbox-horizontal">
 				<div className="flexbox-vertical ascension">
 					{aspects}
+					<div onClick={() => {this.props.app.setState({popup: "ascension"})}}>
+						<Text text={"Add aspect..."}/>
+					</div>
 				</div>
-					<div className="aspect-preview flex-grow">
+					<div className="aspect-preview">
 						{currentAspect}
 					</div>
 			</div>

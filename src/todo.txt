@@ -12,13 +12,14 @@ X show game's names for abilities in sidebar\
 
 -- General
 - panel showing chosen skills
-- close button
+X close button
 - rip game UI buttons
 - add margin to the main interface
 - top bar
 - import unselectable css
 - escape key to close popups
 - search bars
+- fix janky css layouts everywhere
 
 -- Skill sheet
 X skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
@@ -34,10 +35,13 @@ X make rhombe highlighted if you have any skill in the category
 - options (like turning off formatting)
 
 -- Ascension
+- truncate long node descs
 - popup showing all the options
-- tab showing your aspects
+X tab showing your aspects
 - tab showing all your keywords
-- show node index before the text
-- add right click menu to change nodes
+X show node index before the text
+X add right click menu to change nodes
 - in the asc name display icons of keywords contained in chosen subnodes
-- add "any" option for subnodes
+X add "any" option for subnodes
+X prevent adding an asp twice
+- rclick to remove asps
