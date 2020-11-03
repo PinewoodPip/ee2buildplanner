@@ -151,7 +151,7 @@ function Portrait(props) {
 }
 
 export function Text(props) {
-	return <p className={"text " + props.className} onClick={props.onClick}>{props.text}</p>
+	return <p style={props.style} className={"text " + props.className} onClick={props.onClick}>{props.text}</p>
 }
 
 function CharacterName(props) {
@@ -457,15 +457,36 @@ class Skills extends React.Component {
 	}
 }
 
+function Keyword(props) {
+	return (
+		<Icon style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.getImage(game.mappings.keywords[props.keyword])}/>
+	)
+}
+
+function AspectListing(props) {
+	return (
+		<div className="flexbox-horizontal flex-align-centered aspect" onClick={props.onClick}>
+			<Text text={props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
+			<div style={{width: "50%", margin: "0 5px 0 5px"}} className="flexbox-horizontal flex-align-centered">
+				{props.keywords}
+			</div>
+		</div>
+	)
+}
+
 function Aspect(props) {
 	let asp = props.data
-	let tooltip = game.ascension.getAspectElement(asp)
+	// let tooltip = game.ascension.getAspectElement(asp)
 	let info = game.ascension.getAspect(asp)
+	let keywords = game.ascension.getKeywordsInAspectBuild(asp)
+	let keywordDisplay = []
+
+	for (let x in keywords) {
+		keywordDisplay.push(<Keyword key={x} keyword={keywords[x]}/>)
+	}
 
 	return (
-		<Tooltip content={tooltip} placement="right">
-			<Text text={info.name} onClick={props.onClick}/>
-		</Tooltip>
+		<AspectListing keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
 	)
 }
 
@@ -496,12 +517,19 @@ class Ascension extends React.Component {
 			aspects.push(<Aspect data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
 		}
 
-		let currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
+		let currentAspect = null;
+		if (this.props.app.state.selectedAspect != null)
+			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
 
 		return <Container>
 			<div className="flexbox-horizontal">
-				<div className="flexbox-vertical ascension">
+				<div className="flexbox-vertical ascension flex-align-start">
+					<AspectListing keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>
+					<hr/>
+
 					{aspects}
+
+					<hr/>
 					<div onClick={() => {this.props.app.setState({popup: "ascension"})}}>
 						<Text text={"Add aspect..."}/>
 					</div>

@@ -105,5 +105,28 @@ export const idToImageMappings = {
 		"Air": "Aerotheurge",
 		"Source": "Sourcery",
 		"Polymorph": "Polymorph",
+	},
+	keywords: {
+		"Abeyance": "AMER_UI_Ascension_Keyword_Abeyance",
+		"Adaptation": "AMER_UI_Ascension_Keyword_Adaptation",
+		"Bane": "AMER_UI_Ascension_Keyword_Bane",
+		"Benevolence": "AMER_UI_Ascension_Keyword_Benevolence",
+		"Celestial": "AMER_UI_Ascension_Keyword_Celestial",
+		"Centurion": "AMER_UI_Ascension_Keyword_Centurion",
+		"Defiance": "AMER_UI_Ascension_Keyword_Defiance",
+		"Disintegrate": "AMER_UI_Ascension_Keyword_Disintegrate",
+		"Elementalist": "AMER_UI_Ascension_Keyword_Elementalist",
+		"Paucity": "AMER_UI_Ascension_Keyword_Paucity",
+		"Predator": "AMER_UI_Ascension_Keyword_Predator",
+		"Presence": "AMER_UI_Ascension_Keyword_Presence",
+		"Prosperity": "AMER_UI_Ascension_Keyword_Prosperity", // kekw
+		"Purity": "AMER_UI_Ascension_Keyword_Purity",
+		"Purity": "AMER_UI_Ascension_Keyword_Purity",
+		"Vitality Void": "AMER_UI_Ascension_Keyword_VitalityVoid",
+		"Violent Strike": "AMER_UI_Ascension_Keyword_ViolentStrike",
+		"Volatile Armor": "AMER_UI_Ascension_Keyword_VolatileArmor",
+		"Voracity": "AMER_UI_Ascension_Keyword_Voracity",
+		"Ward": "AMER_UI_Ascension_Keyword_Ward",
+		"Wither": "AMER_UI_Ascension_Keyword_Wither",
 	}
 }

@@ -41,6 +41,19 @@
   flex-grow: 1;
 }
 
+hr {
+  /* border: 0.5px black solid; */
+  width: 85%;
+}
+
+.aspect {
+  min-height: 32px
+}
+
+.aspect:hover {
+  background-color: rgb(115, 219, 214);
+}
+
 .flex-align-end {
   justify-content: flex-end !important;
 }
@@ -94,7 +107,7 @@
 }
 
 .context-option:hover {
-  background-color: lightseagreen;
+  background-color: rgb(115, 219, 214);
   outline: 1px solid black;
 }
 
@@ -187,6 +200,8 @@
   /* background-color: lightgreen; */
   outline: 1px black solid;
 }
+
+/* $highlighted-color: rgb(115, 219, 214) */
 
 .highlighted-bg {
   background-color: rgb(115, 219, 214);

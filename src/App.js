@@ -44,6 +44,35 @@ class Ascension {
   aspects;
   app;
 
+  // get the json info of an aspect by id
+  getReferenceById(id) {
+    for (let x in this.aspects) {
+      if (Object.keys(this.aspects[x]).includes(id))
+        return this.aspects[x][id]
+    }
+    return null
+  }
+
+  getKeywordsInAspectBuild(asp) {
+    let ref = this.getReferenceById(asp.id)
+
+    let keywords = []
+    for (let x in ref.nodes) {
+      let node = ref.nodes[x]
+
+      if (node.containedKeywords != undefined) {
+        for (let z in node.containedKeywords) {
+          let keyword = node.containedKeywords[z]
+          if (!keywords.includes(keyword))
+            keywords.push(keyword)
+        }
+      }
+    }
+
+    return keywords
+  }
+
+  // get an aspect from the user's build by id
   getBuildAspectById(id) {
     for (let x in this.app.state.aspects) {
       if (this.app.state.aspects[x].id == id)
@@ -52,6 +81,7 @@ class Ascension {
     return null
   }
 
+  // check if user has aspect in their build
   hasAspect(asp) {
     for (let x in this.app.state.aspects) {
       if (this.app.state.aspects[x].id == asp.id)
@@ -200,7 +230,7 @@ class App extends React.Component {
       ready: false,
       popup: "ascension",
       skillbookCategory: "Air",
-      selectedAspect: 0,
+      selectedAspect: null,
       currentFamily: "force",
       currentlyViewedAspect: {family: null, id: null, nodes: []},
 
@@ -252,7 +282,10 @@ class App extends React.Component {
     ]
     let promises = []
 
-    game.images.icons = importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/))
+    game.images.icons = {
+      ...importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/)),
+      ...importAll(require.context("./images/keywords", false, /\.(gif|jpe?g|svg|png)$/))
+    }
 
     for (let x = 0; x < requests.length; x++) {
       promises.push(axios.get(requests[x]))
