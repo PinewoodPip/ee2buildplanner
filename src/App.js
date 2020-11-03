@@ -354,7 +354,8 @@ class App extends React.Component {
 
     game.images.icons = {
       ...importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/)),
-      ...importAll(require.context("./images/keywords", false, /\.(gif|jpe?g|svg|png)$/))
+      ...importAll(require.context("./images/keywords", false, /\.(gif|jpe?g|svg|png)$/)),
+      ...importAll(require.context("./images/interface", false, /\.(gif|jpe?g|svg|png)$/)),
     }
 
     for (let x = 0; x < requests.length; x++) {

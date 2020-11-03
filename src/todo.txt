@@ -36,6 +36,8 @@ X make rhombe highlighted if you have any skill in the category
 
 -- Ascension
 X truncate long node descs
+- show reqs in asc browser
+X when reqs are unmet only highlight the unmet embs
 X popup showing all the options
 X tab showing your aspects
 - tab showing all your keywords

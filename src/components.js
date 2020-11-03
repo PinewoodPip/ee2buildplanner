@@ -331,6 +331,8 @@ export function AscensionPopup(props) {
 	function addAspect() {
 		var cloneDeep = require('lodash.clonedeep');
 		let currentlyViewed = props.app.state.currentlyViewedAspect
+		if (currentlyViewed.id == null)
+			return;
 
 		// just close the interface if this asp is already in the build
 		if (game.ascension.hasAspect(currentlyViewed)) {
@@ -361,7 +363,7 @@ export function AscensionPopup(props) {
 		<Container className="flexbox-vertical skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width">
 				<Text text={"Ascension"} className={"flex-grow"}/>
-				<Icon img={game.getImage("statIcons_DecayingTouch")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={game.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
 				<div className="flexbox-vertical flex-align-start">
@@ -370,11 +372,13 @@ export function AscensionPopup(props) {
 				<div className="flexbox-vertical aspect-listing">
 					{asps}
 				</div>
+
 				<div className="flexbox-vertical aspect-preview">
 					{currentAspect}
-					<div onClick={() => {addAspect()}}>
-						<Text text={"Add aspect"}/>
-					</div>
+
+					<div style={{height: "10px"}}/>
+
+					<GreenButton text="Add aspect" onClick={() => {addAspect()}}/>
 				</div>
 			</div>
 		</Container>
@@ -397,7 +401,7 @@ export function SkillBook(props) {
 		<Container className="flexbox-vertical skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width">
 				<Text text={"Skillbook"} className={"flex-grow"}/>
-				<Icon img={game.getImage("statIcons_DecayingTouch")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={game.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 			<div className="flexbox-horizontal">
 				<div className="flexbox-vertical">
@@ -445,7 +449,7 @@ class Skills extends React.Component {
 		}
 
 		// button to add more skills, opening the skillbook
-		skills.push(<Icon img={game.getImage("statIcons_Regenerate")} size="64px" onClick={this.openSkillBook.bind(this)}/>)
+		skills.push(<Icon className="button" borderless={true} img={game.getImage("add")} size="64px" onClick={this.openSkillBook.bind(this)}/>)
 
 		return (
 			<Container className="skills">
@@ -506,8 +510,23 @@ export function RightClickMenu(props) {
 
 function Embodiments(props) {
 	let embs = []
+	let reqs;
+	let rews;
+	let unmet = []
+
+	if (props.highlightUnmet) {
+		reqs = game.ascension.getTotalRequirements()
+		rews = game.ascension.getTotalRewards()
+
+		for (let x in reqs) {
+			if (rews[x] < reqs[x])
+				unmet.push(x)
+		}
+	}
+
 	for (let x in props.amounts) {
-		embs.push(<Embodiment type={x} amount={props.amounts[x]}/>)
+		let className = (unmet.includes(x)) ? "reqs-unmet" : ""
+		embs.push(<Embodiment className={className} type={x} amount={props.amounts[x]}/>)
 	}
 	return <div className="flexbox-horizontal flex-align-centered" style={{width: "unset"}}>
 		{embs}
@@ -516,7 +535,7 @@ function Embodiments(props) {
 
 function Embodiment(props) {
 	return (
-	<div className={"embodiment " + props.type}>
+	<div className={"embodiment " + props.type + " " + props.className}>
 	<p>{props.amount}</p>
 	</div>
 	)
@@ -539,7 +558,7 @@ class Ascension extends React.Component {
 		if (this.props.app.state.selectedAspect != null)
 			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
 
-		let reqsUnmetClass = (game.ascension.meetsRequirements) ? "" : "reqs-unmet"
+		// let reqsUnmetClass = (game.ascension.meetsRequirements) ? "" : "reqs-unmet"
 
 		return <Container>
 			<div className="flexbox-horizontal">
@@ -551,18 +570,18 @@ class Ascension extends React.Component {
 
 					<hr/>
 
-					<div className={"flexbox-horizontal flex-align-centered " + reqsUnmetClass}>
+					<div className={"flexbox-horizontal flex-align-centered "}>
 						<Text text={"Reqs:"} style={{textAlign: "right"}}/>
-						<Embodiments amounts={game.ascension.getTotalRequirements()}/>
+						<Embodiments highlightUnmet={true} amounts={game.ascension.getTotalRequirements()}/>
 					</div>
 					<div className="flexbox-horizontal flex-align-centered">
 						<Text text={"Rewards:"} style={{textAlign: "right"}}/>
 						<Embodiments amounts={game.ascension.getTotalRewards()}/>
 					</div>
 
-					<div onClick={() => {this.props.app.setState({popup: "ascension"})}}>
-						<Text text={"Add aspect..."}/>
-					</div>
+					<div style={{height: "10px"}}/>
+
+					<GreenButton text="Add aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
 				</div>
 					<div className="aspect-preview">
 						{currentAspect}
@@ -570,6 +589,15 @@ class Ascension extends React.Component {
 			</div>
 		</Container>
 	}
+}
+
+function GreenButton(props) {
+	return (
+		<div className="absolute button" onClick={props.onClick}>
+			<img style={{width: "150px", height: "30px"}} src={game.getImage("button_green")}/>
+			<Text text={props.text} className="unselectable"/>
+		</div>
+	)
 }
 
 export class MainInterface extends React.Component {
