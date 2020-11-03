@@ -122,14 +122,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_FireEarth_AllySkills",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_BHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -145,14 +149,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_FireEarth_NonTieredStatuses",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_Slowed2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -173,7 +181,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -360,14 +370,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_ACT_BHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_ACT_0AP",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -390,28 +404,36 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_Acid",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_Bleeding",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_Suffocating",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_Terrified2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -565,14 +587,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_ThePawn",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -705,14 +731,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Inconspicuous",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -894,14 +924,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_PredatorOrVuln3",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_ACT_ElemStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -917,21 +951,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_EmulateSkillSI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_FeedbackAttribBonus",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_ForceEntropyLifeDamageScaling",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -1134,21 +1174,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_ACT_BHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_ACT_DamageAtOnce",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_ACT_MK2_ArmorDepleted",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -1165,14 +1211,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_EleArrowheads",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_BHStackNonBoss",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -1384,14 +1434,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_ACT_VitThreshold",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_Terrified",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -1407,21 +1461,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_MUTA_EmulateBlackShroud",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_MUTA_Sneak",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_EmulateFoKSI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -1587,21 +1647,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_FireEarth_AllySkills",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_ACT_DamageAtOnce",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_FireEarth_AllySkills_MK2_NecroRogue",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -1617,14 +1683,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_FeedbackCrit",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_AcidSuffCalc",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -1782,7 +1852,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_Dazzled",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -1794,14 +1866,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_VitThreshold",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_MK2_EnemyKilled",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -1817,7 +1893,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_DualWieldrange",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -1829,7 +1907,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_Hemorrhage",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -1969,7 +2049,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ]
@@ -1981,14 +2063,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_2HArmorBonus",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_ACT_BasicOnHit",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -2021,7 +2107,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_FinStrDamageScaling",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -2037,21 +2125,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_Conqueror",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_VitalityVoidACT",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_SourceGen_Conq",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -2200,14 +2294,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_OccultOrElem",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_FreeOHBasicAttack",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -2234,14 +2332,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_FeedbackPowerEffect",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_TeleportWithered",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -2258,14 +2360,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_DoTs",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_Glaciate",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -2406,6 +2512,12 @@
                 "id": "PHYSICALRESISTANCE",
                 "value": 2.0
               }
+            ],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              }
             ]
           ],
           "containedKeywords": [
@@ -2421,14 +2533,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_ACT_Berserk",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_2HDamageFromForce",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -2456,14 +2572,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_MUTA_WitherACT_BasicAttack",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_LifestealDamageFromForce",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -2480,21 +2600,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_MUTA_EffectiveSI_Wrath",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_EmulateWiltingSI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_T3BlockedForDamage",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -2631,7 +2757,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -2811,7 +2939,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_ACT_SourceSpent",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -2823,7 +2953,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_ACT_SlowAndWeak2And3",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -2847,7 +2979,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_Terrified2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -2859,7 +2993,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_MUTA_CritAppliesSubj2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -2884,7 +3020,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -3091,14 +3229,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_TerrifiedAndSubj2And3",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_AllyAoO",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -3119,14 +3261,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_Weakened2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_CritFromTargetLowLife",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -3264,14 +3410,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_ThePawn",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Inconspicuous",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -3473,14 +3623,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_ACT_VitThresholdPerTurn",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_ACT_Bleeding",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -3496,14 +3650,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_HitCountExtendSourceGen",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_MUTA_BasicAttackSIGotS",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "mutator"
               }
             ],
             [],
@@ -3511,7 +3669,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_SummonLimitTo2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -3682,21 +3842,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_ACT_AllyDeathsPerRound",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_NearCorpseEndOfTurn",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Skill_BoneshapedSkitterer",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -3712,21 +3878,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Paucity_MUTA_SummonACT",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Paucity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_SkittererConversion",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_DamagePerCorpse",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -3915,14 +4087,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_AllyWither",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_ACT_SubjAndTerrified",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -3938,7 +4114,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_NowBasicAttack",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [],
@@ -3946,7 +4124,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -4143,21 +4323,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_AllyPredator",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_ACT_SourceSpent",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_ACT_SourceSpent_MK2_T3Status",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -4173,21 +4359,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_VoracityACT",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_Terrified2AndSubj2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_DamageFromTargetCount",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -4347,16 +4539,24 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Adaptation"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_ACT_AllyKilled",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_AlliedSummonKilled",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -4384,28 +4584,36 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_PercPowerLifesteal",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_MakeTotem",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_EmulateInfectSpendAdapt",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Skill_AccursedVessel",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -4555,14 +4763,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_ACT_AllyViolentStrike",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_ACT_CombatDeath",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -4591,14 +4803,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_RecoverAPOnKill",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_Wither",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -4615,21 +4831,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Predator_MUTA_BloatedCorpseOnKill",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Predator",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_VitalityVoid_MUTA_CorpseSkitterers",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "VitalityVoid",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_BHThreshold_AlwaysSufficient",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -4775,7 +4997,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_ACT_CorpseExploded",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "activator"
               }
             ],
             [],
@@ -4813,7 +5037,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Skill_Haruspicy",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -4952,7 +5178,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -4974,14 +5202,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_ACT_Paucity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Skill_CorpseMastery",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -5000,7 +5232,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_SummonsFloat",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -5016,14 +5250,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_AdaptSpend_DemiLich_A",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_PreexistingBHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -5038,28 +5276,36 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_AdaptSpend_DemiLich_B",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_Adapt",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_DemilichCannotDie",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Skill_BoneshapedCrusher",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -5073,7 +5319,9 @@
             {
               "type": "specialLogic",
               "id": "Ascension_DemilichHealConversion",
-              "value": 1.0
+              "value": 1.0,
+              "keyword": null,
+              "keywordBoon": null
             }
           ],
           "subNodes": []
@@ -5253,9 +5501,19 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Abeyance"
+              },
+              {
                 "type": "flexStat",
                 "id": "STRENGTH",
                 "value": 1.0
+              }
+            ],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Adaptation"
               }
             ]
           ],
@@ -5271,14 +5529,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_CleanseTiered1And2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_EleRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -5290,7 +5552,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -5469,14 +5733,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_MissedByAttack",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_AtaxiaSquelched",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -5499,7 +5767,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_Calcifying",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -5661,12 +5931,19 @@
         {
           "parent": [],
           "subNodes": [
-            [],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -5801,19 +6078,25 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_BaseEleRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_MK2_Damage",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -5970,14 +6253,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_EndOfTurnFreeOffHand",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_ACT_Calcifying",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -5998,7 +6285,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_EmulatePetrifyingVisage",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -6010,7 +6299,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_Slowed2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -6203,16 +6494,24 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Adaptation"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_ACT_MK2_IncarnateInfus",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_AlliedSummonKilled",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -6228,14 +6527,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_AllRegen",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_EmulateThrowDust",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [],
@@ -6243,7 +6546,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_SummonLimitTo2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -6440,9 +6745,15 @@
             ],
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Defiance_ACT_MK2_NonSummonAllyCount",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -6455,16 +6766,30 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Abeyance"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_ThresholdFromWitsPower",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_AllyPredator",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
+              }
+            ],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
               }
             ]
           ],
@@ -6482,21 +6807,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_AdaptSpendFireAoE",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_TotemsAttackConversion",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_EmulateDragonBlaze",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -6657,7 +6988,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_MissedByAttack",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -6669,12 +7002,16 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_ACT_DamageBuffer",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_ACT_MK2_CritByEnemy",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -6693,7 +7030,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_MissedByAttack_MK2_OnAoO",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -6710,21 +7049,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_AdaptationStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_CritAdaptStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_MUTA_AdaptationStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -6916,6 +7261,10 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Abeyance"
+              },
+              {
                 "type": "flexStat",
                 "id": "AllResistance",
                 "value": 2.0
@@ -6923,14 +7272,22 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_BufferDRFormInertiaScaling",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Adaptation"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_ACT_MK2_Flurry",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -6963,21 +7320,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_TotemSac",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_FortifyOpenEyes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_MeteorShowerSI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -7151,14 +7514,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_ACT_Cannibalize",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_MUTA_DWDamagePerTotem",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -7177,7 +7544,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_SummonsFloat",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7193,14 +7562,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_InitMovementCon",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_MUTA_Skitterer",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -7216,14 +7589,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_MassForHeroes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_MassForSummons",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [],
@@ -7231,7 +7608,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_SkitterersOnSummonDeath",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7379,7 +7758,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7401,14 +7782,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_ACT_RitualReaction",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_MUTA_2HDodgePenalty",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -7427,7 +7812,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_SummonsFloat",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7450,28 +7837,36 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Occultist_MUTA_TotemsAttack",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Occultist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Wither_ACT_TheRitual",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Wither",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_CannotDie_TheRitual",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_TotemsDupeOnDeath",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7616,12 +8011,19 @@
         {
           "parent": [],
           "subNodes": [
-            [],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Abeyance"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_FreeOHEmulateSilencingStare",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -7649,21 +8051,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_AdaptSpendBufferReduce",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_AdaptationStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Demolitionist_AdaptSpenderSIBoost",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7680,21 +8088,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_NonLethal",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_AdaptSpendEmulateChainLight",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_SourceGen_Dynamo",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -7843,10 +8257,16 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              },
               {
                 "type": "flexStat",
                 "id": "EARTHRESISTANCE",
@@ -7994,19 +8414,25 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_BaseEleRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_MK2_PhysRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -8177,12 +8603,19 @@
         {
           "parent": [],
           "subNodes": [
-            [],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Benevolence"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_ACT_DamageBuffer",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -8198,7 +8631,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_SourceGenReward",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -8385,7 +8820,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_BHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -8397,7 +8834,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_HitAlly",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -8418,14 +8857,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_CleanseNonTiered",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_Taunt",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -8650,23 +9093,33 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Benevolence"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_ACT_MK2_FreeOHPaucityPurity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_BHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_MK2_ElemStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -8690,14 +9143,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_FlatArmor",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_DupeOnSelf",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -8892,7 +9349,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_DefianceBHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -8908,21 +9367,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_HitAlly",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_CenturionAndCelestial_MUTA_WardACTGenExtend",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_HitAlly_MK2_ACTOnWard",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -8939,14 +9404,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_SIRupturedTendons",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_DamageAndViolentStrikeACT",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -9159,6 +9628,10 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Benevolence"
+              },
+              {
                 "type": "flexStat",
                 "id": "EleResistance",
                 "value": 2.0
@@ -9166,21 +9639,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Adaptation_MUTA_BenevolenceACT",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_ACT_DamageBuffer",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_ACT_MK2_DualWieldDodge",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -9197,21 +9676,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_AdaptStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_MUTA_HealAndRemoveBHStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -9379,15 +9864,24 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_AllyCrit",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
-            [],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Prosperity"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_ACT_Basic_MK2_Ward",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -9404,7 +9898,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_ArmorRestoInertiaScaling",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -9416,7 +9912,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_ViolentStrikeForAlly",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -9566,6 +10064,10 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Abeyance"
+              },
+              {
                 "type": "flexStat",
                 "id": "PHYSICALRESISTANCE",
                 "value": 5.0
@@ -9573,7 +10075,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_DamageOrder",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -9585,7 +10089,15 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_EnemyT3StatusOnAlly",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
+              }
+            ],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
               }
             ]
           ],
@@ -9602,14 +10114,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_EmulateShieldsUp",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_EmulateBattleStomp",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -9746,6 +10262,12 @@
                 "id": "PHYSICALRESISTANCE",
                 "value": 2.0
               }
+            ],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              }
             ]
           ],
           "containedKeywords": [
@@ -9761,14 +10283,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_EndOfTurnDefiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_DWAccCrit",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -9797,14 +10323,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_AtaxiaAndSquelch2",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_EffectiveSI_Poly",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -9820,7 +10350,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_WhirlwindConversion",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -9972,14 +10504,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_Offensive",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_MUTA_EncourageReaction",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Ward",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -10007,7 +10543,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_EnemyEmulateSpells",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -10023,7 +10561,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_WardShareAndAPRec",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -10172,9 +10712,15 @@
             ],
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Defiance_MUTA_PreparedAP",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -10189,7 +10735,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_ACT_AllyArmorToZero",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               }
             ],
             [],
@@ -10218,14 +10766,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_ComebackKid",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_SelfArmorHeal",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -10241,14 +10793,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Abeyance_MUTA_Fortress",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_Stockpile",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -10399,16 +10955,24 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Defiance_MUTA_FlatArmorModerate",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -10588,14 +11152,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_AllySource",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_AirWater_AllySkills",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -10611,7 +11179,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_ExtendSourceGen",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -10623,7 +11193,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_AirWater_NonTieredStatuses",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -10659,7 +11231,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -10806,19 +11380,25 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_BaseEleRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_MK2_VitRegen",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -10989,6 +11569,10 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Prosperity"
+              },
+              {
                 "type": "flexStat",
                 "id": "CONSTITUTION",
                 "value": 1.0
@@ -10998,7 +11582,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_VitThreshold",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -11014,7 +11600,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -11208,14 +11796,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_CenturionOrWeak3",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_ACT_ElemStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -11231,21 +11823,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_ElemStacksMinus",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_FeedbackCritAndRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_EffectiveSI_AirWater",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -11439,9 +12037,15 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Prosperity"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_ACT_Basic_MK2_FlurrySI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -11453,12 +12057,16 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_VitThreshold",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_MK2_ProsperityLost",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -11474,21 +12082,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_EffectiveSI_Hunts",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_CDReduc",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -11687,21 +12301,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_AllyPaucityPurity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_VitThreshold",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_MK2_CelestialCDReduc",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -11718,7 +12338,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_GiveSourceSI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [],
@@ -11726,7 +12348,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_EmulateSpontCombSI",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -11879,6 +12503,10 @@
           "subNodes": [
             [
               {
+                "type": "keywordBasicActivator",
+                "id": "Benevolence"
+              },
+              {
                 "type": "flexStat",
                 "id": "AllResistance",
                 "value": 2.0
@@ -11886,14 +12514,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_ACT_MK2_FreeOH_PaucityPurity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_AirWater_AllySkills",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -11907,7 +12539,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_ACT_AirWater_AllySkills_MK2_HuntsWar",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -11937,21 +12571,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_HealAndEleRes",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_PurityACT_CDReduc",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_ElemStackMinusFromCelestial",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -12106,19 +12746,31 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_AllySource",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_MK2_NoVitThreshold",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_ACT_AllyBHCleanse",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "activator"
+              }
+            ],
+            [
+              {
+                "type": "keywordBasicActivator",
+                "id": "Defiance"
               }
             ]
           ],
@@ -12135,21 +12787,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_Haste",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_MagicShell",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_ViolentStrike_MUTA_GlaciateIgnition",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "ViolentStrike",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -12300,14 +12958,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_AllyWard",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_ArmorRestoLifeScaling",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -12335,14 +12997,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_EmulateCelestialHeal",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_MUTA_CleanseBH",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -12358,21 +13024,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Benevolence_MUTA_GainNoStacks",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_SIResurrect",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Celestial",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_GoddessReactionAP",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -12531,14 +13203,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_ShieldsUp",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_FreeOHCritCHance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -12566,21 +13242,27 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_PurityGivesCenturionScaling",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_MUTA_EmulateSupernova",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_BlindingRadiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -12596,14 +13278,18 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Centurion_ACT_TeleportStrike",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Centurion",
+                "keywordBoon": "activator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_MUTA_EffectiveSI_AirFire",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Purity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -12739,7 +13425,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_MageFin",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ]
           ],
@@ -12755,7 +13443,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_ACT_Purity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               }
             ],
             [],
@@ -12784,19 +13474,25 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_RadiusAndNoFF",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [
               {
                 "type": "specialLogic",
                 "id": "Ascension_Skill_Ignition_Duplicate",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_ScorchAppliesCharged",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -12812,7 +13508,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Elementalist_MUTA_SplendorNova",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Elementalist",
+                "keywordBoon": "mutator"
               }
             ],
             [],
@@ -12820,7 +13518,9 @@
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_SplendorSource",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "mutator"
               }
             ]
           ],

@@ -25,6 +25,8 @@ ascensionDataParsers = {
 
     "specialLogic": re.compile('DB_AMER_UI_Ascension_Node_Reward_SpecialLogic\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<specialLogic>.*)", (?P<value>.*)\);'),
 
+    "keyword": re.compile('DB_AMER_UI_Ascension_Node_Reward_Keyword\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<keyword>.*)"\)'),
+
 }
 
 # regex notes
@@ -58,6 +60,30 @@ regexes = {
     "nodes": parentNodeRegex,
     "subNode": subNodeRegex,
 }
+
+keywordsPrefix = "Ascension_"
+activator = "_ACT_"
+mutator = "_MUTA_"
+keywords = [
+    "Presence",
+    "Predator",
+    "Defiance",
+    "ViolentStrike",
+    "Celestial",
+    "Occultist",
+    "Voracity",
+    "Centurion",
+    "Ward",
+    "Adaptation",
+    "Abeyance",
+    "Wither",
+    "Benevolence",
+    "Elementalist",
+    "Paucity",
+    "Purity",
+    "Prosperity",
+    "VitalityVoid",
+]
 
 def prettifyDescription(string):
     newStr = string.replace("<br>", "\n")
@@ -178,7 +204,21 @@ for line in ascData.readlines():
             #     subNodeData[subIndex].append({"type": "flexStat", "id": search["stat"], "value": value})
 
             elif key == "specialLogic":
-                n.append({"type": "specialLogic", "id": search["specialLogic"], "value": float(value)})
+                # search for keywords
+                logic = search["specialLogic"]
+                
+                keyword = None
+                keywordBoonType = None
+
+                for x in keywords:
+                    if (x + activator) in logic:
+                        keyword = x
+                        keywordBoonType = "activator"
+                    elif (x + mutator) in logic:
+                        keyword = x
+                        keywordBoonType = "mutator"
+
+                n.append({"type": "specialLogic", "id": logic, "value": float(value), "keyword": keyword, "keywordBoon": keywordBoonType})
                 
 
             elif key == "extendedStat":
@@ -186,6 +226,9 @@ for line in ascData.readlines():
                 
             elif key == "embReward":
                 n.append({"type": "embodimentReward", "id": search["emb"], "value": float(value)})
+
+            elif key == "keyword":
+                n.append({"type": "keywordBasicActivator", "id": search["keyword"],})
             
             interpreted = True
 
