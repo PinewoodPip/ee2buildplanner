@@ -462,8 +462,9 @@ class Skills extends React.Component {
 }
 
 function Keyword(props) {
+	let className = props.faded == true ? "faded-out" : "keyword"
 	return (
-		<Icon style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.getImage(game.mappings.keywords[props.keyword])}/>
+		<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.getImage(game.mappings.keywords[props.keyword])}/>
 	)
 }
 
@@ -485,8 +486,12 @@ function Aspect(props) {
 	let keywords = game.ascension.getKeywordsInAspectBuild(asp)
 	let keywordDisplay = []
 
-	for (let x in keywords) {
-		keywordDisplay.push(<Keyword key={x} keyword={keywords[x]}/>)
+	console.log(keywords)
+
+	for (let x in keywords.allKeywords) {
+		let gotten = keywords.keywordsGotten.includes(keywords.allKeywords[x])
+		console.log(gotten)
+		keywordDisplay.push(<Keyword faded={!gotten} key={x} keyword={keywords.allKeywords[x]}/>)
 	}
 
 	return (

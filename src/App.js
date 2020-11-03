@@ -126,8 +126,19 @@ class Ascension {
     let ref = this.getReferenceById(asp.id)
 
     let keywords = []
+    let keywordsInBuild = []
     for (let x in ref.nodes) {
       let node = ref.nodes[x]
+
+      let subNode = node.subNodes[asp.nodes[x]]
+
+      // iterate through stat boosts and look for specialLogic ones, those give keyword activators/mutators
+      for (let z in subNode) {
+        let subNodeStat = subNode[z]
+        if (subNodeStat.type == "specialLogic" && subNodeStat.keyword != null) {
+          keywordsInBuild.push(subNodeStat.keyword)
+        }
+      }
 
       if (node.containedKeywords != undefined) {
         for (let z in node.containedKeywords) {
@@ -138,7 +149,7 @@ class Ascension {
       }
     }
 
-    return keywords
+    return {allKeywords: keywords, keywordsGotten: keywordsInBuild}
   }
 
   // get an aspect from the user's build by id

@@ -14,6 +14,15 @@
   position: relative;
 }
 
+.faded-out {
+  filter: opacity(40%);
+}
+
+.keyword {
+  /* pepega it's a greyscale image you dingus */
+  /* filter: hue-rotate(360 deg); */
+}
+
 .absolute p {
   position: absolute;
   text-align: center;
