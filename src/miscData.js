@@ -79,6 +79,37 @@ export const origins = {
 	}
 }
 
+export const nodesWithExtraKeywords = {
+	Ascension_Occultist_MUTA_EmulateInfectSpendAdapt: ["Adaptation"],
+	Ascension_Occultist_MUTA_EmulateInfectSpendAdapt: ["Adaptation"],
+	Ascension_VitalityVoid_MUTA_Wither: ["Wither"],
+	Ascension_Occultist_MUTA_Adapt: ["Adaptation"],
+	Ascension_Abeyance_MUTA_AdaptSpendFireAoE: ["Adaptation"],
+	Ascension_Centurion_MUTA_AdaptationStacks: ["Adaptation"],
+	Ascension_Centurion_MUTA_CritAdaptStacks: ["Adaptation"],
+	Ascension_Ward_MUTA_AdaptationStacks: ["Adaptation"],
+	Ascension_Abeyance_MUTA_AdaptSpendBufferReduce: ["Adaptation"],
+	Ascension_Centurion_MUTA_AdaptationStacks: ["Adaptation"],
+	Ascension_Demolitionist_AdaptSpenderSIBoost: ["Adaptation"], // really special case
+	Ascension_Centurion_MUTA_AdaptSpendEmulateChainLight: ["Adaptation"],
+	Ascension_Centurion_MUTA_DefianceBHStacks: ["Defiance"],
+	Ascension_CenturionAndCelestial_MUTA_WardACTGenExtend: ["Ward"],
+	Ascension_Centurion_MUTA_DamageAndViolentStrikeACT: ["ViolentStrike"], //
+	Ascension_Adaptation_MUTA_BenevolenceACT: ["Benevolence"],
+	Ascension_Benevolence_MUTA_AdaptStacks: ["Adaptation"],
+	Ascension_Celestial_MUTA_ViolentStrikeForAlly: ["ViolentStrike"],
+	Ascension_Celestial_MUTA_WardShareAndAPRec: ["Ward"],
+	Ascension_Benevolence_MUTA_PurityACT_CDReduc: ["Purity"],
+	Ascension_Benevolence_MUTA_EmulateCelestialHeal: ["Celestial"],
+	Ascension_Centurion_MUTA_PurityGivesCenturionScaling: ["Purity"],
+
+	Ascension_ViolentStrike_MUTA_VitalityVoidACT: ["VitalityVoid"],
+	Ascension_VitalityVoid_MUTA_TeleportWithered: ["Wither"],
+	Ascension_Paucity_MUTA_WitherACT_BasicAttack: ["Wither"],
+	Ascension_Predator_MUTA_VoracityACT: ["Voracity"],
+
+}
+
 export const idToImageMappings = {
 	abilities: {
 		"Warrior": "Ability_Warfare",

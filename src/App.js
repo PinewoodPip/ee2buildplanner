@@ -142,6 +142,12 @@ class Ascension {
         if ((typesWithKeyword.includes(subNodeStat.type)) && subNodeStat.keyword != null) {
           keywordsInBuild.push(subNodeStat.keyword)
         }
+
+        if (Object.keys(miscData.nodesWithExtraKeywords).includes(subNodeStat.id)) {
+          for (let v in miscData.nodesWithExtraKeywords[subNodeStat.id]) {
+            keywordsInBuild.push(miscData.nodesWithExtraKeywords[subNodeStat.id][v])
+          }
+        }
       }
 
       if (node.containedKeywords != undefined) {
