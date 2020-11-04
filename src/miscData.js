@@ -102,6 +102,7 @@ export const nodesWithExtraKeywords = {
 	Ascension_Benevolence_MUTA_PurityACT_CDReduc: ["Purity"],
 	Ascension_Benevolence_MUTA_EmulateCelestialHeal: ["Celestial"],
 	Ascension_Centurion_MUTA_PurityGivesCenturionScaling: ["Purity"],
+	Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt: ["Adaptation"],
 
 	Ascension_ViolentStrike_MUTA_VitalityVoidACT: ["VitalityVoid"],
 	Ascension_VitalityVoid_MUTA_TeleportWithered: ["Wither"],

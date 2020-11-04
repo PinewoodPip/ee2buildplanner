@@ -354,9 +354,11 @@ export function AscensionPopup(props) {
 	let asps = []
 	for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
 		let asp = game.ascension.aspects[props.app.state.currentFamily][x]
-		asps.push(<div onClick={() => {changeCurrentlyViewedAspect(asp)}}>
-			<Text text={asp.name}/>
-		</div>)
+		// asps.push(<div onClick={() => {changeCurrentlyViewedAspect(asp)}}>
+		// 	<Text text={asp.name}/>
+		// </div>)
+		asps.push(<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
+		
 	}
 
 	return (
@@ -482,9 +484,17 @@ function AspectListing(props) {
 }
 
 function Aspect(props) {
-	let asp = props.data
+	let asp;
+	let info;
+	if (props.id != undefined) {
+		asp = game.ascension.getReferenceById(props.id)
+		info = game.ascension.getReferenceById(props.id)
+	}
+	else {
+		asp = props.data
+		info = game.ascension.getAspect(asp)
+	} 
 	// let tooltip = game.ascension.getAspectElement(asp)
-	let info = game.ascension.getAspect(asp)
 	let keywords = game.ascension.getKeywordsInAspectBuild(asp)
 	let keywordDisplay = []
 
@@ -566,8 +576,6 @@ class Ascension extends React.Component {
 		let currentAspect = null;
 		if (this.props.app.state.selectedAspect != null)
 			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
-
-		// let reqsUnmetClass = (game.ascension.meetsRequirements) ? "" : "reqs-unmet"
 
 		return <Container>
 			<div className="flexbox-horizontal">
