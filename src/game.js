@@ -1,9 +1,10 @@
 import './App.css';
 import React from 'react';
-import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+// import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { cloneDeep } from "lodash"
 
-import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments } from "./components.js"
+import { MainInterface, SkillBook, Text, AscensionPopup, Embodiments } from "./components.js"
+import { ContextMenu } from "./genericComponents.js"
 import * as miscData from "./miscData.js"
 import { game } from "./App.js" // how does this not cause any problems...
 import * as utils from "./utils.js"
@@ -20,6 +21,36 @@ export class Game {
     
   }
   mappings = miscData.mappings
+
+  getStats() {
+    function addStat(id, amount) {
+      if (utils.hasKey(stats, id)) {
+        stats[id] += amount
+      }
+      else {
+        stats[id] = amount
+      }
+    }
+    let stats = {}
+    for (let x in this.app.state.aspects) {
+      let asp = this.ascension.getReferenceById(this.app.state.aspects[x].id)
+      let build = this.app.state.aspects[x].nodes
+
+      for (let z in asp.nodes) {
+        for (let v in asp.nodes[z].parent) {
+          let parentBoost = asp.nodes[z].parent[v]
+          addStat(parentBoost.id, parentBoost.value)
+        }
+        for (let v in asp.nodes[z].subNodes[build[z]]) {
+          let subNodeBoost = asp.nodes[z].subNodes[build[z]][v]
+          console.log(subNodeBoost)
+          addStat(subNodeBoost.id, subNodeBoost.value)
+        }
+      }
+
+      return stats;
+    }
+  }
 
   render() {this.app.forceUpdate()}
 }
@@ -40,6 +71,28 @@ export class Ascension {
     }
 
     return true
+  }
+
+  async removeAspect(e, id) {
+    let asp = this.getBuildAspectById(id)
+    let state = cloneDeep(this.app.state.aspects)
+
+    state = state.filter((x)=>{return x.id != asp.id})
+
+    await this.app.closeContext()
+    this.app.setState({aspects: state})
+  }
+
+  async moveAspect(e, id, movement) {
+    let asp = this.getBuildAspectById(id)
+    let state = cloneDeep(this.app.state.aspects)
+    let index = this.app.state.aspects.indexOf(asp) + movement
+    state = state.filter((x)=>{return x.id != asp.id})
+
+    state.splice(index, 0, asp)
+
+    await this.app.closeContext()
+    this.app.setState({aspects: state})
   }
 
   // get requirements of chosen aspects
@@ -220,11 +273,14 @@ export class Ascension {
 
       this.app.setState({currentlyViewedAspect: state})
     }
+
+    this.app.closeContext()
   }
 
   // todo cleanup
   getAspectElement(asp, interactive=false, mode="edit", skipEmptyEmbs=true) {
-    if (asp.id == null)
+    // quit if asp is invalid. this can happen when the user removes an aspect they're viewing
+    if (asp == undefined || asp.id == null)
       return null;
 
     // if user has this aspect, override behaviour so edits done to the asp in the popup are reflected in the build
@@ -269,12 +325,6 @@ export class Ascension {
       if (interactive) {
         let id = Math.random()
 
-        tooltip.push(
-          <ContextMenuTrigger id={id}>
-            <Text key={Math.random()} text={parentText}/>
-            <Text key={Math.random()} text={subNodeText}/>
-          </ContextMenuTrigger>)
-
         let subNodeOptions = []
         let ref = game.ascension.getAspectReference(asp)
 
@@ -295,10 +345,12 @@ export class Ascension {
           // subNodeOptions.push(<hr/>)
         }
 
+        let menu = subNodeOptions
         tooltip.push(
-          <RightClickMenu id={id}>
-            {subNodeOptions}
-          </RightClickMenu>)
+          <div onContextMenu={(e)=>{this.app.contextMenu(menu, e)}}>
+            <Text key={Math.random()} text={parentText}/>
+            <Text key={Math.random()} text={subNodeText}/>
+          </div>)
       }
       else {
         tooltip.push(<Text key={Math.random()} text={parentText}/>)

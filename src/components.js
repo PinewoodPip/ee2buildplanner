@@ -319,6 +319,7 @@ export function AscensionPopup(props) {
 		props.app.setState(obj)
 	}
 
+	// this should be an Ascension method
 	function addAspect() {
 		var cloneDeep = require('lodash.clonedeep');
 		let currentlyViewed = props.app.state.currentlyViewedAspect
@@ -337,7 +338,9 @@ export function AscensionPopup(props) {
 			id: currentlyViewed.id,
 			nodes: currentlyViewed.nodes,
 		})
-		props.app.setState({aspects: asps, popup: null})
+
+		console.log(props.app.state)
+		props.app.setState({aspects: asps, selectedAspect: props.app.state.aspects.length, popup: null})
 	}
 
 	let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
@@ -498,22 +501,9 @@ function Keyword(props) {
 }
 
 function AspectListing(props) {
-	let contextId = Math.random()
-	let rclick = <RightClickMenu id={contextId}>
-	<Text text="Remove"/>
-	<Text text="Move up"/>
-	<Text text="Move down"/>
-</RightClickMenu>
 	return (
-		
-
-		// asps.push(<RightClickMenu id={contextId}>
-		// 	<Text text="Remove"/>
-		// 	<Text text="Move up"/>
-		// 	<Text text="Move down"/>
-		// </RightClickMenu>)
-		<div className="flexbox-horizontal flex-align-centered aspect" onClick={props.onClick}>
-			<Text rightClickMenu={rclick} text={props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
+		<div onContextMenu={props.onContextMenu} className="flexbox-horizontal flex-align-centered aspect" onClick={props.onClick}>
+			<Text text={props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
 			<div style={{width: "50%", margin: "0 5px 0 5px"}} className="flexbox-horizontal flex-align-centered">
 				{props.keywords}
 			</div>
@@ -536,48 +526,46 @@ function Aspect(props) {
 	let keywords = game.ascension.getKeywordsInAspectBuild(asp)
 	let keywordDisplay = []
 
-	console.log(keywords)
-
-	let contextId = "t"
+	let func = null
+	if (props.interactable) {
+		let elements = [
+			<Text text="Select option:"/>,
+			<Text text="Remove" onClick={(e)=>{game.ascension.removeAspect(e, asp.id)}}/>,
+			<Text text="Move up" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, -1)}}/>,
+			<Text text="Move down" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, 1)}}/>
+		]
+		func = (e) => {props.app.contextMenu(
+			elements, e
+		)}
+	}
 
 	for (let x in keywords.allKeywords) {
 		let gotten = keywords.keywordsGotten.includes(keywords.allKeywords[x])
-		console.log(gotten)
 		keywordDisplay.push(<Keyword faded={!gotten} key={x} keyword={keywords.allKeywords[x]}/>)
 	}
 
 	return (
-		<AspectListing keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
-		// <div>
-		// 	<ContextMenuTrigger id={contextId}>
-		// 		<AspectListing keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
-		// 	</ContextMenuTrigger>
-		// 	<RightClickMenu id={contextId}>
-		// 		<Text text="Remove"/>
-		// 		<Text text="Move up"/>
-		// 		<Text text="Move down"/>
-		// 	</RightClickMenu>
-		// </div>
+		<AspectListing onContextMenu={func} keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
 	)
 }
 
-export function RightClickMenu(props) {
-	let items = []
+// export function RightClickMenu(props) {
+// 	let items = []
 
-	console.log(props.children)
-	for (let x in props.children) {
-		let className = props.children[x].props.notInteractable ? "context-option-noninteractable" : "context-option"
+// 	console.log(props.children)
+// 	for (let x in props.children) {
+// 		let className = props.children[x].props.notInteractable ? "context-option-noninteractable" : "context-option"
 
-		items.push(<MenuItem className={className}>{props.children[x]}</MenuItem>)
-	}
-	return (
-		<ContextMenu id={props.id} hideOnLeave={true} className="">
-			<div className="context-menu">
-				{items}
-			</div>
-		</ContextMenu>
-	)
-}
+// 		items.push(<MenuItem className={className}>{props.children[x]}</MenuItem>)
+// 	}
+// 	return (
+// 		<ContextMenu id={props.id} hideOnLeave={true} className="">
+// 			<div className="context-menu">
+// 				{items}
+// 			</div>
+// 		</ContextMenu>
+// 	)
+// }
 
 export function Embodiments(props) {
 	let embs = []
@@ -624,7 +612,7 @@ class Ascension extends React.Component {
 		for (let x in this.props.app.state.aspects) {
 			let asp = this.props.app.state.aspects[x]
 
-			aspects.push(<Aspect data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
+			aspects.push(<Aspect interactable={true} data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
 		}
 
 		let currentAspect = null;
@@ -653,6 +641,7 @@ class Ascension extends React.Component {
 					<div style={{height: "10px"}}/>
 
 					<GreenButton text="Add aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
+					<GreenButton text="View boosts" onClick={() => {this.props.app.setState({popup: "stats"})}}/>
 				</div>
 					<div className="aspect-preview">
 						{currentAspect}
@@ -660,6 +649,46 @@ class Ascension extends React.Component {
 			</div>
 		</Container>
 	}
+}
+
+export function Boosts(props) {
+	let boosts = []
+	let stats = game.getStats()
+	for (let x in stats) {
+		let stat = stats[x]
+		boosts.push(<p>{x} {stat}</p>)
+	}
+	return (
+		<Container className="flexbox-vertical flex-align-start skillbook">
+			<div className="flexbox-horizontal flex-align-end full-width bar">
+				<Text text={"Boosts"} className={"flex-grow"}/>
+				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+			</div>
+
+			<div style={{height: "20px"}}/>
+
+			{boosts}
+
+			{/* <div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
+				<div className="flexbox-vertical flex-align-start" style={{width: "15%"}}>
+					{familyButtons}
+				</div>
+				<div className="flexbox-vertical flex-align-start aspect-listing" style={{width: "40%"}}>
+					{asps}
+				</div>
+
+				<div className="flexbox-vertical aspect-preview">
+					{currentAspect}
+
+					<div style={{height: "10px"}}/>
+
+					<div className="sticky-bottom">
+						<GreenButton text="Add aspect" onClick={() => {addAspect()}}/>
+					</div>
+				</div>
+			</div> */}
+		</Container>
+	)
 }
 
 function GreenButton(props) {

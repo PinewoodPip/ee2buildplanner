@@ -1,13 +1,13 @@
 import './App.css';
 import React from 'react';
 import update from 'immutability-helper';
-import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+// import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 import * as utils from "./utils.js"
 import { Game, Ascension } from "./game.js"
-import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments } from "./components.js"
+import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments, Boosts } from "./components.js"
 import * as miscData from "./miscData.js"
-import { Popup } from "./genericComponents.js"
+import { Popup, ContextMenu } from "./genericComponents.js"
 
 const axios = require('axios').default;
 
@@ -16,11 +16,15 @@ class App extends React.Component {
     super()
     this.state = {
       ready: false,
-      popup: "ascension",
+      popup: null,
       skillbookCategory: "Air",
       selectedAspect: null,
       currentFamily: "force",
       currentlyViewedAspect: {family: null, id: null, nodes: []},
+      contextMenu: {
+        position: null,
+        element: null,
+      },
 
       physique: {
         race: "lizard",
@@ -57,6 +61,15 @@ class App extends React.Component {
         }
       ]
     }
+  }
+
+  contextMenu(element, e) {
+    e.preventDefault()
+    this.setState({contextMenu: {position: {x: e.pageX, y: e.pageY}, element: element}})
+  }
+
+  closeContext() {
+    this.setState({contextMenu: {position: null, element: null}})
   }
 
   // called when the component is created for the first time. we fetch data here
@@ -105,18 +118,28 @@ class App extends React.Component {
     if (this.state.ready) {
 
       // popup elements which are placed in the middle of the screen
+      // darn i think this rerenders unused ones...
       let popup = null;
       switch (this.state.popup) {
         case "skillbook": {popup = <SkillBook app={this}/>; break}
         case "ascension": {popup = <AscensionPopup app={this}/>; break}
+        case "stats": {popup = <Boosts app={this}/>; break}
       }
 
       if (this.state.popup != null) {
         popup = <Popup element={popup}/>
       }
 
+      let contextMenu = null
+      if (this.state.contextMenu.element != null) {
+        contextMenu = <ContextMenu app={this}>{this.state.contextMenu.element}</ContextMenu>
+
+      }
+
       return (
-        <div className="App">
+        // onClick={this.closeContext.bind(this)}
+        <div className="App" >
+          {contextMenu}
           {popup}
           <MainInterface app={this}/>
         </div>

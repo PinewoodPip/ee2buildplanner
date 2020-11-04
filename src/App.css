@@ -285,6 +285,10 @@ hr {
   top: 0px;
 }
 
+.context {
+  position: absolute;
+}
+
 .sticky-bottom {
   background-color: whitesmoke;
   position: sticky;
