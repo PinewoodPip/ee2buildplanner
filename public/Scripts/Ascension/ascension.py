@@ -49,6 +49,23 @@ ascensionDataParsers = {
 #  todo t2 emb nodes
 # PROC_AMER_UI_Ascension_Node_AddReward_FromReal("Force_TheArcanist", "Node_1.0", "Force", 1.0);
 
+def removeTrailingUnderscores(string):
+    arr = list(string)
+    arr.reverse()
+
+    toRemove = 0
+    for char in arr:
+        if char != "_":
+            break
+        toRemove += 1
+
+    while toRemove > 0:
+        arr.pop(0)
+        toRemove -= 1
+
+    arr.reverse()
+    return "".join(arr)
+
 ascensions = {
     "force": {},
     "entropy": {},
@@ -245,7 +262,11 @@ for line in ascData.readlines():
                 
 
             elif key == "extendedStat":
-                n.append({"type": "extendedStat", "id": search["stat"] + "_" + search["subStat"] + "_" + search["subSubStat"] + "_" + search["subSubSubStat"], "value": float(value)})
+                realId = search["stat"] + "_" + search["subStat"] + "_" + search["subSubStat"] + "_" + search["subSubSubStat"]
+
+                realId = removeTrailingUnderscores(realId)
+
+                n.append({"type": "extendedStat", "id": realId, "value": float(value)})
                 
             elif key == "embReward":
                 n.append({"type": "embodimentReward", "id": search["emb"], "value": float(value)})
@@ -278,11 +299,13 @@ for line in ascData.readlines():
                         keyword = "Presence"
                         keywordBoonType = "mutator"
 
+                realId = search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat
+                realId = removeTrailingUnderscores(realId)
                 n.append({
                     "type": "statusExtension",
                     "subType": subType,
                     "status": status,
-                    "id": search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat,
+                    "id": realId,
                     "value": float(value),
                     "keyword": keyword,
                     "keywordBoon": keywordBoonType,
@@ -313,12 +336,14 @@ for line in ascData.readlines():
                         keyword = "Presence"
                         keywordBoonType = "mutator"
 
+                realId = search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat
+                realId = removeTrailingUnderscores(realId)
                 n.append({
                     "type": "scalingExtension",
                     "subType": subType,
                     "scalingStat": search["scalingStat"] + "_" + search["scalingSubStat"],
                     "status": status,
-                    "id": search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat,
+                    "id": realId,
                     "value": float(value),
                     "keyword": keyword,
                     "keywordBoon": keywordBoonType,

@@ -9,22 +9,27 @@ export function importAll(r) {
 }
 
 export function hasKey(obj, key) {
-    return Object.keys(obj).includes(key)
+  return Object.keys(obj).includes(key)
 }
 
 // get an image by its filename (extension excluded)
 export function getImage(id) {
-    // missing image; some skills don't have an icon assigned and just say "unknown"
-    if (id == "unknown" || id == null || id == undefined) {
-      return game.images.icons["Action_Identify.png"].default
-    }
-
-    let file = id + ".png"
-    if (hasKey(game.images.icons, file))
-      return game.images.icons[file].default
-    else {
-      // report missing/typo'd images
-      console.log("Missing icon: " + file)
-      return null
-    }
+  // missing image; some skills don't have an icon assigned and just say "unknown"
+  if (id == "unknown" || id == null || id == undefined) {
+    return game.images.icons["Action_Identify.png"].default
   }
+
+  let file = id + ".png"
+  if (hasKey(game.images.icons, file))
+    return game.images.icons[file].default
+  else {
+    // report missing/typo'd images
+    console.log("Missing icon: " + file)
+    return null
+  }
+}
+
+export function format(str) { // by gpvos from stackoverflow
+  var args = arguments;
+  return str.replace(/\{(\d+)\}/g, function (m, n) { return args[parseInt(n) + 1]; });
+};

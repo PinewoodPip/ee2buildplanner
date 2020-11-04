@@ -651,12 +651,59 @@ class Ascension extends React.Component {
 	}
 }
 
+function StatBoost(props) {
+	return (
+		<div className="flexbox-horizontal">
+			<Text text={props.text}/>
+		</div>
+	)
+}
+
 export function Boosts(props) {
 	let boosts = []
 	let stats = game.getStats()
+	let statStrings = {}
 	for (let x in stats) {
-		let stat = stats[x]
-		boosts.push(<p>{x} {stat}</p>)
+		for (let z in stats[x]) {
+			let stat = stats[x][z]
+			let displayString;
+
+			if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
+				displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
+			}
+			else {
+				displayString = utils.format("{0}: {1}", stat.id, stat.amount)
+			}
+
+			// todo optimize
+			if (utils.hasKey(statStrings, stat.type)) {
+				statStrings[stat.type][stat.id] = displayString
+			}
+			else {
+				statStrings[stat.type] = {}
+				statStrings[stat.type][stat.id] = displayString
+			}
+
+			boosts.push(<Text text={displayString}/>)
+		}
+	}
+
+	// categorize stat boosts to display them in different boxes
+	let categorizedBoosts = {resistances: []}
+	for (let x in miscData.statCategories) {
+		let statsToCategorize = miscData.statCategories[x]
+
+		for (let z in statsToCategorize) {
+			let statToCategorize = statsToCategorize[z]
+
+			console.log(statStrings)
+			if (utils.hasKey(statStrings, statToCategorize.type) && utils.hasKey(statStrings[statToCategorize.type], statToCategorize.id)) {
+				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={statStrings[statToCategorize.type][statToCategorize.id]}/>)
+			}
+			else {
+				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={utils.format(miscData.stats[statToCategorize.type][statToCategorize.id].display, 0)}/>)
+			}
+		}
 	}
 	return (
 		<Container className="flexbox-vertical flex-align-start skillbook">
@@ -667,26 +714,18 @@ export function Boosts(props) {
 
 			<div style={{height: "20px"}}/>
 
-			{boosts}
-
-			{/* <div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
-				<div className="flexbox-vertical flex-align-start" style={{width: "15%"}}>
-					{familyButtons}
+			<div className="flexbox-horizontal" style={{alignItems: "flex-start"}}>
+				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
+					<Text text="Resistances"/>
+					<hr/>
+					{categorizedBoosts.resistances}
 				</div>
-				<div className="flexbox-vertical flex-align-start aspect-listing" style={{width: "40%"}}>
-					{asps}
+				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
+					<Text text="Temp place for other stats"/>
+					<hr/>
+					{boosts}
 				</div>
-
-				<div className="flexbox-vertical aspect-preview">
-					{currentAspect}
-
-					<div style={{height: "10px"}}/>
-
-					<div className="sticky-bottom">
-						<GreenButton text="Add aspect" onClick={() => {addAspect()}}/>
-					</div>
-				</div>
-			</div> */}
+			</div>
 		</Container>
 	)
 }

@@ -111,6 +111,185 @@ export const nodesWithExtraKeywords = {
 
 }
 
+export const statCategories = {
+	resistances: [
+		{type: "flexStat", id: "AllResistance"},
+		{type: "flexStat", id: "PHYSICALRESISTANCE"},
+		{type: "flexStat", id: "PIERCINGRESISTANCE"},
+		{type: "flexStat", id: "EleResistance"},
+		{type: "flexStat", id: "FIRERESISTANCE"},
+		{type: "flexStat", id: "WATERRESISTANCE"},
+		{type: "flexStat", id: "EARTHRESISTANCE"},
+		{type: "flexStat", id: "AIRRESISTANCE"},
+		{type: "flexStat", id: "POISONRESISTANCE"},
+	]
+}
+
+export const stats = {
+	realStats: {
+		str: {
+			display: "Strength: {0}",
+		},
+		finesse: {
+			display: "Finesse: {0}",
+		},
+		pwr: {
+			display: "Power: {0}",
+		},
+		con: {
+			display: "Constitution: {0}",
+		},
+		mem: {
+			display: "Memory: {0}",
+		},
+		wits: {
+			display: "Wits: {0}",
+		},
+	},
+	flexStat: {
+		CONSTITUTION: {
+			display: "Constitution: {0}",
+			default: 10,
+		},
+		MEMORY: {
+			display: "Memory: {0}",
+			default: 10,
+		},
+		INTELLIGENCE: {
+			display: "Power: {0}",
+			default: 10,
+		},
+		STRENGTH: {
+			display: "Strength: {0}",
+			default: 10,
+		},
+		WITS: {
+			display: "Wits: {0}",
+			default: 10,
+		},
+		FINESSE: {
+			display: "Finesse: {0}",
+			default: 10,
+		},
+		INITIATIVE: {
+			display: "Initiative: {0}",
+		},
+		CRITICALCHANCE: {
+			display: "Critical Chance: {0}%",
+		},
+		DAMAGEBOOST: {
+			display: "Damage: +{0}% additive",
+		},
+		LIFESTEAL: {
+			display: "Lifesteal: {0}%",
+		},
+		MOVEMENT: {
+			display: "Movement: +{0}m"
+		},
+
+		MAGICARMORBOOST: {
+			display: "Magical Armor: {0}%"
+		},
+		PHYSICALARMORBOOST: {
+			display: "Physical Armor: +{0}%"
+		},
+
+		MAGICARMOR: {
+			display: "Magical Armor: +{0} Qualifier"
+		},
+		PHYSICALARMOR: {
+			display: "Physical Armor: +{0} Qualifier"
+		},
+
+		RESISTDEATH: {
+			display: "ResistDeath: {0}"
+		},
+
+		VITALITYBOOST: {
+			display: "Maximum Vitality: +{0}%"
+		},
+
+		DODGEBOOST: {
+			display: "Dodge: {0}%"
+		},
+
+		AllResistance: {
+			display: "All Resistances: {0}%"
+		},
+		EleResistance: {
+			display: "Elemental Resistance: {0}%",
+		},
+		PHYSICALRESISTANCE: {
+			display: "Physical Resistance: {0}%",
+		},
+		PIERCINGRESISTANCE: {
+			display: "Piercing Resistance: {0}%",
+		},
+		EARTHRESISTANCE: {
+			display: "Earth Resistance: {0}%"
+		},
+		PHYSICALRESISTANCE: {
+			display: "Physical Resistance: {0}%"
+		},
+		POISONRESISTANCE: {
+			display: "Poison Resistance: {0}%"
+		},
+		WATERRESISTANCE: {
+			display: "Water Resistance: {0}%"
+		},
+		FIRERESISTANCE: {
+			display: "Fire Resistance: {0}%"
+		},
+		AIRRESISTANCE: {
+			display: "Air Resistance: {0}%"
+		},
+
+		FireSpecialist: {
+			display: "Pyrokinetic: {0}"
+		},
+		EarthSpecialist: {
+			display: "Geomancer: {0}"
+		},
+		AirSpecialist: {
+			display: "Aerotheurge: {0}"
+		},
+		WaterSpecialist: {
+			display: "Hydrosophist: {0}"
+		},
+		Necromancy: {
+			display: "Necromancer: {0}"
+		},
+		RogueLore: {
+			display: "Scoundrel: {0}"
+		},
+		Summoning: {
+			display: "Summoning: {0}"
+		},
+
+		Leadership: {
+			display: "Leadership: {0}"
+		},
+		PainReflection: {
+			display: "Retribution: {0}"
+		},
+		DualWielding: {
+			display: "Dual Wielding: {0}"
+		},
+		SingleHanded: {
+			display: "Single Handed: {0}"
+		},
+	},
+	extendedStat: {
+
+	},
+	specialLogic: {
+		// Ascension_Elementalist_ACT_FireEarth_AllySkills: {
+		// 	display: "Ascension_Elementalist_ACT_FireEarth_AllySkills {0}"
+		// }
+	},
+	
+}
+
 export const aspectsAfterWePutAnHrToMakeThingsLookNice = [
 	"TheSerpent", "TheTiger", "TheWolf", "TheSupplicant", "TheSilkworm", "Wealth", "TheGuardsman", "TheRhinoceros", "TheRabbit", "TheStag",
 ]

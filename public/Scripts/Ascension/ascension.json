@@ -166,14 +166,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Elementalist__",
+                "id": "FreeReactionCharge_AMER_Elementalist",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Predator__",
+                "id": "FreeReactionCharge_AMER_Predator",
                 "value": 1.0
               }
             ],
@@ -398,7 +398,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_PAUCITY",
-                "id": "DodgeFatigue_AddAmount___",
+                "id": "DodgeFatigue_AddAmount",
                 "value": 4.0,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -920,7 +920,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 14.0
               }
             ]
@@ -1135,7 +1135,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "PercAttributeIncrease_Finesse__",
+              "id": "PercAttributeIncrease_Finesse",
               "value": 13.0
             }
           ],
@@ -1220,7 +1220,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PAUCITY",
-                "id": "Stat_ACCURACYBOOST__",
+                "id": "Stat_ACCURACYBOOST",
                 "value": 10.0,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -1229,7 +1229,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PAUCITY",
-                "id": "Stat_DAMAGEBOOST__",
+                "id": "Stat_DAMAGEBOOST",
                 "value": 20.0,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -1238,7 +1238,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PAUCITY",
-                "id": "Stat_INITIATIVE__",
+                "id": "Stat_INITIATIVE",
                 "value": 10.0,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -1334,7 +1334,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 15.0
             }
           ],
@@ -1416,12 +1416,12 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "SummonStat_ExtendedStat_Voracity_Life__",
+              "id": "SummonStat_ExtendedStat_Voracity_Life",
               "value": 10.0
             },
             {
               "type": "extendedStat",
-              "id": "Voracity_BothArmor___",
+              "id": "Voracity_BothArmor",
               "value": 7.0
             }
           ],
@@ -1954,7 +1954,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PURITY",
-                "id": "Stat_ACCURACYBOOST__",
+                "id": "Stat_ACCURACYBOOST",
                 "value": 10.0,
                 "keyword": "Purity",
                 "keywordBoon": "mutator"
@@ -1963,7 +1963,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PURITY",
-                "id": "Stat_DAMAGEBOOST__",
+                "id": "Stat_DAMAGEBOOST",
                 "value": 15.0,
                 "keyword": "Purity",
                 "keywordBoon": "mutator"
@@ -1972,7 +1972,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_PURITY",
-                "id": "Voracity_Life___",
+                "id": "Voracity_Life",
                 "value": 15.0,
                 "keyword": "Purity",
                 "keywordBoon": "mutator"
@@ -2146,12 +2146,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ]
@@ -2168,7 +2168,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PURITY_AURA",
-                "id": "Stat_APRECOVERY__",
+                "id": "Stat_APRECOVERY",
                 "value": 1.0,
                 "keyword": "Purity",
                 "keywordBoon": "mutator"
@@ -2218,7 +2218,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SourceGen_AddPointsGranted___",
+                "id": "SourceGen_AddPointsGranted",
                 "value": 1.0
               },
               {
@@ -2300,7 +2300,7 @@
             },
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 10.0
             }
           ],
@@ -2327,7 +2327,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 14.0
               }
             ]
@@ -2340,7 +2340,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 1.3
             }
           ],
@@ -2392,12 +2392,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ]
@@ -2563,12 +2563,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Elementalist__",
+                "id": "FreeReactionCharge_AMER_Elementalist",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.1
               },
               {
@@ -2580,12 +2580,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Predator__",
+                "id": "FreeReactionCharge_AMER_Predator",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.1
               },
               {
@@ -2599,7 +2599,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_ACCURACYBOOST__",
+                "id": "Stat_ACCURACYBOOST",
                 "value": 10.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -2608,7 +2608,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_CRITICALCHANCE__",
+                "id": "Stat_CRITICALCHANCE",
                 "value": 10.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -2649,12 +2649,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 20.0
               }
             ]
@@ -2824,7 +2824,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 5.0
               }
             ]
@@ -2857,7 +2857,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 9.0
               }
             ]
@@ -2878,14 +2878,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 12.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_LIFESTEAL_",
+                "id": "SummonStat_FlexStat_Stat_LIFESTEAL",
                 "value": 7.0
               }
             ]
@@ -2968,7 +2968,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_ExtendedStat_Voracity_Life__",
+                "id": "SummonStat_ExtendedStat_Voracity_Life",
                 "value": 10.0
               }
             ]
@@ -3011,7 +3011,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 10.0
               }
             ]
@@ -3021,7 +3021,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_MagicArmor___",
+              "id": "Voracity_MagicArmor",
               "value": 4.0
             }
           ],
@@ -3057,7 +3057,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 6.0
               }
             ]
@@ -3095,12 +3095,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_ExtendedStat_Voracity_Life__",
+                "id": "SummonStat_ExtendedStat_Voracity_Life",
                 "value": 15.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_LIFESTEAL_",
+                "id": "SummonStat_FlexStat_Stat_LIFESTEAL",
                 "value": 8.0
               }
             ]
@@ -3140,7 +3140,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Occultist__",
+                "id": "FreeReactionCharge_AMER_Occultist",
                 "value": 1.0
               },
               {
@@ -3152,7 +3152,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE_",
+                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE",
                 "value": 11.0
               }
             ],
@@ -3245,7 +3245,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 2.0
             }
           ],
@@ -3287,7 +3287,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 3.0
             }
           ],
@@ -3329,7 +3329,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 4.0
             }
           ],
@@ -3577,7 +3577,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "Voracity_Life___",
+                "id": "Voracity_Life",
                 "value": 6.0
               }
             ]
@@ -3636,7 +3636,7 @@
             },
             {
               "type": "extendedStat",
-              "id": "Voracity_BothArmor___",
+              "id": "Voracity_BothArmor",
               "value": 7.0
             }
           ],
@@ -3672,7 +3672,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_MOVEMENT_",
+                "id": "SummonStat_FlexStat_Stat_MOVEMENT",
                 "value": 0.2
               }
             ]
@@ -3725,7 +3725,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_BothArmor___",
+              "id": "Voracity_BothArmor",
               "value": 5.0
             }
           ],
@@ -3752,19 +3752,19 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_MOVEMENT_",
+                "id": "SummonStat_FlexStat_Stat_MOVEMENT",
                 "value": 0.6
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_ExtendedStat_Voracity_Life__",
+                "id": "SummonStat_ExtendedStat_Voracity_Life",
                 "value": 10.0
               }
             ]
@@ -3797,12 +3797,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE_",
+                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE",
                 "value": 10.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_LIFESTEAL_",
+                "id": "SummonStat_FlexStat_Stat_LIFESTEAL",
                 "value": 10.0
               }
             ]
@@ -4248,7 +4248,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 10.0
               }
             ]
@@ -4381,7 +4381,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 15.0
             }
           ],
@@ -4463,7 +4463,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Voracity_Life___",
+              "id": "Voracity_Life",
               "value": 15.0
             }
           ],
@@ -4745,12 +4745,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Adaptation_AddMaxStacks___",
+                "id": "Adaptation_AddMaxStacks",
                 "value": 2.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 10.0
               }
             ]
@@ -4899,12 +4899,12 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.7
             },
             {
               "type": "extendedStat",
-              "id": "MaxRes_ELERES_<NODENAME>_",
+              "id": "MaxRes_ELERES_<NODENAME>",
               "value": 1.0
             }
           ],
@@ -4912,28 +4912,28 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Occultist__",
+                "id": "FreeReactionCharge_AMER_Occultist",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Predator__",
+                "id": "FreeReactionCharge_AMER_Predator",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Voracity_BothArmor___",
+                "id": "Voracity_BothArmor",
                 "value": 10.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Voracity_Life___",
+                "id": "Voracity_Life",
                 "value": 20.0
               }
             ]
@@ -4968,12 +4968,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ]
@@ -4999,7 +4999,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "VitalityVoid_Radius___",
+                "id": "VitalityVoid_Radius",
                 "value": 1.0
               },
               {
@@ -5041,12 +5041,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Battered_StackInfluence_Enemy___",
+                "id": "Battered_StackInfluence_Enemy",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "Harried_StackInfluence_Enemy___",
+                "id": "Harried_StackInfluence_Enemy",
                 "value": 1.0
               },
               {
@@ -5215,7 +5215,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "ACID",
-                "id": "InstantEffect_ApplyBattered__",
+                "id": "InstantEffect_ApplyBattered",
                 "value": 1.0,
                 "keyword": null,
                 "keywordBoon": null
@@ -5224,7 +5224,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "BLEEDING",
-                "id": "InstantEffect_ApplyBattered__",
+                "id": "InstantEffect_ApplyBattered",
                 "value": 1.0,
                 "keyword": null,
                 "keywordBoon": null
@@ -5233,7 +5233,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "POISONED",
-                "id": "InstantEffect_ApplyHarried__",
+                "id": "InstantEffect_ApplyHarried",
                 "value": 1.0,
                 "keyword": null,
                 "keywordBoon": null
@@ -5242,7 +5242,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "SUFFOCATING",
-                "id": "InstantEffect_ApplyHarried__",
+                "id": "InstantEffect_ApplyHarried",
                 "value": 1.0,
                 "keyword": null,
                 "keywordBoon": null
@@ -5251,12 +5251,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Memory__",
+                "id": "PercAttributeIncrease_Memory",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ]
@@ -5274,7 +5274,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Entropy",
                 "status": "AMER_PAUCITY",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 2.5,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5284,7 +5284,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Entropy",
                 "status": "AMER_PAUCITY",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 2.5,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5294,7 +5294,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Force",
                 "status": "AMER_PAUCITY",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 2.5,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5304,7 +5304,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Force",
                 "status": "AMER_PAUCITY",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 2.5,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5314,7 +5314,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_PAUCITY",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 2.5,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5324,7 +5324,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_PAUCITY",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 2.5,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5336,7 +5336,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Entropy",
                 "status": "AMER_WITHER",
-                "id": "Stat_ACCURACYBOOST__",
+                "id": "Stat_ACCURACYBOOST",
                 "value": -2.5,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -5346,7 +5346,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Force",
                 "status": "AMER_WITHER",
-                "id": "Stat_ACCURACYBOOST__",
+                "id": "Stat_ACCURACYBOOST",
                 "value": -2.5,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -5356,7 +5356,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_WITHER",
-                "id": "Stat_ACCURACYBOOST__",
+                "id": "Stat_ACCURACYBOOST",
                 "value": -2.5,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -5376,7 +5376,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_PAUCITY",
-                "id": "ToggleStatus_AMER_DECAY_NEGALEADERSHIP_AURA__",
+                "id": "ToggleStatus_AMER_DECAY_NEGALEADERSHIP_AURA",
                 "value": -1.0,
                 "keyword": "Paucity",
                 "keywordBoon": "mutator"
@@ -5388,7 +5388,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Entropy",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": -1.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -5398,7 +5398,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Force",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": -1.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -5408,7 +5408,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": -1.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -5417,14 +5417,14 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": -10.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
                 "type": "extendedStat",
-                "id": "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay_",
+                "id": "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay",
                 "value": 1.0
               }
             ],
@@ -5519,7 +5519,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 9.0
               }
             ],
@@ -5533,14 +5533,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance",
                 "value": 8.0
               }
             ]
@@ -5550,7 +5550,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 1.3
             }
           ],
@@ -5588,7 +5588,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Adaptation_AddMaxStacks___",
+                "id": "Adaptation_AddMaxStacks",
                 "value": 2.0
               }
             ]
@@ -5603,7 +5603,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Paucity_Blocked___",
+                "id": "Paucity_Blocked",
                 "value": 1.0
               },
               {
@@ -5626,12 +5626,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 20.0
               }
             ],
@@ -5674,17 +5674,17 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 15.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE_",
+                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE",
                 "value": 13.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_LIFESTEAL_",
+                "id": "SummonStat_FlexStat_Stat_LIFESTEAL",
                 "value": 10.0
               }
             ]
@@ -5708,7 +5708,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Status_AddDuration_AMER_BANE__",
+                "id": "Status_AddDuration_AMER_BANE",
                 "value": -1.0
               },
               {
@@ -6099,7 +6099,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 6.0
               }
             ]
@@ -6139,7 +6139,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_EleResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_EleResistance",
                 "value": 4.0
               }
             ]
@@ -6185,7 +6185,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 6.0
               }
             ]
@@ -6215,12 +6215,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_MOVEMENT_",
+                "id": "SummonStat_FlexStat_Stat_MOVEMENT",
                 "value": 0.5
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_EleResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_EleResistance",
                 "value": 5.0
               }
             ]
@@ -6263,21 +6263,21 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Centurion__",
+                "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Occultist__",
+                "id": "FreeReactionCharge_AMER_Occultist",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE_",
+                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE",
                 "value": 11.0
               }
             ]
@@ -6391,7 +6391,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Ability_Perseverance_",
+                "id": "SummonStat_FlexStat_Ability_Perseverance",
                 "value": 1.0
               }
             ]
@@ -6410,28 +6410,28 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 9.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 9.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 6.5
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE_",
+                "id": "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE",
                 "value": 5.0
               }
             ]
@@ -6445,7 +6445,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_PHYSICALRESISTANCE__",
+                "id": "Stat_PHYSICALRESISTANCE",
                 "value": 6.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -6467,7 +6467,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE_",
+                "id": "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE",
                 "value": 7.0
               }
             ]
@@ -6560,7 +6560,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 5.0
               }
             ]
@@ -6570,7 +6570,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Regen_PhysicalArmor___",
+              "id": "Regen_PhysicalArmor",
               "value": 2.0
             }
           ],
@@ -6604,7 +6604,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 7.0
               }
             ]
@@ -6641,14 +6641,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 12.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_ExtendedStat_Regen_Life__",
+                "id": "SummonStat_ExtendedStat_Regen_Life",
                 "value": 9.0
               }
             ]
@@ -6746,7 +6746,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance",
                 "value": 2.0
               }
             ]
@@ -6816,17 +6816,17 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 10.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 10.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance",
                 "value": 5.0
               }
             ]
@@ -6856,7 +6856,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Occultist__",
+                "id": "FreeReactionCharge_AMER_Occultist",
                 "value": 1.0
               },
               {
@@ -6872,7 +6872,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_WITHER",
-                "id": "Stat_MOVEMENTBOOST__",
+                "id": "Stat_MOVEMENTBOOST",
                 "value": -5.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -6882,7 +6882,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_WITHER",
-                "id": "Stat_MOVEMENTBOOST__",
+                "id": "Stat_MOVEMENTBOOST",
                 "value": -1.5,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -6892,7 +6892,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Entropy",
                 "status": "AMER_WITHER",
-                "id": "Stat_MOVEMENTBOOST__",
+                "id": "Stat_MOVEMENTBOOST",
                 "value": -1.5,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -6901,17 +6901,17 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DODGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DODGEBOOST",
                 "value": 10.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_VITALITYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_VITALITYBOOST",
                 "value": 13.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 10.0
               }
             ]
@@ -6978,7 +6978,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.3
             },
             {
@@ -7019,7 +7019,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 5.0
               }
             ]
@@ -7069,7 +7069,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 1.0
             }
           ],
@@ -7084,21 +7084,21 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 13.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 13.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 10.0
               }
             ],
@@ -7108,7 +7108,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Ability_Leadership",
                 "status": "LEADERSHIP",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 1.5,
                 "keyword": "Presence",
                 "keywordBoon": "mutator"
@@ -7147,17 +7147,17 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 8.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE_",
+                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE",
                 "value": 11.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 12.0
               }
             ]
@@ -7391,7 +7391,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.5
               }
             ],
@@ -7400,7 +7400,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_DAMAGEBOOST__",
+                "id": "Stat_DAMAGEBOOST",
                 "value": 15.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -7452,7 +7452,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_INITIATIVE__",
+                "id": "Stat_INITIATIVE",
                 "value": 10.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -7461,7 +7461,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_DEFIANCE",
-                "id": "FreeReactionCharge_AMER_Centurion__",
+                "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 2.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -7675,7 +7675,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.7
               },
               {
@@ -7696,12 +7696,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Adaptation_AddMaxStacks___",
+                "id": "Adaptation_AddMaxStacks",
                 "value": 2.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 13.0
               }
             ],
@@ -7745,7 +7745,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Status_AddDuration_AMER_WARD__",
+                "id": "Status_AddDuration_AMER_WARD",
                 "value": 1.0
               },
               {
@@ -7819,7 +7819,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "PercAttributeIncrease_Memory__",
+              "id": "PercAttributeIncrease_Memory",
               "value": 10.0
             }
           ],
@@ -7855,7 +7855,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance",
                 "value": 1.0
               }
             ]
@@ -7920,38 +7920,38 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 13.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 13.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 10.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DODGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DODGEBOOST",
                 "value": 8.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_ExtendedStat_Regen_Life__",
+                "id": "SummonStat_ExtendedStat_Regen_Life",
                 "value": 10.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Ability_Perseverance_",
+                "id": "SummonStat_FlexStat_Ability_Perseverance",
                 "value": 2.0
               }
             ]
@@ -7994,24 +7994,24 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Adaptation_AddMaxStacks___",
+                "id": "Adaptation_AddMaxStacks",
                 "value": 2.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Memory__",
+                "id": "PercAttributeIncrease_Memory",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_VITALITYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_VITALITYBOOST",
                 "value": 15.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_MOVEMENT_",
+                "id": "SummonStat_FlexStat_Stat_MOVEMENT",
                 "value": 0.6
               }
             ]
@@ -8151,28 +8151,28 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 10.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance_",
+                "id": "SummonStat_FlexStat_Stat_SpecialCase_AllResistance",
                 "value": 8.0
               }
             ]
@@ -8218,7 +8218,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Adaptation_AddMaxStacks___",
+                "id": "Adaptation_AddMaxStacks",
                 "value": 2.0
               }
             ]
@@ -8251,12 +8251,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ],
@@ -8299,17 +8299,17 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DODGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DODGEBOOST",
                 "value": 15.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 25.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_MOVEMENT_",
+                "id": "SummonStat_FlexStat_Stat_MOVEMENT",
                 "value": 1.0
               }
             ]
@@ -8343,14 +8343,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Status_AddDuration_AMER_WARD__",
+                "id": "Status_AddDuration_AMER_WARD",
                 "value": 1.0
               },
               {
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WARD",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 25.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -8359,7 +8359,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WARD",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 25.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -8368,7 +8368,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WARD",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": 25.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -8485,19 +8485,19 @@
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 9.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 10.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DODGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DODGEBOOST",
                 "value": 15.0
               }
             ]
@@ -8509,34 +8509,34 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Centurion__",
+                "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "MaxRes_ELERES_<NODENAME>_",
+                "id": "MaxRes_ELERES_<NODENAME>",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Occultist__",
+                "id": "FreeReactionCharge_AMER_Occultist",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "MaxRes_ELERES_<NODENAME>_",
+                "id": "MaxRes_ELERES_<NODENAME>",
                 "value": 1.0
               }
             ],
@@ -8546,7 +8546,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Ability_Leadership",
                 "status": "LEADERSHIP",
-                "id": "Stat_CRITICALCHANCE__",
+                "id": "Stat_CRITICALCHANCE",
                 "value": 1.0,
                 "keyword": "Presence",
                 "keywordBoon": "mutator"
@@ -8555,12 +8555,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "MaxRes_ELERES_<NODENAME>_",
+                "id": "MaxRes_ELERES_<NODENAME>",
                 "value": 1.0
               },
               {
@@ -8584,7 +8584,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Occultist__",
+                "id": "FreeReactionCharge_AMER_Occultist",
                 "value": 1.0
               },
               {
@@ -8607,12 +8607,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Memory__",
+                "id": "PercAttributeIncrease_Memory",
                 "value": 20.0
               }
             ],
@@ -8639,7 +8639,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_BANE",
-                "id": "Stat_APRECOVERY__",
+                "id": "Stat_APRECOVERY",
                 "value": -1.0,
                 "keyword": "Bane",
                 "keywordBoon": "mutator"
@@ -8651,7 +8651,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Entropy",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": -2.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -8661,7 +8661,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": -2.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -8671,7 +8671,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Embodiment_Inertia",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": -2.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -8680,7 +8680,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WITHER",
-                "id": "PercAttributeIncrease_Wits__",
+                "id": "PercAttributeIncrease_Wits",
                 "value": -20.0,
                 "keyword": "Wither",
                 "keywordBoon": "mutator"
@@ -8689,17 +8689,17 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST_",
+                "id": "SummonStat_FlexStat_Stat_ACCURACYBOOST",
                 "value": 15.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE_",
+                "id": "SummonStat_FlexStat_Stat_CRITICALCHANCE",
                 "value": 15.0
               },
               {
                 "type": "extendedStat",
-                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST_",
+                "id": "SummonStat_FlexStat_Stat_DAMAGEBOOST",
                 "value": 21.0
               }
             ]
@@ -8839,21 +8839,21 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_MagicArmor___",
+                "id": "Regen_MagicArmor",
                 "value": 14.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 10.0
               }
             ]
@@ -8863,7 +8863,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 1.3
             }
           ],
@@ -8912,12 +8912,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 20.0
               }
             ]
@@ -9150,7 +9150,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_DEFIANCE",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.02,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -9533,7 +9533,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WARD",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.03,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -9754,7 +9754,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.0
               },
               {
@@ -9777,7 +9777,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Centurion__",
+                "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 1.0
               },
               {
@@ -9861,7 +9861,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.4
             },
             {
@@ -9986,7 +9986,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Ability_Leadership",
                 "status": "LEADERSHIP",
-                "id": "Regen_BothArmor___",
+                "id": "Regen_BothArmor",
                 "value": 1.0,
                 "keyword": "Presence",
                 "keywordBoon": "mutator"
@@ -10141,7 +10141,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.3
             },
             {
@@ -10256,7 +10256,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 15.0
               }
             ],
@@ -10549,7 +10549,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Adaptation_AddMaxStacks___",
+                "id": "Adaptation_AddMaxStacks",
                 "value": 2.0
               }
             ]
@@ -10793,7 +10793,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Celestial__",
+                "id": "FreeReactionCharge_AMER_Celestial",
                 "value": 1.0
               },
               {
@@ -10841,7 +10841,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 14.0
               },
               {
@@ -10857,7 +10857,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Stat_PHYSICALRESISTANCE__",
+                "id": "Stat_PHYSICALRESISTANCE",
                 "value": 10.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"
@@ -10866,7 +10866,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Stat_PIERCINGRESISTANCE__",
+                "id": "Stat_PIERCINGRESISTANCE",
                 "value": 10.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"
@@ -11038,7 +11038,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Centurion__",
+                "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 1.0
               },
               {
@@ -11052,14 +11052,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Status_AddDuration_AMER_DEFIANCE__",
+                "id": "Status_AddDuration_AMER_DEFIANCE",
                 "value": 1.0
               },
               {
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_DAMAGEBOOST__",
+                "id": "Stat_DAMAGEBOOST",
                 "value": 25.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -11189,7 +11189,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 9.0
               }
             ]
@@ -11201,12 +11201,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Celestial__",
+                "id": "FreeReactionCharge_AMER_Celestial",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.2
               },
               {
@@ -11218,12 +11218,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Centurion__",
+                "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.2
               },
               {
@@ -11237,7 +11237,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_DODGEBOOST__",
+                "id": "Stat_DODGEBOOST",
                 "value": 10.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -11246,7 +11246,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_DEFIANCE",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.02,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -11287,12 +11287,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ]
@@ -11336,7 +11336,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Reaction_BlockBasic_AMER_Centurion__",
+                "id": "Reaction_BlockBasic_AMER_Centurion",
                 "value": 1.0
               },
               {
@@ -11352,7 +11352,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Spell_Projectile_BouncingShield_TheArena__",
+                "id": "Spell_Projectile_BouncingShield_TheArena",
                 "value": 1.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"
@@ -11361,7 +11361,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "IgnoreShieldPowerPenalty___",
+                "id": "IgnoreShieldPowerPenalty",
                 "value": 1.0
               }
             ]
@@ -11433,7 +11433,7 @@
             },
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.7
             }
           ],
@@ -11531,12 +11531,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Memory__",
+                "id": "PercAttributeIncrease_Memory",
                 "value": 20.0
               }
             ]
@@ -11563,7 +11563,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_WARD",
-                "id": "MaxRes_EleRes__",
+                "id": "MaxRes_EleRes",
                 "value": 3.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -11572,7 +11572,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_WARD",
-                "id": "Stat_PHYSICALRESISTANCE__",
+                "id": "Stat_PHYSICALRESISTANCE",
                 "value": 7.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -11581,7 +11581,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_WARD",
-                "id": "Stat_PIERCINGRESISTANCE__",
+                "id": "Stat_PIERCINGRESISTANCE",
                 "value": 7.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -11611,7 +11611,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Form",
                 "status": "AMER_WARD",
-                "id": "Stat_SpecialCase_AllResistance__",
+                "id": "Stat_SpecialCase_AllResistance",
                 "value": 1.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -11621,7 +11621,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Inertia",
                 "status": "AMER_WARD",
-                "id": "Stat_SpecialCase_AllResistance__",
+                "id": "Stat_SpecialCase_AllResistance",
                 "value": 1.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -11631,7 +11631,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Embodiment_Life",
                 "status": "AMER_WARD",
-                "id": "Stat_SpecialCase_AllResistance__",
+                "id": "Stat_SpecialCase_AllResistance",
                 "value": 1.0,
                 "keyword": "Ward",
                 "keywordBoon": "mutator"
@@ -11706,12 +11706,12 @@
             },
             {
               "type": "extendedStat",
-              "id": "Voracity_MagicArmor___",
+              "id": "Voracity_MagicArmor",
               "value": 5.0
             },
             {
               "type": "extendedStat",
-              "id": "Voracity_PhysArmor___",
+              "id": "Voracity_PhysArmor",
               "value": 5.0
             }
           ],
@@ -11753,7 +11753,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.3
               }
             ],
@@ -11765,7 +11765,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.3
               }
             ],
@@ -11777,7 +11777,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.3
               }
             ],
@@ -11817,7 +11817,7 @@
                 "subType": "extendedStat",
                 "scalingStat": "Ability_Leadership",
                 "status": "LEADERSHIP",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.0015,
                 "keyword": "Presence",
                 "keywordBoon": "mutator"
@@ -11826,12 +11826,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 20.0
               }
             ]
@@ -11883,7 +11883,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "SourceGen_InfiniteDuration___",
+                "id": "SourceGen_InfiniteDuration",
                 "value": 1.0
               },
               {
@@ -12014,12 +12014,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 5.0
               },
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 5.0
               }
             ],
@@ -12031,7 +12031,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 5.0
               }
             ]
@@ -12065,12 +12065,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.0
               },
               {
                 "type": "extendedStat",
-                "id": "Regen_PhysicalArmor___",
+                "id": "Regen_PhysicalArmor",
                 "value": 2.0
               }
             ]
@@ -12288,7 +12288,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Celestial__",
+                "id": "FreeReactionCharge_AMER_Celestial",
                 "value": 1.0
               },
               {
@@ -12300,7 +12300,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Elementalist__",
+                "id": "FreeReactionCharge_AMER_Elementalist",
                 "value": 1.0
               },
               {
@@ -12393,7 +12393,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Regen_Life___",
+              "id": "Regen_Life",
               "value": 2.0
             }
           ],
@@ -12432,7 +12432,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "Regen_Life___",
+              "id": "Regen_Life",
               "value": 2.5
             }
           ],
@@ -12496,7 +12496,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 2.0
               }
             ]
@@ -12659,7 +12659,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Ability_Leadership__",
+                "id": "Ability_Leadership",
                 "value": 1.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"
@@ -12697,7 +12697,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes___",
+                "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes",
                 "value": 1.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"
@@ -12715,7 +12715,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_PURITY",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.025,
                 "keyword": "Purity",
                 "keywordBoon": "mutator"
@@ -12867,7 +12867,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "PercAttributeIncrease_Memory__",
+              "id": "PercAttributeIncrease_Memory",
               "value": 10.0
             },
             {
@@ -12899,7 +12899,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Memory__",
+                "id": "PercAttributeIncrease_Memory",
                 "value": 6.0
               }
             ]
@@ -13199,7 +13199,7 @@
                 "type": "statusExtension",
                 "subType": "extendedStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost___",
+                "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost",
                 "value": 1.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"
@@ -13300,7 +13300,7 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "PercAttributeIncrease_Memory__",
+              "id": "PercAttributeIncrease_Memory",
               "value": 10.0
             }
           ],
@@ -13406,7 +13406,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 7.0
               }
             ],
@@ -13471,7 +13471,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Explode_OnStatus_AMER_PURITY_AURA_AMER_SCRIPT_TheNymph_Purity_Radial_",
+                "id": "Explode_OnStatus_AMER_PURITY_AURA_AMER_SCRIPT_TheNymph_Purity_Radial",
                 "value": 1.0
               }
             ],
@@ -13665,7 +13665,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Ability_Leadership",
                 "status": "LEADERSHIP",
-                "id": "Stat_MOVEMENT__",
+                "id": "Stat_MOVEMENT",
                 "value": 10.0,
                 "keyword": "Presence",
                 "keywordBoon": "mutator"
@@ -13913,7 +13913,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_DEFIANCE",
-                "id": "Stat_SpecialCase_EleResistance__",
+                "id": "Stat_SpecialCase_EleResistance",
                 "value": 7.0,
                 "keyword": "Defiance",
                 "keywordBoon": "mutator"
@@ -14027,7 +14027,7 @@
             },
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.7
             }
           ],
@@ -14049,7 +14049,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 10.0
               }
             ],
@@ -14125,12 +14125,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Memory__",
+                "id": "PercAttributeIncrease_Memory",
                 "value": 20.0
               }
             ]
@@ -14289,7 +14289,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Regen_Life___",
+                "id": "Regen_Life",
                 "value": 10.0
               }
             ],
@@ -14313,7 +14313,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.3
               }
             ],
@@ -14325,7 +14325,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.3
               }
             ],
@@ -14337,7 +14337,7 @@
               },
               {
                 "type": "extendedStat",
-                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 1.3
               }
             ],
@@ -14347,7 +14347,7 @@
                 "subType": "flexStat",
                 "scalingStat": "Ability_Leadership",
                 "status": "LEADERSHIP",
-                "id": "Stat_MOVEMENT__",
+                "id": "Stat_MOVEMENT",
                 "value": 10.0,
                 "keyword": "Presence",
                 "keywordBoon": "mutator"
@@ -14382,12 +14382,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Constitution__",
+                "id": "PercAttributeIncrease_Constitution",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Strength__",
+                "id": "PercAttributeIncrease_Strength",
                 "value": 20.0
               }
             ]
@@ -14421,7 +14421,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Purity_CooldownManip___",
+                "id": "Purity_CooldownManip",
                 "value": -6.0
               },
               {
@@ -14569,12 +14569,12 @@
           "parent": [
             {
               "type": "extendedStat",
-              "id": "BattHarr_Threshold_Sum_Self_Both__",
+              "id": "BattHarr_Threshold_Sum_Self_Both",
               "value": 0.7
             },
             {
               "type": "extendedStat",
-              "id": "MaxRes_ELERES_<NODENAME>_",
+              "id": "MaxRes_ELERES_<NODENAME>",
               "value": 1.0
             }
           ],
@@ -14582,14 +14582,14 @@
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Celestial__",
+                "id": "FreeReactionCharge_AMER_Celestial",
                 "value": 1.0
               }
             ],
             [
               {
                 "type": "extendedStat",
-                "id": "FreeReactionCharge_AMER_Elementalist__",
+                "id": "FreeReactionCharge_AMER_Elementalist",
                 "value": 1.0
               }
             ],
@@ -14623,7 +14623,7 @@
             [
               {
                 "type": "extendedStat",
-                "id": "Status_AddDuration_AMER_SCORCHED__",
+                "id": "Status_AddDuration_AMER_SCORCHED",
                 "value": 1.0
               },
               {
@@ -14638,12 +14638,12 @@
             [
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Finesse__",
+                "id": "PercAttributeIncrease_Finesse",
                 "value": 20.0
               },
               {
                 "type": "extendedStat",
-                "id": "PercAttributeIncrease_Intelligence__",
+                "id": "PercAttributeIncrease_Intelligence",
                 "value": 20.0
               }
             ]
@@ -14704,7 +14704,7 @@
                 "type": "statusExtension",
                 "subType": "flexStat",
                 "status": "AMER_PROSPERITY",
-                "id": "Spell_Shout_Ignition_Splendor__",
+                "id": "Spell_Shout_Ignition_Splendor",
                 "value": 1.0,
                 "keyword": "Prosperity",
                 "keywordBoon": "mutator"

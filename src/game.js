@@ -23,15 +23,37 @@ export class Game {
   mappings = miscData.mappings
 
   getStats() {
-    function addStat(id, amount) {
-      if (utils.hasKey(stats, id)) {
-        stats[id] += amount
+    // todo clean up params
+    function addStat(id, amount, stat) {
+      if (utils.hasKey(stats[stat.type], stat.id)) {
+        stats[stat.type][stat.id].amount += amount
+        console.log(stats)
       }
       else {
-        stats[id] = amount
+        stats[stat.type][stat.id] = {type: stat.type, amount: amount, id: id}
+        console.log(stats)
       }
     }
+
     let stats = {}
+
+    // default stats
+    for (let x in miscData.stats) {
+      let type = miscData.stats[x]
+      stats[x] = {}
+      if (x != "realStats") {
+        for (let z in type) {
+          let stat = type[z]
+
+          let defaultAmount = (stat.default != undefined) ? stat.default : 0
+
+          stats[x][z] = {type: x, amount: defaultAmount, id: z}
+        }
+      }
+    }
+
+    console.log(stats)
+
     for (let x in this.app.state.aspects) {
       let asp = this.ascension.getReferenceById(this.app.state.aspects[x].id)
       let build = this.app.state.aspects[x].nodes
@@ -39,17 +61,24 @@ export class Game {
       for (let z in asp.nodes) {
         for (let v in asp.nodes[z].parent) {
           let parentBoost = asp.nodes[z].parent[v]
-          addStat(parentBoost.id, parentBoost.value)
+          addStat(parentBoost.id, parentBoost.value, parentBoost)
         }
         for (let v in asp.nodes[z].subNodes[build[z]]) {
           let subNodeBoost = asp.nodes[z].subNodes[build[z]][v]
-          console.log(subNodeBoost)
-          addStat(subNodeBoost.id, subNodeBoost.value)
+          addStat(subNodeBoost.id, subNodeBoost.value, subNodeBoost)
         }
       }
-
-      return stats;
     }
+
+    console.log(stats)
+
+    // calculate real, absolute amounts of stats
+    // yeah first we will need to track default amounts and add all stats to the stats obj
+
+    // let str = stats
+    // stats["str"] = {type: "realStat", id: "str", amount: str}
+
+    return stats;
   }
 
   render() {this.app.forceUpdate()}
