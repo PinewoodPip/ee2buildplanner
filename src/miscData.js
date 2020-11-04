@@ -111,9 +111,13 @@ export const nodesWithExtraKeywords = {
 
 }
 
+export const aspectsAfterWePutAnHrToMakeThingsLookNice = [
+	"TheSerpent", "TheTiger", "TheWolf", "TheSupplicant", "TheSilkworm", "Wealth", "TheGuardsman", "TheRhinoceros", "TheRabbit", "TheStag",
+]
+
 export const boostsWithKeywords = [
 	"specialLogic", "statusExtension", "scalingExtension", "extraStatusApplication"
-  ]
+]
 
 // converts ids to image filenames / in-game names
 export const mappings = {

@@ -60,8 +60,10 @@
 
 .flexbox-wrap {
   display: flex;
-  align-items: center;
-  /* justify-content: space-evenly; */
+  /* align-items: center; */
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -92,7 +94,7 @@ hr {
 }
 
 .full-width {
-  width: 90%;
+  width: 100%;
 }
 
 .lateral-margin {
@@ -169,10 +171,19 @@ hr {
   background-color: lightslategray;
   min-width: 150px;
   min-height: 70px;
+  z-index: 999999;
 }
 
 .context-option {
+  max-width: 350px;
   padding: 5px;
+  text-overflow: ellipsis;
+  z-index: 999999;
+
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 .context-header {
@@ -216,6 +227,7 @@ hr {
 
 .skill-icon {
   /* border: 3px darkslategray solid; */
+  /* height: "64px"; */
 }
 
 .skill-selected {
@@ -236,13 +248,21 @@ hr {
 
 .skillbook {
   width: 900px;
-  height: 500px;
+  height: 600px;
   background-color: whitesmoke;
+}
+
+.ascension-family:hover {
+  background-color: rgb(115, 219, 214);
 }
 
 .ascension {
   width: 500px;
   height: 500px
+}
+
+.bar {
+  background-color: rgb(153, 152, 152);
 }
 
 /* div {height: 100%;} */
@@ -311,7 +331,7 @@ hr {
 
 .skill-listing {
   width: 700px;
-  height: 300px;
+  height: 100%;
 }
 
 /* TEXT */

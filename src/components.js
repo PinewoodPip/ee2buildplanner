@@ -8,6 +8,7 @@ import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { ContextMenuContents} from "./genericComponents.js"
 import * as utils from "./utils.js"
 import { game } from "./App.js"
+import * as miscData from "./miscData.js"
 
 export class Tooltip extends React.Component {
 	render() {
@@ -287,7 +288,8 @@ class Skill extends React.Component {
 
 function AscensionFamilyButton(props) {
 	return (
-		<div className="flexbox-horizontal" onClick={()=>{props.app.setState({currentFamily: props.family.toLowerCase()})}}>
+		<div className="flexbox-horizontal flex-align-start full-width ascension-family" onClick={()=>{props.app.setState({currentFamily: props.family.toLowerCase()})}}>
+			<Embodiment type={props.family.toLowerCase()} amount={""}/>
 			<Text text={props.family}/>
 		</div>
 	)
@@ -339,26 +341,33 @@ export function AscensionPopup(props) {
 	let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
 
 	let asps = []
+	asps.push(<AspectListing keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>)
+	asps.push(<hr/>)
 	for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
 		let asp = game.ascension.aspects[props.app.state.currentFamily][x]
-		// asps.push(<div onClick={() => {changeCurrentlyViewedAspect(asp)}}>
-		// 	<Text text={asp.name}/>
-		// </div>)
+
 		asps.push(<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
+
+		if (miscData.aspectsAfterWePutAnHrToMakeThingsLookNice.includes(x)) {
+			asps.push(<hr/>)
+		}
 		
 	}
 
 	return (
-		<Container className="flexbox-vertical skillbook">
-			<div className="flexbox-horizontal flex-align-end full-width">
+		<Container className="flexbox-vertical flex-align-start skillbook">
+			<div className="flexbox-horizontal flex-align-end full-width bar">
 				<Text text={"Ascension"} className={"flex-grow"}/>
 				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
+
+			<div style={{height: "20px"}}/>
+
 			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
-				<div className="flexbox-vertical flex-align-start">
+				<div className="flexbox-vertical flex-align-start" style={{width: "15%"}}>
 					{familyButtons}
 				</div>
-				<div className="flexbox-vertical aspect-listing">
+				<div className="flexbox-vertical flex-align-start aspect-listing" style={{width: "40%"}}>
 					{asps}
 				</div>
 
@@ -387,16 +396,19 @@ export function SkillBook(props) {
 	}
 
 	return (
-		<Container className="flexbox-vertical skillbook">
-			<div className="flexbox-horizontal flex-align-end full-width">
+		<Container className="flexbox-vertical flex-align-start skillbook">
+			<div className="flexbox-horizontal flex-align-end full-width bar">
 				<Text text={"Skillbook"} className={"flex-grow"}/>
 				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
-			<div className="flexbox-horizontal">
+
+			<div style={{height: "20px"}}/>
+
+			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin">
 				<div className="flexbox-vertical">
 					{abilityButtons}
 				</div>
-				<div className="flexbox-wrap skill-listing">
+				<div className="flexbox-wrap flexbox-horizontal skill-listing">
 					{skills}
 				</div>
 			</div>
@@ -504,7 +516,7 @@ export function RightClickMenu(props) {
 		items.push(<MenuItem>{props.children[x]}</MenuItem>)
 	}
 	return (
-		<ContextMenu id={props.id} hideOnLeave={true}>
+		<ContextMenu id={props.id} hideOnLeave={true} className="">
 			<div className="context-menu">
 				{items}
 			</div>
