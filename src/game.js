@@ -279,16 +279,16 @@ export class Ascension {
         let ref = game.ascension.getAspectReference(asp)
 
         // header
-        subNodeOptions.push(<Text className="context-header" text={"Choose a subnode:"}/>)
+        subNodeOptions.push(<Text notInteractable={true} className="context-header" text={"Choose a subnode:"}/>)
 
         // "any" option
-        subNodeOptions.push(<div className="context-option" onClick={() => {this.changeSubNode(asp, x, null, mode)}}>
+        subNodeOptions.push(<div onClick={() => {this.changeSubNode(asp, x, null, mode)}}>
         <Text text={"Any"}/>
       </div>)
 
         for (let z in ref.nodesText[x].subNodes) {
           subNodeOptions.push(
-            <div className="context-option" onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
+            <div onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
               <Text text={ref.nodesText[x].subNodes[z]}/>
             </div>)
           

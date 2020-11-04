@@ -6,6 +6,8 @@ import update from 'immutability-helper';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 import { ContextMenuContents} from "./genericComponents.js"
+import { Menu, Item, Separator, Submenu, MenuProvider } from 'react-contexify';
+import 'react-contexify/dist/ReactContexify.min.css';
 import * as utils from "./utils.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
@@ -346,6 +348,19 @@ export function AscensionPopup(props) {
 	for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
 		let asp = game.ascension.aspects[props.app.state.currentFamily][x]
 
+		let contextId = x
+		let element = 
+			<ContextMenuTrigger id={contextId} className="full-width" style={{width: "100%", height: "100%", position: "absolute"}}>
+			<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>
+		</ContextMenuTrigger>
+
+		// asps.push(<RightClickMenu id={contextId}>
+		// 	<Text text="Remove"/>
+		// 	<Text text="Move up"/>
+		// 	<Text text="Move down"/>
+		// </RightClickMenu>)
+
+		// asps.push(element)
 		asps.push(<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
 
 		if (miscData.aspectsAfterWePutAnHrToMakeThingsLookNice.includes(x)) {
@@ -353,6 +368,15 @@ export function AscensionPopup(props) {
 		}
 		
 	}
+
+	// let realAsps = []
+	// for (let x in asps) {
+	// 	let asp = asps[x]
+
+	// 	realAsps.push(<ContextMenuTrigger id={Math.random()}>
+	// 	{asp}
+	// </ContextMenuTrigger>)
+	// }
 
 	return (
 		<Container className="flexbox-vertical flex-align-start skillbook">
@@ -376,7 +400,9 @@ export function AscensionPopup(props) {
 
 					<div style={{height: "10px"}}/>
 
-					<GreenButton text="Add aspect" onClick={() => {addAspect()}}/>
+					<div className="sticky-bottom">
+						<GreenButton text="Add aspect" onClick={() => {addAspect()}}/>
+					</div>
 				</div>
 			</div>
 		</Container>
@@ -472,9 +498,22 @@ function Keyword(props) {
 }
 
 function AspectListing(props) {
+	let contextId = Math.random()
+	let rclick = <RightClickMenu id={contextId}>
+	<Text text="Remove"/>
+	<Text text="Move up"/>
+	<Text text="Move down"/>
+</RightClickMenu>
 	return (
+		
+
+		// asps.push(<RightClickMenu id={contextId}>
+		// 	<Text text="Remove"/>
+		// 	<Text text="Move up"/>
+		// 	<Text text="Move down"/>
+		// </RightClickMenu>)
 		<div className="flexbox-horizontal flex-align-centered aspect" onClick={props.onClick}>
-			<Text text={props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
+			<Text rightClickMenu={rclick} text={props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
 			<div style={{width: "50%", margin: "0 5px 0 5px"}} className="flexbox-horizontal flex-align-centered">
 				{props.keywords}
 			</div>
@@ -499,6 +538,8 @@ function Aspect(props) {
 
 	console.log(keywords)
 
+	let contextId = "t"
+
 	for (let x in keywords.allKeywords) {
 		let gotten = keywords.keywordsGotten.includes(keywords.allKeywords[x])
 		console.log(gotten)
@@ -507,13 +548,27 @@ function Aspect(props) {
 
 	return (
 		<AspectListing keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
+		// <div>
+		// 	<ContextMenuTrigger id={contextId}>
+		// 		<AspectListing keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
+		// 	</ContextMenuTrigger>
+		// 	<RightClickMenu id={contextId}>
+		// 		<Text text="Remove"/>
+		// 		<Text text="Move up"/>
+		// 		<Text text="Move down"/>
+		// 	</RightClickMenu>
+		// </div>
 	)
 }
 
 export function RightClickMenu(props) {
 	let items = []
+
+	console.log(props.children)
 	for (let x in props.children) {
-		items.push(<MenuItem>{props.children[x]}</MenuItem>)
+		let className = props.children[x].props.notInteractable ? "context-option-noninteractable" : "context-option"
+
+		items.push(<MenuItem className={className}>{props.children[x]}</MenuItem>)
 	}
 	return (
 		<ContextMenu id={props.id} hideOnLeave={true} className="">

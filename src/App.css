@@ -186,6 +186,18 @@ hr {
   user-select: none; /* Standard */
 }
 
+.context-option-noninteractable {
+  max-width: 350px;
+  padding: 5px;
+  text-overflow: ellipsis;
+  z-index: 999999;
+
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
 .context-header {
   padding: 5px;
 }
@@ -271,6 +283,12 @@ hr {
   background-color: whitesmoke;
   position: sticky;
   top: 0px;
+}
+
+.sticky-bottom {
+  background-color: whitesmoke;
+  position: sticky;
+  bottom: 0px;
 }
 
 .aspect-preview {
