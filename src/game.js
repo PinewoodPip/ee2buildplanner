@@ -75,7 +75,7 @@ export class Game {
     // calculate real, absolute amounts of stats
     // yeah first we will need to track default amounts and add all stats to the stats obj
 
-    // let str = stats
+    // let str = stats["flexStat"]["STRENGTH"]
     // stats["str"] = {type: "realStat", id: "str", amount: str}
 
     return stats;
