@@ -111,8 +111,13 @@ export const nodesWithExtraKeywords = {
 
 }
 
-export const idToImageMappings = {
-	abilities: {
+export const boostsWithKeywords = [
+	"specialLogic", "statusExtension", "scalingExtension", "extraStatusApplication"
+  ]
+
+// converts ids to image filenames / in-game names
+export const mappings = {
+	abilityImages: {
 		"Warrior": "Ability_Warfare",
 		"Water": "Ability_Hydrosophist",
 		"Earth": "Ability_Geomancer",
@@ -138,7 +143,7 @@ export const idToImageMappings = {
 		"Source": "Sourcery",
 		"Polymorph": "Polymorph",
 	},
-	keywords: {
+	keywordImages: {
 		"Abeyance": "AMER_UI_Ascension_Keyword_Abeyance",
 		"Adaptation": "AMER_UI_Ascension_Keyword_Adaptation",
 		"Bane": "AMER_UI_Ascension_Keyword_Bane",

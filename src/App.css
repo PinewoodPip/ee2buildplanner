@@ -137,6 +137,7 @@ hr {
 .embodiment p {
   margin: 0;
   text-align: center;
+  line-height: 23px;
 }
 
 .force {

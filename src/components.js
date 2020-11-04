@@ -1,10 +1,13 @@
 import React from 'react';
-import { game } from "./App.js"
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import _ from "underscore";
 import update from 'immutability-helper';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+
+import { ContextMenuContents} from "./genericComponents.js"
+import * as utils from "./utils.js"
+import { game } from "./App.js"
 
 export class Tooltip extends React.Component {
 	render() {
@@ -17,22 +20,6 @@ export class Tooltip extends React.Component {
 		  </Tippy>
 		)
 	}
-}
-
-// function ContextMenu(props) {
-// 	return (
-// 		<MenuProvider id={props.id}>
-// 			{props.children}
-// 		</MenuProvider>
-// 	)
-// }
-
-function ContextMenuContents(props) {
-	return (
-		<ContextMenu id={props.id}>
-			{props.children}
-		</ContextMenu>
-	)
 }
 
 function SkillTooltip(props) {
@@ -195,7 +182,7 @@ function SkillBookAbilityCategory(props) {
 
 	return (
 		<div className={"flexbox-horizontal flex-align-start skillbook-category " + className} onClick={func}>
-			<Icon img={game.getImage(game.mappings.abilities[props.category])} size="32px"/>
+			<Icon img={utils.getImage(game.mappings.abilityImages[props.category])} size="32px"/>
 			<div style={{width: "15px"}}/>
 			<Text text={game.mappings.abilityNames[props.category]}/>
 		</div>
@@ -256,7 +243,7 @@ class SkillAbilities extends React.Component {
 			let className = (this.hasAnyRelevantSkill(x) || this.props.app.state.skillAbilities[x] > 0) ? "highlighted-bg" : ""
 
 			skillAbilities.push(<div className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
-				<Icon img={game.getImage(game.mappings.abilities[x])} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
+				<Icon img={utils.getImage(game.mappings.abilityImages[x])} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
 				<Text text={game.mappings.abilityNames[x]} className="flex-grow" onClick={()=>{openSkillbookFunc(x)}}/>
 				{button}
 			</div>)
@@ -285,7 +272,7 @@ class Skill extends React.Component {
 	}
 
 	render() {
-		let img = game.getImage(this.props.data.Icon)
+		let img = utils.getImage(this.props.data.Icon)
 		let highlight = this.props.highlight != "false"
 		
 		let className = (this.props.app.state.skills.includes(this.props.data.id) && highlight) ? "skill-selected" : ""
@@ -365,7 +352,7 @@ export function AscensionPopup(props) {
 		<Container className="flexbox-vertical skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width">
 				<Text text={"Ascension"} className={"flex-grow"}/>
-				<Icon className="button" img={game.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
 				<div className="flexbox-vertical flex-align-start">
@@ -403,7 +390,7 @@ export function SkillBook(props) {
 		<Container className="flexbox-vertical skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width">
 				<Text text={"Skillbook"} className={"flex-grow"}/>
-				<Icon className="button" img={game.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 			<div className="flexbox-horizontal">
 				<div className="flexbox-vertical">
@@ -451,7 +438,7 @@ class Skills extends React.Component {
 		}
 
 		// button to add more skills, opening the skillbook
-		skills.push(<Icon className="button" borderless={true} img={game.getImage("add")} size="64px" onClick={this.openSkillBook.bind(this)}/>)
+		skills.push(<Icon className="button" borderless={true} img={utils.getImage("add")} size="64px" onClick={this.openSkillBook.bind(this)}/>)
 
 		return (
 			<Container className="skills">
@@ -467,7 +454,7 @@ function Keyword(props) {
 	let className = props.faded == true ? "faded-out" : "keyword"
 	return (
 		<Tooltip content={<Text text={game.mappings.keywordNames[props.keyword]}/>}>
-			<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.getImage(game.mappings.keywords[props.keyword])}/>
+			<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={utils.getImage(game.mappings.keywordImages[props.keyword])}/>
 		</Tooltip>
 	)
 }
@@ -492,7 +479,7 @@ function Aspect(props) {
 	}
 	else {
 		asp = props.data
-		info = game.ascension.getAspect(asp)
+		info = game.ascension.getAspectText(asp)
 	} 
 	// let tooltip = game.ascension.getAspectElement(asp)
 	let keywords = game.ascension.getKeywordsInAspectBuild(asp)
@@ -611,7 +598,7 @@ class Ascension extends React.Component {
 function GreenButton(props) {
 	return (
 		<div className="absolute button" onClick={props.onClick}>
-			<img style={{width: "150px", height: "30px"}} src={game.getImage("button_green")}/>
+			<img style={{width: "150px", height: "30px"}} src={utils.getImage("button_green")}/>
 			<Text text={props.text} className="unselectable"/>
 		</div>
 	)
