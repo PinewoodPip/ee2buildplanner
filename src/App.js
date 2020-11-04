@@ -132,10 +132,14 @@ class Ascension {
 
       let subNode = node.subNodes[asp.nodes[x]]
 
+      let typesWithKeyword = [
+        "specialLogic", "statusExtension", "scalingExtension", "extraStatusApplication"
+      ]
+
       // iterate through stat boosts and look for specialLogic ones, those give keyword activators/mutators
       for (let z in subNode) {
         let subNodeStat = subNode[z]
-        if (subNodeStat.type == "specialLogic" && subNodeStat.keyword != null) {
+        if ((typesWithKeyword.includes(subNodeStat.type)) && subNodeStat.keyword != null) {
           keywordsInBuild.push(subNodeStat.keyword)
         }
       }

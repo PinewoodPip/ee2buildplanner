@@ -400,7 +400,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "DodgeFatigue_AddAmount___",
                 "value": 4.0,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -1222,7 +1222,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "Stat_ACCURACYBOOST__",
                 "value": 10.0,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -1231,7 +1231,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "Stat_DAMAGEBOOST__",
                 "value": 20.0,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -1240,7 +1240,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "Stat_INITIATIVE__",
                 "value": 10.0,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               }
             ],
@@ -1956,7 +1956,7 @@
                 "status": "AMER_PURITY",
                 "id": "Stat_ACCURACYBOOST__",
                 "value": 10.0,
-                "keyword": "AMER_PURITY",
+                "keyword": "Purity",
                 "keywordBoon": "mutator"
               },
               {
@@ -1965,7 +1965,7 @@
                 "status": "AMER_PURITY",
                 "id": "Stat_DAMAGEBOOST__",
                 "value": 15.0,
-                "keyword": "AMER_PURITY",
+                "keyword": "Purity",
                 "keywordBoon": "mutator"
               },
               {
@@ -1974,7 +1974,7 @@
                 "status": "AMER_PURITY",
                 "id": "Voracity_Life___",
                 "value": 15.0,
-                "keyword": "AMER_PURITY",
+                "keyword": "Purity",
                 "keywordBoon": "mutator"
               }
             ]
@@ -2170,7 +2170,7 @@
                 "status": "AMER_PURITY_AURA",
                 "id": "Stat_APRECOVERY__",
                 "value": 1.0,
-                "keyword": "AMER_PURITY",
+                "keyword": "Purity",
                 "keywordBoon": "mutator"
               }
             ],
@@ -2601,7 +2601,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_ACCURACYBOOST__",
                 "value": 10.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -2610,7 +2610,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_CRITICALCHANCE__",
                 "value": 10.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -4299,7 +4299,7 @@
                 "status": "AMER_WITHER",
                 "id": "AMER_DECAYING_2",
                 "duration": 12.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               }
             ],
@@ -5276,7 +5276,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": 2.5,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -5286,7 +5286,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "PercAttributeIncrease_Intelligence__",
                 "value": 2.5,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -5296,7 +5296,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": 2.5,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -5306,7 +5306,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "PercAttributeIncrease_Intelligence__",
                 "value": 2.5,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -5316,7 +5316,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": 2.5,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               },
               {
@@ -5326,7 +5326,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "PercAttributeIncrease_Intelligence__",
                 "value": 2.5,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               }
             ],
@@ -5338,7 +5338,7 @@
                 "status": "AMER_WITHER",
                 "id": "Stat_ACCURACYBOOST__",
                 "value": -2.5,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -5348,7 +5348,7 @@
                 "status": "AMER_WITHER",
                 "id": "Stat_ACCURACYBOOST__",
                 "value": -2.5,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -5358,7 +5358,7 @@
                 "status": "AMER_WITHER",
                 "id": "Stat_ACCURACYBOOST__",
                 "value": -2.5,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               }
             ]
@@ -5378,7 +5378,7 @@
                 "status": "AMER_PAUCITY",
                 "id": "ToggleStatus_AMER_DECAY_NEGALEADERSHIP_AURA__",
                 "value": -1.0,
-                "keyword": "AMER_PAUCITY",
+                "keyword": "Paucity",
                 "keywordBoon": "mutator"
               }
             ],
@@ -5390,7 +5390,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Constitution__",
                 "value": -1.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -5400,7 +5400,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Constitution__",
                 "value": -1.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -5410,7 +5410,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Constitution__",
                 "value": -1.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -5419,7 +5419,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Constitution__",
                 "value": -10.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -6447,7 +6447,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_PHYSICALRESISTANCE__",
                 "value": 6.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -6874,7 +6874,7 @@
                 "status": "AMER_WITHER",
                 "id": "Stat_MOVEMENTBOOST__",
                 "value": -5.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -6884,7 +6884,7 @@
                 "status": "AMER_WITHER",
                 "id": "Stat_MOVEMENTBOOST__",
                 "value": -1.5,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -6894,7 +6894,7 @@
                 "status": "AMER_WITHER",
                 "id": "Stat_MOVEMENTBOOST__",
                 "value": -1.5,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               }
             ],
@@ -7402,7 +7402,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_DAMAGEBOOST__",
                 "value": 15.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -7454,7 +7454,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_INITIATIVE__",
                 "value": 10.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -7463,7 +7463,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "FreeReactionCharge_AMER_Centurion__",
                 "value": 2.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -8352,7 +8352,7 @@
                 "status": "AMER_WARD",
                 "id": "PercAttributeIncrease_Intelligence__",
                 "value": 25.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -8361,7 +8361,7 @@
                 "status": "AMER_WARD",
                 "id": "PercAttributeIncrease_Finesse__",
                 "value": 25.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -8370,7 +8370,7 @@
                 "status": "AMER_WARD",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": 25.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               }
             ],
@@ -8641,7 +8641,7 @@
                 "status": "AMER_BANE",
                 "id": "Stat_APRECOVERY__",
                 "value": -1.0,
-                "keyword": "AMER_BANE",
+                "keyword": "Bane",
                 "keywordBoon": "mutator"
               }
             ],
@@ -8653,7 +8653,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": -2.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -8663,7 +8663,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": -2.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -8673,7 +8673,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": -2.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               },
               {
@@ -8682,7 +8682,7 @@
                 "status": "AMER_WITHER",
                 "id": "PercAttributeIncrease_Wits__",
                 "value": -20.0,
-                "keyword": "AMER_WITHER",
+                "keyword": "Wither",
                 "keywordBoon": "mutator"
               }
             ],
@@ -9152,7 +9152,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "BattHarr_Threshold_Sum_Self_Both__",
                 "value": 0.02,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -9535,7 +9535,7 @@
                 "status": "AMER_WARD",
                 "id": "BattHarr_Threshold_Sum_Self_Both__",
                 "value": 0.03,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               }
             ]
@@ -10340,7 +10340,7 @@
                 "status": "AMER_WARD",
                 "id": "VolatileArmor_Physical_300_Physical_AMER_RS3_FX_VolatileArmor",
                 "value": 15.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -10349,7 +10349,7 @@
                 "status": "AMER_WARD",
                 "id": "VolatileArmor_Magic_300_Physical_AMER_RS3_FX_VolatileArmor",
                 "value": 15.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               }
             ]
@@ -10859,7 +10859,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Stat_PHYSICALRESISTANCE__",
                 "value": 10.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               },
               {
@@ -10868,7 +10868,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Stat_PIERCINGRESISTANCE__",
                 "value": 10.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               }
             ]
@@ -11061,7 +11061,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_DAMAGEBOOST__",
                 "value": 25.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -11239,7 +11239,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_DODGEBOOST__",
                 "value": 10.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -11248,7 +11248,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "BattHarr_Threshold_Sum_Self_Both__",
                 "value": 0.02,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -11354,7 +11354,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Spell_Projectile_BouncingShield_TheArena__",
                 "value": 1.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               }
             ],
@@ -11565,7 +11565,7 @@
                 "status": "AMER_WARD",
                 "id": "MaxRes_EleRes__",
                 "value": 3.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -11574,7 +11574,7 @@
                 "status": "AMER_WARD",
                 "id": "Stat_PHYSICALRESISTANCE__",
                 "value": 7.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -11583,7 +11583,7 @@
                 "status": "AMER_WARD",
                 "id": "Stat_PIERCINGRESISTANCE__",
                 "value": 7.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               }
             ]
@@ -11613,7 +11613,7 @@
                 "status": "AMER_WARD",
                 "id": "Stat_SpecialCase_AllResistance__",
                 "value": 1.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -11623,7 +11623,7 @@
                 "status": "AMER_WARD",
                 "id": "Stat_SpecialCase_AllResistance__",
                 "value": 1.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               },
               {
@@ -11633,7 +11633,7 @@
                 "status": "AMER_WARD",
                 "id": "Stat_SpecialCase_AllResistance__",
                 "value": 1.0,
-                "keyword": "AMER_WARD",
+                "keyword": "Ward",
                 "keywordBoon": "mutator"
               }
             ]
@@ -12661,7 +12661,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Ability_Leadership__",
                 "value": 1.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               },
               {
@@ -12699,7 +12699,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes___",
                 "value": 1.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               },
               {
@@ -12717,7 +12717,7 @@
                 "status": "AMER_PURITY",
                 "id": "BattHarr_Threshold_Sum_Self_Both__",
                 "value": 0.025,
-                "keyword": "AMER_PURITY",
+                "keyword": "Purity",
                 "keywordBoon": "mutator"
               }
             ]
@@ -13201,7 +13201,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost___",
                 "value": 1.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               },
               {
@@ -13915,7 +13915,7 @@
                 "status": "AMER_DEFIANCE",
                 "id": "Stat_SpecialCase_EleResistance__",
                 "value": 7.0,
-                "keyword": "AMER_DEFIANCE",
+                "keyword": "Defiance",
                 "keywordBoon": "mutator"
               },
               {
@@ -14706,7 +14706,7 @@
                 "status": "AMER_PROSPERITY",
                 "id": "Spell_Shout_Ignition_Splendor__",
                 "value": 1.0,
-                "keyword": "AMER_PROSPERITY",
+                "keyword": "Prosperity",
                 "keywordBoon": "mutator"
               }
             ],

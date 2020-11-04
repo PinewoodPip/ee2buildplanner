@@ -259,6 +259,10 @@ for line in ascData.readlines():
                 keywordBoonType = None
                 subType = key.replace("statusExtension", "")
 
+                statusKeyword = status.replace("AMER_", "")
+                statusKeyword = statusKeyword.replace("_AURA", "")
+                statusKeyword = statusKeyword.capitalize()
+
                 subSubStat = ""
                 subSubSubStat = ""
                 if "subSubStat" in search.keys():
@@ -268,7 +272,7 @@ for line in ascData.readlines():
 
                 for x in keywordStatuses:
                     if (x) in status.upper():
-                        keyword = x
+                        keyword = statusKeyword
                         keywordBoonType = "mutator"
                     if status == "LEADERSHIP":
                         keyword = "Presence"
@@ -286,6 +290,10 @@ for line in ascData.readlines():
 
             elif key == "scalingStatflexStat" or key == "scalingStatextendedStat":
                 status = search["status"]
+                statusKeyword = status.replace("AMER_", "")
+                statusKeyword = statusKeyword.replace("_AURA", "")
+                statusKeyword = statusKeyword.capitalize()
+
                 keyword = None
                 keywordBoonType = None
                 subType = key.replace("scalingStat", "")
@@ -299,7 +307,7 @@ for line in ascData.readlines():
 
                 for x in keywordStatuses:
                     if (x) in status.upper():
-                        keyword = x
+                        keyword = statusKeyword
                         keywordBoonType = "mutator"
                     if status == "LEADERSHIP":
                         keyword = "Presence"
@@ -320,10 +328,14 @@ for line in ascData.readlines():
                 status = search["status"]
                 keyword = None
                 keywordBoonType = None
+
+                statusKeyword = status.replace("AMER_", "")
+                statusKeyword = statusKeyword.replace("_AURA", "")
+                statusKeyword = statusKeyword.capitalize()
                 
                 for x in keywordStatuses:
                     if (x) in status.upper():
-                        keyword = x
+                        keyword = statusKeyword
                         keywordBoonType = "mutator"
                     if status == "LEADERSHIP":
                         keyword = "Presence"
