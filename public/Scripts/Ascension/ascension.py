@@ -27,6 +27,19 @@ ascensionDataParsers = {
 
     "keyword": re.compile('DB_AMER_UI_Ascension_Node_Reward_Keyword\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<keyword>.*)"\)'),
 
+    "statusExtensionflexStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_StatusMod_FlexStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<status>.*)", "(?P<stat>.*)", "(?P<subStat>.*)", (?P<value>.*), ".*", .*\);'),
+
+    "statusExtensionextendedStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_StatusMod_ExtendedStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<status>.*)", "(?P<stat>.*)", "(?P<subStat>.*)", "(?P<subSubStat>.*)", "(?P<subSubSubStat>.*)", (?P<value>.*), ".*", .*\);'),
+
+    "scalingStatextendedStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_ScalingStat_StatusMod_ExtendedStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<scalingStat>.*)", "(?P<scalingSubStat>.*)", "(?P<status>.*)", "(?P<stat>.*)", "(?P<subStat>.*)", "", "", .*, (?P<value>.*)\);'),
+
+    "scalingStatflexStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_ScalingStat_StatusMod_FlexStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<scalingStat>.*)", "(?P<scalingSubStat>.*)", "(?P<status>.*)", "(?P<stat>.*)", "(?P<subStat>.*)", ".*", [0-9], (?P<value>.*)\);'),
+
+    # "scalingStatextendedStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_ScalingStat_StatusMod_ExtendedStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<scalingStat>.*)", "(?P<scalingSubStat>.*)", "(?P<status>.*)", "(?P<stat>.*)", "(?P<subStat>.*)", ([ [0-9]"]*)*, (?P<value>[[0-9]\.]*)\);;'),
+
+    # "scalingStatflexStat": re.compile('DB_AMER_UI_Ascension_Node_Reward_ScalingStat_StatusMod_FlexStat\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<scalingStat>.*)", "(?P<scalingSubStat>.*)", "(?P<status>.*)", "(?P<stat>.*)", "(?P<subStat>.*)", ([ [0-9]"]*)*, (?P<value>[[0-9]\.]*)\);'),
+
+    "extraStatusApplication": re.compile('DB_AMER_UI_Ascension_Node_Reward_StatusMod_AddStatus\("(?P<family>.*)_(?P<id>.*)", "Node_(?P<index>[0-9]*)(.(?P<subIndex>[0-9]*))?", "(?P<status>.*)", "(?P<newStatus>.*)", (?P<duration>.*), .*, .*\);')
 }
 
 # regex notes
@@ -83,6 +96,16 @@ keywords = [
     "Purity",
     "Prosperity",
     "VitalityVoid",
+]
+keywordStatuses = [
+    "AMER_PAUCITY",
+    "AMER_PURITY", # WILL ALSO MATCH PURITY_AURA
+    "AMER_DEFIANCE",
+    "AMER_WITHER",
+    "AMER_WARD",
+    "AMER_ABEYANCE",
+    "AMER_BANE",
+    "AMER_PROSPERITY",
 ]
 
 def prettifyDescription(string):
@@ -229,6 +252,91 @@ for line in ascData.readlines():
 
             elif key == "keyword":
                 n.append({"type": "keywordBasicActivator", "id": search["keyword"],})
+
+            elif key == "statusExtensionflexStat" or key =="statusExtensionextendedStat":
+                status = search["status"]
+                keyword = None
+                keywordBoonType = None
+                subType = key.replace("statusExtension", "")
+
+                subSubStat = ""
+                subSubSubStat = ""
+                if "subSubStat" in search.keys():
+                    subSubStat = search["subSubStat"]
+                if "subSubSubStat" in search.keys():
+                    subSubSubStat = search["subSubSubStat"]
+
+                for x in keywordStatuses:
+                    if (x) in status.upper():
+                        keyword = x
+                        keywordBoonType = "mutator"
+                    if status == "LEADERSHIP":
+                        keyword = "Presence"
+                        keywordBoonType = "mutator"
+
+                n.append({
+                    "type": "statusExtension",
+                    "subType": subType,
+                    "status": status,
+                    "id": search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat,
+                    "value": float(value),
+                    "keyword": keyword,
+                    "keywordBoon": keywordBoonType,
+                })
+
+            elif key == "scalingStatflexStat" or key == "scalingStatextendedStat":
+                status = search["status"]
+                keyword = None
+                keywordBoonType = None
+                subType = key.replace("scalingStat", "")
+
+                subSubStat = ""
+                subSubSubStat = ""
+                if "subSubStat" in search.keys():
+                    subSubStat = search["subSubStat"]
+                if "subSubSubStat" in search.keys():
+                    subSubSubStat = search["subSubSubStat"]
+
+                for x in keywordStatuses:
+                    if (x) in status.upper():
+                        keyword = x
+                        keywordBoonType = "mutator"
+                    if status == "LEADERSHIP":
+                        keyword = "Presence"
+                        keywordBoonType = "mutator"
+
+                n.append({
+                    "type": "scalingExtension",
+                    "subType": subType,
+                    "scalingStat": search["scalingStat"] + "_" + search["scalingSubStat"],
+                    "status": status,
+                    "id": search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat,
+                    "value": float(value),
+                    "keyword": keyword,
+                    "keywordBoon": keywordBoonType,
+                })
+
+            elif key == "extraStatusApplication":
+                status = search["status"]
+                keyword = None
+                keywordBoonType = None
+                
+                for x in keywordStatuses:
+                    if (x) in status.upper():
+                        keyword = x
+                        keywordBoonType = "mutator"
+                    if status == "LEADERSHIP":
+                        keyword = "Presence"
+                        keywordBoonType = "mutator"
+                
+                n.append({
+                    "type": "extraStatusApplication",
+                    "status": status,
+                    "id": search["newStatus"],
+                    "duration": float(search["duration"]),
+                    "keyword": keyword,
+                    "keywordBoon": keywordBoonType,
+                })
             
             interpreted = True
 

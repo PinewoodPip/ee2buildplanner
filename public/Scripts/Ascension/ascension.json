@@ -395,6 +395,15 @@
           "subNodes": [
             [
               {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_PAUCITY",
+                "id": "DodgeFatigue_AddAmount___",
+                "value": 4.0,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "flexStat",
                 "id": "DODGEBOOST",
                 "value": 2.0
@@ -1206,7 +1215,35 @@
         {
           "parent": [],
           "subNodes": [
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PAUCITY",
+                "id": "Stat_ACCURACYBOOST__",
+                "value": 10.0,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PAUCITY",
+                "id": "Stat_DAMAGEBOOST__",
+                "value": 20.0,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PAUCITY",
+                "id": "Stat_INITIATIVE__",
+                "value": 10.0,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
@@ -1911,6 +1948,35 @@
                 "keyword": "Predator",
                 "keywordBoon": "mutator"
               }
+            ],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PURITY",
+                "id": "Stat_ACCURACYBOOST__",
+                "value": 10.0,
+                "keyword": "AMER_PURITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PURITY",
+                "id": "Stat_DAMAGEBOOST__",
+                "value": 15.0,
+                "keyword": "AMER_PURITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_PURITY",
+                "id": "Voracity_Life___",
+                "value": 15.0,
+                "keyword": "AMER_PURITY",
+                "keywordBoon": "mutator"
+              }
             ]
           ],
           "containedKeywords": [
@@ -2097,7 +2163,17 @@
         {
           "parent": [],
           "subNodes": [
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PURITY_AURA",
+                "id": "Stat_APRECOVERY__",
+                "value": 1.0,
+                "keyword": "AMER_PURITY",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "flexStat",
@@ -2519,6 +2595,24 @@
               }
             ],
             [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_ACCURACYBOOST__",
+                "value": 10.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_CRITICALCHANCE__",
+                "value": 10.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
@@ -4199,7 +4293,16 @@
                 "keywordBoon": "mutator"
               }
             ],
-            [],
+            [
+              {
+                "type": "extraStatusApplication",
+                "status": "AMER_WITHER",
+                "id": "AMER_DECAYING_2",
+                "duration": 12.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
@@ -5107,7 +5210,44 @@
                 "keywordBoon": "activator"
               }
             ],
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "ACID",
+                "id": "InstantEffect_ApplyBattered__",
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "BLEEDING",
+                "id": "InstantEffect_ApplyBattered__",
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "POISONED",
+                "id": "InstantEffect_ApplyHarried__",
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "SUFFOCATING",
+                "id": "InstantEffect_ApplyHarried__",
+                "value": 1.0,
+                "keyword": null,
+                "keywordBoon": null
+              }
+            ],
             [
               {
                 "type": "extendedStat",
@@ -5127,7 +5267,102 @@
         },
         {
           "parent": [],
-          "subNodes": [],
+          "subNodes": [
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Entropy",
+                "status": "AMER_PAUCITY",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": 2.5,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Entropy",
+                "status": "AMER_PAUCITY",
+                "id": "PercAttributeIncrease_Intelligence__",
+                "value": 2.5,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Force",
+                "status": "AMER_PAUCITY",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": 2.5,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Force",
+                "status": "AMER_PAUCITY",
+                "id": "PercAttributeIncrease_Intelligence__",
+                "value": 2.5,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_PAUCITY",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": 2.5,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_PAUCITY",
+                "id": "PercAttributeIncrease_Intelligence__",
+                "value": 2.5,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Entropy",
+                "status": "AMER_WITHER",
+                "id": "Stat_ACCURACYBOOST__",
+                "value": -2.5,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Force",
+                "status": "AMER_WITHER",
+                "id": "Stat_ACCURACYBOOST__",
+                "value": -2.5,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_WITHER",
+                "id": "Stat_ACCURACYBOOST__",
+                "value": -2.5,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              }
+            ]
+          ],
           "containedKeywords": [
             "Paucity",
             "Wither"
@@ -5136,8 +5371,57 @@
         {
           "parent": [],
           "subNodes": [
-            [],
             [
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_PAUCITY",
+                "id": "ToggleStatus_AMER_DECAY_NEGALEADERSHIP_AURA__",
+                "value": -1.0,
+                "keyword": "AMER_PAUCITY",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Entropy",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Constitution__",
+                "value": -1.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Force",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Constitution__",
+                "value": -1.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Constitution__",
+                "value": -1.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Constitution__",
+                "value": -10.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
               {
                 "type": "extendedStat",
                 "id": "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay_",
@@ -6158,6 +6442,15 @@
           "subNodes": [
             [
               {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_PHYSICALRESISTANCE__",
+                "value": 6.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
               }
@@ -6574,7 +6867,37 @@
                 "keywordBoon": "mutator"
               }
             ],
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_WITHER",
+                "id": "Stat_MOVEMENTBOOST__",
+                "value": -5.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_WITHER",
+                "id": "Stat_MOVEMENTBOOST__",
+                "value": -1.5,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Entropy",
+                "status": "AMER_WITHER",
+                "id": "Stat_MOVEMENTBOOST__",
+                "value": -1.5,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "extendedStat",
@@ -6777,6 +7100,18 @@
                 "type": "extendedStat",
                 "id": "Regen_Life___",
                 "value": 10.0
+              }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Ability_Leadership",
+                "status": "LEADERSHIP",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": 1.5,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
               }
             ]
           ],
@@ -7062,6 +7397,15 @@
             ],
             [
               {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_DAMAGEBOOST__",
+                "value": 15.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
               },
@@ -7104,6 +7448,24 @@
               }
             ],
             [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_INITIATIVE__",
+                "value": 10.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_DEFIANCE",
+                "id": "FreeReactionCharge_AMER_Centurion__",
+                "value": 2.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
@@ -7983,6 +8345,33 @@
                 "type": "extendedStat",
                 "id": "Status_AddDuration_AMER_WARD__",
                 "value": 1.0
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "PercAttributeIncrease_Intelligence__",
+                "value": 25.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "PercAttributeIncrease_Finesse__",
+                "value": 25.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": 25.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
               }
             ],
             [
@@ -8151,7 +8540,18 @@
                 "value": 1.0
               }
             ],
-            [],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Ability_Leadership",
+                "status": "LEADERSHIP",
+                "id": "Stat_CRITICALCHANCE__",
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "extendedStat",
@@ -8234,8 +8634,58 @@
         {
           "parent": [],
           "subNodes": [
-            [],
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_BANE",
+                "id": "Stat_APRECOVERY__",
+                "value": -1.0,
+                "keyword": "AMER_BANE",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Entropy",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": -2.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": -2.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Embodiment_Inertia",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": -2.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WITHER",
+                "id": "PercAttributeIncrease_Wits__",
+                "value": -20.0,
+                "keyword": "AMER_WITHER",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "extendedStat",
@@ -8697,6 +9147,15 @@
             ],
             [
               {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_DEFIANCE",
+                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "value": 0.02,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
               },
@@ -9066,6 +9525,17 @@
                 "id": "Ascension_Benevolence_MUTA_SourceGenReward",
                 "value": 1.0,
                 "keyword": "Benevolence",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "value": 0.03,
+                "keyword": "AMER_WARD",
                 "keywordBoon": "mutator"
               }
             ]
@@ -9509,6 +9979,18 @@
                 "id": "PHYSICALRESISTANCE",
                 "value": 3.0
               }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Ability_Leadership",
+                "status": "LEADERSHIP",
+                "id": "Regen_BothArmor___",
+                "value": 1.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
+              }
             ]
           ],
           "containedKeywords": [
@@ -9848,6 +10330,26 @@
                 "id": "Ascension_Centurion_MUTA_DamageAndViolentStrikeACT",
                 "value": 1.0,
                 "keyword": "Centurion",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "VolatileArmor_Physical_300_Physical_AMER_RS3_FX_VolatileArmor",
+                "value": 15.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "VolatileArmor_Magic_300_Physical_AMER_RS3_FX_VolatileArmor",
+                "value": 15.0,
+                "keyword": "AMER_WARD",
                 "keywordBoon": "mutator"
               }
             ]
@@ -10349,6 +10851,26 @@
                 "keyword": "Celestial",
                 "keywordBoon": "mutator"
               }
+            ],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Stat_PHYSICALRESISTANCE__",
+                "value": 10.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Stat_PIERCINGRESISTANCE__",
+                "value": 10.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              }
             ]
           ],
           "containedKeywords": [
@@ -10534,6 +11056,15 @@
                 "value": 1.0
               },
               {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_DAMAGEBOOST__",
+                "value": 25.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
               }
@@ -10703,6 +11234,24 @@
             ],
             [
               {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_DODGEBOOST__",
+                "value": 10.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_DEFIANCE",
+                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "value": 0.02,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
               }
@@ -10798,7 +11347,17 @@
                 "keywordBoon": "mutator"
               }
             ],
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Spell_Projectile_BouncingShield_TheArena__",
+                "value": 1.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "extendedStat",
@@ -10998,6 +11557,35 @@
                 "keyword": "Celestial",
                 "keywordBoon": "mutator"
               }
+            ],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_WARD",
+                "id": "MaxRes_EleRes__",
+                "value": 3.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_WARD",
+                "id": "Stat_PHYSICALRESISTANCE__",
+                "value": 7.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_WARD",
+                "id": "Stat_PIERCINGRESISTANCE__",
+                "value": 7.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              }
             ]
           ],
           "containedKeywords": [
@@ -11014,6 +11602,38 @@
                 "id": "Ascension_Celestial_MUTA_WardShareAndAPRec",
                 "value": 1.0,
                 "keyword": "Celestial",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Form",
+                "status": "AMER_WARD",
+                "id": "Stat_SpecialCase_AllResistance__",
+                "value": 1.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Inertia",
+                "status": "AMER_WARD",
+                "id": "Stat_SpecialCase_AllResistance__",
+                "value": 1.0,
+                "keyword": "AMER_WARD",
+                "keywordBoon": "mutator"
+              },
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Embodiment_Life",
+                "status": "AMER_WARD",
+                "id": "Stat_SpecialCase_AllResistance__",
+                "value": 1.0,
+                "keyword": "AMER_WARD",
                 "keywordBoon": "mutator"
               }
             ]
@@ -11191,7 +11811,18 @@
                 "keywordBoon": "activator"
               }
             ],
-            [],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "extendedStat",
+                "scalingStat": "Ability_Leadership",
+                "status": "LEADERSHIP",
+                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "value": 0.0015,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "extendedStat",
@@ -12025,6 +12656,15 @@
           "subNodes": [
             [
               {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Ability_Leadership__",
+                "value": 1.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "keywordBasicActivator",
                 "id": "Prosperity"
               },
@@ -12054,10 +12694,30 @@
           "subNodes": [
             [
               {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes___",
+                "value": 1.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes",
                 "value": 1.0,
                 "keyword": "Prosperity",
+                "keywordBoon": "mutator"
+              }
+            ],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_PURITY",
+                "id": "BattHarr_Threshold_Sum_Self_Both__",
+                "value": 0.025,
+                "keyword": "AMER_PURITY",
                 "keywordBoon": "mutator"
               }
             ]
@@ -12536,6 +13196,15 @@
           "subNodes": [
             [
               {
+                "type": "statusExtension",
+                "subType": "extendedStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost___",
+                "value": 1.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost",
                 "value": 1.0,
@@ -12992,6 +13661,16 @@
             ],
             [
               {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Ability_Leadership",
+                "status": "LEADERSHIP",
+                "id": "Stat_MOVEMENT__",
+                "value": 10.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
+              },
+              {
                 "type": "flexStat",
                 "id": "MOVEMENT",
                 "value": 0.4
@@ -13230,6 +13909,15 @@
               }
             ],
             [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_DEFIANCE",
+                "id": "Stat_SpecialCase_EleResistance__",
+                "value": 7.0,
+                "keyword": "AMER_DEFIANCE",
+                "keywordBoon": "mutator"
+              },
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance"
@@ -13652,6 +14340,18 @@
                 "id": "BattHarr_Threshold_Sum_Self_Both__",
                 "value": 1.3
               }
+            ],
+            [
+              {
+                "type": "scalingExtension",
+                "subType": "flexStat",
+                "scalingStat": "Ability_Leadership",
+                "status": "LEADERSHIP",
+                "id": "Stat_MOVEMENT__",
+                "value": 10.0,
+                "keyword": "Presence",
+                "keywordBoon": "mutator"
+              }
             ]
           ],
           "containedKeywords": [
@@ -13925,6 +14625,14 @@
                 "type": "extendedStat",
                 "id": "Status_AddDuration_AMER_SCORCHED__",
                 "value": 1.0
+              },
+              {
+                "type": "extraStatusApplication",
+                "status": "AMER_SCORCHED",
+                "id": "AMER_BLIND_2",
+                "duration": 6.0,
+                "keyword": null,
+                "keywordBoon": null
               }
             ],
             [
@@ -13991,7 +14699,17 @@
                 "keywordBoon": "mutator"
               }
             ],
-            [],
+            [
+              {
+                "type": "statusExtension",
+                "subType": "flexStat",
+                "status": "AMER_PROSPERITY",
+                "id": "Spell_Shout_Ignition_Splendor__",
+                "value": 1.0,
+                "keyword": "AMER_PROSPERITY",
+                "keywordBoon": "mutator"
+              }
+            ],
             [
               {
                 "type": "specialLogic",
