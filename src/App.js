@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup } from "./components.js"
+import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments } from "./components.js"
 import * as miscData from "./miscData.js"
 import update from 'immutability-helper';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
@@ -231,7 +231,7 @@ class Ascension {
     }
   }
 
-  getAspectElement(asp, interactive=false, mode="edit") {
+  getAspectElement(asp, interactive=false, mode="edit", skipEmptyEmbs=true) {
     if (asp.id == null)
       return null;
 
@@ -244,8 +244,20 @@ class Ascension {
 		let tooltip = []
 		let nasp = game.ascension.getAspect(asp)
 
-		tooltip.push(<div className="aspect-name-bg"><Text key={Math.random()} className="" text={nasp.name}/>
+    // sticky header containing name and embodiment info
+		tooltip.push(<div className="aspect-name-bg">
+        <Text key={Math.random()} className="" text={nasp.name}/>
+
+        <div className="flexbox-horizontal flex-align-centered">
+          <Text text="Reqs:"/>
+          <Embodiments key={Math.random()} skipEmpty={skipEmptyEmbs} amounts={game.ascension.getRequirements(asp.id)}/>
+        </div>
+        <div className="flexbox-horizontal flex-align-centered">
+          <Text text="Rewards:"/>
+          <Embodiments key={Math.random()} skipEmpty={skipEmptyEmbs} amounts={game.ascension.getRewards(asp.id)}/>
+        </div>
       </div>)
+
 
 		for (let x in nasp.nodesText) {
       let parentIndex = (parseInt(x)+1)
@@ -300,7 +312,7 @@ class Ascension {
         tooltip.push(<Text key={Math.random()} text={parentText}/>)
 			  tooltip.push(<Text key={Math.random()} text={subNodeText}/>)
       }
-		}
+    }
 
 		return <div style={{position: "relative"}}>
 			{tooltip}

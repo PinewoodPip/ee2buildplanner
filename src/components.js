@@ -515,7 +515,7 @@ export function RightClickMenu(props) {
 	)
 }
 
-function Embodiments(props) {
+export function Embodiments(props) {
 	let embs = []
 	let reqs;
 	let rews;
@@ -532,10 +532,12 @@ function Embodiments(props) {
 	}
 
 	for (let x in props.amounts) {
-		let className = (unmet.includes(x)) ? "reqs-unmet" : ""
-		embs.push(<Embodiment className={className} type={x} amount={props.amounts[x]}/>)
+		if (!props.skipEmpty || (props.skipEmpty && props.amounts[x] > 0)) {
+			let className = (unmet.includes(x)) ? "reqs-unmet" : ""
+			embs.push(<Embodiment className={className} type={x} amount={props.amounts[x]}/>)
+		}
 	}
-	return <div className="flexbox-horizontal flex-align-centered" style={{width: "unset"}}>
+	return <div className="flexbox-horizontal flex-align-centered" style={{width: "unset", ...props.style}}>
 		{embs}
 	</div>
 }
