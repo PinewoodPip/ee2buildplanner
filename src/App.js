@@ -34,6 +34,15 @@ class App extends React.Component {
         gender: "female",
         lifeType: "alive",
       },
+      // naturally invested attrs
+      attributes: {
+        str: 0,
+        fin: 0,
+        pwr: 0,
+        con: 0,
+        mem: 0,
+        wits: 0,
+      },
       name: "Lindsay Lohan",
       skills: [],
       artifacts: [],
@@ -84,6 +93,7 @@ class App extends React.Component {
       ...utils.importAll(require.context("./images/skills", false, /\.(gif|jpe?g|svg|png)$/)),
       ...utils.importAll(require.context("./images/keywords", false, /\.(gif|jpe?g|svg|png)$/)),
       ...utils.importAll(require.context("./images/interface", false, /\.(gif|jpe?g|svg|png)$/)),
+      ...utils.importAll(require.context("./images/icons", false, /\.(gif|jpe?g|svg|png)$/)),
     }
 
     // load game data

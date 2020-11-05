@@ -154,6 +154,9 @@ export const statCategories = {
 	]
 }
 
+export const playerAttributes = 43
+export const maxNaturalAttributeInvestment = 30
+
 export const stats = {
 	realStats: {
 		str: {
@@ -956,6 +959,22 @@ export const boostsWithKeywords = [
 
 // converts ids to image filenames / in-game names
 export const mappings = {
+	attributeNamesShort: {
+		"str": "Str",
+		"fin": "Fin",
+		"pwr": "Pwr",
+		"con": "Con",
+		"mem": "Mem",
+		"wits": "Wits",
+	},
+	attributeIcons: {
+		"str": "strength",
+		"fin": "finesse",
+		"pwr": "intelligence",
+		"con": "constitution",
+		"mem": "memory",
+		"wits": "wits",
+	},
 	abilityImages: {
 		"Warrior": "Ability_Warfare",
 		"Water": "Ability_Hydrosophist",

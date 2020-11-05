@@ -173,7 +173,7 @@ function Icon(props) {
 	style.width = props.size
 	style.height = props.size
 	return (
-		<div style={style} className={className} onClick={props.onClick}>
+		<div style={style} className={className} onClick={props.onClick} onContextMenu={props.onContextMenu}>
 			<img src={props.img} style={{width: props.size, height: props.size}}/>
 		</div>
 	)
@@ -748,6 +748,58 @@ export function Boosts(props) {
 	)
 }
 
+function IncrementButton(props) {
+	return (
+		<Icon onContextMenu={props.onContextMenu} img={props.img} onClick={props.onClick} className="button" size="24px"/>
+	)
+}
+
+function Attribute(props) {
+	let disabledDecrement = false
+	let disabledIncrement = false
+	let func = (increment) => {
+		game.changeAttribute(props.id, increment)
+	}
+	let attrName = game.mappings.attributeNamesShort[props.id]
+	// let attrAmount = game.app.state.attributes[props.id]
+	let attrAmount = game.getStats().realStats[props.id].amount
+	let menu = [
+		<Text text="Choose option:"/>,
+		<Text text="Max out" onClick={()=>{game.maximizeAttribute(props.id)}}/>,
+		<Text text="Remove all" onClick={()=>{game.minimizeAttribute(props.id)}}/>,
+	]
+
+	return (
+		<div className="flexbox-horizontal flex-align-centered" style={{height: "30px"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
+			<Icon className="" img={utils.getImage(game.mappings.attributeIcons[props.id])} size="24px"/>
+			<Text style={{width: "50px"}} text={utils.format("{0}:", attrName)}/>
+			<Text style={{width: "25px"}} text={utils.format("{0}", attrAmount)}/>
+
+			<div style={{width: "10px"}}/>
+
+			<IncrementButton img={utils.getImage("remove_point")} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
+			<IncrementButton img={utils.getImage("add_point")} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
+		</div>
+	)
+}
+
+class Attributes extends React.Component {
+	render() {
+		let remaining = miscData.playerAttributes - game.totalAttributePointsSpent
+		return <Container className="flexbox-vertical skill-abilities">
+			<Text text="Attributes"/>
+			<Text text={utils.format("{0} Remaining", remaining)}/>
+
+			<Attribute id="str"/>
+			<Attribute id="fin"/>
+			<Attribute id="pwr"/>
+			<Attribute id="con"/>
+			<Attribute id="mem"/>
+			<Attribute id="wits"/>
+		</Container>
+	}
+}
+
 function GreenButton(props) {
 	return (
 		<div className="absolute button" onClick={props.onClick}>
@@ -767,6 +819,7 @@ export class MainInterface extends React.Component {
 					<Skills app={this.props.app}/>
 				</div>
 				<div className="flexbox-horizontal flex-align-start">
+					<Attributes app={this}/>
 					<SkillAbilities app={this.props.app}/>
 					<Ascension app={this.props.app}/>
 				</div>

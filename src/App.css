@@ -62,6 +62,10 @@
   flex-wrap: wrap;
 }
 
+.increment-button:hover {
+  
+}
+
 .flexbox-wrap {
   display: flex;
   /* align-items: center; */

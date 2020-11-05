@@ -9,6 +9,8 @@ export function importAll(r) {
 }
 
 export function hasKey(obj, key) {
+  console.log(obj)
+  console.log(key)
   return Object.keys(obj).includes(key)
 }
 

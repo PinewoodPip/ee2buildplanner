@@ -22,6 +22,48 @@ export class Game {
   }
   mappings = miscData.mappings
 
+  get totalAttributePointsSpent() {
+    let amount = 0
+    for (let x in this.app.state.attributes) {
+      amount += this.app.state.attributes[x]
+    }
+    return amount
+  }
+
+  // todo redo these; changing the state so many times lags a lot.
+  async maximizeAttribute(id) {
+    let amount = this.totalAttributePointsSpent
+    while (amount < miscData.playerAttributes) {
+      await this.changeAttribute(id, 1)
+      amount++;
+    }
+  }
+
+  async minimizeAttribute(id) {
+    let amount = game.app.state.attributes[id]
+    while (amount > 0) {
+      await this.changeAttribute(id, -1)
+      amount--;
+    }
+  }
+
+  async changeAttribute(id, increment) {
+    let attrs = cloneDeep(this.app.state.attributes)
+
+    let attr = attrs[id]
+
+    if (attr + increment < 0)
+      return
+    if (this.totalAttributePointsSpent + increment > miscData.playerAttributes)
+      return;
+    if (attr + increment > miscData.maxNaturalAttributeInvestment)
+      return;
+
+    attrs[id] += increment
+
+    await this.app.setState({attributes: attrs})
+  }
+
   getStats() {
     // todo clean up params
     function addStat(id, amount, stat) {
@@ -79,28 +121,28 @@ export class Game {
     // yeah first we will need to track default amounts and add all stats to the stats obj
 
     let realStr = (
-      stats["flexStat"]["STRENGTH"].amount + 
-      (stats["flexStat"]["STRENGTH"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
+      stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str +
+      (stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
 
     let realFin = (
-      stats["flexStat"]["FINESSE"].amount + 
-      (stats["flexStat"]["FINESSE"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
+      stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin +
+      (stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
 
     let realInt = (
-      stats["flexStat"]["INTELLIGENCE"].amount + 
-      (stats["flexStat"]["INTELLIGENCE"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
+      stats["flexStat"]["INTELLIGENCE"].amount + game.app.state.attributes.pwr +
+      (stats["flexStat"]["INTELLIGENCE"].amount + game.app.state.attributes.pwr - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
 
     let realCon = (
-      stats["flexStat"]["CONSTITUTION"].amount + 
-      (stats["flexStat"]["CONSTITUTION"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
+      stats["flexStat"]["CONSTITUTION"].amount + game.app.state.attributes.con +
+      (stats["flexStat"]["CONSTITUTION"].amount + game.app.state.attributes.con - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
 
     let realMem = (
-      stats["flexStat"]["MEMORY"].amount + 
-      (stats["flexStat"]["MEMORY"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
+      stats["flexStat"]["MEMORY"].amount + game.app.state.attributes.mem +
+      (stats["flexStat"]["MEMORY"].amount + game.app.state.attributes.mem - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
 
     let realWits = (
-      stats["flexStat"]["WITS"].amount + 
-      (stats["flexStat"]["WITS"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
+      stats["flexStat"]["WITS"].amount + game.app.state.attributes.wits +
+      (stats["flexStat"]["WITS"].amount + game.app.state.attributes.wits - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
 
     stats.realStats["str"] = {type: "realStats", id: "str", amount: realStr}
     stats.realStats["fin"] = {type: "realStats", id: "fin", amount: realFin}
