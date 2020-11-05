@@ -125,6 +125,8 @@ keywordStatuses = [
     "AMER_PROSPERITY",
 ]
 
+stringPrefix = "AMER_UI_Ascension_"
+
 def prettifyDescription(string):
     newStr = string.replace("<br>", "\n")
 
@@ -154,6 +156,8 @@ def prettifyDescription(string):
 
 current = (None, None)
 
+strings = {}
+
 f = open("TSK_Import.txt", encoding='utf8')
 for line in f.readlines():
     interpreted = False
@@ -170,6 +174,8 @@ for line in f.readlines():
             if reg == "nodes":
                 # text
                 ascensions[search["family"]][search["id"]]["nodesText"].append({"parent": text, "subNodes": []})
+                index = len(ascensions[search["family"]][search["id"]]["nodesText"]) - 1
+                strings[ stringPrefix + search["family"].capitalize() + "_" + search["id"] + "_Node_" + str(index) ] = text
 
                 ascensions[search["family"]][search["id"]]["nodes"].append({"parent": [], "subNodes": []})
                 interpreted = True
@@ -178,6 +184,11 @@ for line in f.readlines():
 
                 # text
                 ascensions[search["family"]][search["id"]]["nodesText"][int(search["index"])]["subNodes"].append(text)
+
+                index = len(ascensions[search["family"]][search["id"]]["nodesText"]) - 1
+                subIndex = len(ascensions[search["family"]][search["id"]]["nodesText"][int(search["index"])]["subNodes"]) - 1
+
+                strings[ stringPrefix + search["family"].capitalize() + "_" + search["id"] + "_Node_" + str(index) + "_" + str(subIndex) ] = text
                 pass
             else:
                 ascensions[search["family"]][search["id"]][reg] = text
@@ -383,3 +394,18 @@ for line in ascData.readlines():
 output = json.dumps(ascensions, indent=2, ensure_ascii=False)
 with open("ascension.json", "w", encoding="utf8") as w:
     w.write(output)
+
+
+lengthThreshold = 42
+# remove extra text
+relevantStrings = {}
+for string in strings:
+    if "Learn the Ada" not in strings[string]:			
+        strings[string] = strings[string].split("\n»")[0]
+    if (len(strings[string]) > lengthThreshold):
+        print(str(len(strings[string])) + strings[string])
+        relevantStrings[string] = strings[string]
+
+stringsOutput = json.dumps(relevantStrings, indent=2, ensure_ascii=False, sort_keys=True)
+with open("tsk_export.json", "w", encoding="utf8") as w:
+    w.write(stringsOutput)

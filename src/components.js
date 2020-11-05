@@ -669,7 +669,15 @@ export function Boosts(props) {
 			let displayString;
 
 			if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
-				displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
+
+				if (stat.type == "specialLogic") {
+					// skip if we dont have it
+					if (stat.amount == 0)
+						continue
+					displayString = game.ascension.specialStrings[miscData.stats[stat.type][stat.id].referenceString]
+				}
+				else
+					displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
 			}
 			else {
 				displayString = utils.format("{0}: {1}", stat.id, stat.amount)
@@ -689,7 +697,7 @@ export function Boosts(props) {
 	}
 
 	// categorize stat boosts to display them in different boxes
-	let categorizedBoosts = {resistances: []}
+	let categorizedBoosts = {resistances: [], realAttributes: [], skillAbilities: [], realResistances: []}
 	for (let x in miscData.statCategories) {
 		let statsToCategorize = miscData.statCategories[x]
 
@@ -714,13 +722,23 @@ export function Boosts(props) {
 
 			<div style={{height: "20px"}}/>
 
-			<div className="flexbox-horizontal" style={{alignItems: "flex-start"}}>
+			<div className="flexbox-horizontal flex-wrap" style={{alignItems: "flex-start"}}>
 				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
 					<Text text="Resistances"/>
 					<hr/>
-					{categorizedBoosts.resistances}
+					{categorizedBoosts.realResistances}
 				</div>
 				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
+					<Text text="Real Attributes"/>
+					<hr/>
+					{categorizedBoosts.realAttributes}
+				</div>
+				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
+					<Text text="Skill Abilites"/>
+					<hr/>
+					{categorizedBoosts.skillAbilities}
+				</div>
+				<div style={{maxHeight: "500px", width: "200px"}} className="flexbox-vertical flex-align-start wrap-y">
 					<Text text="Temp place for other stats"/>
 					<hr/>
 					{boosts}

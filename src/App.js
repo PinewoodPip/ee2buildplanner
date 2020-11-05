@@ -25,6 +25,9 @@ class App extends React.Component {
         position: null,
         element: null,
       },
+      DRAmount: 100,
+      DR: true,
+      rounding: 2,
 
       physique: {
         race: "lizard",
@@ -88,6 +91,7 @@ class App extends React.Component {
       "/Scripts/Artifacts/artifacts.json",
       "/Scripts/Ascension/ascension.json",
       "/Scripts/Skills/Output/skills.json",
+      "/Scripts/Ascension/tsk_export.json",
     ]
     let promises = []
 
@@ -100,6 +104,7 @@ class App extends React.Component {
         game.artifacts = responses[0].data
         game.ascension.aspects = responses[1].data
         game.skills = responses[2].data
+        game.ascension.specialStrings = responses[3].data
         game.ascension.app = this
 
         // start rendering once all data is ready

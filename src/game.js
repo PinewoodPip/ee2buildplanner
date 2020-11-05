@@ -70,15 +70,87 @@ export class Game {
       }
     }
 
-    console.log(stats)
+    return this.getRealStats(stats);
+  }
+
+  getRealStats(stats) {
 
     // calculate real, absolute amounts of stats
     // yeah first we will need to track default amounts and add all stats to the stats obj
 
-    // let str = stats["flexStat"]["STRENGTH"]
-    // stats["str"] = {type: "realStat", id: "str", amount: str}
+    let realStr = (
+      stats["flexStat"]["STRENGTH"].amount + 
+      (stats["flexStat"]["STRENGTH"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
 
-    return stats;
+    let realFin = (
+      stats["flexStat"]["FINESSE"].amount + 
+      (stats["flexStat"]["FINESSE"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
+
+    let realInt = (
+      stats["flexStat"]["INTELLIGENCE"].amount + 
+      (stats["flexStat"]["INTELLIGENCE"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
+
+    let realCon = (
+      stats["flexStat"]["CONSTITUTION"].amount + 
+      (stats["flexStat"]["CONSTITUTION"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
+
+    let realMem = (
+      stats["flexStat"]["MEMORY"].amount + 
+      (stats["flexStat"]["MEMORY"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
+
+    let realWits = (
+      stats["flexStat"]["WITS"].amount + 
+      (stats["flexStat"]["WITS"].amount - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
+
+    stats.realStats["str"] = {type: "realStats", id: "str", amount: realStr}
+    stats.realStats["fin"] = {type: "realStats", id: "fin", amount: realFin}
+    stats.realStats["pwr"] = {type: "realStats", id: "pwr", amount: realInt}
+    stats.realStats["con"] = {type: "realStats", id: "con", amount: realCon}
+    stats.realStats["mem"] = {type: "realStats", id: "mem", amount: realMem}
+    stats.realStats["wits"] = {type: "realStats", id: "wits", amount: realWits}
+
+    // resistances
+    let realResPhys = (
+      stats.flexStat.PHYSICALRESISTANCE.amount + stats.flexStat.AllResistance.amount
+    )
+    let realResPierce = (
+      stats.flexStat.PIERCINGRESISTANCE.amount + stats.flexStat.AllResistance.amount
+    )
+    let realResFire = (
+      stats.flexStat.FIRERESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
+    )
+    let realResEarth = (
+      stats.flexStat.EARTHRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
+    )
+    let realResPoison = (
+      stats.flexStat.POISONRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
+    )
+    let realResWater = (
+      stats.flexStat.WATERRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
+    )
+    let realResAir = (
+      stats.flexStat.AIRRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
+    )
+
+    stats.realStats["res_physical"] = {type: "realStats", id: "res_physical", amount: this.applyDR(realResPhys)}
+    stats.realStats["res_piercing"] = {type: "realStats", id: "res_piercing", amount: this.applyDR(realResPierce)}
+    stats.realStats["res_fire"] = {type: "realStats", id: "res_fire", amount: this.applyDR(realResFire)}
+    stats.realStats["res_water"] = {type: "realStats", id: "res_water", amount: this.applyDR(realResWater)}
+    stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
+    stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
+    stats.realStats["res_air"] = {type: "realStats", id: "res_air", amount: this.applyDR(realResAir)}
+
+    return stats
+  }
+
+  // apply diminishing returns; used for resistances in the game, if the setting is on
+  applyDR(statAmount) {
+    if (!this.app.state.DR)
+      return statAmount
+
+    console.log(statAmount)
+    let effectivenessReduction = statAmount / (statAmount + this.app.state.DRAmount)
+    return utils.round(statAmount * (1 - effectivenessReduction), this.app.state.rounding)
   }
 
   render() {this.app.forceUpdate()}
@@ -87,6 +159,7 @@ export class Game {
 // class for methods related to ascension mechanics. also holds all aspect data
 export class Ascension {
   aspects;
+  specialStrings;
   app;
 
   // whether the current build meets all requirements

@@ -122,6 +122,35 @@ export const statCategories = {
 		{type: "flexStat", id: "EARTHRESISTANCE"},
 		{type: "flexStat", id: "AIRRESISTANCE"},
 		{type: "flexStat", id: "POISONRESISTANCE"},
+	],
+	realResistances: [
+		{type: "realStats", id: "res_physical"},
+		{type: "realStats", id: "res_piercing"},
+		{type: "realStats", id: "res_fire"},
+		{type: "realStats", id: "res_water"},
+		{type: "realStats", id: "res_earth"},
+		{type: "realStats", id: "res_air"},
+		{type: "realStats", id: "res_poison"},
+	],
+	realAttributes: [
+		{type: "realStats", id: "str"},
+		{type: "realStats", id: "fin"},
+		{type: "realStats", id: "pwr"},
+		{type: "realStats", id: "con"},
+		{type: "realStats", id: "mem"},
+		{type: "realStats", id: "wits"},
+	],
+	skillAbilities: [
+		{type: "flexStat", id: "AirSpecialist"},
+		{type: "flexStat", id: "EarthSpecialist"},
+		{type: "flexStat", id: "RangerLore"},
+		{type: "flexStat", id: "WaterSpecialist"},
+		{type: "flexStat", id: "Necromancy"},
+		{type: "flexStat", id: "Polymorph"},
+		{type: "flexStat", id: "FireSpecialist"},
+		{type: "flexStat", id: "RogueLore"},
+		{type: "flexStat", id: "Summoning"},
+		{type: "flexStat", id: "WarriorLore"},
 	]
 }
 
@@ -130,7 +159,7 @@ export const stats = {
 		str: {
 			display: "Strength: {0}",
 		},
-		finesse: {
+		fin: {
 			display: "Finesse: {0}",
 		},
 		pwr: {
@@ -144,6 +173,28 @@ export const stats = {
 		},
 		wits: {
 			display: "Wits: {0}",
+		},
+		// resistances
+		res_fire: {
+			display: "Fire Resistance: {0}%"
+		},
+		res_water: {
+			display: "Water Resistance: {0}%"
+		},
+		res_earth: {
+			display: "Earth Resistance: {0}%"
+		},
+		res_poison: {
+			display: "Poison Resistance: {0}%"
+		},
+		res_air: {
+			display: "Air Resistance: {0}%"
+		},
+		res_physical: {
+			display: "Physical Resistance: {0}%"
+		},
+		res_piercing: {
+			display: "Piercing Resistance: {0}%"
 		},
 	},
 	flexStat: {
@@ -228,9 +279,6 @@ export const stats = {
 		EARTHRESISTANCE: {
 			display: "Earth Resistance: {0}%"
 		},
-		PHYSICALRESISTANCE: {
-			display: "Physical Resistance: {0}%"
-		},
 		POISONRESISTANCE: {
 			display: "Poison Resistance: {0}%"
 		},
@@ -270,6 +318,9 @@ export const stats = {
 		},
 		WarriorLore: {
 			display: "Warfare: {0}"
+		},
+		Polymorph: {
+			display: "Polymorph: {0}"
 		},
 
 		Leadership: {
@@ -456,35 +507,431 @@ export const stats = {
 		Ascension_Elementalist_ACT_FireEarth_AllySkills: {
 			display: " : {0}",
 			bool: true,
-			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_3.0"
+			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_3_0"
 		},
 		Ascension_Predator_ACT_BHStacks: {
 			display: " : {0}",
 			bool: true,
-			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_3.1"
+			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_3_1"
 		},
 		Ascension_Elementalist_MUTA_FireEarth_NonTieredStatuses: {
 			display: " : {0}",
 			bool: true,
-			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_4.0"
+			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_4_0"
+		},
+		Ascension_Predator_MUTA_Slowed2: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_4_1"
+		},
+		Ascension_MageFin: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheFalcon_Node_4_4"
+		},
+		Ascension_Paucity_ACT_BHStacks: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHatchet_Node_3_0"
+		},
+		Ascension_ViolentStrike_ACT_0AP: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHatchet_Node_3_1"
+		},
+		Ascension_ViolentStrike_MUTA_Acid: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHatchet_Node_4_0"
+		},
+		Ascension_ViolentStrike_MUTA_Bleeding: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHatchet_Node_4_2"
+		},
+		Ascension_ViolentStrike_MUTA_Suffocating: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHatchet_Node_4_3"
+		},
+		Ascension_ViolentStrike_MUTA_Terrified2: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHatchet_Node_4_4"
+		},
+		Ascension_WeaponSkillTalent_ThePawn: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHornet_Node_2_0"
+		},
+		Ascension_WeaponSkillTalent_Sortilege: {
+			display: " : {0}",
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheHornet_Node_2_1"
+		},
+		Ascension_WeaponSkillTalent_Inconspicuous: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheSerpent_Node_2_0"
+		},
+		Ascension_WeaponSkillTalent_Sortilege: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheSerpent_Node_2_1"
+		},
+		Ascension_Elementalist_ACT_PredatorOrVuln3: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcanist_Node_3_0"
+		},
+		Ascension_ViolentStrike_ACT_ElemStacks: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcanist_Node_3_1"
+		},
+		Ascension_Elementalist_MUTA_EmulateSkillSI: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcanist_Node_4_0"
+		},
+		Ascension_Elementalist_MUTA_FeedbackAttribBonus: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcanist_Node_4_1"
+		},
+		Ascension_ViolentStrike_MUTA_ForceEntropyLifeDamageScaling: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcanist_Node_4_2"
+		},
+		Ascension_Paucity_ACT_BHStacks: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcher_Node_3_0"
+		},
+		Ascension_ViolentStrike_ACT_DamageAtOnce: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcher_Node_3_1"
+		},
+		Ascension_Paucity_ACT_MK2_ArmorDepleted: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcher_Node_3_2"
+		},
+		Ascension_ViolentStrike_MUTA_EleArrowheads: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcher_Node_4_1"
+		},
+		Ascension_ViolentStrike_MUTA_BHStackNonBoss: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheArcher_Node_4_2"
+		},
+		Ascension_Paucity_ACT_VitThreshold: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheManticore_Node_3_0"
+		},
+		Ascension_Predator_ACT_Terrified: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheManticore_Node_3_1"
+		},
+		Ascension_Paucity_MUTA_EmulateBlackShroud: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheManticore_Node_4_0"
+		},
+		Ascension_Paucity_MUTA_Sneak: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheManticore_Node_4_1"
+		},
+		Ascension_Predator_MUTA_EmulateFoKSI: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheManticore_Node_4_2"
+		},
+		Ascension_Elementalist_ACT_FireEarth_AllySkills: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheScorpion_Node_2_0"
+		},
+		Ascension_VitalityVoid_ACT_DamageAtOnce: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheScorpion_Node_2_1"
+		},
+		Ascension_Elementalist_ACT_FireEarth_AllySkills_MK2_NecroRogue: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheScorpion_Node_2_2"
+		},
+		Ascension_Elementalist_MUTA_FeedbackCrit: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheScorpion_Node_3_0"
+		},
+		Ascension_VitalityVoid_MUTA_AcidSuffCalc: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheScorpion_Node_3_1"
+		},
+		Ascension_Predator_ACT_Dazzled: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheTiger_Node_2_0"
+		},
+		Ascension_Purity_ACT_VitThreshold: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheTiger_Node_2_1"
+		},
+		Ascension_Purity_ACT_MK2_EnemyKilled: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheTiger_Node_2_2"
+		},
+		Ascension_Predator_MUTA_DualWieldrange: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheTiger_Node_3_0"
+		},
+		Ascension_Predator_MUTA_Hemorrhage: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheTiger_Node_3_1"
+		},
+		Ascension_MageFin: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_1_3"
+		},
+		Ascension_2HArmorBonus: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_2_0"
+		},
+		Ascension_ViolentStrike_ACT_BasicOnHit: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_2_1"
+		},
+		Ascension_ViolentStrike_MUTA_FinStrDamageScaling: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_3_1"
+		},
+		Ascension_Purity_MUTA_Conqueror: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_4_0"
+		},
+		Ascension_ViolentStrike_MUTA_VitalityVoidACT: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_4_1"
+		},
+		Ascension_SourceGen_Conq: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheConqueror_Node_4_2"
+		},
+		Ascension_Elementalist_ACT_OccultOrElem: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheKraken_Node_2_0"
+		},
+		Ascension_Elementalist_MUTA_FreeOHBasicAttack: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheKraken_Node_2_1"
+		},
+		Ascension_Elementalist_MUTA_FeedbackPowerEffect: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheKraken_Node_3_0"
+		},
+		Ascension_VitalityVoid_MUTA_TeleportWithered: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheKraken_Node_3_1"
+		},
+		Ascension_Elementalist_MUTA_DoTs: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheKraken_Node_4_0"
+		},
+		Ascension_VitalityVoid_MUTA_Glaciate: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_TheKraken_Node_4_1"
+		},
+		Ascension_Paucity_ACT_Berserk: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_2_0"
+		},
+		Ascension_VitalityVoid_MUTA_2HDamageFromForce: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_2_1"
+		},
+		Ascension_Paucity_MUTA_WitherACT_BasicAttack: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_3_0"
+		},
+		Ascension_Predator_MUTA_LifestealDamageFromForce: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_3_1"
+		},
+		Ascension_Paucity_MUTA_EffectiveSI_Wrath: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_4_0"
+		},
+		Ascension_Predator_MUTA_EmulateWiltingSI: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_4_1"
+		},
+		Ascension_T3BlockedForDamage: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Force_Wrath_Node_4_2"
+		},
+		// sortilege
+		Ascension_VitalityVoid_ACT_SourceSpent: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheFly_Node_3_0"
+		},
+		Ascension_Wither_ACT_SlowAndWeak2And3: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheFly_Node_3_1"
+		},
+		Ascension_VitalityVoid_MUTA_Terrified2: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheFly_Node_4_0"
+		},
+		Ascension_Wither_MUTA_CritAppliesSubj2: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheFly_Node_4_1"
+		},
+		// magef
+		Ascension_Occultist_ACT_TerrifiedAndSubj2And3: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheVulture_Node_3_0"
+		},
+		Ascension_Predator_ACT_AllyAoO: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheVulture_Node_3_1"
+		},
+		Ascension_Occultist_MUTA_Weakened2: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheVulture_Node_4_0"
+		},
+		Ascension_Predator_MUTA_CritFromTargetLowLife: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheVulture_Node_4_1"
+		},
+		Ascension_WeaponSkillTalent_ThePawn: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheWolf_Node_2_0"
+		},
+		Ascension_WeaponSkillTalent_Inconspicuous: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheWolf_Node_2_1"
+		},
+		Ascension_VitalityVoid_ACT_VitThresholdPerTurn: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_3_0"
+		},
+		Ascension_Wither_ACT_Bleeding: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_3_1"
+		},
+		Ascension_VitalityVoid_MUTA_HitCountExtendSourceGen: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_4_0"
+		},
+		Ascension_Wither_MUTA_BasicAttackSIGotS: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_4_1"
+		},
+		Ascension_SummonLimitTo2: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_4_3"
+		},
+		Ascension_Paucity_ACT_AllyDeathsPerRound: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Extinction_Node_2_0"
+		},
+		Ascension_Predator_ACT_NearCorpseEndOfTurn: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Extinction_Node_2_1"
+		},
+		Ascension_Skill_BoneshapedSkitterer: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Extinction_Node_2_2"
+		},
+		Ascension_Paucity_MUTA_SummonACT: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Extinction_Node_3_0"
+		},
+		Ascension_Predator_MUTA_SkittererConversion: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Extinction_Node_3_1"
+		},
+		Ascension_Predator_MUTA_DamagePerCorpse: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Extinction_Node_3_2"
+		},
+		Ascension_Occultist_ACT_AllyWither: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheImp_Node_3_0"
+		},
+		Ascension_Wither_ACT_SubjAndTerrified: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheImp_Node_3_1"
+		},
+		Ascension_Occultist_MUTA_NowBasicAttack: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheImp_Node_4_0"
+		},
+		Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheImp_Node_4_2"
+		},
+		Ascension_Predator_ACT_AllyPredator: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheHyena_Node_3_0"
+		},
+		Ascension_VitalityVoid_ACT_SourceSpent: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheHyena_Node_3_1"
+		},
+		Ascension_VitalityVoid_ACT_SourceSpent_MK2_T3Status: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheHyena_Node_3_2"
+		},
+		Ascension_Predator_MUTA_VoracityACT: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheHyena_Node_4_0"
+		},
+		Ascension_VitalityVoid_MUTA_Terrified2AndSubj2: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheHyena_Node_4_1"
+		},
+		Ascension_VitalityVoid_MUTA_DamageFromTargetCount: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheHyena_Node_4_2"
+		},
+		Ascension_Adaptation_ACT_AllyKilled: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheSupplicant_Node_2_0"
+		},
+		Ascension_Occultist_ACT_AlliedSummonKilled: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheSupplicant_Node_2_1"
+		},
+		Ascension_Adaptation_MUTA_PercPowerLifesteal: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_0"
+		},
+		Ascension_Occultist_MUTA_MakeTotem: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_1"
+		},
+		Ascension_Occultist_MUTA_EmulateInfectSpendAdapt: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_2"
+		},
+		Ascension_Skill_AccursedVessel: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_3"
+		},
+		Ascension_Predator_ACT_AllyViolentStrike: {
+			bool: true,
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_2_0"
 		},
 		Status_AddDuration_AMER_SCORCHED: {
-			display: " : {0}",
 			bool: true,
 			referenceString: ""
 		},
 		Status_AddDuration_AMER_SCORCHED: {
-			display: " : {0}",
 			bool: true,
 			referenceString: ""
 		},
 		Status_AddDuration_AMER_SCORCHED: {
-			display: " : {0}",
 			bool: true,
 			referenceString: ""
 		},
 		Status_AddDuration_AMER_SCORCHED: {
-			display: " : {0}",
+			bool: true,
+			referenceString: ""
+		},
+		Status_AddDuration_AMER_SCORCHED: {
+			bool: true,
+			referenceString: ""
+		},
+		Status_AddDuration_AMER_SCORCHED: {
 			bool: true,
 			referenceString: ""
 		},

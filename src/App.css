@@ -58,6 +58,10 @@
   flex-wrap: wrap;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .flexbox-wrap {
   display: flex;
   /* align-items: center; */

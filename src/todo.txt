@@ -51,3 +51,10 @@ X prevent adding an asp twice
 - after adding an asp, switch to it
 - tooltips for keywords
 - dont rely on containedKeywords for determining keywords, as those also include free charges?
+
+
+- txt field
+- dropdown with multiple builds
+- saving/exporting
+- ap/effects in skills
+- attr picker

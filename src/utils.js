@@ -12,6 +12,11 @@ export function hasKey(obj, key) {
   return Object.keys(obj).includes(key)
 }
 
+export function round(number, places=1) {
+  var rounded = Math.round( number * Math.pow(10, places) ) / Math.pow(10, places);
+  return rounded;
+}
+
 // get an image by its filename (extension excluded)
 export function getImage(id) {
   // missing image; some skills don't have an icon assigned and just say "unknown"
