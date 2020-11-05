@@ -4,6 +4,7 @@ import 'tippy.js/dist/tippy.css';
 import _ from "underscore";
 import update from 'immutability-helper';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
+import { cloneDeep } from "lodash"
 
 import { ContextMenuContents} from "./genericComponents.js"
 import { Menu, Item, Separator, Submenu, MenuProvider } from 'react-contexify';
@@ -133,9 +134,25 @@ class CharacterProfile extends React.Component {
 }
 
 function Portrait(props) {
+	function changePortrait(e) {
+		let elements = []
+		for (let x in miscData.portraits) {
+			elements.push(
+				<Icon className="button" img={utils.getImage(miscData.portraits[x])} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portraitIndex: x})}}/>
+			)
+		}
+
+		let realElements = [
+			<div className="flexbox-horizontal flex-wrap" style={{maxWidth: "600px"}}>
+				{elements}
+			</div>
+		]
+
+		props.app.contextMenu(realElements, e)
+	}
 	return (
-		<div className="portrait">
-			{/* todo */}
+		<div className="portrait" onContextMenu={changePortrait}>
+			<Icon img={utils.getImage(miscData.portraits[props.app.state.portraitIndex])} style={{width: "120px", height: "150px"}}/>
 		</div>
 	)
 }
@@ -169,12 +186,21 @@ function CharacterNameEditButton(props) {
 
 function Icon(props) {
 	let className = (props.className != undefined) ? props.className : "icon"
-	let style = (props.style != undefined) ? props.style : {}
-	style.width = props.size
-	style.height = props.size
+	let style = (props.style != undefined) ? cloneDeep(props.style) : {}
+
+	if (props.style != undefined) {
+		style.width = (props.style.width != undefined) ? props.style.width : props.size
+		style.height = (props.style.height != undefined) ? props.style.height : props.size
+	}
+	else {
+		style.width = props.size
+		style.height = props.size
+	}
+	
 	return (
 		<div style={style} className={className} onClick={props.onClick} onContextMenu={props.onContextMenu}>
-			<img src={props.img} style={{width: props.size, height: props.size}}/>
+			{/* <img src={props.img} style={{width: props.size, height: props.size}}/> */}
+			<img src={props.img} style={{width: "100%", height: "100%"}}/>
 		</div>
 	)
 }

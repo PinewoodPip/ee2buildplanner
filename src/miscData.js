@@ -193,6 +193,26 @@ export const statCategories = {
 export const playerAttributes = 43
 export const maxNaturalAttributeInvestment = 30
 
+export const portraits = [
+	"ifan",
+	"lohse",
+	"sebille",
+	"red_prince",
+	"beast",
+	"fane",
+	"human_m",
+	"human_f",
+	"elf_m",
+	"elf_f",
+	"dwarf_m",
+	"dwarf_f",
+	"lizard_m",
+	"lizard_f",
+	"magister_waifu",
+	"derpy_bald_guy",
+	"obama",
+]
+
 export const stats = {
 	realStats: {
 		str: {

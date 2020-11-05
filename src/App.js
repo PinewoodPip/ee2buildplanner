@@ -30,6 +30,8 @@ class App extends React.Component {
       rounding: 2,
       currentKeyword: "Abeyance",
 
+      portraitIndex: 0,
+      customPortrait: null,
       physique: {
         race: "lizard",
         gender: "female",
@@ -103,6 +105,7 @@ class App extends React.Component {
       ...utils.importAll(require.context("./images/keywords", false, /\.(gif|jpe?g|svg|png)$/)),
       ...utils.importAll(require.context("./images/interface", false, /\.(gif|jpe?g|svg|png)$/)),
       ...utils.importAll(require.context("./images/icons", false, /\.(gif|jpe?g|svg|png)$/)),
+      ...utils.importAll(require.context("./images/portraits", false, /\.(gif|jpe?g|svg|png)$/)),
     }
 
     // load game data
@@ -139,6 +142,15 @@ class App extends React.Component {
 
   closePopupPanel() {this.setState({popup: null})}
 
+  handleKeyPress(e) {
+    let key = e.key
+
+    console.log(key)
+    if (key == "Escape") {
+      this.closeContext()
+    }
+  }
+
   render() {
     // only start rendering once all data has been fetched
     if (this.state.ready) {
@@ -165,7 +177,7 @@ class App extends React.Component {
 
       return (
         // onClick={this.closeContext.bind(this)}
-        <div className="App" >
+        <div className="App" onKeyDown={(e)=>{this.handleKeyPress(e)}}>
           {contextMenu}
           {popup}
           <MainInterface app={this}/>
