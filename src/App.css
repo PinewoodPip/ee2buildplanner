@@ -23,6 +23,15 @@
   /* filter: hue-rotate(360 deg); */
 }
 
+.portrait-frame {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  transform: translate(-50%, -97.5%);
+}
+
 .absolute p {
   position: absolute;
   text-align: center;
@@ -364,8 +373,8 @@ hr {
 }
 
 .portrait {
-  width: 120px;
-  height: 150px;
+  width: 108px;
+  height: 135px;
   border: 1px black solid;
 }
 
