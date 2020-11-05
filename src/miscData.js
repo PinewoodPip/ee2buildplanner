@@ -151,6 +151,22 @@ export const statCategories = {
 		{type: "flexStat", id: "RogueLore"},
 		{type: "flexStat", id: "Summoning"},
 		{type: "flexStat", id: "WarriorLore"},
+	],
+	summonBoosts: [
+		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DAMAGEBOOST"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_ACCURACYBOOST"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_LIFESTEAL"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_CRITICALCHANCE"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_MOVEMENT"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_SpecialCase_AllResistance"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Ability_Perseverance"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE"},
+		{type: "extendedStat", id: "SummonStat_ExtendedStat_Regen_Life"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DODGEBOOST"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_VITALITYBOOST"},
+		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
+		{type: "specialLogic", id: "Ascension_SummonLimitTo2"},
 	]
 }
 
@@ -827,7 +843,8 @@ export const stats = {
 		},
 		Ascension_SummonLimitTo2: {
 			bool: true,
-			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_4_3"
+			referenceString: "AMER_UI_Ascension_Entropy_BloodApe_Node_4_3",
+			strings: ["Can have 1 controllable summon at once.", "Can have 2 controllable summons at once."]
 		},
 		Ascension_Paucity_ACT_AllyDeathsPerRound: {
 			bool: true,

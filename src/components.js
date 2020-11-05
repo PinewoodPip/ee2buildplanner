@@ -339,7 +339,6 @@ export function AscensionPopup(props) {
 			nodes: currentlyViewed.nodes,
 		})
 
-		console.log(props.app.state)
 		props.app.setState({aspects: asps, selectedAspect: props.app.state.aspects.length, popup: null})
 	}
 
@@ -674,7 +673,12 @@ export function Boosts(props) {
 					// skip if we dont have it
 					if (stat.amount == 0)
 						continue
-					displayString = game.ascension.specialStrings[miscData.stats[stat.type][stat.id].referenceString]
+					if (stat.stringIfTrue != undefined)
+						displayString = stat.stringIfTrue
+					// else
+					// 	displayString = stat.id
+					else
+						displayString = game.ascension.specialStrings[miscData.stats[stat.type][stat.id].referenceString]
 				}
 				else
 					displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
@@ -697,19 +701,36 @@ export function Boosts(props) {
 	}
 
 	// categorize stat boosts to display them in different boxes
-	let categorizedBoosts = {resistances: [], realAttributes: [], skillAbilities: [], realResistances: []}
+	let categorizedBoosts = {resistances: [], realAttributes: [], skillAbilities: [], realResistances: [], summonBoosts: []}
 	for (let x in miscData.statCategories) {
 		let statsToCategorize = miscData.statCategories[x]
 
 		for (let z in statsToCategorize) {
 			let statToCategorize = statsToCategorize[z]
 
-			console.log(statStrings)
+			// console.log(statStrings)
 			if (utils.hasKey(statStrings, statToCategorize.type) && utils.hasKey(statStrings[statToCategorize.type], statToCategorize.id)) {
 				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={statStrings[statToCategorize.type][statToCategorize.id]}/>)
 			}
 			else {
-				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={utils.format(miscData.stats[statToCategorize.type][statToCategorize.id].display, 0)}/>)
+				console.log(statToCategorize.id)
+				let text;
+				if (statToCategorize.type != "specialLogic")
+					text = miscData.stats[statToCategorize.type][statToCategorize.id].display
+				else {
+					// improve this
+					if (miscData.stats[statToCategorize.type][statToCategorize.id].strings != undefined) {
+						let strings = miscData.stats[statToCategorize.type][statToCategorize.id].strings
+						let val = stats[statToCategorize.type][statToCategorize.id].amount
+						text = strings[Math.min(val, strings.length-1)]
+						console.log(Math.max(val, strings.length))
+					}
+					else {
+						text = miscData.stats[statToCategorize.type][statToCategorize.id].referenceString
+					}
+				}
+
+				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={utils.format(text, 0)}/>)
 			}
 		}
 	}
@@ -737,6 +758,11 @@ export function Boosts(props) {
 					<Text text="Skill Abilites"/>
 					<hr/>
 					{categorizedBoosts.skillAbilities}
+				</div>
+				<div style={{maxHeight: "500px", width: "300px"}} className="flexbox-vertical flex-align-start wrap-y">
+					<Text text="Summon Boosts"/>
+					<hr/>
+					{categorizedBoosts.summonBoosts}
 				</div>
 				<div style={{maxHeight: "500px", width: "200px"}} className="flexbox-vertical flex-align-start wrap-y">
 					<Text text="Temp place for other stats"/>

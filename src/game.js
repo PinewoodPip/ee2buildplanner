@@ -69,11 +69,11 @@ export class Game {
     function addStat(id, amount, stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {
         stats[stat.type][stat.id].amount += amount
-        console.log(stats)
+        // console.log(stats)
       }
       else {
         stats[stat.type][stat.id] = {type: stat.type, amount: amount, id: id}
-        console.log(stats)
+        // console.log(stats)
       }
     }
 
@@ -93,8 +93,6 @@ export class Game {
         }
       }
     }
-
-    console.log(stats)
 
     for (let x in this.app.state.aspects) {
       let asp = this.ascension.getReferenceById(this.app.state.aspects[x].id)
@@ -190,7 +188,6 @@ export class Game {
     if (!this.app.state.DR)
       return statAmount
 
-    console.log(statAmount)
     let effectivenessReduction = statAmount / (statAmount + this.app.state.DRAmount)
     return utils.round(statAmount * (1 - effectivenessReduction), this.app.state.rounding)
   }
