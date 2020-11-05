@@ -197,6 +197,13 @@ export const stats = {
 			display: "Piercing Resistance: {0}%"
 		},
 	},
+	embodimentReward: {
+		Force: {display: "Bonus Force Embodied: {0}"},
+		Entropy: {display: "Bonus Entropy Embodied: {0}"},
+		Form: {display: "Bonus Form Embodied: {0}"},
+		Inertia: {display: "Bonus Inertia Embodied: {0}"},
+		Life: {display: "Bonus Life Embodied: {0}"},
+	},
 	flexStat: {
 		CONSTITUTION: {
 			display: "Constitution: {0}",

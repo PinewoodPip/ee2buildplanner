@@ -227,12 +227,13 @@ export class Ascension {
   // todo: bonus embs from stat boosts
   getTotalRewards() {
     let asps = []
+    let stats = game.getStats()
     let rews = {
-      force: 0,
-      entropy: 0,
-      form: 0,
-      inertia: 0,
-      life: 0,
+      force: stats.embodimentReward.Force.amount,
+      entropy: stats.embodimentReward.Entropy.amount,
+      form: stats.embodimentReward.Form.amount,
+      inertia: stats.embodimentReward.Inertia.amount,
+      life: stats.embodimentReward.Life.amount,
     }
 
     for (let x in this.app.state.aspects) {
