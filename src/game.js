@@ -78,6 +78,7 @@ export class Game {
     }
 
     let stats = {}
+    let keywords = {}
 
     // default stats
     for (let x in miscData.stats) {
@@ -94,6 +95,17 @@ export class Game {
       }
     }
 
+    function tryToAddKeyword(node) {
+      if (utils.hasKey(node, "keyword")) {
+        if (utils.hasKey(keywords, node.keyword)) {
+          keywords[node.keyword].push({id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon})
+        }
+        else {
+          keywords[node.keyword] = [{id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon}]
+        }
+      }
+    }
+
     for (let x in this.app.state.aspects) {
       let asp = this.ascension.getReferenceById(this.app.state.aspects[x].id)
       let build = this.app.state.aspects[x].nodes
@@ -102,15 +114,46 @@ export class Game {
         for (let v in asp.nodes[z].parent) {
           let parentBoost = asp.nodes[z].parent[v]
           addStat(parentBoost.id, parentBoost.value, parentBoost)
+          tryToAddKeyword(parentBoost)
         }
         for (let v in asp.nodes[z].subNodes[build[z]]) {
           let subNodeBoost = asp.nodes[z].subNodes[build[z]][v]
           addStat(subNodeBoost.id, subNodeBoost.value, subNodeBoost)
+          tryToAddKeyword(subNodeBoost)
         }
       }
     }
 
+    this.app.keywords = keywords
+
     return this.getRealStats(stats);
+  }
+
+  getDisplayString(stat) {
+    let displayString;
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
+      if (stat.type == "specialLogic") {
+        let statDisplay = miscData.stats.specialLogic[stat.id]
+
+        if (statDisplay.strings != undefined)
+          displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
+        else if (statDisplay.referenceString != undefined && stat.amount > 0)
+          displayString = game.ascension.specialStrings[statDisplay.referenceString]
+        else if (statDisplay.referenceString != undefined) {
+          displayString = "FALSE: " + game.ascension.specialStrings[statDisplay.referenceString]
+        }
+        else {
+          console.log(statDisplay)
+          displayString = utils.format("UNDEFINED STAT1 {0}: {1}", stat.id, stat.amount)
+        }
+      }
+      else
+        displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
+    }
+    else {
+      displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
+    }
+    return displayString
   }
 
   getRealStats(stats) {
@@ -394,6 +437,14 @@ export class Ascension {
 
     return info;
   }
+
+  // getKeywords() {
+  //   let keywords = {}
+
+  //   for (let x in this.app.state.aspects) {
+  //     let build = this.app.state.aspects[]
+  //   }
+  // }
 
   // change the subnode of an aspect
   changeSubNode(asp, node, newSubNode, mode="edit") {

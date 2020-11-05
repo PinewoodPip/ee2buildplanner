@@ -444,6 +444,60 @@ export function SkillBook(props) {
 	)
 }
 
+export function Keywords(props) {
+	let keywordButtons = []
+	console.log(props.app.keywords)
+	for (let x in props.app.keywords) {
+		let func = () => {props.app.setState({currentKeyword: x})}
+		let element = <div key={x} className={"flexbox-horizontal flex-align-start skillbook-category "} onClick={func}>
+			<Icon img={utils.getImage(game.mappings.keywordImages[x])} size="32px"/>
+			<div style={{width: "15px"}}/>
+			<Text text={game.mappings.keywordNames[x]}/>
+		</div>
+		keywordButtons.push(element)
+	}
+
+	let activators = []
+	let mutators = []
+
+	activators.push(<Text text={<b>Activators</b>}/>)
+	mutators.push(<Text text={<b>Mutators</b>}/>)
+
+	for (let x in props.app.keywords[props.app.state.currentKeyword]) {
+		let keyword = props.app.keywords[props.app.state.currentKeyword][x]
+		console.log([keyword.id])
+		let element = <Text text={game.getDisplayString(game.app.stats.specialLogic[keyword.id])}/>
+
+		console.log(keyword)
+		if (keyword.keywordBoon == "activator")
+			activators.push(element)
+		else
+			mutators.push(element)
+	}
+	
+	return (
+		<Container className="flexbox-vertical flex-align-start skillbook">
+			<div className="flexbox-horizontal flex-align-end full-width bar">
+				<Text text={"Keywords"} className={"flex-grow"}/>
+				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+			</div>
+
+			<div style={{height: "20px"}}/>
+
+			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin">
+				<div className="flexbox-vertical flex-align-start">
+					{keywordButtons}
+				</div>
+				<div className="flexbox-vertical flex-align-start skill-listing">
+					{activators}
+					<hr/>
+					{mutators}
+				</div>
+			</div>
+		</Container>
+	)
+}
+
 function CharacterRace(props) {
 	let options = []
 	for (let x in game.races) {
@@ -639,8 +693,9 @@ class Ascension extends React.Component {
 
 					<div style={{height: "10px"}}/>
 
-					<GreenButton text="Add aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
-					<GreenButton text="View boosts" onClick={() => {this.props.app.setState({popup: "stats"})}}/>
+					<GreenButton text="Add Aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
+					<GreenButton text="View Stats" onClick={() => {this.props.app.setState({popup: "stats"})}}/>
+					<GreenButton text="View Keywords" onClick={() => {this.props.app.setState({popup: "keywords"})}}/>
 				</div>
 					<div className="aspect-preview">
 						{currentAspect}
@@ -669,28 +724,7 @@ export function Boosts(props) {
 			let stat = stats[x][z]
 			let displayString;
 
-			if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
-				if (stat.type == "specialLogic") {
-					let statDisplay = miscData.stats.specialLogic[stat.id]
-
-					if (statDisplay.strings != undefined)
-						displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
-					else if (statDisplay.referenceString != undefined && stat.amount > 0)
-						displayString = game.ascension.specialStrings[statDisplay.referenceString]
-					else if (statDisplay.referenceString != undefined) {
-						displayString = "FALSE: " + game.ascension.specialStrings[statDisplay.referenceString]
-					}
-					else {
-						console.log(statDisplay)
-						displayString = utils.format("UNDEFINED STAT1 {0}: {1}", stat.id, stat.amount)
-					}
-				}
-				else
-					displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
-			}
-			else {
-				displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
-			}
+			displayString = game.getDisplayString(stat)
 
 			// todo optimize
 			if (utils.hasKey(statStrings, stat.type)) {

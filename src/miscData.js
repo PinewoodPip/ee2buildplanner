@@ -109,6 +109,11 @@ export const nodesWithExtraKeywords = {
 	Ascension_Paucity_MUTA_WitherACT_BasicAttack: ["Wither"],
 	Ascension_Predator_MUTA_VoracityACT: ["Voracity"],
 
+	Ascension_Elementalist_ACT_CenturionOrWeak3: ["Centurion"],
+	Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor: ["Ward"],
+	Ascension_Celestial_ACT_AllyWard: ["Ward"],
+	Ascension_Centurion_ACT_EndOfTurnDefiance: ["Defiance"],
+
 }
 
 export const statCategories = {

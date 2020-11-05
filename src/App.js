@@ -5,7 +5,7 @@ import update from 'immutability-helper';
 
 import * as utils from "./utils.js"
 import { Game, Ascension } from "./game.js"
-import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments, Boosts } from "./components.js"
+import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments, Boosts, Keywords } from "./components.js"
 import * as miscData from "./miscData.js"
 import { Popup, ContextMenu } from "./genericComponents.js"
 
@@ -28,6 +28,7 @@ class App extends React.Component {
       DRAmount: 100,
       DR: true,
       rounding: 2,
+      currentKeyword: "Abeyance",
 
       physique: {
         race: "lizard",
@@ -75,6 +76,14 @@ class App extends React.Component {
     }
   }
 
+  stats;
+  keywords;
+
+  // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
+  componentDidUpdate(prevState, newState) {
+    this.stats = game.getStats()
+  }
+
   contextMenu(element, e) {
     e.preventDefault()
     this.setState({contextMenu: {position: {x: e.pageX, y: e.pageY}, element: element}})
@@ -117,6 +126,8 @@ class App extends React.Component {
         game.ascension.specialStrings = responses[3].data
         game.ascension.app = this
 
+        this.stats = game.getStats()
+
         // start rendering once all data is ready
         this.setState({ready: true})
       }.bind(this))
@@ -139,6 +150,7 @@ class App extends React.Component {
         case "skillbook": {popup = <SkillBook app={this}/>; break}
         case "ascension": {popup = <AscensionPopup app={this}/>; break}
         case "stats": {popup = <Boosts app={this}/>; break}
+        case "keywords": {popup = <Keywords app={this}/>; break}
       }
 
       if (this.state.popup != null) {

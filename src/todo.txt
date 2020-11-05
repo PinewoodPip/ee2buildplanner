@@ -50,6 +50,7 @@ X prevent adding an asp twice
 - emb bopnuses from tier 2s
 - after adding an asp, switch to it
 - tooltips for keywords
+
 - dont rely on containedKeywords for determining keywords, as those also include free charges?
 
 
