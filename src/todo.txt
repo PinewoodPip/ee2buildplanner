@@ -58,3 +58,5 @@ X prevent adding an asp twice
 - saving/exporting
 - ap/effects in skills
 - attr picker
+
+- attributes from poly

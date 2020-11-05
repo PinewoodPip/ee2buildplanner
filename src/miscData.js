@@ -93,7 +93,7 @@ export const nodesWithExtraKeywords = {
 	Ascension_Demolitionist_AdaptSpenderSIBoost: ["Adaptation"], // really special case
 	Ascension_Centurion_MUTA_AdaptSpendEmulateChainLight: ["Adaptation"],
 	Ascension_Centurion_MUTA_DefianceBHStacks: ["Defiance"],
-	Ascension_CenturionAndCelestial_MUTA_WardACTGenExtend: ["Ward"],
+	Ascension_CenturionAndCelestial_MUTA_WardACTGenExtend: ["Ward", "Centurion"],
 	Ascension_Centurion_MUTA_DamageAndViolentStrikeACT: ["ViolentStrike"], //
 	Ascension_Adaptation_MUTA_BenevolenceACT: ["Benevolence"],
 	Ascension_Benevolence_MUTA_AdaptStacks: ["Adaptation"],
@@ -167,6 +167,21 @@ export const statCategories = {
 		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_VITALITYBOOST"},
 		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
 		{type: "specialLogic", id: "Ascension_SummonLimitTo2"},
+	],
+	voracity: [
+		{type: "extendedStat", id: "Voracity_Life"},
+		{type: "extendedStat", id: "Voracity_BothArmor"},
+		{type: "extendedStat", id: "Voracity_PhysArmor"},
+		{type: "extendedStat", id: "Voracity_MagicArmor"},
+	],
+	combatAbilities: [
+		{type: "flexStat", id: "SingleHanded"},
+		{type: "flexStat", id: "TwoHanded"},
+		{type: "flexStat", id: "Ranged"},
+		{type: "flexStat", id: "DualWielding"},
+		{type: "flexStat", id: "Leadership"},
+		{type: "flexStat", id: "PainReflection"},
+		{type: "flexStat", id: "Perseverance"},
 	]
 }
 
@@ -355,11 +370,14 @@ export const stats = {
 		PainReflection: {
 			display: "Retribution: {0}"
 		},
+		Perseverance: {
+			display: "Perseverance: {0}"
+		},
 		DualWielding: {
 			display: "Dual Wielding: {0}"
 		},
 		SingleHanded: {
-			display: "Single Handed: {0}"
+			display: "Single-Handed: {0}"
 		},
 		Ranged: {
 			display: "Ranged: {0}"
@@ -528,6 +546,10 @@ export const stats = {
 		},
 		
 	},
+	keywordBasicActivator: {},
+	statusExtension: {},
+	scalingExtension: {},
+	extraStatusApplication: {},
 	specialLogic: {
 		// careful, some are not bools and can stack
 		Ascension_Elementalist_ACT_FireEarth_AllySkills: {
@@ -938,29 +960,542 @@ export const stats = {
 			bool: true,
 			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_2_0"
 		},
-		Status_AddDuration_AMER_SCORCHED: {
-			bool: true,
-			referenceString: ""
+		Ascension_VitalityVoid_ACT_CombatDeath: {
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_2_1"
 		},
-		Status_AddDuration_AMER_SCORCHED: {
-			bool: true,
-			referenceString: ""
+		Ascension_Predator_MUTA_RecoverAPOnKill: {
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_3_0"
 		},
-		Status_AddDuration_AMER_SCORCHED: {
-			bool: true,
-			referenceString: ""
+		Ascension_VitalityVoid_MUTA_Wither: {
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_3_1"
 		},
-		Status_AddDuration_AMER_SCORCHED: {
-			bool: true,
-			referenceString: ""
+		Ascension_Predator_MUTA_BloatedCorpseOnKill: {
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_4_0"
 		},
-		Status_AddDuration_AMER_SCORCHED: {
-			bool: true,
-			referenceString: ""
+		Ascension_VitalityVoid_MUTA_CorpseSkitterers: {
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_4_1"
 		},
-		Status_AddDuration_AMER_SCORCHED: {
-			bool: true,
-			referenceString: ""
+		Ascension_BHThreshold_AlwaysSufficient: {
+			referenceString: "AMER_UI_Ascension_Entropy_Death_Node_4_2"
+		},
+		Ascension_Wither_ACT_CorpseExploded: {
+			referenceString: "AMER_UI_Ascension_Entropy_Decay_Node_2_0"
+		},
+		Ascension_Skill_Haruspicy: {
+			referenceString: "AMER_UI_Ascension_Entropy_Decay_Node_4_2"
+		},
+		// mag fin
+		Ascension_Adaptation_ACT_Paucity: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_2_0"
+		},
+		Ascension_Skill_CorpseMastery: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_2_1"
+		},
+		Ascension_SummonsFloat: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_2_3"
+		},
+		Ascension_Adaptation_MUTA_AdaptSpend_DemiLich_A: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_3_0"
+		},
+		Ascension_Occultist_MUTA_PreexistingBHStacks: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_3_1"
+		},
+		Ascension_Adaptation_MUTA_AdaptSpend_DemiLich_B: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_4_0"
+		},
+		Ascension_Occultist_MUTA_Adapt: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_4_1"
+		},
+		Ascension_DemilichCannotDie: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_4_2"
+		},
+		Ascension_Skill_BoneshapedCrusher: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_4_3"
+		},
+		Ascension_DemilichHealConversion: {
+			referenceString: "AMER_UI_Ascension_Entropy_Demilich_Node_5"
+		},
+		Ascension_Abeyance_MUTA_CleanseTiered1And2: {
+			referenceString: "AMER_UI_Ascension_Form_TheChalice_Node_4_0"
+		},
+		Ascension_Adaptation_MUTA_EleRes: {
+			referenceString: "AMER_UI_Ascension_Form_TheChalice_Node_4_1"
+		},
+		// mage fin
+		Ascension_Centurion_ACT_MissedByAttack: {
+			referenceString: "AMER_UI_Ascension_Form_TheKey_Node_3_0"
+		},
+		Ascension_Occultist_ACT_AtaxiaSquelched: {
+			referenceString: "AMER_UI_Ascension_Form_TheKey_Node_3_1"
+		},
+		Ascension_Occultist_MUTA_Calcifying: {
+			referenceString: "AMER_UI_Ascension_Form_TheKey_Node_4_1"
+		},
+		Ascension_WeaponSkillShieldsUpAggro: {
+			referenceString: "AMER_UI_Ascension_Form_TheNautilus_Node_2_1"
+		},
+		// sortil
+		// mk2 thing? down here
+		Ascension_Presence_MUTA_BaseEleRes: {
+			referenceString: "AMER_UI_Ascension_Form_TheSilkworm_Node_2_1"
+		},
+		Ascension_Occultist_ACT_EndOfTurnFreeOffHand: {
+			referenceString: "AMER_UI_Ascension_Form_TheBasilisk_Node_2_0"
+		},
+		Ascension_Wither_ACT_Calcifying: {
+			referenceString: "AMER_UI_Ascension_Form_TheBasilisk_Node_2_1"
+		},
+		Ascension_Occultist_MUTA_EmulatePetrifyingVisage: {
+			referenceString: "AMER_UI_Ascension_Form_TheBasilisk_Node_3_0"
+		},
+		Ascension_Occultist_MUTA_Slowed2: {
+			referenceString: "AMER_UI_Ascension_Form_TheBasilisk_Node_3_1"
+		},
+		Ascension_Adaptation_ACT_MK2_IncarnateInfus: {
+			referenceString: "AMER_UI_Ascension_Form_Doppelganger_Node_3_0"
+		},
+		Ascension_Occultist_ACT_AlliedSummonKilled: {
+			referenceString: "AMER_UI_Ascension_Form_Doppelganger_Node_3_1"
+		},
+		Ascension_Adaptation_MUTA_AllRegen: {
+			referenceString: "AMER_UI_Ascension_Form_Doppelganger_Node_4_0"
+		},
+		Ascension_Occultist_MUTA_EmulateThrowDust: {
+			referenceString: "AMER_UI_Ascension_Form_Doppelganger_Node_4_1"
+		},
+		// summon limit to 2
+		Ascension_Defiance_ACT_MK2_NonSummonAllyCount: {
+			referenceString: "AMER_UI_Ascension_Form_TheDragon_Node_2_3"
+		},
+		Ascension_Abeyance_MUTA_ThresholdFromWitsPower: {
+			referenceString: "AMER_UI_Ascension_Form_TheDragon_Node_3_0"
+		},
+		Ascension_Centurion_ACT_AllyPredator: {
+			referenceString: "AMER_UI_Ascension_Form_TheDragon_Node_3_1"
+		},
+		Ascension_Abeyance_MUTA_AdaptSpendFireAoE: {
+			referenceString: "AMER_UI_Ascension_Form_TheDragon_Node_4_0"
+		},
+		Ascension_Abeyance_MUTA_TotemsAttackConversion: {
+			referenceString: "AMER_UI_Ascension_Form_TheDragon_Node_4_1"
+		},
+		Ascension_Centurion_MUTA_EmulateDragonBlaze: {
+			referenceString: "AMER_UI_Ascension_Form_TheDragon_Node_4_2"
+		},
+		Ascension_Centurion_ACT_MissedByAttack: {
+			referenceString: "AMER_UI_Ascension_Form_TheGryphon_Node_2_0"
+		},
+		Ascension_Ward_ACT_DamageBuffer: {
+			referenceString: "AMER_UI_Ascension_Form_TheGryphon_Node_2_1"
+		},
+		// Ascension_Ward_ACT_MK2_CritByEnemy: {
+		// 	referenceString: ""
+		// },
+		// ???
+		Ascension_Centurion_ACT_MissedByAttack_MK2_OnAoO: {
+			referenceString: "AMER_UI_Ascension_Form_TheGryphon_Node_2_3"
+		},
+		Ascension_Centurion_MUTA_AdaptationStacks: {
+			referenceString: "AMER_UI_Ascension_Form_TheGryphon_Node_3_0"
+		},
+		Ascension_Centurion_MUTA_CritAdaptStacks: {
+			referenceString: "AMER_UI_Ascension_Form_TheGryphon_Node_3_1"
+		},
+		Ascension_Ward_MUTA_AdaptationStacks: {
+			referenceString: "AMER_UI_Ascension_Form_TheGryphon_Node_3_2"
+		},
+		// ??
+		Ascension_Abeyance_MUTA_BufferDRFormInertiaScaling: {
+			referenceString: "AMER_UI_Ascension_Form_Wealth_Node_3_0"
+		},
+		Ascension_Adaptation_ACT_MK2_Flurry: {
+			referenceString: "AMER_UI_Ascension_Form_Wealth_Node_3_1"
+		},
+		Ascension_Abeyance_MUTA_TotemSac: {
+			referenceString: "AMER_UI_Ascension_Form_Wealth_Node_4_0"
+		},
+		Ascension_Adaptation_MUTA_FortifyOpenEyes: {
+			referenceString: "AMER_UI_Ascension_Form_Wealth_Node_4_1"
+		},
+		Ascension_Adaptation_MUTA_MeteorShowerSI: {
+			referenceString: "AMER_UI_Ascension_Form_Wealth_Node_4_2"
+		},
+		Ascension_Adaptation_ACT_Cannibalize: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_2_0"
+		},
+		Ascension_Ward_MUTA_DWDamagePerTotem: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_2_1"
+		},
+		// floating summon
+		Ascension_Adaptation_MUTA_InitMovementCon: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_3_0"
+		},
+		Ascension_Ward_MUTA_Skitterer: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_3_1"
+		},
+		Ascension_Adaptation_MUTA_MassForHeroes: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_4_0"
+		},
+		Ascension_Adaptation_MUTA_MassForSummons: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_4_1"
+		},
+		Ascension_SkitterersOnSummonDeath: {
+			referenceString: "AMER_UI_Ascension_Form_Cerberus_Node_4_3"
+		},
+		// mag fin
+		Ascension_Occultist_ACT_RitualReaction: {
+			referenceString: "AMER_UI_Ascension_Form_TheRitual_Node_2_0"
+		},
+		Ascension_Wither_MUTA_2HDodgePenalty: {
+			referenceString: "AMER_UI_Ascension_Form_TheRitual_Node_2_1"
+		},
+		// summons float
+		Ascension_Occultist_MUTA_TotemsAttack: {
+			referenceString: "AMER_UI_Ascension_Form_TheRitual_Node_4_0"
+		},
+		Ascension_Wither_ACT_TheRitual: {
+			referenceString: "AMER_UI_Ascension_Form_TheRitual_Node_4_1"
+		},
+		Ascension_CannotDie_TheRitual: {
+			referenceString: "AMER_UI_Ascension_Form_TheRitual_Node_4_2"
+		},
+		Ascension_TotemsDupeOnDeath: {
+			referenceString: "AMER_UI_Ascension_Form_TheRitual_Node_4_3"
+		},
+		Ascension_Centurion_MUTA_FreeOHEmulateSilencingStare: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_2_1"
+		},
+		Ascension_Abeyance_MUTA_AdaptSpendBufferReduce: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_3_0"
+		},
+		Ascension_Centurion_MUTA_AdaptationStacks: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_3_1"
+		},
+		Ascension_Demolitionist_AdaptSpenderSIBoost: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_3_2"
+		},
+		Ascension_Abeyance_MUTA_NonLethal: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_4_0"
+		},
+		Ascension_Centurion_MUTA_AdaptSpendEmulateChainLight: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_4_1"
+		},
+		Ascension_SourceGen_Dynamo: {
+			referenceString: "AMER_UI_Ascension_Form_Sphinx_Node_4_2"
+		},
+		// Ascension_WeaponSkillShieldsUpAggro: {
+		// 	referenceString: ""
+		// },
+		//another time
+		// presence ele
+		Ascension_Presence_MUTA_MK2_PhysRes: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheAuroch_Node_2_1"
+		},
+		// Ascension_Ward_ACT_DamageBuffer: {
+		// 	referenceString: ""
+		// },
+		Ascension_Benevolence_MUTA_SourceGenReward: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCrab_Node_4_0"
+		},
+		Ascension_Celestial_ACT_BHStacks: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGuardsman_Node_3_0"
+		},
+		Ascension_Centurion_ACT_HitAlly: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGuardsman_Node_3_1"
+		},
+		Ascension_Celestial_MUTA_CleanseNonTiered: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGuardsman_Node_4_0"
+		},
+		Ascension_Centurion_MUTA_Taunt: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGuardsman_Node_4_1"
+		},
+		Ascension_Benevolence_ACT_MK2_FreeOHPaucityPurity: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_2_0"
+		},
+		// bh celestial
+		Ascension_Celestial_ACT_MK2_ElemStacks: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCasque_Node_3_2"
+		},
+		Ascension_Benevolence_MUTA_FlatArmor: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCasque_Node_4_0"
+		},
+		Ascension_Celestial_MUTA_DupeOnSelf: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCasque_Node_4_1"
+		},
+		Ascension_Centurion_MUTA_DefianceBHStacks: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCenturion_Node_2_3"
+		},
+		Ascension_Centurion_ACT_HitAlly: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCenturion_Node_3_0"
+		},
+		Ascension_CenturionAndCelestial_MUTA_WardACTGenExtend: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCenturion_Node_3_1"
+		},
+		Ascension_Centurion_ACT_HitAlly_MK2_ACTOnWard: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCenturion_Node_3_2"
+		},
+		Ascension_Centurion_MUTA_SIRupturedTendons: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCenturion_Node_4_0"
+		},
+		Ascension_Centurion_MUTA_DamageAndViolentStrikeACT: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheCenturion_Node_4_1"
+		},
+		Ascension_Adaptation_MUTA_BenevolenceACT: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGladiator_Node_3_0"
+		},
+		// ward
+		Ascension_Ward_ACT_MK2_DualWieldDodge: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGladiator_Node_3_2"
+		},
+		Ascension_Benevolence_MUTA_AdaptStacks: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGladiator_Node_4_0"
+		},
+		Ascension_Ward_MUTA_HealAndRemoveBHStacks: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGladiator_Node_4_1"
+		},
+		Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheGladiator_Node_4_2"
+		},
+		Ascension_Celestial_ACT_AllyCrit: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_2_0"
+		},
+		Ascension_Prosperity_ACT_Basic_MK2_Ward: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_2_2"
+		},
+		Ascension_Celestial_MUTA_ArmorRestoInertiaScaling: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_3_0"
+		},
+		Ascension_Celestial_MUTA_ViolentStrikeForAlly: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_3_1"
+		},
+		Ascension_Abeyance_MUTA_DamageOrder: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_2_0"
+		},
+		Ascension_Centurion_ACT_EnemyT3StatusOnAlly: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_2_1"
+		},
+		Ascension_Abeyance_MUTA_EmulateShieldsUp: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_3_0"
+		},
+		Ascension_Centurion_MUTA_EmulateBattleStomp: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_3_1"
+		},
+		Ascension_Centurion_ACT_EndOfTurnDefiance: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheArena_Node_2_0"
+		},
+		Ascension_Prosperity_MUTA_DWAccCrit: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheArena_Node_2_1"
+		},
+		Ascension_Centurion_MUTA_AtaxiaAndSquelch2: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheArena_Node_3_0"
+		},
+		Ascension_Prosperity_MUTA_EffectiveSI_Poly: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheArena_Node_3_1"
+		},
+		Ascension_Centurion_MUTA_WhirlwindConversion: {
+			referenceString: "AMER_UI_Ascension_Inertia_TheArena_Node_4_0"
+		},
+		Ascension_Celestial_ACT_Offensive: {
+			referenceString: "AMER_UI_Ascension_Inertia_Champion_Node_2_0"
+		},
+		Ascension_Ward_MUTA_EncourageReaction: {
+			referenceString: "AMER_UI_Ascension_Inertia_Champion_Node_2_1"
+		},
+		Ascension_Celestial_MUTA_EnemyEmulateSpells: {
+			referenceString: "AMER_UI_Ascension_Inertia_Champion_Node_3_0"
+		},
+		Ascension_Celestial_MUTA_WardShareAndAPRec: {
+			referenceString: "AMER_UI_Ascension_Inertia_Champion_Node_4_0"
+		},
+		Ascension_Defiance_MUTA_PreparedAP: {
+			referenceString: "AMER_UI_Ascension_Inertia_Fortress_Node_1_3"
+		},
+		Ascension_Benevolence_ACT_AllyArmorToZero: {
+			referenceString: "AMER_UI_Ascension_Inertia_Fortress_Node_2_0"
+		},
+		Ascension_Abeyance_MUTA_ComebackKid: {
+			referenceString: "AMER_UI_Ascension_Inertia_Fortress_Node_3_0"
+		},
+		Ascension_Benevolence_MUTA_SelfArmorHeal: {
+			referenceString: "AMER_UI_Ascension_Inertia_Fortress_Node_3_1"
+		},
+		Ascension_Abeyance_MUTA_Fortress: {
+			referenceString: "AMER_UI_Ascension_Inertia_Fortress_Node_4_0"
+		},
+		Ascension_Benevolence_MUTA_Stockpile: {
+			referenceString: "AMER_UI_Ascension_Inertia_Fortress_Node_4_1"
+		},
+		Ascension_Defiance_MUTA_FlatArmorModerate: {
+			referenceString: "AMER_UI_Ascension_Life_TheBeetle_Node_2_0"
+		},
+		// shiled up
+		Ascension_Celestial_ACT_AllySource: {
+			referenceString: "AMER_UI_Ascension_Life_TheHind_Node_3_0"
+		},
+		Ascension_Elementalist_ACT_AirWater_AllySkills: {
+			referenceString: "AMER_UI_Ascension_Life_TheHind_Node_3_1"
+		},
+		Ascension_Celestial_MUTA_ExtendSourceGen: {
+			referenceString: "AMER_UI_Ascension_Life_TheHind_Node_4_0"
+		},
+		Ascension_Elementalist_MUTA_AirWater_NonTieredStatuses: {
+			referenceString: "AMER_UI_Ascension_Life_TheHind_Node_4_1"
+		},
+		// fin
+		// sort
+		// presence ele
+		Ascension_Presence_MUTA_MK2_VitRegen: {
+			referenceString: "AMER_UI_Ascension_Life_TheLizard_Node_2_1"
+		},
+		// ?
+		Ascension_Purity_ACT_VitThreshold: {
+			referenceString: "AMER_UI_Ascension_Life_TheNymph_Node_3_1"
+		},
+		Ascension_Prosperity_MUTA_BuffDurationAndRes: {
+			referenceString: "AMER_UI_Ascension_Life_TheRabbit_Node_4_0"
+		},
+		Ascension_Elementalist_ACT_CenturionOrWeak3: {
+			referenceString: "AMER_UI_Ascension_Life_TheEnchantress_Node_3_0"
+		},
+		Ascension_Prosperity_ACT_ElemStacks: {
+			referenceString: "AMER_UI_Ascension_Life_TheEnchantress_Node_3_1"
+		},
+		Ascension_Purity_MUTA_ElemStacksMinus: {
+			referenceString: "AMER_UI_Ascension_Life_TheEnchantress_Node_4_0"
+		},
+		Ascension_Elementalist_MUTA_FeedbackCritAndRes: {
+			referenceString: "AMER_UI_Ascension_Life_TheEnchantress_Node_4_1"
+		},
+		Ascension_Prosperity_MUTA_EffectiveSI_AirWater: {
+			referenceString: "AMER_UI_Ascension_Life_TheEnchantress_Node_4_2"
+		},
+		Ascension_Prosperity_ACT_Basic_MK2_FlurrySI: {
+			referenceString: "AMER_UI_Ascension_Life_TheHuntress_Node_3_0"
+		},
+		// purity
+		Ascension_Purity_ACT_MK2_ProsperityLost: {
+			referenceString: "AMER_UI_Ascension_Life_TheHuntress_Node_3_1"
+		},
+		Ascension_Prosperity_MUTA_SkillDurAndStatBoost: {
+			referenceString: "AMER_UI_Ascension_Life_TheHuntress_Node_4_0"
+		},
+		Ascension_Prosperity_MUTA_EffectiveSI_Hunts: {
+			referenceString: "AMER_UI_Ascension_Life_TheHuntress_Node_4_1"
+		},
+		Ascension_Purity_MUTA_CDReduc: {
+			referenceString: "AMER_UI_Ascension_Life_TheHuntress_Node_4_2"
+		},
+		Ascension_Celestial_ACT_AllyPaucityPurity: {
+			referenceString: "AMER_UI_Ascension_Life_TheNymph_Node_3_0"
+		},
+		// purity
+		Ascension_Purity_MUTA_MK2_CelestialCDReduc: {
+			referenceString: "AMER_UI_Ascension_Life_TheNymph_Node_3_2"
+		},
+		Ascension_Celestial_MUTA_GiveSourceSI: {
+			referenceString: "AMER_UI_Ascension_Life_TheNymph_Node_4_0"
+		},
+		Ascension_Purity_MUTA_EmulateSpontCombSI: {
+			referenceString: "AMER_UI_Ascension_Life_TheNymph_Node_4_2"
+		},
+		Ascension_Benevolence_ACT_MK2_FreeOH_PaucityPurity: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_2_0"
+		},
+		Ascension_Elementalist_ACT_AirWater_AllySkills: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_2_1"
+		},
+		Ascension_Elementalist_ACT_AirWater_AllySkills_MK2_HuntsWar: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_2_3"
+		},
+		Ascension_Benevolence_MUTA_HealAndEleRes: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_3_0"
+		},
+		Ascension_Benevolence_MUTA_PurityACT_CDReduc: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_3_1"
+		},
+		Ascension_Elementalist_MUTA_ElemStackMinusFromCelestial: {
+			referenceString: "AMER_UI_Ascension_Life_Pegasus_Node_3_2"
+		},
+		// cele source
+		Ascension_Celestial_ACT_MK2_NoVitThreshold: {
+			referenceString: "AMER_UI_Ascension_Life_TheStag_Node_2_0"
+		},
+		Ascension_ViolentStrike_ACT_AllyBHCleanse: {
+			referenceString: "AMER_UI_Ascension_Life_TheStag_Node_2_1"
+		},
+		Ascension_Celestial_MUTA_Haste: {
+			referenceString: "AMER_UI_Ascension_Life_TheStag_Node_3_0"
+		},
+		Ascension_Celestial_MUTA_MagicShell: {
+			referenceString: "AMER_UI_Ascension_Life_TheStag_Node_3_1"
+		},
+		Ascension_ViolentStrike_MUTA_GlaciateIgnition: {
+			referenceString: "AMER_UI_Ascension_Life_TheStag_Node_3_2"
+		},
+		Ascension_Celestial_ACT_AllyWard: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_2_0"
+		},
+		Ascension_Celestial_MUTA_ArmorRestoLifeScaling: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_2_1"
+		},
+		Ascension_Benevolence_MUTA_EmulateCelestialHeal: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_3_0"
+		},
+		Ascension_Celestial_MUTA_CleanseBH: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_3_1"
+		},
+		Ascension_Benevolence_MUTA_GainNoStacks: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_4_0"
+		},
+		Ascension_Celestial_ACT_SIResurrect: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_4_1"
+		},
+		Ascension_GoddessReactionAP: {
+			referenceString: "AMER_UI_Ascension_Life_TheGoddess_Node_4_2"
+		},
+		Ascension_Purity_ACT_ShieldsUp: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_2_0"
+		},
+		// might be bugged
+		Ascension_Centurion_MUTA_FreeOHCritCHance: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_2_1"
+		},
+		Ascension_Centurion_MUTA_PurityGivesCenturionScaling: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_3_0"
+		},
+		Ascension_Centurion_MUTA_EmulateSupernova: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_3_1"
+		},
+		Ascension_Purity_MUTA_BlindingRadiance: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_3_2"
+		},
+		Ascension_Centurion_ACT_TeleportStrike: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_4_0"
+		},
+		Ascension_Purity_MUTA_EffectiveSI_AirFire: {
+			referenceString: "AMER_UI_Ascension_Life_Hope_Node_4_1"
+		},
+		// fin
+		Ascension_Prosperity_ACT_Purity: {
+			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_2_0"
+		},
+		Ascension_Elementalist_MUTA_RadiusAndNoFF: {
+			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_3_0"
+		},
+		// these 2 are both the same node
+		Ascension_Skill_Ignition_Duplicate: {
+			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_3_1",
+			strings: ["When you cast Ignition, emulate its effects."]
+		},
+		Ascension_Prosperity_MUTA_ScorchAppliesCharged: {
+			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_3_1",
+			strings: ["If you have Prosperity when you apply Scorched to an enemy, also apply Charged for 1 turn."]
+		},
+		Ascension_Elementalist_MUTA_SplendorNova: {
+			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_4_0"
+		},
+		Ascension_Prosperity_MUTA_SplendorSource: {
+			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_4_2"
 		},
 	},
 

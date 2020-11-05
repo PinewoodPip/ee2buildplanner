@@ -675,10 +675,15 @@ export function Boosts(props) {
 
 					if (statDisplay.strings != undefined)
 						displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
-					else if (stat.referenceString != undefined)
+					else if (statDisplay.referenceString != undefined && stat.amount > 0)
 						displayString = game.ascension.specialStrings[statDisplay.referenceString]
-					else
+					else if (statDisplay.referenceString != undefined) {
+						displayString = "FALSE: " + game.ascension.specialStrings[statDisplay.referenceString]
+					}
+					else {
+						console.log(statDisplay)
 						displayString = utils.format("UNDEFINED STAT1 {0}: {1}", stat.id, stat.amount)
+					}
 				}
 				else
 					displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
@@ -703,8 +708,9 @@ export function Boosts(props) {
 	}
 
 	// categorize stat boosts to display them in different boxes
-	let categorizedBoosts = {resistances: [], realAttributes: [], skillAbilities: [], realResistances: [], summonBoosts: []}
+	let categorizedBoosts = {}
 	for (let x in miscData.statCategories) { // for each category defined above
+		categorizedBoosts[x] = []
 		let statsToCategorize = miscData.statCategories[x]
 
 		for (let z in statsToCategorize) { // for each stat in category
@@ -750,34 +756,33 @@ export function Boosts(props) {
 
 			<div style={{height: "20px"}}/>
 
-			<div className="flexbox-horizontal flex-wrap" style={{alignItems: "flex-start"}}>
-				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
-					<Text text="Resistances"/>
-					<hr/>
-					{categorizedBoosts.realResistances}
-				</div>
-				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
-					<Text text="Real Attributes"/>
-					<hr/>
-					{categorizedBoosts.realAttributes}
-				</div>
-				<div style={{maxHeight: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
-					<Text text="Skill Abilites"/>
-					<hr/>
-					{categorizedBoosts.skillAbilities}
-				</div>
-				<div style={{maxHeight: "500px", width: "300px"}} className="flexbox-vertical flex-align-start wrap-y">
-					<Text text="Summon Boosts"/>
-					<hr/>
-					{categorizedBoosts.summonBoosts}
-				</div>
-				<div style={{maxHeight: "500px", width: "200px"}} className="flexbox-vertical flex-align-start wrap-y">
+			<div className="flexbox-horizontal flex-wrap wrap-y" style={{alignItems: "flex-start"}}>
+				<StatTab name="Resistances" elements={categorizedBoosts.realResistances} width="200px"/>
+				<StatTab name="Attributes" elements={categorizedBoosts.realAttributes} width="200px"/>
+				<StatTab name="Skill Abilities" elements={categorizedBoosts.skillAbilities} width="200px"/>
+				<StatTab name="Combat Abilities" elements={categorizedBoosts.combatAbilities} width="300px"/>
+				<StatTab name="Summon Boosts" width="300px" elements={categorizedBoosts.summonBoosts}/>
+				<StatTab name="Voracity" elements={categorizedBoosts.voracity} width="300px"/>
+
+				<div style={{maxHeight: "500px", width: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
 					<Text text="Temp place for other stats"/>
 					<hr/>
 					{boosts}
 				</div>
 			</div>
 		</Container>
+	)
+}
+
+function StatTab(props) {
+	return (
+		<div style={{maxHeight: "500px", width: props.width, height: "unset", marginBottom: "20px"}} className="flexbox-vertical flex-align-start wrap-y">
+			<div style={{position: "relative"}}>
+				<Text text={props.name} className="sticky-top"/>
+			</div>
+			<hr/>
+			{props.elements}
+		</div>
 	)
 }
 

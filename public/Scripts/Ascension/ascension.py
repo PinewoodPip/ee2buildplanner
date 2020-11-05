@@ -283,7 +283,7 @@ for line in ascData.readlines():
                 n.append({"type": "embodimentReward", "id": search["emb"], "value": float(value)})
 
             elif key == "keyword":
-                n.append({"type": "keywordBasicActivator", "id": search["keyword"],})
+                n.append({"type": "keywordBasicActivator", "id": search["keyword"], "value": 1.0})
 
             elif key == "statusExtensionflexStat" or key =="statusExtensionextendedStat":
                 status = search["status"]
@@ -400,9 +400,9 @@ lengthThreshold = 42
 # remove extra text
 relevantStrings = {}
 for string in strings:
-    if "Learn the Ada" not in strings[string]:			
+    if "Learn the " not in strings[string] and "Defiance" not in strings[string] and "Abeyance" not in strings[string] and "Whirlwind" not in strings[string] and "Prosperity" not in strings[string] and "Purity" not in strings[string]:			
         strings[string] = strings[string].split("\n»")[0]
-    if (len(strings[string]) > lengthThreshold):
+    if (len(strings[string]) > lengthThreshold or "Defiance" in strings[string] or "Abeyance" in strings[string] or "Whirlwind" in strings[string] or "Ward" in strings[string] or "Prosperity" in strings[string] or "Charged" in strings[string]):
         print(str(len(strings[string])) + strings[string])
         relevantStrings[string] = strings[string]
 

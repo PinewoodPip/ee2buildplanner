@@ -307,6 +307,12 @@ hr {
   bottom: 0px;
 }
 
+.sticky-top {
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0px;
+}
+
 .aspect-preview {
   width: 300px;
   height: 500px;
