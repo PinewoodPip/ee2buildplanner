@@ -662,29 +662,29 @@ export function Boosts(props) {
 	let boosts = []
 	let stats = game.getStats()
 	let statStrings = {}
+
+	// literally all the stats as strings
 	for (let x in stats) {
 		for (let z in stats[x]) {
 			let stat = stats[x][z]
 			let displayString;
 
 			if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
-
 				if (stat.type == "specialLogic") {
-					// skip if we dont have it
-					if (stat.amount == 0)
-						continue
-					if (stat.stringIfTrue != undefined)
-						displayString = stat.stringIfTrue
-					// else
-					// 	displayString = stat.id
+					let statDisplay = miscData.stats.specialLogic[stat.id]
+
+					if (statDisplay.strings != undefined)
+						displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
+					else if (stat.referenceString != undefined)
+						displayString = game.ascension.specialStrings[statDisplay.referenceString]
 					else
-						displayString = game.ascension.specialStrings[miscData.stats[stat.type][stat.id].referenceString]
+						displayString = utils.format("UNDEFINED STAT1 {0}: {1}", stat.id, stat.amount)
 				}
 				else
 					displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
 			}
 			else {
-				displayString = utils.format("{0}: {1}", stat.id, stat.amount)
+				displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
 			}
 
 			// todo optimize
@@ -696,42 +696,49 @@ export function Boosts(props) {
 				statStrings[stat.type][stat.id] = displayString
 			}
 
+			console.log(statStrings)
+
 			boosts.push(<Text text={displayString}/>)
 		}
 	}
 
 	// categorize stat boosts to display them in different boxes
 	let categorizedBoosts = {resistances: [], realAttributes: [], skillAbilities: [], realResistances: [], summonBoosts: []}
-	for (let x in miscData.statCategories) {
+	for (let x in miscData.statCategories) { // for each category defined above
 		let statsToCategorize = miscData.statCategories[x]
 
-		for (let z in statsToCategorize) {
+		for (let z in statsToCategorize) { // for each stat in category
 			let statToCategorize = statsToCategorize[z]
+			let stat = stats[statToCategorize.type][statToCategorize.id] // the stat in the build
+			
 
-			// console.log(statStrings)
+			
 			if (utils.hasKey(statStrings, statToCategorize.type) && utils.hasKey(statStrings[statToCategorize.type], statToCategorize.id)) {
 				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={statStrings[statToCategorize.type][statToCategorize.id]}/>)
 			}
 			else {
-				console.log(statToCategorize.id)
-				let text;
-				if (statToCategorize.type != "specialLogic")
-					text = miscData.stats[statToCategorize.type][statToCategorize.id].display
-				else {
-					// improve this
-					if (miscData.stats[statToCategorize.type][statToCategorize.id].strings != undefined) {
-						let strings = miscData.stats[statToCategorize.type][statToCategorize.id].strings
-						let val = stats[statToCategorize.type][statToCategorize.id].amount
-						text = strings[Math.min(val, strings.length-1)]
-						console.log(Math.max(val, strings.length))
-					}
-					else {
-						text = miscData.stats[statToCategorize.type][statToCategorize.id].referenceString
-					}
-				}
-
-				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={utils.format(text, 0)}/>)
+				// alert("t")
 			}
+			// else {
+			// 	console.log(statToCategorize.id)
+			// 	let text;
+			// 	if (statToCategorize.type != "specialLogic")
+			// 		text = miscData.stats[statToCategorize.type][statToCategorize.id].display
+			// 	else {
+			// 		// improve this
+			// 		if (miscData.stats[statToCategorize.type][statToCategorize.id].strings != undefined) {
+			// 			let strings = miscData.stats[statToCategorize.type][statToCategorize.id].strings
+			// 			let val = stats[statToCategorize.type][statToCategorize.id].amount
+			// 			text = strings[Math.min(val, strings.length-1)]
+			// 			console.log(Math.max(val, strings.length))
+			// 		}
+			// 		else {
+			// 			text = miscData.stats[statToCategorize.type][statToCategorize.id].referenceString
+			// 		}
+			// 	}
+
+			// 	categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={utils.format(text, 0)}/>)
+			// }
 		}
 	}
 	return (
