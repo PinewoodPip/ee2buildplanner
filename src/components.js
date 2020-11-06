@@ -148,6 +148,7 @@ class CharacterProfile extends React.Component {
         return <Container className="character-profile">
             <div className="flexbox-horizontal">
 				<Portrait app={this.props.app}/>
+				<div style={{width: "10px"}}/>
 				<div className="flexbox-vertical">
 					<CharacterName app={this.props.app}/>
 					<CharacterRace app={this.props.app}/>
@@ -162,7 +163,7 @@ function Portrait(props) {
 		let elements = []
 		for (let x in miscData.portraits) {
 			elements.push(
-				<Icon className="button" img={utils.getImage(miscData.portraits[x])} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portraitIndex: x})}}/>
+				<Icon className="button" img={miscData.portraits[x]} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portraitIndex: x})}}/>
 			)
 		}
 
@@ -176,7 +177,7 @@ function Portrait(props) {
 	}
 	return (
 		<div className="portrait" style={{position: "relative"}} onContextMenu={changePortrait} >
-			<Icon img={utils.getImage(miscData.portraits[props.app.state.portraitIndex])} style={{width: "108px", height: "135px"}}/>
+			<Icon img={miscData.portraits[props.app.state.portraitIndex]} style={{width: "108px", height: "135px"}}/>
 
 			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "150px"}} className="portrait-frame"/>
 		</div>
@@ -192,6 +193,7 @@ function CharacterName(props) {
 	return (
 		<div className="flexbox-horizontal name-edit-container">
 			<Text text={props.app.state.name}/>
+			<div style={{width: "20px"}}/>
 			<CharacterNameEditButton app={props.app}/>
 		</div>
 	)
@@ -205,9 +207,9 @@ function CharacterNameEditButton(props) {
 	}
 
 	return (
-		<div className="name-edit box" onClick={()=>{func()}}>
+		<Icon img={"name_edit"} className="name-edit button" onClick={()=>{func()}}>
 			{/* todo */}
-		</div>
+		</Icon>
 	)
 }
 
@@ -227,7 +229,7 @@ function Icon(props) {
 	return (
 		<div style={style} className={className} onClick={props.onClick} onContextMenu={props.onContextMenu}>
 			{/* <img src={props.img} style={{width: props.size, height: props.size}}/> */}
-			<img src={props.img} style={{width: "100%", height: "100%"}}/>
+			<img src={utils.getImage(props.img)} style={{width: "100%", height: "100%"}}/>
 		</div>
 	)
 }
@@ -238,7 +240,7 @@ function SkillBookAbilityCategory(props) {
 
 	return (
 		<div className={"flexbox-horizontal flex-align-start skillbook-category " + className} onClick={func}>
-			<Icon img={utils.getImage(game.mappings.abilityImages[props.category])} size="32px"/>
+			<Icon img={game.mappings.abilityImages[props.category]} size="32px"/>
 			<div style={{width: "15px"}}/>
 			<Text text={game.mappings.abilityNames[props.category]}/>
 		</div>
@@ -299,7 +301,7 @@ class SkillAbilities extends React.Component {
 			let className = (this.hasAnyRelevantSkill(x) || this.props.app.state.skillAbilities[x] > 0) ? "highlighted-bg" : ""
 
 			skillAbilities.push(<div className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
-				<Icon img={utils.getImage(game.mappings.abilityImages[x])} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
+				<Icon img={game.mappings.abilityImages[x]} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
 				<Text text={game.mappings.abilityNames[x]} className="flex-grow" onClick={()=>{openSkillbookFunc(x)}}/>
 				{button}
 			</div>)
@@ -328,7 +330,7 @@ class Skill extends React.Component {
 	}
 
 	render() {
-		let img = utils.getImage(this.props.data.Icon)
+		let img = this.props.data.Icon
 		let highlight = this.props.highlight != "false"
 		
 		let className = (this.props.app.state.skills.includes(this.props.data.id) && highlight) ? "skill-selected" : ""
@@ -437,7 +439,7 @@ export function AscensionPopup(props) {
 		<Container className="flexbox-vertical flex-align-start skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width bar">
 				<Text text={"Ascension"} className={"flex-grow"}/>
-				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 
 			<div style={{height: "20px"}}/>
@@ -480,7 +482,7 @@ export function SkillBook(props) {
 		<Container className="flexbox-vertical flex-align-start skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width bar">
 				<Text text={"Skillbook"} className={"flex-grow"}/>
-				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 
 			<div style={{height: "20px"}}/>
@@ -503,7 +505,7 @@ export function Keywords(props) {
 	for (let x in props.app.keywords) {
 		let func = () => {props.app.setState({currentKeyword: x})}
 		let element = <div key={x} className={"flexbox-horizontal flex-align-start skillbook-category "} onClick={func}>
-			<Icon img={utils.getImage(game.mappings.keywordImages[x])} size="32px"/>
+			<Icon img={game.mappings.keywordImages[x]} size="32px"/>
 			<div style={{width: "15px"}}/>
 			<Text text={game.mappings.keywordNames[x]}/>
 		</div>
@@ -532,7 +534,7 @@ export function Keywords(props) {
 		<Container className="flexbox-vertical flex-align-start skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width bar">
 				<Text text={"Keywords"} className={"flex-grow"}/>
-				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 
 			<div style={{height: "20px"}}/>
@@ -585,7 +587,7 @@ class Skills extends React.Component {
 		}
 
 		// button to add more skills, opening the skillbook
-		skills.push(<Icon className="button" borderless={true} img={utils.getImage("add")} size="64px" onClick={this.openSkillBook.bind(this)}/>)
+		skills.push(<Icon className="button" borderless={true} img={"add"} size="64px" onClick={this.openSkillBook.bind(this)}/>)
 
 		return (
 			<Container className="skills">
@@ -601,7 +603,7 @@ function Keyword(props) {
 	let className = props.faded == true ? "faded-out" : "keyword"
 	return (
 		<Tooltip content={<Text text={game.mappings.keywordNames[props.keyword]}/>}>
-			<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={utils.getImage(game.mappings.keywordImages[props.keyword])}/>
+			<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.mappings.keywordImages[props.keyword]}/>
 		</Tooltip>
 	)
 }
@@ -840,7 +842,7 @@ export function Boosts(props) {
 		<Container className="flexbox-vertical flex-align-start skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width bar">
 				<Text text={"Boosts"} className={"flex-grow"}/>
-				<Icon className="button" img={utils.getImage("close")} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+				<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 			</div>
 
 			<div style={{height: "20px"}}/>
@@ -898,14 +900,14 @@ function Attribute(props) {
 
 	return (
 		<div className="flexbox-horizontal flex-align-centered" style={{height: "30px"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
-			<Icon className="" img={utils.getImage(game.mappings.attributeIcons[props.id])} size="24px"/>
+			<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
 			<Text style={{width: "50px"}} text={utils.format("{0}:", attrName)}/>
 			<Text style={{width: "25px"}} text={utils.format("{0}", attrAmount)}/>
 
 			<div style={{width: "10px"}}/>
 
-			<IncrementButton img={utils.getImage("remove_point")} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
-			<IncrementButton img={utils.getImage("add_point")} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
+			<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
+			<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
 		</div>
 	)
 }

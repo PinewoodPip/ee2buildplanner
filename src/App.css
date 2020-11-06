@@ -356,6 +356,7 @@ hr {
 
 .character-profile {
   width: 300px;
+  height: 100%;
 }
 
 .skills {
@@ -364,17 +365,13 @@ hr {
   height: 100%;
 }
 
-.name-edit-container {
-  min-width: 100px;
-}
-
 .name-edit-container Text {
   overflow: hidden;
 }
 
 .name-edit {
-  width: 25px;
-  height: 25px;
+  width: 55px;
+  height: 33px;
 }
 
 .portrait {
