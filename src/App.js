@@ -29,6 +29,7 @@ class App extends React.Component {
       DR: true,
       rounding: 2,
       currentKeyword: "Abeyance",
+      darkMode: true,
 
       portraitIndex: 0,
       customPortrait: null,

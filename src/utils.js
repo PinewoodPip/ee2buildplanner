@@ -12,6 +12,10 @@ export function hasKey(obj, key) {
   return Object.keys(obj).includes(key)
 }
 
+export function limitRange(value, min, max) {
+  return Math.max(min, Math.min(value, max))
+}
+
 export function round(number, places=1) {
   var rounded = Math.round( number * Math.pow(10, places) ) / Math.pow(10, places);
   return rounded;

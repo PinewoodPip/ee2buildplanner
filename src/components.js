@@ -98,22 +98,46 @@ function SkillTooltip(props) {
 	)
 }
 
+// a container that can have multiple tabs to switch between. Each child is a tab
 class TabbedContainer extends React.Component {
+	constructor() {
+		super()
+		this.state = {index: 0}
+	}
+
+	// changeIndex(increment) {
+	// 	let max = this.props.children.length - 1
+	// 	let newIndex = this.state.index + increment;
+
+	// 	if (newIndex < 0)
+	// 		newIndex = max
+	// 	else if (newIndex > max)
+	// 		newIndex = 0
+
+	// 	this.setState({index: newIndex})
+	// }
+
     render() {
-        return <div className="flexbox-vertical">
-            <div className="flexbox-horiztonal">
-                {this.props.tabs}
-            </div>
-            <Container>
-                {this.props.children}
+		let options = []
+		for (let x in this.props.children) {
+			options.push(<option value={x}>{this.props.children[x].props.name}</option>)
+		}
+        return <Container className="flexbox-vertical" style={this.props.style}>
+				<div style={{marginTop: "20px", marginBottom: "20px"}}>
+					<select onChange={(e)=>{this.setState({index: e.target.value})}}>
+						{options}
+					</select>
+				</div>
+				
+                {this.props.children[this.state.index]}
             </Container>
-        </div>
     }
 }
 
 class Container extends React.Component {
     render() {
-        return <div className={this.props.className + " box"}>
+		let bg = this.props.noBg ? "" : " box"
+        return <div className={this.props.className + bg} style={this.props.style}>
             {this.props.children}
         </div>
     }
@@ -160,7 +184,8 @@ function Portrait(props) {
 }
 
 export function Text(props) {
-	return <p style={props.style} className={"text " + props.className} onClick={props.onClick}>{props.text}</p>
+	let extraClass = game.app.state.darkMode ? "dark-mode-text" : ""
+	return <p style={props.style} className={extraClass + " text " + props.className} onClick={props.onClick}>{props.text}</p>
 }
 
 function CharacterName(props) {
@@ -280,8 +305,8 @@ class SkillAbilities extends React.Component {
 			</div>)
 		}
 
-		return <Container className="flexbox-vertical skill-abilities">
-			<Text text={"Skill Abilities"}/>
+		return <Container className="flexbox-vertical flex-align-start skill-abilities" noBg={this.props.noBg}>
+			{/* <Text text={"Skill Abilities"}/> */}
 			{skillAbilities}
 		</Container>
 	}
@@ -678,7 +703,7 @@ export function Embodiments(props) {
 function Embodiment(props) {
 	return (
 	<div className={"embodiment " + props.type + " " + props.className}>
-	<p>{props.amount}</p>
+		<Text text={props.amount}></Text>
 	</div>
 	)
 }
@@ -700,7 +725,7 @@ class Ascension extends React.Component {
 		if (this.props.app.state.selectedAspect != null)
 			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
 
-		return <Container>
+		return <Container style={{height: "100%"}}>
 			<div className="flexbox-horizontal">
 				<div className="flexbox-vertical ascension flex-align-start">
 					<AspectListing keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>
@@ -883,20 +908,37 @@ function Attribute(props) {
 	)
 }
 
+// todo rename this component; holds far more than just attributes now
 class Attributes extends React.Component {
 	render() {
 		let remaining = miscData.playerAttributes - game.totalAttributePointsSpent
-		return <Container className="flexbox-vertical skill-abilities">
-			<Text text="Attributes"/>
-			<Text text={utils.format("{0} Remaining", remaining)}/>
+		// return <Container className="flexbox-vertical skill-abilities">
+		// 	<Text text="Attributes"/>
+		// 	<Text text={utils.format("{0} Remaining", remaining)}/>
 
-			<Attribute id="str"/>
-			<Attribute id="fin"/>
-			<Attribute id="pwr"/>
-			<Attribute id="con"/>
-			<Attribute id="mem"/>
-			<Attribute id="wits"/>
-		</Container>
+		// 	<Attribute id="str"/>
+		// 	<Attribute id="fin"/>
+		// 	<Attribute id="pwr"/>
+		// 	<Attribute id="con"/>
+		// 	<Attribute id="mem"/>
+		// 	<Attribute id="wits"/>
+		// </Container>
+		return <TabbedContainer style={{minWidth: "220px", height: "100%"}}>
+			<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
+				{/* <Text text="Attributes"/> */}
+				<Text text={utils.format("{0} Remaining", remaining)}/>
+
+				<Attribute id="str"/>
+				<Attribute id="fin"/>
+				<Attribute id="pwr"/>
+				<Attribute id="con"/>
+				<Attribute id="mem"/>
+				<Attribute id="wits"/>
+			</Container>
+			<Container name="Skill Abilities" noBg className="flexbox-vertical flex-align-start">
+				<SkillAbilities app={this.props.app} noBg/>
+			</Container>
+		</TabbedContainer>
 	}
 }
 
@@ -918,9 +960,12 @@ export class MainInterface extends React.Component {
 					<CharacterProfile app={this.props.app}/>
 					<Skills app={this.props.app}/>
 				</div>
-				<div className="flexbox-horizontal flex-align-start">
-					<Attributes app={this}/>
-					<SkillAbilities app={this.props.app}/>
+
+				{/* todo remove this and just use a container as the parent */}
+				<div style={{height: "10px"}}/>
+
+				<div className="flexbox-horizontal flex-align-centered" style={{height: "500px"}}>
+					<Attributes app={this.props.app}/>
 					<Ascension app={this.props.app}/>
 				</div>
 			</div>

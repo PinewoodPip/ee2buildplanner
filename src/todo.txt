@@ -58,6 +58,10 @@ X prevent adding an asp twice
 - dropdown with multiple builds
 - saving/exporting
 - ap/effects in skills
-- attr picker
+X attr picker
+
+- add the rest of statuses
+- hide hidden skills
+- add ap and statuses to skill descs
 
 - attributes from poly
