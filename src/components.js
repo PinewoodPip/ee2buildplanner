@@ -702,9 +702,11 @@ export function Embodiments(props) {
 
 function Embodiment(props) {
 	return (
-	<div className={"embodiment " + props.type + " " + props.className}>
-		<Text text={props.amount}></Text>
-	</div>
+	<Tooltip content={utils.capitalize(props.type)}>
+		<div className={"embodiment " + props.type + " " + props.className}>
+			<Text text={props.amount}></Text>
+		</div>
+	</Tooltip>
 	)
 }
 

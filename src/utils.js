@@ -12,6 +12,10 @@ export function hasKey(obj, key) {
   return Object.keys(obj).includes(key)
 }
 
+export function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 export function limitRange(value, min, max) {
   return Math.max(min, Math.min(value, max))
 }
