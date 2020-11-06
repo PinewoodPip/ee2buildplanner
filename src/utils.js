@@ -20,6 +20,16 @@ export function limitRange(value, min, max) {
   return Math.max(min, Math.min(value, max))
 }
 
+export function isEmptyString(string) {
+  if (string.length == 0)
+    return true
+  for (let x = 0; x < string.length; x++) {
+    if (string.charAt(x) != " ")
+      return false
+  }
+  return true
+}
+
 export function round(number, places=1) {
   var rounded = Math.round( number * Math.pow(10, places) ) / Math.pow(10, places);
   return rounded;

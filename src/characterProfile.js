@@ -74,8 +74,9 @@ function CharacterName(props) {
 
 function CharacterNameEditButton(props) {
 	let func = () => {
-		let newName = window.prompt("Enter a name for this character:")
-		newName = (newName != "") ? newName : props.app.state.name
+        let newName = window.prompt("Enter a name for this character:")
+        console.log(newName)
+		newName = (newName != null && !utils.isEmptyString(newName)) ? newName : props.app.state.name
 		props.app.setState({name: newName})
 	}
 
