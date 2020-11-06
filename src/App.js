@@ -5,9 +5,11 @@ import update from 'immutability-helper';
 
 import * as utils from "./utils.js"
 import { Game, Ascension } from "./game.js"
-import { MainInterface, SkillBook, Text, RightClickMenu, AscensionPopup, Embodiments, Boosts, Keywords } from "./components.js"
+import { MainInterface, AscensionPopup, Embodiments, Keywords } from "./components.js"
 import * as miscData from "./miscData.js"
-import { Popup, ContextMenu } from "./genericComponents.js"
+import { Popup, ContextMenu, Text, Icon } from "./genericComponents.js"
+import { Boosts } from "./statsDisplay.js"
+import { SkillBook } from "./skillbook.js"
 
 const axios = require('axios').default;
 

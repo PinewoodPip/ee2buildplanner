@@ -294,7 +294,7 @@ hr {
 }
 
 .ascension-family:hover {
-  background-color: rgb(115, 219, 214);
+  background-color: rgb(70, 70, 70);
 }
 
 .ascension {
@@ -309,7 +309,7 @@ hr {
 /* div {height: 100%;} */
 
 .aspect-name-bg {
-  background-color: whitesmoke;
+  background-color: rgb(70, 70, 70);;
   position: sticky;
   top: 0px;
 }
@@ -332,7 +332,8 @@ hr {
 
 .aspect-preview {
   width: 300px;
-  height: 500px;
+  height: 450px;
+  margin-right: 25px;
   /* overflow: scroll; */
   overflow-y: scroll;
 }
@@ -342,7 +343,7 @@ hr {
 }
 .skillbook-category:hover {
   filter: brightness(110%);
-  background-color: whitesmoke;
+  background-color: rgb(70, 70, 70);
   outline: 1px grey solid;
 }
 
@@ -350,8 +351,9 @@ hr {
   outline: 1px black solid;
 }
 
+/* used for skill abilities */
 .highlighted-bg {
-  background-color: rgb(115, 219, 214);
+  background-color: rgb(70, 70, 70);;
 }
 
 .character-profile {

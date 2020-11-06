@@ -1,10 +1,9 @@
 import './App.css';
 import React from 'react';
-// import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { cloneDeep } from "lodash"
 
-import { MainInterface, SkillBook, Text, AscensionPopup, Embodiments } from "./components.js"
-import { ContextMenu } from "./genericComponents.js"
+import { Embodiments } from "./components.js"
+import { ContextMenu, Text } from "./genericComponents.js"
 import * as miscData from "./miscData.js"
 import { game } from "./App.js" // how does this not cause any problems...
 import * as utils from "./utils.js"
@@ -69,11 +68,9 @@ export class Game {
     function addStat(id, amount, stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {
         stats[stat.type][stat.id].amount += amount
-        // console.log(stats)
       }
       else {
         stats[stat.type][stat.id] = {type: stat.type, amount: amount, id: id}
-        // console.log(stats)
       }
     }
 
@@ -95,6 +92,7 @@ export class Game {
       }
     }
 
+    // if a stat is defined to contain a keyword, add it to a list of this build's keywords
     function tryToAddKeyword(node) {
       if (utils.hasKey(node, "keyword")) {
         if (utils.hasKey(keywords, node.keyword)) {
@@ -124,42 +122,54 @@ export class Game {
       }
     }
 
+    // cache
     this.app.keywords = keywords
 
     return this.getRealStats(stats);
   }
 
+  // get a string display of a stat
   getDisplayString(stat) {
     let displayString;
+
+    // check if this stat has a defined subtype and string in miscData
     if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
+
+      // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent booleans
       if (stat.type == "specialLogic") {
         let statDisplay = miscData.stats.specialLogic[stat.id]
 
         if (statDisplay.strings != undefined)
+          // if this specialLogic has defined strings for on/off, use those
           displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
+
         else if (statDisplay.referenceString != undefined && stat.amount > 0)
+          // otherwise use the game's description for it.
           displayString = game.ascension.specialStrings[statDisplay.referenceString]
+
         else if (statDisplay.referenceString != undefined) {
+          // we don't have this specialLogic - preppend a "FALSE"
           displayString = "FALSE: " + game.ascension.specialStrings[statDisplay.referenceString]
         }
+        // if all fails, use a placeholder
         else {
-          console.log(statDisplay)
-          displayString = utils.format("UNDEFINED STAT1 {0}: {1}", stat.id, stat.amount)
+          displayString = utils.format("UNDEFINED SPECIALLOGIC STAT {0}: {1}", stat.id, stat.amount)
         }
       }
       else
         displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
     }
+    // otherwise use a placeholder
     else {
       displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
     }
+
     return displayString
   }
 
   getRealStats(stats) {
 
     // calculate real, absolute amounts of stats
-    // yeah first we will need to track default amounts and add all stats to the stats obj
 
     let realStr = (
       stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str +
@@ -241,7 +251,7 @@ export class Game {
 // class for methods related to ascension mechanics. also holds all aspect data
 export class Ascension {
   aspects;
-  specialStrings;
+  specialStrings; // strings related to specialLogic stat boosts
   app;
 
   // whether the current build meets all requirements
@@ -257,6 +267,7 @@ export class Ascension {
     return true
   }
 
+  // remove an aspect from the build
   async removeAspect(e, id) {
     let asp = this.getBuildAspectById(id)
     let state = cloneDeep(this.app.state.aspects)
@@ -267,6 +278,7 @@ export class Ascension {
     this.app.setState({aspects: state})
   }
 
+  // move aspect up/down in the list
   async moveAspect(e, id, movement) {
     let asp = this.getBuildAspectById(id)
     let state = cloneDeep(this.app.state.aspects)
@@ -279,7 +291,7 @@ export class Ascension {
     this.app.setState({aspects: state})
   }
 
-  // get requirements of chosen aspects
+  // get requirements of chosen aspects. for each emb this will be the highest amount ever required
   getTotalRequirements() {
     let asps = []
     let reqs = {
@@ -305,8 +317,7 @@ export class Ascension {
     return reqs;
   }
 
-  // get rewards of chosen aspects
-  // todo: bonus embs from stat boosts
+  // get rewards of chosen aspects. this factors in embodiments granted by stat boosts - these are found in the "second tier" of aspects, in their second nodes.
   getTotalRewards() {
     let asps = []
     let stats = game.getStats()
@@ -332,11 +343,11 @@ export class Ascension {
     return rews;
   }
 
-  getRequirements(id) {
+  getRequirements(id) { // get reqs of an aspect by id
     return this.getReferenceById(id).requirements;
   }
 
-  getRewards(id) {
+  getRewards(id) { // get rewards of an aspect by id
     return this.getReferenceById(id).rewards;
   }
 
@@ -371,7 +382,7 @@ export class Ascension {
           keywordsInBuild.push(subNodeStat.keyword)
         }
 
-        // if this node references multiple keywords (only a few do), add them
+        // if this node references multiple keywords (only a few do), add them. These are manually defined in miscData
         if (utils.hasKey(miscData.nodesWithExtraKeywords, subNodeStat.id)) {
           for (let v in miscData.nodesWithExtraKeywords[subNodeStat.id]) {
             keywordsInBuild.push(miscData.nodesWithExtraKeywords[subNodeStat.id][v])
@@ -380,6 +391,7 @@ export class Ascension {
       }
 
       // node.containedKeywords specifies which keywords are contained in each node (not each subnode) by Amer. We use that to get a list of all the keywords an aspect offers
+      // todo redo this. This is sometimes "inaccurate" because it includes +free reaction nodes.
       if (node.containedKeywords != undefined) {
         for (let z in node.containedKeywords) {
           let keyword = node.containedKeywords[z].replace(" ", "")
@@ -437,14 +449,6 @@ export class Ascension {
 
     return info;
   }
-
-  // getKeywords() {
-  //   let keywords = {}
-
-  //   for (let x in this.app.state.aspects) {
-  //     let build = this.app.state.aspects[]
-  //   }
-  // }
 
   // change the subnode of an aspect
   changeSubNode(asp, node, newSubNode, mode="edit") {
@@ -516,8 +520,6 @@ export class Ascension {
       tooltip.push(<hr/>)
       
       if (interactive) {
-        let id = Math.random()
-
         let subNodeOptions = []
         let ref = game.ascension.getAspectReference(asp)
 
@@ -534,8 +536,6 @@ export class Ascension {
             <div onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
               <Text text={ref.nodesText[x].subNodes[z]}/>
             </div>)
-          
-          // subNodeOptions.push(<hr/>)
         }
 
         let menu = subNodeOptions

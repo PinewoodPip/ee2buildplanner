@@ -36,18 +36,18 @@ X make rhombe highlighted if you have any skill in the category
 
 -- Ascension
 X truncate long node descs
-- show reqs in asc browser
+X show reqs in asc browser
 X when reqs are unmet only highlight the unmet embs
 X popup showing all the options
 X tab showing your aspects
-- tab showing all your keywords
+X tab showing all your keywords
 X show node index before the text
 X add right click menu to change nodes
 X in the asc name display icons of keywords contained in chosen subnodes
 X add "any" option for subnodes
 X prevent adding an asp twice
-- rclick to remove asps
-- emb bopnuses from tier 2s
+X rclick to remove asps
+X emb bopnuses from tier 2s
 - after adding an asp, switch to it
 - tooltips for keywords
 
@@ -65,3 +65,4 @@ X attr picker
 - add ap and statuses to skill descs
 
 - attributes from poly
+- warn when not enough str to wear armor for level ?
