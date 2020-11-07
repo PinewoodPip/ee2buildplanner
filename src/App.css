@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .button:hover {
   filter: brightness(130%);
 }
@@ -9,6 +13,15 @@
 .button:active {
   filter: brightness(70%);
 }
+
+select {
+  cursor: pointer;
+}
+
+/* yeah nvm this just seems unstyleable. */
+/* option {
+  cursor: pointer;
+} */
 
 .absolute {
   position: relative;
@@ -109,7 +122,8 @@ hr {
 }
 
 .aspect {
-  min-height: 32px
+  min-height: 32px;
+  cursor: pointer;
 }
 
 .aspect:hover {
@@ -261,11 +275,13 @@ hr {
   width: 25px;
   height: 20px;
   text-align: center;
+  cursor: pointer;
 }
 
 .skill-abilities {
   width: 200px;
   height: 100%;
+  cursor: pointer;
 }
 
 .icon {
@@ -345,7 +361,8 @@ hr {
 }
 
 .skillbook-category {
-  width: 150px
+  width: 150px;
+  cursor: pointer;
 }
 .skillbook-category:hover {
   filter: brightness(110%);

@@ -172,13 +172,14 @@ export class Game {
   // todo clean up
   getDisplayString(stat) {
     let displayString;
+    let isArtifact = stat.id.search("PIP_Artifact") > -1
 
     // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || stat.type == "specialLogic") {
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type == "specialLogic" || stat.type == "statusExtension") && !isArtifact) {
 
       // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
-      if (stat.type == "specialLogic") {
-        let statDisplay = miscData.stats.specialLogic[stat.id]
+      if (stat.type == "specialLogic" || stat.type == "statusExtension") {
+        let statDisplay = miscData.stats.[stat.type][stat.id]
 
         
         if (statDisplay && statDisplay.strings != undefined)

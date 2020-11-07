@@ -113,6 +113,7 @@ export const nodesWithExtraKeywords = {
 	Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor: ["Ward"],
 	Ascension_Celestial_ACT_AllyWard: ["Ward"],
 	Ascension_Centurion_ACT_EndOfTurnDefiance: ["Defiance"],
+	Ascension_Prosperity_ACT_Basic_MK2_Ward: ["Ward"],
 
 }
 
@@ -1278,7 +1279,13 @@ export const stats = {
 			display: "When you have at least 90% Vitality (-1% per Form or Life embodied), Prosperity is considered active."
 		}
 	},
-	statusExtension: {},
+	statusExtension: {
+		// neat hack to get rid of duplicate text. This node grants 2 effects, one for each type of armor, meaning it shows 2 (same) strings in the keywords screen. This removes a duplicate.
+		VolatileArmor_Physical_300_Physical_AMER_RS3_FX_VolatileArmor: {
+			strings: ["", ""]
+		},
+
+	},
 	scalingExtension: {},
 	extraStatusApplication: {},
 	specialLogic: {

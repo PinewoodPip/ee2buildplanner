@@ -408,7 +408,8 @@
                 "id": "DodgeFatigue_AddAmount",
                 "value": 4.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_4_0"
               },
               {
                 "type": "flexStat",
@@ -1246,7 +1247,8 @@
                 "id": "Stat_ACCURACYBOOST",
                 "value": 10.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_4_0"
               },
               {
                 "type": "statusExtension",
@@ -1255,7 +1257,8 @@
                 "id": "Stat_DAMAGEBOOST",
                 "value": 20.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_4_0"
               },
               {
                 "type": "statusExtension",
@@ -1264,7 +1267,8 @@
                 "id": "Stat_INITIATIVE",
                 "value": 10.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_4_0"
               }
             ],
             [
@@ -1997,7 +2001,8 @@
                 "id": "Stat_ACCURACYBOOST",
                 "value": 10.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_3_2"
               },
               {
                 "type": "statusExtension",
@@ -2006,7 +2011,8 @@
                 "id": "Stat_DAMAGEBOOST",
                 "value": 15.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_3_2"
               },
               {
                 "type": "statusExtension",
@@ -2015,7 +2021,8 @@
                 "id": "Voracity_Life",
                 "value": 15.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_3_2"
               }
             ]
           ],
@@ -2214,7 +2221,8 @@
                 "id": "Stat_APRECOVERY",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_3_0"
               }
             ],
             [
@@ -2655,7 +2663,8 @@
                 "id": "Stat_ACCURACYBOOST",
                 "value": 10.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_1_2"
               },
               {
                 "type": "statusExtension",
@@ -2664,7 +2673,8 @@
                 "id": "Stat_CRITICALCHANCE",
                 "value": 10.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_1_2"
               },
               {
                 "type": "keywordBasicActivator",
@@ -5334,7 +5344,8 @@
                 "id": "InstantEffect_ApplyBattered",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_2_1"
               },
               {
                 "type": "statusExtension",
@@ -5343,7 +5354,8 @@
                 "id": "InstantEffect_ApplyBattered",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_2_1"
               },
               {
                 "type": "statusExtension",
@@ -5352,7 +5364,8 @@
                 "id": "InstantEffect_ApplyHarried",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_2_1"
               },
               {
                 "type": "statusExtension",
@@ -5361,7 +5374,8 @@
                 "id": "InstantEffect_ApplyHarried",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_2_1"
               }
             ],
             [
@@ -5495,7 +5509,8 @@
                 "id": "ToggleStatus_AMER_DECAY_NEGALEADERSHIP_AURA",
                 "value": -1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_4_0"
               }
             ],
             [
@@ -5536,7 +5551,8 @@
                 "id": "PercAttributeIncrease_Constitution",
                 "value": -10.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_4_1"
               },
               {
                 "type": "extendedStat",
@@ -6588,7 +6604,8 @@
                 "id": "Stat_PHYSICALRESISTANCE",
                 "value": 6.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheNautilus_Node_2_0"
               },
               {
                 "type": "keywordBasicActivator",
@@ -7026,7 +7043,8 @@
                 "id": "Stat_MOVEMENTBOOST",
                 "value": -5.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_3_2"
               },
               {
                 "type": "scalingExtension",
@@ -7565,7 +7583,8 @@
                 "id": "Stat_DAMAGEBOOST",
                 "value": 15.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_2_3"
               },
               {
                 "type": "keywordBasicActivator",
@@ -7626,7 +7645,8 @@
                 "id": "Stat_INITIATIVE",
                 "value": 10.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_3_2"
               },
               {
                 "type": "statusExtension",
@@ -7635,7 +7655,8 @@
                 "id": "FreeReactionCharge_AMER_Centurion",
                 "value": 2.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_3_2"
               },
               {
                 "type": "keywordBasicActivator",
@@ -8555,7 +8576,8 @@
                 "id": "PercAttributeIncrease_Intelligence",
                 "value": 25.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_4_2"
               },
               {
                 "type": "statusExtension",
@@ -8564,7 +8586,8 @@
                 "id": "PercAttributeIncrease_Finesse",
                 "value": 25.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_4_2"
               },
               {
                 "type": "statusExtension",
@@ -8573,7 +8596,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": 25.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_4_2"
               }
             ],
             [
@@ -8849,7 +8873,8 @@
                 "id": "Stat_APRECOVERY",
                 "value": -1.0,
                 "keyword": "Bane",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_3_0"
               }
             ],
             [
@@ -8890,7 +8915,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": -20.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_3_1"
               }
             ],
             [
@@ -9375,7 +9401,8 @@
                 "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.02,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArmadillo_Node_2_1"
               },
               {
                 "type": "keywordBasicActivator",
@@ -9769,7 +9796,8 @@
                 "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.03,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCrab_Node_4_1"
               }
             ]
           ],
@@ -10592,7 +10620,8 @@
                 "id": "VolatileArmor_Physical_300_Physical_AMER_RS3_FX_VolatileArmor",
                 "value": 15.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_4_2"
               },
               {
                 "type": "statusExtension",
@@ -10601,7 +10630,8 @@
                 "id": "VolatileArmor_Magic_300_Physical_AMER_RS3_FX_VolatileArmor",
                 "value": 15.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_4_2"
               }
             ]
           ],
@@ -11127,7 +11157,8 @@
                 "id": "Stat_PHYSICALRESISTANCE",
                 "value": 10.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_3_2"
               },
               {
                 "type": "statusExtension",
@@ -11136,7 +11167,8 @@
                 "id": "Stat_PIERCINGRESISTANCE",
                 "value": 10.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_3_2"
               }
             ]
           ],
@@ -11334,7 +11366,8 @@
                 "id": "Stat_DAMAGEBOOST",
                 "value": 25.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_2_2"
               },
               {
                 "type": "keywordBasicActivator",
@@ -11517,7 +11550,8 @@
                 "id": "Stat_DODGEBOOST",
                 "value": 10.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_1_2"
               },
               {
                 "type": "statusExtension",
@@ -11526,7 +11560,8 @@
                 "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.02,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_1_2"
               },
               {
                 "type": "keywordBasicActivator",
@@ -11640,7 +11675,8 @@
                 "id": "Spell_Projectile_BouncingShield_TheArena",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_4_1"
               }
             ],
             [
@@ -11854,7 +11890,8 @@
                 "id": "MaxRes_EleRes",
                 "value": 3.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_3_1"
               },
               {
                 "type": "statusExtension",
@@ -11863,7 +11900,8 @@
                 "id": "Stat_PHYSICALRESISTANCE",
                 "value": 7.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_3_1"
               },
               {
                 "type": "statusExtension",
@@ -11872,7 +11910,8 @@
                 "id": "Stat_PIERCINGRESISTANCE",
                 "value": 7.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_3_1"
               }
             ]
           ],
@@ -12973,7 +13012,8 @@
                 "id": "Ability_Leadership",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheRabbit_Node_3_0"
               },
               {
                 "type": "keywordBasicActivator",
@@ -13015,7 +13055,8 @@
                 "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheRabbit_Node_4_0"
               },
               {
                 "type": "specialLogic",
@@ -13034,7 +13075,8 @@
                 "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.025,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheRabbit_Node_4_1"
               }
             ]
           ],
@@ -13529,7 +13571,8 @@
                 "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_4_0"
               },
               {
                 "type": "specialLogic",
@@ -14263,7 +14306,8 @@
                 "id": "Stat_SpecialCase_EleResistance",
                 "value": 7.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_2_2"
               },
               {
                 "type": "keywordBasicActivator",
@@ -15080,7 +15124,8 @@
                 "id": "Spell_Shout_Ignition_Splendor",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_4_1"
               }
             ],
             [

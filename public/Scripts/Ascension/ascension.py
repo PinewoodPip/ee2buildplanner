@@ -314,6 +314,9 @@ for line in ascData.readlines():
 
                 realId = search["stat"] + "_" + search["subStat"] + "_" + subSubStat + "_" + subSubSubStat
                 realId = removeTrailingUnderscores(realId)
+                
+                refString = removeTrailingUnderscores("AMER_UI_Ascension_" + search["family"] + "_" + search["id"] + "_Node_" + str(nodeIndex) + "_" + str(subIndex))
+
                 n.append({
                     "type": "statusExtension",
                     "subType": subType,
@@ -322,6 +325,7 @@ for line in ascData.readlines():
                     "value": float(value),
                     "keyword": keyword,
                     "keywordBoon": keywordBoonType,
+                    "string": refString,
                 })
 
             elif key == "scalingStatflexStat" or key == "scalingStatextendedStat":
