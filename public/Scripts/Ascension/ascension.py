@@ -285,7 +285,7 @@ for line in ascData.readlines():
                 n.append({"type": "embodimentReward", "id": search["emb"], "value": float(value)})
 
             elif key == "keyword":
-                n.append({"type": "keywordBasicActivator", "id": search["keyword"], "value": 1.0})
+                n.append({"type": "keywordBasicActivator", "id": search["keyword"], "value": 1.0, "keyword": search["keyword"], "keywordBoon": "activator"})
 
             elif key == "statusExtensionflexStat" or key =="statusExtensionextendedStat":
                 status = search["status"]

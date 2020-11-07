@@ -140,7 +140,7 @@ export function Keywords(props) {
 
 	for (let x in props.app.keywords[props.app.state.currentKeyword]) {
 		let keyword = props.app.keywords[props.app.state.currentKeyword][x]
-		let element = <Text text={game.getDisplayString(game.app.stats.specialLogic[keyword.id])}/>
+		let element = <Text text={game.getDisplayString(game.app.stats[keyword.type][keyword.id])}/>
 
 		if (keyword.keywordBoon == "activator")
 			activators.push(element)

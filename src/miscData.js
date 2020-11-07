@@ -1258,7 +1258,26 @@ export const stats = {
 		},
 		
 	},
-	keywordBasicActivator: {},
+	keywordBasicActivator: {
+		Abeyance: {
+			display: "If it is not your turn, when you are dealt combat damage equivalent to at least 30% of your maximum Vitality (-0.5% per Inertia or Form embodied, minimum of 20%) at once, Abeyance activates."
+		},
+		Adaptation: {
+			display: "Adaptation skill: 1 AP, no cooldown, activate Adaptation when cast."
+		},
+		Defiance: {
+			display: "When you become Flanked, and when you start your turn within 5m of at least two enemies, Defiance activates for 1 turn."
+		},
+		IncarnateChampion: {
+			display: "Summon Incarnate summons an Incarnate Champion."
+		},
+		Benevolence: {
+			display: "Gain Mercy, 2 AP, 1 turn cooldown, activate Benevolence on each ally within 8m."
+		},
+		Prosperity: {
+			display: "When you have at least 90% Vitality (-1% per Form or Life embodied), Prosperity is considered active."
+		}
+	},
 	statusExtension: {},
 	scalingExtension: {},
 	extraStatusApplication: {},
@@ -1287,7 +1306,7 @@ export const aspectsAfterWePutAnHrToMakeThingsLookNice = [
 ]
 
 export const boostsWithKeywords = [
-	"specialLogic", "statusExtension", "scalingExtension", "extraStatusApplication"
+	"specialLogic", "statusExtension", "scalingExtension", "extraStatusApplication", "keywordBasicActivator"
 ]
 
 // converts ids to image filenames / in-game names

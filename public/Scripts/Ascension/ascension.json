@@ -2669,7 +2669,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -3914,7 +3916,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "IncarnateChampion",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "IncarnateChampion",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -4819,7 +4823,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Adaptation",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -6069,7 +6075,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Abeyance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -6081,7 +6089,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Adaptation",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -6583,7 +6593,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -7265,7 +7277,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Adaptation",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -7336,7 +7350,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "IncarnateChampion",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "IncarnateChampion",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -7554,7 +7570,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -7577,7 +7595,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Abeyance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -7620,7 +7640,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -8126,7 +8148,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Abeyance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -8146,7 +8170,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Adaptation",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Adaptation",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -9083,7 +9109,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Abeyance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -9352,7 +9380,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -9697,7 +9727,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Benevolence",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -10215,7 +10247,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Benevolence",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -10782,7 +10816,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Benevolence",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -11033,7 +11069,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Prosperity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               }
             ],
             [
@@ -11250,7 +11288,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Abeyance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Abeyance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -11299,7 +11339,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -11489,7 +11531,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ]
           ],
@@ -12030,7 +12074,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -12296,7 +12342,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -12930,7 +12978,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Prosperity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -13426,7 +13476,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Prosperity",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Prosperity",
+                "keywordBoon": "activator"
               },
               {
                 "type": "specialLogic",
@@ -13919,7 +13971,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Benevolence",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Benevolence",
+                "keywordBoon": "activator"
               },
               {
                 "type": "flexStat",
@@ -14214,7 +14268,9 @@
               {
                 "type": "keywordBasicActivator",
                 "id": "Defiance",
-                "value": 1.0
+                "value": 1.0,
+                "keyword": "Defiance",
+                "keywordBoon": "activator"
               }
             ]
           ],
