@@ -46,8 +46,6 @@ export function Boosts(props) {
 				statStrings[stat.type][stat.id] = displayString
 			}
 
-			console.log(statStrings)
-
 			boosts.push(<Text text={displayString}/>)
 		}
 	}

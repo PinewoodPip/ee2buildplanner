@@ -31,7 +31,6 @@ export class Game {
 
   getArtifact(id) {
     let info = cloneDeep(game.artifacts[id])
-    console.log(id)
     if (utils.hasKey(miscData.artifactBoosts, id))
       info.boosts = miscData.artifactBoosts[id]
     else
@@ -89,12 +88,14 @@ export class Game {
 
   getStats() {
     // todo clean up params
-    function addStat(id, amount, stat) {
+    function addStat(stat) {
+      // console.log(stat)
       if (utils.hasKey(stats[stat.type], stat.id)) {
-        stats[stat.type][stat.id].amount += amount
+        stats[stat.type][stat.id].amount += stat.value
+        stats[stat.type][stat.id].refString = stat.string
       }
       else {
-        stats[stat.type][stat.id] = {type: stat.type, amount: amount, id: id}
+        stats[stat.type][stat.id] = {type: stat.type, amount: stat.value, id: stat.id, refString: stat.string}
       }
     }
 
@@ -118,12 +119,17 @@ export class Game {
 
     // if a stat is defined to contain a keyword, add it to a list of this build's keywords
     function tryToAddKeyword(node) {
-      if (utils.hasKey(node, "keyword")) {
+      if ("keywords" in node) {
+        node.keywords.forEach(keywordObj => {
+          utils.tryToPush(keywords, keywordObj.keyword, {id: node.id, type: node.type, keyword: keywordObj.keyword, keywordBoon: keywordObj.keywordBoon, refString: node.string})
+        })
+      }
+      else if (utils.hasKey(node, "keyword")) {
         if (utils.hasKey(keywords, node.keyword)) {
-          keywords[node.keyword].push({id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon})
+          keywords[node.keyword].push({id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon, refString: node.string})
         }
         else {
-          keywords[node.keyword] = [{id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon}]
+          keywords[node.keyword] = [{id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon, refString: node.string}]
         }
       }
     }
@@ -135,16 +141,26 @@ export class Game {
       for (let z in asp.nodes) {
         for (let v in asp.nodes[z].parent) {
           let parentBoost = asp.nodes[z].parent[v]
-          addStat(parentBoost.id, parentBoost.value, parentBoost)
+          addStat(parentBoost)
           tryToAddKeyword(parentBoost)
         }
         for (let v in asp.nodes[z].subNodes[build[z]]) {
           let subNodeBoost = asp.nodes[z].subNodes[build[z]][v]
-          addStat(subNodeBoost.id, subNodeBoost.value, subNodeBoost)
+          addStat(subNodeBoost)
           tryToAddKeyword(subNodeBoost)
         }
       }
     }
+
+    this.app.state.artifacts.forEach(element => {
+      let boosts = miscData.artifactBoosts[element]
+      if (boosts && "innate" in boosts) {
+        boosts.innate.forEach(e => {
+          addStat(e)
+          tryToAddKeyword(e)
+        })
+      }
+    })
 
     // cache
     this.app.keywords = keywords
@@ -153,31 +169,28 @@ export class Game {
   }
 
   // get a string display of a stat
+  // todo clean up
   getDisplayString(stat) {
     let displayString;
 
     // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || stat.type == "specialLogic") {
 
       // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
       if (stat.type == "specialLogic") {
         let statDisplay = miscData.stats.specialLogic[stat.id]
 
-        if (statDisplay.strings != undefined)
-          // if this specialLogic has defined strings for on/off, use those
+        
+        if (statDisplay && statDisplay.strings != undefined)
+        // if this specialLogic has defined strings for on/off, use those
           displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
-
-        else if (statDisplay.referenceString != undefined && stat.amount > 0)
+        else if (stat.amount > 0) {
           // otherwise use the game's description for it.
-          displayString = game.ascension.specialStrings[statDisplay.referenceString]
-
-        else if (statDisplay.referenceString != undefined) {
-          // we don't have this specialLogic - preppend a "FALSE"
-          displayString = "FALSE: " + game.ascension.specialStrings[statDisplay.referenceString]
+          displayString = game.ascension.specialStrings[stat.refString]
         }
-        // if all fails, use a placeholder
         else {
-          displayString = utils.format("UNDEFINED SPECIALLOGIC STAT {0}: {1}", stat.id, stat.amount)
+          // we don't have this specialLogic - preppend a "FALSE"
+          displayString = "FALSE: " + game.ascension.specialStrings[stat.refString]
         }
       }
       else
@@ -185,7 +198,12 @@ export class Game {
     }
     // otherwise use a placeholder
     else {
-      displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
+      if (stat.id.search("PIP_Artifact") > -1) {
+        let desc = stat.id.replace("PIP_Artifact_", "").toLowerCase()
+        displayString = game.artifacts[desc].description
+      }
+      else
+        displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
     }
 
     return displayString

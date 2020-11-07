@@ -269,7 +269,9 @@ for line in ascData.readlines():
                         keyword = x
                         keywordBoonType = "mutator"
 
-                n.append({"type": "specialLogic", "id": logic, "value": float(value), "keyword": keyword, "keywordBoon": keywordBoonType})
+                refString = removeTrailingUnderscores("AMER_UI_Ascension_" + search["family"] + "_" + search["id"] + "_Node_" + str(nodeIndex) + "_" + str(subIndex))
+
+                n.append({"type": "specialLogic", "id": logic, "value": float(value), "keyword": keyword, "keywordBoon": keywordBoonType, "string": refString})
                 
 
             elif key == "extendedStat":

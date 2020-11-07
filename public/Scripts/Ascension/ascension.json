@@ -124,7 +124,8 @@
                 "id": "Ascension_Elementalist_ACT_FireEarth_AllySkills",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheFalcon_Node_3_0"
               }
             ],
             [
@@ -133,7 +134,8 @@
                 "id": "Ascension_Predator_ACT_BHStacks",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheFalcon_Node_3_1"
               }
             ]
           ],
@@ -151,7 +153,8 @@
                 "id": "Ascension_Elementalist_MUTA_FireEarth_NonTieredStatuses",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheFalcon_Node_4_0"
               }
             ],
             [
@@ -160,7 +163,8 @@
                 "id": "Ascension_Predator_MUTA_Slowed2",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheFalcon_Node_4_1"
               }
             ],
             [
@@ -183,7 +187,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheFalcon_Node_4_4"
               }
             ]
           ],
@@ -372,7 +377,8 @@
                 "id": "Ascension_Paucity_ACT_BHStacks",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_3_0"
               }
             ],
             [
@@ -381,7 +387,8 @@
                 "id": "Ascension_ViolentStrike_ACT_0AP",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_3_1"
               }
             ]
           ],
@@ -415,7 +422,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_Acid",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_4_1"
               }
             ],
             [
@@ -424,7 +432,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_Bleeding",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_4_2"
               }
             ],
             [
@@ -433,7 +442,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_Suffocating",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_4_3"
               }
             ],
             [
@@ -442,7 +452,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_Terrified2",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheHatchet_Node_4_4"
               }
             ]
           ],
@@ -598,7 +609,8 @@
                 "id": "Ascension_WeaponSkillTalent_ThePawn",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheHornet_Node_2_0"
               }
             ],
             [
@@ -607,7 +619,8 @@
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheHornet_Node_2_1"
               }
             ],
             [
@@ -742,7 +755,8 @@
                 "id": "Ascension_WeaponSkillTalent_Inconspicuous",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheSerpent_Node_2_0"
               }
             ],
             [
@@ -751,7 +765,8 @@
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheSerpent_Node_2_1"
               }
             ],
             [
@@ -935,7 +950,8 @@
                 "id": "Ascension_Elementalist_ACT_PredatorOrVuln3",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheArcanist_Node_3_0"
               }
             ],
             [
@@ -944,7 +960,8 @@
                 "id": "Ascension_ViolentStrike_ACT_ElemStacks",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheArcanist_Node_3_1"
               }
             ]
           ],
@@ -962,7 +979,8 @@
                 "id": "Ascension_Elementalist_MUTA_EmulateSkillSI",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcanist_Node_4_0"
               }
             ],
             [
@@ -971,7 +989,8 @@
                 "id": "Ascension_Elementalist_MUTA_FeedbackAttribBonus",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcanist_Node_4_1"
               }
             ],
             [
@@ -980,7 +999,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_ForceEntropyLifeDamageScaling",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcanist_Node_4_2"
               }
             ]
           ],
@@ -1185,7 +1205,8 @@
                 "id": "Ascension_Paucity_ACT_BHStacks",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_3_0"
               }
             ],
             [
@@ -1194,7 +1215,8 @@
                 "id": "Ascension_ViolentStrike_ACT_DamageAtOnce",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_3_1"
               }
             ],
             [
@@ -1203,7 +1225,8 @@
                 "id": "Ascension_Paucity_ACT_MK2_ArmorDepleted",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_3_2"
               }
             ]
           ],
@@ -1250,7 +1273,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_EleArrowheads",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_4_1"
               }
             ],
             [
@@ -1259,7 +1283,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_BHStackNonBoss",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheArcher_Node_4_2"
               }
             ]
           ],
@@ -1473,7 +1498,8 @@
                 "id": "Ascension_Paucity_ACT_VitThreshold",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheManticore_Node_3_0"
               }
             ],
             [
@@ -1482,7 +1508,8 @@
                 "id": "Ascension_Predator_ACT_Terrified",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheManticore_Node_3_1"
               }
             ]
           ],
@@ -1500,7 +1527,8 @@
                 "id": "Ascension_Paucity_MUTA_EmulateBlackShroud",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheManticore_Node_4_0"
               }
             ],
             [
@@ -1509,7 +1537,8 @@
                 "id": "Ascension_Paucity_MUTA_Sneak",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheManticore_Node_4_1"
               }
             ],
             [
@@ -1518,7 +1547,8 @@
                 "id": "Ascension_Predator_MUTA_EmulateFoKSI",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheManticore_Node_4_2"
               }
             ]
           ],
@@ -1686,7 +1716,8 @@
                 "id": "Ascension_Elementalist_ACT_FireEarth_AllySkills",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheScorpion_Node_2_0"
               }
             ],
             [
@@ -1695,7 +1726,8 @@
                 "id": "Ascension_VitalityVoid_ACT_DamageAtOnce",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheScorpion_Node_2_1"
               }
             ],
             [
@@ -1704,7 +1736,8 @@
                 "id": "Ascension_Elementalist_ACT_FireEarth_AllySkills_MK2_NecroRogue",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheScorpion_Node_2_2"
               }
             ]
           ],
@@ -1722,7 +1755,8 @@
                 "id": "Ascension_Elementalist_MUTA_FeedbackCrit",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheScorpion_Node_3_0"
               }
             ],
             [
@@ -1731,7 +1765,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_AcidSuffCalc",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheScorpion_Node_3_1"
               }
             ]
           ],
@@ -1891,7 +1926,8 @@
                 "id": "Ascension_Predator_ACT_Dazzled",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_2_0"
               }
             ],
             [
@@ -1905,7 +1941,8 @@
                 "id": "Ascension_Purity_ACT_VitThreshold",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_2_1"
               }
             ],
             [
@@ -1914,7 +1951,8 @@
                 "id": "Ascension_Purity_ACT_MK2_EnemyKilled",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_2_2"
               }
             ]
           ],
@@ -1932,7 +1970,8 @@
                 "id": "Ascension_Predator_MUTA_DualWieldrange",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_3_0"
               }
             ],
             [
@@ -1946,7 +1985,8 @@
                 "id": "Ascension_Predator_MUTA_Hemorrhage",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheTiger_Node_3_1"
               }
             ],
             [
@@ -2117,7 +2157,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_1_3"
               }
             ]
           ]
@@ -2131,7 +2172,8 @@
                 "id": "Ascension_2HArmorBonus",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_2_0"
               }
             ],
             [
@@ -2140,7 +2182,8 @@
                 "id": "Ascension_ViolentStrike_ACT_BasicOnHit",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_2_1"
               }
             ],
             [
@@ -2185,7 +2228,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_FinStrDamageScaling",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_3_1"
               }
             ]
           ],
@@ -2203,7 +2247,8 @@
                 "id": "Ascension_Purity_MUTA_Conqueror",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_4_0"
               }
             ],
             [
@@ -2212,7 +2257,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_VitalityVoidACT",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_4_1"
               }
             ],
             [
@@ -2226,7 +2272,8 @@
                 "id": "Ascension_SourceGen_Conq",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_TheConqueror_Node_4_2"
               }
             ]
           ],
@@ -2377,7 +2424,8 @@
                 "id": "Ascension_Elementalist_ACT_OccultOrElem",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_TheKraken_Node_2_0"
               }
             ],
             [
@@ -2386,7 +2434,8 @@
                 "id": "Ascension_Elementalist_MUTA_FreeOHBasicAttack",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheKraken_Node_2_1"
               }
             ],
             [
@@ -2415,7 +2464,8 @@
                 "id": "Ascension_Elementalist_MUTA_FeedbackPowerEffect",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheKraken_Node_3_0"
               }
             ],
             [
@@ -2424,7 +2474,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_TeleportWithered",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheKraken_Node_3_1"
               }
             ]
           ],
@@ -2443,7 +2494,8 @@
                 "id": "Ascension_Elementalist_MUTA_DoTs",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheKraken_Node_4_0"
               }
             ],
             [
@@ -2452,7 +2504,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_Glaciate",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_TheKraken_Node_4_1"
               }
             ]
           ],
@@ -2635,7 +2688,8 @@
                 "id": "Ascension_Paucity_ACT_Berserk",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_2_0"
               }
             ],
             [
@@ -2644,7 +2698,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_2HDamageFromForce",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_2_1"
               }
             ],
             [
@@ -2674,7 +2729,8 @@
                 "id": "Ascension_Paucity_MUTA_WitherACT_BasicAttack",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_3_0"
               }
             ],
             [
@@ -2683,7 +2739,8 @@
                 "id": "Ascension_Predator_MUTA_LifestealDamageFromForce",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_3_1"
               }
             ]
           ],
@@ -2702,7 +2759,8 @@
                 "id": "Ascension_Paucity_MUTA_EffectiveSI_Wrath",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_4_0"
               }
             ],
             [
@@ -2711,7 +2769,8 @@
                 "id": "Ascension_Predator_MUTA_EmulateWiltingSI",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_4_1"
               }
             ],
             [
@@ -2720,7 +2779,8 @@
                 "id": "Ascension_T3BlockedForDamage",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Force_Wrath_Node_4_2"
               }
             ]
           ],
@@ -2873,7 +2933,8 @@
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_TheCrow_Node_2_0"
               }
             ],
             [
@@ -3076,7 +3137,8 @@
                 "id": "Ascension_VitalityVoid_ACT_SourceSpent",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheFly_Node_3_0"
               }
             ],
             [
@@ -3090,7 +3152,8 @@
                 "id": "Ascension_Wither_ACT_SlowAndWeak2And3",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheFly_Node_3_1"
               }
             ],
             [
@@ -3121,7 +3184,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_Terrified2",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheFly_Node_4_0"
               }
             ],
             [
@@ -3135,7 +3199,8 @@
                 "id": "Ascension_Wither_MUTA_CritAppliesSubj2",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheFly_Node_4_1"
               }
             ],
             [
@@ -3168,7 +3233,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_TheFly_Node_4_4"
               }
             ]
           ],
@@ -3377,7 +3443,8 @@
                 "id": "Ascension_Occultist_ACT_TerrifiedAndSubj2And3",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheVulture_Node_3_0"
               }
             ],
             [
@@ -3386,7 +3453,8 @@
                 "id": "Ascension_Predator_ACT_AllyAoO",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheVulture_Node_3_1"
               }
             ]
           ],
@@ -3409,7 +3477,8 @@
                 "id": "Ascension_Occultist_MUTA_Weakened2",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheVulture_Node_4_0"
               }
             ],
             [
@@ -3418,7 +3487,8 @@
                 "id": "Ascension_Predator_MUTA_CritFromTargetLowLife",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheVulture_Node_4_1"
               }
             ]
           ],
@@ -3558,7 +3628,8 @@
                 "id": "Ascension_WeaponSkillTalent_ThePawn",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_TheWolf_Node_2_0"
               }
             ],
             [
@@ -3567,7 +3638,8 @@
                 "id": "Ascension_WeaponSkillTalent_Inconspicuous",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_TheWolf_Node_2_1"
               }
             ],
             [
@@ -3783,7 +3855,8 @@
                 "id": "Ascension_VitalityVoid_ACT_VitThresholdPerTurn",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_BloodApe_Node_3_0"
               }
             ],
             [
@@ -3792,7 +3865,8 @@
                 "id": "Ascension_Wither_ACT_Bleeding",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_BloodApe_Node_3_1"
               }
             ],
             [
@@ -3822,7 +3896,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_HitCountExtendSourceGen",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_BloodApe_Node_4_0"
               }
             ],
             [
@@ -3831,7 +3906,8 @@
                 "id": "Ascension_Wither_MUTA_BasicAttackSIGotS",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_BloodApe_Node_4_1"
               }
             ],
             [
@@ -3847,7 +3923,8 @@
                 "id": "Ascension_SummonLimitTo2",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_BloodApe_Node_4_3"
               }
             ]
           ],
@@ -4020,7 +4097,8 @@
                 "id": "Ascension_Paucity_ACT_AllyDeathsPerRound",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_Extinction_Node_2_0"
               }
             ],
             [
@@ -4029,7 +4107,8 @@
                 "id": "Ascension_Predator_ACT_NearCorpseEndOfTurn",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_Extinction_Node_2_1"
               }
             ],
             [
@@ -4038,7 +4117,8 @@
                 "id": "Ascension_Skill_BoneshapedSkitterer",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Extinction_Node_2_2"
               }
             ]
           ],
@@ -4056,7 +4136,8 @@
                 "id": "Ascension_Paucity_MUTA_SummonACT",
                 "value": 1.0,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Extinction_Node_3_0"
               }
             ],
             [
@@ -4065,7 +4146,8 @@
                 "id": "Ascension_Predator_MUTA_SkittererConversion",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Extinction_Node_3_1"
               }
             ],
             [
@@ -4074,7 +4156,8 @@
                 "id": "Ascension_Predator_MUTA_DamagePerCorpse",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Extinction_Node_3_2"
               }
             ]
           ],
@@ -4265,7 +4348,8 @@
                 "id": "Ascension_Occultist_ACT_AllyWither",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheImp_Node_3_0"
               }
             ],
             [
@@ -4274,7 +4358,8 @@
                 "id": "Ascension_Wither_ACT_SubjAndTerrified",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheImp_Node_3_1"
               }
             ]
           ],
@@ -4292,7 +4377,8 @@
                 "id": "Ascension_Occultist_MUTA_NowBasicAttack",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheImp_Node_4_0"
               }
             ],
             [
@@ -4311,7 +4397,8 @@
                 "id": "Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheImp_Node_4_2"
               }
             ]
           ],
@@ -4510,7 +4597,8 @@
                 "id": "Ascension_Predator_ACT_AllyPredator",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheHyena_Node_3_0"
               }
             ],
             [
@@ -4519,7 +4607,8 @@
                 "id": "Ascension_VitalityVoid_ACT_SourceSpent",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheHyena_Node_3_1"
               }
             ],
             [
@@ -4528,7 +4617,8 @@
                 "id": "Ascension_VitalityVoid_ACT_SourceSpent_MK2_T3Status",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheHyena_Node_3_2"
               }
             ]
           ],
@@ -4546,7 +4636,8 @@
                 "id": "Ascension_Predator_MUTA_VoracityACT",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheHyena_Node_4_0"
               }
             ],
             [
@@ -4555,7 +4646,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_Terrified2AndSubj2",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheHyena_Node_4_1"
               }
             ],
             [
@@ -4564,7 +4656,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_DamageFromTargetCount",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheHyena_Node_4_2"
               }
             ]
           ],
@@ -4733,7 +4826,8 @@
                 "id": "Ascension_Adaptation_ACT_AllyKilled",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheSupplicant_Node_2_0"
               }
             ],
             [
@@ -4742,7 +4836,8 @@
                 "id": "Ascension_Occultist_ACT_AlliedSummonKilled",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_TheSupplicant_Node_2_1"
               }
             ],
             [
@@ -4772,7 +4867,8 @@
                 "id": "Ascension_Adaptation_MUTA_PercPowerLifesteal",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_0"
               }
             ],
             [
@@ -4781,7 +4877,8 @@
                 "id": "Ascension_Occultist_MUTA_MakeTotem",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_1"
               }
             ],
             [
@@ -4790,7 +4887,8 @@
                 "id": "Ascension_Occultist_MUTA_EmulateInfectSpendAdapt",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_2"
               }
             ],
             [
@@ -4799,7 +4897,8 @@
                 "id": "Ascension_Skill_AccursedVessel",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_TheSupplicant_Node_3_3"
               }
             ]
           ],
@@ -4956,7 +5055,8 @@
                 "id": "Ascension_Predator_ACT_AllyViolentStrike",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_2_0"
               }
             ],
             [
@@ -4965,7 +5065,8 @@
                 "id": "Ascension_VitalityVoid_ACT_CombatDeath",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_2_1"
               }
             ],
             [
@@ -4996,7 +5097,8 @@
                 "id": "Ascension_Predator_MUTA_RecoverAPOnKill",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_3_0"
               }
             ],
             [
@@ -5010,7 +5112,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_Wither",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_3_1"
               }
             ]
           ],
@@ -5029,7 +5132,8 @@
                 "id": "Ascension_Predator_MUTA_BloatedCorpseOnKill",
                 "value": 1.0,
                 "keyword": "Predator",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_4_0"
               }
             ],
             [
@@ -5038,7 +5142,8 @@
                 "id": "Ascension_VitalityVoid_MUTA_CorpseSkitterers",
                 "value": 1.0,
                 "keyword": "VitalityVoid",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_4_1"
               }
             ],
             [
@@ -5062,7 +5167,8 @@
                 "id": "Ascension_BHThreshold_AlwaysSufficient",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Death_Node_4_2"
               }
             ]
           ],
@@ -5210,7 +5316,8 @@
                 "id": "Ascension_Wither_ACT_CorpseExploded",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_2_0"
               }
             ],
             [
@@ -5437,7 +5544,8 @@
                 "id": "Ascension_Skill_Haruspicy",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_4_2"
               }
             ]
           ],
@@ -5585,7 +5693,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_1_3"
               }
             ],
             [
@@ -5614,7 +5723,8 @@
                 "id": "Ascension_Adaptation_ACT_Paucity",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_2_0"
               }
             ],
             [
@@ -5623,7 +5733,8 @@
                 "id": "Ascension_Skill_CorpseMastery",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_2_1"
               }
             ],
             [
@@ -5644,7 +5755,8 @@
                 "id": "Ascension_SummonsFloat",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_2_3"
               }
             ]
           ],
@@ -5662,7 +5774,8 @@
                 "id": "Ascension_Adaptation_MUTA_AdaptSpend_DemiLich_A",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_3_0"
               }
             ],
             [
@@ -5671,7 +5784,8 @@
                 "id": "Ascension_Occultist_MUTA_PreexistingBHStacks",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_3_1"
               }
             ],
             [
@@ -5705,7 +5819,8 @@
                 "id": "Ascension_Adaptation_MUTA_AdaptSpend_DemiLich_B",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_4_0"
               }
             ],
             [
@@ -5719,7 +5834,8 @@
                 "id": "Ascension_Occultist_MUTA_Adapt",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_4_1"
               }
             ],
             [
@@ -5743,7 +5859,8 @@
                 "id": "Ascension_DemilichCannotDie",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_4_2"
               }
             ],
             [
@@ -5752,7 +5869,8 @@
                 "id": "Ascension_Skill_BoneshapedCrusher",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Entropy_Demilich_Node_4_3"
               }
             ]
           ],
@@ -5768,7 +5886,8 @@
               "id": "Ascension_DemilichHealConversion",
               "value": 1.0,
               "keyword": null,
-              "keywordBoon": null
+              "keywordBoon": null,
+              "string": "AMER_UI_Ascension_Entropy_Demilich_Node_5_None"
             }
           ],
           "subNodes": []
@@ -5980,7 +6099,8 @@
                 "id": "Ascension_Abeyance_MUTA_CleanseTiered1And2",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheChalice_Node_4_0"
               }
             ],
             [
@@ -5989,7 +6109,8 @@
                 "id": "Ascension_Adaptation_MUTA_EleRes",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheChalice_Node_4_1"
               }
             ],
             [
@@ -6003,7 +6124,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheChalice_Node_4_2"
               }
             ]
           ],
@@ -6205,7 +6327,8 @@
                 "id": "Ascension_Centurion_ACT_MissedByAttack",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheKey_Node_3_0"
               }
             ],
             [
@@ -6214,7 +6337,8 @@
                 "id": "Ascension_Occultist_ACT_AtaxiaSquelched",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheKey_Node_3_1"
               }
             ],
             [
@@ -6262,7 +6386,8 @@
                 "id": "Ascension_Occultist_MUTA_Calcifying",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheKey_Node_4_1"
               }
             ],
             [
@@ -6467,7 +6592,8 @@
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheNautilus_Node_2_1"
               }
             ],
             [
@@ -6625,7 +6751,8 @@
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheSilkworm_Node_2_0"
               }
             ],
             [
@@ -6634,14 +6761,16 @@
                 "id": "Ascension_Presence_MUTA_BaseEleRes",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheSilkworm_Node_2_1"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_MK2_Damage",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheSilkworm_Node_2_1"
               }
             ],
             [
@@ -6807,7 +6936,8 @@
                 "id": "Ascension_Occultist_ACT_EndOfTurnFreeOffHand",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_2_0"
               }
             ],
             [
@@ -6816,7 +6946,8 @@
                 "id": "Ascension_Wither_ACT_Calcifying",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_2_1"
               }
             ],
             [
@@ -6856,7 +6987,8 @@
                 "id": "Ascension_Occultist_MUTA_EmulatePetrifyingVisage",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_3_0"
               }
             ],
             [
@@ -6870,7 +7002,8 @@
                 "id": "Ascension_Occultist_MUTA_Slowed2",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_3_1"
               }
             ],
             [
@@ -7139,7 +7272,8 @@
                 "id": "Ascension_Adaptation_ACT_MK2_IncarnateInfus",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_Doppelganger_Node_3_0"
               }
             ],
             [
@@ -7148,7 +7282,8 @@
                 "id": "Ascension_Occultist_ACT_AlliedSummonKilled",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_Doppelganger_Node_3_1"
               }
             ],
             [
@@ -7183,7 +7318,8 @@
                 "id": "Ascension_Adaptation_MUTA_AllRegen",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Doppelganger_Node_4_0"
               }
             ],
             [
@@ -7192,7 +7328,8 @@
                 "id": "Ascension_Occultist_MUTA_EmulateThrowDust",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Doppelganger_Node_4_1"
               }
             ],
             [
@@ -7208,7 +7345,8 @@
                 "id": "Ascension_SummonLimitTo2",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_Doppelganger_Node_4_3"
               }
             ]
           ],
@@ -7423,7 +7561,8 @@
                 "id": "Ascension_Defiance_ACT_MK2_NonSummonAllyCount",
                 "value": 1.0,
                 "keyword": "Defiance",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_2_3"
               }
             ]
           ],
@@ -7445,7 +7584,8 @@
                 "id": "Ascension_Abeyance_MUTA_ThresholdFromWitsPower",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_3_0"
               }
             ],
             [
@@ -7454,7 +7594,8 @@
                 "id": "Ascension_Centurion_ACT_AllyPredator",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_3_1"
               }
             ],
             [
@@ -7499,7 +7640,8 @@
                 "id": "Ascension_Abeyance_MUTA_AdaptSpendFireAoE",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_4_0"
               }
             ],
             [
@@ -7508,7 +7650,8 @@
                 "id": "Ascension_Abeyance_MUTA_TotemsAttackConversion",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_4_1"
               }
             ],
             [
@@ -7517,7 +7660,8 @@
                 "id": "Ascension_Centurion_MUTA_EmulateDragonBlaze",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheDragon_Node_4_2"
               }
             ]
           ],
@@ -7680,7 +7824,8 @@
                 "id": "Ascension_Centurion_ACT_MissedByAttack",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_2_0"
               }
             ],
             [
@@ -7694,14 +7839,16 @@
                 "id": "Ascension_Ward_ACT_DamageBuffer",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_2_1"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Ward_ACT_MK2_CritByEnemy",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_2_1"
               }
             ],
             [
@@ -7722,7 +7869,8 @@
                 "id": "Ascension_Centurion_ACT_MissedByAttack_MK2_OnAoO",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_2_3"
               }
             ]
           ],
@@ -7741,7 +7889,8 @@
                 "id": "Ascension_Centurion_MUTA_AdaptationStacks",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_3_0"
               }
             ],
             [
@@ -7750,7 +7899,8 @@
                 "id": "Ascension_Centurion_MUTA_CritAdaptStacks",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_3_1"
               }
             ],
             [
@@ -7764,7 +7914,8 @@
                 "id": "Ascension_Ward_MUTA_AdaptationStacks",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheGryphon_Node_3_2"
               }
             ]
           ],
@@ -7987,7 +8138,8 @@
                 "id": "Ascension_Abeyance_MUTA_BufferDRFormInertiaScaling",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Wealth_Node_3_0"
               }
             ],
             [
@@ -8001,7 +8153,8 @@
                 "id": "Ascension_Adaptation_ACT_MK2_Flurry",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_Wealth_Node_3_1"
               }
             ],
             [
@@ -8048,7 +8201,8 @@
                 "id": "Ascension_Abeyance_MUTA_TotemSac",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Wealth_Node_4_0"
               }
             ],
             [
@@ -8057,7 +8211,8 @@
                 "id": "Ascension_Adaptation_MUTA_FortifyOpenEyes",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Wealth_Node_4_1"
               }
             ],
             [
@@ -8066,7 +8221,8 @@
                 "id": "Ascension_Adaptation_MUTA_MeteorShowerSI",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Wealth_Node_4_2"
               }
             ]
           ],
@@ -8249,7 +8405,8 @@
                 "id": "Ascension_Adaptation_ACT_Cannibalize",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_2_0"
               }
             ],
             [
@@ -8258,7 +8415,8 @@
                 "id": "Ascension_Ward_MUTA_DWDamagePerTotem",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_2_1"
               }
             ],
             [
@@ -8279,7 +8437,8 @@
                 "id": "Ascension_SummonsFloat",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_2_3"
               }
             ]
           ],
@@ -8297,7 +8456,8 @@
                 "id": "Ascension_Adaptation_MUTA_InitMovementCon",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_3_0"
               }
             ],
             [
@@ -8306,7 +8466,8 @@
                 "id": "Ascension_Ward_MUTA_Skitterer",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_3_1"
               }
             ],
             [
@@ -8341,7 +8502,8 @@
                 "id": "Ascension_Adaptation_MUTA_MassForHeroes",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_4_0"
               }
             ],
             [
@@ -8350,7 +8512,8 @@
                 "id": "Ascension_Adaptation_MUTA_MassForSummons",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_4_1"
               }
             ],
             [
@@ -8393,7 +8556,8 @@
                 "id": "Ascension_SkitterersOnSummonDeath",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_Cerberus_Node_4_3"
               }
             ]
           ],
@@ -8581,7 +8745,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_1_3"
               }
             ]
           ],
@@ -8605,7 +8770,8 @@
                 "id": "Ascension_Occultist_ACT_RitualReaction",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_2_0"
               }
             ],
             [
@@ -8614,7 +8780,8 @@
                 "id": "Ascension_Wither_MUTA_2HDodgePenalty",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_2_1"
               }
             ],
             [
@@ -8635,7 +8802,8 @@
                 "id": "Ascension_SummonsFloat",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_2_3"
               }
             ]
           ],
@@ -8730,7 +8898,8 @@
                 "id": "Ascension_Occultist_MUTA_TotemsAttack",
                 "value": 1.0,
                 "keyword": "Occultist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_4_0"
               }
             ],
             [
@@ -8739,7 +8908,8 @@
                 "id": "Ascension_Wither_ACT_TheRitual",
                 "value": 1.0,
                 "keyword": "Wither",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_4_1"
               }
             ],
             [
@@ -8753,7 +8923,8 @@
                 "id": "Ascension_CannotDie_TheRitual",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_4_2"
               }
             ],
             [
@@ -8762,7 +8933,8 @@
                 "id": "Ascension_TotemsDupeOnDeath",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_4_3"
               }
             ]
           ],
@@ -8920,7 +9092,8 @@
                 "id": "Ascension_Centurion_MUTA_FreeOHEmulateSilencingStare",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_2_1"
               }
             ],
             [
@@ -8950,7 +9123,8 @@
                 "id": "Ascension_Abeyance_MUTA_AdaptSpendBufferReduce",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_3_0"
               }
             ],
             [
@@ -8959,7 +9133,8 @@
                 "id": "Ascension_Centurion_MUTA_AdaptationStacks",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_3_1"
               }
             ],
             [
@@ -8968,7 +9143,8 @@
                 "id": "Ascension_Demolitionist_AdaptSpenderSIBoost",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_3_2"
               }
             ]
           ],
@@ -8987,7 +9163,8 @@
                 "id": "Ascension_Abeyance_MUTA_NonLethal",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_4_0"
               }
             ],
             [
@@ -8996,7 +9173,8 @@
                 "id": "Ascension_Centurion_MUTA_AdaptSpendEmulateChainLight",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_4_1"
               }
             ],
             [
@@ -9005,7 +9183,8 @@
                 "id": "Ascension_SourceGen_Dynamo",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Form_Sphinx_Node_4_2"
               }
             ]
           ],
@@ -9156,7 +9335,8 @@
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Inertia_TheArmadillo_Node_2_0"
               }
             ],
             [
@@ -9323,7 +9503,8 @@
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Inertia_TheAuroch_Node_2_0"
               }
             ],
             [
@@ -9332,14 +9513,16 @@
                 "id": "Ascension_Presence_MUTA_BaseEleRes",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheAuroch_Node_2_1"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_MK2_PhysRes",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheAuroch_Node_2_1"
               }
             ],
             [
@@ -9523,7 +9706,8 @@
                 "id": "Ascension_Ward_ACT_DamageBuffer",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheCrab_Node_3_1"
               }
             ]
           ],
@@ -9541,7 +9725,8 @@
                 "id": "Ascension_Benevolence_MUTA_SourceGenReward",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCrab_Node_4_0"
               }
             ],
             [
@@ -9741,7 +9926,8 @@
                 "id": "Ascension_Celestial_ACT_BHStacks",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheGuardsman_Node_3_0"
               }
             ],
             [
@@ -9755,7 +9941,8 @@
                 "id": "Ascension_Centurion_ACT_HitAlly",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheGuardsman_Node_3_1"
               }
             ]
           ],
@@ -9778,7 +9965,8 @@
                 "id": "Ascension_Celestial_MUTA_CleanseNonTiered",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheGuardsman_Node_4_0"
               }
             ],
             [
@@ -9787,7 +9975,8 @@
                 "id": "Ascension_Centurion_MUTA_Taunt",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheGuardsman_Node_4_1"
               }
             ],
             [
@@ -10033,7 +10222,8 @@
                 "id": "Ascension_Benevolence_ACT_MK2_FreeOHPaucityPurity",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheCasque_Node_3_0"
               }
             ],
             [
@@ -10042,7 +10232,8 @@
                 "id": "Ascension_Celestial_ACT_BHStacks",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheCasque_Node_3_1"
               }
             ],
             [
@@ -10051,7 +10242,8 @@
                 "id": "Ascension_Celestial_ACT_MK2_ElemStacks",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheCasque_Node_3_2"
               }
             ]
           ],
@@ -10077,7 +10269,8 @@
                 "id": "Ascension_Benevolence_MUTA_FlatArmor",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCasque_Node_4_0"
               }
             ],
             [
@@ -10086,7 +10279,8 @@
                 "id": "Ascension_Celestial_MUTA_DupeOnSelf",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCasque_Node_4_1"
               }
             ]
           ],
@@ -10283,7 +10477,8 @@
                 "id": "Ascension_Centurion_MUTA_DefianceBHStacks",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_2_3"
               }
             ]
           ],
@@ -10301,7 +10496,8 @@
                 "id": "Ascension_Centurion_ACT_HitAlly",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_3_0"
               }
             ],
             [
@@ -10310,7 +10506,8 @@
                 "id": "Ascension_CenturionAndCelestial_MUTA_WardACTGenExtend",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_3_1"
               }
             ],
             [
@@ -10319,7 +10516,8 @@
                 "id": "Ascension_Centurion_ACT_HitAlly_MK2_ACTOnWard",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_3_2"
               }
             ]
           ],
@@ -10338,7 +10536,8 @@
                 "id": "Ascension_Centurion_MUTA_SIRupturedTendons",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_4_0"
               }
             ],
             [
@@ -10347,7 +10546,8 @@
                 "id": "Ascension_Centurion_MUTA_DamageAndViolentStrikeACT",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCenturion_Node_4_1"
               }
             ],
             [
@@ -10594,7 +10794,8 @@
                 "id": "Ascension_Adaptation_MUTA_BenevolenceACT",
                 "value": 1.0,
                 "keyword": "Adaptation",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheGladiator_Node_3_0"
               }
             ],
             [
@@ -10603,7 +10804,8 @@
                 "id": "Ascension_Ward_ACT_DamageBuffer",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheGladiator_Node_3_1"
               }
             ],
             [
@@ -10612,7 +10814,8 @@
                 "id": "Ascension_Ward_ACT_MK2_DualWieldDodge",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheGladiator_Node_3_2"
               }
             ]
           ],
@@ -10631,7 +10834,8 @@
                 "id": "Ascension_Benevolence_MUTA_AdaptStacks",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheGladiator_Node_4_0"
               }
             ],
             [
@@ -10640,7 +10844,8 @@
                 "id": "Ascension_Ward_MUTA_HealAndRemoveBHStacks",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheGladiator_Node_4_1"
               }
             ],
             [
@@ -10649,7 +10854,8 @@
                 "id": "Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheGladiator_Node_4_2"
               }
             ]
           ],
@@ -10819,7 +11025,8 @@
                 "id": "Ascension_Celestial_ACT_AllyCrit",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_2_0"
               }
             ],
             [
@@ -10835,7 +11042,8 @@
                 "id": "Ascension_Prosperity_ACT_Basic_MK2_Ward",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_2_2"
               }
             ]
           ],
@@ -10854,7 +11062,8 @@
                 "id": "Ascension_Celestial_MUTA_ArmorRestoInertiaScaling",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_3_0"
               }
             ],
             [
@@ -10868,7 +11077,8 @@
                 "id": "Ascension_Celestial_MUTA_ViolentStrikeForAlly",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheHippopotamus_Node_3_1"
               }
             ],
             [
@@ -11052,7 +11262,8 @@
                 "id": "Ascension_Abeyance_MUTA_DamageOrder",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_2_0"
               }
             ],
             [
@@ -11066,7 +11277,8 @@
                 "id": "Ascension_Centurion_ACT_EnemyT3StatusOnAlly",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_2_1"
               }
             ],
             [
@@ -11106,7 +11318,8 @@
                 "id": "Ascension_Abeyance_MUTA_EmulateShieldsUp",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_3_0"
               }
             ],
             [
@@ -11115,7 +11328,8 @@
                 "id": "Ascension_Centurion_MUTA_EmulateBattleStomp",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheRhinoceros_Node_3_1"
               }
             ]
           ],
@@ -11294,7 +11508,8 @@
                 "id": "Ascension_Centurion_ACT_EndOfTurnDefiance",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_2_0"
               }
             ],
             [
@@ -11303,7 +11518,8 @@
                 "id": "Ascension_Prosperity_MUTA_DWAccCrit",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_2_1"
               }
             ],
             [
@@ -11334,7 +11550,8 @@
                 "id": "Ascension_Centurion_MUTA_AtaxiaAndSquelch2",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_3_0"
               }
             ],
             [
@@ -11343,7 +11560,8 @@
                 "id": "Ascension_Prosperity_MUTA_EffectiveSI_Poly",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_3_1"
               }
             ]
           ],
@@ -11366,7 +11584,8 @@
                 "id": "Ascension_Centurion_MUTA_WhirlwindConversion",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheArena_Node_4_0"
               }
             ],
             [
@@ -11538,7 +11757,8 @@
                 "id": "Ascension_Celestial_ACT_Offensive",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_2_0"
               }
             ],
             [
@@ -11547,7 +11767,8 @@
                 "id": "Ascension_Ward_MUTA_EncourageReaction",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_2_1"
               }
             ],
             [
@@ -11577,7 +11798,8 @@
                 "id": "Ascension_Celestial_MUTA_EnemyEmulateSpells",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_3_0"
               }
             ],
             [
@@ -11624,7 +11846,8 @@
                 "id": "Ascension_Celestial_MUTA_WardShareAndAPRec",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_4_0"
               }
             ],
             [
@@ -11814,7 +12037,8 @@
                 "id": "Ascension_Defiance_MUTA_PreparedAP",
                 "value": 1.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_1_3"
               }
             ]
           ],
@@ -11831,7 +12055,8 @@
                 "id": "Ascension_Benevolence_ACT_AllyArmorToZero",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_2_0"
               }
             ],
             [
@@ -11873,7 +12098,8 @@
                 "id": "Ascension_Abeyance_MUTA_ComebackKid",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_3_0"
               }
             ],
             [
@@ -11882,7 +12108,8 @@
                 "id": "Ascension_Benevolence_MUTA_SelfArmorHeal",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_3_1"
               }
             ]
           ],
@@ -11900,7 +12127,8 @@
                 "id": "Ascension_Abeyance_MUTA_Fortress",
                 "value": 1.0,
                 "keyword": "Abeyance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_4_0"
               }
             ],
             [
@@ -11914,7 +12142,8 @@
                 "id": "Ascension_Benevolence_MUTA_Stockpile",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_4_1"
               }
             ]
           ],
@@ -12074,7 +12303,8 @@
                 "id": "Ascension_Defiance_MUTA_FlatArmorModerate",
                 "value": 1.0,
                 "keyword": "Defiance",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheBeetle_Node_2_0"
               }
             ],
             [
@@ -12083,7 +12313,8 @@
                 "id": "Ascension_WeaponSkillShieldsUpAggro",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_TheBeetle_Node_2_1"
               }
             ],
             [
@@ -12265,7 +12496,8 @@
                 "id": "Ascension_Celestial_ACT_AllySource",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheHind_Node_3_0"
               }
             ],
             [
@@ -12274,7 +12506,8 @@
                 "id": "Ascension_Elementalist_ACT_AirWater_AllySkills",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheHind_Node_3_1"
               }
             ]
           ],
@@ -12292,7 +12525,8 @@
                 "id": "Ascension_Celestial_MUTA_ExtendSourceGen",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheHind_Node_4_0"
               }
             ],
             [
@@ -12306,7 +12540,8 @@
                 "id": "Ascension_Elementalist_MUTA_AirWater_NonTieredStatuses",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheHind_Node_4_1"
               }
             ],
             [
@@ -12344,7 +12579,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_TheHind_Node_4_4"
               }
             ]
           ],
@@ -12493,7 +12729,8 @@
                 "id": "Ascension_WeaponSkillTalent_Sortilege",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_TheLizard_Node_2_0"
               }
             ],
             [
@@ -12502,14 +12739,16 @@
                 "id": "Ascension_Presence_MUTA_BaseEleRes",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheLizard_Node_2_1"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Presence_MUTA_MK2_VitRegen",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheLizard_Node_2_1"
               }
             ],
             [
@@ -12705,7 +12944,8 @@
                 "id": "Ascension_Purity_ACT_VitThreshold",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheRabbit_Node_3_1"
               }
             ]
           ],
@@ -12732,7 +12972,8 @@
                 "id": "Ascension_Prosperity_MUTA_BuffDurationAndRes",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheRabbit_Node_4_0"
               }
             ],
             [
@@ -12939,7 +13180,8 @@
                 "id": "Ascension_Elementalist_ACT_CenturionOrWeak3",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheEnchantress_Node_3_0"
               }
             ],
             [
@@ -12948,7 +13190,8 @@
                 "id": "Ascension_Prosperity_ACT_ElemStacks",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheEnchantress_Node_3_1"
               }
             ]
           ],
@@ -12966,7 +13209,8 @@
                 "id": "Ascension_Purity_MUTA_ElemStacksMinus",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheEnchantress_Node_4_0"
               }
             ],
             [
@@ -12975,7 +13219,8 @@
                 "id": "Ascension_Elementalist_MUTA_FeedbackCritAndRes",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheEnchantress_Node_4_1"
               }
             ],
             [
@@ -12984,7 +13229,8 @@
                 "id": "Ascension_Prosperity_MUTA_EffectiveSI_AirWater",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheEnchantress_Node_4_2"
               }
             ]
           ],
@@ -13187,7 +13433,8 @@
                 "id": "Ascension_Prosperity_ACT_Basic_MK2_FlurrySI",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_3_0"
               }
             ],
             [
@@ -13201,14 +13448,16 @@
                 "id": "Ascension_Purity_ACT_VitThreshold",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_3_1"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Purity_ACT_MK2_ProsperityLost",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_3_1"
               }
             ]
           ],
@@ -13235,7 +13484,8 @@
                 "id": "Ascension_Prosperity_MUTA_SkillDurAndStatBoost",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_4_0"
               }
             ],
             [
@@ -13244,7 +13494,8 @@
                 "id": "Ascension_Prosperity_MUTA_EffectiveSI_Hunts",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_4_1"
               }
             ],
             [
@@ -13253,7 +13504,8 @@
                 "id": "Ascension_Purity_MUTA_CDReduc",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheHuntress_Node_4_2"
               }
             ]
           ],
@@ -13454,7 +13706,8 @@
                 "id": "Ascension_Celestial_ACT_AllyPaucityPurity",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheNymph_Node_3_0"
               }
             ],
             [
@@ -13463,7 +13716,8 @@
                 "id": "Ascension_Purity_ACT_VitThreshold",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheNymph_Node_3_1"
               }
             ],
             [
@@ -13472,7 +13726,8 @@
                 "id": "Ascension_Purity_MUTA_MK2_CelestialCDReduc",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheNymph_Node_3_2"
               }
             ]
           ],
@@ -13491,7 +13746,8 @@
                 "id": "Ascension_Celestial_MUTA_GiveSourceSI",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheNymph_Node_4_0"
               }
             ],
             [
@@ -13507,7 +13763,8 @@
                 "id": "Ascension_Purity_MUTA_EmulateSpontCombSI",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheNymph_Node_4_2"
               }
             ]
           ],
@@ -13674,7 +13931,8 @@
                 "id": "Ascension_Benevolence_ACT_MK2_FreeOH_PaucityPurity",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_2_0"
               }
             ],
             [
@@ -13683,7 +13941,8 @@
                 "id": "Ascension_Elementalist_ACT_AirWater_AllySkills",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_2_1"
               }
             ],
             [
@@ -13709,7 +13968,8 @@
                 "id": "Ascension_Elementalist_ACT_AirWater_AllySkills_MK2_HuntsWar",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_2_3"
               }
             ]
           ],
@@ -13741,7 +14001,8 @@
                 "id": "Ascension_Benevolence_MUTA_HealAndEleRes",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_3_0"
               }
             ],
             [
@@ -13750,7 +14011,8 @@
                 "id": "Ascension_Benevolence_MUTA_PurityACT_CDReduc",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_3_1"
               }
             ],
             [
@@ -13759,7 +14021,8 @@
                 "id": "Ascension_Elementalist_MUTA_ElemStackMinusFromCelestial",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_3_2"
               }
             ]
           ],
@@ -13916,14 +14179,16 @@
                 "id": "Ascension_Celestial_ACT_AllySource",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_2_0"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Celestial_ACT_MK2_NoVitThreshold",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_2_0"
               }
             ],
             [
@@ -13932,7 +14197,8 @@
                 "id": "Ascension_ViolentStrike_ACT_AllyBHCleanse",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_2_1"
               }
             ],
             [
@@ -13967,7 +14233,8 @@
                 "id": "Ascension_Celestial_MUTA_Haste",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_3_0"
               }
             ],
             [
@@ -13976,7 +14243,8 @@
                 "id": "Ascension_Celestial_MUTA_MagicShell",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_3_1"
               }
             ],
             [
@@ -13985,7 +14253,8 @@
                 "id": "Ascension_ViolentStrike_MUTA_GlaciateIgnition",
                 "value": 1.0,
                 "keyword": "ViolentStrike",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheStag_Node_3_2"
               }
             ]
           ],
@@ -14138,7 +14407,8 @@
                 "id": "Ascension_Celestial_ACT_AllyWard",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_2_0"
               }
             ],
             [
@@ -14147,7 +14417,8 @@
                 "id": "Ascension_Celestial_MUTA_ArmorRestoLifeScaling",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_2_1"
               }
             ],
             [
@@ -14177,7 +14448,8 @@
                 "id": "Ascension_Benevolence_MUTA_EmulateCelestialHeal",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_3_0"
               }
             ],
             [
@@ -14186,7 +14458,8 @@
                 "id": "Ascension_Celestial_MUTA_CleanseBH",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_3_1"
               }
             ]
           ],
@@ -14204,7 +14477,8 @@
                 "id": "Ascension_Benevolence_MUTA_GainNoStacks",
                 "value": 1.0,
                 "keyword": "Benevolence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_4_0"
               }
             ],
             [
@@ -14213,7 +14487,8 @@
                 "id": "Ascension_Celestial_ACT_SIResurrect",
                 "value": 1.0,
                 "keyword": "Celestial",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_4_1"
               }
             ],
             [
@@ -14222,7 +14497,8 @@
                 "id": "Ascension_GoddessReactionAP",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_TheGoddess_Node_4_2"
               }
             ]
           ],
@@ -14395,7 +14671,8 @@
                 "id": "Ascension_Purity_ACT_ShieldsUp",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_2_0"
               }
             ],
             [
@@ -14404,7 +14681,8 @@
                 "id": "Ascension_Centurion_MUTA_FreeOHCritCHance",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_2_1"
               }
             ],
             [
@@ -14434,7 +14712,8 @@
                 "id": "Ascension_Centurion_MUTA_PurityGivesCenturionScaling",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_3_0"
               }
             ],
             [
@@ -14443,7 +14722,8 @@
                 "id": "Ascension_Centurion_MUTA_EmulateSupernova",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_3_1"
               }
             ],
             [
@@ -14457,7 +14737,8 @@
                 "id": "Ascension_Purity_MUTA_BlindingRadiance",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_3_2"
               }
             ]
           ],
@@ -14475,7 +14756,8 @@
                 "id": "Ascension_Centurion_ACT_TeleportStrike",
                 "value": 1.0,
                 "keyword": "Centurion",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_4_0"
               }
             ],
             [
@@ -14484,7 +14766,8 @@
                 "id": "Ascension_Purity_MUTA_EffectiveSI_AirFire",
                 "value": 1.0,
                 "keyword": "Purity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_4_1"
               }
             ]
           ],
@@ -14627,7 +14910,8 @@
                 "id": "Ascension_MageFin",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_1_2"
               }
             ]
           ],
@@ -14645,7 +14929,8 @@
                 "id": "Ascension_Prosperity_ACT_Purity",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "activator"
+                "keywordBoon": "activator",
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_2_0"
               }
             ],
             [
@@ -14690,7 +14975,8 @@
                 "id": "Ascension_Elementalist_MUTA_RadiusAndNoFF",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_3_0"
               }
             ],
             [
@@ -14699,14 +14985,16 @@
                 "id": "Ascension_Skill_Ignition_Duplicate",
                 "value": 1.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_3_1"
               },
               {
                 "type": "specialLogic",
                 "id": "Ascension_Prosperity_MUTA_ScorchAppliesCharged",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_3_1"
               }
             ]
           ],
@@ -14724,7 +15012,8 @@
                 "id": "Ascension_Elementalist_MUTA_SplendorNova",
                 "value": 1.0,
                 "keyword": "Elementalist",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_4_0"
               }
             ],
             [
@@ -14744,7 +15033,8 @@
                 "id": "Ascension_Prosperity_MUTA_SplendorSource",
                 "value": 1.0,
                 "keyword": "Prosperity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_4_2"
               }
             ]
           ],

@@ -30,6 +30,15 @@ export function isEmptyString(string) {
   return true
 }
 
+export function tryToPush(obj, key, element) {
+  if (key in obj) {
+    obj[key].push(element)
+  }
+  else {
+    obj[key] = [element]
+  }
+}
+
 export function round(number, places=1) {
   var rounded = Math.round( number * Math.pow(10, places) ) / Math.pow(10, places);
   return rounded;

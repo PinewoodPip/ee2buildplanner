@@ -80,12 +80,6 @@ export function AscensionPopup(props) {
 			<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>
 		</ContextMenuTrigger>
 
-		// asps.push(<RightClickMenu id={contextId}>
-		// 	<Text text="Remove"/>
-		// 	<Text text="Move up"/>
-		// 	<Text text="Move down"/>
-		// </RightClickMenu>)
-
 		// asps.push(element)
 		asps.push(<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
 
@@ -94,15 +88,6 @@ export function AscensionPopup(props) {
 		}
 		
 	}
-
-	// let realAsps = []
-	// for (let x in asps) {
-	// 	let asp = asps[x]
-
-	// 	realAsps.push(<ContextMenuTrigger id={Math.random()}>
-	// 	{asp}
-	// </ContextMenuTrigger>)
-	// }
 
 	return (
 		<Container className="flexbox-vertical flex-align-start skillbook">
@@ -137,7 +122,6 @@ export function AscensionPopup(props) {
 
 export function Keywords(props) {
 	let keywordButtons = []
-	console.log(props.app.keywords)
 	for (let x in props.app.keywords) {
 		let func = () => {props.app.setState({currentKeyword: x})}
 		let element = <div key={x} className={"flexbox-horizontal flex-align-start skillbook-category "} onClick={func}>
@@ -156,10 +140,8 @@ export function Keywords(props) {
 
 	for (let x in props.app.keywords[props.app.state.currentKeyword]) {
 		let keyword = props.app.keywords[props.app.state.currentKeyword][x]
-		console.log([keyword.id])
 		let element = <Text text={game.getDisplayString(game.app.stats.specialLogic[keyword.id])}/>
 
-		console.log(keyword)
 		if (keyword.keywordBoon == "activator")
 			activators.push(element)
 		else
