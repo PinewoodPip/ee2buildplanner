@@ -69,6 +69,12 @@ body {
   align-items: flex-start;
   justify-content: start;
   flex-wrap: wrap;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.artifact {
+  outline: 1px slategray solid;
 }
 
 .flex-wrap {
@@ -455,18 +461,18 @@ select {
   /* border: 1px black solid; */
   background-color: #131313;
   background-image: 
-  url("images/interface/frame_left_gray.png"), 
-  url("images/interface/frame_bottom_gray.png"),
-  url("images/interface/frame_right_gray.png"),
-  url("images/interface/frame_top_gray.png"),
   url("images/interface/frame_corner_top_left_gray.png"),
   url("images/interface/frame_corner_top_right_gray.png"),
   url("images/interface/frame_corner_bottom_right_gray.png"),
-  url("images/interface/frame_corner_bottom_left_gray.png");
+  url("images/interface/frame_corner_bottom_left_gray.png"),
+  url("images/interface/frame_left_gray.png"), 
+  url("images/interface/frame_bottom_gray.png"),
+  url("images/interface/frame_right_gray.png"),
+  url("images/interface/frame_top_gray.png");
 
-  background-position: left, bottom, right, top, top left, top right, bottom right, bottom left;
+  background-position: top left, top right, bottom right, bottom left, left, bottom, right, top;
   background-repeat: no-repeat;
-  background-size: 40px 100%, 100% 40px, 40px 100%, 100% 40px, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+  background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px, 40px 100%, 100% 40px, 40px 100%, 100% 40px;
 
   margin: 10px;
 }

@@ -459,6 +459,7 @@
   "sanguineharvest": {
     "id": "sanguineharvest",
     "name": "Sanguine Harvest",
+    "description": "When you heal an ally while casting a skill, you have a 5% chance per Memory over 10 to activate Violent Strike on them. This effect may only occur once per round on each ally",
     "icon": "AMER_UNI_Wand_F"
   },
   "seraph": {

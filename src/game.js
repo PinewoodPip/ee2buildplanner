@@ -29,6 +29,30 @@ export class Game {
     return amount
   }
 
+  getArtifact(id) {
+    let info = cloneDeep(game.artifacts[id])
+    console.log(id)
+    if (utils.hasKey(miscData.artifactBoosts, id))
+      info.boosts = miscData.artifactBoosts[id]
+    else
+      info.boosts = {}
+
+    return info;
+  }
+
+  addArtifact(id) {
+    let state = cloneDeep(this.app.state.artifacts)
+    if (!state.includes(id))
+      state.push(id)
+    this.app.setState({artifacts: state})
+  }
+
+  removeArtifact(id) {
+    let state = cloneDeep(this.app.state.artifacts)
+    state = state.filter((x)=>{return x != id})
+    this.app.setState({artifacts: state})
+  }
+
   // todo redo these; changing the state so many times lags a lot.
   async maximizeAttribute(id) {
     let amount = this.totalAttributePointsSpent
@@ -135,7 +159,7 @@ export class Game {
     // check if this stat has a defined subtype and string in miscData
     if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id)) {
 
-      // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent booleans
+      // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
       if (stat.type == "specialLogic") {
         let statDisplay = miscData.stats.specialLogic[stat.id]
 
@@ -391,7 +415,7 @@ export class Ascension {
       }
 
       // node.containedKeywords specifies which keywords are contained in each node (not each subnode) by Amer. We use that to get a list of all the keywords an aspect offers
-      // todo redo this. This is sometimes "inaccurate" because it includes +free reaction nodes.
+      // todo redo this. This is sometimes "inaccurate" because Amer includes +free reaction nodes.
       if (node.containedKeywords != undefined) {
         for (let z in node.containedKeywords) {
           let keyword = node.containedKeywords[z].replace(" ", "")

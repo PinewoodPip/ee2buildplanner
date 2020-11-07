@@ -80,6 +80,12 @@ export function Icon(props) {
 	)
 }
 
+export function TabButton(props) {
+	return <div className={"flexbox-horizontal flex-align-start skillbook-category " + props.className} onClick={props.onClick}>
+		{props.children}
+	</div>
+}
+
 export function Popup(props) {
   return (
     <div className="popup-cover">

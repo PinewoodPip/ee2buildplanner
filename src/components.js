@@ -10,6 +10,7 @@ import * as miscData from "./miscData.js"
 import { CharacterProfile } from "./characterProfile.js"
 import { Skill } from "./skillbook.js"
 import { Attributes } from "./gameStatSheet.js"
+import { Artifacts } from './artifacts.js';
 
 function AscensionFamilyButton(props) {
 	return (
@@ -379,18 +380,21 @@ export class MainInterface extends React.Component {
 	render() {
 		return <div>
 			<TopBar app={this.props.app}/>
-			<div style={{margin: "25px"}}>
-				<div className="flexbox-horizontal flex-align-centered" style={{height: "150px"}}>
-					<CharacterProfile app={this.props.app}/>
-					<Skills app={this.props.app}/>
-				</div>
+			<div className="flexbox-horizontal">
+				<div style={{margin: "25px"}}>
+					<div className="flexbox-horizontal flex-align-start" style={{height: "150px"}}>
+						<CharacterProfile app={this.props.app}/>
+						<Skills app={this.props.app}/>
+						<Artifacts app={this.props.app}/>
+					</div>
 
-				{/* todo remove this and just use a container as the parent */}
-				<div style={{height: "10px"}}/>
+					{/* todo remove this and just use a container as the parent */}
+					<div style={{height: "10px"}}/>
 
-				<div className="flexbox-horizontal flex-align-centered" style={{height: "500px"}}>
-					<Attributes app={this.props.app}/>
-					<Ascension app={this.props.app}/>
+					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
+						<Attributes app={this.props.app}/>
+						<Ascension app={this.props.app}/>
+					</div>
 				</div>
 			</div>
 		</div>

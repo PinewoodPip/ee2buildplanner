@@ -190,8 +190,695 @@ export const statCategories = {
 	]
 }
 
+export const artifactCategories = {
+	weapons: [
+		"thebutchersdisciple",
+		"thechthonian",
+		"famine",
+		"golem",
+		"vertigo",
+		"convergence",
+		"expedition",
+		"hibernaculum",
+		"momentum",
+		"zenith",
+		"cataclysm",
+		"leper",
+		"mirage",
+		"occam",
+		"thirst",
+		"wraith",
+		"thecrucible",
+		"glacier",
+		"goldforge",
+		"leviathan",
+		"malleusmaleficarum",
+		"gluttony",
+		"impetus",
+		"lightspire",
+		"nightmare",
+		"pestilence",
+		"thecannibal",
+		"eclipse",
+		"obelisk",
+		"thesavage",
+		"zodiac",
+		"blackglassbrand",
+		"gramswordofgrief",
+		"judgement",
+		"lambentblade",
+		"zeal",
+		"rodofabeyance",
+		"rodofcommand",
+		"rodofconviction",
+		"pariah",
+		"rapture",
+		"sanguineharvest",
+	],
+	shields: [
+		"adamant",
+		"amaranthinebulwark",
+		"faceofthefallen",
+		"infernalcontract",
+		"prismaticbarrier"
+	],
+	boots: [
+		"absence",
+		"consecration",
+		"desperation",
+		"godspeed",
+		"kudzu",
+		"onslaught",
+		"salamander",
+		"silkclimb",
+		"trample",
+		"vortex",
+	],
+	chests: [
+		"abyss",
+		"antediluviancarapace",
+		"bloodforge",
+		"bountyhunter",
+		"coruscatingsilks",
+		"empyreanvestments",
+		"thejaguar",
+		"malice",
+		"mountain",
+		"necromancersraiment",
+		"nemesis",
+		"nihility",
+		"ouroboros",
+		"urgency",
+		"thevault",
+	],
+	gloves: [
+		"apothecarysguile",
+		"thebutcherswill",
+		"charity",
+		"dominion",
+		"ethertide",
+		"fistofdecay",
+		"pyre",
+		"redorison",
+		"wintersgrasp",
+	],
+	helmets: [
+		"giantsskull",
+		"ironmaiden",
+		"thelocustcrown",
+		"misery",
+		"serenity",
+		"smother",
+		"thornhalo",
+		"tundra",
+		"paragon"
+	],
+	amulets: [
+		"angelsegg",
+		"arcturus",
+		"drogsluck",
+		"ghostflame",
+		"seraph",
+		"wendigo"
+	],
+	rings: [
+		"austerity",
+		"carnality",
+		"dread",
+		"exaltation",
+		"eyeofthestorm",
+		"fecundity",
+		"prophecy",
+	]
+}
+
 export const playerAttributes = 43
 export const maxNaturalAttributeInvestment = 30
+
+// list of artifacts that grant stats, and which ones. some are toggleable, others are always active
+export const artifactBoosts = {
+	// absence
+	abyss: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Abyss",
+                value: 1.0,
+				keywords: [{keyword: "Paucity", keywordBoon: "activator"}, {keyword: "ViolentStrike", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	adament: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Adamant",
+                value: 1.0,
+				keywords: [{keyword: "Ward", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	amaranthinebulwark: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_AmaranthineBulwark",
+                value: 1.0,
+				keywords: [{keyword: "Ward", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	angelsegg: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_AngelsEgg",
+                value: 1.0,
+				keywords: [{keyword: "Purity", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	antediluviancarapace: {
+		innate: [],
+		statuses: ["PIP_Artifact_AntediluvianCarapace"]
+	},
+	// apothecary guile
+	arcturus: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Arcturus",
+                value: 1.0,
+				keywords: [{keyword: "Centurion", keywordBoon: "mutator"}, {keyword: "Ward", keywordBoon: "activator"}]
+            }
+		]
+	},
+	austerity: {
+		innate: [
+			{
+                type: "flexStat",
+                id: "PHYSICALRESISTANCE",
+                value: 20.0,
+			},
+			{
+                type: "flexStat",
+                id: "PIERCINGRESISTANCE",
+                value: 20.0,
+            },
+		]
+	},
+	blackglassbrand: {
+		innate: [
+			{
+                type: "flexStat",
+                id: "FreeReactionCharge_AMER_Centurion",
+                value: 1.0,
+			},
+		]
+	},
+	// bloodforge - should we include this?
+	// bounty hunter
+	carnality: {
+		innate: [
+			{
+                type: "flexStat",
+                id: "FIRERESISTANCE",
+                value: 30.0,
+			},
+			{
+                type: "flexStat",
+                id: "WATERRESISTANCE",
+                value: 30.0,
+			},
+			{
+                type: "flexStat",
+                id: "EARTHRESISTANCE",
+                value: 30.0,
+			},
+			{
+                type: "flexStat",
+                id: "AIRRESISTANCE",
+                value: 30.0,
+			},
+			{
+                type: "flexStat",
+                id: "POISONRESISTANCE",
+                value: 30.0,
+			},
+		]
+	},
+	// CATACLYSM
+	charity: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Charity",
+                value: 1.0,
+				keywords: [{keyword: "Benevolence", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	consecration: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Consecration",
+                value: 1.0,
+				keywords: [{keyword: "Celestial", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	// convergence
+	// corruscating silks
+	// desperation
+	// dominion
+	consecration: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Dread",
+                value: 1.0,
+				keywords: [{keyword: "Vitality Void", keywordBoon: "mutator"}]
+            }
+		],
+		statuses: ["PIP_Artifact_Dread"]
+	},
+	drogsluck: {
+		innate: [],
+		statuses: ["PIP_Artifact_DrogsLuck"]
+	},
+	// eclipse
+	// empyrean vestments
+	// ether tide
+	exaltation: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Exaltation",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	expedition: {
+		innate: [],
+		statuses: ["PIP_Artifact_Expedition"]
+	},
+	eyeofthestorm: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_EyeOfTheStorm",
+                value: 1.0,
+				keywords: [{keyword: "Predator", keywordBoon: "mutator"}]
+            }
+		],
+		statuses: ["PIP_Artifact_EyeOfTheStorm"]
+	},
+	faceofthefallen: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_FaceOfTheFallen",
+                value: 1.0,
+				keywords: [{keyword: "Voracity", keywordBoon: "activator"}]
+            }
+		]
+	},
+	famine: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Famine",
+                value: 1.0,
+				keywords: [{keyword: "Paucity", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	// fecundity
+	fistofdecay: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_FistOfDecay",
+                value: 1.0,
+				keywords: [{keyword: "VitalityVoid", keywordBoon: "activator"}]
+            }
+		]
+	},
+	ghostflame: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_GhostFlame",
+                value: 1.0,
+				keywords: [{keyword: "Occultist", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	// giants skull
+	// glacier
+	// gluttony
+	// godspeed
+	goldforge: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Goldforge",
+                value: 1.0,
+				keywords: [{keyword: "Prosperity", keywordBoon: "mutator"}, {keyword: "VolatileArmor", keywordBoon: "activator"}]
+            }
+		]
+	},
+	golem: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Golem",
+                value: 1.0,
+				keywords: [{keyword: "Prosperity", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	// gram
+	// hibernaculum
+	// impetus
+	infernalcontract: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_InfernalContract",
+                value: 1.0,
+				keywords: [{keyword: "Wither", keywordBoon: "activator"}]
+            }
+		]
+	},
+	// iron maiden
+	judgement: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Judgement",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	kudzu: {
+		innate: [],
+		statuses: ["PIP_Artifact_Kudzu"]
+	},
+	// lambent blade
+	// leper
+	leviathan: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Leviathan",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "mutator"}]
+            }
+		],
+		statuses: ["Pip_Artifact_Leviathan"]
+	},
+	// lightspire
+	// malice
+	// malleusmaleficarum
+	// mirage
+	// misery
+	// momentum - todo add rune penalty
+	necromancersraiment: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_NecromancersRaiment",
+                value: 1.0,
+				keywords: [{keyword: "Wither", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	nemesis: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Nemesis",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "activator"}]
+            }
+		]
+	},
+	// nightmare
+	nihility: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Nihility",
+                value: 1.0,
+				keywords: [{keyword: "VitalityVoid", keywordBoon: "activator"}]
+            }
+		]
+	},
+	// obelisk
+	// occam
+	onslaught: {
+		innate: [],
+		statuses: ["PIP_Artifact_Onslaught"]
+	},
+	// ouroboros
+	paragon: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Paragon",
+                value: 1.0,
+				keywords: [{keyword: "VitalityVoid", keywordBoon: "activator"}, {keyword: "VitalityVoid", keywordBoon: "mutator"}, {keyword: "Benevolence", keywordBoon: "mutator"},]
+            }
+		]
+	},
+	// pariah - should maybe have a status for this
+	// pestilence
+	prismaticbarrier: {
+		innate: [
+			{
+				type: "specialLogic",
+				id: "PIP_Artifact_PrismaticBarrier",
+				value: 1.0,
+				keywords: [{keyword: "Prosperity", keywordBoon: "mutator"}]
+			}
+	],
+		statuses: ["PIP_Artifact_PrismaticBarrier"]
+	},
+	// prophecy todo
+	// pyre
+	rapture: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Rapture",
+                value: 1.0,
+				keywords: [{keyword: "Celestial", keywordBoon: "mutator"}, {keyword: "Purity", keywordBoon: "activator"}]
+            }
+		]
+	},
+	redorison: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_RedOrison",
+                value: 1.0,
+				keywords: [{keyword: "Celestial", keywordBoon: "mutator"}, {keyword: "Occultist", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	rodofabeyance: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_RodOfAbeyance",
+                value: 1.0,
+				keywords: [{keyword: "Abeyance", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	rodofcommand: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_RodOfCommand",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	rodofcommarodofconvictionnd: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_RodOfConviction",
+                value: 1.0,
+				keywords: [{keyword: "VolatileArmor", keywordBoon: "activator"}]
+            }
+		]
+	},
+	// salamander
+	sanguineharvest: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_SanguineHarvest",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "activator"}]
+            }
+		]
+	},
+	seraph: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Seraph",
+                value: 1.0,
+				keywords: [{keyword: "Celestial", keywordBoon: "mutator"}]
+			},
+			{
+				type: "extendedStat",
+				id: "FreeReactionCharge_AMER_Celestial",
+				value: 1.0,
+			}
+		]
+	},
+	serenity: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Serenity",
+                value: 1.0,
+				keywords: [{keyword: "Purity", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	// silkclimb
+	// smother
+	thebutchersdisciple: {
+		innate: [],
+		statuses: ["PIP_Artifact_TheButchersDisciple"]
+	},
+	thebutcherswill: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_TheButchersWill",
+                value: 1.0,
+				keywords: [{keyword: "ViolentStrike", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	// thecannibal
+	// cthonian
+	// crucible
+	// jaguar
+	thelocustcrown: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_TheLocustCrown",
+                value: 1.0,
+				keywords: [{keyword: "Wither", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	thesavage: {
+		innate: [
+			{
+                type: "flexStat",
+                id: "FireSpecialist",
+                value: -1.0,
+			},
+			{
+                type: "flexStat",
+                id: "WaterSpecialist",
+                value: -1.0,
+			},
+			{
+                type: "flexStat",
+                id: "EarthSpecialist",
+                value: -1.0,
+			},
+			{
+                type: "flexStat",
+                id: "AirSpecialist",
+                value: -1.0,
+			},
+			{
+                type: "flexStat",
+                id: "Summoning",
+                value: -1.0,
+            },
+			{
+                type: "flexStat",
+                id: "Necromancy",
+                value: -1.0,
+            },
+		]
+	},
+	// the vault
+	// thirst
+	// thorn halo
+	// trample
+	// tundra
+	urgency: {
+		innate: [],
+		statuses: ["PIP_Artifact_Urgency"]
+	},
+	vertigo: {
+		innate: [
+			{
+				type: "extendedStat",
+				id: "PercAttributeIncrease_Finesse",
+				value: 20.0,
+			}
+		],
+		statuses: ["PIP_Artifact_Vertigo"]
+	},
+	vortex: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Vortex",
+                value: 1.0,
+				keywords: [{keyword: "VitalityVoid", keywordBoon: "mutator"}]
+            }
+		]
+	},
+	wendigo: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Wendigo",
+                value: 1.0,
+				keywords: [{keyword: "Predator", keywordBoon: "mutator"}]
+			},
+			{
+				type: "extendedStat",
+				id: "FreeReactionCharge_AMER_Predator",
+				value: 1.0,
+			}
+		]
+	},
+	// winter grasp
+	// wraith
+	// zeal
+	// zenith
+	zodiac: {
+		innate: [
+			{
+                type: "specialLogic",
+                id: "PIP_Artifact_Zodiac",
+                value: 1.0,
+				keywords: [{keyword: "Celestial", keywordBoon: "mutator"}]
+            }
+		]
+	},
+}
 
 export const portraits = [
 	"ifan",
