@@ -9,7 +9,7 @@ import * as miscData from "./miscData.js"
 function CharacterRace(props) {
 	let options = []
 	for (let x in game.races) {
-		options.push(<option key={x} value={x} selected={props.app.state.physique.race == x} onChange={(e)=>{props.app.setState({race: e.target.value}); game.render()}}>{game.races[x].name}</option>)
+		options.push(<option key={x} value={x} selected={props.app.state.physique.race === x} onChange={(e)=>{props.app.setState({race: e.target.value}); game.render()}}>{game.races[x].name}</option>)
 	}
 
 	return (<div>
@@ -55,7 +55,7 @@ export function Portrait(props) {
 		<div className="portrait button" style={{position: "relative"}} onContextMenu={changePortrait} onClick={changePortrait}>
 			<Icon img={miscData.portraits[props.app.state.portraitIndex]} style={{width: "108px", height: "135px"}}/>
 
-			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "150px"}} className="portrait-frame"/>
+			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "150px"}} className="portrait-frame" alt={""}/>
 		</div>
 	)
 }

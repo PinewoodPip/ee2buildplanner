@@ -4,7 +4,7 @@ import { game } from "./App.js"
 // import all images from a folder in /src/ and map them to an object
 export function importAll(r) {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
   return images;
 }
 
@@ -21,13 +21,7 @@ export function limitRange(value, min, max) {
 }
 
 export function isEmptyString(string) {
-  if (string.length == 0)
-    return true
-  for (let x = 0; x < string.length; x++) {
-    if (string.charAt(x) != " ")
-      return false
-  }
-  return true
+  return (string.length === 0 || string.trim().length === 0)
 }
 
 export function tryToPush(obj, key, element) {
@@ -40,14 +34,13 @@ export function tryToPush(obj, key, element) {
 }
 
 export function round(number, places=1) {
-  var rounded = Math.round( number * Math.pow(10, places) ) / Math.pow(10, places);
-  return rounded;
+  return Math.round( number * Math.pow(10, places) ) / Math.pow(10, places);;
 }
 
 // get an image by its filename (extension excluded)
 export function getImage(id) {
   // missing image; some skills don't have an icon assigned and just say "unknown"
-  if (id == "unknown" || id == null || id == undefined) {
+  if (id === "unknown" || id === null || id === undefined) {
     return game.images.icons["Action_Identify.png"].default
   }
 

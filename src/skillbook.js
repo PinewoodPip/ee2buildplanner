@@ -3,8 +3,6 @@ import React from 'react';
 
 import { Icon, Container, Text, Tooltip } from "./genericComponents.js"
 import { game } from "./App.js"
-import * as utils from "./utils.js"
-import * as miscData from "./miscData.js"
 
 export class Skill extends React.Component {
 	toggleSkill() {
@@ -12,7 +10,7 @@ export class Skill extends React.Component {
 		let id = this.props.data.id
 
 		if (skills.includes(id)) {
-			skills = skills.filter((x) => {return x != id})
+			skills = skills.filter((x) => {return x !== id})
 		}
 		else {
 			skills.push(id)
@@ -23,7 +21,7 @@ export class Skill extends React.Component {
 
 	render() {
 		let img = this.props.data.Icon
-		let highlight = this.props.highlight != "false"
+		let highlight = this.props.highlight != "false" // eslint-disable-line
 		
 		let className = (this.props.app.state.skills.includes(this.props.data.id) && highlight) ? "skill-selected" : ""
 
@@ -37,7 +35,7 @@ export class Skill extends React.Component {
 
 function SkillBookAbilityCategory(props) {
 	let func = () => {props.app.setState({skillbookCategory: props.category})}
-	let className = (props.app.state.skillbookCategory == props.category) ? "chosen" : ""
+	let className = (props.app.state.skillbookCategory === props.category) ? "chosen" : ""
 
 	return (
 		<div className={"flexbox-horizontal flex-align-start skillbook-category " + className} onClick={func}>
@@ -77,10 +75,10 @@ function SkillTooltip(props) {
 			skill.DescriptionRef.split(`3 (requires 9 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[1],
 		]
 
-		if (infusionText[0] != undefined) {
+		if (infusionText[0] != null) {
 			infusionText[0] = infusionText[0].split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[0]
 		}
-		if (infusionText[1] != undefined) {
+		if (infusionText[1] != null) {
 			infusionText[1] = infusionText[1].split(`3 (requires 9 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[0]
 		}
 	
@@ -91,7 +89,7 @@ function SkillTooltip(props) {
 		]
 	
 		for (let x in infusionText) {
-			if (infusionText[x] != undefined) {
+			if (infusionText[x] != null) {
 				desc.push(prefixes[x] + infusionText[x])
 			}
 		}

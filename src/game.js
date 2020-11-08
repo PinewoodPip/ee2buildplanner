@@ -3,7 +3,7 @@ import React from 'react';
 import { cloneDeep } from "lodash"
 
 import { Embodiments } from "./components.js"
-import { ContextMenu, Text } from "./genericComponents.js"
+import { Text } from "./genericComponents.js"
 import * as miscData from "./miscData.js"
 import { game } from "./App.js" // how does this not cause any problems...
 import * as utils from "./utils.js"
@@ -70,7 +70,7 @@ export class Game {
 
   removeArtifact(id) {
     let state = cloneDeep(this.app.state.artifacts)
-    state = state.filter((x)=>{return x != id})
+    state = state.filter((x)=>{return x !== id})
     this.app.setState({artifacts: state})
   }
 
@@ -126,11 +126,11 @@ export class Game {
     for (let x in miscData.stats) {
       let type = miscData.stats[x]
       stats[x] = {}
-      if (x != "realStats") {
+      if (x !== "realStats") {
         for (let z in type) {
           let stat = type[z]
 
-          let defaultAmount = (stat.default != undefined) ? stat.default : 0
+          let defaultAmount = (stat.default != null) ? stat.default : 0
 
           stats[x][z] = {type: x, amount: defaultAmount, id: z}
         }
@@ -186,7 +186,7 @@ export class Game {
     // status effect boosts
     this.app.state.buffs.forEach(id => {
       let data = miscData.statuses[id]
-      if (data.type != "special") {
+      if (data.type !== "special") {
         data.boosts.forEach(e => {
           addStat(e)
           // these cannot contain keywords
@@ -204,14 +204,13 @@ export class Game {
   // todo clean up
   getDisplayString(stat) {
     let displayString;
-    console.log(stat)
     let isArtifact = stat.id.search("PIP_Artifact_") > -1
 
     // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type == "specialLogic" || stat.type == "statusExtension") && !isArtifact) {
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type === "specialLogic" || stat.type === "statusExtension") && !isArtifact) {
 
       // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
-      if (stat.type == "specialLogic" || stat.type == "statusExtension") {
+      if (stat.type === "specialLogic" || stat.type === "statusExtension") {
         let statDisplay = miscData.stats.[stat.type][stat.id]
 
         
@@ -498,7 +497,7 @@ export class Ascension {
   // get an aspect from the user's build by id
   getBuildAspectById(id) {
     for (let x in this.app.state.aspects) {
-      if (this.app.state.aspects[x].id == id)
+      if (this.app.state.aspects[x].id === id)
         return this.app.state.aspects[x]
     }
     return null
@@ -581,7 +580,7 @@ export class Ascension {
 		let nasp = game.ascension.getAspectText(asp)
 
     // sticky header containing name and embodiment info
-		tooltip.push(<div className="aspect-name-bg">
+		tooltip.push(<div className="aspect-name-bg" key={"header"}>
         <Text key={Math.random()} className="" text={nasp.name}/>
 
         <div className="flexbox-horizontal flex-align-centered">
@@ -608,30 +607,30 @@ export class Ascension {
         subNodeText = `Node ${parentIndex}.X: Any`
       }
 
-      tooltip.push(<hr/>)
+      tooltip.push(<hr key={Math.random()}/>)
       
       if (interactive) {
         let subNodeOptions = []
         let ref = game.ascension.getAspectReference(asp)
 
         // header
-        subNodeOptions.push(<Text notInteractable={true} className="context-header" text={"Choose a subnode:"}/>)
+        subNodeOptions.push(<Text key="header" notInteractable={true} className="context-header" text={"Choose a subnode:"}/>)
 
         // "any" option
-        subNodeOptions.push(<div onClick={() => {this.changeSubNode(asp, x, null, mode)}}>
+        subNodeOptions.push(<div key={x} onClick={() => {this.changeSubNode(asp, x, null, mode)}}>
         <Text text={"Any"}/>
       </div>)
 
         for (let z in ref.nodesText[x].subNodes) {
           subNodeOptions.push(
-            <div onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
+            <div key={z} onClick={() => {this.changeSubNode(asp, x, z, mode)}}>
               <Text text={ref.nodesText[x].subNodes[z]}/>
             </div>)
         }
 
         let menu = subNodeOptions
         tooltip.push(
-          <div onContextMenu={(e)=>{this.app.contextMenu(menu, e)}}>
+          <div key={x} onContextMenu={(e)=>{this.app.contextMenu(menu, e)}}>
             <Text key={Math.random()} text={parentText}/>
             <Text key={Math.random()} text={subNodeText}/>
           </div>)

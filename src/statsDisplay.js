@@ -1,4 +1,4 @@
-import { ContextMenu, Text, Icon, Container } from "./genericComponents.js"
+import { Text, Icon, Container } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -47,7 +47,7 @@ export function Boosts(props) {
 				statStrings[stat.type][stat.id] = displayString
 			}
 
-			boosts.push(<Text text={displayString}/>)
+			boosts.push(<Text key={z} text={displayString}/>)
 		}
 	}
 
@@ -59,15 +59,12 @@ export function Boosts(props) {
 
 		for (let z in statsToCategorize) { // for each stat in category
 			let statToCategorize = statsToCategorize[z]
-			let stat = stats[statToCategorize.type][statToCategorize.id] // the stat in the build
+			// let stat = stats[statToCategorize.type][statToCategorize.id] // the stat in the build
 			
 
 			
 			if (utils.hasKey(statStrings, statToCategorize.type) && utils.hasKey(statStrings[statToCategorize.type], statToCategorize.id)) {
-				categorizedBoosts[x].push(<StatBoost key={Math.random()} type={statToCategorize.type} subType={statToCategorize.id} text={statStrings[statToCategorize.type][statToCategorize.id]}/>)
-			}
-			else {
-				// alert("t")
+				categorizedBoosts[x].push(<StatBoost key={z} type={statToCategorize.type} subType={statToCategorize.id} text={statStrings[statToCategorize.type][statToCategorize.id]}/>)
 			}
 		}
 	}

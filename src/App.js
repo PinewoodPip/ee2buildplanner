@@ -1,13 +1,10 @@
 import './App.css';
 import React from 'react';
-import update from 'immutability-helper';
-// import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 import * as utils from "./utils.js"
-import { Game, Ascension } from "./game.js"
-import { MainInterface, AscensionPopup, Embodiments, Keywords } from "./components.js"
-import * as miscData from "./miscData.js"
-import { Popup, ContextMenu, Text, Icon } from "./genericComponents.js"
+import { Game } from "./game.js"
+import { MainInterface, AscensionPopup, Keywords } from "./components.js"
+import { Popup, ContextMenu } from "./genericComponents.js"
 import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"
 import { ArtifactsPopup } from "./artifacts.js"
@@ -158,12 +155,7 @@ class App extends React.Component {
   closePopupPanel() {this.setState({popup: null})}
 
   handleKeyPress(e) {
-    let key = e.key
-
-    console.log(key)
-    if (key == "Escape") {
-      this.closeContext()
-    }
+    if (e.key === "Escape") {this.closePopupPanel()}
   }
 
   render() {
@@ -179,6 +171,7 @@ class App extends React.Component {
         case "stats": {popup = <Boosts app={this}/>; break}
         case "keywords": {popup = <Keywords app={this}/>; break}
         case "artifacts": {popup = <ArtifactsPopup app={this}/>; break}
+        default: {break}
       }
 
       if (this.state.popup != null) {
@@ -191,8 +184,8 @@ class App extends React.Component {
       }
 
       return (
-        // onClick={this.closeContext.bind(this)}
-        <div className="App" onKeyDown={(e)=>{this.handleKeyPress(e)}}>
+        // tabindex is needed to catch key presses. Outline disables the ugly outline when the element is focused
+        <div className="App" tabIndex={-1} style={{outline: "none"}} onKeyDown={(e)=>{this.handleKeyPress(e)}}>
           {contextMenu}
           {popup}
           <MainInterface app={this}/>

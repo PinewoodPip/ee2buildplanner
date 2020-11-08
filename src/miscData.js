@@ -81,7 +81,6 @@ export const origins = {
 
 export const nodesWithExtraKeywords = {
 	Ascension_Occultist_MUTA_EmulateInfectSpendAdapt: ["Adaptation"],
-	Ascension_Occultist_MUTA_EmulateInfectSpendAdapt: ["Adaptation"],
 	Ascension_VitalityVoid_MUTA_Wither: ["Wither"],
 	Ascension_Occultist_MUTA_Adapt: ["Adaptation"],
 	Ascension_Abeyance_MUTA_AdaptSpendFireAoE: ["Adaptation"],
@@ -89,7 +88,6 @@ export const nodesWithExtraKeywords = {
 	Ascension_Centurion_MUTA_CritAdaptStacks: ["Adaptation"],
 	Ascension_Ward_MUTA_AdaptationStacks: ["Adaptation"],
 	Ascension_Abeyance_MUTA_AdaptSpendBufferReduce: ["Adaptation"],
-	Ascension_Centurion_MUTA_AdaptationStacks: ["Adaptation"],
 	Ascension_Demolitionist_AdaptSpenderSIBoost: ["Adaptation"], // really special case
 	Ascension_Centurion_MUTA_AdaptSpendEmulateChainLight: ["Adaptation"],
 	Ascension_Centurion_MUTA_DefianceBHStacks: ["Defiance"],
@@ -103,12 +101,10 @@ export const nodesWithExtraKeywords = {
 	Ascension_Benevolence_MUTA_EmulateCelestialHeal: ["Celestial"],
 	Ascension_Centurion_MUTA_PurityGivesCenturionScaling: ["Purity"],
 	Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt: ["Adaptation"],
-
 	Ascension_ViolentStrike_MUTA_VitalityVoidACT: ["VitalityVoid"],
 	Ascension_VitalityVoid_MUTA_TeleportWithered: ["Wither"],
 	Ascension_Paucity_MUTA_WitherACT_BasicAttack: ["Wither"],
 	Ascension_Predator_MUTA_VoracityACT: ["Voracity"],
-
 	Ascension_Elementalist_ACT_CenturionOrWeak3: ["Centurion"],
 	Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor: ["Ward"],
 	Ascension_Celestial_ACT_AllyWard: ["Ward"],
@@ -453,7 +449,7 @@ export const artifactBoosts = {
 	// corruscating silks
 	// desperation
 	// dominion
-	consecration: {
+	dread: {
 		innate: [
 			{
                 type: "specialLogic",
@@ -1159,9 +1155,6 @@ export const stats = {
 		},
 		SourceGen_AddPointsGranted: {
 			display: "Source gain from Source Generation: +{0}"
-		},
-		Regen_PhysicalArmor: {
-			display: "Missing Physical Armor Regen: {0}%"
 		},
 		BattHarr_Threshold_Sum_Self_Both: {
 			display: "B/H Threshold: +{0} ???"

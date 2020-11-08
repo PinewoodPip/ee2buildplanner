@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import _ from "underscore";
 
-import { Icon, Container, TabbedContainer, Text, Tooltip } from "./genericComponents.js"
+import { Icon, Container, TabbedContainer, Text } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -79,7 +79,7 @@ class SkillAbilities extends React.Component {
 	hasAnyRelevantSkill(category) {
 		for (let x in this.props.app.state.skills) {
 			let skill = game.skills[this.props.app.state.skills[x]]
-			if (skill.Ability == category)
+			if (skill.Ability === category)
 				return true
 		}
 		return false
@@ -90,7 +90,7 @@ class SkillAbilities extends React.Component {
 		let newLevel;
 
 		// treat the current level as being higher if the user has a relevant skill in this category (SI level 1 has no requirements)
-		if (currentLevel == 0 && this.hasAnyRelevantSkill(category))
+		if (currentLevel === 0 && this.hasAnyRelevantSkill(category))
 			currentLevel = 1
 
 		// loop back to first index after going through all the states
@@ -107,11 +107,11 @@ class SkillAbilities extends React.Component {
 		let openSkillbookFunc = function(category){this.props.app.setState({popup: "skillbook", skillbookCategory: category})}.bind(this)
 
 		for (let x in game.skills.sorted) {
-			if (x == "Source")
+			if (x === "Source")
 				continue
 			let level = this.SI_Levels[this.props.app.state.skillAbilities[x]]
 
-			if (this.props.app.state.skillAbilities[x] == 0 && this.hasAnyRelevantSkill(x)) {
+			if (this.props.app.state.skillAbilities[x] === 0 && this.hasAnyRelevantSkill(x)) {
 				level = this.SI_Levels[1];
 			}
 
@@ -121,7 +121,7 @@ class SkillAbilities extends React.Component {
 
 			let className = (this.hasAnyRelevantSkill(x) || this.props.app.state.skillAbilities[x] > 0) ? "highlighted-bg" : ""
 
-			skillAbilities.push(<div className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
+			skillAbilities.push(<div key={x} className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
 				<Icon img={game.mappings.abilityImages[x]} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
 				<Text text={game.mappings.abilityNames[x]} className="flex-grow" onClick={()=>{openSkillbookFunc(x)}}/>
 				{button}

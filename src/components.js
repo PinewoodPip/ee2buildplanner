@@ -1,9 +1,6 @@
 import React from 'react';
-import _ from "underscore";
-import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
-import { cloneDeep } from "lodash"
 
-import { ContextMenuContents, Tooltip, Container, TabbedContainer, Text, Icon } from "./genericComponents.js"
+import { Tooltip, Container, Text, Icon } from "./genericComponents.js"
 import * as utils from "./utils.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
@@ -69,22 +66,15 @@ export function AscensionPopup(props) {
 	let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
 
 	let asps = []
-	asps.push(<AspectListing keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>)
-	asps.push(<hr/>)
+	asps.push(<AspectListing key="header" keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>)
+	asps.push(<hr key={Math.random()}/>)
 	for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
 		let asp = game.ascension.aspects[props.app.state.currentFamily][x]
 
-		let contextId = x
-		let element = 
-			<ContextMenuTrigger id={contextId} className="full-width" style={{width: "100%", height: "100%", position: "absolute"}}>
-			<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>
-		</ContextMenuTrigger>
-
-		// asps.push(element)
-		asps.push(<Aspect id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
+		asps.push(<Aspect key={x} id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
 
 		if (miscData.aspectsAfterWePutAnHrToMakeThingsLookNice.includes(x)) {
-			asps.push(<hr/>)
+			asps.push(<hr key={Math.random()}/>)
 		}
 		
 	}
@@ -142,7 +132,7 @@ export function Keywords(props) {
 		let keyword = props.app.keywords[props.app.state.currentKeyword][x]
 		let element = <Text text={game.getDisplayString(game.app.stats[keyword.type][keyword.id])}/>
 
-		if (keyword.keywordBoon == "activator")
+		if (keyword.keywordBoon === "activator")
 			activators.push(element)
 		else
 			mutators.push(element)
@@ -192,7 +182,7 @@ class Skills extends React.Component {
 		}
 
 		// button to add more skills, opening the skillbook
-		skills.push(<Icon className="button" borderless={true} img={"add"} size="64px" onClick={this.openSkillBook.bind(this)}/>)
+		skills.push(<Icon key="add" className="button" borderless={true} img={"add"} size="64px" onClick={this.openSkillBook.bind(this)}/>)
 
 		return (
 			<Container className="skills">
@@ -205,7 +195,7 @@ class Skills extends React.Component {
 }
 
 function Keyword(props) {
-	let className = props.faded == true ? "faded-out" : "keyword"
+	let className = props.faded === true ? "faded-out" : "keyword"
 	return (
 		<Tooltip content={<Text text={game.mappings.keywordNames[props.keyword]}/>}>
 			<Icon className={className} style={{margin: "0 3px 0 3px"}} size={"32px"} img={game.mappings.keywordImages[props.keyword]}/>
@@ -227,7 +217,7 @@ function AspectListing(props) {
 function Aspect(props) {
 	let asp;
 	let info;
-	if (props.id != undefined) {
+	if (props.id != null) {
 		asp = game.ascension.getReferenceById(props.id)
 		info = game.ascension.getReferenceById(props.id)
 	}
@@ -281,7 +271,7 @@ export function Embodiments(props) {
 	for (let x in props.amounts) {
 		if (!props.skipEmpty || (props.skipEmpty && props.amounts[x] > 0)) {
 			let className = (unmet.includes(x)) ? "reqs-unmet" : ""
-			embs.push(<Embodiment className={className} type={x} amount={props.amounts[x]}/>)
+			embs.push(<Embodiment key={x} className={className} type={x} amount={props.amounts[x]}/>)
 		}
 	}
 	return <div className="flexbox-horizontal flex-align-centered" style={{width: "unset", ...props.style}}>
@@ -309,7 +299,7 @@ class Ascension extends React.Component {
 		for (let x in this.props.app.state.aspects) {
 			let asp = this.props.app.state.aspects[x]
 
-			aspects.push(<Aspect interactable={true} data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
+			aspects.push(<Aspect key={x} interactable={true} data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
 		}
 
 		let currentAspect = null;
@@ -352,7 +342,7 @@ class Ascension extends React.Component {
 function GreenButton(props) {
 	return (
 		<div className="absolute button" onClick={props.onClick}>
-			<img style={{width: "150px", height: "30px"}} src={utils.getImage("button_green")}/>
+			<img alt={props.text} style={{width: "150px", height: "30px"}} src={utils.getImage("button_green")}/>
 			<Text text={props.text} className="unselectable"/>
 		</div>
 	)

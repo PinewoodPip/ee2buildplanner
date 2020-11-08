@@ -1,9 +1,8 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text } from "./genericComponents.js"
+import { Icon } from "./genericComponents.js"
 import { game } from "./App.js"
-import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
 
 function Buff(props) {
@@ -16,7 +15,7 @@ export function BuffBar(props) {
     for (let x in miscData.statuses) {
         let status = miscData.statuses[x]
 
-        if (status.type != "special" || props.app.state.artifacts.includes(status.id.replace("PIP_Artifact_", "").toLowerCase()))
+        if (status.type !== "special" || props.app.state.artifacts.includes(status.id.replace("PIP_Artifact_", "").toLowerCase()))
         buffs.push(<Buff key={x} data={status}/>)
     }
     return <div className="flexbox-horizontal flex-align-centered">

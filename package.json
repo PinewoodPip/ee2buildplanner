@@ -30,7 +30,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "parserOptions": {
+      "eqeqeq": [2, "smart"]
+    }
   },
   "browserslist": {
     "production": [

@@ -45,7 +45,7 @@ export class TabbedContainer extends React.Component {
     render() {
 		let options = []
 		for (let x in this.props.children) {
-			options.push(<option value={x}>{this.props.children[x].props.name}</option>)
+			options.push(<option key={x} value={x}>{this.props.children[x].props.name}</option>)
 		}
         return <Container className="flexbox-vertical" style={this.props.style}>
 				<div style={{marginTop: "20px", marginBottom: "20px"}}>
@@ -60,12 +60,12 @@ export class TabbedContainer extends React.Component {
 }
 
 export function Icon(props) {
-	let className = (props.className != undefined) ? props.className : "icon"
-	let style = (props.style != undefined) ? cloneDeep(props.style) : {}
+	let className = (props.className != null) ? props.className : "icon"
+	let style = (props.style != null) ? cloneDeep(props.style) : {}
 
-	if (props.style != undefined) {
-		style.width = (props.style.width != undefined) ? props.style.width : props.size
-		style.height = (props.style.height != undefined) ? props.style.height : props.size
+	if (props.style != null) {
+		style.width = (props.style.width != null) ? props.style.width : props.size
+		style.height = (props.style.height != null) ? props.style.height : props.size
 	}
 	else {
 		style.width = props.size
@@ -75,7 +75,7 @@ export function Icon(props) {
 	return (
 		<div style={style} className={className} onClick={props.onClick} onContextMenu={props.onContextMenu}>
 			{/* <img src={props.img} style={{width: props.size, height: props.size}}/> */}
-			<img src={utils.getImage(props.img)} style={{width: "100%", height: "100%"}}/>
+			<img alt={""} src={utils.getImage(props.img)} style={{width: "100%", height: "100%"}}/>
 		</div>
 	)
 }
@@ -98,7 +98,7 @@ export function Popup(props) {
 
 export class Tooltip extends React.Component {
 	render() {
-		let placement = (this.props.placement != undefined) ? this.props.placement : "bottom"
+		let placement = (this.props.placement != null) ? this.props.placement : "bottom"
 		return (
 		  <Tippy content={this.props.content} placement={placement} duration="0">
 			<span>
@@ -114,7 +114,7 @@ export function ContextMenu(props) {
   let info = props.app.state.contextMenu;
   for (let x in props.children) {
     // if an element has no onClick handler, don't highlight it when the user hovers over it
-    let className = props.children[x].props.onClick != undefined ? "context-option" : "context-option-noninteractable"
+    let className = props.children[x].props.onClick != null ? "context-option" : "context-option-noninteractable"
     childs.push(<div key={Math.random()} className={className}>{props.children[x]}</div>)
   }
   return (
@@ -123,11 +123,3 @@ export function ContextMenu(props) {
     </div>
   )
 }
-
-// export function ContextMenuContents(props) {
-// 	return (
-// 		<ContextMenu id={props.id}>
-// 			{props.children}
-// 		</ContextMenu>
-// 	)
-// }

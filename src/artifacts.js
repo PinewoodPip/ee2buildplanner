@@ -1,8 +1,7 @@
 import './App.css';
 import React from 'react';
-import _ from "underscore";
 
-import { Icon, Container, TabbedContainer, Text, Tooltip, TabButton } from "./genericComponents.js"
+import { Icon, Container, Text, Tooltip, TabButton } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -29,7 +28,7 @@ export class ArtifactsPopup extends React.Component {
     render() {
         let categories = []
         for (let x in miscData.artifactCategories) {
-            categories.push(<TabButton onClick={()=>{this.setState({tab: x})}}>
+            categories.push(<TabButton key={x} onClick={()=>{this.setState({tab: x})}}>
                 <Text text={utils.capitalize(x)}/>
             </TabButton>)
         }
