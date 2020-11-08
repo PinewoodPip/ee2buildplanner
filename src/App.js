@@ -32,6 +32,7 @@ class App extends React.Component {
       currentKeyword: "Abeyance",
       darkMode: true,
       stats: null,
+      text: "",
 
       statCategories: new Set(),
       portraitIndex: 0,

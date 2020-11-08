@@ -112,6 +112,38 @@ body {
   /* align-items: flex-start; */
 }
 
+textarea {
+  height: 93%;
+  width: 85%; /* gotta figure out why padding doesn't do this for me */
+  background-color: transparent;
+  color: whitesmoke;
+  padding: 15px;
+  overflow-y: scroll;
+  resize: none;
+  outline: none;
+  border: none;
+  /* margin: 15px; */
+}
+
+::-webkit-scrollbar-thumb {
+  margin: 5px 0;
+  border: solid;
+  border-width: 10px 0 10px 15px;
+ 
+  border-image: url("/src/images/interface/scrollbar_test.png") 10 15;
+  border-image-repeat: stretch;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* does not work. */
+  /* filter: brightness(130%); */
+}
+
+textarea::-webkit-scrollbar {
+  /* interestingly, this must exist for the custom scrollbar to work, and it must not be within the regular ::-webkit-scrollbar style. */
+  display: block;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -326,7 +358,7 @@ hr {
 }
 
 .ascension {
-  width: 500px;
+  width: 400px;
   height: 500px
 }
 
@@ -509,5 +541,7 @@ select {
   background-repeat: no-repeat;
   background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px, 40px 100%, 100% 40px, 40px 100%, 100% 40px;
 
-  margin: 10px;
+  padding: 10px;
+
+  margin: 5px;
 }

@@ -18,6 +18,22 @@ function AscensionFamilyButton(props) {
 	)
 }
 
+export class TextField extends React.Component {
+	constructor() {super(); this.state = {text: ""}}
+	shouldComponentUpdate(nextProps, nextState) {
+		if (nextProps != this.props)
+			return true
+		return false
+	}
+	render() {
+		return (
+			<Container style={{width: "100%", height: "100%"}}>
+				<textarea tabIndex={0} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}}/>
+			</Container>
+		)
+	}
+}
+
 export function AscensionPopup(props) {
 	let familyButtons = []
 	for (let x in game.ascension.aspects) {
@@ -357,11 +373,12 @@ export class MainInterface extends React.Component {
 					</div>
 
 					{/* todo remove this and just use a container as the parent */}
-					<div style={{height: "10px"}}/>
+					<div style={{height: "30px"}}/>
 
 					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
 						<Attributes app={this.props.app}/>
 						<Ascension app={this.props.app}/>
+						<TextField app={this.props.app}/>
 					</div>
 				</div>
 			</div>
