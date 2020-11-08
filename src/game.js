@@ -183,17 +183,6 @@ export class Game {
       }
     })
 
-    // status effect boosts
-    this.app.state.buffs.forEach(id => {
-      let data = miscData.statuses[id]
-      if (data.type !== "special") {
-        data.boosts.forEach(e => {
-          addStat(e)
-          // these cannot contain keywords
-        })
-      }
-    })
-
     // cache
     this.app.keywords = keywords
 
@@ -244,9 +233,18 @@ export class Game {
 
   getRealStats(stats) {
 
+    function addStat(stat) {
+      if (utils.hasKey(stats[stat.type], stat.id)) {
+        stats[stat.type][stat.id].amount += stat.value
+        stats[stat.type][stat.id].refString = stat.string
+      }
+      else {
+        stats[stat.type][stat.id] = {type: stat.type, amount: stat.value, id: stat.id, refString: stat.string}
+      }
+    }
     // calculate real, absolute amounts of stats
 
-    // artifact special toggleable effects
+    // artifact special toggleable effects.
     this.app.state.buffs.forEach(id => {
       let data = miscData.statuses[id]
       if (data.type == "special") {
@@ -256,6 +254,43 @@ export class Game {
 
             stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
             stats.extendedStat.PercAttributeIncrease_Wits.amount += investmentBonus
+            break;
+          }
+          case "PIP_Artifact_EyeOfTheStorm": {
+            let investmentBonus = 25 + (2.5 * stats.flexStat.airSpecialist.amount)
+
+            stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
+            break;
+          }
+          case "PIP_Artifact_Kudzu": {
+            stats.flexStat.POISONRESISTANCE.amount += 20
+            stats.flexStat.EARTHRESISTANCE.amount += 10
+            stats.flexStat.PHYSICALRESISTANCE.amount += 10
+            break;
+          }
+          case "PIP_Artifact_Leviathan": {
+            // lmao why did i even think of this
+            stats.flexStat.MOVEMENT.amount += 0.5
+            break;
+          }
+          case "PIP_Artifact_Onslaught": {
+            let investmentBonus = 3 * (Math.min(0, stats.flexStat.MOVEMENT.amount - 2))
+            stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
+            stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
+            break;
+          }
+          case "PIP_Artifact_PrismaticBarrier": {
+            let resBonus = 3 * stats.flexStat.Perseverance.amount
+            stats.flexStat.EleResistance.amount += resBonus
+            break;
+          }
+          case "PIP_Artifact_Urgency": {
+            let force = stats.embodimentReward.Force.amount + this.ascension.getTotalRewards().force
+            let dmgBoost = 10 * force
+            let movementBoost = 0.3 * force
+            stats.flexStat.DAMAGEBOOST.amount += dmgBoost
+            stats.flexStat.MOVEMENT.amount += movementBoost
+            break;
           }
         }
       }
@@ -322,6 +357,17 @@ export class Game {
     stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
     stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
     stats.realStats["res_air"] = {type: "realStats", id: "res_air", amount: this.applyDR(realResAir)}
+
+    // status effect boosts
+    this.app.state.buffs.forEach(id => {
+      let data = miscData.statuses[id]
+      if (data.type !== "special") {
+        data.boosts.forEach(e => {
+          addStat(e)
+          // these cannot contain keywords
+        })
+      }
+    })
 
     return stats
   }
@@ -410,7 +456,7 @@ export class Ascension {
   // get rewards of chosen aspects. this factors in embodiments granted by stat boosts - these are found in the "second tier" of aspects, in their second nodes.
   getTotalRewards() {
     let asps = []
-    let stats = game.getStats()
+    let stats = game.app.stats
     let rews = {
       force: stats.embodimentReward.Force.amount,
       entropy: stats.embodimentReward.Entropy.amount,

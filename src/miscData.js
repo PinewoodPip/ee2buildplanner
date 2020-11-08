@@ -1,3 +1,5 @@
+import { game } from "./App.js"
+
 export const races = {
 	human: {
 		name: "Human",
@@ -882,24 +884,24 @@ export const statuses = {
 	// 	type: "special",
 	// 	id: "PIP_Artifact_AntediluvianCarapace"
 	// },
-	PIP_Artifact_DrogsLuck: {type: "special", id: "PIP_Artifact_DrogsLuck"},
-	PIP_Artifact_Expedition: {type: "special", id: "PIP_Artifact_Expedition"},
-	PIP_Artifact_EyeOfTheStorm: {type: "special", id: "PIP_Artifact_EyeOfTheStorm"},
-	PIP_Artifact_Kudzu: {type: "special", id: "PIP_Artifact_Kudzu"},
-	PIP_Artifact_Leviathan: {type: "special", id: "PIP_Artifact_Leviathan"},
-	PIP_Artifact_Onslaught: {type: "special", id: "PIP_Artifact_Onslaught"},
-	PIP_Artifact_PrismaticBarrier: {type: "special", id: "PIP_Artifact_PrismaticBarrier"},
-	PIP_Artifact_Urgency: {type: "special", id: "PIP_Artifact_Urgency"},
+	PIP_Artifact_DrogsLuck: {type: "special", id: "PIP_Artifact_DrogsLuck", icon: "AMER_UNI_Amulet_A"},
+	// PIP_Artifact_Expedition: {type: "special", id: "PIP_Artifact_Expedition"},
+	PIP_Artifact_EyeOfTheStorm: {type: "special", id: "PIP_Artifact_EyeOfTheStorm", icon: "AMER_UNI_Ring_A"},
+	PIP_Artifact_Kudzu: {type: "special", id: "PIP_Artifact_Kudzu", icon: "AMER_UNI_Boots_Cloth_A"},
+	PIP_Artifact_Leviathan: {type: "special", id: "PIP_Artifact_Leviathan", icon: "AMER_UNI_Mace_A"},
+	PIP_Artifact_Onslaught: {type: "special", id: "PIP_Artifact_Onslaught", icon: "AMER_UNI_Boots_Plate_D"},
+	PIP_Artifact_PrismaticBarrier: {type: "special", id: "PIP_Artifact_PrismaticBarrier", icon: "AMER_UNI_Shield_E"},
+	PIP_Artifact_Urgency: {type: "special", id: "PIP_Artifact_Urgency", icon: "AMER_UNI_Chest_Leather_C"},
 
 	PeaceOfMind: {
 		type: "normal",
 		id: "PeaceOfMind",
 		icon: "Skill_Fire_BurnMyEyes",
 		boosts: [
-			{type: "flexStat", id: "FINESSE", value: 3},
-			{type: "flexStat", id: "INTELLIGENCE", value: 3},
-			{type: "flexStat", id: "STRENGTH", value: 3},
-			{type: "flexStat", id: "WITS", value: 7},
+			{type: "realStats", id: "fin", value: 3},
+			{type: "realStats", id: "pwr", value: 3},
+			{type: "realStats", id: "str", value: 3},
+			{type: "realStats", id: "wits", value: 7},
 		]
 	}
 }
