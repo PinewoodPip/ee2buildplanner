@@ -13,6 +13,32 @@ function IncrementButton(props) {
 	)
 }
 
+function CivilAbility(props) {
+	let func = (increment) => {game.changeCivil(props.id, increment)}
+	return <div className="flexbox-horizontal">
+		{/* <Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/> */}
+		<Text style={{width: "50px"}} text={utils.format("{0}:", props.id)}/>
+		<Text style={{width: "25px"}} text={utils.format("{0}", game.app.state.civils[props.id])}/>
+
+		<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}}/>
+		<IncrementButton img={"add_point"} onClick={()=>{func(1)}}/>
+	</div>
+}
+
+function CivilAbilities(props) {
+	return (
+		<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
+			<CivilAbility id="bartering"/>
+			<CivilAbility id="luckycharm"/>
+			<CivilAbility id="persuasion"/>
+			<CivilAbility id="loremaster"/>
+			<CivilAbility id="telekinesis"/>
+			<CivilAbility id="sneaking"/>
+			<CivilAbility id="thievery"/>
+		</Container>
+	)
+}
+
 function Attribute(props) {
 	let disabledDecrement = false
 	let disabledIncrement = false
@@ -128,6 +154,9 @@ export class Attributes extends React.Component {
 			</Container>
 			<Container name="Skill Abilities" noBg className="flexbox-vertical flex-align-start">
 				<SkillAbilities app={this.props.app} noBg/>
+			</Container>
+			<Container name="Civil Abilities" noBg className="flexbox-vertical flex-align-start">
+				<CivilAbilities app={this.props.app} noBg/>
 			</Container>
 		</TabbedContainer>
 	}

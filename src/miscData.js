@@ -600,7 +600,7 @@ export const artifactBoosts = {
 				keywords: [{keyword: "ViolentStrike", keywordBoon: "mutator"}]
             }
 		],
-		statuses: ["Pip_Artifact_Leviathan"]
+		statuses: ["PIP_Artifact_Leviathan"]
 	},
 	// lightspire
 	// malice
@@ -879,6 +879,33 @@ export const artifactBoosts = {
             }
 		]
 	},
+}
+
+export const statuses = {
+	// PIP_Artifact_AntediluvianCarapace: {
+	// 	type: "special",
+	// 	id: "PIP_Artifact_AntediluvianCarapace"
+	// },
+	PIP_Artifact_DrogsLuck: {type: "special", id: "PIP_Artifact_DrogsLuck"},
+	PIP_Artifact_Expedition: {type: "special", id: "PIP_Artifact_Expedition"},
+	PIP_Artifact_EyeOfTheStorm: {type: "special", id: "PIP_Artifact_EyeOfTheStorm"},
+	PIP_Artifact_Kudzu: {type: "special", id: "PIP_Artifact_Kudzu"},
+	PIP_Artifact_Leviathan: {type: "special", id: "PIP_Artifact_Leviathan"},
+	PIP_Artifact_Onslaught: {type: "special", id: "PIP_Artifact_Onslaught"},
+	PIP_Artifact_PrismaticBarrier: {type: "special", id: "PIP_Artifact_PrismaticBarrier"},
+	PIP_Artifact_Urgency: {type: "special", id: "PIP_Artifact_Urgency"},
+
+	PeaceOfMind: {
+		type: "normal",
+		id: "PeaceOfMind",
+		icon: "Skill_Fire_BurnMyEyes",
+		boosts: [
+			{type: "flexStat", id: "FINESSE", value: 3},
+			{type: "flexStat", id: "INTELLIGENCE", value: 3},
+			{type: "flexStat", id: "STRENGTH", value: 3},
+			{type: "flexStat", id: "WITS", value: 7},
+		]
+	}
 }
 
 export const portraits = [

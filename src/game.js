@@ -29,6 +29,28 @@ export class Game {
     return amount
   }
 
+  changeCivil(id, increment) {
+    let state = cloneDeep(this.app.state.civils)
+    let civil = state[id]
+    if (civil + increment > 10)
+      state[id] = 10
+    else if (civil + increment < 0)
+      state[id] = 0
+    else
+      state[id] = civil + increment
+    this.app.setState({civils: state})
+  }
+
+  toggleBuff(id) {
+    let state = cloneDeep(this.app.state.buffs)
+    if (state.has(id))
+      state.delete(id)
+    else
+      state.add(id)
+    
+    this.app.setState({buffs: state}, game.render.bind(game)) // todo we should maybe look into this instead of using a hack
+  }
+
   getArtifact(id) {
     let info = cloneDeep(game.artifacts[id])
     if (utils.hasKey(miscData.artifactBoosts, id))
@@ -87,9 +109,7 @@ export class Game {
   }
 
   getStats() {
-    // todo clean up params
     function addStat(stat) {
-      // console.log(stat)
       if (utils.hasKey(stats[stat.type], stat.id)) {
         stats[stat.type][stat.id].amount += stat.value
         stats[stat.type][stat.id].refString = stat.string
@@ -152,12 +172,24 @@ export class Game {
       }
     }
 
+    // artifact innate stat boosts
     this.app.state.artifacts.forEach(element => {
       let boosts = miscData.artifactBoosts[element]
       if (boosts && "innate" in boosts) {
         boosts.innate.forEach(e => {
           addStat(e)
           tryToAddKeyword(e)
+        })
+      }
+    })
+
+    // status effect boosts
+    this.app.state.buffs.forEach(id => {
+      let data = miscData.statuses[id]
+      if (data.type != "special") {
+        data.boosts.forEach(e => {
+          addStat(e)
+          // these cannot contain keywords
         })
       }
     })
@@ -172,7 +204,8 @@ export class Game {
   // todo clean up
   getDisplayString(stat) {
     let displayString;
-    let isArtifact = stat.id.search("PIP_Artifact") > -1
+    console.log(stat)
+    let isArtifact = stat.id.search("PIP_Artifact_") > -1
 
     // check if this stat has a defined subtype and string in miscData
     if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type == "specialLogic" || stat.type == "statusExtension") && !isArtifact) {
@@ -213,6 +246,21 @@ export class Game {
   getRealStats(stats) {
 
     // calculate real, absolute amounts of stats
+
+    // artifact special toggleable effects
+    this.app.state.buffs.forEach(id => {
+      let data = miscData.statuses[id]
+      if (data.type == "special") {
+        switch(data.id) {
+          case "PIP_Artifact_DrogsLuck": {
+            let investmentBonus = 15 + (2 * stats.flexStat.FireSpecialist.amount) + (4 * game.app.state.civils.luckycharm)
+
+            stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
+            stats.extendedStat.PercAttributeIncrease_Wits.amount += investmentBonus
+          }
+        }
+      }
+    })
 
     let realStr = (
       stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str +

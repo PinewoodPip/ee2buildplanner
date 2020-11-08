@@ -33,6 +33,7 @@ class App extends React.Component {
       rounding: 2,
       currentKeyword: "Abeyance",
       darkMode: true,
+      stats: null,
 
       portraitIndex: 0,
       customPortrait: null,
@@ -78,7 +79,16 @@ class App extends React.Component {
             0
           ]
         }
-      ]
+      ],
+      buffs: new Set(),
+      civils: {
+        thievery: 0,
+        luckycharm: 0,
+        bartering: 0,
+        sneaking: 0,
+        persuasion: 0,
+        telekinesis: 0,
+      }
     }
   }
 
@@ -87,7 +97,8 @@ class App extends React.Component {
 
   // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
   componentDidUpdate(prevState, newState) {
-    this.stats = game.getStats()
+    // this.setState({stats: game.getStats()})
+    this.stats = game.getStats();
   }
 
   contextMenu(element, e) {

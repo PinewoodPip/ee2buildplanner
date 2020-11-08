@@ -2,6 +2,7 @@ import { ContextMenu, Text, Icon, Container } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
+import { BuffBar } from "./buffs.js"
 
 export function StatBoost(props) {
 	return (
@@ -26,7 +27,7 @@ function StatTab(props) {
 
 export function Boosts(props) {
 	let boosts = []
-	let stats = game.app.stats
+	let stats = props.app.stats
 	let statStrings = {}
 
 	// literally all the stats as strings
@@ -78,6 +79,8 @@ export function Boosts(props) {
 			</div>
 
 			<div style={{height: "20px"}}/>
+
+			<BuffBar app={props.app}/>
 
 			<div className="flexbox-horizontal flex-wrap wrap-y" style={{alignItems: "flex-start"}}>
 				<StatTab name="Resistances" elements={categorizedBoosts.realResistances} width="200px"/>

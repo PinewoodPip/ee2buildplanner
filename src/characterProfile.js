@@ -52,7 +52,7 @@ export function Portrait(props) {
 		props.app.contextMenu(realElements, e)
 	}
 	return (
-		<div className="portrait" style={{position: "relative"}} onContextMenu={changePortrait} >
+		<div className="portrait button" style={{position: "relative"}} onContextMenu={changePortrait} onClick={changePortrait}>
 			<Icon img={miscData.portraits[props.app.state.portraitIndex]} style={{width: "108px", height: "135px"}}/>
 
 			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "150px"}} className="portrait-frame"/>

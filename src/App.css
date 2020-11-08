@@ -352,6 +352,14 @@ hr {
   top: 0px;
 }
 
+.activated {
+  outline: 2px solid whitesmoke;
+}
+
+.can-open-context-menu {
+  cursor: help;
+}
+
 .aspect-preview {
   width: 300px;
   height: 450px;
