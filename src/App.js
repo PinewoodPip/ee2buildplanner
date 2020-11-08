@@ -8,6 +8,7 @@ import { Popup, ContextMenu } from "./genericComponents.js"
 import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"
 import { ArtifactsPopup } from "./artifacts.js"
+import cloneDeep from 'lodash.clonedeep';
 
 const axios = require('axios').default;
 
@@ -32,6 +33,7 @@ class App extends React.Component {
       darkMode: true,
       stats: null,
 
+      statCategories: new Set(),
       portraitIndex: 0,
       customPortrait: null,
       physique: {
@@ -96,6 +98,16 @@ class App extends React.Component {
   componentDidUpdate(prevState, newState) {
     // this.setState({stats: game.getStats()})
     this.stats = game.getStats();
+  }
+
+  // should just make a generic method for updating these...
+  toggleStatCategory(id) {
+    let state = cloneDeep(this.state.statCategories)
+    if (state.has(id))
+      state.delete(id)
+    else
+      state.add(id)
+    this.setState({statCategories: state})
   }
 
   contextMenu(element, e) {

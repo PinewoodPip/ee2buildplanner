@@ -81,9 +81,13 @@ export function Icon(props) {
 }
 
 export function TabButton(props) {
-	return <div className={"flexbox-horizontal flex-align-start skillbook-category " + props.className} onClick={props.onClick}>
-		{props.children}
-	</div>
+	let img = props.img ? [<Icon img={props.img} size="32px"/>, <div style={{width: "15px"}}/>] : null
+	return (
+		<div className={"flexbox-horizontal flex-align-start skillbook-category button " + (props.chosen ? "chosen " : "")} onClick={props.func}>
+			{img}
+			<Text text={props.text}/>
+		</div>
+	)
 }
 
 export function Popup(props) {

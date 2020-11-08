@@ -116,6 +116,12 @@ body {
   flex-grow: 1;
 }
 
+.stat-sheets {
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
 hr {
   /* border: 0.5px black solid; */
   width: 85%;
@@ -341,13 +347,13 @@ hr {
 }
 
 .sticky-bottom {
-  background-color: whitesmoke;
+  background-color: rgb(70, 70, 70);
   position: sticky;
   bottom: 0px;
 }
 
 .sticky-top {
-  background-color: whitesmoke;
+  background-color: rgb(70, 70, 70);
   position: sticky;
   top: 0px;
 }
@@ -369,8 +375,9 @@ hr {
 }
 
 .skillbook-category {
-  width: 150px;
+  width: 100%;
   cursor: pointer;
+  padding: 2px;
 }
 .skillbook-category:hover {
   filter: brightness(110%);
@@ -379,7 +386,10 @@ hr {
 }
 
 .chosen {
-  outline: 1px black solid;
+  background-color: rgb(51, 51, 51);
+  /* outline: 2px solid rgb(70, 70, 70) */
+  /* text-decoration: underline;
+  text-decoration-color: whitesmoke; */
 }
 
 /* used for skill abilities */

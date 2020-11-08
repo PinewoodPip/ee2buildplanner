@@ -292,6 +292,16 @@ export class Game {
             stats.flexStat.MOVEMENT.amount += movementBoost
             break;
           }
+          case "PIP_Artifact_Vertigo": {
+            let fin = (
+              stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin +
+              (stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100)
+              - 10
+            )
+
+            stats.flexStat.DODGEBOOST.amount += 1 * fin
+            stats.flexStat.ACCURACYBOOST.amount += -0.5 * fin
+          }
         }
       }
     })

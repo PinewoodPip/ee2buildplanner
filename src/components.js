@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tooltip, Container, Text, Icon } from "./genericComponents.js"
+import { Tooltip, Container, Text, Icon, TabButton } from "./genericComponents.js"
 import * as utils from "./utils.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
@@ -114,11 +114,7 @@ export function Keywords(props) {
 	let keywordButtons = []
 	for (let x in props.app.keywords) {
 		let func = () => {props.app.setState({currentKeyword: x})}
-		let element = <div key={x} className={"flexbox-horizontal flex-align-start skillbook-category "} onClick={func}>
-			<Icon img={game.mappings.keywordImages[x]} size="32px"/>
-			<div style={{width: "15px"}}/>
-			<Text text={game.mappings.keywordNames[x]}/>
-		</div>
+		let element = <TabButton key={x} img={game.mappings.keywordImages[x]} text={game.mappings.keywordNames[x]} func={func} chosen={props.app.state.currentKeyword === x}/>
 		keywordButtons.push(element)
 	}
 

@@ -28,8 +28,7 @@ export class ArtifactsPopup extends React.Component {
     render() {
         let categories = []
         for (let x in miscData.artifactCategories) {
-            categories.push(<TabButton key={x} onClick={()=>{this.setState({tab: x})}}>
-                <Text text={utils.capitalize(x)}/>
+            categories.push(<TabButton key={x} func={()=>{this.setState({tab: x})}} text={utils.capitalize(x)}>
             </TabButton>)
         }
 

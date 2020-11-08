@@ -116,7 +116,7 @@ export const nodesWithExtraKeywords = {
 }
 
 export const statCategories = {
-	resistances: [
+	"Resistance Bonuses": [
 		{type: "flexStat", id: "AllResistance"},
 		{type: "flexStat", id: "PHYSICALRESISTANCE"},
 		{type: "flexStat", id: "PIERCINGRESISTANCE"},
@@ -127,7 +127,7 @@ export const statCategories = {
 		{type: "flexStat", id: "AIRRESISTANCE"},
 		{type: "flexStat", id: "POISONRESISTANCE"},
 	],
-	realResistances: [
+	"Real Resistances": [
 		{type: "realStats", id: "res_physical"},
 		{type: "realStats", id: "res_piercing"},
 		{type: "realStats", id: "res_fire"},
@@ -136,7 +136,7 @@ export const statCategories = {
 		{type: "realStats", id: "res_air"},
 		{type: "realStats", id: "res_poison"},
 	],
-	realAttributes: [
+	"Real Attributes": [
 		{type: "realStats", id: "str"},
 		{type: "realStats", id: "fin"},
 		{type: "realStats", id: "pwr"},
@@ -144,7 +144,7 @@ export const statCategories = {
 		{type: "realStats", id: "mem"},
 		{type: "realStats", id: "wits"},
 	],
-	skillAbilities: [
+	"Skill Ability Bonuses": [
 		{type: "flexStat", id: "AirSpecialist"},
 		{type: "flexStat", id: "EarthSpecialist"},
 		{type: "flexStat", id: "RangerLore"},
@@ -156,7 +156,7 @@ export const statCategories = {
 		{type: "flexStat", id: "Summoning"},
 		{type: "flexStat", id: "WarriorLore"},
 	],
-	summonBoosts: [
+	"Summon Boosts": [
 		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
 		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DAMAGEBOOST"},
 		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_ACCURACYBOOST"},
@@ -172,13 +172,17 @@ export const statCategories = {
 		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
 		{type: "specialLogic", id: "Ascension_SummonLimitTo2"},
 	],
-	voracity: [
+	"Regeneration": [
+		{type: "extendedStat", id: "Regen_Life"},
+		{type: "extendedStat", id: "Regen_PhysicalArmor"},
+		{type: "extendedStat", id: "Regen_MagicArmor"},
+
 		{type: "extendedStat", id: "Voracity_Life"},
 		{type: "extendedStat", id: "Voracity_BothArmor"},
 		{type: "extendedStat", id: "Voracity_PhysArmor"},
 		{type: "extendedStat", id: "Voracity_MagicArmor"},
 	],
-	combatAbilities: [
+	"Combat Ability Bonuses": [
 		{type: "flexStat", id: "SingleHanded"},
 		{type: "flexStat", id: "TwoHanded"},
 		{type: "flexStat", id: "Ranged"},
@@ -186,6 +190,20 @@ export const statCategories = {
 		{type: "flexStat", id: "Leadership"},
 		{type: "flexStat", id: "PainReflection"},
 		{type: "flexStat", id: "Perseverance"},
+	],
+	"Free Reactions": [
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Centurion"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Elementalist"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Predator"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Celestial"},
+	],
+	"Investment Bonuses": [
+		{type: "extendedStat", id: "PercAttributeIncrease_Strength"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Finesse"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Intelligence"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Constitution"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Memory"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Wits"},
 	]
 }
 
@@ -892,6 +910,7 @@ export const statuses = {
 	PIP_Artifact_Onslaught: {type: "special", id: "PIP_Artifact_Onslaught", icon: "AMER_UNI_Boots_Plate_D"},
 	PIP_Artifact_PrismaticBarrier: {type: "special", id: "PIP_Artifact_PrismaticBarrier", icon: "AMER_UNI_Shield_E"},
 	PIP_Artifact_Urgency: {type: "special", id: "PIP_Artifact_Urgency", icon: "AMER_UNI_Chest_Leather_C"},
+	PIP_Artifact_Vertigo: {type: "special", id: "PIP_Artifact_Vertigo", icon: "AMER_UNI_Axe_A"},
 
 	PeaceOfMind: {
 		type: "normal",
@@ -1040,7 +1059,7 @@ export const stats = {
 		},
 
 		DODGEBOOST: {
-			display: "Dodge: {0}%"
+			display: "Dodge Chance: {0}%"
 		},
 
 		AllResistance: {
@@ -1128,6 +1147,10 @@ export const stats = {
 		},
 	},
 	extendedStat: {
+		// free reaction charges
+		FreeReactionCharge_AMER_Celestial: {
+			display: "Free Celestial Charges: {0}"
+		},
 		FreeReactionCharge_AMER_Centurion: {
 			display: "Free Centurion Charges: {0}"
 		},
@@ -1137,35 +1160,57 @@ export const stats = {
 		FreeReactionCharge_AMER_Predator: {
 			display: "Free Predator Charges: {0}"
 		},
-		Regen_PhysicalArmor: {
-			display: "Missing Physical Armor Regen: {0}%"
+
+		// investment bonuses
+		PercAttributeIncrease_Strength: {
+			display: "Invested Strength: +{0}%"
 		},
 		PercAttributeIncrease_Finesse: {
 			display: "Invested Finesse: +{0}%"
 		},
+		PercAttributeIncrease_Intelligence: {
+			display: "Inested Power: +{0}%"
+		},
+		PercAttributeIncrease_Constitution: {
+			display: "Invested Constitution: +{0}%"
+		},
+		PercAttributeIncrease_Memory: {
+			display: "Invested Memory: +{0}%"
+		},
+		PercAttributeIncrease_Wits: {
+			display: "Invested Wits: +{0}%"
+		},
+
+		// regeneration
+		Regen_Life: {
+			display: "Missing Health Regen: {0}%"
+		},
+		Regen_PhysicalArmor: {
+			display: "Missing Physical Armor Regen: {0}%"
+		},
+		Regen_MagicArmor: {
+			display: "Missing Magical Armor regen: {0}%"
+		},
+
+		// voracity
 		Voracity_Life: {
 			display: "Life restored from Voracity: {0}%"
-		},
-		SummonStat_ExtendedStat_Voracity_Life: {
-			display: "Summon life restored from Voracity: {0}%"
 		},
 		Voracity_BothArmor: {
 			display: "Armors restored from Voracity: {0}%"
 		},
-		PercAttributeIncrease_Intelligence: {
-			display: "Inested Power: +{0}%"
-		},
+
+
 		SourceGen_AddPointsGranted: {
 			display: "Source gain from Source Generation: +{0}"
 		},
 		BattHarr_Threshold_Sum_Self_Both: {
 			display: "B/H Threshold: +{0} ???"
 		},
-		PercAttributeIncrease_Constitution: {
-			display: "Invested Constitution: +{0}%"
-		},
-		PercAttributeIncrease_Wits: {
-			display: "Invested Wits: +{0}%"
+
+		// summon stats
+		SummonStat_ExtendedStat_Voracity_Life: {
+			display: "Summon life restored from Voracity: {0}%"
 		},
 		SummonStat_FlexStat_Stat_DAMAGEBOOST: {
 			display: "Summon Damage: +{0}% additive"
@@ -1187,9 +1232,6 @@ export const stats = {
 		},
 		SummonStat_FlexStat_Stat_MOVEMENT: {
 			display: "Summon Movement: +{0}m ???"
-		},
-		Regen_MagicArmor: {
-			display: "Missing Magical Armor regen: {0}%"
 		},
 		Adaptation_AddMaxStacks: {
 			display: "Maximum Adaptation Stacks: +{0}"
@@ -1240,17 +1282,8 @@ export const stats = {
 		SummonStat_FlexStat_Stat_VITALITYBOOST: {
 			display: "Summon Vitality: +{0}%"
 		},
-		PercAttributeIncrease_Strength: {
-			display: "Invested Strength: +{0}%"
-		},
 		Status_AddDuration_AMER_WARD: {
 			display: "Bonus Ward Duration: +{0}"
-		},
-		PercAttributeIncrease_Memory: {
-			display: "Invested Memory: +{0}%"
-		},
-		FreeReactionCharge_AMER_Celestial: {
-			display: "Free Celestial Charges: {0}"
 		},
 		Status_AddDuration_AMER_DEFIANCE: {
 			display: "Bonus Defiance Duration: {0}"

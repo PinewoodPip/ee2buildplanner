@@ -1,4 +1,4 @@
-import { Text, Icon, Container } from "./genericComponents.js"
+import { Text, Icon, Container, TabButton } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -15,7 +15,7 @@ export function StatBoost(props) {
 
 function StatTab(props) {
 	return (
-		<div style={{maxHeight: "500px", width: props.width, height: "unset", marginBottom: "20px"}} className="flexbox-vertical flex-align-start wrap-y">
+		<div style={{maxHeight: "500px", width: props.width, height: "unset", marginBottom: "20px"}} className="flexbox-vertical flex-align-start">
 			<div style={{position: "relative"}}>
 				<Text text={props.name} className="sticky-top"/>
 			</div>
@@ -47,13 +47,24 @@ export function Boosts(props) {
 				statStrings[stat.type][stat.id] = displayString
 			}
 
-			boosts.push(<Text key={z} text={displayString}/>)
+			if (!(stat.type in miscData.statCategories) || !(utils.hasKey(miscData.statCategories[stat.type], stat.id)))
+				boosts.push(<Text key={z} text={displayString}/>)
 		}
 	}
 
+	let categoryElements = []
+	let statSheets = []
 	// categorize stat boosts to display them in different boxes
 	let categorizedBoosts = {}
 	for (let x in miscData.statCategories) { // for each category defined above
+		let categoryIsChosen = (props.app.state.statCategories.has(x))
+		console.log(categoryIsChosen)
+
+		categoryElements.push(<TabButton key={x} chosen={categoryIsChosen} func={()=>{game.app.toggleStatCategory(x)}} text={utils.capitalize(x)}/>)
+
+		if (!categoryIsChosen)
+			continue
+
 		categorizedBoosts[x] = []
 		let statsToCategorize = miscData.statCategories[x]
 
@@ -61,12 +72,14 @@ export function Boosts(props) {
 			let statToCategorize = statsToCategorize[z]
 			// let stat = stats[statToCategorize.type][statToCategorize.id] // the stat in the build
 			
-
 			
 			if (utils.hasKey(statStrings, statToCategorize.type) && utils.hasKey(statStrings[statToCategorize.type], statToCategorize.id)) {
 				categorizedBoosts[x].push(<StatBoost key={z} type={statToCategorize.type} subType={statToCategorize.id} text={statStrings[statToCategorize.type][statToCategorize.id]}/>)
 			}
 		}
+
+		// add the stat sheet element
+		statSheets.push(<StatTab key={x} name={x} elements={categorizedBoosts[x]} width="300px"/>)
 	}
 	return (
 		<Container className="flexbox-vertical flex-align-start skillbook">
@@ -79,18 +92,19 @@ export function Boosts(props) {
 
 			<BuffBar app={props.app}/>
 
-			<div className="flexbox-horizontal flex-wrap wrap-y" style={{alignItems: "flex-start"}}>
-				<StatTab name="Resistances" elements={categorizedBoosts.realResistances} width="200px"/>
-				<StatTab name="Attributes" elements={categorizedBoosts.realAttributes} width="200px"/>
-				<StatTab name="Skill Abilities" elements={categorizedBoosts.skillAbilities} width="200px"/>
-				<StatTab name="Combat Abilities" elements={categorizedBoosts.combatAbilities} width="300px"/>
-				<StatTab name="Summon Boosts" width="300px" elements={categorizedBoosts.summonBoosts}/>
-				<StatTab name="Voracity" elements={categorizedBoosts.voracity} width="300px"/>
+			<div className="flexbox-horizontal flex-wrap flex-align-space-evenly" style={{alignItems: "flex-start"}}>
+				<div className="flexbox-vertical flex-align-start" style={{width: "20%"}}>
+					{categoryElements}
+				</div>
+				<div className="flexbox-horizontal stat-sheets flex-wrap" style={{width: "70%", height: "500px"}}>
+					
+					{statSheets}
 
-				<div style={{maxHeight: "500px", width: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
-					<Text text="Temp place for other stats"/>
-					<hr/>
-					{boosts}
+					<div style={{maxHeight: "500px", width: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
+						<Text text="Temp place for other stats"/>
+						<hr/>
+						{boosts}
+					</div>
 				</div>
 			</div>
 		</Container>
