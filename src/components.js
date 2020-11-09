@@ -254,10 +254,16 @@ function Aspect(props) {
 		)}
 	}
 
-	for (let x in keywords.allKeywords) {
-		let gotten = keywords.keywordsGotten.includes(keywords.allKeywords[x])
-		keywordDisplay.push(<Keyword faded={!gotten} key={x} keyword={keywords.allKeywords[x]}/>)
-	}
+	console.log(keywords)
+	keywords.allKeywords.forEach(k => {
+		let gotten = keywords.keywordsGotten.includes(k)
+		keywordDisplay.push(<Keyword faded={!gotten} key={k} keyword={k}/>)
+	})
+	// for (let x = 0; x < keywords.allKeywords.length; x++) {
+	// 	let gotten = keywords.keywordsGotten.includes(keywords.allKeywords[x])
+	// 	console.log(keywords.allKeywords[x])
+	// 	keywordDisplay.push(<Keyword faded={!gotten} key={x} keyword={keywords.allKeywords[x]}/>)
+	// }
 
 	return (
 		<AspectListing onContextMenu={func} keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>

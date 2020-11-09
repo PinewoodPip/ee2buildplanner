@@ -48,10 +48,15 @@ X add "any" option for subnodes
 X prevent adding an asp twice
 X rclick to remove asps
 X emb bopnuses from tier 2s
-- after adding an asp, switch to it
-- tooltips for keywords
+X after adding an asp, switch to it
+X tooltips for keywords
 
-- dont rely on containedKeywords for determining keywords, as those also include free charges?
+- changing nodes doesnt instantly refresh rews
+- fix splendor double ignition being considered a keyword
+
+- atrs add stats like dodge
+
+X dont rely on containedKeywords for determining keywords, as those also include free charges?
 
 
 - txt field

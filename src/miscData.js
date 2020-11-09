@@ -112,6 +112,12 @@ export const nodesWithExtraKeywords = {
 	Ascension_Celestial_ACT_AllyWard: ["Ward"],
 	Ascension_Centurion_ACT_EndOfTurnDefiance: ["Defiance"],
 	Ascension_Prosperity_ACT_Basic_MK2_Ward: ["Ward"],
+	Ascension_VitalityVoid_MUTA_2HDamageFromForce: ["Paucity"],
+	Ascension_Paucity_MUTA_WitherACT_BasicAttack: ["Wither"],
+	Ascension_ViolentStrike_MUTA_GlaciateIgnition: ["Purity"],
+	Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt: ["Adaptation"],
+	Ascension_Prosperity_ACT_Purity: ["Purity"],
+	Ascension_Centurion_ACT_HitAlly_MK2_ACTOnWard: ["Ward"]
 
 }
 
@@ -1437,6 +1443,7 @@ export const mappings = {
 		"Voracity": "AMER_UI_Ascension_Keyword_Voracity",
 		"Ward": "AMER_UI_Ascension_Keyword_Ward",
 		"Wither": "AMER_UI_Ascension_Keyword_Wither",
+		"IncarnateChampion": "incarnate",
 	},
 	keywordNames: {
 		"Abeyance": "Abeyance",
@@ -1460,5 +1467,6 @@ export const mappings = {
 		"Voracity": "Voracity",
 		"Ward": "Ward",
 		"Wither": "Wither",
+		"IncarnateChampion": "Incarnate Champion"
 	}
 }

@@ -510,7 +510,7 @@ export class Ascension {
   getKeywordsInAspectBuild(asp) {
     let ref = this.getReferenceById(asp.id)
 
-    let keywords = [] // all keywords that this aspect can offer
+    let keywords = new Set() // all keywords that this aspect can offer
     let keywordsInBuild = [] // keywords contained in the subnodes the user has chosen
 
     // go through all the nodes of this aspect and find keywords
@@ -536,13 +536,19 @@ export class Ascension {
         }
       }
 
-      // node.containedKeywords specifies which keywords are contained in each node (not each subnode) by Amer. We use that to get a list of all the keywords an aspect offers
-      // todo redo this. This is sometimes "inaccurate" because Amer includes +free reaction nodes.
-      if (node.containedKeywords != undefined) {
-        for (let z in node.containedKeywords) {
-          let keyword = node.containedKeywords[z].replace(" ", "")
-          if (!keywords.includes(keyword))
-            keywords.push(keyword)
+      // go through every subnode to note down all the keywords offered in this aspect
+      for (let v in node.subNodes) {
+        for (let z in node.subNodes[v]) {
+          let statBoost = node.subNodes[v][z]
+          if ((miscData.boostsWithKeywords.includes(statBoost.type)) && statBoost.keyword != null) {
+            keywords.add(statBoost.keyword)
+          }
+
+          if (utils.hasKey(miscData.nodesWithExtraKeywords, statBoost.id)) {
+            for (let v in miscData.nodesWithExtraKeywords[statBoost.id]) {
+              keywords.add(miscData.nodesWithExtraKeywords[statBoost.id][v])
+            }
+          }
         }
       }
     }
