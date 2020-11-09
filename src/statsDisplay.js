@@ -58,7 +58,6 @@ export function Boosts(props) {
 	let categorizedBoosts = {}
 	for (let x in miscData.statCategories) { // for each category defined above
 		let categoryIsChosen = (props.app.state.statCategories.has(x))
-		console.log(categoryIsChosen)
 
 		categoryElements.push(<TabButton key={x} chosen={categoryIsChosen} func={()=>{game.app.toggleStatCategory(x)}} text={utils.capitalize(x)}/>)
 
