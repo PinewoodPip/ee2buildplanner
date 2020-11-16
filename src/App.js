@@ -12,6 +12,10 @@ import cloneDeep from 'lodash.clonedeep';
 
 const axios = require('axios').default;
 
+const SAVE_PROTOCOL = 0
+const APP_VERSION = {major: 0, minor: 0, revision: 0}
+const APP_DATE = "16/11/2020" // european format
+
 class App extends React.Component {
   constructor() {
     super()
@@ -50,15 +54,6 @@ class App extends React.Component {
         con: 0,
         mem: 0,
         wits: 0,
-      },
-      combatAbilities: {
-        DualWielding: 0,
-        Ranged: 0,
-        SingleHanded: 0,
-        TwoHanded: 0,
-        Leadership: 0,
-        Perseverance: 0,
-        PainReflection: 0,
       },
       name: "Lindsay Lohan",
       skills: [],
@@ -120,6 +115,96 @@ class App extends React.Component {
     this.stats = game.getStats();
   }
 
+  getSavedBuildsMetadata() {
+    let builds = window.localStorage.getItem("savedBuilds")
+
+    let list = []
+    if (builds) {
+      builds = JSON.parse(builds)
+      builds.forEach(build => {
+        list.push({
+          name: build.metadata.name,
+          author: build.metadata.author,
+          portrait: build.metadata.portrait,
+        })
+      })
+      return list;
+    }
+    return []
+  }
+
+  loadBuild(meta) {
+    let metas = this.getSavedBuildsMetadata()
+    for (var index = 0; index < metas.length; index++) {
+      if (metas[index].name == meta.name)
+        break;
+    }
+
+    let build = JSON.parse(window.localStorage.getItem("savedBuilds"))[index]
+    console.log(build)
+    this.setState({
+      statCategories: build.statCategories,
+      portrait: build.portraitIndex,
+      customPortrait: build.customPortrait,
+      physique: build.physique,
+      attributes: build.attributes,
+      skills: build.skills,
+      artifacts: build.artifacts,
+      abilities: build.abilities,
+      aspects: build.aspects,
+      buffs: new Set(build.buffs),
+      civils: build.civils,
+      talents: new Set(build.talents),
+    })
+  }
+
+  saveBuild() {
+    let name = window.prompt("Enter a name for this build. WARNING: this will override previous builds using this name.")
+    if (utils.isEmptyString(name))
+      return
+
+    let state = this.state
+    let metadata = {
+      name: name,
+      portrait: state.portraitIndex,
+      author: "",
+      format: SAVE_PROTOCOL,
+      appVersion: APP_VERSION,
+    }
+
+    let save = {
+      metadata: metadata,
+      statCategories: state.statCategories,
+      portrait: state.portraitIndex,
+      customPortrait: state.customPortrait,
+      physique: state.physique,
+      attributes: state.attributes,
+      skills: state.skills,
+      artifacts: state.artifacts,
+      abilities: state.abilities,
+      aspects: state.aspects,
+      buffs: Array.from(state.buffs),
+      civils: state.civils,
+      talents: Array.from(state.talents),
+    }
+
+    // save = JSON.stringify(save)
+
+    let storage = window.localStorage.getItem("savedBuilds")
+
+    if (storage) {
+      let builds = JSON.parse(storage)
+      builds.push(save)
+
+      window.localStorage.setItem("savedBuilds", JSON.stringify(builds))
+    }
+    else {
+      window.localStorage.setItem("savedBuilds", JSON.stringify([save]))
+    }
+
+    console.log(JSON.parse(window.localStorage.getItem("savedBuilds")))
+  }
+
   toggleTalent(id) {
     let state = cloneDeep(this.state.talents)
     if (state.has(id))
@@ -175,6 +260,9 @@ class App extends React.Component {
   // called when the component is created for the first time. we fetch data here
   componentDidMount() {
     game.app = this;
+
+    // debug
+    window.localStorage.clear()
 
     // import images
     game.images.icons = {

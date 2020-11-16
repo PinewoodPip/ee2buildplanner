@@ -8,6 +8,7 @@ import { CharacterProfile } from "./characterProfile.js"
 import { Skill } from "./skillbook.js"
 import { Attributes } from "./gameStatSheet.js"
 import { Artifacts } from './artifacts.js';
+import { BuildsDropdown } from './buildsDropdown.js';
 
 function AscensionFamilyButton(props) {
 	return (
@@ -175,8 +176,9 @@ export function Keywords(props) {
 
 function TopBar(props) {
 	return (
-		<div className="top-bar">
-			{/* todo */}
+		<div className="top-bar flexbox-horizontal">
+			<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
+			<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}}/>
 		</div>
 	)
 }

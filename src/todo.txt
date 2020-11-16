@@ -81,7 +81,8 @@ X bonuses from talents
 - on abilities, on right click allow to add custom bonus
 - set build level
 - open skillbook when skill ability is clicked
-- look into why changing nodes doesnt immediately update
+X look into why changing nodes doesnt immediately update
+- show natural inv attributes in tooltip
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

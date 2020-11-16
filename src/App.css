@@ -567,3 +567,13 @@ select {
 
   margin: 5px;
 }
+
+/* builds dropdown */
+.build-entry {
+  width: 300px;
+  height: 100px;
+}
+
+.builds-dropdown {
+  background-color: #131313
+}
