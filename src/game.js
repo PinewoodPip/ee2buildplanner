@@ -221,6 +221,16 @@ export class Game {
       }
     })
 
+    // boosts from talents
+    this.app.state.talents.forEach(id => {
+      let talent = miscData.talents[id]
+
+      talent.boosts.forEach(boost => {
+        addStat(boost)
+        tryToAddKeyword(boost)
+      })
+    })
+
     // cache
     this.app.keywords = keywords
 
@@ -231,10 +241,10 @@ export class Game {
   // todo clean up
   getDisplayString(stat) {
     let displayString;
-    let isArtifact = stat.id.search("PIP_Artifact_") > -1
+    let isSpecialCase = stat.id.search("PIP_Artifact_") > -1 || stat.id.search("PIP_Talent") > -1
 
     // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type === "specialLogic" || stat.type === "statusExtension") && !isArtifact) {
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type === "specialLogic" || stat.type === "statusExtension") && !isSpecialCase) {
 
       // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
       if (stat.type === "specialLogic" || stat.type === "statusExtension") {
@@ -256,13 +266,16 @@ export class Game {
       else
         displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
     }
-    // otherwise use a placeholder
-    else {
+    else { // special cases: artifact and talent boosts
       if (stat.id.search("PIP_Artifact") > -1) {
         let desc = stat.id.replace("PIP_Artifact_", "").toLowerCase()
         displayString = game.artifacts[desc].description
       }
-      else
+      else if (stat.id.search("PIP_Talent") > -1) {
+        let desc = stat.id.replace("PIP_Talent_", "").toLowerCase()
+        displayString = miscData.talents[desc].description
+      }
+      else // otherwise use a placeholder
         displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
     }
 
@@ -405,6 +418,57 @@ export class Game {
     stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
     stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
     stats.realStats["res_air"] = {type: "realStats", id: "res_air", amount: this.applyDR(realResAir)}
+
+    // abilities
+    let abilities = this.app.state.abilities
+    stats.realStats["warfare"] = {type: "realStats", id: "warfare", amount: (
+      stats.flexStat.WarriorLore.amount + abilities.WarriorLore
+    )}
+    stats.realStats["hydrosophist"] = {type: "realStats", id: "hydrosophist", amount: (
+      stats.flexStat.WaterSpecialist.amount + abilities.WaterSpecialist
+    )}
+    stats.realStats["geomancer"] = {type: "realStats", id: "geomancer", amount: (
+      stats.flexStat.EarthSpecialist.amount + abilities.EarthSpecialist
+    )}
+    stats.realStats["necromancer"] = {type: "realStats", id: "necromancer", amount: (
+      stats.flexStat.Necromancy.amount + abilities.Necromancy
+    )}
+    stats.realStats["scoundrel"] = {type: "realStats", id: "scoundrel", amount: (
+      stats.flexStat.RogueLore.amount + abilities.RogueLore
+    )}
+    stats.realStats["huntsman"] = {type: "realStats", id: "huntsman", amount: (
+      stats.flexStat.RangerLore.amount + abilities.RangerLore
+    )}
+    stats.realStats["pyrokinetic"] = {type: "realStats", id: "pyrokinetic", amount: (
+      stats.flexStat.FireSpecialist.amount + abilities.FireSpecialist
+    )}
+    stats.realStats["summoning"] = {type: "realStats", id: "summoning", amount: (
+      stats.flexStat.Summoning.amount + abilities.Summoning
+    )}
+    stats.realStats["polymorph"] = {type: "realStats", id: "polymorph", amount: (
+      stats.flexStat.Polymorph.amount + abilities.Polymorph
+    )}
+    stats.realStats["dualwielding"] = {type: "realStats", id: "dualwielding", amount: (
+      stats.flexStat.DualWielding.amount + abilities.DualWielding
+    )}
+    stats.realStats["ranged"] = {type: "realStats", id: "ranged", amount: (
+      stats.flexStat.Ranged.amount + abilities.Ranged
+    )}
+    stats.realStats["singlehanded"] = {type: "realStats", id: "singlehanded", amount: (
+      stats.flexStat.SingleHanded.amount + abilities.SingleHanded
+    )}
+    stats.realStats["twohanded"] = {type: "realStats", id: "twohanded", amount: (
+      stats.flexStat.TwoHanded.amount + abilities.TwoHanded
+    )}
+    stats.realStats["leadership"] = {type: "realStats", id: "leadership", amount: (
+      stats.flexStat.Leadership.amount + abilities.Leadership
+    )}
+    stats.realStats["perseverance"] = {type: "realStats", id: "perseverance", amount: (
+      stats.flexStat.Perseverance.amount + abilities.Perseverance
+    )}
+    stats.realStats["retribution"] = {type: "realStats", id: "retribution", amount: (
+      stats.flexStat.PainReflection.amount + abilities.PainReflection
+    )}
 
     // status effect boosts
     this.app.state.buffs.forEach(id => {

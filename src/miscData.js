@@ -100,6 +100,18 @@ export const talents = {
 		name: "Sturdy",
 		description: "Sturdy gives you +10% maximum Vitality and +5% Dodging.",
 		unselectable: true,
+		boosts: [
+			{
+                type: "flexStat",
+                id: "DODGEBOOST",
+                value: 5.0,
+			},
+			{ // todo double check if this actually uses this stat
+                type: "flexStat",
+                id: "VITALITYBOOST",
+                value: 10.0,
+			},
+		]
 	},
 	allSkilledUp: {
 		name: "All Skilled Up",
@@ -114,19 +126,17 @@ export const talents = {
 		name: "Astrologer's Gaze",
 		description: "Astrologer's Gaze increases the range of non-melee/touch attacks, skills, scrolls, and grenades by 2m. Additionally, reduces the damage you must deal to Batter or Harry a target by 2.5% of its total vitality."
 	},
-	biggerAndBetter: {
-		name: "Bigger and Better",
-		special: {attributes: 5}
-	},
-	comebackKid: {
-		name: "Comeback Kid"
-	},
-	elementalAffinity: {
-		name: "Elemental Affinity"
-	},
 	benevolent: {
 		name: "Benevolent",
 		description: "With Benevolent, you activate Benevolence on an ally within 8m whenever they reach Battered or Harried 7 or higher; once per round for each ally. Additionally, enemies are prevented from taking attacks of opportunity on you.",
+		boosts: [
+			{
+                type: "specialLogic",
+                id: "PIP_Talent_Benevolent",
+                value: 1.0,
+				keywords: [{keyword: "Benevolence", keywordBoon: "activator"}]
+            }
+		]
 	},
 	biggerAndBetter: {
 		name: "Bigger and Better",
@@ -143,6 +153,18 @@ export const talents = {
 	demon: {
 		name: "Demon",
 		description: "A character with Demon has an extra 15% Fire Resistance, but takes a 15% penalty to Water Resistance. Additionally, the maximum fire resistance is raised by 10.",
+		boosts: [
+			{
+                type: "flexStat",
+                id: "FIRERESISTANCE",
+                value: 15.0,
+			},
+			{
+                type: "flexStat",
+                id: "WATERRESISTANCE",
+                value: -15.0,
+            }
+		]
 	},
 	elementalAffinity: {
 		name: "Elemental Affinity",
@@ -171,10 +193,20 @@ export const talents = {
 	guerrilla: {
 		name: "Guerrilla",
 		description: "While sneaking, Guerrilla grants +40% (+3% per Scoundrel) damage. Also reduces cost of entering sneak mode by 1 AP.",
+		statuses: ["PIP_Talent_Guerrilla"],
 	},
 	hothead: {
 		name: "Hothead",
 		description: "While you are at maximum Vitality or you have Prosperity active, Hothead grants you +10% critical chance and +10% accuracy.",
+		statuses: ["PIP_Talent_Hothead"],
+		boosts: [
+			{
+                type: "specialLogic",
+                id: "PIP_Talent_Hothead",
+                value: 1.0,
+				keywords: [{keyword: "Prosperity", keywordBoon: "mutator"}]
+            }
+		]
 	},
 	inconspicuous: {
 		name: "Inconspicuous",
@@ -183,6 +215,13 @@ export const talents = {
 	leech: {
 		name: "Leech",
 		description: "Leech grants you +15% lifesteal, and you consume contiguous blood puddles that you stand in, healing you for 5% of your maximum vitality.",
+		boosts: [
+			{
+                type: "flexStat",
+                id: "LIFESTEAL",
+                value: 15.0,
+            }
+		]
 	},
 	livingArmor: {
 		name: "Living Armor",
@@ -195,6 +234,13 @@ export const talents = {
 	mnemonic: {
 		name: "Mnemonic",
 		description: "Mnemonic gives you 8 extra points in the Memory attribute.",
+		boosts: [
+			{ // surprisingly, this does count as invested memory
+                type: "flexStat",
+                id: "MEMORY",
+                value: 8.0,
+            }
+		]
 	},
 	morningPerson: {
 		name: "Morning Person",
@@ -207,8 +253,15 @@ export const talents = {
 	parryMaster: {
 		name: "Parry Master",
 		description: "Parry Master gives you 10% dodge chance while dual wielding, and reduces the penalty of dodge fatigue by 3%.",
+		boosts: [
+			{ // should this be toggelabel?
+                type: "flexStat",
+                id: "DODGEBOOST",
+                value: 10.0,
+            }
+		]
 	},
-	pictureOfHealth: {
+	pictureOfHealth: { // todo
 		name: "Picture of Health",
 		description: "Picture of Health gives you extra Vitality: +3% for every point in Warfare",
 	},
@@ -227,6 +280,14 @@ export const talents = {
 	unstable: {
 		name: "Unstable",
 		description: "With Unstable, you activate Vitality Void when you suffer your fifth stack of Battered or Harried (combined total) in a single turn.",
+		boosts: [
+			{
+                type: "specialLogic",
+                id: "PIP_Talent_Unstable",
+                value: 1.0,
+				keywords: [{keyword: "VitalityVoid", keywordBoon: "activator"}]
+            }
+		]
 	},
 	walkItOff: {
 		name: "Walk it Off",
@@ -239,16 +300,47 @@ export const talents = {
 	iceKing: {
 		name: "Ice King",
 		description: "A character with Ice King has an extra 15% Water Resistance, but takes a 15% penalty to Fire Resistance. Additionally, the maximum Water Resistance is raised by 10",
+		boosts: [
+			{
+                type: "flexStat",
+                id: "FIRERESISTANCE",
+                value: -15.0,
+			},
+			{
+                type: "flexStat",
+                id: "WATERRESISTANCE",
+                value: 15.0,
+            }
+		]
 	},
 	ingenious: {
 		name: "Ingenious",
 		description: "Ingenious gives you 5% bonus Critical Chance and 5% extra Critical Multiplier.",
 		unselectable: true,
+		boosts: [ // todo multiplier
+			{
+                type: "flexStat",
+                id: "CRITICALCHANCE",
+                value: 5.0,
+			},
+		]
 	},
 	sophisticated: {
 		name: "Sophisticated",
 		description: "Sophisticated gives you +10% Fire Resistance and +10% Poison Resistance",
 		unselectable: true,
+		boosts: [
+			{
+                type: "flexStat",
+                id: "FIRERESISTANCE",
+                value: 10.0,
+			},
+			{
+                type: "flexStat",
+                id: "POISONRESISTANCE",
+                value: 10.0,
+            }
+		]
 	},
 	spellSong: {
 		name: "Spellsong",
@@ -345,6 +437,25 @@ export const statCategories = {
 		{type: "realStats", id: "con"},
 		{type: "realStats", id: "mem"},
 		{type: "realStats", id: "wits"},
+	],
+	"Real Abilities": [
+		{type: "realStats", id: "dualwielding"},
+		{type: "realStats", id: "ranged"},
+		{type: "realStats", id: "singlehanded"},
+		{type: "realStats", id: "twohanded"},
+		{type: "realStats", id: "leadership"},
+		{type: "realStats", id: "perseverance"},
+		{type: "realStats", id: "retribution"},
+		{type: "realStats", id: "warfare"},
+		{type: "realStats", id: "hydrosophist"},
+		{type: "realStats", id: "geomancer"},
+		{type: "realStats", id: "necromancer"},
+		{type: "realStats", id: "scoundrel"},
+		{type: "realStats", id: "huntsman"},
+		{type: "realStats", id: "pyrokinetic"},
+		{type: "realStats", id: "summoning"},
+		{type: "realStats", id: "aerotheurge"},
+		{type: "realStats", id: "polymorph"},
 	],
 	"Skill Ability Bonuses": [
 		{type: "flexStat", id: "AirSpecialist"},
@@ -1188,6 +1299,58 @@ export const stats = {
 		},
 		res_piercing: {
 			display: "Piercing Resistance: {0}%"
+		},
+		// abilities
+		dualwielding: {
+			display: "Dual Wielding: {0}"
+		},
+		ranged: {
+			display: "Ranged: {0}"
+		},
+		singlehanded: {
+			display: "Single Handed: {0}"
+		},
+		twohanded: {
+			display: "Two Handed: {0}"
+		},
+		leadership: {
+			display: "Leadership: {0}"
+		},
+		perseverance: {
+			display: "Perseverance: {0}"
+		},
+		retribution: {
+			display: "Retribution: {0}"
+		},
+		warfare: {
+			display: "Warfare: {0}"
+		},
+		hydrosophist: {
+			display: "Hydrosophist: {0}"
+		},
+		geomancer: {
+			display: "Geomancer: {0}"
+		},
+		necromancer: {
+			display: "Necromancer: {0}"
+		},
+		scoundrel: {
+			display: "Scoundrel: {0}"
+		},
+		huntsman: {
+			display: "Huntsman: {0}"
+		},
+		pyrokinetic: {
+			display: "Pyrokinetic: {0}"
+		},
+		summoning: {
+			display: "Summoning: {0}"
+		},
+		aerotheurge: {
+			display: "Aerotheurge: {0}"
+		},
+		polymorph: {
+			display: "Polymorph: {0}"
 		},
 	},
 	embodimentReward: {
