@@ -4,22 +4,26 @@ export const races = {
 	human: {
 		name: "Human",
 		innateSkill: "Shout_InspireStart",
-		innateStatBoosts: [] // todo
+		innateStatBoosts: [], // todo
+		talents: ["ingenious", "thrifty"],
 	},
 	elf: {
 		name: "Elf",
 		innateSkill: "Shout_FleshSacrifice",
-		innateStatBoosts: [] // todo
+		innateStatBoosts: [], // todo
+		talents: ["corpseEater", "ancestralKnowledge"],
 	},
 	lizard: {
 		name: "Lizard",
 		innateSkill: "Cone_Flamebreath",
-		innateStatBoosts: [] // todo
+		innateStatBoosts: [], // todo
+		talents: ["spellSong", "sophisticated"],
 	},
 	dwarf: {
 		name: "Dwarf",
 		innateSkill: "Shout_FleshSacrifice",
-		innateStatBoosts: [] // todo
+		innateStatBoosts: [], // todo
+		talents: ["dwarvenGuile", "sturdy"],
 	},
 }
 
@@ -79,6 +83,201 @@ export const origins = {
 		lifeType: "undead",
 		innateSkill: "Target_TimeWarp",
 	}
+}
+
+export const talents = {
+	dwarvenGuile: {
+		name: "Dwarwen Guile",
+		description: "Dwarven Guile gives you +1 in Sneaking.",
+		unselectable: true,
+	},
+	loneWolf: {
+		name: "Lone Wolf",
+		description: "If you are traveling alone or with only one companion, Lone Wolf provides +4 Max AP, +4 Recovery AP, and doubles invested points in attributes - up to a maximum of 40 - and combat abilities (except Polymorph ability) - up to a maximum of 10. This bonus is inactive while there are more than two members in the current party.",
+	},
+	// pet pal
+	sturdy: {
+		name: "Sturdy",
+		description: "Sturdy gives you +10% maximum Vitality and +5% Dodging.",
+		unselectable: true,
+	},
+	allSkilledUp: {
+		name: "All Skilled Up",
+		description: "All Skilled Up immediately grants you 3 extra Combat Ability point(s) and 1 extra Civil Ability point(s)",
+		special: {combatAbilities: 3}
+	},
+	ambidextrous: {
+		name: "Ambidextrous",
+		description: "When your offhand is free or you are wielding a two-handed weapon, Ambidextrous reduces the cost of using grenades and scrolls by 1 AP. Additionally, when your offhand is free, you recover 1 AP after performing a basic attack (or 2 AP if you have Single Handed 10 or higher). AP recovery from basic attacks may never reduce the net-cost to less than 2 AP."
+	},
+	astrologersGaze: {
+		name: "Astrologer's Gaze",
+		description: "Astrologer's Gaze increases the range of non-melee/touch attacks, skills, scrolls, and grenades by 2m. Additionally, reduces the damage you must deal to Batter or Harry a target by 2.5% of its total vitality."
+	},
+	arrowRecovery: {
+		name: "Master Fletcher"
+	},
+	biggerAndBetter: {
+		name: "Bigger and Better",
+		special: {attributes: 5}
+	},
+	comebackKid: {
+		name: "Comeback Kid"
+	},
+	elementalAffinity: {
+		name: "Elemental Affinity"
+	},
+	benevolent: {
+		name: "Benevolent",
+		description: "With Benevolent, you activate Benevolence on an ally within 8m whenever they reach Battered or Harried 7 or higher; once per round for each ally. Additionally, enemies are prevented from taking attacks of opportunity on you.",
+	},
+	biggerAndBetter: {
+		name: "Bigger and Better",
+		description: "Bigger and Better immediately grants you 5 extra attribute points to spend.",
+	},
+	comebackKid: {
+		name: "Comeback Kid",
+		description: "Once per combat, if an enemy lands a fatal blow, Comeback Kid will help you bounce back to life with 30% health. If you die and are resurrected in combat, Comeback Kid will be available again.",
+	},
+	demolitionist: {
+		name: "Demolitionist",
+		description: "Demolitionist adds an extra 5m range to your grenade throws, allows you to recover the first grenade you throw each round, and unlocks Source Infusions for your grenades (except for Cluster grenades): 1: Duplicates the explosion of your grenade throw. 2: +3 repeated explosions at random locations within 3m where the grenade landed. 3: +2 repeated explosions at random locations within 3m where the grenade landed. Recover 1SP.",
+	},
+	demon: {
+		name: "Demon",
+		description: "A character with Demon has an extra 15% Fire Resistance, but takes a 15% penalty to Water Resistance. Additionally, the maximum fire resistance is raised by 10.",
+	},
+	elementalAffinity: {
+		name: "Elemental Affinity",
+		description: "Elemental Affinity lowers the Action Point cost of spells by 1, to a minimum of 1, when standing in a surface of the same element. If you are not standing in a relevant surface but your spell targets a point that is, you recover 1 Action Point after casting the spell, but only if this recovery would not reduce the net-cost of the spell below 2.",
+	},
+	elementalRanger: {
+		name: "Elemental Ranger",
+		description: "Shooting arrows will inflict 20% bonus elemental damage depending on the surface your target is standing in.",
+	},
+	escapist: {
+		name: "Escapist",
+		description: "Escapist grants the Escapist spell, which costs 1 AP, has a 1 turn cooldown, and allows you to jump to a target point within 4m of you.",
+	},
+	executioner: {
+		name: "Executioner",
+		description: "Once each round, Executioner gives you 4 extra Action Points after dealing a killing blow. Additionally, you recover 1 AP when an ally slays an enemy.",
+	},
+	fiveStarDinner: {
+		name: "Five-Star Dinner",
+		description: "Five-Star Dinner doubles the effects of food and potions",
+	},
+	glassCannon: {
+		name: "Glass Cannon",
+		description: "With Glass Cannon, you start every combat round with Maximum AP, but your Vitality, Magic Armor, and Physical Armor are reduced by 35%. Additionally, your Armour does not protect you from statuses.",
+	},
+	guerrilla: {
+		name: "Guerrilla",
+		description: "While sneaking, Guerrilla grants +40% (+3% per Scoundrel) damage. Also reduces cost of entering sneak mode by 1 AP.",
+	},
+	hothead: {
+		name: "Hothead",
+		description: "While you are at maximum Vitality or you have Prosperity active, Hothead grants you +10% critical chance and +10% accuracy.",
+	},
+	inconspicuous: {
+		name: "Inconspicuous",
+		description: "With Inconspicuous, melee opponents find you less attractive in combat and, as you enter combat, you sneak and become invisible until the end of your first turn. However, everyone&apos;s attitude towards you decreases by 15.",
+	},
+	leech: {
+		name: "Leech",
+		description: "Leech grants you +15% lifesteal, and you consume contiguous blood puddles that you stand in, healing you for 5% of your maximum vitality.",
+	},
+	livingArmor: {
+		name: "Living Armor",
+		description: "Living Armor adds 35% of all healing you receive by skills or consumables to your Magic Armor.",
+	},
+	masterFletcher: {
+		name: "Master Fletcher",
+		description: "With Master Fletcher, your special arrows count as basic attacks. Additionally, you have a 33% chance to recover a special arrow after shooting it. Basic attacks may recover AP from the Finesse attribute, and enjoy benefits from other less-common effects.",
+	},
+	mnemonic: {
+		name: "Mnemonic",
+		description: "Mnemonic gives you 8 extra points in the Memory attribute.",
+	},
+	morningPerson: {
+		name: "Morning Person",
+		description: "Even if you act first in a combat round, you are considered Prepared (with 1 AP recovered) - conversely, if you would normally have been Prepared, you recover 1 more Action Point. Also, when you are resurrected, you return with full health.",
+	},
+	opportunist: {
+		name: "Opportunist",
+		description: "Opportunist allows you to perform one attack of opportunity per round against an enemy as it moves out of your melee weapon&apos;s range. Additionally, you may perform one reaction each round for zero AP.",
+	},
+	parryMaster: {
+		name: "Parry Master",
+		description: "Parry Master gives you 10% dodge chance while dual wielding, and reduces the penalty of dodge fatigue by 3%.",
+	},
+	pictureOfHealth: {
+		name: "Picture of Health",
+		description: "Picture of Health gives you extra Vitality: +3% for every point in Warfare",
+	},
+	savageSortilege: {
+		name: "Savage Sortilege",
+		description: "Savage Sortilege gives all magical skills and damaging statuses a critical chance equal to your critical chance score.",
+	},
+	thePawn: {
+		name: "The Pawn",
+		description: "The Pawn permits your character 1.5 AP worth of free movement per turn.",
+	},
+	torturer: {
+		name: "Torturer",
+		description: "With Torturer, your Brittle status requires 1 less stack of Battered to detonate, your Calcifying status also deals its damage when it is applied, and your Scorched status also deals its damage at the start of its target's turns. Additionally, the base damage dealt by Charged, Poisoned, Bleeding, Acid, Suffocating, and Corroding is increased by 50%.",
+	},
+	unstable: {
+		name: "Unstable",
+		description: "With Unstable, you activate Vitality Void when you suffer your fifth stack of Battered or Harried (combined total) in a single turn.",
+	},
+	walkItOff: {
+		name: "Walk it Off",
+		description: "Walk it Off removes 1 stack of both Battered and Harried from you at the start of your turns. Additionally, all status durations are reduced by 1 turn, including positive statuses. Does not affect statuses with a duration of 1 turn.",
+	},
+	whatARush: {
+		name: "What A Rush",
+		description: "What A Rush increases your recovery and maximum Action Points by 1 when your health is below 70%, and an additional +1 for every 20% thereafter, up to a maximum of +5 at 10% and below.",
+	},
+	iceKing: {
+		name: "Ice King",
+		description: "A character with Ice King has an extra 15% Water Resistance, but takes a 15% penalty to Fire Resistance. Additionally, the maximum Water Resistance is raised by 10",
+	},
+	ingenious: {
+		name: "Ingenious",
+		description: "Ingenious gives you 5% bonus Critical Chance and 5% extra Critical Multiplier.",
+		unselectable: true,
+	},
+	sophisticated: {
+		name: "Sophisticated",
+		description: "Sophisticated gives you +10% Fire Resistance and +10% Poison Resistance",
+		unselectable: true,
+	},
+	spellSong: {
+		name: "Spellsong",
+		description: "Spellsong gives you +1 to Persuasion.",
+		unselectable: true,
+	},
+	tradeSecrets: {
+		name: "Trade Secrets",
+		description: "Trade Secrets gives you +1 to Bartering.",
+	},
+	corpseEater: {
+		name: "Corpse Eater",
+		description: "Corpse Eater lets you eat body parts to access the memories of the dead.",
+		unselectable: true,
+	},
+	ancestralKnowledge: {
+		name: "Ancestral Knowledge",
+		description: "Ancestral Knowledge gives you +1 to Loremaster.",
+		unselectable: true,
+	},
+	thrifty: {
+		name: "Thrifty",
+		description: "Thrifty gives you +1 to Bartering.",
+		unselectable: true,
+	},
+	
 }
 
 export const nodesWithExtraKeywords = {

@@ -88,7 +88,8 @@ class App extends React.Component {
         sneaking: 0,
         persuasion: 0,
         telekinesis: 0,
-      }
+      },
+      talents: new Set(),
     }
   }
 
@@ -99,6 +100,39 @@ class App extends React.Component {
   componentDidUpdate(prevState, newState) {
     // this.setState({stats: game.getStats()})
     this.stats = game.getStats();
+  }
+
+  toggleTalent(id) {
+    let state = cloneDeep(this.state.talents)
+    if (state.has(id))
+      state.delete(id)
+    else
+      state.add(id)
+    this.setState({talents: state})
+  }
+
+  // todo finish this
+  toggle(key, value, obj=null) {
+    let state = cloneDeep(this.state)
+    
+    if (typeof state[key] == "array") {
+      if (state[key].includes(value))
+        state[key] = state[key].filter((e)=>{return e != value})
+      else
+        state[key].push(value)
+    }
+    else if (typeof state[key] == "object") {
+      if (value in state[key])
+        delete state[key][value]
+      else
+        state[key][value] = obj
+    }
+    else {
+      console.log("typo")
+    }
+
+    console.log(state)
+    this.setState(state)
   }
 
   // should just make a generic method for updating these...

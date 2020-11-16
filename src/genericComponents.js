@@ -47,7 +47,7 @@ export class TabbedContainer extends React.Component {
 		for (let x in this.props.children) {
 			options.push(<option key={x} value={x}>{this.props.children[x].props.name}</option>)
 		}
-        return <Container className="flexbox-vertical" style={this.props.style}>
+        return <Container className={"flexbox-vertical " + this.props.className} style={this.props.style}>
 				<div style={{marginTop: "20px", marginBottom: "20px"}}>
 					<select onChange={(e)=>{this.setState({index: e.target.value})}}>
 						{options}
@@ -83,7 +83,7 @@ export function Icon(props) {
 export function TabButton(props) {
 	let img = props.img ? [<Icon img={props.img} size="32px"/>, <div style={{width: "15px"}}/>] : null
 	return (
-		<div className={"flexbox-horizontal flex-align-start skillbook-category button " + (props.chosen ? "chosen " : "")} onClick={props.func}>
+		<div className={"flexbox-horizontal flex-align-start skillbook-category button " + (props.chosen ? "chosen " : " ") + props.className} onClick={props.func} style={props.style}>
 			{img}
 			<Text text={props.text}/>
 		</div>

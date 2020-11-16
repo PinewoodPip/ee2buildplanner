@@ -71,3 +71,9 @@ X attr picker
 
 - attributes from poly
 - warn when not enough str to wear armor for level ?
+
+-- NEW TODO
+- numerical combat ability and skill point allocation
+
+-- ISSUES
+- small issue: tooltips from talents expand the page

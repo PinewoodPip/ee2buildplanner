@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import _ from "underscore";
 
-import { Icon, Container, TabbedContainer, Text } from "./genericComponents.js"
+import { Icon, Container, TabbedContainer, Text, TabButton, Tooltip } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -35,6 +35,51 @@ function CivilAbilities(props) {
 			<CivilAbility id="telekinesis"/>
 			<CivilAbility id="sneaking"/>
 			<CivilAbility id="thievery"/>
+		</Container>
+	)
+}
+
+function Talents(props) {
+	let talents = []
+	// show innate talents at the top
+	for (let x in miscData.races[props.app.state.physique.race].talents) {
+		let talent = miscData.talents[miscData.races[props.app.state.physique.race].talents[x]]
+		talents.push(
+			// when tooltips are used we need to use flex-align-start
+			<div className="flexbox-horizontal flex-align-start full-width">
+				<Tooltip content={talent.description} placement="right">
+					{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying */}
+					<TabButton key={x} func={null} chosen={props.app.state.talents.has(x)} text={talent.name} style={{width: "170px"}}/>
+				</Tooltip>
+			</div>
+		)
+	}
+	for (let x in miscData.talents) {
+		let talent = miscData.talents[x]
+
+		if (talent.unselectable)
+			continue
+
+		let func = () => {props.app.toggleTalent(x)}
+
+		// not 100% sure why we need a flexbox to make this full-width
+		talents.push(
+			// when tooltips are used we need to use flex-align-start
+			<div className="flexbox-horizontal flex-align-start full-width">
+				<Tooltip content={talent.description} placement="right">
+					{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying */}
+					<TabButton key={x} func={func} chosen={props.app.state.talents.has(x)} text={talent.name} style={{width: "170px"}}/>
+				</Tooltip>
+			</div>
+		)
+	}
+	return (
+		<Container className="flexbox-vertical flex-align-start skill-abilities" noBg>
+			<Text text={utils.format("{0} chosen", props.app.state.talents.size)}/>
+			{/* wtf... using a % height down below causes the dropdown to be pushed up */}
+			<Container className="flexbox-vertical flex-align-start wrap-y" noBg style={{height: "400px", width: "100%"}}>
+				{talents}
+			</Container>
 		</Container>
 	)
 }
@@ -142,7 +187,6 @@ export class Attributes extends React.Component {
         
 		return <TabbedContainer style={{minWidth: "220px", height: "100%"}}>
 			<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
-				{/* <Text text="Attributes"/> */}
 				<Text text={utils.format("{0} Remaining", remaining)}/>
 
 				<Attribute id="str"/>
@@ -157,6 +201,9 @@ export class Attributes extends React.Component {
 			</Container>
 			<Container name="Civil Abilities" noBg className="flexbox-vertical flex-align-start">
 				<CivilAbilities app={this.props.app} noBg/>
+			</Container>
+			<Container name="Talents" noBg className="flexbox-vertical flex-align-start">
+				<Talents app={this.props.app} noBg/>
 			</Container>
 		</TabbedContainer>
 	}

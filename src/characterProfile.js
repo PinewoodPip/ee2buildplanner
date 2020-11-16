@@ -5,15 +5,23 @@ import { Icon, Container, Text } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
+import cloneDeep from 'lodash.clonedeep';
 
 function CharacterRace(props) {
 	let options = []
 	for (let x in game.races) {
-		options.push(<option key={x} value={x} selected={props.app.state.physique.race === x} onChange={(e)=>{props.app.setState({race: e.target.value}); game.render()}}>{game.races[x].name}</option>)
+		options.push(<option key={x} value={x} selected={props.app.state.physique.race === x}>{game.races[x].name}</option>)
+	}
+
+	let func = function(e) {
+		let state = cloneDeep(props.app.state.physique)
+		state.race = e.target.value.toLowerCase()
+		console.log(e.target.value)
+		props.app.setState({physique: state})
 	}
 
 	return (<div>
-		<select>
+		<select onChange={func}>
 			{options}
 		</select>
 	</div>)
