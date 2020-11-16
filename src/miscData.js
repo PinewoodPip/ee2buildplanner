@@ -1231,10 +1231,6 @@ export const statuses = {
 		type: "special",
 		id: "PIP_Talent_Hothead",
 		icon: "Talent_Hothead",
-		// boosts: [
-		// 	{type: "flexStat", id: "CRITICALCHANCE", value: 10},
-		// 	{type: "flexStat", id: "ACCURACYBOOST", value: 10},
-		// ]
 	},
 
 	PeaceOfMind: {

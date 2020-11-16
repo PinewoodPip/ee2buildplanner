@@ -97,6 +97,7 @@ export class Game {
   get maxNaturalAttributePoints() {
     let amount = miscData.playerAttributes
     amount += this.app.state.talents.has("biggerAndBetter") ? 5 : 0
+    amount += this.app.state.abilities.Polymorph
     return amount;
   }
 
@@ -237,51 +238,6 @@ export class Game {
     this.app.keywords = keywords
 
     return this.getRealStats(stats);
-  }
-
-  // get a string display of a stat
-  // todo clean up
-  getDisplayString(stat) {
-    let displayString;
-    let isSpecialCase = stat.id.search("PIP_Artifact_") > -1 || stat.id.search("PIP_Talent") > -1
-
-    // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type === "specialLogic" || stat.type === "statusExtension") && !isSpecialCase) {
-
-      // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
-      if (stat.type === "specialLogic" || stat.type === "statusExtension") {
-        let statDisplay = miscData.stats.[stat.type][stat.id]
-
-        
-        if (statDisplay && statDisplay.strings != undefined)
-        // if this specialLogic has defined strings for on/off, use those
-          displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
-        else if (stat.amount > 0) {
-          // otherwise use the game's description for it.
-          displayString = game.ascension.specialStrings[stat.refString]
-        }
-        else {
-          // we don't have this specialLogic - preppend a "FALSE"
-          displayString = "FALSE: " + game.ascension.specialStrings[stat.refString]
-        }
-      }
-      else
-        displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
-    }
-    else { // special cases: artifact and talent boosts
-      if (stat.id.search("PIP_Artifact") > -1) {
-        let desc = stat.id.replace("PIP_Artifact_", "").toLowerCase()
-        displayString = game.artifacts[desc].description
-      }
-      else if (stat.id.search("PIP_Talent") > -1) {
-        let desc = stat.id.replace("PIP_Talent_", "").toLowerCase()
-        displayString = miscData.talents[desc].description
-      }
-      else // otherwise use a placeholder
-        displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
-    }
-
-    return displayString
   }
 
   getRealStats(stats) {
@@ -502,6 +458,51 @@ export class Game {
 
     let effectivenessReduction = statAmount / (statAmount + this.app.state.DRAmount)
     return utils.round(statAmount * (1 - effectivenessReduction), this.app.state.rounding)
+  }
+
+  // get a string display of a stat
+  // todo clean up
+  getDisplayString(stat) {
+    let displayString;
+    let isSpecialCase = stat.id.search("PIP_Artifact_") > -1 || stat.id.search("PIP_Talent") > -1
+
+    // check if this stat has a defined subtype and string in miscData
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type === "specialLogic" || stat.type === "statusExtension") && !isSpecialCase) {
+
+      // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
+      if (stat.type === "specialLogic" || stat.type === "statusExtension") {
+        let statDisplay = miscData.stats.[stat.type][stat.id]
+
+        
+        if (statDisplay && statDisplay.strings != undefined)
+        // if this specialLogic has defined strings for on/off, use those
+          displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
+        else if (stat.amount > 0) {
+          // otherwise use the game's description for it.
+          displayString = game.ascension.specialStrings[stat.refString]
+        }
+        else {
+          // we don't have this specialLogic - preppend a "FALSE"
+          displayString = "FALSE: " + game.ascension.specialStrings[stat.refString]
+        }
+      }
+      else
+        displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
+    }
+    else { // special cases: artifact and talent boosts
+      if (stat.id.search("PIP_Artifact") > -1) {
+        let desc = stat.id.replace("PIP_Artifact_", "").toLowerCase()
+        displayString = game.artifacts[desc].description
+      }
+      else if (stat.id.search("PIP_Talent") > -1) {
+        let desc = stat.id.replace("PIP_Talent_", "").toLowerCase()
+        displayString = miscData.talents[desc].description
+      }
+      else // otherwise use a placeholder
+        displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
+    }
+
+    return displayString
   }
 
   render() {this.app.forceUpdate()}
