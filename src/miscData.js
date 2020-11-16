@@ -1225,6 +1225,18 @@ export const statuses = {
 	PIP_Artifact_Urgency: {type: "special", id: "PIP_Artifact_Urgency", icon: "AMER_UNI_Chest_Leather_C"},
 	PIP_Artifact_Vertigo: {type: "special", id: "PIP_Artifact_Vertigo", icon: "AMER_UNI_Axe_A"},
 
+	PIP_Talent_Guerrilla: {type: "special", id: "PIP_Talent_Guerrilla", icon: "Talent_Guerrilla"},
+
+	PIP_Talent_Hothead: {
+		type: "special",
+		id: "PIP_Talent_Hothead",
+		icon: "Talent_Hothead",
+		// boosts: [
+		// 	{type: "flexStat", id: "CRITICALCHANCE", value: 10},
+		// 	{type: "flexStat", id: "ACCURACYBOOST", value: 10},
+		// ]
+	},
+
 	PeaceOfMind: {
 		type: "normal",
 		id: "PeaceOfMind",

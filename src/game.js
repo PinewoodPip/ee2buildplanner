@@ -225,10 +225,12 @@ export class Game {
     this.app.state.talents.forEach(id => {
       let talent = miscData.talents[id]
 
-      talent.boosts.forEach(boost => {
-        addStat(boost)
-        tryToAddKeyword(boost)
-      })
+      if ("boosts" in talent) {
+        talent.boosts.forEach(boost => {
+          addStat(boost)
+          tryToAddKeyword(boost)
+        })
+      }
     })
 
     // cache
@@ -352,6 +354,15 @@ export class Game {
 
             stats.flexStat.DODGEBOOST.amount += 1 * fin
             stats.flexStat.ACCURACYBOOST.amount += -0.5 * fin
+          }
+          case "PIP_Talent_Guerrilla": {
+            let boost = 40 + (3 * (stats.flexStat.RogueLore.amount + game.app.state.abilities.RogueLore))
+
+            stats.flexStat.DAMAGEBOOST.amount += boost
+          }
+          case "PIP_Talent_Hothead": {
+            stats.flexStat.CRITICALCHANCE.amount += 10
+            stats.flexStat.ACCURACYBOOST.amount += 10
           }
         }
       }
