@@ -69,14 +69,14 @@ X attr picker
 - hide hidden skills
 - add ap and statuses to skill descs
 
-- attributes from poly
+X attributes from poly
 - warn when not enough str to wear armor for level ?
 
 -- NEW TODO
 - numerical combat ability and skill point allocation
 - warn when you pick too many talents
 - lone wolf
-- bonuses from talents
+X bonuses from talents
 - origins
 - on abilities, on right click allow to add custom bonus
 - set build level

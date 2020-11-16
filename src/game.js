@@ -717,7 +717,7 @@ export class Ascension {
   }
 
   // change the subnode of an aspect
-  changeSubNode(asp, node, newSubNode, mode="edit") {
+  async changeSubNode(asp, node, newSubNode, mode="edit") {
     let index = this.app.state.aspects.indexOf(asp)
 
     // edits an aspect in the current build
@@ -726,7 +726,7 @@ export class Ascension {
 
       state[index].nodes[node] = newSubNode
 
-      this.app.setState({aspects: state})
+      await this.app.setState({aspects: state})
     }
     // edits an aspect in the Ascension popup/preview
     else if (mode == "preview-edit") {
@@ -734,7 +734,7 @@ export class Ascension {
 
       state.nodes[node] = newSubNode
 
-      this.app.setState({currentlyViewedAspect: state})
+      await this.app.setState({currentlyViewedAspect: state})
     }
 
     this.app.closeContext()
