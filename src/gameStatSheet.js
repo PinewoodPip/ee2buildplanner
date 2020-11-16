@@ -25,6 +25,27 @@ function CivilAbility(props) {
 	</div>
 }
 
+function Ability(props) {
+	let func = (increment) => {game.changeAbility(props.id, increment)}
+	let amountText = utils.format((game.app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), game.app.state.abilities[props.id], game.app.stats.flexStat[props.id].amount)
+
+	return	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
+			<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
+				<Icon className="" img={game.mappings.abilityImages[props.id]} size="24px"/>
+				<div style={{width: "5px"}}/>
+				<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
+					<Text text={utils.format("{0}:", miscData.mappings.abilityNames[props.id])}/>
+					<Text text={amountText}/>
+				</div>
+			</div>
+
+			<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}}>
+				<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}}/>
+				<IncrementButton img={"add_point"} onClick={()=>{func(1)}}/>
+			</div>
+		</div>
+}
+
 function CivilAbilities(props) {
 	return (
 		<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
@@ -84,6 +105,24 @@ function Talents(props) {
 	)
 }
 
+function CombatAbilities(props) {
+	let textClass = game.aboveNaturalAbilityCap ? "overflowed full-width" : ""
+	return (
+		<Container className="flexbox-vertical flex-align-start full-size" name="Attributes" noBg>
+			<Text text={utils.format("{0} points spent", game.investedAbilities)} className={textClass}/>
+			<Ability id="DualWielding"/>
+			<Ability id="Ranged"/>
+			<Ability id="SingleHanded"/>
+			<Ability id="TwoHanded"/>
+			{/* Defensive */}
+			<hr/>
+			<Ability id="Leadership"/>
+			<Ability id="Perseverance"/>
+			<Ability id="PainReflection"/>
+		</Container>
+	)
+}
+
 function Attribute(props) {
 	let disabledDecrement = false
 	let disabledIncrement = false
@@ -114,13 +153,6 @@ function Attribute(props) {
 }
 
 class SkillAbilities extends React.Component {
-	SI_Levels = [
-		"◊",
-		"♦",
-		"♦♦",
-		"♦♦♦",
-	]
-
 	hasAnyRelevantSkill(category) {
 		for (let x in this.props.app.state.skills) {
 			let skill = game.skills[this.props.app.state.skills[x]]
@@ -130,51 +162,45 @@ class SkillAbilities extends React.Component {
 		return false
 	}
 
-	cycleLevel(category) {
-		let currentLevel = this.props.app.state.skillAbilities[category]
-		let newLevel;
-
-		// treat the current level as being higher if the user has a relevant skill in this category (SI level 1 has no requirements)
-		if (currentLevel === 0 && this.hasAnyRelevantSkill(category))
-			currentLevel = 1
-
-		// loop back to first index after going through all the states
-		newLevel = (currentLevel + 1 > 3) ? 0 : currentLevel + 1
-
-		let newObj = _.clone(this.props.app.state.skillAbilities)
-		newObj[category] = newLevel
-
-		this.props.app.setState({skillAbilities: newObj})
+	openSkillbook(category) {
+		this.props.app.setState({popup: "skillbook", skillbookCategory: category})
 	}
 
 	render() {
+		let textClass = game.aboveNaturalAbilityCap ? "overflowed full-width" : ""
 		let skillAbilities = []
-		let openSkillbookFunc = function(category){this.props.app.setState({popup: "skillbook", skillbookCategory: category})}.bind(this)
 
+		let skillAbilityList = [
+			"WarriorLore",
+			"WaterSpecialist",
+			"EarthSpecialist",
+			"Necromancy",
+			"RogueLore",
+			"RangerLore",
+			"FireSpecialist",
+			"Summoning",
+			"AirSpecialist",
+			// "Source",
+			"Polymorph"
+		]
+
+		let index = 0;
 		for (let x in game.skills.sorted) {
+			let statName = skillAbilityList[index]
+			console.log(game.app.stats)
 			if (x === "Source")
 				continue
-			let level = this.SI_Levels[this.props.app.state.skillAbilities[x]]
 
-			if (this.props.app.state.skillAbilities[x] === 0 && this.hasAnyRelevantSkill(x)) {
-				level = this.SI_Levels[1];
-			}
+			skillAbilities.push(
+				// todo fix this to also consider bonuses
+				<Ability key={x} id={statName} className={this.hasAnyRelevantSkill(x) || this.props.app.state.abilities[x] > 0 ? "highlighted-bg" : ""}/>
+			)
 
-			let button = <div className="si-button unselectable" onClick={this.cycleLevel.bind(this, x)}>
-				<Text text={level}/>
-			</div>
-
-			let className = (this.hasAnyRelevantSkill(x) || this.props.app.state.skillAbilities[x] > 0) ? "highlighted-bg" : ""
-
-			skillAbilities.push(<div key={x} className={"flexbox-horizontal flex-align-start " + className} style={{width: "90%", margin: "2px 0px 2px 0px"}}>
-				<Icon img={game.mappings.abilityImages[x]} size="32px" onClick={()=>{openSkillbookFunc(x)}}/>
-				<Text text={game.mappings.abilityNames[x]} className="flex-grow" onClick={()=>{openSkillbookFunc(x)}}/>
-				{button}
-			</div>)
+			index++;
 		}
 
-		return <Container className="flexbox-vertical flex-align-start skill-abilities" noBg={this.props.noBg}>
-			{/* <Text text={"Skill Abilities"}/> */}
+		return <Container className="flexbox-vertical flex-align-start full-size" noBg={this.props.noBg}>
+			<Text text={utils.format("{0} points spent", game.investedAbilities)} className={textClass}/>
 			{skillAbilities}
 		</Container>
 	}
@@ -183,11 +209,11 @@ class SkillAbilities extends React.Component {
 // todo rename this component; holds far more than just attributes now
 export class Attributes extends React.Component {
 	render() {
-        let remaining = miscData.playerAttributes - game.totalAttributePointsSpent
+        let remaining = game.maxNaturalAttributePoints - game.totalAttributePointsSpent
         
-		return <TabbedContainer style={{minWidth: "220px", height: "100%"}}>
+		return <TabbedContainer style={{minWidth: "300px", height: "100%"}}>
 			<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
-				<Text text={utils.format("{0} Remaining", remaining)}/>
+				<Text text={utils.format("{0} Remaining", remaining)} className={remaining < 0 ? "overflowed" : ""}/>
 
 				<Attribute id="str"/>
 				<Attribute id="fin"/>
@@ -196,7 +222,10 @@ export class Attributes extends React.Component {
 				<Attribute id="mem"/>
 				<Attribute id="wits"/>
 			</Container>
-			<Container name="Skill Abilities" noBg className="flexbox-vertical flex-align-start">
+			<Container name="Combat Abilities" noBg className="flexbox-vertical flex-align-start full-size">
+				<CombatAbilities app={this.props.app} noBg/>
+			</Container>
+			<Container name="Skill Abilities" noBg className="flexbox-vertical flex-align-start full-size">
 				<SkillAbilities app={this.props.app} noBg/>
 			</Container>
 			<Container name="Civil Abilities" noBg className="flexbox-vertical flex-align-start">

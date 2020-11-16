@@ -74,6 +74,14 @@ X attr picker
 
 -- NEW TODO
 - numerical combat ability and skill point allocation
+- warn when you pick too many talents
+- lone wolf
+- bonuses from talents
+- origins
+- on abilities, on right click allow to add custom bonus
+- set build level
+- open skillbook when skill ability is clicked
+- look into why changing nodes doesnt immediately update
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

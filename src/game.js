@@ -21,12 +21,32 @@ export class Game {
   }
   mappings = miscData.mappings
 
-  get totalAttributePointsSpent() {
-    let amount = 0
-    for (let x in this.app.state.attributes) {
-      amount += this.app.state.attributes[x]
+  get aboveNaturalAbilityCap() {
+    console.log(this.investedAbilities > this.maxNaturalAbilityPoints)
+    return this.investedAbilities > this.maxNaturalAbilityPoints
+  }
+
+  get maxNaturalAbilityPoints() {return (
+    2 + // starting points
+    (1 * 21) + // per-level points
+    (this.app.state.talents.has("allSkilledUp") ? 3 : 0) // All Skilled Up talent grants 3 extra points.
+  )}
+
+  get investedAbilities() {
+    let count = 0
+    for (let x in this.app.state.abilities) {
+      count += this.app.state.abilities[x]
     }
-    return amount
+    return count;
+  }
+
+  changeAbility(id, increment) {
+    let state = cloneDeep(this.app.state.abilities)
+    state[id] += increment
+    state[id] = utils.limitRange(state[id], 0, 10)
+
+    console.log(this.app.state)
+    this.app.setState({abilities: state})
   }
 
   changeCivil(id, increment) {
@@ -74,10 +94,45 @@ export class Game {
     this.app.setState({artifacts: state})
   }
 
+  get maxNaturalAttributePoints() {
+    let amount = miscData.playerAttributes
+    amount += this.app.state.talents.has("biggerAndBetter") ? 5 : 0
+    return amount;
+  }
+
+  get totalAttributePointsSpent() {
+    let amount = 0
+    for (let x in this.app.state.attributes) {
+      amount += this.app.state.attributes[x]
+    }
+    return amount
+  }
+
+  async changeAttribute(id, increment) {
+    let attrs = cloneDeep(this.app.state.attributes)
+
+    let attr = attrs[id]
+
+    if (attr + increment < 0)
+      return
+    
+    // don't restrict point retrievement if we're in the negatives (happens when you remove the bigger and better talent)
+    if (this.maxNaturalAttributePoints - this.totalAttributePointsSpent > 0 || increment > 0) {
+      if (this.totalAttributePointsSpent + increment > this.maxNaturalAttributePoints)
+        return;
+      if (attr + increment > miscData.maxNaturalAttributeInvestment)
+        return;
+    }
+
+    attrs[id] += increment
+
+    await this.app.setState({attributes: attrs})
+  }
+
   // todo redo these; changing the state so many times lags a lot.
   async maximizeAttribute(id) {
     let amount = this.totalAttributePointsSpent
-    while (amount < miscData.playerAttributes) {
+    while (amount < this.maxNaturalAttributePoints) {
       await this.changeAttribute(id, 1)
       amount++;
     }
@@ -89,23 +144,6 @@ export class Game {
       await this.changeAttribute(id, -1)
       amount--;
     }
-  }
-
-  async changeAttribute(id, increment) {
-    let attrs = cloneDeep(this.app.state.attributes)
-
-    let attr = attrs[id]
-
-    if (attr + increment < 0)
-      return
-    if (this.totalAttributePointsSpent + increment > miscData.playerAttributes)
-      return;
-    if (attr + increment > miscData.maxNaturalAttributeInvestment)
-      return;
-
-    attrs[id] += increment
-
-    await this.app.setState({attributes: attrs})
   }
 
   getStats() {
