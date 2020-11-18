@@ -306,7 +306,7 @@ function Aspect(props) {
 	})
 
 	return (
-		<AspectListing onContextMenu={func} keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
+		<AspectListing onContextMenu={func} onClick={func} keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
 	)
 }
 

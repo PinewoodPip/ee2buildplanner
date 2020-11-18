@@ -883,8 +883,9 @@ export class Ascension {
         }
 
         let menu = subNodeOptions
+        let func = (e)=>{this.app.contextMenu(menu, e)}
         tooltip.push(
-          <div key={x} onContextMenu={(e)=>{this.app.contextMenu(menu, e)}}>
+          <div key={x} onContextMenu={func} onClick={func}>
             <Text key={Math.random()} text={parentText}/>
             <Text key={Math.random()} text={subNodeText}/>
           </div>)
