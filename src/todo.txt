@@ -83,6 +83,7 @@ X bonuses from talents
 - open skillbook when skill ability is clicked
 X look into why changing nodes doesnt immediately update
 - show natural inv attributes in tooltip
+- add lifeType selection
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

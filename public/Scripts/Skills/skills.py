@@ -108,7 +108,10 @@ relevantParams = [
     "Damage Multiplier",
     "Damage Range",
     "DamageType",
+
+    # manually-added properties
     "TieredStatuses",
+    "Hidden",
 
     "IsEnemySkill",
 
@@ -140,6 +143,38 @@ skillTypes = [
     "Skill_Tornado.txt",
     "Skill_Wall.txt",
     "Skill_Zone.txt",
+]
+
+# special skills, like the lizards's flame breath. You can use this tag to hide them in skillbook selection for example
+hiddenSkills = [
+    "Shout_InspireStart",
+    "Shout_FleshSacrifice",
+    "Cone_Flamebreath",
+    "Target_AMER_VampiricTouch",
+    "Dome_CircleOfProtection",
+    "Target_DemonicStare",
+    "Shout_BreakTheShackles",
+    "Target_MaddeningSong",
+    "Summon_SoulWolf",
+    "Target_Squall",
+    "Target_TimeWarp",
+    "Target_PetrifyingTouch",
+
+    "Shout_ElectricFence", # old closed circuit spell
+    "Target_DemonicBargain_Wealth",
+    "Summon_Cat",
+    "Summon_Condor",
+    "Summon_AMER_BoneshapedSkitterer",
+    "Summon_AMER_BoneshapedCrusher",
+    "Summon_Quest_SummonNewt",
+    "Shout_Ignition_Splendor",
+    "Summon_AMER_AccursedVessel",
+    "Target_BloatedCorpse_TheSupplicant",
+    "Target_AMER_CorpseMastery",
+
+    # todo handle this properly
+    "Storm_Ethereal",
+
 ]
 
 bannedStrings = [
@@ -484,6 +519,8 @@ for folder in folders:
 relevantSkills = {}
 for x in allSkills:
     allSkills[x]["DescriptionRef"] = replaceParamsInDescription(allSkills[x])
+
+    allSkills[x]["Hidden"] = allSkills[x]["id"] in hiddenSkills
 
     if not hasBannedString(x) and ("IsEnemySkill" not in allSkills[x].keys() or allSkills[x]["IsEnemySkill"] != "Yes" or allSkills[x]["id"] == "Dome_CircleOfProtection"):
         relevantSkills[x] = allSkills[x]

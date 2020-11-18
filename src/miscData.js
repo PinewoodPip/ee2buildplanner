@@ -18,14 +18,14 @@ export const races = {
 	},
 	dwarf: {
 		name: "Dwarf",
-		innateSkill: "Shout_FleshSacrifice",
+		innateSkill: "Target_PetrifyingTouch",
 		talents: ["dwarvenGuile", "sturdy"],
 	},
 }
 
 export const lifeType = {
 	living: {
-		name: "",
+		name: "Living",
 		innateSkill: null,
 		innateStatBoosts: [] // todo
 	},

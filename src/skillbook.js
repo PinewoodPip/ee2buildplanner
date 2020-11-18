@@ -8,6 +8,10 @@ import * as utils from "./utils.js"
 
 export class Skill extends React.Component {
 	toggleSkill() {
+		// hidden skills are special and cannot be unslotted.
+		if (this.props.data.Hidden)
+			return;
+
 		let skills = this.props.app.state.skills.slice()
 		let id = this.props.data.id
 
@@ -26,6 +30,9 @@ export class Skill extends React.Component {
 		let highlight = this.props.highlight != "false" // eslint-disable-line
 		
 		let className = (this.props.app.state.skills.includes(this.props.data.id) && highlight) ? "skill-selected" : ""
+
+		// special / innate skills display with low opacity
+		className += (this.props.data.Hidden) ? " transparent" : ""
 
 		return <SkillTooltip data={this.props.data}>
 			<Icon img={img} className={"skill-icon " + className} size={"64px"} onClick={this.toggleSkill.bind(this)} style={this.props.style}>
@@ -157,7 +164,10 @@ export function SkillBook(props) {
 	let skills = []
 	for (let x in game.skills.sorted[props.app.state.skillbookCategory]) {
 		let skill = game.skills.sorted[props.app.state.skillbookCategory][x]
-		skills.push(<Skill key={x} data={skill} app={props.app}/>)
+
+		// don't show special skills
+		if (!skill.Hidden)
+			skills.push(<Skill key={x} data={skill} app={props.app}/>)
 	}
 
 	return (

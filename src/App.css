@@ -577,3 +577,7 @@ select {
 .builds-dropdown {
   background-color: #131313
 }
+
+.transparent {
+  filter: opacity(50%);
+}
