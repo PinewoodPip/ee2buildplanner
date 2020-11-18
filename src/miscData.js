@@ -545,6 +545,13 @@ export const artifactCategories = {
 export const playerAttributes = 43
 export const maxNaturalAttributeInvestment = 30
 
+// these stat types use strings from the game instead of ones defined by us. Used for non-quantifiable script triggers.
+export const statTypesWithGameStrings = [
+	"specialLogic",
+	"statusExtension",
+	"extraStatusApplication"
+  ]
+
 // list of artifacts that grant stats, and which ones. some are toggleable, others are always active
 export const artifactBoosts = {
 	// absence
@@ -1579,7 +1586,7 @@ export const stats = {
 			bool: true,
 		},
 		Purity_CooldownManip: {
-			display: "Purity_CooldownManip: {0}"
+			display: "Purity Cooldown Reduction: {0} seconds"
 		},
 		Status_AddDuration_AMER_SCORCHED: {
 			display: "Bonus Scorched Duration: {0}"
@@ -1608,11 +1615,11 @@ export const stats = {
 			bool: true,
 		},
 		Reaction_BlockBasic_AMER_Centurion: {
-			display: "Cannot perform basic Centurion behaviour: {0}",
+			display: "Basic Centurion behaviour disabled: {0}",
 			bool: true,
 		},
 		Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay: {
-			display: "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay: {0}"
+			display: "Withered applies Corroding for 1 turn to enemies within 2m of its target(???): {0}"
 		},
 		Reaction_TempFlexStat_AMER_Centurion_Stat_ACCURACYBOOST: {
 			display: "Accuracy Boost during Centurion: +{0}%"
@@ -1732,7 +1739,7 @@ export const statCategories = {
 		{type: "flexStat", id: "Summoning"},
 		{type: "flexStat", id: "WarriorLore"},
 	],
-	"Summon Boosts": [
+	"Summoning": [
 		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
 		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DAMAGEBOOST"},
 		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_ACCURACYBOOST"},

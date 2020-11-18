@@ -528,57 +528,43 @@ export class Game {
     return utils.round(statAmount * (1 - effectivenessReduction), this.app.state.rounding)
   }
 
-  // get a string display of a stat
-  // todo clean up
+  // get a string display of a stat, formatted with value or true/false when appropriate
   getDisplayString(stat) {
-    let displayString;
-    let isSpecialCase = stat.id.search("PIP_Artifact_") > -1 || stat.id.search("PIP_Talent") > -1
-    let statTypesWithGameStrings = [ // these stat types use strings from the game instead of ones defined by us. Used for non-quantifiable script triggers.
-      "specialLogic",
-      "statusExtension",
-      "extraStatusApplication"
-    ]
+    let isArtifactBoost = stat.id.search("PIP_Artifact_") > -1
+    let isTalentBoost = stat.id.search("PIP_Talent") > -1
 
-    // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || statTypesWithGameStrings.includes(stat.type) && !isSpecialCase) {
-
-      // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
-      if (statTypesWithGameStrings.includes(stat.type)) {
-        let statDisplay = miscData.stats[stat.type][stat.id]
-
-        
-        if (statDisplay && statDisplay.strings != undefined)
-        // if this specialLogic has defined strings for on/off, use those
-          displayString = statDisplay.strings[Math.min(stat.amount, statDisplay.strings.length-1)]
-        else if (stat.amount > 0) {
-          // otherwise use the game's description for it.
-          displayString = game.ascension.specialStrings[stat.refString]
-        }
-        else {
-          console.log(stat)
-          // we don't have this specialLogic - preppend a "FALSE"
-          displayString = "FALSE: " + game.ascension.specialStrings[stat.refString]
-        }
-      }
-      else
-        displayString = utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
+    if (isArtifactBoost) {
+      // artifact boosts use the Artifact's description
+      let artifactId = stat.id.replace("PIP_Artifact_", "").toLowerCase()
+      return game.artifacts[artifactId].description
     }
-    else { // special cases: artifact and talent boosts
-      if (stat.id.search("PIP_Artifact") > -1) {
-        let desc = stat.id.replace("PIP_Artifact_", "").toLowerCase()
-        displayString = game.artifacts[desc].description
+    else if (isTalentBoost) {
+      // talent boosts use the talent's description
+      let talentId = stat.id.replace("PIP_Talent_", "").toLowerCase()
+      return miscData.talents[talentId].description
+    }
+    else if (stat.type in miscData.stats && stat.id in miscData.stats[stat.type]) {
+      // strings defined by us, for generic stats like +movement.
+      let displayInfo = miscData.stats[stat.type][stat.id]
+
+      // manually defined strings for each possible value of a stat. Used by the summon capacity boost for example.
+      if (displayInfo && displayInfo.strings != null) {
+        return displayInfo.strings[Math.min(stat.amount, displayInfo.strings.length-1)]
       }
-      else if (stat.id.search("PIP_Talent") > -1) {
-        let desc = stat.id.replace("PIP_Talent_", "").toLowerCase()
-        displayString = miscData.talents[desc].description
-      }
-      else // otherwise use a placeholder
-        displayString = utils.format("UNDEFINED STAT {0}: {1}", stat.id, stat.amount)
+      else if (displayInfo && displayInfo.bool)
+        return utils.format(miscData.stats[stat.type][stat.id].display, utils.capitalize((stat.amount > 0).toString()))
+
+      return utils.format(miscData.stats[stat.type][stat.id].display, stat.amount)
+    }
+    else if (miscData.statTypesWithGameStrings.includes(stat.type)) {
+      // stat types that use strings from the game if we have not defined a replacement for them.
+      return game.ascension.specialStrings[stat.refString]
     }
 
-    return displayString
+    return "STAT WITH NO STRING: " + stat.type + " " + stat.id
   }
 
+  // wip method for showing sources of stat boosts
   getStatSourcesText(type, id) {
     let stat = this.app.stats[type][id]
 

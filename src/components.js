@@ -134,6 +134,7 @@ export function Keywords(props) {
 	for (let x in props.app.keywords) {
 		let func = () => {props.app.setState({currentKeyword: x})}
 		let element = <TabButton key={x} img={game.mappings.keywordImages[x]} text={game.mappings.keywordNames[x]} func={func} chosen={props.app.state.currentKeyword === x}/>
+
 		keywordButtons.push(element)
 	}
 
@@ -152,6 +153,20 @@ export function Keywords(props) {
 		else
 			mutators.push(element)
 	}
+
+	let display;
+	if (keywordButtons.length === 0) {
+		display = <Text text="You have no keywords in your build."/>
+	}
+	else if (!(props.app.state.currentKeyword in props.app.keywords)) {
+		display = <Text text="Click a keyword on the left to show its actvators and mutators."/>
+	}
+	else {
+		display = [
+			activators,
+			<hr/>,
+			mutators]
+	}
 	
 	return (
 		<Container className="flexbox-vertical flex-align-start skillbook">
@@ -167,9 +182,7 @@ export function Keywords(props) {
 					{keywordButtons}
 				</div>
 				<div className="flexbox-vertical flex-align-start skill-listing">
-					{activators}
-					<hr/>
-					{mutators}
+					{display}
 				</div>
 			</div>
 		</Container>

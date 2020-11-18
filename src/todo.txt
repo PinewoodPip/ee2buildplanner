@@ -82,6 +82,7 @@ X look into why changing nodes doesnt immediately update
 - add lifeType selection
 X reordering skills
 - show sources of stats
+- add the core
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

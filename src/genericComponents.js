@@ -81,7 +81,7 @@ export function Icon(props) {
 }
 
 export function TabButton(props) {
-	let img = props.img ? [<Icon img={props.img} size="32px"/>, <div style={{width: "15px"}}/>] : null
+	let img = props.img ? [<Icon img={props.img} size="32px" className=""/>, <div style={{width: "15px"}}/>] : null
 	return (
 		<div className={"flexbox-horizontal flex-align-start skillbook-category button " + (props.chosen ? "chosen " : " ") + props.className} onClick={props.func} style={props.style}>
 			{img}
