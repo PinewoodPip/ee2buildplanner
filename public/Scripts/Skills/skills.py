@@ -80,6 +80,18 @@ for folder in folders:
                     if key != "id":
                         potions[potionId][key] = potions[search[0]][key]
 
+tieredStatuses = {
+    "AMER_DECAYING_APPLY": re.compile("AMER_DECAYING_APPLY"),
+    "AMER_WEAKENED_APPLY": re.compile("AMER_WEAKENED_APPLY"),
+    "AMER_ENTHRALLED_APPLY": re.compile("AMER_ENTHRALLED_APPLY"),
+    "AMER_ATAXIA_APPLY": re.compile("AMER_ATAXIA_APPLY"),
+
+    "AMER_SQUELCHED_APPLY": re.compile("AMER_SQUELCHED_APPLY"),
+    "AMER_TERRIFIED_APPLY": re.compile("AMER_TERRIFIED_APPLY"),
+    "AMER_SLOWED_APPLY": re.compile("AMER_SLOWED_APPLY"),
+    "AMER_BLIND_APPLY": re.compile("AMER_BLIND_APPLY"),
+}
+
 relevantParams = [
     "id",
     "SkillType",
@@ -96,6 +108,7 @@ relevantParams = [
     "Damage Multiplier",
     "Damage Range",
     "DamageType",
+    "TieredStatuses",
 
     "IsEnemySkill",
 
@@ -450,6 +463,18 @@ for folder in folders:
                 if param == "DescriptionRef":
                     if descRegex.search(value) != None:
                         value = prettifySkillDescription(value)
+                
+                # status effect application
+                if param == "SkillProperties":
+                    statuses = []
+                    print(line)
+                    for key in tieredStatuses:
+                        if tieredStatuses[key].search(line):
+                            statuses.append(key)
+                    
+                    if folder == "Amer":
+                        print(statuses)
+                    currentSkill["TieredStatuses"] = statuses
 
                 currentSkill[param] = value
 

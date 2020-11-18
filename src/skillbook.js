@@ -3,6 +3,8 @@ import React from 'react';
 
 import { Icon, Container, Text, Tooltip } from "./genericComponents.js"
 import { game } from "./App.js"
+import * as miscData from "./miscData.js"
+import * as utils from "./utils.js"
 
 export class Skill extends React.Component {
 	toggleSkill() {
@@ -34,8 +36,9 @@ export class Skill extends React.Component {
 }
 
 function SkillBookAbilityCategory(props) {
-	let func = () => {props.app.setState({skillbookCategory: props.category})}
-	let className = (props.app.state.skillbookCategory === props.category) ? "chosen" : ""
+	let category = miscData.mappings.skillAbilityToSkillDocName[props.category]
+	let func = () => {props.app.setState({skillbookCategory: category})}
+	let className = (props.app.state.skillbookCategory === category) ? "chosen" : ""
 
 	return (
 		<div className={"flexbox-horizontal flex-align-start skillbook-category " + className} onClick={func}>
@@ -101,6 +104,30 @@ function SkillTooltip(props) {
 		realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
 	}
 
+	// action point cost and cooldown
+	let actionInfo = <div className="flexbox-horizontal flex-align-centered">
+		<Text text={skill.ActionPoints}/>
+		<Icon size="32px" img="action_point" className=""/>
+		<Text text={skill.Cooldown + " CD"}/>
+	</div>
+
+	// statuses
+	let statuses = []
+	for (let x in skill.TieredStatuses) {
+		let status = skill.TieredStatuses[x]
+		if (status in miscData.statusNames) {
+			statuses.push(<Text key={status} text={utils.format("Applies {0}", miscData.statusNames[status])}/>)
+		}
+	}
+	let statusesDisplay = null
+	if (statuses.length > 0) {
+		statusesDisplay = <div style={{width: "100%"}} className="flexbox-vertical">
+			{/* <hr/> */}
+			{statuses}
+			{/* <hr/> */}
+		</div>
+	}
+
 	let tooltip = <div className="flexbox-vertical">
 		<Text text={skill.DisplayNameRef}/>
 		<Text text={skill.id} className="text-small"/>
@@ -110,6 +137,9 @@ function SkillTooltip(props) {
 		<div className="text-si">
 			{realDesc}
 		</div>
+
+		{actionInfo}
+		{statusesDisplay}
 	</div>
 	return (
 		<Tooltip content={tooltip} placement="right">
@@ -120,9 +150,9 @@ function SkillTooltip(props) {
 
 export function SkillBook(props) {
 	let abilityButtons = []
-	for (let x in game.skills.sorted) {
-		abilityButtons.push(<SkillBookAbilityCategory key={x} category={x} app={props.app}/>)
-	}
+	miscData.skillAbilityList.forEach(c => {
+		abilityButtons.push(<SkillBookAbilityCategory key={c} category={c} app={props.app}/>)
+	})
 
 	let skills = []
 	for (let x in game.skills.sorted[props.app.state.skillbookCategory]) {

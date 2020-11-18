@@ -1210,6 +1210,32 @@ export const artifactBoosts = {
 	},
 }
 
+export const skillAbilityList = [
+	"WarriorLore",
+	"WaterSpecialist",
+	"EarthSpecialist",
+	"Necromancy",
+	"RogueLore",
+	"RangerLore",
+	"FireSpecialist",
+	"Summoning",
+	"AirSpecialist",
+	// "Source",
+	"Polymorph"
+]
+
+export const statusNames = {
+    "AMER_DECAYING_APPLY": "Vulnerable III",
+    "AMER_WEAKENED_APPLY": "Weakened III",
+    "AMER_ENTHRALLED_APPLY": "Subjugated III",
+    "AMER_ATAXIA_APPLY": "Ataxia III",
+
+    "AMER_SQUELCHED_APPLY": "Squelched III",
+    "AMER_TERRIFIED_APPLY": "Terrified III",
+    "AMER_SLOWED_APPLY": "Slowed III",
+    "AMER_BLIND_APPLY": "Dazzled III",
+}
+
 export const statuses = {
 	// PIP_Artifact_AntediluvianCarapace: {
 	// 	type: "special",
@@ -1785,14 +1811,22 @@ export const mappings = {
 	},
 	abilityNames: {
 		"WarriorLore": "Warfare",
+		"Warrior": "Warfare",
 		"WaterSpecialist": "Hydrosophist",
+		"Water": "Hydrosophist",
 		"EarthSpecialist": "Geomancer",
+		"Earth": "Geomancer",
 		"Necromancy": "Necromancer",
+		"Death": "Necromancer",
 		"RogueLore": "Scoundrel",
+		"Rogue": "Scoundrel",
 		"RangerLore": "Huntsman",
+		"Ranger": "Huntsman",
 		"FireSpecialist": "Pyrokinetic",
+		"Fire": "Pyrokinetic",
 		"Summoning": "Summoning",
 		"AirSpecialist": "Aerotheurge",
+		"Air": "Aerotheurge",
 		"Source": "Sourcery",
 		"Polymorph": "Polymorph",
 		DualWielding: "Dual Wielding",
@@ -1850,5 +1884,18 @@ export const mappings = {
 		"Ward": "Ward",
 		"Wither": "Wither",
 		"IncarnateChampion": "Incarnate Champion"
+	},
+	skillAbilityToSkillDocName: {
+		"WarriorLore": "Warrior",
+		"WaterSpecialist": "Water",
+		"EarthSpecialist": "Earth",
+		"Necromancy": "Death",
+		"RogueLore": "Rogue",
+		"RangerLore": "Ranger",
+		"FireSpecialist": "Fire",
+		"Summoning": "Summoning",
+		"AirSpecialist": "Air",
+		// "Source": "Source",
+		"Polymorph": "Polymorph"
 	}
 }
