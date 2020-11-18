@@ -35,7 +35,7 @@ export class Skill extends React.Component {
 		className += (this.props.data.Hidden) ? " transparent" : ""
 
 		return <SkillTooltip data={this.props.data}>
-			<Icon img={img} className={"skill-icon " + className} size={"64px"} onClick={this.toggleSkill.bind(this)} style={this.props.style}>
+			<Icon img={img} className={"skill-icon " + className} size={"64px"} onClick={this.toggleSkill.bind(this)} style={this.props.style} onContextMenu={this.props.onContextMenu}>
 
 			</Icon>
 		</SkillTooltip>

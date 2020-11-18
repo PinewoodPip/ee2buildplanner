@@ -10,6 +10,7 @@ import { Attributes } from "./gameStatSheet.js"
 import { Artifacts } from './artifacts.js';
 import { BuildsDropdown } from './buildsDropdown.js';
 import { clone } from 'underscore';
+import cloneDeep from 'lodash.clonedeep';
 
 function AscensionFamilyButton(props) {
 	return (
@@ -189,6 +190,17 @@ class Skills extends React.Component {
 		this.props.app.setState({popup: "skillbook"})
 	}
 
+	async reorderSkill(e, id, movement) {
+		let state = cloneDeep(this.props.app.state.skills)
+		let index = this.props.app.state.skills.indexOf(id) + movement
+		state = state.filter((x)=>{return x != id})
+	
+		state.splice(index, 0, id)
+	
+		await this.props.app.closeContext()
+		this.props.app.setState({skills: state})
+	}
+
 	render() {
 		let skills = []
 		let skillIDs = clone(this.props.app.state.skills)
@@ -199,7 +211,16 @@ class Skills extends React.Component {
 
 		for (let x in skillIDs) {
 			let skill = game.skills[skillIDs[x]]
-			skills.push(<Skill key={x} data={skill} app={this.props.app} highlight="false"/>)
+
+			let contextMenu = (!skill.Hidden) ? (e)=>{this.props.app.contextMenu([
+				<Text text="Select option:"/>,
+				<Text text="Move left" onClick={(e)=>{this.reorderSkill(e, skill.id, -1)}}/>,
+				<Text text="Move right" onClick={(e)=>{this.reorderSkill(e, skill.id, 1)}}/>,
+				<Text text="Move to front" onClick={(e)=>{this.reorderSkill(e, skill.id, -1000000)}}/>,
+				<Text text="Move to back" onClick={(e)=>{this.reorderSkill(e, skill.id, 10000000)}}/>,
+			], e)} : (e)=>{e.preventDefault()}
+
+			skills.push(<Skill key={x} data={skill} app={this.props.app} highlight="false" onContextMenu={contextMenu}/>)
 		}
 
 		// button to add more skills, opening the skillbook

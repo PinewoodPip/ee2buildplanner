@@ -73,17 +73,18 @@ X attributes from poly
 - warn when not enough str to wear armor for level ?
 
 -- NEW TODO
-- numerical combat ability and skill point allocation
+X numerical combat ability and skill point allocation
 - warn when you pick too many talents
 - lone wolf
 X bonuses from talents
-- origins
+X origins
 - on abilities, on right click allow to add custom bonus
 - set build level
 - open skillbook when skill ability is clicked
 X look into why changing nodes doesnt immediately update
 - show natural inv attributes in tooltip
 - add lifeType selection
+- reordering skills
 
 -- ISSUES
 - small issue: tooltips from talents expand the page
