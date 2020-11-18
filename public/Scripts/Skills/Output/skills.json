@@ -3258,7 +3258,7 @@
     "DisplayNameRef": "Prototrophize",
     "DescriptionRef": "Tap the well of Source within you to generate an additional Source point. If you are already at maximum Source, extend the duration of your Source Generation by 1 turn instead.",
     "Stealth": "Yes",
-    "Hidden": false
+    "Hidden": true
   },
   "Shout_AMER_Enrage": {
     "id": "Shout_AMER_Enrage",

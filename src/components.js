@@ -222,6 +222,9 @@ class Skills extends React.Component {
 		skillIDs.push(miscData.origins[this.props.app.state.origin].innateSkill)
 		skillIDs.push(miscData.races[this.props.app.state.physique.race].innateSkill)
 
+		if (this.props.app.hasCompleteCore)
+			skillIDs.push("Shout_AMER_Core_GenerateSource")
+
 		for (let x in skillIDs) {
 			let skill = game.skills[skillIDs[x]]
 
@@ -337,7 +340,7 @@ export function Embodiments(props) {
 function Embodiment(props) {
 	return (
 	<Tooltip content={utils.capitalize(props.type)}>
-		<div className={"embodiment " + props.type + " " + props.className}>
+		<div className={"embodiment " + props.type + " " + props.className} onClick={props.onClick}>
 			<Text text={props.amount}></Text>
 		</div>
 	</Tooltip>
@@ -371,6 +374,7 @@ class Ascension extends React.Component {
 
 					<hr/>
 
+					<CoreButtons app={this.props.app}/>
 					<div className={"flexbox-horizontal flex-align-centered "}>
 						<Text text={"Reqs:"} style={{textAlign: "right"}}/>
 						<Embodiments highlightUnmet={true} amounts={game.ascension.getTotalRequirements()}/>
@@ -391,6 +395,28 @@ class Ascension extends React.Component {
 				</div>
 			</div>
 		</Container>
+	}
+}
+
+class CoreButtons extends React.Component {
+	toggleCoreNode(emb) {
+		let state = clone(this.props.app.state.coreNodes)
+		state[emb] = !state[emb]
+
+		this.props.app.setState({coreNodes: state})
+	}
+
+	render() {
+		let embs = []
+		for (let x in miscData.embodimentTypesEnum) {
+			let emb = miscData.embodimentTypesEnum[x]
+			let text = this.props.app.state.coreNodes[emb] ? "X" : ""
+			embs.push(<Embodiment type={emb} amount={text} onClick={()=>{this.toggleCoreNode(emb)}}/>)
+		}
+		return <div className="flexbox-horizontal flex-align-centered">
+			<Text text="Core Nodes:"/>
+			{embs}
+		</div>
 	}
 }
 

@@ -1967,3 +1967,5 @@ export const mappings = {
 		"Polymorph": "Polymorph"
 	}
 }
+
+export const embodimentTypesEnum = ["force", "entropy", "form", "inertia", "life"]

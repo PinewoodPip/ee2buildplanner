@@ -95,6 +95,13 @@ class App extends React.Component {
           ]
         }
       ],
+      coreNodes: {
+        force: false,
+        entropy: false,
+        form: false,
+        inertia: false,
+        life: false,
+      },
       buffs: new Set(),
       civils: {
         thievery: 0,
@@ -114,6 +121,15 @@ class App extends React.Component {
   get talents() {
     return new Set([...this.state.talents, ...miscData.races[this.state.physique.race].talents])
   }
+
+  get hasCompleteCore() {
+    for (let x in this.state.coreNodes) {
+      if (!this.state.coreNodes[x])
+        return false
+    }
+    return true
+  }
+
   // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
   componentDidUpdate(prevState, newState) {
     // this.setState({stats: game.getStats()})

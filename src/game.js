@@ -671,6 +671,13 @@ export class Ascension {
       }
     }
 
+    // core nodes
+    for (let x in game.app.state.coreNodes) {
+      rews[x] += game.app.state.coreNodes[x] ? 1 : 0
+      if (game.app.hasCompleteCore)
+        rews[x] += 1
+    }
+
     return rews;
   }
 

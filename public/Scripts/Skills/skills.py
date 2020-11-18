@@ -159,6 +159,7 @@ hiddenSkills = [
     "Target_Squall",
     "Target_TimeWarp",
     "Target_PetrifyingTouch",
+    "Shout_AMER_Core_GenerateSource",
 
     "Shout_ElectricFence", # old closed circuit spell
     "Target_DemonicBargain_Wealth",
