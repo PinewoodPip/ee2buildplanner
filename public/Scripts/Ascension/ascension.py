@@ -382,14 +382,18 @@ for line in ascData.readlines():
                     if status == "LEADERSHIP":
                         keyword = "Presence"
                         keywordBoonType = "mutator"
+
+                refString = removeTrailingUnderscores("AMER_UI_Ascension_" + search["family"] + "_" + search["id"] + "_Node_" + str(nodeIndex) + "_" + str(subIndex))
                 
                 n.append({
                     "type": "extraStatusApplication",
                     "status": status,
-                    "id": search["newStatus"],
+                    "id": "extraStatusApplication_" + search["newStatus"],
+                    "value": 1.0,
                     "duration": float(search["duration"]),
                     "keyword": keyword,
                     "keywordBoon": keywordBoonType,
+                    "string": refString,
                 })
             
             interpreted = True
@@ -403,13 +407,22 @@ with open("ascension.json", "w", encoding="utf8") as w:
 
 
 lengthThreshold = 42
-# remove extra text
+
+# remove extra text (like "also get +armor"), except for nodes with certain keywords, and save this trimmed Ascension node text as a separate file
 relevantStrings = {}
+keywordsThatMakeAStringRelevant = ["Learn the", "Defiance", "Abeyance", "Prosperity", "Whirlwind", "Purity", "Wither"]
+
 for string in strings:
-    if "Learn the " not in strings[string] and "Defiance" not in strings[string] and "Abeyance" not in strings[string] and "Whirlwind" not in strings[string] and "Prosperity" not in strings[string] and "Purity" not in strings[string]:			
+    valid = len(strings[string]) > lengthThreshold
+    hasKeyword = False
+    for keyword in keywordsThatMakeAStringRelevant:
+        if keyword in strings[string]:
+            hasKeyword = True
+
+    if not hasKeyword:
         strings[string] = strings[string].split("\n»")[0]
-    if (len(strings[string]) > lengthThreshold or "Defiance" in strings[string] or "Abeyance" in strings[string] or "Whirlwind" in strings[string] or "Ward" in strings[string] or "Prosperity" in strings[string] or "Charged" in strings[string]):
-        print(str(len(strings[string])) + strings[string])
+    
+    if valid:
         relevantStrings[string] = strings[string]
 
 stringsOutput = json.dumps(relevantStrings, indent=2, ensure_ascii=False, sort_keys=True)

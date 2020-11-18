@@ -533,13 +533,18 @@ export class Game {
   getDisplayString(stat) {
     let displayString;
     let isSpecialCase = stat.id.search("PIP_Artifact_") > -1 || stat.id.search("PIP_Talent") > -1
+    let statTypesWithGameStrings = [ // these stat types use strings from the game instead of ones defined by us. Used for non-quantifiable script triggers.
+      "specialLogic",
+      "statusExtension",
+      "extraStatusApplication"
+    ]
 
     // check if this stat has a defined subtype and string in miscData
-    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || (stat.type === "specialLogic" || stat.type === "statusExtension") && !isSpecialCase) {
+    if (utils.hasKey(miscData.stats, stat.type) && utils.hasKey(miscData.stats[stat.type], stat.id) || statTypesWithGameStrings.includes(stat.type) && !isSpecialCase) {
 
       // if this stat is of the specialLogic type, the string for it is handled differently; since specialLogics tend to represent boolean powers
-      if (stat.type === "specialLogic" || stat.type === "statusExtension") {
-        let statDisplay = miscData.stats.[stat.type][stat.id]
+      if (statTypesWithGameStrings.includes(stat.type)) {
+        let statDisplay = miscData.stats[stat.type][stat.id]
 
         
         if (statDisplay && statDisplay.strings != undefined)
@@ -550,6 +555,7 @@ export class Game {
           displayString = game.ascension.specialStrings[stat.refString]
         }
         else {
+          console.log(stat)
           // we don't have this specialLogic - preppend a "FALSE"
           displayString = "FALSE: " + game.ascension.specialStrings[stat.refString]
         }

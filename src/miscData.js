@@ -1643,14 +1643,14 @@ export const stats = {
 			display: "When you have at least 90% Vitality (-1% per Form or Life embodied), Prosperity is considered active."
 		}
 	},
-	statusExtension: {
+	statusExtension: { // for most of these, we use the Ascension node's text.
 		// neat hack to get rid of duplicate text. This node grants 2 effects, one for each type of armor, meaning it shows 2 (same) strings in the keywords screen. This removes a duplicate.
+		// sadly there are other nodes that do a similar thing but use flexStats, meaning we cannot use that workaround for them.
 		VolatileArmor_Physical_300_Physical_AMER_RS3_FX_VolatileArmor: {
 			strings: ["", ""]
 		},
-
 	},
-	scalingExtension: {},
+	scalingExtension: {}, // uses Ascension node text.
 	extraStatusApplication: {},
 	specialLogic: {
 		// here we can replace the default text of a node reward with others based on whether we have the node or not. this is used in the summon stats tab for example to show whether we have a second summon slot unlocked or not, so we don't show the ugly whole description of the nodes that grant it

@@ -4399,10 +4399,12 @@
               {
                 "type": "extraStatusApplication",
                 "status": "AMER_WITHER",
-                "id": "AMER_DECAYING_2",
+                "id": "extraStatusApplication_AMER_DECAYING_2",
+                "value": 1.0,
                 "duration": 12.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_TheImp_Node_4_1"
               }
             ],
             [
@@ -15042,10 +15044,12 @@
               {
                 "type": "extraStatusApplication",
                 "status": "AMER_SCORCHED",
-                "id": "AMER_BLIND_2",
+                "id": "extraStatusApplication_AMER_BLIND_2",
+                "value": 1.0,
                 "duration": 6.0,
                 "keyword": null,
-                "keywordBoon": null
+                "keywordBoon": null,
+                "string": "AMER_UI_Ascension_Life_Splendor_Node_2_1"
               }
             ],
             [
