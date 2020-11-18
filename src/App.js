@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import cloneDeep from 'lodash.clonedeep';
 
 import * as utils from "./utils.js"
 import { Game } from "./game.js"
@@ -8,7 +9,7 @@ import { Popup, ContextMenu } from "./genericComponents.js"
 import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"
 import { ArtifactsPopup } from "./artifacts.js"
-import cloneDeep from 'lodash.clonedeep';
+import * as miscData from "./miscData.js"
 
 const axios = require('axios').default;
 
@@ -39,8 +40,9 @@ class App extends React.Component {
       text: "",
 
       statCategories: new Set(),
-      portraitIndex: 0,
+      portrait: "human_m",
       customPortrait: null,
+      origin: "custom",
       physique: {
         race: "lizard",
         gender: "female",
@@ -144,7 +146,7 @@ class App extends React.Component {
     console.log(build)
     this.setState({
       statCategories: build.statCategories,
-      portrait: build.portraitIndex,
+      portrait: build.portrait,
       customPortrait: build.customPortrait,
       physique: build.physique,
       attributes: build.attributes,
@@ -166,7 +168,7 @@ class App extends React.Component {
     let state = this.state
     let metadata = {
       name: name,
-      portrait: state.portraitIndex,
+      portrait: state.portrait,
       author: "",
       format: SAVE_PROTOCOL,
       appVersion: APP_VERSION,
@@ -175,7 +177,7 @@ class App extends React.Component {
     let save = {
       metadata: metadata,
       statCategories: state.statCategories,
-      portrait: state.portraitIndex,
+      portrait: state.portrait,
       customPortrait: state.customPortrait,
       physique: state.physique,
       attributes: state.attributes,
@@ -203,6 +205,22 @@ class App extends React.Component {
     }
 
     console.log(JSON.parse(window.localStorage.getItem("savedBuilds")))
+  }
+
+  changeOrigin(e) {
+    let id = e.target.value
+    let origin = miscData.origins[id]
+
+    this.setState({
+      origin: id,
+      name: origin.name,
+      physique: {
+        race: origin.race,
+        gender: origin.gender,
+        lifeType: origin.lifeType,
+      },
+      portrait: (origin.forcedPortrait) ? origin.forcedPortrait : this.state.portrait
+    })
   }
 
   toggleTalent(id) {

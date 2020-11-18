@@ -170,23 +170,9 @@ class SkillAbilities extends React.Component {
 		let textClass = game.aboveNaturalAbilityCap ? "overflowed full-width" : ""
 		let skillAbilities = []
 
-		let skillAbilityList = [
-			"WarriorLore",
-			"WaterSpecialist",
-			"EarthSpecialist",
-			"Necromancy",
-			"RogueLore",
-			"RangerLore",
-			"FireSpecialist",
-			"Summoning",
-			"AirSpecialist",
-			// "Source",
-			"Polymorph"
-		]
-
 		let index = 0;
 		for (let x in game.skills.sorted) {
-			let statName = skillAbilityList[index]
+			let statName = miscData.skillAbilityList[index]
 			console.log(game.app.stats)
 			if (x === "Source")
 				continue

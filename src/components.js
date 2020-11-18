@@ -9,6 +9,7 @@ import { Skill } from "./skillbook.js"
 import { Attributes } from "./gameStatSheet.js"
 import { Artifacts } from './artifacts.js';
 import { BuildsDropdown } from './buildsDropdown.js';
+import { clone } from 'underscore';
 
 function AscensionFamilyButton(props) {
 	return (
@@ -190,8 +191,14 @@ class Skills extends React.Component {
 
 	render() {
 		let skills = []
-		for (let x in this.props.app.state.skills) {
-			let skill = game.skills[this.props.app.state.skills[x]]
+		let skillIDs = clone(this.props.app.state.skills)
+
+		// origin and race-specific skills
+		skillIDs.push(miscData.origins[this.props.app.state.origin].innateSkill)
+		skillIDs.push(miscData.races[this.props.app.state.physique.race].innateSkill)
+
+		for (let x in skillIDs) {
+			let skill = game.skills[skillIDs[x]]
 			skills.push(<Skill key={x} data={skill} app={this.props.app} highlight="false"/>)
 		}
 

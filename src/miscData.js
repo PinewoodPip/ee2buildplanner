@@ -4,25 +4,21 @@ export const races = {
 	human: {
 		name: "Human",
 		innateSkill: "Shout_InspireStart",
-		innateStatBoosts: [], // todo
 		talents: ["ingenious", "thrifty"],
 	},
 	elf: {
 		name: "Elf",
 		innateSkill: "Shout_FleshSacrifice",
-		innateStatBoosts: [], // todo
 		talents: ["corpseEater", "ancestralKnowledge"],
 	},
 	lizard: {
 		name: "Lizard",
 		innateSkill: "Cone_Flamebreath",
-		innateStatBoosts: [], // todo
 		talents: ["spellSong", "sophisticated"],
 	},
 	dwarf: {
 		name: "Dwarf",
 		innateSkill: "Shout_FleshSacrifice",
-		innateStatBoosts: [], // todo
 		talents: ["dwarvenGuile", "sturdy"],
 	},
 }
@@ -40,41 +36,55 @@ export const lifeType = {
 	},
 }
 
+// todo rename forcedPortrait
 export const origins = {
+	custom: {
+		name: "Custom Character",
+		race: "human",
+		gender: "male",
+		lifeType: "alive",
+		innateSkill: "Dome_CircleOfProtection",
+		forcedPortrait: "human_m",
+	},
 	red_prince: {
 		name: "The Red Prince",
 		race: "lizard",
 		gender: "male",
 		lifeType: "alive",
-		innateSkill: "Target_DemonicStare"
+		innateSkill: "Target_DemonicStare",
+		forcedPortrait: "red_prince",
 	},
 	sebille: {
 		name: "Sebille",
 		race: "elf",
 		gender: "female",
 		lifeType: "alive",
-		innateSkill: "Shout_BreakTheShackles"
+		innateSkill: "Shout_BreakTheShackles",
+		forcedPortrait: "sebille",
 	},
 	lohse: {
 		name: "Lohse",
 		race: "human",
 		gender: "female",
 		lifeType: "alive",
-		innateSkill: "Target_MaddeningSong"
+		innateSkill: "Target_MaddeningSong",
+		forcedPortrait: "lohse",
 	},
 	ifan: {
 		name: "Ifan Ben-Mezd",
 		race: "human",
 		gender: "male",
 		lifeType: "alive",
-		innateSkill: "Summon_SoulWolf"
+		innateSkill: "Summon_SoulWolf",
+		forcedPortrait: "ifan",
 	},
 	beast: {
 		name: "Beast",
 		race: "dwarf",
 		gender: "male",
 		lifeType: "alive",
-		innateSkill: "Target_Squall"
+		innateSkill: "Target_Squall",
+		forcedPortrait: "beast",
 	},
 	fane: {
 		name: "Fane",
@@ -82,6 +92,7 @@ export const origins = {
 		gender: "male",
 		lifeType: "undead",
 		innateSkill: "Target_TimeWarp",
+		forcedPortrait: "fane",
 	}
 }
 
@@ -1273,12 +1284,12 @@ export const statuses = {
 }
 
 export const portraits = [
-	"ifan",
-	"lohse",
-	"sebille",
-	"red_prince",
-	"beast",
-	"fane",
+	// "ifan",
+	// "lohse",
+	// "sebille",
+	// "red_prince",
+	// "beast",
+	// "fane",
 	"human_m",
 	"human_f",
 	"elf_m",
@@ -1288,6 +1299,7 @@ export const portraits = [
 	"lizard_m",
 	"lizard_f",
 	"magister_waifu",
+	"pip",
 	"derpy_bald_guy",
 	"obama",
 ]

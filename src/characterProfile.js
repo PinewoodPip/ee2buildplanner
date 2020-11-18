@@ -27,15 +27,30 @@ function CharacterRace(props) {
 	</div>)
 }
 
+function CharacterOrigin(props) {
+	let options = []
+	for (let x in miscData.origins) {
+		let origin = miscData.origins[x]
+		options.push(<option key={x} value={x} selected={props.app.state.origin === x}>{origin.name}</option>)
+	}
+
+	return <select onChange={props.app.changeOrigin.bind(props.app)}>
+		{options}
+	</select>
+}
+
 export class CharacterProfile extends React.Component {
     render() {
+		// only show race dropdown for custom characters
+		let raceDropdown = (this.props.app.state.origin === "custom") ? <CharacterRace app={this.props.app}/> : null
         return <Container className="character-profile">
             <div className="flexbox-horizontal">
 				<Portrait app={this.props.app}/>
 				<div style={{width: "10px"}}/>
 				<div className="flexbox-vertical">
 					<CharacterName app={this.props.app}/>
-					<CharacterRace app={this.props.app}/>
+					<CharacterOrigin app={this.props.app}/>
+					{raceDropdown}
 				</div>
 			</div>
         </Container>
@@ -44,10 +59,12 @@ export class CharacterProfile extends React.Component {
 
 export function Portrait(props) {
 	function changePortrait(e) {
+		if (props.app.state.origin !== "custom")
+			return
 		let elements = []
 		for (let x in miscData.portraits) {
 			elements.push(
-				<Icon className="button" img={miscData.portraits[x]} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portraitIndex: x})}}/>
+				<Icon className="button" img={miscData.portraits[x]} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portrait: miscData.portraits[x]})}}/>
 			)
 		}
 
@@ -61,7 +78,7 @@ export function Portrait(props) {
 	}
 	return (
 		<div className="portrait button" style={{position: "relative"}} onContextMenu={changePortrait} onClick={changePortrait}>
-			<Icon img={miscData.portraits[props.app.state.portraitIndex]} style={{width: "108px", height: "135px"}}/>
+			<Icon img={props.app.state.portrait} style={{width: "108px", height: "135px"}}/>
 
 			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "150px"}} className="portrait-frame" alt={""}/>
 		</div>

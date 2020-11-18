@@ -485,7 +485,7 @@ relevantSkills = {}
 for x in allSkills:
     allSkills[x]["DescriptionRef"] = replaceParamsInDescription(allSkills[x])
 
-    if not hasBannedString(x) and ("IsEnemySkill" not in allSkills[x].keys() or allSkills[x]["IsEnemySkill"] != "Yes"):
+    if not hasBannedString(x) and ("IsEnemySkill" not in allSkills[x].keys() or allSkills[x]["IsEnemySkill"] != "Yes" or allSkills[x]["id"] == "Dome_CircleOfProtection"):
         relevantSkills[x] = allSkills[x]
 
         keysToPop = []
