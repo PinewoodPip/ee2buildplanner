@@ -420,117 +420,6 @@ export const nodesWithExtraKeywords = {
 
 }
 
-export const statCategories = {
-	"Resistance Bonuses": [
-		{type: "flexStat", id: "AllResistance"},
-		{type: "flexStat", id: "PHYSICALRESISTANCE"},
-		{type: "flexStat", id: "PIERCINGRESISTANCE"},
-		{type: "flexStat", id: "EleResistance"},
-		{type: "flexStat", id: "FIRERESISTANCE"},
-		{type: "flexStat", id: "WATERRESISTANCE"},
-		{type: "flexStat", id: "EARTHRESISTANCE"},
-		{type: "flexStat", id: "AIRRESISTANCE"},
-		{type: "flexStat", id: "POISONRESISTANCE"},
-	],
-	"Real Resistances": [
-		{type: "realStats", id: "res_physical"},
-		{type: "realStats", id: "res_piercing"},
-		{type: "realStats", id: "res_fire"},
-		{type: "realStats", id: "res_water"},
-		{type: "realStats", id: "res_earth"},
-		{type: "realStats", id: "res_air"},
-		{type: "realStats", id: "res_poison"},
-	],
-	"Real Attributes": [
-		{type: "realStats", id: "str"},
-		{type: "realStats", id: "fin"},
-		{type: "realStats", id: "pwr"},
-		{type: "realStats", id: "con"},
-		{type: "realStats", id: "mem"},
-		{type: "realStats", id: "wits"},
-	],
-	"Real Abilities": [
-		{type: "realStats", id: "dualwielding"},
-		{type: "realStats", id: "ranged"},
-		{type: "realStats", id: "singlehanded"},
-		{type: "realStats", id: "twohanded"},
-		{type: "realStats", id: "leadership"},
-		{type: "realStats", id: "perseverance"},
-		{type: "realStats", id: "retribution"},
-		{type: "realStats", id: "warfare"},
-		{type: "realStats", id: "hydrosophist"},
-		{type: "realStats", id: "geomancer"},
-		{type: "realStats", id: "necromancer"},
-		{type: "realStats", id: "scoundrel"},
-		{type: "realStats", id: "huntsman"},
-		{type: "realStats", id: "pyrokinetic"},
-		{type: "realStats", id: "summoning"},
-		{type: "realStats", id: "aerotheurge"},
-		{type: "realStats", id: "polymorph"},
-	],
-	"Skill Ability Bonuses": [
-		{type: "flexStat", id: "AirSpecialist"},
-		{type: "flexStat", id: "EarthSpecialist"},
-		{type: "flexStat", id: "RangerLore"},
-		{type: "flexStat", id: "WaterSpecialist"},
-		{type: "flexStat", id: "Necromancy"},
-		{type: "flexStat", id: "Polymorph"},
-		{type: "flexStat", id: "FireSpecialist"},
-		{type: "flexStat", id: "RogueLore"},
-		{type: "flexStat", id: "Summoning"},
-		{type: "flexStat", id: "WarriorLore"},
-	],
-	"Summon Boosts": [
-		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DAMAGEBOOST"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_ACCURACYBOOST"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_LIFESTEAL"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_CRITICALCHANCE"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_MOVEMENT"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_SpecialCase_AllResistance"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Ability_Perseverance"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE"},
-		{type: "extendedStat", id: "SummonStat_ExtendedStat_Regen_Life"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DODGEBOOST"},
-		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_VITALITYBOOST"},
-		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
-		{type: "specialLogic", id: "Ascension_SummonLimitTo2"},
-	],
-	"Regeneration": [
-		{type: "extendedStat", id: "Regen_Life"},
-		{type: "extendedStat", id: "Regen_PhysicalArmor"},
-		{type: "extendedStat", id: "Regen_MagicArmor"},
-
-		{type: "extendedStat", id: "Voracity_Life"},
-		{type: "extendedStat", id: "Voracity_BothArmor"},
-		{type: "extendedStat", id: "Voracity_PhysArmor"},
-		{type: "extendedStat", id: "Voracity_MagicArmor"},
-	],
-	"Combat Ability Bonuses": [
-		{type: "flexStat", id: "DualWielding"},
-		{type: "flexStat", id: "Ranged"},
-		{type: "flexStat", id: "SingleHanded"},
-		{type: "flexStat", id: "TwoHanded"},
-		{type: "flexStat", id: "Leadership"},
-		{type: "flexStat", id: "Perseverance"},
-		{type: "flexStat", id: "PainReflection"},
-	],
-	"Free Reactions": [
-		{type: "extendedStat", id: "FreeReactionCharge_AMER_Centurion"},
-		{type: "extendedStat", id: "FreeReactionCharge_AMER_Elementalist"},
-		{type: "extendedStat", id: "FreeReactionCharge_AMER_Predator"},
-		{type: "extendedStat", id: "FreeReactionCharge_AMER_Celestial"},
-	],
-	"Investment Bonuses": [
-		{type: "extendedStat", id: "PercAttributeIncrease_Strength"},
-		{type: "extendedStat", id: "PercAttributeIncrease_Finesse"},
-		{type: "extendedStat", id: "PercAttributeIncrease_Intelligence"},
-		{type: "extendedStat", id: "PercAttributeIncrease_Constitution"},
-		{type: "extendedStat", id: "PercAttributeIncrease_Memory"},
-		{type: "extendedStat", id: "PercAttributeIncrease_Wits"},
-	]
-}
-
 export const artifactCategories = {
 	weapons: [
 		"thebutchersdisciple",
@@ -1308,21 +1197,27 @@ export const stats = {
 	realStats: {
 		str: {
 			display: "Strength: {0}",
+			default: 10,
 		},
 		fin: {
 			display: "Finesse: {0}",
+			default: 10,
 		},
 		pwr: {
 			display: "Power: {0}",
+			default: 10,
 		},
 		con: {
 			display: "Constitution: {0}",
+			default: 10,
 		},
 		mem: {
 			display: "Memory: {0}",
+			default: 10,
 		},
 		wits: {
 			display: "Wits: {0}",
+			default: 10,
 		},
 		// resistances
 		res_fire: {
@@ -1407,38 +1302,41 @@ export const stats = {
 		Life: {display: "Bonus Life Embodied: {0}"},
 	},
 	flexStat: {
-		CONSTITUTION: {
-			display: "Constitution: {0}",
-			default: 10,
-		},
-		MEMORY: {
-			display: "Memory: {0}",
-			default: 10,
-		},
-		INTELLIGENCE: {
-			display: "Power: {0}",
-			default: 10,
-		},
+		// attributes
 		STRENGTH: {
-			display: "Strength: {0}",
-			default: 10,
-		},
-		WITS: {
-			display: "Wits: {0}",
-			default: 10,
+			display: "Strength: +{0}",
 		},
 		FINESSE: {
-			display: "Finesse: {0}",
-			default: 10,
+			display: "Finesse: +{0}",
 		},
-		INITIATIVE: {
-			display: "Initiative: {0}",
+		INTELLIGENCE: {
+			display: "Power: +{0}",
+		},
+		CONSTITUTION: {
+			display: "Constitution: +{0}",
+		},
+		MEMORY: {
+			display: "Memory: +{0}",
+		},
+		WITS: {
+			display: "Wits: +{0}",
+		},
+
+		// other boosts
+		DAMAGEBOOST: {
+			display: "Damage: +{0}% additive",
 		},
 		CRITICALCHANCE: {
 			display: "Critical Chance: {0}%",
 		},
-		DAMAGEBOOST: {
-			display: "Damage: +{0}% additive",
+		ACCURACYBOOST: {
+			display: "Accuracy: +{0}%"
+		},
+		DODGEBOOST: {
+			display: "Dodge Chance: {0}%"
+		},
+		INITIATIVE: {
+			display: "Initiative: {0}",
 		},
 		LIFESTEAL: {
 			display: "Lifesteal: {0}%",
@@ -1447,11 +1345,8 @@ export const stats = {
 			display: "Movement: +{0}m"
 		},
 
-		MAGICARMORBOOST: {
-			display: "Magical Armor: {0}%"
-		},
-		PHYSICALARMORBOOST: {
-			display: "Physical Armor: +{0}%"
+		VITALITYBOOST: {
+			display: "Maximum Vitality: +{0}%"
 		},
 
 		MAGICARMOR: {
@@ -1461,100 +1356,100 @@ export const stats = {
 			display: "Physical Armor: +{0} Qualifier"
 		},
 
-		RESISTDEATH: {
-			display: "ResistDeath: {0}"
+		MAGICARMORBOOST: {
+			display: "Magical Armor: +{0}%"
+		},
+		PHYSICALARMORBOOST: {
+			display: "Physical Armor: +{0}%"
 		},
 
-		VITALITYBOOST: {
-			display: "Maximum Vitality: +{0}%"
-		},
-
-		DODGEBOOST: {
-			display: "Dodge Chance: {0}%"
-		},
-
+		// resistances
 		AllResistance: {
-			display: "All Resistances: {0}%"
+			display: "All Resistances: +{0}%"
 		},
 		EleResistance: {
-			display: "Elemental Resistance: {0}%",
+			display: "Elemental Resistance: +{0}%",
 		},
 		PHYSICALRESISTANCE: {
-			display: "Physical Resistance: {0}%",
+			display: "Physical Resistance: +{0}%",
 		},
 		PIERCINGRESISTANCE: {
-			display: "Piercing Resistance: {0}%",
+			display: "Piercing Resistance: +{0}%",
 		},
 		EARTHRESISTANCE: {
-			display: "Earth Resistance: {0}%"
+			display: "Earth Resistance: +{0}%"
 		},
 		POISONRESISTANCE: {
-			display: "Poison Resistance: {0}%"
+			display: "Poison Resistance: +{0}%"
 		},
 		WATERRESISTANCE: {
-			display: "Water Resistance: {0}%"
+			display: "Water Resistance: +{0}%"
 		},
 		FIRERESISTANCE: {
-			display: "Fire Resistance: {0}%"
+			display: "Fire Resistance: +{0}%"
 		},
 		AIRRESISTANCE: {
-			display: "Air Resistance: {0}%"
+			display: "Air Resistance: +{0}%"
 		},
 
+		// skill abilities
 		FireSpecialist: {
-			display: "Pyrokinetic: {0}"
+			display: "Pyrokinetic: +{0}"
 		},
 		EarthSpecialist: {
-			display: "Geomancer: {0}"
+			display: "Geomancer: +{0}"
 		},
 		AirSpecialist: {
-			display: "Aerotheurge: {0}"
+			display: "Aerotheurge: +{0}"
 		},
 		WaterSpecialist: {
-			display: "Hydrosophist: {0}"
+			display: "Hydrosophist: +{0}"
 		},
 		Necromancy: {
-			display: "Necromancer: {0}"
+			display: "Necromancer: +{0}"
 		},
 		RogueLore: {
-			display: "Scoundrel: {0}"
+			display: "Scoundrel: +{0}"
 		},
 		Summoning: {
-			display: "Summoning: {0}"
+			display: "Summoning: +{0}"
 		},
 		RangerLore: {
-			display: "Huntsman: {0}"
+			display: "Huntsman: +{0}"
 		},
 		WarriorLore: {
-			display: "Warfare: {0}"
+			display: "Warfare: +{0}"
 		},
 		Polymorph: {
-			display: "Polymorph: {0}"
+			display: "Polymorph: +{0}"
 		},
 
-		Leadership: {
-			display: "Leadership: {0}"
-		},
-		PainReflection: {
-			display: "Retribution: {0}"
-		},
-		Perseverance: {
-			display: "Perseverance: {0}"
-		},
+		// combat abilities
 		DualWielding: {
-			display: "Dual Wielding: {0}"
+			display: "Dual Wielding: +{0}"
 		},
 		SingleHanded: {
-			display: "Single-Handed: {0}"
+			display: "Single-Handed: +{0}"
 		},
 		Ranged: {
-			display: "Ranged: {0}"
+			display: "Ranged: +{0}"
 		},
 		TwoHanded: {
-			display: "Two-handed: {0}"
+			display: "Two-handed: +{0}"
 		},
-		ACCURACYBOOST: {
-			display: "Accuracy: +{0}%"
+		Leadership: {
+			display: "Leadership: +{0}"
+		},
+		PainReflection: {
+			display: "Retribution: +{0}"
+		},
+		Perseverance: {
+			display: "Perseverance: +{0}"
+		},
+
+		// other
+		RESISTDEATH: {
+			display: "Resists Death: {0}"
 		},
 	},
 	extendedStat: {
@@ -1570,6 +1465,9 @@ export const stats = {
 		},
 		FreeReactionCharge_AMER_Predator: {
 			display: "Free Predator Charges: {0}"
+		},
+		FreeReactionCharge_AMER_Occultist: {
+			display: "Free Occultist Charges: {0}"
 		},
 
 		// investment bonuses
@@ -1610,13 +1508,11 @@ export const stats = {
 		Voracity_BothArmor: {
 			display: "Armors restored from Voracity: {0}%"
 		},
-
-
-		SourceGen_AddPointsGranted: {
-			display: "Source gain from Source Generation: +{0}"
+		Voracity_PhysArmor: {
+			display: "Physical Armor restored from Voracity: {0}%"
 		},
-		BattHarr_Threshold_Sum_Self_Both: {
-			display: "B/H Threshold: +{0} ???"
+		Voracity_MagicArmor: {
+			display: "Magical Armor restored from Voracity: {0}%"
 		},
 
 		// summon stats
@@ -1632,52 +1528,19 @@ export const stats = {
 		SummonStat_FlexStat_Stat_LIFESTEAL: {
 			display: "Summon lifesteal: {0}%"
 		},
-		Voracity_MagicArmor: {
-			display: "Magical Armor restored from Voracity: {0}%"
-		},
-		FreeReactionCharge_AMER_Occultist: {
-			display: "Free Occultist Charges: {0}"
-		},
 		SummonStat_FlexStat_Stat_CRITICALCHANCE: {
 			display: "Summon Critical Chance: +{0}%"
 		},
 		SummonStat_FlexStat_Stat_MOVEMENT: {
-			display: "Summon Movement: +{0}m ???"
-		},
-		Adaptation_AddMaxStacks: {
-			display: "Maximum Adaptation Stacks: +{0}"
+			display: "Summon Movement: +{0}m"
 		},
 		"MaxRes_ELERES_<NODENAME>": {
 			display: "Maximum Elemental Resistance: +{0}%"
 		},
-		VitalityVoid_Radius: {
-			display: "Vitality Void Radius: +{0}m"
-		},
-		Battered_StackInfluence_Enemy: {
-			display: "Battered_StackInfluence_Enemy: {0}"
-		},
-		Harried_StackInfluence_Enemy: {
-			display: "Harried_StackInfluence_Enemy: {0}"
-		},
-		Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay: {
-			display: "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay: {0}"
-		},
 		SummonStat_FlexStat_Stat_SpecialCase_AllResistance: {
 			display: "Summon All Resistances: +{0}%"
 		},
-		Paucity_Blocked: {
-			display: "Unable to activate Paucity: {0}",
-			bool: true,
-		},
-		Status_AddDuration_AMER_BANE: {
-			display: "Extra Bane Duration: {0}"
-		},
-		Reaction_TempFlexStat_AMER_Centurion_Stat_ACCURACYBOOST: {
-			display: "Accuracy Boost during Centurion: +{0}%"
-		},
-		Reaction_TempFlexStat_AMER_Centurion_Stat_CRITICALCHANCE: {
-			display: "Critical Chance boost during Centurion: +{0}%"
-		},
+
 		SummonStat_FlexStat_Ability_Perseverance: {
 			display: "Summon Perseverance: {0}"
 		},
@@ -1693,29 +1556,27 @@ export const stats = {
 		SummonStat_FlexStat_Stat_VITALITYBOOST: {
 			display: "Summon Vitality: +{0}%"
 		},
-		Status_AddDuration_AMER_WARD: {
-			display: "Bonus Ward Duration: +{0}"
-		},
-		Status_AddDuration_AMER_DEFIANCE: {
-			display: "Bonus Defiance Duration: {0}"
-		},
-		Reaction_BlockBasic_AMER_Centurion: {
-			display: "Cannot perform basic Centurion behaviour: {0}",
-			bool: true,
-		},
-		IgnoreShieldPowerPenalty: {
-			display: "Shield Power penalty removed: {0}",
-			bool: true,
-		},
-		Voracity_PhysArmor: {
-			display: "Physical Armor restored from Voracity: {0}%"
+
+		// misc
+		SourceGen_AddPointsGranted: {
+			display: "Source gain from Source Generation: +{0}"
 		},
 		SourceGen_InfiniteDuration: {
 			display: "Infinite Source Generation: {0}",
 			bool: true,
 		},
-		Explode_OnStatus_AMER_PURITY_AURA_AMER_SCRIPT_TheNymph_Purity_Radial: {
-			display: "Explode_OnStatus_AMER_PURITY_AURA_AMER_SCRIPT_TheNymph_Purity_Radial: {0}"
+		BattHarr_Threshold_Sum_Self_Both: {
+			display: "B/H Threshold: +{0} ???"
+		},
+		Battered_StackInfluence_Enemy: {
+			display: "Battered_StackInfluence_Enemy: {0}"
+		},
+		Harried_StackInfluence_Enemy: {
+			display: "Harried_StackInfluence_Enemy: {0}"
+		},
+		IgnoreShieldPowerPenalty: {
+			display: "Shield Power penalty removed: {0}",
+			bool: true,
 		},
 		Purity_CooldownManip: {
 			display: "Purity_CooldownManip: {0}"
@@ -1723,6 +1584,43 @@ export const stats = {
 		Status_AddDuration_AMER_SCORCHED: {
 			display: "Bonus Scorched Duration: {0}"
 		},
+		Status_AddDuration_AMER_WARD: {
+			display: "Bonus Ward Duration: +{0}"
+		},
+		Status_AddDuration_AMER_DEFIANCE: {
+			display: "Bonus Defiance Duration: {0}"
+		},
+		Status_AddDuration_AMER_BANE: {
+			display: "Extra Bane Duration: {0}"
+		},
+		VitalityVoid_Radius: {
+			display: "Vitality Void Radius: +{0}m"
+		},
+		Adaptation_AddMaxStacks: {
+			display: "Maximum Adaptation Stacks: +{0}"
+		},
+		Explode_OnStatus_AMER_PURITY_AURA_AMER_SCRIPT_TheNymph_Purity_Radial: {
+			display: "Purity applies Subjugated within 8m: {0}",
+			bool: true,
+		},
+		Paucity_Blocked: {
+			display: "Unable to activate Paucity: {0}",
+			bool: true,
+		},
+		Reaction_BlockBasic_AMER_Centurion: {
+			display: "Cannot perform basic Centurion behaviour: {0}",
+			bool: true,
+		},
+		Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay: {
+			display: "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay: {0}"
+		},
+		Reaction_TempFlexStat_AMER_Centurion_Stat_ACCURACYBOOST: {
+			display: "Accuracy Boost during Centurion: +{0}%"
+		},
+		Reaction_TempFlexStat_AMER_Centurion_Stat_CRITICALCHANCE: {
+			display: "Critical Chance boost during Centurion: +{0}%"
+		},
+		
 		
 	},
 	keywordBasicActivator: {
@@ -1772,6 +1670,157 @@ export const stats = {
 		}
 	},
 
+}
+
+export const statCategories = {
+	"Resistance Bonuses": [
+		{type: "flexStat", id: "AllResistance"},
+		{type: "flexStat", id: "PHYSICALRESISTANCE"},
+		{type: "flexStat", id: "PIERCINGRESISTANCE"},
+		{type: "flexStat", id: "EleResistance"},
+		{type: "flexStat", id: "FIRERESISTANCE"},
+		{type: "flexStat", id: "WATERRESISTANCE"},
+		{type: "flexStat", id: "EARTHRESISTANCE"},
+		{type: "flexStat", id: "AIRRESISTANCE"},
+		{type: "flexStat", id: "POISONRESISTANCE"},
+	],
+	"Real Resistances": [
+		{type: "realStats", id: "res_physical"},
+		{type: "realStats", id: "res_piercing"},
+		{type: "realStats", id: "res_fire"},
+		{type: "realStats", id: "res_water"},
+		{type: "realStats", id: "res_earth"},
+		{type: "realStats", id: "res_air"},
+		{type: "realStats", id: "res_poison"},
+	],
+	"Real Attributes": [
+		{type: "realStats", id: "str"},
+		{type: "realStats", id: "fin"},
+		{type: "realStats", id: "pwr"},
+		{type: "realStats", id: "con"},
+		{type: "realStats", id: "mem"},
+		{type: "realStats", id: "wits"},
+	],
+	"Real Abilities": [
+		{type: "realStats", id: "dualwielding"},
+		{type: "realStats", id: "ranged"},
+		{type: "realStats", id: "singlehanded"},
+		{type: "realStats", id: "twohanded"},
+		{type: "realStats", id: "leadership"},
+		{type: "realStats", id: "perseverance"},
+		{type: "realStats", id: "retribution"},
+		{type: "realStats", id: "warfare"},
+		{type: "realStats", id: "hydrosophist"},
+		{type: "realStats", id: "geomancer"},
+		{type: "realStats", id: "necromancer"},
+		{type: "realStats", id: "scoundrel"},
+		{type: "realStats", id: "huntsman"},
+		{type: "realStats", id: "pyrokinetic"},
+		{type: "realStats", id: "summoning"},
+		{type: "realStats", id: "aerotheurge"},
+		{type: "realStats", id: "polymorph"},
+	],
+	"Skill Ability Bonuses": [
+		{type: "flexStat", id: "AirSpecialist"},
+		{type: "flexStat", id: "EarthSpecialist"},
+		{type: "flexStat", id: "RangerLore"},
+		{type: "flexStat", id: "WaterSpecialist"},
+		{type: "flexStat", id: "Necromancy"},
+		{type: "flexStat", id: "Polymorph"},
+		{type: "flexStat", id: "FireSpecialist"},
+		{type: "flexStat", id: "RogueLore"},
+		{type: "flexStat", id: "Summoning"},
+		{type: "flexStat", id: "WarriorLore"},
+	],
+	"Summon Boosts": [
+		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DAMAGEBOOST"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_ACCURACYBOOST"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_LIFESTEAL"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_CRITICALCHANCE"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_MOVEMENT"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_SpecialCase_AllResistance"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Ability_Perseverance"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_PHYSICALRESISTANCE"},
+		{type: "extendedStat", id: "SummonStat_ExtendedStat_Regen_Life"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_DODGEBOOST"},
+		{type: "extendedStat", id: "SummonStat_FlexStat_Stat_VITALITYBOOST"},
+		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
+		{type: "specialLogic", id: "Ascension_SummonLimitTo2"},
+	],
+	"Regeneration": [
+		{type: "extendedStat", id: "Regen_Life"},
+		{type: "extendedStat", id: "Regen_PhysicalArmor"},
+		{type: "extendedStat", id: "Regen_MagicArmor"},
+
+		{type: "extendedStat", id: "Voracity_Life"},
+		{type: "extendedStat", id: "Voracity_BothArmor"},
+		{type: "extendedStat", id: "Voracity_PhysArmor"},
+		{type: "extendedStat", id: "Voracity_MagicArmor"},
+	],
+	"Combat Ability Bonuses": [
+		{type: "flexStat", id: "DualWielding"},
+		{type: "flexStat", id: "Ranged"},
+		{type: "flexStat", id: "SingleHanded"},
+		{type: "flexStat", id: "TwoHanded"},
+		{type: "flexStat", id: "Leadership"},
+		{type: "flexStat", id: "Perseverance"},
+		{type: "flexStat", id: "PainReflection"},
+	],
+	"Free Reactions": [
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Centurion"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Elementalist"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Predator"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Celestial"},
+		{type: "extendedStat", id: "FreeReactionCharge_AMER_Occultist"},
+	],
+	"Investment Bonuses": [
+		{type: "extendedStat", id: "PercAttributeIncrease_Strength"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Finesse"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Intelligence"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Constitution"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Memory"},
+		{type: "extendedStat", id: "PercAttributeIncrease_Wits"},
+	],
+	"General Boosts": [
+		{type: "flexStat", id: "DAMAGEBOOST"},
+		{type: "flexStat", id: "CRITICALCHANCE"},
+		{type: "flexStat", id: "ACCURACYBOOST"},
+		{type: "flexStat", id: "DODGEBOOST"},
+		{type: "flexStat", id: "INITIATIVE"},
+		{type: "flexStat", id: "LIFESTEAL"},
+		{type: "flexStat", id: "MOVEMENT"},
+		{type: "flexStat", id: "VITALITYBOOST"},
+		{type: "flexStat", id: "PHYSICALARMOR"},
+		{type: "flexStat", id: "PHYSICALARMORBOOST"},
+		{type: "flexStat", id: "MAGICARMOR"},
+		{type: "flexStat", id: "MAGICARMORBOOST"},
+		// {type: "extendedStat", id: "Voracity_Life"},
+		// {type: "extendedStat", id: "Voracity_BothArmor"},
+		{type: "extendedStat", id: "BattHarr_Threshold_Sum_Self_Both"},
+		{type: "flexStat", id: "RESISTDEATH"},
+	],
+	"Miscellaneous": [
+		{type: "extendedStat", id: "SourceGen_AddPointsGranted"},
+		{type: "extendedStat", id: "SourceGen_InfiniteDuration"},
+		{type: "extendedStat", id: "BattHarr_Threshold_Sum_Self_Both"},
+		{type: "extendedStat", id: "Battered_StackInfluence_Enemy"},
+		{type: "extendedStat", id: "Adaptation_AddMaxSHarried_StackInfluence_Enemytacks"},
+		{type: "extendedStat", id: "Purity_CooldownManip"},
+		{type: "extendedStat", id: "Status_AddDuration_AMER_SCORCHED"},
+		{type: "extendedStat", id: "Explode_OnStatus_AMER_PURITY_AURA_AMER_SCRIPT_TheNymph_Purity_Radial"},
+		{type: "extendedStat", id: "IgnoreShieldPowerPenalty"},
+		{type: "extendedStat", id: "Status_AddDuration_AMER_WARD"},
+		{type: "extendedStat", id: "Status_AddDuration_AMER_DEFIANCE"},
+		{type: "extendedStat", id: "Status_AddDuration_AMER_BANE"},
+		{type: "extendedStat", id: "VitalityVoid_Radius"},
+		{type: "extendedStat", id: "Adaptation_AddMaxStacks"},
+		{type: "extendedStat", id: "Paucity_Blocked"},
+		{type: "extendedStat", id: "Reaction_BlockBasic_AMER_Centurion"},
+		{type: "extendedStat", id: "Explode_OnStatus_AMER_WITHER_Projectile_AMER_SCRIPT_Wither_Decay"},
+		{type: "extendedStat", id: "Reaction_TempFlexStat_AMER_Centurion_Stat_ACCURACYBOOST"},
+		{type: "extendedStat", id: "Reaction_TempFlexStat_AMER_Centurion_Stat_CRITICALCHANCE"},
+	]
 }
 
 export const aspectsAfterWePutAnHrToMakeThingsLookNice = [

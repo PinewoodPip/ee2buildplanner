@@ -150,18 +150,34 @@ export class Game {
   getStats() {
     function addStat(stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {
+        // stat total
         stats[stat.type][stat.id].amount += stat.value
+
+        if (stats[stat.type][stat.id].sources == undefined)
+          stats[stat.type][stat.id].sources = {}
+
+        // per-source tracking
+        if (stat.source != null)
+          stats[stat.type][stat.id].sources[stat.source] += stat.value
+        else
+          stats[stat.type][stat.id].sources["Unknown"] += stat.value
+
         stats[stat.type][stat.id].refString = stat.string
       }
       else {
-        stats[stat.type][stat.id] = {type: stat.type, amount: stat.value, id: stat.id, refString: stat.string}
+        stats[stat.type][stat.id] = {type: stat.type, amount: stat.value, id: stat.id, refString: stat.string, sources: {}}
+
+        if (stat.source != null)
+          stats[stat.type][stat.id].sources[stat.source] = stat.value
+        else
+          stats[stat.type][stat.id].sources["Unknown"] = stat.value
       }
     }
 
     let stats = {}
     let keywords = {}
 
-    // default stats
+    // default stat amounts
     for (let x in miscData.stats) {
       let type = miscData.stats[x]
       stats[x] = {}
@@ -171,7 +187,7 @@ export class Game {
 
           let defaultAmount = (stat.default != null) ? stat.default : 0
 
-          stats[x][z] = {type: x, amount: defaultAmount, id: z}
+          stats[x][z] = {type: x, amount: defaultAmount, id: z, sources: {"Base": defaultAmount}}
         }
       }
     }
@@ -193,6 +209,7 @@ export class Game {
       }
     }
 
+    // stats from ascension
     for (let x in this.app.state.aspects) {
       let asp = this.ascension.getReferenceById(this.app.state.aspects[x].id)
       let build = this.app.state.aspects[x].nodes
@@ -200,11 +217,15 @@ export class Game {
       for (let z in asp.nodes) {
         for (let v in asp.nodes[z].parent) {
           let parentBoost = asp.nodes[z].parent[v]
+          parentBoost.source = "Ascension"
+
           addStat(parentBoost)
           tryToAddKeyword(parentBoost)
         }
         for (let v in asp.nodes[z].subNodes[build[z]]) {
           let subNodeBoost = asp.nodes[z].subNodes[build[z]][v]
+          subNodeBoost.source = "Ascension"
+
           addStat(subNodeBoost)
           tryToAddKeyword(subNodeBoost)
         }
@@ -216,6 +237,7 @@ export class Game {
       let boosts = miscData.artifactBoosts[element]
       if (boosts && "innate" in boosts) {
         boosts.innate.forEach(e => {
+          e.source = element
           addStat(e)
           tryToAddKeyword(e)
         })
@@ -223,11 +245,12 @@ export class Game {
     })
 
     // boosts from talents
-    this.app.state.talents.forEach(id => {
+    this.app.talents.forEach(id => {
       let talent = miscData.talents[id]
 
       if ("boosts" in talent) {
         talent.boosts.forEach(boost => {
+          boost.source = "Talent"
           addStat(boost)
           tryToAddKeyword(boost)
         })
@@ -240,18 +263,33 @@ export class Game {
     return this.getRealStats(stats);
   }
 
-  getRealStats(stats) {
+  getRealStats(stats) { // calculate real, absolute amounts of stats
 
     function addStat(stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {
+        // stat total
         stats[stat.type][stat.id].amount += stat.value
+
+        if (stats[stat.type][stat.id].sources == undefined)
+          stats[stat.type][stat.id].sources = {}
+
+        // per-source tracking
+        if (stat.source != null)
+          stats[stat.type][stat.id].sources[stat.source] += stat.value
+        else
+          stats[stat.type][stat.id].sources["Unknown"] += stat.value
+
         stats[stat.type][stat.id].refString = stat.string
       }
       else {
-        stats[stat.type][stat.id] = {type: stat.type, amount: stat.value, id: stat.id, refString: stat.string}
+        stats[stat.type][stat.id] = {type: stat.type, amount: stat.value, id: stat.id, refString: stat.string, sources: {}}
+
+        if (stat.source != null)
+          stats[stat.type][stat.id].sources[stat.source] = stat.value
+        else
+          stats[stat.type][stat.id].sources["Unknown"] = stat.value
       }
     }
-    // calculate real, absolute amounts of stats
 
     // artifact special toggleable effects.
     this.app.state.buffs.forEach(id => {
@@ -261,44 +299,57 @@ export class Game {
           case "PIP_Artifact_DrogsLuck": {
             let investmentBonus = 15 + (2 * stats.flexStat.FireSpecialist.amount) + (4 * game.app.state.civils.luckycharm)
 
-            stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
-            stats.extendedStat.PercAttributeIncrease_Wits.amount += investmentBonus
+            // stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
+            addStat({type: "extendedStat", id: "PercAttributeIncrease_Intelligence", value: investmentBonus, source: "Drog's Luck"})
+            // stats.extendedStat.PercAttributeIncrease_Wits.amount += investmentBonus
+            addStat({type: "extendedStat", id: "PercAttributeIncrease_Wits", value: investmentBonus, source: "Drog's Luck"})
             break;
           }
           case "PIP_Artifact_EyeOfTheStorm": {
             let investmentBonus = 25 + (2.5 * stats.flexStat.airSpecialist.amount)
 
-            stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
+            // stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
+            addStat({type: "extendedStat", id: "PercAttributeIncrease_Finesse", value: investmentBonus, source: "Eye of the Storm"})
             break;
           }
           case "PIP_Artifact_Kudzu": {
-            stats.flexStat.POISONRESISTANCE.amount += 20
-            stats.flexStat.EARTHRESISTANCE.amount += 10
-            stats.flexStat.PHYSICALRESISTANCE.amount += 10
+            // stats.flexStat.POISONRESISTANCE.amount += 20
+            // stats.flexStat.EARTHRESISTANCE.amount += 10
+            // stats.flexStat.PHYSICALRESISTANCE.amount += 10
+            addStat({type: "flexStat", id: "POISONRESISTANCE", value: 20, source: "Kudzu"})
+            addStat({type: "flexStat", id: "EARTHRESISTANCE", value: 10, source: "Kudzu"})
+            addStat({type: "flexStat", id: "PHYSICALRESISTANCE", value: 10, source: "Kudzu"})
             break;
           }
           case "PIP_Artifact_Leviathan": {
             // lmao why did i even think of this
-            stats.flexStat.MOVEMENT.amount += 0.5
+            // stats.flexStat.MOVEMENT.amount += 0.5
+            addStat({type: "flexStat", id: "MOVEMENT", value: 0.5, source: "Leviathan"})
             break;
           }
           case "PIP_Artifact_Onslaught": {
             let investmentBonus = 3 * (Math.min(0, stats.flexStat.MOVEMENT.amount - 2))
-            stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
-            stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
+            // stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
+            // stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
+            addStat({type: "extendedStat", id: "PercAttributeIncrease_Finesse", value: investmentBonus, source: "Onslaught"})
+            addStat({type: "extendedStat", id: "PercAttributeIncrease_Intelligence", value: investmentBonus, source: "Onslaught"})
             break;
           }
           case "PIP_Artifact_PrismaticBarrier": {
             let resBonus = 3 * stats.flexStat.Perseverance.amount
-            stats.flexStat.EleResistance.amount += resBonus
+            // stats.flexStat.EleResistance.amount += resBonus
+            addStat({type: "flexStat", id: "EleResistance", value: resBonus, source: "Prismatic Barrier"})
             break;
           }
           case "PIP_Artifact_Urgency": {
             let force = stats.embodimentReward.Force.amount + this.ascension.getTotalRewards().force
             let dmgBoost = 10 * force
             let movementBoost = 0.3 * force
-            stats.flexStat.DAMAGEBOOST.amount += dmgBoost
-            stats.flexStat.MOVEMENT.amount += movementBoost
+
+            // stats.flexStat.DAMAGEBOOST.amount += dmgBoost
+            // stats.flexStat.MOVEMENT.amount += movementBoost
+            addStat({type: "flexStat", id: "DAMAGEBOOST", value: dmgBoost, source: "Urgency"})
+            addStat({type: "flexStat", id: "MOVEMENT", value: movementBoost, source: "Urgency"})
             break;
           }
           case "PIP_Artifact_Vertigo": {
@@ -308,43 +359,60 @@ export class Game {
               - 10
             )
 
-            stats.flexStat.DODGEBOOST.amount += 1 * fin
-            stats.flexStat.ACCURACYBOOST.amount += -0.5 * fin
+            // stats.flexStat.DODGEBOOST.amount += 1 * fin
+            // stats.flexStat.ACCURACYBOOST.amount += -0.5 * fin
+            addStat({type: "flexStat", id: "DODGEBOOST", value: 1 * fin, source: "Vertigo"})
+            addStat({type: "flexStat", id: "ACCURACYBOOST", value: -0.5 * fin, source: "Vertigo"})
           }
           case "PIP_Talent_Guerrilla": {
             let boost = 40 + (3 * (stats.flexStat.RogueLore.amount + game.app.state.abilities.RogueLore))
 
-            stats.flexStat.DAMAGEBOOST.amount += boost
+            // stats.flexStat.DAMAGEBOOST.amount += boost
+
+            addStat({type: "flexStat", id: "DAMAGEBOOST", value: boost, source: "Guerrilla"})
           }
           case "PIP_Talent_Hothead": {
-            stats.flexStat.CRITICALCHANCE.amount += 10
-            stats.flexStat.ACCURACYBOOST.amount += 10
+            // stats.flexStat.CRITICALCHANCE.amount += 10
+            // stats.flexStat.ACCURACYBOOST.amount += 10
+
+            addStat({type: "flexStat", id: "CRITICALCHANCE", value: 10, source: "Hothead"})
+            addStat({type: "flexStat", id: "ACCURACYBOOST", value: 10, source: "Hothead"})
           }
         }
       }
     })
 
+    // strength
+    // addStat({type: "realStats", id: "str", value: stats["flexStat"]["STRENGTH"].amount, source: "Ascension"})
+
+    // these are not initialized like normal stats, so we add the default amount manaully
     let realStr = (
+      miscData.stats.realStats.str.default +
       stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str +
       (stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
 
     let realFin = (
+      miscData.stats.realStats.fin.default +
       stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin +
       (stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
 
     let realInt = (
+      miscData.stats.realStats.pwr.default +
       stats["flexStat"]["INTELLIGENCE"].amount + game.app.state.attributes.pwr +
       (stats["flexStat"]["INTELLIGENCE"].amount + game.app.state.attributes.pwr - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
 
     let realCon = (
+      miscData.stats.realStats.con.default +
       stats["flexStat"]["CONSTITUTION"].amount + game.app.state.attributes.con +
       (stats["flexStat"]["CONSTITUTION"].amount + game.app.state.attributes.con - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
 
     let realMem = (
+      miscData.stats.realStats.mem.default +
       stats["flexStat"]["MEMORY"].amount + game.app.state.attributes.mem +
       (stats["flexStat"]["MEMORY"].amount + game.app.state.attributes.mem - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
 
     let realWits = (
+      miscData.stats.realStats.wits.default +
       stats["flexStat"]["WITS"].amount + game.app.state.attributes.wits +
       (stats["flexStat"]["WITS"].amount + game.app.state.attributes.wits - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
 
@@ -503,6 +571,17 @@ export class Game {
     }
 
     return displayString
+  }
+
+  getStatSourcesText(type, id) {
+    let stat = this.app.stats[type][id]
+
+    let text = []
+    for (let source in stat.sources) {
+      text.push(<Text key={source} text={utils.format("From {0}: +{1}", source, stat.sources[source])}/>)
+    }
+
+    return text;
   }
 
   render() {this.app.forceUpdate()}

@@ -70,7 +70,7 @@ function Talents(props) {
 			<div className="flexbox-horizontal flex-align-start full-width">
 				<Tooltip content={talent.description} placement="right">
 					{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying */}
-					<TabButton key={x} func={null} chosen={props.app.state.talents.has(x)} text={talent.name} style={{width: "170px"}}/>
+					<TabButton key={x} func={null} chosen={props.app.talents.has(miscData.races[props.app.state.physique.race].talents[x])} text={talent.name} style={{width: "170px"}}/>
 				</Tooltip>
 			</div>
 		)
@@ -89,7 +89,7 @@ function Talents(props) {
 			<div className="flexbox-horizontal flex-align-start full-width">
 				<Tooltip content={talent.description} placement="right">
 					{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying */}
-					<TabButton key={x} func={func} chosen={props.app.state.talents.has(x)} text={talent.name} style={{width: "170px"}}/>
+					<TabButton key={x} func={func} chosen={props.app.talents.has(x)} text={talent.name} style={{width: "170px"}}/>
 				</Tooltip>
 			</div>
 		)
@@ -142,7 +142,10 @@ function Attribute(props) {
 		<div className="flexbox-horizontal flex-align-centered" style={{height: "30px"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
 			<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
 			<Text style={{width: "50px"}} text={utils.format("{0}:", attrName)}/>
-			<Text style={{width: "25px"}} text={utils.format("{0}", attrAmount)}/>
+
+			<Tooltip content={utils.format("Natural investment: {0}", game.app.state.attributes[props.id])}>
+				<Text style={{width: "25px"}} text={utils.format("{0}", attrAmount)}/>
+			</Tooltip>
 
 			<div style={{width: "10px"}}/>
 

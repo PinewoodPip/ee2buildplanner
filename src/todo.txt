@@ -55,19 +55,15 @@ X tooltips for keywords
 - fix splendor double ignition being considered a keyword
 
 - atrs add stats like dodge
-
 X dont rely on containedKeywords for determining keywords, as those also include free charges?
-
-
-- txt field
+X txt field
 - dropdown with multiple builds
 - saving/exporting
-- ap/effects in skills
 X attr picker
 
 - add the rest of statuses
-- hide hidden skills
-- add ap and statuses to skill descs
+X hide hidden skills
+X add ap and statuses to skill descs
 
 X attributes from poly
 - warn when not enough str to wear armor for level ?
@@ -84,7 +80,8 @@ X origins
 X look into why changing nodes doesnt immediately update
 - show natural inv attributes in tooltip
 - add lifeType selection
-- reordering skills
+X reordering skills
+- show sources of stats
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

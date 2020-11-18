@@ -80,6 +80,12 @@ export function Boosts(props) {
 		// add the stat sheet element
 		statSheets.push(<StatTab key={x} name={x} elements={categorizedBoosts[x]} width="300px"/>)
 	}
+
+	// if no stat sheets are selected, show a hint on how to use them
+	if (statSheets.length === 0) {
+		statSheets = <Text text="Click on the stat categories on the left to display their relevant stats here."/>
+	}
+
 	return (
 		<Container className="flexbox-vertical flex-align-start skillbook">
 			<div className="flexbox-horizontal flex-align-end full-width bar">
@@ -91,6 +97,8 @@ export function Boosts(props) {
 
 			<BuffBar app={props.app}/>
 
+			<hr/>
+
 			<div className="flexbox-horizontal flex-wrap flex-align-space-evenly" style={{alignItems: "flex-start"}}>
 				<div className="flexbox-vertical flex-align-start" style={{width: "20%"}}>
 					{categoryElements}
@@ -99,11 +107,11 @@ export function Boosts(props) {
 					
 					{statSheets}
 
-					<div style={{maxHeight: "500px", width: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
+					{/* <div style={{maxHeight: "500px", width: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
 						<Text text="Temp place for other stats"/>
 						<hr/>
 						{boosts}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</Container>

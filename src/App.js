@@ -111,6 +111,9 @@ class App extends React.Component {
   stats;
   keywords;
 
+  get talents() {
+    return new Set([...this.state.talents, ...miscData.races[this.state.physique.race].talents])
+  }
   // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
   componentDidUpdate(prevState, newState) {
     // this.setState({stats: game.getStats()})
