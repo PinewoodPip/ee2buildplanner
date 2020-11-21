@@ -17,7 +17,7 @@ import { ExportMenu } from './buildsDropdown';
 
 const axios = require('axios').default;
 
-const SAVE_PROTOCOL = 1
+const SAVE_PROTOCOL = 0
 const APP_VERSION = {major: 0, minor: 0, revision: 0}
 const APP_DATE = "16/11/2020" // european format
 const URL_PROTOCOL = 0
@@ -28,7 +28,7 @@ class App extends React.Component {
     this.state = {
       ready: false,
       popup: null,
-      skillbookCategory: "Air",
+      skillbookCategory: "Warrior",
       selectedAspect: null,
       currentFamily: "force",
       currentlyViewedAspect: {family: null, id: null, nodes: []},
@@ -42,20 +42,37 @@ class App extends React.Component {
       currentKeyword: "Abeyance",
       darkMode: true,
       stats: null,
-      text: "", // wait what was this?
 
-      id: uuid(),
+      // should these be saved?
       statCategories: new Set(),
+      buffs: new Set(),
+
+      // stuff that is saved
+      id: uuid(),
+      name: "Lindsay Lohan",
       portrait: "human_m",
       customPortrait: null,
       origin: "custom",
       physique: {
         race: "lizard",
-        gender: "female",
+        // gender: "female",
         lifeType: "alive",
       },
-      // naturally invested attrs
-      attributes: {
+      text: "", // textarea text
+
+      skills: [], // todo make these sets
+      artifacts: [],
+
+      aspects: [],
+      coreNodes: { // todo rework this to use numerical ids
+        force: false,
+        entropy: false,
+        form: false,
+        inertia: false,
+        life: false,
+      },
+
+      attributes: { // naturally invested attrs
         str: 0,
         fin: 0,
         pwr: 0,
@@ -63,9 +80,7 @@ class App extends React.Component {
         mem: 0,
         wits: 0,
       },
-      name: "Lindsay Lohan",
-      skills: [],
-      artifacts: [],
+
       abilities: {
         // combat abilities
         DualWielding: 0,
@@ -88,27 +103,7 @@ class App extends React.Component {
         // Source: 0, -- the player cannot invest into this ingame.
         Polymorph: 0,
       },
-      aspects: [
-        {
-          family: "force",
-          id: "TheFalcon",
-          nodes: [
-            0,
-            2,
-            1,
-            0,
-            0
-          ]
-        }
-      ],
-      coreNodes: {
-        force: false,
-        entropy: false,
-        form: false,
-        inertia: false,
-        life: false,
-      },
-      buffs: new Set(),
+      
       civils: {
         thievery: 0,
         luckycharm: 0,
@@ -117,6 +112,7 @@ class App extends React.Component {
         persuasion: 0,
         telekinesis: 0,
       },
+
       talents: new Set(),
     }
   }
@@ -164,17 +160,20 @@ class App extends React.Component {
     this.setState({
       id: build.id,
       name: build.metadata.name,
-      statCategories: build.statCategories,
       portrait: build.portrait,
       customPortrait: build.customPortrait,
       origin: build.origin,
       physique: build.physique,
-      attributes: build.attributes,
+      text: build.text,
+      
       skills: build.skills,
       artifacts: build.artifacts,
-      abilities: build.abilities,
+      
       aspects: build.aspects,
-      buffs: new Set(build.buffs),
+      coreNodes: build.coreNodes,
+
+      attributes: build.attributes,
+      abilities: build.abilities,
       civils: build.civils,
       talents: new Set(build.talents),
     })
@@ -189,11 +188,7 @@ class App extends React.Component {
   }
 
   saveBuild() {
-    let state = this.state
-
     let save = this.getCurrentBuild()
-
-    // save = JSON.stringify(save)
 
     let storage = window.localStorage.getItem("savedBuilds")
 
@@ -212,7 +207,7 @@ class App extends React.Component {
     console.log(JSON.parse(window.localStorage.getItem("savedBuilds")))
 
     // save which build we were last using, so we can load it next time the app is opened
-    window.localStorage.setItem("lastBuild", state.id)
+    window.localStorage.setItem("lastBuild", save.id)
 
     window.alert("Build saved. Saving also happens automatically when you close the tab.")
   }
@@ -379,26 +374,31 @@ class App extends React.Component {
       format: SAVE_PROTOCOL,
       appVersion: APP_VERSION,
     }
+    let template = {
+      metadata: metadata,
+
+      id: state.id,
+      name: metadata.name,
+      portrait: state.portrait,
+      customPortrait: state.customPortrait,
+      origin: state.origin,
+      physique: state.physique,
+      text: state.text,
+      
+      skills: state.skills,
+      artifacts: state.artifacts,
+      
+      aspects: state.aspects,
+      coreNodes: state.coreNodes,
+
+      attributes: state.attributes,
+      abilities: state.abilities,
+      civils: state.civils,
+      talents: Array.from(state.talents),
+    }
 
     if (!compressed) {
-      return {
-        metadata: metadata,
-        id: state.id,
-        name: metadata.name,
-        origin: state.origin,
-        statCategories: state.statCategories,
-        portrait: state.portrait,
-        customPortrait: state.customPortrait,
-        physique: state.physique,
-        attributes: state.attributes,
-        skills: state.skills,
-        artifacts: state.artifacts,
-        abilities: state.abilities,
-        aspects: state.aspects,
-        buffs: Array.from(state.buffs),
-        civils: state.civils,
-        talents: Array.from(state.talents),
-      }
+      return template;
     }
     else {
       let artifacts = []
@@ -410,25 +410,10 @@ class App extends React.Component {
         skills.push(game.numericalIDs.skills.indexOf(state.skills[x]))
       }
 
-      // todo use a template for this or something
-      return {
-        metadata: metadata,
-        id: state.id,
-        name: metadata.name,
-        origin: state.origin,
-        statCategories: state.statCategories,
-        portrait: state.portrait,
-        customPortrait: state.customPortrait,
-        physique: state.physique,
-        attributes: state.attributes,
-        skills: skills,
-        artifacts: artifacts,
-        abilities: state.abilities,
-        aspects: state.aspects,
-        buffs: Array.from(state.buffs),
-        civils: state.civils,
-        talents: Array.from(state.talents),
-      }
+      template.skills = skills;
+      template.artifacts = artifacts;
+
+      return template
     }
   }
 

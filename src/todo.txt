@@ -78,11 +78,15 @@ X origins
 - set build level
 - open skillbook when skill ability is clicked
 X look into why changing nodes doesnt immediately update
-- show natural inv attributes in tooltip
+X show natural inv attributes in tooltip
 - add lifeType selection
 X reordering skills
 - show sources of stats
-- add the core
+X add the core
+X fix text field not being loaded
+- highlight save button is a build is unsaved, make "save as new" into a dropdown button
 
 -- ISSUES
 - small issue: tooltips from talents expand the page
+- text are edits are lost if you do not unblur before leaving page
+- deleting a build doesn't unload it - is this an issue?

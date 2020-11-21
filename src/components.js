@@ -24,15 +24,36 @@ function AscensionFamilyButton(props) {
 
 export class TextField extends React.Component {
 	constructor() {super(); this.state = {text: ""}}
+	lastId;
 	shouldComponentUpdate(nextProps, nextState) {
-		if (nextProps != this.props)
+		if (nextProps.text != this.state.text) {
 			return true
+		}
 		return false
 	}
+
+	onChange(e) {
+		this.setState({text: e.target.value});
+		e.preventDefault()
+	}
+
+	componentDidMount() {
+		this.lastId = this.props.buildId
+		// this.setState({text: this.props.text})
+	}
+
 	render() {
+		let text = this.state.text
+		if (this.props.buildId != this.lastId) { // yikes there's got to be a better
+			text = this.props.app.state.text;
+			this.state.text = text
+			this.lastId = this.props.buildId;
+		}
+
 		return (
+			// onChange={(e)=>{this.setState({text: e.target.value})}}
 			<Container style={{width: "100%", height: "100%"}}>
-				<textarea tabIndex={0} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}}/>
+				<textarea onChange={this.onChange.bind(this)} tabIndex={0} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}} value={text}></textarea>
 			</Container>
 		)
 	}
@@ -453,7 +474,7 @@ export class MainInterface extends React.Component {
 					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
 						<Attributes app={this.props.app}/>
 						<Ascension app={this.props.app}/>
-						<TextField app={this.props.app}/>
+						<TextField app={this.props.app} buildId={this.props.app.state.id}/>
 					</div>
 				</div>
 			</div>
