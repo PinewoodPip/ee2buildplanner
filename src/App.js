@@ -7,7 +7,8 @@ import { Base64 } from 'js-base64';
 
 import * as utils from "./utils.js"
 import { Game } from "./game.js"
-import { MainInterface, AscensionPopup, Keywords } from "./components.js"
+import { AscensionPopup, Keywords } from "./ascensionComponents.js"
+import { MainInterface } from "./components.js"
 import { Popup, ContextMenu } from "./genericComponents.js"
 import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"

@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { cloneDeep } from "lodash"
 
-import { Embodiments } from "./components.js"
+import { Embodiments } from "./ascensionComponents.js"
 import { Text } from "./genericComponents.js"
 import * as miscData from "./miscData.js"
 import { game } from "./App.js" // how does this not cause any problems...
