@@ -14,6 +14,7 @@ export class Game {
   artifacts = null
   races = miscData.races
   origins = miscData.origins
+  numericalIDs;
 
   ascension = new Ascension()
   images = {

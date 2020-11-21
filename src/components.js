@@ -11,6 +11,7 @@ import { Artifacts } from './artifacts.js';
 import { BuildsDropdown } from './buildsDropdown.js';
 import { clone } from 'underscore';
 import cloneDeep from 'lodash.clonedeep';
+import { uuid } from 'uuidv4';
 
 function AscensionFamilyButton(props) {
 	return (
@@ -194,6 +195,11 @@ function TopBar(props) {
 		<div className="top-bar flexbox-horizontal">
 			<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
 			<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}}/>
+			<GreenButton text="Save New Build" onClick={async (e) => {
+				await props.app.setState({id: uuid()})
+				props.app.saveBuild()
+				}}/>
+			<Icon className="button" img={"export"} onClick={()=>{props.app.exportBuild()}} size="32px"/>
 		</div>
 	)
 }
@@ -306,7 +312,7 @@ function Aspect(props) {
 	})
 
 	return (
-		<AspectListing onContextMenu={func} onClick={func} keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
+		<AspectListing onContextMenu={func} keywords={keywordDisplay} name={info.name} onClick={props.onClick}/>
 	)
 }
 
