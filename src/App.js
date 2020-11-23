@@ -136,10 +136,6 @@ class App extends React.Component {
 
   // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
   async componentDidUpdate(prevProps, prevState) {
-    // if (prevState.lw != this.state.lw) {
-    //   await this.toggleLoneWolf()
-    //   console.log(this.state.lw)
-    // }
     this.stats = game.getStats();
   }
 
@@ -164,7 +160,7 @@ class App extends React.Component {
     }
     this.setState(newState)
     if (adjusted) {
-      window.alert("Your attribute and ability investment has been adjusted to remove overflow.")
+      window.alert("Your attribute and ability investments have been adjusted to remove overflow form becoming Lone Wolf.")
     }
   }
 

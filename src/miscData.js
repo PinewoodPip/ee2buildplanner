@@ -105,6 +105,7 @@ export const talents = {
 	loneWolf: {
 		name: "Lone Wolf",
 		description: "If you are traveling alone or with only one companion, Lone Wolf provides +4 Max AP, +4 Recovery AP, and doubles invested points in attributes - up to a maximum of 40 - and combat abilities (except Polymorph ability) - up to a maximum of 10. This bonus is inactive while there are more than two members in the current party.",
+		unselectable: true,
 	},
 	// pet pal
 	sturdy: {

@@ -63,21 +63,31 @@ function CivilAbilities(props) {
 	)
 }
 
+function Talent(props) {
+	// when tooltips are used we need to use flex-align-start
+	return <div className="flexbox-horizontal flex-align-start full-width">
+		<Tooltip content={props.data.description} placement="right">
+			{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying. */}
+			<TabButton func={props.func} chosen={props.chosen} text={props.data.name} style={{width: "170px"}}/>
+		</Tooltip>
+	</div>
+}
+
 function Talents(props) {
 	let talents = []
+
+	// show lw if this build is made for it
+	if (props.app.state.lw) {
+		talents.push(<Talent key={-1} data={miscData.talents.loneWolf} chosen={true}/>)
+	}
+
 	// show innate talents at the top
 	for (let x in miscData.races[props.app.state.physique.race].talents) {
 		let talent = miscData.talents[miscData.races[props.app.state.physique.race].talents[x]]
-		talents.push(
-			// when tooltips are used we need to use flex-align-start
-			<div className="flexbox-horizontal flex-align-start full-width">
-				<Tooltip content={talent.description} placement="right">
-					{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying */}
-					<TabButton key={x} func={null} chosen={props.app.talents.has(miscData.races[props.app.state.physique.race].talents[x])} text={talent.name} style={{width: "170px"}}/>
-				</Tooltip>
-			</div>
-		)
+		talents.push(<Talent key={x} data={talent} chosen={true}/>)
 	}
+
+	// display all normal talents
 	for (let x in miscData.talents) {
 		let talent = miscData.talents[x]
 
@@ -87,16 +97,9 @@ function Talents(props) {
 		let func = () => {props.app.toggleTalent(x)}
 
 		// not 100% sure why we need a flexbox to make this full-width
-		talents.push(
-			// when tooltips are used we need to use flex-align-start
-			<div className="flexbox-horizontal flex-align-start full-width">
-				<Tooltip content={talent.description} placement="right">
-					{/* theory: 100% width doesn't work here because it'd be 100% width of the tooltip trigger. annoying */}
-					<TabButton key={x} func={func} chosen={props.app.talents.has(x)} text={talent.name} style={{width: "170px"}}/>
-				</Tooltip>
-			</div>
-		)
+		talents.push(<Talent key={x} func={func} data={talent} chosen={props.app.talents.has(x)}/>)
 	}
+	
 	return (
 		<Container className="flexbox-vertical flex-align-start skill-abilities" noBg>
 			<Text text={utils.format("{0} chosen", props.app.state.talents.size)}/>
