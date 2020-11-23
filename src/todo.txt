@@ -90,3 +90,6 @@ X fix text field not being loaded
 - small issue: tooltips from talents expand the page
 - text are edits are lost if you do not unblur before leaving page
 - deleting a build doesn't unload it - is this an issue?
+- cancelling out of deleting a build undoes your changes
+- highlighting skill abilities in stat display no longer works
+- lw checkbox desyncs

@@ -43,8 +43,9 @@ export class Game {
 
   changeAbility(id, increment) {
     let state = cloneDeep(this.app.state.abilities)
+    let maximum = this.app.state.lw ? 5 : 10
     state[id] += increment
-    state[id] = utils.limitRange(state[id], 0, 10)
+    state[id] = utils.limitRange(state[id], 0, maximum)
 
     console.log(this.app.state)
     this.app.setState({abilities: state})
@@ -112,6 +113,9 @@ export class Game {
 
   async changeAttribute(id, increment) {
     let attrs = cloneDeep(this.app.state.attributes)
+    let maxInvestment = miscData.maxNaturalAttributeInvestment
+    if (this.app.state.lw)
+      maxInvestment /= 2
 
     let attr = attrs[id]
 
@@ -122,7 +126,7 @@ export class Game {
     if (this.maxNaturalAttributePoints - this.totalAttributePointsSpent > 0 || increment > 0) {
       if (this.totalAttributePointsSpent + increment > this.maxNaturalAttributePoints)
         return;
-      if (attr + increment > miscData.maxNaturalAttributeInvestment)
+      if (attr + increment > maxInvestment)
         return;
     }
 
@@ -383,39 +387,65 @@ export class Game {
       }
     })
 
-    // strength
-    // addStat({type: "realStats", id: "str", value: stats["flexStat"]["STRENGTH"].amount, source: "Ascension"})
+    // function getRealBaseAttribute(stats, id) {
+    //   let manualInvestment = 
+    // }
+
+    function getInvestedAttribute(id) {
+      let investmentMult = (game.app.state.lw) ? 2 : 1
+      let flexStatIDs = {
+        "str": "STRENGTH",
+        "fin": "FINESSE",
+        "pwr": "INTELLIGENCE",
+        "con": "CONSTITUTION",
+        "mem": "MEMORY",
+        "wits": "WITS",
+      }
+      return (
+        game.app.state.attributes.[id] * investmentMult +
+        stats["flexStat"][flexStatIDs[id]].amount * investmentMult
+      )
+    }
 
     // these are not initialized like normal stats, so we add the default amount manaully
+    let invested = {
+      str: getInvestedAttribute("str"),
+      fin: getInvestedAttribute("fin"),
+      pwr: getInvestedAttribute("pwr"),
+      con: getInvestedAttribute("con"),
+      mem: getInvestedAttribute("mem"),
+      wits: getInvestedAttribute("wits"),
+    }
+
     let realStr = (
       miscData.stats.realStats.str.default +
-      stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str +
-      (stats["flexStat"]["STRENGTH"].amount + game.app.state.attributes.str - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
+      invested.str +
+      (invested.str - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
 
     let realFin = (
       miscData.stats.realStats.fin.default +
-      stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin +
-      (stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
+      invested.fin +
+      (invested.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
 
     let realInt = (
       miscData.stats.realStats.pwr.default +
-      stats["flexStat"]["INTELLIGENCE"].amount + game.app.state.attributes.pwr +
-      (stats["flexStat"]["INTELLIGENCE"].amount + game.app.state.attributes.pwr - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
+      invested.pwr +
+      (invested.pwr - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
 
     let realCon = (
       miscData.stats.realStats.con.default +
-      stats["flexStat"]["CONSTITUTION"].amount + game.app.state.attributes.con +
-      (stats["flexStat"]["CONSTITUTION"].amount + game.app.state.attributes.con - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
+      invested.con +
+      (invested.con - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
 
     let realMem = (
       miscData.stats.realStats.mem.default +
-      stats["flexStat"]["MEMORY"].amount + game.app.state.attributes.mem +
-      (stats["flexStat"]["MEMORY"].amount + game.app.state.attributes.mem - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
+      invested.mem +
+      (invested.mem - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
 
     let realWits = (
       miscData.stats.realStats.wits.default +
-      stats["flexStat"]["WITS"].amount + game.app.state.attributes.wits +
-      (stats["flexStat"]["WITS"].amount + game.app.state.attributes.wits - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
+      invested.wits +
+      (invested.wits - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
 
     stats.realStats["str"] = {type: "realStats", id: "str", amount: realStr}
     stats.realStats["fin"] = {type: "realStats", id: "fin", amount: realFin}
@@ -457,53 +487,55 @@ export class Game {
 
     // abilities
     let abilities = this.app.state.abilities
+    let mult = this.app.state.lw ? 2 : 1
     stats.realStats["warfare"] = {type: "realStats", id: "warfare", amount: (
-      stats.flexStat.WarriorLore.amount + abilities.WarriorLore
+      stats.flexStat.WarriorLore.amount + abilities.WarriorLore * mult
     )}
     stats.realStats["hydrosophist"] = {type: "realStats", id: "hydrosophist", amount: (
-      stats.flexStat.WaterSpecialist.amount + abilities.WaterSpecialist
+      stats.flexStat.WaterSpecialist.amount + abilities.WaterSpecialist * mult
     )}
     stats.realStats["geomancer"] = {type: "realStats", id: "geomancer", amount: (
-      stats.flexStat.EarthSpecialist.amount + abilities.EarthSpecialist
+      stats.flexStat.EarthSpecialist.amount + abilities.EarthSpecialist * mult
     )}
     stats.realStats["necromancer"] = {type: "realStats", id: "necromancer", amount: (
-      stats.flexStat.Necromancy.amount + abilities.Necromancy
+      stats.flexStat.Necromancy.amount + abilities.Necromancy * mult
     )}
     stats.realStats["scoundrel"] = {type: "realStats", id: "scoundrel", amount: (
-      stats.flexStat.RogueLore.amount + abilities.RogueLore
+      stats.flexStat.RogueLore.amount + abilities.RogueLore * mult
     )}
     stats.realStats["huntsman"] = {type: "realStats", id: "huntsman", amount: (
-      stats.flexStat.RangerLore.amount + abilities.RangerLore
+      stats.flexStat.RangerLore.amount + abilities.RangerLore * mult
     )}
     stats.realStats["pyrokinetic"] = {type: "realStats", id: "pyrokinetic", amount: (
-      stats.flexStat.FireSpecialist.amount + abilities.FireSpecialist
+      stats.flexStat.FireSpecialist.amount + abilities.FireSpecialist * mult
     )}
     stats.realStats["summoning"] = {type: "realStats", id: "summoning", amount: (
-      stats.flexStat.Summoning.amount + abilities.Summoning
+      stats.flexStat.Summoning.amount + abilities.Summoning * mult
     )}
+    // poly gets no boost from lw
     stats.realStats["polymorph"] = {type: "realStats", id: "polymorph", amount: (
       stats.flexStat.Polymorph.amount + abilities.Polymorph
     )}
     stats.realStats["dualwielding"] = {type: "realStats", id: "dualwielding", amount: (
-      stats.flexStat.DualWielding.amount + abilities.DualWielding
+      stats.flexStat.DualWielding.amount + abilities.DualWielding * mult
     )}
     stats.realStats["ranged"] = {type: "realStats", id: "ranged", amount: (
-      stats.flexStat.Ranged.amount + abilities.Ranged
+      stats.flexStat.Ranged.amount + abilities.Ranged * mult
     )}
     stats.realStats["singlehanded"] = {type: "realStats", id: "singlehanded", amount: (
-      stats.flexStat.SingleHanded.amount + abilities.SingleHanded
+      stats.flexStat.SingleHanded.amount + abilities.SingleHanded * mult
     )}
     stats.realStats["twohanded"] = {type: "realStats", id: "twohanded", amount: (
-      stats.flexStat.TwoHanded.amount + abilities.TwoHanded
+      stats.flexStat.TwoHanded.amount + abilities.TwoHanded * mult
     )}
     stats.realStats["leadership"] = {type: "realStats", id: "leadership", amount: (
-      stats.flexStat.Leadership.amount + abilities.Leadership
+      stats.flexStat.Leadership.amount + abilities.Leadership * mult
     )}
     stats.realStats["perseverance"] = {type: "realStats", id: "perseverance", amount: (
-      stats.flexStat.Perseverance.amount + abilities.Perseverance
+      stats.flexStat.Perseverance.amount + abilities.Perseverance * mult
     )}
     stats.realStats["retribution"] = {type: "realStats", id: "retribution", amount: (
-      stats.flexStat.PainReflection.amount + abilities.PainReflection
+      stats.flexStat.PainReflection.amount + abilities.PainReflection * mult
     )}
 
     // status effect boosts

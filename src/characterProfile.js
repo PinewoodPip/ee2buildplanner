@@ -39,6 +39,27 @@ function CharacterOrigin(props) {
 	</select>
 }
 
+function Dropdown(props) {
+	let options = []
+	for (let x in props.options) {
+		options.push(<option key={x} value={props.options[x]} selected={props.selected === x}>{props.options[x]}</option>)
+	}
+
+	return <select onChange={props.onChange}>
+		{options}
+	</select>
+}
+
+function FlairedCheckbox(props) {
+	return (
+		<div className="flexbox-horizontal flex-align-start" style={props.style}>
+			<input type="checkbox" value={props.ticked} onChange={props.onChange}/>
+			<div style={{width: "10px"}}/>
+			<Text text={props.text}/>
+		</div>
+	)
+}
+
 export class CharacterProfile extends React.Component {
     render() {
 		// only show race dropdown for custom characters
@@ -51,6 +72,7 @@ export class CharacterProfile extends React.Component {
 					<CharacterName app={this.props.app}/>
 					<CharacterOrigin app={this.props.app}/>
 					{raceDropdown}
+					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
 				</div>
 			</div>
         </Container>

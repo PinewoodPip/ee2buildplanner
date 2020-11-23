@@ -60,6 +60,7 @@ class App extends React.Component {
         lifeType: "alive",
       },
       text: "", // textarea text
+      lw: false,
 
       skills: [], // todo make these sets
       artifacts: [],
@@ -134,9 +135,37 @@ class App extends React.Component {
   }
 
   // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
-  componentDidUpdate(prevState, newState) {
-    // this.setState({stats: game.getStats()})
+  async componentDidUpdate(prevProps, prevState) {
+    // if (prevState.lw != this.state.lw) {
+    //   await this.toggleLoneWolf()
+    //   console.log(this.state.lw)
+    // }
     this.stats = game.getStats();
+  }
+
+  async toggleLoneWolf() {
+    let newState = cloneDeep(this.state)
+    newState.lw = !newState.lw
+    let adjusted = false;
+    if (newState.lw) {
+      // check for overflowed attributes and abilities
+      for (let x in this.state.attributes) {
+        if (this.state.attributes[x] > miscData.maxNaturalAttributeInvestment / 2) {
+          newState.attributes[x] = miscData.maxNaturalAttributeInvestment / 2
+          adjusted = true;
+        }
+      }
+      for (let x in this.state.abilities) {
+        if (this.state.abilities[x] > 5 && x != "Polymorph") {
+          newState.abilities[x] = Math.ceil(this.state.abilities[x] / 2)
+          adjusted = true;
+        }
+      }
+    }
+    this.setState(newState)
+    if (adjusted) {
+      window.alert("Your attribute and ability investment has been adjusted to remove overflow.")
+    }
   }
 
   loadBuild(id, fullBuild=null) {
@@ -166,6 +195,7 @@ class App extends React.Component {
       origin: build.origin,
       physique: build.physique,
       text: build.text,
+      lw: build.lw,
       
       skills: build.skills,
       artifacts: build.artifacts,
@@ -188,7 +218,12 @@ class App extends React.Component {
     return JSON.parse(window.localStorage.getItem("savedBuilds"))
   }
 
-  saveBuild() {
+  saveBuild(e, tabIsBeingClosed=false) {
+    if (tabIsBeingClosed && !utils.hasKey(this.getSavedBuilds(), this.state.id)) {
+      if (!window.confirm("Do you want to save this build before leaving?"))
+        return
+    }
+    
     let save = this.getCurrentBuild()
 
     let storage = window.localStorage.getItem("savedBuilds")
@@ -205,12 +240,13 @@ class App extends React.Component {
       window.localStorage.setItem("savedBuilds", JSON.stringify(obj))
     }
 
-    console.log(JSON.parse(window.localStorage.getItem("savedBuilds")))
-
     // save which build we were last using, so we can load it next time the app is opened
     window.localStorage.setItem("lastBuild", save.id)
 
-    window.alert("Build saved. Saving also happens automatically when you close the tab.")
+    if (!tabIsBeingClosed)
+      window.alert("Build saved. Saving also happens automatically when you close the tab.")
+    
+    // return e.returnValue = "Aasdasd"
   }
 
   changeOrigin(e) {
@@ -347,7 +383,7 @@ class App extends React.Component {
         else {
           // load the last build the user was working on, if it exists
           let lastBuildId = window.localStorage.getItem("lastBuild")
-          if (lastBuildId && lastBuildId in this.getSavedBuilds()) {
+          if (lastBuildId && utils.hasKey(this.getSavedBuilds(), lastBuildId)) {
             console.log(this.getSavedBuilds()[lastBuildId])
             try {this.loadBuild(lastBuildId)}
             catch {window.alert("Your last build could not be loaded.")}
@@ -385,6 +421,7 @@ class App extends React.Component {
       origin: state.origin,
       physique: state.physique,
       text: state.text,
+      lw: state.lw,
       
       skills: state.skills,
       artifacts: state.artifacts,
@@ -470,7 +507,7 @@ class App extends React.Component {
 
       return (
         // tabindex is needed to catch key presses. Outline disables the ugly outline when the element is focused
-        <Beforeunload onBeforeunload={()=>{this.saveBuild()}}>
+        <Beforeunload onBeforeunload={(e)=>{this.saveBuild(e, true)}}>
           <div className="App" tabIndex={-1} style={{outline: "none"}} onKeyDown={(e)=>{this.handleKeyPress(e)}}>
             {contextMenu}
             {popup}

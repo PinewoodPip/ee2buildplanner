@@ -27,7 +27,10 @@ function CivilAbility(props) {
 
 function Ability(props) {
 	let func = (increment) => {game.changeAbility(props.id, increment)}
-	let amountText = utils.format((game.app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), game.app.state.abilities[props.id], game.app.stats.flexStat[props.id].amount)
+	let naturalAmount = game.app.state.abilities[props.id]
+	if (game.app.state.lw && props.id != "Polymorph")
+		naturalAmount *= 2
+	let amountText = utils.format((game.app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), naturalAmount, game.app.stats.flexStat[props.id].amount)
 
 	return	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
 			<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>

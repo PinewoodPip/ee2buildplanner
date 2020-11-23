@@ -581,3 +581,8 @@ select {
 .transparent {
   filter: opacity(50%);
 }
+
+input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
