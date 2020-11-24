@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text } from "./genericComponents.js"
+import { Icon, Container, Text, FileButton } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -37,6 +37,9 @@ export function BuildsDropdown(props) {
     for (let x in buildsList) {
         builds.push(<Build data={buildsList[x]} app={props.app}/>)
     }
+
+    builds.push(<FileButton text="Import build" func={(f)=>{props.app.importBuild(f)}}/>)
+
 	return (
 		<Container className="flexbox-vertical builds-dropdown" noBg>
 			{builds}
@@ -44,6 +47,7 @@ export function BuildsDropdown(props) {
 	)
 }
 
+// UNUSED
 export class ExportMenu extends React.Component {
     render() {
         return <Container className="flexbox-vertical">

@@ -59,7 +59,10 @@ function TopBar(props) {
 				await props.app.setState({id: uuid()})
 				props.app.saveBuild()
 				}}/>
-			<Icon className="button" img={"export"} onClick={()=>{props.app.exportBuild()}} size="32px"/>
+			<div className="flexbox-horizontal top-bar-button" onClick={()=>{props.app.exportBuild()}} style={{width: "150px"}}>
+				<Icon className="button" img={"export"} size="32px"/>
+				<Text text="Export build"/>
+			</div>
 		</div>
 	)
 }

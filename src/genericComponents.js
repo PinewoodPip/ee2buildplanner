@@ -136,3 +136,26 @@ export function ContextMenu(props) {
     </div>
   )
 }
+
+export class FileButton extends React.Component {
+	async getFile(event) {
+		event.stopPropagation();
+		event.preventDefault();
+		var file = event.target.files[0];
+		return file.text()
+	}
+	render() {
+		return(
+			<div className="flexbox-horizontal import-build button" onClick={() => {this.upload.click()}} disabled={(this.props.disabled)}>
+				<Icon size="32px" img="export"/>
+				<Text text="Import build"/>
+			<input id="myInput"
+				type="file"
+				ref={(ref) => this.upload = ref}
+				style={{display: 'none'}}
+				onChange={async (e) => {let file = await this.getFile.bind(this)(e); this.props.func(file)}}
+			/>
+			</div>
+		)
+	}
+}

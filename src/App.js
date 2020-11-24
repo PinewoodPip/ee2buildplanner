@@ -164,6 +164,29 @@ class App extends React.Component {
     }
   }
 
+  importBuild(f) {
+    try {
+      let build = JSON.parse(f)
+      console.log(Object.keys(build.metadata).length)
+      if (build.metadata.format != SAVE_PROTOCOL)
+        throw "";
+      this.loadBuild(null, build)
+    }
+    catch {
+      window.alert("The file you chose is not a valid build.")
+    }
+  }
+
+  exportBuild() {
+    let save = this.getCurrentBuild()
+    let json = JSON.stringify(save, null, 2);
+
+    var FileSaver = require('file-saver');
+    var blob = new Blob([json], {type: "text/plain;charset=utf-8"});
+    FileSaver.saveAs(blob, utils.format("{0}.json", save.metadata.name));
+  }
+
+  // todo more error handling
   loadBuild(id, fullBuild=null) {
     let build;
     if (!fullBuild) {
@@ -204,10 +227,6 @@ class App extends React.Component {
       civils: build.civils,
       talents: new Set(build.talents),
     })
-  }
-
-  exportBuild() {
-    this.setState({popup: "export"})
   }
 
   getSavedBuilds() {

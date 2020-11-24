@@ -1,5 +1,3 @@
-import { game } from "./App.js"
-
 export const races = {
 	human: {
 		name: "Human",

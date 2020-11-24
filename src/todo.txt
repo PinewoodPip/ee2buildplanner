@@ -85,6 +85,7 @@ X reordering skills
 X add the core
 X fix text field not being loaded
 - highlight save button is a build is unsaved, make "save as new" into a dropdown button
+- fancify scrollbars
 
 -- ISSUES
 - small issue: tooltips from talents expand the page
