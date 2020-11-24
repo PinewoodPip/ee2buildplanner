@@ -109,6 +109,13 @@ function SkillTooltip(props) {
 	let realDesc = []
 	for (let x in desc) {
 		realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
+		// let re = />.*</
+		// if (game.app.state.config.highlightSkillKeywords)
+		// 	realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
+		// else {
+		// 	let special = desc[x].match(re)
+		// 	realDesc.push(<Text key={x} text={special != null ? special[0] : desc[x]}/>)
+		// }
 	}
 
 	// action point cost and cooldown

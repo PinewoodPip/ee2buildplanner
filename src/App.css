@@ -176,6 +176,9 @@ hr {
   width: 100%;
 }
 
+.flipped-x {transform: scaleX(-1);}
+.flipped-y {transform: scaleY(-1);}
+
 .lateral-margin {
   margin: 0 10px 0 10px
 }
@@ -319,7 +322,7 @@ hr {
 .top-bar {
   height: 50px;
   width: 100%;
-  background-color: lightslategray;
+  background-color: rgb(57, 76, 94);
 }
 
 .si-button {

@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text } from "./genericComponents.js"
+import { Icon, Container, Text, FlairedCheckbox } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -48,16 +48,6 @@ function Dropdown(props) {
 	return <select onChange={props.onChange}>
 		{options}
 	</select>
-}
-
-function FlairedCheckbox(props) {
-	return (
-		<div className="flexbox-horizontal flex-align-start" style={props.style}>
-			<input type="checkbox" checked={props.ticked} onChange={props.onChange}/>
-			<div style={{width: "10px"}}/>
-			<Text text={props.text}/>
-		</div>
-	)
 }
 
 export class CharacterProfile extends React.Component {

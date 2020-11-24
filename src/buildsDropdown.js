@@ -4,8 +4,6 @@ import React from 'react';
 import { Icon, Container, Text, FileButton } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
-import * as miscData from "./miscData.js"
-import cloneDeep from 'lodash.clonedeep';
 
 function Build(props) {
     let title = props.data.author != null ? "{0} by {1}" : "{0}"

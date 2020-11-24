@@ -88,6 +88,8 @@ X fix text field not being loaded
 - fancify scrollbars
 - improve attributes panel
 - basic weapon choice box
+- prevent tooltips from overflowing
+- featured builds
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

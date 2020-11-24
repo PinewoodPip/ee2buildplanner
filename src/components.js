@@ -3,7 +3,7 @@ import { clone } from 'underscore';
 import cloneDeep from 'lodash.clonedeep';
 import { uuid } from 'uuidv4';
 
-import { Container, Text, Icon, GreenButton } from "./genericComponents.js"
+import { Container, Text, Icon, GreenButton, Flourish, FlairedCheckbox } from "./genericComponents.js"
 import { Ascension } from "./ascensionComponents.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
@@ -12,6 +12,8 @@ import { Skill } from "./skillbook.js"
 import { Attributes } from "./gameStatSheet.js"
 import { Artifacts } from './artifacts.js';
 import { BuildsDropdown } from './buildsDropdown.js';
+import { APP_DATE } from "./App.js"
+import * as utils from "./utils.js"
 
 export class TextField extends React.Component {
 	constructor() {super(); this.state = {text: ""}}
@@ -50,20 +52,79 @@ export class TextField extends React.Component {
 }
 
 function TopBar(props) {
-	return (
-		<div className="top-bar flexbox-horizontal">
-			<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
-			<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}}/>
-			<GreenButton text="Save New Build" onClick={async (e) => {
+	function onContext(e) {
+		props.app.contextMenu([
+			<Text text="Choose an option:"/>,
+			<Text text="Save as a new build" onClick={async (e) => {
 				await props.app.setState({id: uuid()})
 				props.app.saveBuild()
 				}}/>
-			<div className="flexbox-horizontal top-bar-button" onClick={()=>{props.app.exportBuild()}} style={{width: "150px"}}>
-				<Icon className="button" img={"export"} size="32px"/>
-				<Text text="Export build"/>
+		], e)
+	}
+	return (
+		<div className="top-bar flexbox-horizontal flex-align-space-between">
+			<div style={{width: "10px"}}/>
+
+			<div className="flexbox-horizontal flex-align-start" style={{width: "33%"}}>
+				<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
+				<div style={{width: "10px"}}/>
+				<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
+				<div style={{width: "10px"}}/>
+				<div className="flexbox-horizontal top-bar-button" onClick={()=>{props.app.exportBuild()}} style={{width: "150px"}}>
+					<Icon className="button" img={"export"} size="32px"/>
+					<Text text="Export build"/>
+				</div>
 			</div>
+
+			<div className="flexbox-vertical flex-align-centered flex-grow">
+				<Flourish className="flipped-y"/>
+				<Text text="Pip's Build Planner" style={{margin: "-5px", fontSize: "18px"}}/>
+				{/* <Icon img="flourish"/> */}
+				<Flourish/>
+			</div>
+
+			<div className="flexbox-horizontal flex-align-end" style={{width: "33%"}}>
+				<GreenButton text="Featured Builds" onClick={()=>{props.app.setState({popup: "featuredBuilds"})}}/>
+				<div style={{width: "10px"}}/>
+				<GreenButton text="Config" onClick={()=>{props.app.setState({popup: "config"})}}/>
+			</div>
+
+			<div style={{width: "10px"}}/>
 		</div>
 	)
+}
+
+export class Config extends React.Component {
+	toggleSetting(e, key) {
+		let state = clone(this.props.app.state.config)
+		state[key] = !state[key]
+		console.log(state)
+		this.props.app.setState({config: state})
+	}
+	render() {
+		let config = this.props.app.state.config
+		return <Container className="flexbox-vertical flex-align-space-between" style={{width: "600px", height: "500px"}}>
+			<div className="flexbox-horizontal flex-align-end full-width bar">
+				<Text text={"Config"} className={"flex-grow"}/>
+				<Icon className="button" img={"close"} size="32px" onClick={()=>{this.props.app.setState({popup: null})}} app={this.props.app}/>
+			</div>
+
+			<div style={{height: "20px"}}/>
+
+			<div className="flexbox-vertical flex-grow">
+				<FlairedCheckbox text="Highlight keywords in skill tooltips" ticked={config.highlightSkillKeywords} onChange={(e)=>{this.toggleSetting(e, "highlightSkillKeywords")}}/>
+			</div>
+
+			<div className="flexbox-vertical">
+				<hr/>
+				<Text text="App made by PinewoodPip in React."/>
+				<Text text="Epic Encounters 2 mod and app design help by Ameranth &amp; Elric."/>
+				<Text text="Most graphic assets made by Larian."/>
+				<hr/>
+				<Text text={utils.format("App version: {0}", APP_DATE)}/>
+			</div>
+		</Container>
+	}
 }
 
 class Skills extends React.Component {

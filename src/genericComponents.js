@@ -61,9 +61,23 @@ export class TabbedContainer extends React.Component {
 
 export function GreenButton(props) {
 	return (
-		<div className="absolute button" onClick={props.onClick}>
+		<div className="absolute button" onClick={props.onClick} onContextMenu={props.onContextMenu}>
 			<img alt={props.text} style={{width: "150px", height: "30px"}} src={utils.getImage("button_green")}/>
 			<Text text={props.text} className="unselectable"/>
+		</div>
+	)
+}
+
+export function Flourish(props) {
+	return <Icon className={props.className} style={{width: "180px", height: "13px"}} img={"flourish"}/>
+}
+
+export function FlairedCheckbox(props) {
+	return (
+		<div className="flexbox-horizontal flex-align-centered" style={props.style}>
+			<input type="checkbox" checked={props.ticked} onChange={props.onChange}/>
+			<div style={{width: "10px"}}/>
+			<Text text={props.text}/>
 		</div>
 	)
 }

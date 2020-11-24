@@ -8,7 +8,7 @@ import { Base64 } from 'js-base64';
 import * as utils from "./utils.js"
 import { Game } from "./game.js"
 import { AscensionPopup, Keywords } from "./ascensionComponents.js"
-import { MainInterface } from "./components.js"
+import { Config, MainInterface } from "./components.js"
 import { Popup, ContextMenu } from "./genericComponents.js"
 import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"
@@ -20,7 +20,7 @@ const axios = require('axios').default;
 
 const SAVE_PROTOCOL = 0
 const APP_VERSION = {major: 0, minor: 0, revision: 0}
-const APP_DATE = "16/11/2020" // european format
+export const APP_DATE = "16/11/2020" // european format
 const URL_PROTOCOL = 0
 
 class App extends React.Component {
@@ -43,6 +43,10 @@ class App extends React.Component {
       currentKeyword: "Abeyance",
       darkMode: true,
       stats: null,
+
+      config: {
+        highlightSkillKeywords: false,
+      },
 
       // should these be saved?
       statCategories: new Set(),
@@ -508,6 +512,8 @@ class App extends React.Component {
         case "keywords": {popup = <Keywords app={this}/>; break}
         case "artifacts": {popup = <ArtifactsPopup app={this}/>; break}
         case "export": {popup = <ExportMenu app={this}/>}
+        case "config": {popup = <Config app={this}/>; break;}
+        // case "featuredBuilds": {popup = <}
         default: {break}
       }
 
