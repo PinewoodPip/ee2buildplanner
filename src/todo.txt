@@ -93,4 +93,4 @@ X fix text field not being loaded
 - deleting a build doesn't unload it - is this an issue?
 - cancelling out of deleting a build undoes your changes
 - highlighting skill abilities in stat display no longer works
-- lw checkbox desyncs
+- skills dont show if they directly apply stacks (ex. aero touch)

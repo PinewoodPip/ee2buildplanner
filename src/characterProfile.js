@@ -53,7 +53,7 @@ function Dropdown(props) {
 function FlairedCheckbox(props) {
 	return (
 		<div className="flexbox-horizontal flex-align-start" style={props.style}>
-			<input type="checkbox" value={props.ticked} onChange={props.onChange}/>
+			<input type="checkbox" checked={props.ticked} onChange={props.onChange}/>
 			<div style={{width: "10px"}}/>
 			<Text text={props.text}/>
 		</div>

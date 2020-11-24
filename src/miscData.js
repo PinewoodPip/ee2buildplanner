@@ -403,7 +403,6 @@ export const nodesWithExtraKeywords = {
 	Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt: ["Adaptation"],
 	Ascension_ViolentStrike_MUTA_VitalityVoidACT: ["VitalityVoid"],
 	Ascension_VitalityVoid_MUTA_TeleportWithered: ["Wither"],
-	Ascension_Paucity_MUTA_WitherACT_BasicAttack: ["Wither"],
 	Ascension_Predator_MUTA_VoracityACT: ["Voracity"],
 	Ascension_Elementalist_ACT_CenturionOrWeak3: ["Centurion"],
 	Ascension_Centurion_MUTA_RestoreArmorAddDamageFromArmor: ["Ward"],
@@ -413,7 +412,6 @@ export const nodesWithExtraKeywords = {
 	Ascension_VitalityVoid_MUTA_2HDamageFromForce: ["Paucity"],
 	Ascension_Paucity_MUTA_WitherACT_BasicAttack: ["Wither"],
 	Ascension_ViolentStrike_MUTA_GlaciateIgnition: ["Purity"],
-	Ascension_Wither_MUTA_EmulateVampTouchSpendAdapt: ["Adaptation"],
 	Ascension_Prosperity_ACT_Purity: ["Purity"],
 	Ascension_Centurion_ACT_HitAlly_MK2_ACTOnWard: ["Ward"]
 
@@ -1964,6 +1962,30 @@ export const mappings = {
 		"AirSpecialist": "Air",
 		// "Source": "Source",
 		"Polymorph": "Polymorph"
+	},
+	skillDocToGameAbilityName: {
+		"Warrior": "WarriorLore",
+		"Water": "WaterSpecialist",
+		"Earth": "EarthSpecialist",
+		"Death": "Necromancy",
+		"Rogue": "RogueLore",
+		"Ranger": "RangerLore",
+		"Fire": "FireSpecialist",
+		"Summoning": "Summoning",
+		"Air": "AirSpecialist",
+		// "Source": "Source",
+		"Polymorph": "Polymorph"
+	},
+	statusCSS: {
+		"AMER_ATAXIA_APPLY": "text-ataxia",
+        "AMER_DECAYING_APPLY": "text-vulnerable",
+        "AMER_WEAKENED_APPLY": "text-weakened",
+        "AMER_ENTHRALLED_APPLY": "text-subjugated",
+
+        "AMER_SQUELCHED_APPLY": "text-squelched",
+        "AMER_SLOWED_APPLY": "text-slowed",
+        "AMER_BLIND_APPLY": "text-dazzled",
+		"AMER_TERRIFIED_APPLY": "text-terrified",
 	}
 }
 

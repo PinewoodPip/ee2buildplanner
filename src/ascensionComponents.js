@@ -1,12 +1,10 @@
 import './App.css';
 import React from 'react';
 import { clone } from 'underscore';
-import cloneDeep from 'lodash.clonedeep';
 
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
 import * as utils from "./utils.js"
-import { Game } from "./game.js"
 import { Tooltip, Container, Text, Icon, TabButton, GreenButton } from "./genericComponents.js"
 
 export class Ascension extends React.Component {
@@ -257,10 +255,10 @@ function Aspect(props) {
 	let func = null
 	if (props.interactable) {
 		let elements = [
-			<Text text="Select option:"/>,
-			<Text text="Remove" onClick={(e)=>{game.ascension.removeAspect(e, asp.id)}}/>,
-			<Text text="Move up" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, -1)}}/>,
-			<Text text="Move down" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, 1)}}/>
+			<Text key={1} text="Select option:"/>,
+			<Text key={2} text="Remove" onClick={(e)=>{game.ascension.removeAspect(e, asp.id)}}/>,
+			<Text key={3} text="Move up" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, -1)}}/>,
+			<Text key={4} text="Move down" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, 1)}}/>
 		]
 		func = (e) => {props.app.contextMenu(
 			elements, e
@@ -329,7 +327,7 @@ class CoreButtons extends React.Component {
 		for (let x in miscData.embodimentTypesEnum) {
 			let emb = miscData.embodimentTypesEnum[x]
 			let text = this.props.app.state.coreNodes[emb] ? "X" : ""
-			embs.push(<Embodiment type={emb} amount={text} onClick={()=>{this.toggleCoreNode(emb)}}/>)
+			embs.push(<Embodiment key={x} type={emb} amount={text} onClick={()=>{this.toggleCoreNode(emb)}}/>)
 		}
 		return <div className="flexbox-horizontal flex-align-centered">
 			<Text text="Core Nodes:"/>

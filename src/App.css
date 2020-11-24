@@ -494,7 +494,7 @@ hr {
 .text-si-symbol {color: rgb(102, 174, 241)}
 
 .text-pyro {color: rgb(245, 68, 68)}
-.text-geo {color: rgb(110, 77, 28)}
+.text-geo {color: rgb(168, 127, 65)}
 .text-aero {color: rgb(125, 127, 243)}
 .text-water {color: rgb(53, 201, 238)}
 .text-warfare {color: rgb(175, 104, 104)}
@@ -502,16 +502,31 @@ hr {
 .text-poly {color: rgb(207, 199, 90)}
 .text-summon {color: rgb(175, 140, 255)}
 .text-rogue {color: rgb(165, 137, 137)}
-.text-necro {color: rgb(116, 88, 111)}
+.text-necro {color: rgb(165, 126, 158)}
 
 .text-dmg-armor-magic {color: rgb(76, 200, 216)}
-.text-dmg-armor-phys {color: rgb(153, 152, 152)}
-.text-dmg-phys {color: rgb(168, 168, 168)}
+.text-dmg-armor-phys {color: rgb(184, 184, 184)}
+.text-dmg-phys {color: rgb(184, 184, 184)}
 .text-dmg-pierce {color: rgb(223, 96, 96)}
 .text-dmg-air {color:rgb(125, 127, 243)}
 .text-dmg-water {color: rgb(53, 201, 238)}
 .text-dmg-fire {color: rgb(245, 68, 68)}
-.text-dmg-earth {color: rgb(110, 77, 28)}
+.text-dmg-earth {color: rgb(168, 127, 65)}
+
+.text-battered {color: rgb(241, 107, 107)}
+.text-harried {color: rgb(159, 209, 238)}
+
+.text-ap {color: rgb(170, 228, 123)}
+
+.text-ataxia {color: rgb(241, 107, 107)}
+.text-vulnerable {color: rgb(241, 107, 107)}
+.text-subjugated {color: rgb(241, 107, 107)}
+.text-weakened {color: rgb(241, 107, 107)}
+
+.text-squelched {color: rgb(159, 209, 238)}
+.text-terrified {color: rgb(159, 209, 238)}
+.text-slowed {color: rgb(159, 209, 238)}
+.text-dazzled {color: rgb(159, 209, 238)}
 
 /*  */
 

@@ -327,6 +327,21 @@ def highlightKeywords(string):
         "Physical Armor": "text-dmg-armor-phys",
         "Magic Armor": "text-dmg-armor-magic",
         "Weapon Damage": "text-dmg-phys",
+
+        "Battered": "text-battered",
+        "Harried": "text-harried",
+
+        "AP": "text-ap",
+
+        "Ataxia III": "text-ataxia",
+        "Vulnerable III": "text-vulnerable",
+        "Weakened III": "text-weakened",
+        "Subjugated III": "text-subjugated",
+
+        "Squelched III": "text-squelched",
+        "Slowed III": "text-slowed",
+        "Dazzled III": "text-dazzled",
+        "Terrified III": "text-terrified",
     }
 
     newString = string

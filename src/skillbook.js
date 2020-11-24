@@ -123,7 +123,9 @@ function SkillTooltip(props) {
 	for (let x in skill.TieredStatuses) {
 		let status = skill.TieredStatuses[x]
 		if (status in miscData.statusNames) {
-			statuses.push(<Text key={status} text={utils.format("Applies {0}", miscData.statusNames[status])}/>)
+			let text = parser(utils.format("<p>Applies <span class='{0}'>{1}</span></p>", miscData.mappings.statusCSS[status], miscData.statusNames[status]))
+			// statuses.push(<Text key={status} text={text}/>)
+			statuses.push(text)
 		}
 	}
 	let statusesDisplay = null
@@ -135,11 +137,28 @@ function SkillTooltip(props) {
 		</div>
 	}
 
-	let tooltip = <div className="flexbox-vertical">
-		<Text text={skill.DisplayNameRef}/>
-		<Text text={skill.id} className="text-small"/>
+	// school icon & school name
+	let abilityIcon;
+	let schoolName;
+	if (skill.Ability === "None" || skill.Ability == null) {
+		abilityIcon = "ability_Special"
+		schoolName = "Special"
+	}
+	else {
+		abilityIcon = utils.format("ability_{0}", miscData.mappings.skillDocToGameAbilityName[skill.Ability])
+		schoolName = miscData.mappings.abilityNames[skill.Ability]
+	}
 
-		<div style={{height: "10px"}}/>
+	let tooltip = <div className="flexbox-vertical">
+		<Text text={skill.DisplayNameRef} style={{fontSize: "17px", fontWeight: "bold"}}/>
+		{/* <Text text={skill.id} className="text-small"/> */}
+		<div className="flexbox-horizontal flex-align-centered">
+			<Icon size="20px" img={abilityIcon} className=""/>
+			<div style={{width: "5px"}}/>
+			<Text text={schoolName} style={{fontSize: "13px"}}/>
+		</div>
+
+		{/* <div style={{height: "10px"}}/> */}
 
 		<div className="text-si">
 			{realDesc}

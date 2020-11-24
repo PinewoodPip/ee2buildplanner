@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import _ from "underscore";
 
 import { Icon, Container, TabbedContainer, Text, TabButton, Tooltip } from "./genericComponents.js"
 import { game } from "./App.js"
@@ -28,7 +27,7 @@ function CivilAbility(props) {
 function Ability(props) {
 	let func = (increment) => {game.changeAbility(props.id, increment)}
 	let naturalAmount = game.app.state.abilities[props.id]
-	if (game.app.state.lw && props.id != "Polymorph")
+	if (game.app.state.lw && props.id !== "Polymorph")
 		naturalAmount *= 2
 	let amountText = utils.format((game.app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), naturalAmount, game.app.stats.flexStat[props.id].amount)
 

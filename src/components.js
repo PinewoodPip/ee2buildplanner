@@ -3,9 +3,8 @@ import { clone } from 'underscore';
 import cloneDeep from 'lodash.clonedeep';
 import { uuid } from 'uuidv4';
 
-import { Tooltip, Container, Text, Icon, GreenButton } from "./genericComponents.js"
-import { Ascension, AscensionPopup } from "./ascensionComponents.js"
-import * as utils from "./utils.js"
+import { Container, Text, Icon, GreenButton } from "./genericComponents.js"
+import { Ascension } from "./ascensionComponents.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
 import { CharacterProfile } from "./characterProfile.js"
@@ -18,7 +17,7 @@ export class TextField extends React.Component {
 	constructor() {super(); this.state = {text: ""}}
 	lastId;
 	shouldComponentUpdate(nextProps, nextState) {
-		if (nextProps.text != this.state.text) {
+		if (nextProps.text !== this.state.text) {
 			return true
 		}
 		return false
@@ -35,7 +34,7 @@ export class TextField extends React.Component {
 
 	render() {
 		let text = this.state.text
-		if (this.props.buildId != this.lastId) { // yikes there's got to be a better
+		if (this.props.buildId !== this.lastId) { // yikes there's got to be a better way
 			text = this.props.app.state.text;
 			this.state.text = text
 			this.lastId = this.props.buildId;
@@ -75,7 +74,7 @@ class Skills extends React.Component {
 	async reorderSkill(e, id, movement) {
 		let state = cloneDeep(this.props.app.state.skills)
 		let index = this.props.app.state.skills.indexOf(id) + movement
-		state = state.filter((x)=>{return x != id})
+		state = state.filter((x)=>{return x !== id})
 	
 		state.splice(index, 0, id)
 	

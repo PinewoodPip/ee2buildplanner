@@ -23,7 +23,6 @@ export class Game {
   mappings = miscData.mappings
 
   get aboveNaturalAbilityCap() {
-    console.log(this.investedAbilities > this.maxNaturalAbilityPoints)
     return this.investedAbilities > this.maxNaturalAbilityPoints
   }
 
@@ -47,7 +46,6 @@ export class Game {
     state[id] += increment
     state[id] = utils.limitRange(state[id], 0, maximum)
 
-    console.log(this.app.state)
     this.app.setState({abilities: state})
   }
 
@@ -158,7 +156,7 @@ export class Game {
         // stat total
         stats[stat.type][stat.id].amount += stat.value
 
-        if (stats[stat.type][stat.id].sources == undefined)
+        if (stats[stat.type][stat.id].sources == undefined) // eslint-disable-line
           stats[stat.type][stat.id].sources = {}
 
         // per-source tracking
@@ -275,7 +273,7 @@ export class Game {
         // stat total
         stats[stat.type][stat.id].amount += stat.value
 
-        if (stats[stat.type][stat.id].sources == undefined)
+        if (stats[stat.type][stat.id].sources == undefined) // eslint-disable-line
           stats[stat.type][stat.id].sources = {}
 
         // per-source tracking
@@ -299,7 +297,7 @@ export class Game {
     // artifact special toggleable effects.
     this.app.state.buffs.forEach(id => {
       let data = miscData.statuses[id]
-      if (data.type == "special") {
+      if (data.type === "special") {
         switch(data.id) {
           case "PIP_Artifact_DrogsLuck": {
             let investmentBonus = 15 + (2 * stats.flexStat.FireSpecialist.amount) + (4 * game.app.state.civils.luckycharm)
@@ -368,6 +366,8 @@ export class Game {
             // stats.flexStat.ACCURACYBOOST.amount += -0.5 * fin
             addStat({type: "flexStat", id: "DODGEBOOST", value: 1 * fin, source: "Vertigo"})
             addStat({type: "flexStat", id: "ACCURACYBOOST", value: -0.5 * fin, source: "Vertigo"})
+
+            break;
           }
           case "PIP_Talent_Guerrilla": {
             let boost = 40 + (3 * (stats.flexStat.RogueLore.amount + game.app.state.abilities.RogueLore))
@@ -375,6 +375,8 @@ export class Game {
             // stats.flexStat.DAMAGEBOOST.amount += boost
 
             addStat({type: "flexStat", id: "DAMAGEBOOST", value: boost, source: "Guerrilla"})
+
+            break;
           }
           case "PIP_Talent_Hothead": {
             // stats.flexStat.CRITICALCHANCE.amount += 10
@@ -382,6 +384,8 @@ export class Game {
 
             addStat({type: "flexStat", id: "CRITICALCHANCE", value: 10, source: "Hothead"})
             addStat({type: "flexStat", id: "ACCURACYBOOST", value: 10, source: "Hothead"})
+
+            break;
           }
         }
       }
@@ -636,7 +640,7 @@ export class Ascension {
     let asp = this.getBuildAspectById(id)
     let state = cloneDeep(this.app.state.aspects)
 
-    state = state.filter((x)=>{return x.id != asp.id})
+    state = state.filter((x)=>{return x.id !== asp.id})
 
     await this.app.closeContext()
     this.app.setState({aspects: state})
@@ -647,7 +651,7 @@ export class Ascension {
     let asp = this.getBuildAspectById(id)
     let state = cloneDeep(this.app.state.aspects)
     let index = this.app.state.aspects.indexOf(asp) + movement
-    state = state.filter((x)=>{return x.id != asp.id})
+    state = state.filter((x)=>{return x.id !== asp.id})
 
     state.splice(index, 0, asp)
 
@@ -793,7 +797,7 @@ export class Ascension {
   // check if user has aspect in their build
   hasAspect(asp) {
     for (let x in this.app.state.aspects) {
-      if (this.app.state.aspects[x].id == asp.id)
+      if (this.app.state.aspects[x].id === asp.id)
         return true
     }
     return false
@@ -832,7 +836,7 @@ export class Ascension {
     let index = this.app.state.aspects.indexOf(asp)
 
     // edits an aspect in the current build
-    if (mode == "edit") {
+    if (mode === "edit") {
       let state = cloneDeep(this.app.state.aspects)
 
       state[index].nodes[node] = newSubNode
@@ -840,7 +844,7 @@ export class Ascension {
       await this.app.setState({aspects: state})
     }
     // edits an aspect in the Ascension popup/preview
-    else if (mode == "preview-edit") {
+    else if (mode === "preview-edit") {
       let state = cloneDeep(this.app.state.currentlyViewedAspect)
 
       state.nodes[node] = newSubNode
@@ -854,7 +858,7 @@ export class Ascension {
   // todo cleanup
   getAspectElement(asp, interactive=false, mode="edit", skipEmptyEmbs=true) {
     // quit if asp is invalid. this can happen when the user removes an aspect they're viewing
-    if (asp == undefined || asp.id == null)
+    if (asp == null || asp.id == null)
       return null;
 
     // if user has this aspect, override behaviour so edits done to the asp in the popup are reflected in the build
