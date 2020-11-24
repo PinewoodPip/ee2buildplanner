@@ -7,8 +7,9 @@ import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
 
 function IncrementButton(props) {
+	let className = props.disabled ? "disabled" : "button"
 	return (
-		<Icon onContextMenu={props.onContextMenu} img={props.img} onClick={props.onClick} className="button" size="24px"/>
+		<Icon onContextMenu={props.onContextMenu} img={props.img} onClick={props.onClick} className={className} size="24px"/>
 	)
 }
 
@@ -132,12 +133,12 @@ function CombatAbilities(props) {
 }
 
 function Attribute(props) {
-	let disabledDecrement = false
-	let disabledIncrement = false
+	let disabledIncrement = game.attributeIsMaxed(props.id)
+	let disabledDecrement = game.app.state.attributes[props.id] == 0
 	let func = (increment) => {
 		game.changeAttribute(props.id, increment)
 	}
-	let attrName = game.mappings.attributeNamesShort[props.id]
+	let attrName = game.mappings.attributeNames[props.id]
 	// let attrAmount = game.app.state.attributes[props.id]
 	let attrAmount = game.getStats().realStats[props.id].amount
 	let menu = [

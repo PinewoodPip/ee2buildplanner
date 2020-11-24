@@ -79,7 +79,6 @@ X origins
 - open skillbook when skill ability is clicked
 X look into why changing nodes doesnt immediately update
 X show natural inv attributes in tooltip
-- add lifeType selection
 X reordering skills
 - show sources of stats
 X add the core
@@ -90,6 +89,10 @@ X fix text field not being loaded
 - basic weapon choice box
 - prevent tooltips from overflowing
 - featured builds
+- align embs displays
+- changelog in config
+- add lifeType selection
+- add instrument easter egg
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

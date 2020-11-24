@@ -150,6 +150,11 @@ export class Game {
     }
   }
 
+  attributeIsMaxed(id) {
+    let cap = this.app.state.lw ? 15 : 30
+    return this.app.state.attributes[id] >= cap
+  }
+
   getStats() {
     function addStat(stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {

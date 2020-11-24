@@ -1847,6 +1847,14 @@ export const mappings = {
 		"mem": "Mem",
 		"wits": "Wits",
 	},
+	attributeNames: {
+		"str": "Strength",
+		"fin": "Finesse",
+		"pwr": "Power",
+		"con": "Constitution",
+		"mem": "Memory",
+		"wits": "Wits",
+	},
 	attributeIcons: {
 		"str": "strength",
 		"fin": "finesse",

@@ -36,11 +36,11 @@ export class Ascension extends React.Component {
 
 					<CoreButtons app={this.props.app}/>
 					<div className={"flexbox-horizontal flex-align-centered "}>
-						<Text text={"Reqs:"} style={{textAlign: "right"}}/>
+						<Text text={"Reqs:"} style={{width: "100px"}}/>
 						<Embodiments highlightUnmet={true} amounts={game.ascension.getTotalRequirements()}/>
 					</div>
 					<div className="flexbox-horizontal flex-align-centered">
-						<Text text={"Rewards:"} style={{textAlign: "right"}}/>
+						<Text text={"Rewards:"} style={{width: "100px"}}/>
 						<Embodiments amounts={game.ascension.getTotalRewards()}/>
 					</div>
 
@@ -326,11 +326,11 @@ class CoreButtons extends React.Component {
 		let embs = []
 		for (let x in miscData.embodimentTypesEnum) {
 			let emb = miscData.embodimentTypesEnum[x]
-			let text = this.props.app.state.coreNodes[emb] ? "X" : ""
+			let text = this.props.app.state.coreNodes[emb] ? "✓" : ""
 			embs.push(<Embodiment key={x} type={emb} amount={text} onClick={()=>{this.toggleCoreNode(emb)}}/>)
 		}
 		return <div className="flexbox-horizontal flex-align-centered">
-			<Text text="Core Nodes:"/>
+			<Text text="Core Nodes:" style={{width: "100px"}}/>
 			{embs}
 		</div>
 	}

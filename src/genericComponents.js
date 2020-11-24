@@ -53,6 +53,8 @@ export class TabbedContainer extends React.Component {
 						{options}
 					</select>
 				</div>
+				<Flourish style={{marginTop: "-15px"}}/>
+				<div style={{height: "15px"}}/>
 				
                 {this.props.children[this.state.index]}
             </Container>
@@ -69,7 +71,10 @@ export function GreenButton(props) {
 }
 
 export function Flourish(props) {
-	return <Icon className={props.className} style={{width: "180px", height: "13px"}} img={"flourish"}/>
+	let style = props.style ? props.style : {};
+	style.width = "180px"
+	style.height = "13px"
+	return <Icon className={props.className + " "} style={style} img={"flourish"}/>
 }
 
 export function FlairedCheckbox(props) {

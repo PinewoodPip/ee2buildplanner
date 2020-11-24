@@ -62,34 +62,37 @@ function TopBar(props) {
 		], e)
 	}
 	return (
-		<div className="top-bar flexbox-horizontal flex-align-space-between">
-			<div style={{width: "10px"}}/>
+		<div className="flexbox-vertical flex-align-centered">
+			<div className="top-bar flexbox-horizontal flex-align-space-between">
+				<div style={{width: "10px"}}/>
 
-			<div className="flexbox-horizontal flex-align-start" style={{width: "33%"}}>
-				<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
-				<div style={{width: "10px"}}/>
-				<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
-				<div style={{width: "10px"}}/>
-				<div className="flexbox-horizontal top-bar-button" onClick={()=>{props.app.exportBuild()}} style={{width: "150px"}}>
-					<Icon className="button" img={"export"} size="32px"/>
-					<Text text="Export build"/>
+				<div className="flexbox-horizontal flex-align-start" style={{width: "33%"}}>
+					<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
+					<div style={{width: "10px"}}/>
+					<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
+					<div style={{width: "10px"}}/>
+					<div className="flexbox-horizontal top-bar-button" onClick={()=>{props.app.exportBuild()}} style={{width: "150px"}}>
+						<Icon className="button" img={"export"} size="32px"/>
+						<Text text="Export build"/>
+					</div>
 				</div>
-			</div>
 
-			<div className="flexbox-vertical flex-align-centered flex-grow">
-				<Flourish className="flipped-y"/>
-				<Text text="Pip's Build Planner" style={{margin: "-5px", fontSize: "18px"}}/>
-				{/* <Icon img="flourish"/> */}
-				<Flourish/>
-			</div>
+				<div className="flexbox-vertical flex-align-centered flex-grow">
+					<Flourish className="flipped-y"/>
+					<Text text="Pip's Build Planner" style={{margin: "-5px", fontSize: "18px"}}/>
+					{/* <Icon img="flourish"/> */}
+					<Flourish/>
+				</div>
 
-			<div className="flexbox-horizontal flex-align-end" style={{width: "33%"}}>
-				<GreenButton text="Featured Builds" onClick={()=>{props.app.setState({popup: "featuredBuilds"})}}/>
+				<div className="flexbox-horizontal flex-align-end" style={{width: "33%"}}>
+					<GreenButton text="Featured Builds" onClick={()=>{props.app.setState({popup: "featuredBuilds"})}}/>
+					<div style={{width: "10px"}}/>
+					<GreenButton text="Config" onClick={()=>{props.app.setState({popup: "config"})}}/>
+				</div>
+
 				<div style={{width: "10px"}}/>
-				<GreenButton text="Config" onClick={()=>{props.app.setState({popup: "config"})}}/>
 			</div>
-
-			<div style={{width: "10px"}}/>
+			<div className="top-bar-bottom"/>
 		</div>
 	)
 }
