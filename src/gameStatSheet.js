@@ -98,10 +98,13 @@ function Talents(props) {
 		// not 100% sure why we need a flexbox to make this full-width
 		talents.push(<Talent key={x} func={func} data={talent} chosen={props.app.talents.has(x)}/>)
 	}
+
+	// use red text highlight if we pick too many talents
+	let className = props.app.state.talents.size > miscData.maxTalents ? "overflowed" : ""
 	
 	return (
 		<Container className="flexbox-vertical flex-align-start skill-abilities" noBg>
-			<Text text={utils.format("{0} chosen", props.app.state.talents.size)}/>
+			<Text text={utils.format("{0} chosen", props.app.state.talents.size)} className={className}/>
 			{/* wtf... using a % height down below causes the dropdown to be pushed up */}
 			<Container className="flexbox-vertical flex-align-start wrap-y" noBg style={{height: "400px", width: "100%"}}>
 				{talents}

@@ -357,10 +357,11 @@ export const talents = {
 		description: "Spellsong gives you +1 to Persuasion.",
 		unselectable: true,
 	},
-	tradeSecrets: {
-		name: "Trade Secrets",
-		description: "Trade Secrets gives you +1 to Bartering.",
-	},
+	// tradeSecrets: {
+	// 	name: "Trade Secrets",
+	// 	description: "Trade Secrets gives you +1 to Bartering.",
+	// 	innate: true,
+	// },
 	corpseEater: {
 		name: "Corpse Eater",
 		description: "Corpse Eater lets you eat body parts to access the memories of the dead.",
@@ -541,6 +542,7 @@ export const artifactCategories = {
 
 export const playerAttributes = 43
 export const maxNaturalAttributeInvestment = 30
+export const maxTalents = 8 // 5 base, +1 from Karon, +2 from Sworn
 
 // these stat types use strings from the game instead of ones defined by us. Used for non-quantifiable script triggers.
 export const statTypesWithGameStrings = [

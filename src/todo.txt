@@ -57,8 +57,8 @@ X tooltips for keywords
 - atrs add stats like dodge
 X dont rely on containedKeywords for determining keywords, as those also include free charges?
 X txt field
-- dropdown with multiple builds
-- saving/exporting
+X dropdown with multiple builds
+X saving/exporting
 X attr picker
 
 - add the rest of statuses
@@ -70,8 +70,8 @@ X attributes from poly
 
 -- NEW TODO
 X numerical combat ability and skill point allocation
-- warn when you pick too many talents
-- lone wolf
+X warn when you pick too many talents
+X lone wolf
 X bonuses from talents
 X origins
 - on abilities, on right click allow to add custom bonus
@@ -86,6 +86,8 @@ X add the core
 X fix text field not being loaded
 - highlight save button is a build is unsaved, make "save as new" into a dropdown button
 - fancify scrollbars
+- improve attributes panel
+- basic weapon choice box
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

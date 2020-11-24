@@ -553,6 +553,12 @@ export class Game {
       }
     })
 
+    // extra stats from attributes. We should prob have a realStats entry for these?
+    stats.flexStat.PHYSICALARMORBOOST.amount += (3 * (stats.realStats.str.amount - 10))
+    stats.flexStat.MAGICARMORBOOST.amount += (3 * (stats.realStats.str.amount - 10))
+    stats.flexStat.DODGEBOOST.amount += (0.5 * (stats.realStats.fin.amount - 10))
+    stats.flexStat.DAMAGEBOOST.amount += (2.5 * (stats.realStats.pwr.amount - 10))
+
     return stats
   }
 
