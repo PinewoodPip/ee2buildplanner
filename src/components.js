@@ -3,7 +3,7 @@ import { clone } from 'underscore';
 import cloneDeep from 'lodash.clonedeep';
 import { uuid } from 'uuidv4';
 
-import { Container, Text, Icon, GreenButton, Flourish, FlairedCheckbox } from "./genericComponents.js"
+import { Container, Text, Icon, GreenButton, Flourish, FlairedCheckbox, Tooltip } from "./genericComponents.js"
 import { Ascension } from "./ascensionComponents.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
@@ -31,21 +31,21 @@ export class TextField extends React.Component {
 	}
 
 	componentDidMount() {
-		this.lastId = this.props.buildId
+		this.lastId = this.props.lastValue
 	}
 
 	render() {
 		let text = this.state.text
-		if (this.props.buildId !== this.lastId) { // yikes there's got to be a better way
+		if (this.props.lastValue !== this.lastId) { // yikes there's got to be a better way
 			text = this.props.app.state.text;
 			this.state.text = text
-			this.lastId = this.props.buildId;
+			this.lastId = this.props.lastValue;
 		}
 
 		return (
 			// onChange={(e)=>{this.setState({text: e.target.value})}}
-			<Container style={{width: "100%", height: "100%"}}>
-				<textarea onChange={this.onChange.bind(this)} tabIndex={0} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}} value={text}></textarea>
+			<Container style={{width: "100%", height: "100%"}} className={this.props.className} noBg={this.props.noBg}>
+				<textarea onChange={this.onChange.bind(this)} tabIndex={0} onBlur={this.props.onBlur} value={text}></textarea>
 			</Container>
 		)
 	}
@@ -101,9 +101,16 @@ export class Config extends React.Component {
 	toggleSetting(e, key) {
 		let state = clone(this.props.app.state.config)
 		state[key] = !state[key]
-		console.log(state)
 		this.props.app.setState({config: state})
 	}
+
+	setConfigValue(id, val) {
+		let state = clone(this.props.app.state.config)
+		state[id] = val
+		this.props.app.setState({config: state})
+		console.log(state)
+	}
+
 	render() {
 		let config = this.props.app.state.config
 		return <Container className="flexbox-vertical flex-align-space-between" style={{width: "600px", height: "500px"}}>
@@ -115,7 +122,14 @@ export class Config extends React.Component {
 			<div style={{height: "20px"}}/>
 
 			<div className="flexbox-vertical flex-grow">
-				<FlairedCheckbox text="Highlight keywords in skill tooltips" ticked={config.highlightSkillKeywords} onChange={(e)=>{this.toggleSetting(e, "highlightSkillKeywords")}}/>
+				{/* <FlairedCheckbox text="Highlight keywords in skill tooltips" ticked={config.highlightSkillKeywords} onChange={(e)=>{this.toggleSetting(e, "highlightSkillKeywords")}}/> */}
+				<Tooltip content="The name that will be shown when you share your builds with other people." placement="bottom">
+					<div className="flexbox-horizontal">
+						<Text text="Build author name:"/>
+						<div style={{width: "10px"}}/>
+						<TextField lastValue={config.author} app={this.props.app} onBlur={(e) => {this.setConfigValue("author", e.target.value)}} text={config.author} className="author-field" noBg/>
+					</div>
+				</Tooltip>
 			</div>
 
 			<div className="flexbox-vertical">
@@ -202,7 +216,7 @@ export class MainInterface extends React.Component {
 					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
 						<Attributes app={this.props.app}/>
 						<Ascension app={this.props.app}/>
-						<TextField app={this.props.app} buildId={this.props.app.state.id}/>
+						<TextField app={this.props.app} lastValue={this.props.app.state.id} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}}/>
 					</div>
 				</div>
 			</div>

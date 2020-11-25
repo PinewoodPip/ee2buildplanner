@@ -93,6 +93,7 @@ X fix text field not being loaded
 - changelog in config
 - add lifeType selection
 - add instrument easter egg
+- add metadata to saved build list, like author, build role and keywords
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

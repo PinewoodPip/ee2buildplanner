@@ -455,7 +455,13 @@ hr {
 
 /* used for skill abilities */
 .highlighted-bg {
-  background-color: rgb(70, 70, 70);;
+  background-color: rgb(70, 70, 70);
+}
+
+.author-field {
+  width: 150px !important;
+  height: 25px !important;
+  outline: 1px rgb(70, 70, 70) solid;
 }
 
 .underline {

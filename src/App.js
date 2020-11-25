@@ -43,9 +43,11 @@ class App extends React.Component {
       currentKeyword: "Abeyance",
       darkMode: true,
       stats: null,
+      metadata: null, // metadata for builds loaded from file. not always present
 
       config: {
         highlightSkillKeywords: false,
+        author: "",
       },
 
       // should these be saved?
@@ -211,6 +213,7 @@ class App extends React.Component {
     console.log(build)
 
     this.setState({
+      metadata: build.metadata,
       id: build.id,
       name: build.metadata.name,
       portrait: build.portrait,
@@ -235,6 +238,10 @@ class App extends React.Component {
 
   getSavedBuilds() {
     return JSON.parse(window.localStorage.getItem("savedBuilds"))
+  }
+
+  saveConfig() {
+    window.localStorage.setItem("config", JSON.stringify(this.state.config))
   }
 
   saveBuild(e, tabIsBeingClosed=false) {
@@ -364,7 +371,7 @@ class App extends React.Component {
     }
     
     axios.all(promises)
-      .then(function(responses) {
+      .then(async function(responses) {
         game.artifacts = responses[0].data
         game.ascension.aspects = responses[1].data
         game.skills = responses[2].data
@@ -384,6 +391,11 @@ class App extends React.Component {
         catch {
           window.localStorage.removeItem("savedBuilds")
         }
+
+        // load config
+        let savedConfig = window.localStorage.getItem("config")
+        if (savedConfig)
+          await this.setState({config: JSON.parse(savedConfig)})
 
         // check if we're using a build url
         const urlParams = new URLSearchParams(window.location.search)
@@ -426,7 +438,7 @@ class App extends React.Component {
     let metadata = {
       name: state.name,
       portrait: state.portrait,
-      author: "",
+      author: state.metadata ? state.metadata.author : state.config.author,
       format: SAVE_PROTOCOL,
       appVersion: APP_VERSION,
     }
@@ -528,7 +540,7 @@ class App extends React.Component {
 
       return (
         // tabindex is needed to catch key presses. Outline disables the ugly outline when the element is focused
-        <Beforeunload onBeforeunload={(e)=>{this.saveBuild(e, true)}}>
+        <Beforeunload onBeforeunload={(e)=>{this.saveConfig(); this.saveBuild(e, true)}}>
           <div className="App" tabIndex={-1} style={{outline: "none"}} onKeyDown={(e)=>{this.handleKeyPress(e)}}>
             {contextMenu}
             {popup}

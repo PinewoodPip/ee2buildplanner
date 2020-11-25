@@ -6,7 +6,7 @@ import { game } from "./App.js"
 import * as utils from "./utils.js"
 
 function Build(props) {
-    let title = props.data.author != null ? "{0} by {1}" : "{0}"
+    let title = props.data.author != game.app.state.config.author ? "{0} by {1}" : "{0}"
     title = utils.format(title, props.data.metadata.name, props.data.metadata.author)
     function deleteBuild(e) {
         e.preventDefault()
