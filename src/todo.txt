@@ -24,15 +24,15 @@ X close button
 -- Skill sheet
 X skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
 X make rhombe highlighted if you have any skill in the category
-- combat abilities
-- show bonuses from ascensions
+X combat abilities
+X show bonuses from ascensions
 - clicking on a skill name should open the skillbook
 
 -- Top bar
-- name of the app
-- save/load buttons
+X name of the app
+X save/load buttons
 - featured builds gallery
-- options (like turning off formatting)
+X options (like turning off formatting)
 
 -- Ascension
 X truncate long node descs
@@ -89,11 +89,12 @@ X fix text field not being loaded
 - basic weapon choice box
 - prevent tooltips from overflowing
 - featured builds
-- align embs displays
+X align embs displays
 - changelog in config
 - add lifeType selection
 - add instrument easter egg
-- add metadata to saved build list, like author, build role and keywords
+X add metadata to saved build list, like author, build role and keywords
+X save config to localstoarge
 
 -- ISSUES
 - small issue: tooltips from talents expand the page
@@ -102,3 +103,4 @@ X fix text field not being loaded
 - cancelling out of deleting a build undoes your changes
 - highlighting skill abilities in stat display no longer works
 - skills dont show if they directly apply stacks (ex. aero touch)
+- tooltip for enrage is MASSIVE

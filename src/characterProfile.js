@@ -42,10 +42,10 @@ function CharacterOrigin(props) {
 function Dropdown(props) {
 	let options = []
 	for (let x in props.options) {
-		options.push(<option key={x} value={props.options[x]} selected={props.selected === x}>{props.options[x]}</option>)
+		options.push(<option key={x} value={props.options[x]}>{props.options[x]}</option>)
 	}
 
-	return <select onChange={props.onChange}>
+	return <select onChange={props.onChange} value={props.selected}>
 		{options}
 	</select>
 }
@@ -54,6 +54,13 @@ export class CharacterProfile extends React.Component {
     render() {
 		// only show race dropdown for custom characters
 		let raceDropdown = (this.props.app.state.origin === "custom") ? <CharacterRace app={this.props.app}/> : null
+
+		// build role options
+		let roleOptions = {}
+		for (let x in miscData.buildRoles) {
+			roleOptions[x] = miscData.buildRoles[x].name
+		}
+
         return <Container className="character-profile">
             <div className="flexbox-horizontal">
 				<Portrait app={this.props.app}/>
@@ -62,6 +69,7 @@ export class CharacterProfile extends React.Component {
 					<CharacterName app={this.props.app}/>
 					<CharacterOrigin app={this.props.app}/>
 					{raceDropdown}
+					<Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/>
 					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
 				</div>
 			</div>

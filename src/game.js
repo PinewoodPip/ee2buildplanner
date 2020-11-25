@@ -411,7 +411,7 @@ export class Game {
         "wits": "WITS",
       }
       return (
-        game.app.state.attributes.[id] * investmentMult +
+        game.app.state.attributes[id] * investmentMult +
         stats["flexStat"][flexStatIDs[id]].amount * investmentMult
       )
     }
@@ -565,6 +565,14 @@ export class Game {
     stats.flexStat.DAMAGEBOOST.amount += (2.5 * (stats.realStats.pwr.amount - 10))
 
     return stats
+  }
+
+  getKeywordIDsInBuild() {
+    let kws = new Set()
+    for (let x in game.app.keywords) {
+      kws.add(x)
+    }
+    return Array.from(kws)
   }
 
   // apply diminishing returns; used for resistances in the game, if the setting is on

@@ -1999,4 +1999,19 @@ export const mappings = {
 	}
 }
 
+export const buildRoles = {
+	dps: {
+		name: "DPS",
+		icon: "role_dps",
+	},
+	tank: {
+		name: "Tank",
+		icon: "role_tank",
+	},
+	support: {
+		name: "Support",
+		icon: "role_support",
+	},
+}
+
 export const embodimentTypesEnum = ["force", "entropy", "form", "inertia", "life"]

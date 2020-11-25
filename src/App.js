@@ -67,6 +67,7 @@ class App extends React.Component {
       },
       text: "", // textarea text
       lw: false,
+      role: "dps",
 
       skills: [], // todo make these sets
       artifacts: [],
@@ -214,6 +215,7 @@ class App extends React.Component {
 
     this.setState({
       metadata: build.metadata,
+      role: build.metadata.role,
       id: build.id,
       name: build.metadata.name,
       portrait: build.portrait,
@@ -439,6 +441,8 @@ class App extends React.Component {
       name: state.name,
       portrait: state.portrait,
       author: state.metadata ? state.metadata.author : state.config.author,
+      role: state.role,
+      keywords: game.getKeywordIDsInBuild(),
       format: SAVE_PROTOCOL,
       appVersion: APP_VERSION,
     }

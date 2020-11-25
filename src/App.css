@@ -464,6 +464,14 @@ hr {
   outline: 1px rgb(70, 70, 70) solid;
 }
 
+.role-display {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  /* background-color: rgba(70, 70, 70, 0.2); */
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -606,9 +614,17 @@ select {
   height: 100px;
 }
 
+.build-entry:hover {
+  background-color: rgb(70, 70, 70);
+}
+
 .import-build {
   width: 300px;
   height: 50px;
+}
+
+.import-build:hover {
+  background-color: rgb(70, 70, 70);
 }
 
 .builds-dropdown {
