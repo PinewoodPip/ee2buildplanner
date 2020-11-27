@@ -5,7 +5,7 @@ import { clone } from 'underscore';
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
 import * as utils from "./utils.js"
-import { Tooltip, Container, Text, Icon, TabButton, GreenButton } from "./genericComponents.js"
+import { Tooltip, Container, Text, Icon, TabButton, GreenButton, Flourish } from "./genericComponents.js"
 
 export class Ascension extends React.Component {
 	changeCurrentAspect(asp) {
@@ -52,6 +52,8 @@ export class Ascension extends React.Component {
 					</div>
 
 					<div style={{height: "10px"}}/>
+
+					<Flourish style={{marginBottom: "15px"}}/>
 
 					<GreenButton text="Add Aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
 					<GreenButton text="View Stats" onClick={() => {this.props.app.setState({popup: "stats"})}}/>

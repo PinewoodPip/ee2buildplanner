@@ -74,10 +74,7 @@ function TopBar(props) {
 					<div style={{width: "10px"}}/>
 					<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
 					<div style={{width: "10px"}}/>
-					<div className="flexbox-horizontal top-bar-button" onClick={()=>{props.app.exportBuild()}} style={{width: "150px"}}>
-						<Icon className="button" img={"export"} size="32px"/>
-						<Text text="Export build"/>
-					</div>
+					<GreenButton text="Export build" onClick={()=>{props.app.exportBuild()}}/>
 				</div>
 
 				<div className="flexbox-vertical flex-align-centered flex-grow">

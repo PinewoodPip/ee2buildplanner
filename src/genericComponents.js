@@ -85,8 +85,8 @@ export function GreenButton(props) {
 
 export function Flourish(props) {
 	let style = props.style ? props.style : {};
-	style.width = "180px"
-	style.height = "13px"
+	style.width = style.width ? style.width : "180px"
+	style.height = style.height ? style.height : "13px"
 	return <Icon className={props.className + " "} style={style} img={"flourish"}/>
 }
 
