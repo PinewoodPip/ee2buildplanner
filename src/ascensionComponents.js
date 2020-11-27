@@ -20,9 +20,16 @@ export class Ascension extends React.Component {
 			aspects.push(<Aspect key={x} interactable={true} data={asp} app={this.props.app} onClick={()=>{this.changeCurrentAspect(asp)}}/>)
 		}
 
+		// if no aspects are in this build, show a hint on how to use the panel
+		if (aspects.length == 0)
+			aspects = <Text text="Click 'Add Aspect' to add an aspect." className="text-faded"/>
+
 		let currentAspect = null;
 		if (this.props.app.state.selectedAspect != null)
 			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
+
+		if (currentAspect == null)
+			currentAspect = <Text text="When you click on an Aspect, its nodes will show up here." style={{width: "80%"}} className="text-faded"/>
 
 		return <Container style={{height: "100%"}}>
 			<div className="flexbox-horizontal">

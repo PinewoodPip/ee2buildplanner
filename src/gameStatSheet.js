@@ -15,14 +15,28 @@ function IncrementButton(props) {
 
 function CivilAbility(props) {
 	let func = (increment) => {game.changeCivil(props.id, increment)}
-	return <div className="flexbox-horizontal">
-		{/* <Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/> */}
-		<Text style={{width: "50px"}} text={utils.format("{0}:", props.id)}/>
-		<Text style={{width: "25px"}} text={utils.format("{0}", game.app.state.civils[props.id])}/>
+	let disabledDecrement = game.app.state.civils[props.id] == 0
+	let disabledIncrement = game.app.state.civils[props.id] == 10 // todo change later when we add equips
 
-		<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}}/>
-		<IncrementButton img={"add_point"} onClick={()=>{func(1)}}/>
-	</div>
+	return (
+	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
+			<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
+				<Icon className="" img={game.mappings.civilIcons[props.id]} size="24px"/>
+				<div style={{width: "5px"}}/>
+				<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
+					<Text text={utils.format("{0}:", miscData.mappings.civilNames[props.id])}/>
+					<Tooltip content={utils.format("Civil Points invested: {0}", game.app.state.civils[props.id])}>
+						<Text text={utils.format("{0}", game.app.state.civils[props.id])}/>
+					</Tooltip>
+				</div>
+			</div>
+
+			<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}}>
+				<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
+				<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
+			</div>
+		</div>
+		)
 }
 
 function Ability(props) {
@@ -51,12 +65,14 @@ function Ability(props) {
 
 function CivilAbilities(props) {
 	return (
-		<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
+		<Container className="flexbox-vertical flex-align-start full-size" name="Attributes" noBg>
 			<CivilAbility id="bartering"/>
 			<CivilAbility id="luckycharm"/>
 			<CivilAbility id="persuasion"/>
+			<hr/>
 			<CivilAbility id="loremaster"/>
 			<CivilAbility id="telekinesis"/>
+			<hr/>
 			<CivilAbility id="sneaking"/>
 			<CivilAbility id="thievery"/>
 		</Container>
@@ -135,12 +151,16 @@ function CombatAbilities(props) {
 function Attribute(props) {
 	let disabledIncrement = game.attributeIsMaxed(props.id)
 	let disabledDecrement = game.app.state.attributes[props.id] == 0
+
 	let func = (increment) => {
 		game.changeAttribute(props.id, increment)
 	}
+
 	let attrName = game.mappings.attributeNames[props.id]
-	// let attrAmount = game.app.state.attributes[props.id]
-	let attrAmount = game.getStats().realStats[props.id].amount
+
+	// todo fix this
+	let total = game.getStats().realStats[props.id].amount
+
 	let menu = [
 		<Text text="Choose option:"/>,
 		<Text text="Max out" onClick={()=>{game.maximizeAttribute(props.id)}}/>,
@@ -148,18 +168,22 @@ function Attribute(props) {
 	]
 
 	return (
-		<div className="flexbox-horizontal flex-align-centered" style={{height: "30px"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
-			<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
-			<Text style={{width: "50px"}} text={utils.format("{0}:", attrName)}/>
+		<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
+			<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
+				<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
+				<div style={{width: "5px"}}/>
+				<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
+					<Text text={attrName}/>
+					<Tooltip content={utils.format("Attribute Points invested: {0}", game.app.state.attributes[props.id])}>
+						<Text text={utils.format("{0}", total)}/>
+					</Tooltip>
+				</div>
+			</div>
 
-			<Tooltip content={utils.format("Natural investment: {0}", game.app.state.attributes[props.id])}>
-				<Text style={{width: "25px"}} text={utils.format("{0}", attrAmount)}/>
-			</Tooltip>
-
-			<div style={{width: "10px"}}/>
-
-			<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
-			<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
+			<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
+				<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
+				<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
+			</div>
 		</div>
 	)
 }
@@ -210,7 +234,7 @@ export class Attributes extends React.Component {
         let remaining = game.maxNaturalAttributePoints - game.totalAttributePointsSpent
         
 		return <TabbedContainer style={{minWidth: "300px", height: "100%"}}>
-			<Container className="flexbox-vertical flex-align-start skill-abilities" name="Attributes" noBg>
+			<Container name="Attributes" noBg className="flexbox-vertical flex-align-start full-size">
 				<Text text={utils.format("{0} Remaining", remaining)} className={remaining < 0 ? "overflowed" : ""}/>
 
 				<Attribute id="str"/>
@@ -226,7 +250,7 @@ export class Attributes extends React.Component {
 			<Container name="Skill Abilities" noBg className="flexbox-vertical flex-align-start full-size">
 				<SkillAbilities app={this.props.app} noBg/>
 			</Container>
-			<Container name="Civil Abilities" noBg className="flexbox-vertical flex-align-start">
+			<Container name="Civil Abilities" noBg className="flexbox-vertical flex-align-start full-size">
 				<CivilAbilities app={this.props.app} noBg/>
 			</Container>
 			<Container name="Talents" noBg className="flexbox-vertical flex-align-start">

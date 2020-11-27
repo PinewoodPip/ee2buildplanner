@@ -506,6 +506,17 @@ hr {width: 85%;}
   height: 22px;
 }
 
+select {
+  background-color: rgb(70, 70, 70);
+  border: none;
+}
+
+select:hover {
+  filter: brightness(150%);
+}
+
+option {border: none;}
+
 .name-edit {
   padding: 0 !important;
   resize: none;

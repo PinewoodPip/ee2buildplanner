@@ -632,7 +632,7 @@ export class Game {
     return text;
   }
 
-  render() {this.app.forceUpdate()}
+  async render() {await this.app.forceUpdate()}
 }
 
 // class for methods related to ascension mechanics. also holds all aspect data

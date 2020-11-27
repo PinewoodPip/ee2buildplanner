@@ -69,11 +69,11 @@ class App extends React.Component {
       // textarea text
       text:  `This is a text field. You can write whatever you want here.
 
-      ==============================
-      
-      You can use this space to take notes, explain your build's usage, strengths/weaknesses, desired gear, etc.
-      
-      There is no character limit and it will be saved when you save the build.`, 
+==============================
+
+You can use this space to take notes, explain your build's usage, strengths/weaknesses, desired gear, etc.
+
+There is no character limit and it will be saved when you save the build.`, 
       lw: false,
       role: "dps",
 
@@ -128,6 +128,7 @@ class App extends React.Component {
         sneaking: 0,
         persuasion: 0,
         telekinesis: 0,
+        loremaster: 0,
       },
 
       talents: new Set(),

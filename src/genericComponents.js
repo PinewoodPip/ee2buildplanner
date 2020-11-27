@@ -7,6 +7,19 @@ import { cloneDeep } from "lodash"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 
+export function Dropdown(props) {
+	let options = []
+	for (let x in props.options) {
+		options.push(<option key={x} value={x}>{props.options[x]}</option>)
+	}
+
+	console.log(props.selected)
+
+	return <select onChange={props.onChange} value={props.selected}>
+		{options}
+	</select>
+}
+
 // text wrapper component. has support for dark mode on/off toggle
 export function Text(props) {
 	let extraClass = game.app.state.darkMode ? "dark-mode-text" : ""

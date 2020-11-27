@@ -97,7 +97,7 @@ X add metadata to saved build list, like author, build role and keywords
 X save config to localstoarge
 - add scrollbar to builds dropdown
 - make sidebars for the build lists - one element which is the sidebar, other transparent element that has onClick that closes it
-- make the character name box just be a textfield
+X make the character name box just be a textfield
 X when lw overflow is fixed, bring the abilities to their max rather than half their real value
 X add delete-move buttons to aspect listing when hovering overr it
 X pointer cursor for core nodes
@@ -105,6 +105,9 @@ X pointer cursor for core nodes
 X only show alert on saving once
 - "fresh new build" button
 - show effects of combat abils
+- loading build should close dropdown
+X show hint in aspect panel when empty
+- make clickboxes of subnodes better
 
 -- ISSUES
 - small issue: tooltips from talents expand the page
@@ -115,3 +118,4 @@ X only show alert on saving once
 - skills dont show if they directly apply stacks (ex. aero touch)
 - tooltip for enrage is MASSIVE
 - too many keywords ina build prob causes some issue in the builds dropdown
+- min/max attribute option is laggy

@@ -34,7 +34,6 @@ export const lifeType = {
 	},
 }
 
-// todo rename forcedPortrait
 export const origins = {
 	custom: {
 		name: "Custom Character",
@@ -1862,6 +1861,24 @@ export const mappings = {
 		"con": "constitution",
 		"mem": "memory",
 		"wits": "wits",
+	},
+	civilIcons: {
+		"persuasion": "Ability_Persuasion",
+		"sneaking": "Ability_Sneaking",
+		"telekinesis": "Ability_Telekinesis",
+		"thievery": "Ability_Thievery",
+		"loremaster": "Ability_Loremaster",
+		"luckycharm": "Ability_LuckyCharm",
+		"bartering": "Ability_Bartering",
+	},
+	civilNames: {
+		"persuasion": "Persuasion",
+		"sneaking": "Sneaking",
+		"telekinesis": "Telekinesis",
+		"thievery": "Thievery",
+		"loremaster": "Loremaster",
+		"luckycharm": "Lucky Charm",
+		"bartering": "Bartering",
 	},
 	abilityImages: {
 		"WarriorLore": "Ability_Warfare",

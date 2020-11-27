@@ -1,66 +1,44 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text, FlairedCheckbox } from "./genericComponents.js"
+import { Icon, Container, Text, FlairedCheckbox, Dropdown } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
 import cloneDeep from 'lodash.clonedeep';
 import { TextField } from './components';
 
-function CharacterRace(props) {
-	let options = []
-	for (let x in game.races) {
-		options.push(<option key={x} value={x} selected={props.app.state.physique.race === x}>{game.races[x].name}</option>)
-	}
-
-	let func = function(e) {
-		let state = cloneDeep(props.app.state.physique)
+export class CharacterProfile extends React.Component {
+	changeRace(e) {
+		console.log(e.target.value)
+		let state = cloneDeep(this.props.app.state.physique)
 		state.race = e.target.value.toLowerCase()
 		console.log(e.target.value)
-		props.app.setState({physique: state})
+		this.props.app.setState({physique: state})
 	}
 
-	return (<div>
-		<select onChange={func}>
-			{options}
-		</select>
-	</div>)
-}
-
-function CharacterOrigin(props) {
-	let options = []
-	for (let x in miscData.origins) {
-		let origin = miscData.origins[x]
-		options.push(<option key={x} value={x} selected={props.app.state.origin === x}>{origin.name}</option>)
-	}
-
-	return <select onChange={props.app.changeOrigin.bind(props.app)}>
-		{options}
-	</select>
-}
-
-function Dropdown(props) {
-	let options = []
-	for (let x in props.options) {
-		options.push(<option key={x} value={props.options[x]}>{props.options[x]}</option>)
-	}
-
-	return <select onChange={props.onChange} value={props.selected}>
-		{options}
-	</select>
-}
-
-export class CharacterProfile extends React.Component {
     render() {
-		// only show race dropdown for custom characters
-		let raceDropdown = (this.props.app.state.origin === "custom") ? <CharacterRace app={this.props.app}/> : null
-
 		// build role options
 		let roleOptions = {}
 		for (let x in miscData.buildRoles) {
 			roleOptions[x] = miscData.buildRoles[x].name
 		}
+
+		// origin dropdown options
+		let originOptions = {}
+		for (let x in miscData.origins) {
+			let origin = miscData.origins[x]
+			originOptions[x] = origin.name
+		}
+
+		// race options
+		let raceOptions = {}
+		for (let x in game.races) {
+			raceOptions[x] = game.races[x].name
+		}
+
+		// only show race dropdown for custom characters
+		let raceDropdown = (this.props.app.state.origin === "custom character") ? <Dropdown options={raceOptions} onChange={(e)=>{this.changeRace(e)}} selected={this.props.app.state.physique.race}/> : null
 
         return <Container className="character-profile">
             <div className="flexbox-horizontal">
@@ -68,7 +46,7 @@ export class CharacterProfile extends React.Component {
 				{/* <div style={{width: "10px"}}/> */}
 				<div className="flexbox-vertical" style={{width: "180px"}}>
 					<CharacterName app={this.props.app}/>
-					<CharacterOrigin app={this.props.app}/>
+					<Dropdown options={originOptions} onChange={(e)=>{this.props.app.setState({origin: e.target.value})}} selected={this.props.app.state.origin}/>
 					{raceDropdown}
 					<Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/>
 					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
