@@ -168,6 +168,12 @@ class Skills extends React.Component {
 		skillIDs.push(miscData.origins[this.props.app.state.origin].innateSkill)
 		skillIDs.push(miscData.races[this.props.app.state.physique.race].innateSkill)
 
+		// if build has no skills, show a message explaining this element's purpose
+		let usabilityTip = this.props.app.state.skills.length == 0 ?
+		<div className="absolute-centered" style={{bottom: "90%"}}>
+			<Text text="Click the + button to add skills." className="text-faded"/>
+		</div> : null
+
 		if (this.props.app.hasCompleteCore)
 			skillIDs.push("Shout_AMER_Core_GenerateSource")
 
@@ -190,8 +196,9 @@ class Skills extends React.Component {
 
 		return (
 			<Container className="skills">
-				<div className="flexbox-horizontal-list" style={{margin: "10px"}}>
+				<div className="flexbox-horizontal-list" style={{margin: "10px", position: "relative"}}>
 					{skills}
+					{usabilityTip}
 				</div>
 			</Container>
 		)

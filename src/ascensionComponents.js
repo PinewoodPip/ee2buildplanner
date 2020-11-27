@@ -232,7 +232,7 @@ export function Embodiments(props) {
 			embs.push(<Embodiment key={x} className={className} type={x} amount={props.amounts[x]}/>)
 		}
 	}
-	return <div className="flexbox-horizontal flex-align-centered" style={{width: "unset", ...props.style}}>
+	return <div className={"flexbox-horizontal flex-align-centered"} style={{width: "unset", ...props.style}}>
 		{embs}
 	</div>
 }
@@ -275,15 +275,28 @@ function Aspect(props) {
 	)
 }
 
-function AspectListing(props) {
-	return (
-		<div onContextMenu={props.onContextMenu} className="flexbox-horizontal flex-align-centered aspect" onClick={props.onClick}>
-			<Text text={props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
-			<div style={{width: "50%", margin: "0 5px 0 5px"}} className="flexbox-horizontal flex-align-centered">
-				{props.keywords}
+class AspectListing extends React.Component {
+	constructor() {super(); this.state = {beingHovered: false}}
+
+	render() {
+		// only add :hover class if this is clickable (there is 1 'fake' instance of this component, used as a header)
+		let extraClass = this.props.onClick ? "hoverable" : ""
+		let dropdownIcon = this.state.beingHovered && this.props.onClick ? 
+		<div className="aspect-dropdown-button" onClick={(e)=>{e.stopPropagation(); this.props.onContextMenu(e)}}>
+			<Icon img={"dropdown"} size="24px"/>
+		</div> : null
+
+		return (
+			<div onContextMenu={this.props.onContextMenu} className={"flexbox-horizontal flex-align-centered aspect " + extraClass} onClick={this.props.onClick} style={{position: "relative"}} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
+				<Text text={this.props.name} style={{margin: "0 5px 0 5px", width: "50%"}}/>
+				<div style={{width: "50%", margin: "0 5px 0 5px"}} className="flexbox-horizontal flex-align-centered">
+					{this.props.keywords}
+				</div>
+
+				{dropdownIcon}
 			</div>
-		</div>
-	)
+		)
+	}
 }
 
 function Keyword(props) {
@@ -307,7 +320,7 @@ function AscensionFamilyButton(props) {
 function Embodiment(props) {
 	return (
 	<Tooltip content={utils.capitalize(props.type)}>
-		<div className={"embodiment " + props.type + " " + props.className} onClick={props.onClick}>
+		<div className={"embodiment " + props.type + " " + props.className} onClick={props.onClick} style={props.style}>
 			<Text text={props.amount}></Text>
 		</div>
 	</Tooltip>
@@ -327,7 +340,7 @@ class CoreButtons extends React.Component {
 		for (let x in miscData.embodimentTypesEnum) {
 			let emb = miscData.embodimentTypesEnum[x]
 			let text = this.props.app.state.coreNodes[emb] ? "✓" : ""
-			embs.push(<Embodiment key={x} type={emb} amount={text} onClick={()=>{this.toggleCoreNode(emb)}}/>)
+			embs.push(<Embodiment key={x} type={emb} amount={text} onClick={()=>{this.toggleCoreNode(emb)}} className="button"/>)
 		}
 		return <div className="flexbox-horizontal flex-align-centered">
 			<Text text="Core Nodes:" style={{width: "100px"}}/>

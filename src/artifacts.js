@@ -14,10 +14,18 @@ export class Artifacts extends React.Component {
             artifacts.push(<Artifact key={x} data={art} onClick={()=>{game.removeArtifact(art.id)}}/>)
         }
 
+        // if build has no artifacts, show a message explaining this element's purpose
+		let usabilityTip = this.props.app.state.artifacts.length == 0 ?
+		<div className="absolute-centered" style={{bottom: "90%", width: "100%"}}>
+			<Text text="Click the + button to add artifacts." className="text-faded"/>
+		</div> : null
+
         return <Container className="skills">
-            <div className="flexbox-horizontal-list" style={{margin: "10px", height: "100%"}}>
+            <div className="flexbox-horizontal-list" style={{margin: "10px", height: "100%", position: "relative"}}>
                 {artifacts}
                 <Icon className="button" borderless={true} img={"add"} size="64px" onClick={()=>{this.props.app.setState({popup: "artifacts"})}}/>
+
+                {usabilityTip}
             </div>
         </Container>
     }

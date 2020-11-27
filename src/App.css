@@ -154,19 +154,30 @@ textarea::-webkit-scrollbar {
   overflow-y: scroll;
 }
 
-hr {
-  /* border: 0.5px black solid; */
-  width: 85%;
-}
+hr {width: 85%;}
 
 .aspect {
   min-height: 32px;
-  cursor: pointer;
 }
 
-.aspect:hover {
-  background-color: rgb(70, 70, 70);
+.aspect-dropdown-button {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
 }
+
+.absolute-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* .aspect:hover {
+  background-color: rgb(70, 70, 70);
+} */
 
 .flex-align-end {
   justify-content: flex-end !important;
@@ -553,6 +564,8 @@ hr {
 .text-slowed {color: rgb(159, 209, 238)}
 .text-dazzled {color: rgb(159, 209, 238)}
 
+.text-faded {color: rgb(109, 109, 109) !important}
+
 /*  */
 
 .popup-cover {
@@ -644,3 +657,5 @@ input[type="checkbox"] {
   outline: 1px solid rgb(150, 90, 55);
   background-color: rgb(187, 128, 93);
 }
+
+.hoverable:hover {background-color: rgb(70, 70, 70); cursor: pointer;}

@@ -48,6 +48,7 @@ class App extends React.Component {
       config: {
         highlightSkillKeywords: false,
         author: "",
+        hasSeenSaveAlert: false,
       },
 
       // should these be saved?
@@ -65,7 +66,14 @@ class App extends React.Component {
         // gender: "female",
         lifeType: "alive",
       },
-      text: "", // textarea text
+      // textarea text
+      text:  `This is a text field. You can write whatever you want here.
+
+      ==============================
+      
+      You can use this space to take notes, explain your build's usage, strengths/weaknesses, desired gear, etc.
+      
+      There is no character limit and it will be saved when you save the build.`, 
       lw: false,
       role: "dps",
 
@@ -151,7 +159,7 @@ class App extends React.Component {
     newState.lw = !newState.lw
     let adjusted = false;
     if (newState.lw) {
-      // check for overflowed attributes and abilities
+      // check for overflowed attributes and abilities and fix them
       for (let x in this.state.attributes) {
         if (this.state.attributes[x] > miscData.maxNaturalAttributeInvestment / 2) {
           newState.attributes[x] = miscData.maxNaturalAttributeInvestment / 2
@@ -160,14 +168,14 @@ class App extends React.Component {
       }
       for (let x in this.state.abilities) {
         if (this.state.abilities[x] > 5 && x != "Polymorph") {
-          newState.abilities[x] = Math.ceil(this.state.abilities[x] / 2)
+          newState.abilities[x] = 5
           adjusted = true;
         }
       }
     }
     this.setState(newState)
     if (adjusted) {
-      window.alert("Your attribute and ability investments have been adjusted to remove overflow form becoming Lone Wolf.")
+      window.alert("Your attribute and ability investments have been adjusted to remove overflow from becoming Lone Wolf.")
     }
   }
 
@@ -271,8 +279,14 @@ class App extends React.Component {
     // save which build we were last using, so we can load it next time the app is opened
     window.localStorage.setItem("lastBuild", save.id)
 
-    if (!tabIsBeingClosed)
+    if (!tabIsBeingClosed && !this.state.config.hasSeenSaveAlert) {
       window.alert("Build saved. Saving also happens automatically when you close the tab.")
+
+      let config = cloneDeep(this.state.config)
+      config.hasSeenSaveAlert = true;
+
+      this.setState({config: config})
+    }
     
     // return e.returnValue = "Aasdasd"
   }
