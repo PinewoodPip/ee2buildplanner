@@ -85,7 +85,7 @@ X add the core
 X fix text field not being loaded
 - highlight save button is a build is unsaved, make "save as new" into a dropdown button
 - fancify scrollbars
-- improve attributes panel
+X improve attributes panel
 - basic weapon choice box
 - prevent tooltips from overflowing
 - featured builds

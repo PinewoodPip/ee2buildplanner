@@ -15,6 +15,7 @@ import { SkillBook } from "./skillbook.js"
 import { ArtifactsPopup } from "./artifacts.js"
 import * as miscData from "./miscData.js"
 import { ExportMenu } from './buildsDropdown';
+import { clone } from 'underscore';
 
 const axios = require('axios').default;
 
@@ -148,6 +149,12 @@ There is no character limit and it will be saved when you save the build.`,
         return false
     }
     return true
+  }
+
+  changeLifeType(id) {
+    let state = clone(this.state.physique)
+    state.lifeType = id
+    this.setState({physique: state})
   }
 
   // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them

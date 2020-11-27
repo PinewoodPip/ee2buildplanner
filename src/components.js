@@ -169,7 +169,11 @@ class Skills extends React.Component {
 
 		// origin and race-specific skills
 		skillIDs.push(miscData.origins[this.props.app.state.origin].innateSkill)
-		skillIDs.push(miscData.races[this.props.app.state.physique.race].innateSkill)
+
+		if (this.props.app.state.physique.lifeType != "undead")
+			skillIDs.push(miscData.races[this.props.app.state.physique.race].innateSkill)
+		else
+			skillIDs.push("Target_AMER_VampiricTouch")
 
 		// if build has no skills, show a message explaining this element's purpose
 		let usabilityTip = this.props.app.state.skills.length == 0 ?

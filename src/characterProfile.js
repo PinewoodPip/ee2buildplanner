@@ -37,8 +37,13 @@ export class CharacterProfile extends React.Component {
 			raceOptions[x] = game.races[x].name
 		}
 
+		let lifeTypes = {alive: miscData.lifeType.living.name, undead: miscData.lifeType.undead.name}
+		let lifeType = this.props.app.state.origin == "custom" ?
+		<Dropdown options={lifeTypes} onChange={(e)=>{this.props.app.changeLifeType(e.target.value)}} selected={this.props.app.state.physique.lifeType}/>
+		: null
+
 		// only show race dropdown for custom characters
-		let raceDropdown = (this.props.app.state.origin === "custom character") ? <Dropdown options={raceOptions} onChange={(e)=>{this.changeRace(e)}} selected={this.props.app.state.physique.race}/> : null
+		let raceDropdown = (this.props.app.state.origin === "custom") ? <Dropdown options={raceOptions} onChange={(e)=>{this.changeRace(e)}} selected={this.props.app.state.physique.race}/> : null
 
         return <Container className="character-profile">
             <div className="flexbox-horizontal">
@@ -46,9 +51,17 @@ export class CharacterProfile extends React.Component {
 				{/* <div style={{width: "10px"}}/> */}
 				<div className="flexbox-vertical" style={{width: "180px"}}>
 					<CharacterName app={this.props.app}/>
-					<Dropdown options={originOptions} onChange={(e)=>{this.props.app.setState({origin: e.target.value})}} selected={this.props.app.state.origin}/>
-					{raceDropdown}
+
+					<Dropdown options={originOptions} onChange={(e)=>{this.props.app.changeOrigin(e)}} selected={this.props.app.state.origin}/>
+
+					<div className="flexbox-horizontal flex-align-centered">
+						{raceDropdown}
+
+						{lifeType}
+					</div>
+
 					<Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/>
+
 					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
 				</div>
 			</div>

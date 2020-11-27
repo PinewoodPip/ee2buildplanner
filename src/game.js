@@ -476,9 +476,9 @@ export class Game {
     let realResEarth = (
       stats.flexStat.EARTHRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
     )
-    let realResPoison = (
+    let realResPoison = this.app.state.physique.lifeType != "undead" ? (
       stats.flexStat.POISONRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
-    )
+    ) : 200
     let realResWater = (
       stats.flexStat.WATERRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
     )
@@ -491,7 +491,13 @@ export class Game {
     stats.realStats["res_fire"] = {type: "realStats", id: "res_fire", amount: this.applyDR(realResFire)}
     stats.realStats["res_water"] = {type: "realStats", id: "res_water", amount: this.applyDR(realResWater)}
     stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
-    stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
+
+    // todo fix
+    if (this.app.state.physique.lifeType != "undead")
+      stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
+    else
+      stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: realResPoison}
+
     stats.realStats["res_air"] = {type: "realStats", id: "res_air", amount: this.applyDR(realResAir)}
 
     // abilities
