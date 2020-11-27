@@ -87,7 +87,7 @@ body {
 }
 
 .artifact {
-  outline: 1px slategray solid;
+  /* outline: 1px slategray solid; */
 }
 
 .flex-wrap {
@@ -141,6 +141,10 @@ body {
 
 textarea::-webkit-scrollbar {
   /* interestingly, this must exist for the custom scrollbar to work, and it must not be within the regular ::-webkit-scrollbar style. */
+  display: block;
+}
+
+div::-webkit-scrollbar {
   display: block;
 }
 
@@ -503,7 +507,7 @@ hr {width: 85%;}
   width: 100%;
   margin-top: 5px;
   margin-right: 20px;
-  height: 22px;
+  height: 55px;
 }
 
 select {
@@ -669,6 +673,7 @@ select {
   filter: opacity(50%);
 }
 
+/* can't style the inner part directly */
 input[type="checkbox"] {
   height: 25px;
   width: 25px;

@@ -46,21 +46,30 @@ export class CharacterProfile extends React.Component {
 		let raceDropdown = (this.props.app.state.origin === "custom") ? <Dropdown options={raceOptions} onChange={(e)=>{this.changeRace(e)}} selected={this.props.app.state.physique.race}/> : null
 
         return <Container className="character-profile">
-            <div className="flexbox-horizontal">
+            <div className="flexbox-horizontal flex-align-centered">
 				<Portrait app={this.props.app}/>
 				{/* <div style={{width: "10px"}}/> */}
-				<div className="flexbox-vertical" style={{width: "180px"}}>
+				<div className="flexbox-vertical flex-align-start" style={{width: "180px", height: "150px"}}>
 					<CharacterName app={this.props.app}/>
 
-					<Dropdown options={originOptions} onChange={(e)=>{this.props.app.changeOrigin(e)}} selected={this.props.app.state.origin}/>
+					{/* oh god bless this solved the clipping */}
+					<div className="flexbox-vertical flex-grow flex-align-start">
+						<Dropdown options={originOptions} onChange={(e)=>{this.props.app.changeOrigin(e)}} selected={this.props.app.state.origin}/>
 
-					<div className="flexbox-horizontal flex-align-centered">
-						{raceDropdown}
+						<div style={{height: "2px"}}/>
 
-						{lifeType}
+						<div className="flexbox-horizontal flex-align-centered">
+							{raceDropdown}
+
+							<div style={{width: "2px"}}/>
+
+							{lifeType}
+						</div>
+
+						<div style={{height: "2px"}}/>
+
+						<Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/>
 					</div>
-
-					<Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/>
 
 					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
 				</div>
@@ -104,19 +113,5 @@ function CharacterName(props) {
 		<div className="flexbox-horizontal name-edit-container">
 			<TextField app={props.app} text={props.app.state.name} lastValue={props.app.state.id} textareaClass="name-edit" onBlur={(e)=>{props.app.setState({name: e.target.value})}} stateKey="name" noBg/>
 		</div>
-	)
-}
-
-function CharacterNameEditButton(props) {
-	let func = () => {
-        let newName = window.prompt("Enter a name for this character:")
-		newName = (newName != null && !utils.isEmptyString(newName)) ? newName : props.app.state.name
-		props.app.setState({name: newName})
-	}
-
-	return (
-		<Icon img={"name_edit"} className="name-edit button" onClick={()=>{func()}}>
-			{/* todo */}
-		</Icon>
 	)
 }

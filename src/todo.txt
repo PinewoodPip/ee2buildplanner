@@ -91,7 +91,7 @@ X improve attributes panel
 - featured builds
 X align embs displays
 - changelog in config
-- add lifeType selection
+X add lifeType selection
 - add instrument easter egg
 X add metadata to saved build list, like author, build role and keywords
 X save config to localstoarge
@@ -108,6 +108,8 @@ X only show alert on saving once
 - loading build should close dropdown
 X show hint in aspect panel when empty
 - make clickboxes of subnodes better
+- don't push charname around when changing origin
+- attr display is bugged
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

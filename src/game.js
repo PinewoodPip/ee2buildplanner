@@ -411,8 +411,8 @@ export class Game {
         "wits": "WITS",
       }
       return (
-        game.app.state.attributes[id] * investmentMult +
-        stats["flexStat"][flexStatIDs[id]].amount * investmentMult
+        (game.app.state.attributes[id] +
+        stats["flexStat"][flexStatIDs[id]].amount) * investmentMult
       )
     }
 
@@ -429,32 +429,32 @@ export class Game {
     let realStr = (
       miscData.stats.realStats.str.default +
       invested.str +
-      (invested.str - 10)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
+      (invested.str)*(stats["extendedStat"].PercAttributeIncrease_Strength.amount/100))
 
     let realFin = (
       miscData.stats.realStats.fin.default +
       invested.fin +
-      (invested.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
+      (invested.fin)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100))
 
     let realInt = (
       miscData.stats.realStats.pwr.default +
       invested.pwr +
-      (invested.pwr - 10)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
+      (invested.pwr)*(stats["extendedStat"].PercAttributeIncrease_Intelligence.amount/100))
 
     let realCon = (
       miscData.stats.realStats.con.default +
       invested.con +
-      (invested.con - 10)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
+      (invested.con)*(stats["extendedStat"].PercAttributeIncrease_Constitution.amount/100))
 
     let realMem = (
       miscData.stats.realStats.mem.default +
       invested.mem +
-      (invested.mem - 10)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
+      (invested.mem)*(stats["extendedStat"].PercAttributeIncrease_Memory.amount/100))
 
     let realWits = (
       miscData.stats.realStats.wits.default +
       invested.wits +
-      (invested.wits - 10)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
+      (invested.wits)*(stats["extendedStat"].PercAttributeIncrease_Wits.amount/100))
 
     stats.realStats["str"] = {type: "realStats", id: "str", amount: realStr}
     stats.realStats["fin"] = {type: "realStats", id: "fin", amount: realFin}
