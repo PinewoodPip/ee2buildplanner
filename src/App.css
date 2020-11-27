@@ -112,7 +112,7 @@ body {
   /* align-items: flex-start; */
 }
 
-textarea {
+.textarea {
   height: 93%;
   width: 85%; /* gotta figure out why padding doesn't do this for me */
   background-color: transparent;
@@ -498,13 +498,23 @@ hr {width: 85%;}
   height: 100%;
 }
 
-.name-edit-container Text {
+.name-edit-container {
   overflow: hidden;
+  width: 100%;
+  margin-top: 5px;
+  margin-right: 20px;
+  height: 22px;
 }
 
 .name-edit {
-  width: 55px;
-  height: 33px;
+  padding: 0 !important;
+  resize: none;
+  background: none;
+  outline: none;
+  border: none;
+  color: whitesmoke;
+  font-size: 17px;
+  text-align: center;
 }
 
 .portrait {

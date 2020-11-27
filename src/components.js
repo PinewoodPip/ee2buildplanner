@@ -37,7 +37,10 @@ export class TextField extends React.Component {
 	render() {
 		let text = this.state.text
 		if (this.props.lastValue !== this.lastId) { // yikes there's got to be a better way
-			text = this.props.app.state.text;
+			text = this.props.app.state[this.props.stateKey];
+			if (this.props.stateSubKey)
+				text = text[this.props.stateSubKey];
+
 			this.state.text = text
 			this.lastId = this.props.lastValue;
 		}
@@ -45,7 +48,7 @@ export class TextField extends React.Component {
 		return (
 			// onChange={(e)=>{this.setState({text: e.target.value})}}
 			<Container style={{width: "100%", height: "100%"}} className={this.props.className} noBg={this.props.noBg}>
-				<textarea onChange={this.onChange.bind(this)} tabIndex={0} onBlur={this.props.onBlur} value={text}></textarea>
+				<textarea onChange={this.onChange.bind(this)} tabIndex={0} onBlur={this.props.onBlur} value={text} className={this.props.textareaClass}></textarea>
 			</Container>
 		)
 	}
@@ -127,7 +130,7 @@ export class Config extends React.Component {
 					<div className="flexbox-horizontal">
 						<Text text="Build author name:"/>
 						<div style={{width: "10px"}}/>
-						<TextField lastValue={config.author} app={this.props.app} onBlur={(e) => {this.setConfigValue("author", e.target.value)}} text={config.author} className="author-field" noBg/>
+						<TextField lastValue={config.author} app={this.props.app} onBlur={(e) => {this.setConfigValue("author", e.target.value)}} text={config.author} className="author-field" noBg stateKey="config" stateSubKey="author"/>
 					</div>
 				</Tooltip>
 			</div>
@@ -223,7 +226,7 @@ export class MainInterface extends React.Component {
 					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
 						<Attributes app={this.props.app}/>
 						<Ascension app={this.props.app}/>
-						<TextField app={this.props.app} lastValue={this.props.app.state.id} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}}/>
+						<TextField app={this.props.app} lastValue={this.props.app.state.id} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}} stateKey="text" textareaClass="textarea"/>
 					</div>
 				</div>
 			</div>

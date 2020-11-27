@@ -6,6 +6,7 @@ import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
 import cloneDeep from 'lodash.clonedeep';
+import { TextField } from './components';
 
 function CharacterRace(props) {
 	let options = []
@@ -64,8 +65,8 @@ export class CharacterProfile extends React.Component {
         return <Container className="character-profile">
             <div className="flexbox-horizontal">
 				<Portrait app={this.props.app}/>
-				<div style={{width: "10px"}}/>
-				<div className="flexbox-vertical">
+				{/* <div style={{width: "10px"}}/> */}
+				<div className="flexbox-vertical" style={{width: "180px"}}>
 					<CharacterName app={this.props.app}/>
 					<CharacterOrigin app={this.props.app}/>
 					{raceDropdown}
@@ -110,9 +111,7 @@ export function Portrait(props) {
 function CharacterName(props) {
 	return (
 		<div className="flexbox-horizontal name-edit-container">
-			<Text text={props.app.state.name}/>
-			<div style={{width: "20px"}}/>
-			<CharacterNameEditButton app={props.app}/>
+			<TextField app={props.app} text={props.app.state.name} lastValue={props.app.state.id} textareaClass="name-edit" onBlur={(e)=>{props.app.setState({name: e.target.value})}} stateKey="name" noBg/>
 		</div>
 	)
 }
