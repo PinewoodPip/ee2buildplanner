@@ -133,21 +133,25 @@ export class Game {
     await this.app.setState({attributes: attrs})
   }
 
-  // todo redo these; changing the state so many times lags a lot.
-  async maximizeAttribute(id) {
-    let amount = this.totalAttributePointsSpent
-    while (amount < this.maxNaturalAttributePoints) {
-      await this.changeAttribute(id, 1)
-      amount++;
-    }
+  maximizeAttribute(id) {
+    let state = cloneDeep(this.app.state.attributes)
+    
+    let max = this.app.state.lw ? miscData.maxNaturalAttributeInvestment/2 : miscData.maxNaturalAttributeInvestment
+
+    let pointsLeft = Math.max(this.maxNaturalAttributePoints - this.totalAttributePointsSpent, 0)
+
+    let points = utils.limitRange(state[id] + pointsLeft, 0, max)
+
+    state[id] = points
+
+    this.app.setState({attributes: state})
   }
 
   async minimizeAttribute(id) {
-    let amount = game.app.state.attributes[id]
-    while (amount > 0) {
-      await this.changeAttribute(id, -1)
-      amount--;
-    }
+    let state = cloneDeep(this.app.state.attributes)
+    state[id] = 0
+
+    this.app.setState({attributes: state})
   }
 
   attributeIsMaxed(id) {

@@ -223,7 +223,7 @@ There is no character limit and it will be saved when you save the build.`,
     if (!build)
       return;
 
-    if (build.metadata.format != SAVE_PROTOCOL) {
+    if (build.metadata.format !== SAVE_PROTOCOL) {
       alert("This build is either invalid or was made for a different version of the app and cannot be loaded.")
       return;
     }
