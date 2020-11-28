@@ -159,6 +159,7 @@ hiddenSkills = [
     "Target_Squall",
     "Target_TimeWarp",
     "Target_PetrifyingTouch",
+    
     "Shout_AMER_Core_GenerateSource",
 
     "Shout_ElectricFence", # old closed circuit spell
@@ -172,8 +173,9 @@ hiddenSkills = [
     "Summon_AMER_AccursedVessel",
     "Target_BloatedCorpse_TheSupplicant",
     "Target_AMER_CorpseMastery",
+    "Projectile_BouncingShield_TheArena",
 
-    # todo handle this properly
+    # todo handle this properly. we cannot filter this one out the normal way because the Amer version of this spell has the same string in its name
     "Storm_Ethereal",
 
 ]
@@ -420,6 +422,8 @@ def replaceParamsInDescription(skill):
 
                     if "Damage Multiplier" in realSource.keys():
                         damage += realSource["Damage Multiplier"]
+                    elif "Damage" in realSource.keys(): # used in weapon boosts
+                        damage += "(Weapon-based) "
                     else:
                         damage += "(UNKNOWN)"
 
@@ -432,10 +436,10 @@ def replaceParamsInDescription(skill):
                     elif "UseWeaponDamage" in realSource.keys() and realSource["UseWeaponDamage"] == "Yes":
                         damage += "% Weapon Damage"
                     else:
-                        damage += "% "
-
                         if "DamageType" in realSource.keys():
-                            damage += realSource["DamageType"] + " Damage"
+                            damage += "% " + realSource["DamageType"] + " Damage"
+                        elif "Damage Type" in realSource.keys():
+                            damage += realSource["Damage Type"] + " Damage"
                         else:
                             damage += "UNKNOWN DAMAGE TYPE"
                     realValues.append(damage)

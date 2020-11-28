@@ -57,13 +57,16 @@ export class TextField extends React.Component {
 function TopBar(props) {
 	function onContext(e) {
 		props.app.contextMenu([
-			<Text text="Choose an option:"/>,
-			<Text text="Save as a new build" onClick={async (e) => {
+			<Text key={0} text="Choose an option:"/>,
+			<Text key={1} text="Save as a new build" onClick={async (e) => {
 				await props.app.setState({id: uuid()})
 				props.app.saveBuild()
 				}}/>
 		], e)
 	}
+
+	let extraSaveButtonClass = props.app.currentBuildIsStored ? "" : "red-overlay"
+
 	return (
 		<div className="flexbox-vertical flex-align-centered">
 			<div className="top-bar flexbox-horizontal flex-align-space-between">
@@ -72,7 +75,11 @@ function TopBar(props) {
 				<div className="flexbox-horizontal flex-align-start" style={{width: "33%"}}>
 					<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
 					<div style={{width: "10px"}}/>
-					<GreenButton text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
+
+					<div style={{position: "relative"}}>
+						<GreenButton className={extraSaveButtonClass} text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
+						<Icon className="button absolute-center-vertical" img={"dropdown"} onClick={(e)=>{e.stopPropagation(); onContext(e)}} style={{right: "3px"}}/>
+					</div>
 					<div style={{width: "10px"}}/>
 					<GreenButton text="Export build" onClick={()=>{props.app.exportBuild()}}/>
 				</div>

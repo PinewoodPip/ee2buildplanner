@@ -264,6 +264,10 @@ There is no character limit and it will be saved when you save the build.`,
     window.localStorage.setItem("config", JSON.stringify(this.state.config))
   }
 
+  get currentBuildIsStored() {
+    return Object.keys(JSON.parse(window.localStorage.getItem("savedBuilds"))).includes(this.state.id)
+  }
+
   saveBuild(e, tabIsBeingClosed=false) {
     if (tabIsBeingClosed && !utils.hasKey(this.getSavedBuilds(), this.state.id)) {
       if (!window.confirm("Do you want to save this build before leaving?"))

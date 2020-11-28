@@ -40,8 +40,18 @@ select {
   transform: translate(-50%, -97.5%);
 }
 
+.absolute-center-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 body {
   background-image: url("images/interface/haze.png");
+}
+
+.red-overlay {
+  filter: hue-rotate(190deg);
 }
 
 .absolute p {
@@ -360,7 +370,7 @@ hr {width: 85%;}
 }
 
 .icon {
-  border: 1px darkslategray solid;
+  /* border: 1px darkslategray solid; */
 }
 
 .skill-icon {

@@ -84,7 +84,7 @@ X reordering skills
 X add the core
 X fix text field not being loaded
 - highlight save button is a build is unsaved, make "save as new" into a dropdown button
-- fancify scrollbars
+X fancify scrollbars
 X improve attributes panel
 - basic weapon choice box
 X prevent contextmenus from overflowing
@@ -111,7 +111,7 @@ X show hint in aspect panel when empty
 X don't push charname around when changing origin
 X attr display is bugged
 X optimize skill and artifacts panel
-- remove bouncing shield arena
+Z remove bouncing shield arena
 - option for alternate ascension layout, where the nodes screen takes up the whole thing, leaving more space for notes
 
 -- ISSUES
@@ -121,8 +121,8 @@ X optimize skill and artifacts panel
 - small issue: tooltips from talents expand the page
 - text are edits are lost if you do not unblur before leaving page
 - deleting a build doesn't unload it - is this an issue?
-- cancelling out of deleting a build undoes your changes
-- highlighting skill abilities in stat display no longer works
+-? cancelling out of deleting a build undoes your changes ? seems fixed ?
 - skills dont show if they directly apply stacks (ex. aero touch)
 - tooltip for enrage is MASSIVE
 - too many keywords ina build prob causes some issue in the builds dropdown
+- "save build" button doesn't instantly update its color warning

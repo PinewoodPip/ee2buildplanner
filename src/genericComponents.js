@@ -74,7 +74,7 @@ export class TabbedContainer extends React.Component {
 
 export function GreenButton(props) {
 	return (
-		<div className="absolute button" onClick={props.onClick} onContextMenu={props.onContextMenu}>
+		<div className={"absolute button " + props.className} onClick={props.onClick} onContextMenu={props.onContextMenu}>
 			<img alt={props.text} style={{width: "150px", height: "30px"}} src={utils.getImage("button_green")}/>
 			<Text text={props.text} className="unselectable"/>
 		</div>

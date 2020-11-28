@@ -1348,7 +1348,7 @@
     "MemorizationRequirements": "FireSpecialist 1; WarriorLore 1",
     "Icon": "Skill_Fire_FireBrand",
     "DisplayNameRef": "Fire Brand",
-    "DescriptionRef": "Apply Firebrand to yourself, granting a 8m aura that adds (UNKNOWN)% UNKNOWN DAMAGE TYPE (before modifiers) to weapon attacks for you and your allies.\n\nSource Infusions:\n1: Bonus damage increased by 25%. \n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Bonus damage increased by 55%. +1 turn duration.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Aura radius extended to 13m. Recover 1SP.\n ",
+    "DescriptionRef": "Apply Firebrand to yourself, granting a 8m aura that adds (Weapon-based) <span class='text-dmg-fire'>Fire Damage</span> (before modifiers) to weapon attacks for you and your allies.\n\nSource Infusions:\n1: Bonus damage increased by 25%. \n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Bonus damage increased by 55%. +1 turn duration.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Aura radius extended to 13m. Recover 1SP.\n ",
     "StatsDescriptionParams": "Weapon:Status_FireBrand:Damage;AreaRadius",
     "Hidden": false
   },
@@ -1451,7 +1451,7 @@
     "MemorizationRequirements": "EarthSpecialist 1; Polymorph 1",
     "Icon": "Skill_Earth_SiphonPoison",
     "DisplayNameRef": "Siphon Poison",
-    "DescriptionRef": "Consume poison surfaces and clouds in a 8m radius around you, and add up to (UNKNOWN)% UNKNOWN DAMAGE TYPE to your weapon, based on the size of the surface consumed.\n\nSource Infusions:\n1: Grants Immunity to Poisoned, +15% Poison resistance (+2% per <span class='text-geo'>Geomancer</span>), and you Poison those who attack you, for 3 turns.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Create an 8m solid circle of Poison around yourself before casting.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): Recover 2<span class='text-ap'>AP</span> and 1SP.\n ",
+    "DescriptionRef": "Consume poison surfaces and clouds in a 8m radius around you, and add up to (Weapon-based) Poison Damage to your weapon, based on the size of the surface consumed.\n\nSource Infusions:\n1: Grants Immunity to Poisoned, +15% Poison resistance (+2% per <span class='text-geo'>Geomancer</span>), and you Poison those who attack you, for 3 turns.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Create an 8m solid circle of Poison around yourself before casting.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): Recover 2<span class='text-ap'>AP</span> and 1SP.\n ",
     "StatsDescriptionParams": "Weapon:Status_SiphonPoison:Damage;AreaRadius",
     "Hidden": false
   },
@@ -1600,7 +1600,7 @@
     "MemorizationRequirements": "FireSpecialist 1; WarriorLore 1",
     "Icon": "Skill_Skillcrafting_Fire_SparkingSwings",
     "DisplayNameRef": "Sparking Swings",
-    "DescriptionRef": "Apply Sparkstriker to yourself, causing melee weapon strikes to fire a flaming bolt at the closest additional enemy in a 13m radius of the original target, dealing (UNKNOWN)% UNKNOWN DAMAGE TYPE.\n\nSource Infusions:\n1: Becomes a 5m radius aura. +1 turn duration.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. Aura radius increased to 8m.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. +2 turn duration. Aura radius increased to 13m.\n ",
+    "DescriptionRef": "Apply Sparkstriker to yourself, causing melee weapon strikes to fire a flaming bolt at the closest additional enemy in a 13m radius of the original target, dealing (Weapon-based) <span class='text-dmg-fire'>Fire Damage</span>.\n\nSource Infusions:\n1: Becomes a 5m radius aura. +1 turn duration.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. Aura radius increased to 8m.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. +2 turn duration. Aura radius increased to 13m.\n ",
     "StatsDescriptionParams": "Weapon:Dummy_AMER_SparkingSwingsDisplay:Damage",
     "Hidden": false
   },
@@ -1616,7 +1616,7 @@
     "MemorizationRequirements": "EarthSpecialist 1; RogueLore 1",
     "Icon": "Skill_Skillcrafting_Earth_VenomCoating",
     "DisplayNameRef": "Venom Coating",
-    "DescriptionRef": "Coat your weapon with poison, adding (UNKNOWN)% UNKNOWN DAMAGE TYPE (before modifiers) to your weapon.\n\nSource Infusions:\n1: +1 turn duration.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Effect becomes an 8m aura.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): +2 turn duration. Recover 1SP.\n ",
+    "DescriptionRef": "Coat your weapon with poison, adding (Weapon-based) Poison Damage (before modifiers) to your weapon.\n\nSource Infusions:\n1: +1 turn duration.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Effect becomes an 8m aura.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): +2 turn duration. Recover 1SP.\n ",
     "StatsDescriptionParams": "Weapon:Status_VenomCoating:Damage",
     "Hidden": false
   },
@@ -2287,7 +2287,7 @@
     "UseWeaponProperties": "Yes",
     "Icon": "Skill_Rogue_KneeBreaker",
     "DisplayNameRef": "Rupture Tendons",
-    "DescriptionRef": "Cruelly maim target character, dealing 100% <span class='text-dmg-phys'>Weapon Damage</span> and applying Ruptured Tendons, which deals (UNKNOWN)% UNKNOWN DAMAGE TYPE for each 0.75m they move.\nGive tendies!\n\nSource Infusions:\n1: +5% accuracy (+1% per <span class='text-rogue'>Scoundrel</span>) and +20% damage (+4% per <span class='text-rogue'>Scoundrel</span>) while casting.\n2 (requires 5 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. If cast while sneaking, attempt to sneak.\n3 (requires 9 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. Bleed damage is increased by 35%. If cast while sneaking, Pay 2 more <span class='text-ap'>AP</span>: Apply to all other enemies within 3m.\n ",
+    "DescriptionRef": "Cruelly maim target character, dealing 100% <span class='text-dmg-phys'>Weapon Damage</span> and applying Ruptured Tendons, which deals (Weapon-based) <span class='text-dmg-pierce'>Piercing Damage</span> for each 0.75m they move.\nGive tendies!\n\nSource Infusions:\n1: +5% accuracy (+1% per <span class='text-rogue'>Scoundrel</span>) and +20% damage (+4% per <span class='text-rogue'>Scoundrel</span>) while casting.\n2 (requires 5 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. If cast while sneaking, attempt to sneak.\n3 (requires 9 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. Bleed damage is increased by 35%. If cast while sneaking, Pay 2 more <span class='text-ap'>AP</span>: Apply to all other enemies within 3m.\n ",
     "StatsDescriptionParams": "Damage;Weapon:Damage_KneeBreaker:Damage",
     "Hidden": false
   },
@@ -2715,7 +2715,7 @@
     "UseWeaponProperties": "No",
     "Icon": "Skill_Ranger_ElementalArrowheads",
     "DisplayNameRef": "Elemental Arrowheads",
-    "DescriptionRef": "Target a surface in range and apply a status to yourself that adds (UNKNOWN)% UNKNOWN DAMAGE TYPEdamage (before modifiers) of the corresponding type to your bow or crossbow for 2 turns.\n\nSource Infusions:\n1: +1 turn duration. Recover 2 <span class='text-ap'>AP</span>.\n2 (requires 5 <span class='text-huntsman'>Huntsman</span>): +1 turn duration. When you hit an enemy while performing a basic attack, apply the status corresponding to the bonus damage granted by Elemental Arrowheads for 1 turn: Air to Charged, Earth to Calcifying, Fire to Scorched, Physical to Bleeding, Poison to Poisoned, and Water to Brittle. \n ",
+    "DescriptionRef": "Target a surface in range and apply a status to yourself that adds (Weapon-based) Chaos Damagedamage (before modifiers) of the corresponding type to your bow or crossbow for 2 turns.\n\nSource Infusions:\n1: +1 turn duration. Recover 2 <span class='text-ap'>AP</span>.\n2 (requires 5 <span class='text-huntsman'>Huntsman</span>): +1 turn duration. When you hit an enemy while performing a basic attack, apply the status corresponding to the bonus damage granted by Elemental Arrowheads for 1 turn: Air to Charged, Earth to Calcifying, Fire to Scorched, Physical to Bleeding, Poison to Poisoned, and Water to Brittle. \n ",
     "StatsDescriptionParams": "Weapon:Status_Arrowhead_Chaos:Damage",
     "Hidden": false
   },
@@ -2883,7 +2883,7 @@
     "UseWeaponProperties": "No",
     "Icon": "Skill_Fire_FlamingCrescendo",
     "DisplayNameRef": "Immolation",
-    "DescriptionRef": "Apply Immolation to target character, causing them to erupt into flames when this status ends, or as they die, dealing (UNKNOWN)% UNKNOWN DAMAGE TYPE to characters in a 3m radius.\n\nSource Infusions:\n1: Base damage of explosion is increased by 20%.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Also cast on the nearest visible enemy to your target that is within 13m of you, with a 3-turn timer.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Pay 2 more <span class='text-ap'>AP</span>: Apply base effects to all targets hit by the explosion.\n ",
+    "DescriptionRef": "Apply Immolation to target character, causing them to erupt into flames when this status ends, or as they die, dealing (Weapon-based) <span class='text-dmg-fire'>Fire Damage</span> to characters in a 3m radius.\n\nSource Infusions:\n1: Base damage of explosion is increased by 20%.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Also cast on the nearest visible enemy to your target that is within 13m of you, with a 3-turn timer.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Pay 2 more <span class='text-ap'>AP</span>: Apply base effects to all targets hit by the explosion.\n ",
     "StatsDescriptionParams": "Weapon:Skill_FlamingCrescendo:Damage",
     "Hidden": false
   },
@@ -3149,7 +3149,7 @@
     "DescriptionRef": "Sling your shield at target enemy with tremendous violence, causing it to ricochet to another enemy in a 5m radius, dealing 67% <span class='text-dmg-phys'>Physical Damage</span> to both. \n\nSource Infusions:\n1: Before casting, recover armor equivalent to that of your shield.\n2 (requires 5 <span class='text-warfare'>Warfare</span>): Repeat base effects.\n3 (requires 9 <span class='text-warfare'>Warfare</span>): Pay 2 more <span class='text-ap'>AP</span>: Cast on all visible enemies within 13m.\n ",
     "StatsDescriptionParams": "Damage;AreaRadius",
     "MemorizationRequirements": "",
-    "Hidden": false
+    "Hidden": true
   },
   "Projectile_AMER_FingerOfDeath": {
     "id": "Projectile_AMER_FingerOfDeath",
@@ -3859,7 +3859,7 @@
         "DescriptionRef": "Sling your shield at target enemy with tremendous violence, causing it to ricochet to another enemy in a 5m radius, dealing 67% <span class='text-dmg-phys'>Physical Damage</span> to both. \n\nSource Infusions:\n1: Before casting, recover armor equivalent to that of your shield.\n2 (requires 5 <span class='text-warfare'>Warfare</span>): Repeat base effects.\n3 (requires 9 <span class='text-warfare'>Warfare</span>): Pay 2 more <span class='text-ap'>AP</span>: Cast on all visible enemies within 13m.\n ",
         "StatsDescriptionParams": "Damage;AreaRadius",
         "MemorizationRequirements": "",
-        "Hidden": false
+        "Hidden": true
       },
       "Shout_AMER_Enrage": {
         "id": "Shout_AMER_Enrage",
@@ -4411,7 +4411,7 @@
         "MemorizationRequirements": "EarthSpecialist 1; Polymorph 1",
         "Icon": "Skill_Earth_SiphonPoison",
         "DisplayNameRef": "Siphon Poison",
-        "DescriptionRef": "Consume poison surfaces and clouds in a 8m radius around you, and add up to (UNKNOWN)% UNKNOWN DAMAGE TYPE to your weapon, based on the size of the surface consumed.\n\nSource Infusions:\n1: Grants Immunity to Poisoned, +15% Poison resistance (+2% per <span class='text-geo'>Geomancer</span>), and you Poison those who attack you, for 3 turns.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Create an 8m solid circle of Poison around yourself before casting.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): Recover 2<span class='text-ap'>AP</span> and 1SP.\n ",
+        "DescriptionRef": "Consume poison surfaces and clouds in a 8m radius around you, and add up to (Weapon-based) Poison Damage to your weapon, based on the size of the surface consumed.\n\nSource Infusions:\n1: Grants Immunity to Poisoned, +15% Poison resistance (+2% per <span class='text-geo'>Geomancer</span>), and you Poison those who attack you, for 3 turns.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Create an 8m solid circle of Poison around yourself before casting.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): Recover 2<span class='text-ap'>AP</span> and 1SP.\n ",
         "StatsDescriptionParams": "Weapon:Status_SiphonPoison:Damage;AreaRadius",
         "Hidden": false
       },
@@ -4427,7 +4427,7 @@
         "MemorizationRequirements": "EarthSpecialist 1; RogueLore 1",
         "Icon": "Skill_Skillcrafting_Earth_VenomCoating",
         "DisplayNameRef": "Venom Coating",
-        "DescriptionRef": "Coat your weapon with poison, adding (UNKNOWN)% UNKNOWN DAMAGE TYPE (before modifiers) to your weapon.\n\nSource Infusions:\n1: +1 turn duration.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Effect becomes an 8m aura.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): +2 turn duration. Recover 1SP.\n ",
+        "DescriptionRef": "Coat your weapon with poison, adding (Weapon-based) Poison Damage (before modifiers) to your weapon.\n\nSource Infusions:\n1: +1 turn duration.\n2 (requires 5 <span class='text-geo'>Geomancer</span>): Effect becomes an 8m aura.\n3 (requires 9 <span class='text-geo'>Geomancer</span>): +2 turn duration. Recover 1SP.\n ",
         "StatsDescriptionParams": "Weapon:Status_VenomCoating:Damage",
         "Hidden": false
       },
@@ -5109,7 +5109,7 @@
         "UseWeaponProperties": "Yes",
         "Icon": "Skill_Rogue_KneeBreaker",
         "DisplayNameRef": "Rupture Tendons",
-        "DescriptionRef": "Cruelly maim target character, dealing 100% <span class='text-dmg-phys'>Weapon Damage</span> and applying Ruptured Tendons, which deals (UNKNOWN)% UNKNOWN DAMAGE TYPE for each 0.75m they move.\nGive tendies!\n\nSource Infusions:\n1: +5% accuracy (+1% per <span class='text-rogue'>Scoundrel</span>) and +20% damage (+4% per <span class='text-rogue'>Scoundrel</span>) while casting.\n2 (requires 5 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. If cast while sneaking, attempt to sneak.\n3 (requires 9 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. Bleed damage is increased by 35%. If cast while sneaking, Pay 2 more <span class='text-ap'>AP</span>: Apply to all other enemies within 3m.\n ",
+        "DescriptionRef": "Cruelly maim target character, dealing 100% <span class='text-dmg-phys'>Weapon Damage</span> and applying Ruptured Tendons, which deals (Weapon-based) <span class='text-dmg-pierce'>Piercing Damage</span> for each 0.75m they move.\nGive tendies!\n\nSource Infusions:\n1: +5% accuracy (+1% per <span class='text-rogue'>Scoundrel</span>) and +20% damage (+4% per <span class='text-rogue'>Scoundrel</span>) while casting.\n2 (requires 5 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. If cast while sneaking, attempt to sneak.\n3 (requires 9 <span class='text-rogue'>Scoundrel</span>): +1 turn duration. Bleed damage is increased by 35%. If cast while sneaking, Pay 2 more <span class='text-ap'>AP</span>: Apply to all other enemies within 3m.\n ",
         "StatsDescriptionParams": "Damage;Weapon:Damage_KneeBreaker:Damage",
         "Hidden": false
       },
@@ -5489,7 +5489,7 @@
         "UseWeaponProperties": "No",
         "Icon": "Skill_Ranger_ElementalArrowheads",
         "DisplayNameRef": "Elemental Arrowheads",
-        "DescriptionRef": "Target a surface in range and apply a status to yourself that adds (UNKNOWN)% UNKNOWN DAMAGE TYPEdamage (before modifiers) of the corresponding type to your bow or crossbow for 2 turns.\n\nSource Infusions:\n1: +1 turn duration. Recover 2 <span class='text-ap'>AP</span>.\n2 (requires 5 <span class='text-huntsman'>Huntsman</span>): +1 turn duration. When you hit an enemy while performing a basic attack, apply the status corresponding to the bonus damage granted by Elemental Arrowheads for 1 turn: Air to Charged, Earth to Calcifying, Fire to Scorched, Physical to Bleeding, Poison to Poisoned, and Water to Brittle. \n ",
+        "DescriptionRef": "Target a surface in range and apply a status to yourself that adds (Weapon-based) Chaos Damagedamage (before modifiers) of the corresponding type to your bow or crossbow for 2 turns.\n\nSource Infusions:\n1: +1 turn duration. Recover 2 <span class='text-ap'>AP</span>.\n2 (requires 5 <span class='text-huntsman'>Huntsman</span>): +1 turn duration. When you hit an enemy while performing a basic attack, apply the status corresponding to the bonus damage granted by Elemental Arrowheads for 1 turn: Air to Charged, Earth to Calcifying, Fire to Scorched, Physical to Bleeding, Poison to Poisoned, and Water to Brittle. \n ",
         "StatsDescriptionParams": "Weapon:Status_Arrowhead_Chaos:Damage",
         "Hidden": false
       }
@@ -5657,7 +5657,7 @@
         "MemorizationRequirements": "FireSpecialist 1; WarriorLore 1",
         "Icon": "Skill_Fire_FireBrand",
         "DisplayNameRef": "Fire Brand",
-        "DescriptionRef": "Apply Firebrand to yourself, granting a 8m aura that adds (UNKNOWN)% UNKNOWN DAMAGE TYPE (before modifiers) to weapon attacks for you and your allies.\n\nSource Infusions:\n1: Bonus damage increased by 25%. \n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Bonus damage increased by 55%. +1 turn duration.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Aura radius extended to 13m. Recover 1SP.\n ",
+        "DescriptionRef": "Apply Firebrand to yourself, granting a 8m aura that adds (Weapon-based) <span class='text-dmg-fire'>Fire Damage</span> (before modifiers) to weapon attacks for you and your allies.\n\nSource Infusions:\n1: Bonus damage increased by 25%. \n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Bonus damage increased by 55%. +1 turn duration.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Aura radius extended to 13m. Recover 1SP.\n ",
         "StatsDescriptionParams": "Weapon:Status_FireBrand:Damage;AreaRadius",
         "Hidden": false
       },
@@ -5673,7 +5673,7 @@
         "MemorizationRequirements": "FireSpecialist 1; WarriorLore 1",
         "Icon": "Skill_Skillcrafting_Fire_SparkingSwings",
         "DisplayNameRef": "Sparking Swings",
-        "DescriptionRef": "Apply Sparkstriker to yourself, causing melee weapon strikes to fire a flaming bolt at the closest additional enemy in a 13m radius of the original target, dealing (UNKNOWN)% UNKNOWN DAMAGE TYPE.\n\nSource Infusions:\n1: Becomes a 5m radius aura. +1 turn duration.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. Aura radius increased to 8m.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. +2 turn duration. Aura radius increased to 13m.\n ",
+        "DescriptionRef": "Apply Sparkstriker to yourself, causing melee weapon strikes to fire a flaming bolt at the closest additional enemy in a 13m radius of the original target, dealing (Weapon-based) <span class='text-dmg-fire'>Fire Damage</span>.\n\nSource Infusions:\n1: Becomes a 5m radius aura. +1 turn duration.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. Aura radius increased to 8m.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Sparks chain +1 time. +2 turn duration. Aura radius increased to 13m.\n ",
         "StatsDescriptionParams": "Weapon:Dummy_AMER_SparkingSwingsDisplay:Damage",
         "Hidden": false
       },
@@ -5784,7 +5784,7 @@
         "UseWeaponProperties": "No",
         "Icon": "Skill_Fire_FlamingCrescendo",
         "DisplayNameRef": "Immolation",
-        "DescriptionRef": "Apply Immolation to target character, causing them to erupt into flames when this status ends, or as they die, dealing (UNKNOWN)% UNKNOWN DAMAGE TYPE to characters in a 3m radius.\n\nSource Infusions:\n1: Base damage of explosion is increased by 20%.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Also cast on the nearest visible enemy to your target that is within 13m of you, with a 3-turn timer.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Pay 2 more <span class='text-ap'>AP</span>: Apply base effects to all targets hit by the explosion.\n ",
+        "DescriptionRef": "Apply Immolation to target character, causing them to erupt into flames when this status ends, or as they die, dealing (Weapon-based) <span class='text-dmg-fire'>Fire Damage</span> to characters in a 3m radius.\n\nSource Infusions:\n1: Base damage of explosion is increased by 20%.\n2 (requires 5 <span class='text-pyro'>Pyrokinetic</span>): Also cast on the nearest visible enemy to your target that is within 13m of you, with a 3-turn timer.\n3 (requires 9 <span class='text-pyro'>Pyrokinetic</span>): Pay 2 more <span class='text-ap'>AP</span>: Apply base effects to all targets hit by the explosion.\n ",
         "StatsDescriptionParams": "Weapon:Skill_FlamingCrescendo:Damage",
         "Hidden": false
       },
