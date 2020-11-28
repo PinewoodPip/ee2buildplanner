@@ -162,8 +162,17 @@ export function ContextMenu(props) {
     let className = props.children[x].props.onClick != null ? "context-option" : "context-option-noninteractable"
     childs.push(<div key={Math.random()} className={className}>{props.children[x]}</div>)
   }
+
+  let left = window.innerWidth > (info.position.x + window.innerWidth/5) ? info.position.x : info.position.x - window.innerWidth/5
+
+  let top = window.innerHeight > (info.position.y + window.innerHeight/3) ? info.position.y : info.position.y - window.innerHeight/3
+
   return (
-    <div className="context context-menu" onMouseLeave={()=>{props.app.closeContext()}} style={{left: info.position.x, top: info.position.y}}>
+    <div className="context context-menu" onMouseLeave={()=>{props.app.closeContext()}} style={{left: left, top: top}} ref={element => {
+		if (!element)
+			return
+		return (element.getBoundingClientRect())
+	}}>
       {childs}
     </div>
   )
@@ -190,4 +199,11 @@ export class FileButton extends React.Component {
 			</div>
 		)
 	}
+}
+
+export function PopupHeader(props) {
+	return <div className="flexbox-horizontal flex-align-end full-width bar">
+		<Text text={props.text} className={"flex-grow"}/>
+		<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+	</div>
 }

@@ -87,7 +87,7 @@ X fix text field not being loaded
 - fancify scrollbars
 X improve attributes panel
 - basic weapon choice box
-- prevent tooltips from overflowing
+X prevent contextmenus from overflowing
 - featured builds
 X align embs displays
 - changelog in config
@@ -108,8 +108,9 @@ X only show alert on saving once
 - loading build should close dropdown
 X show hint in aspect panel when empty
 - make clickboxes of subnodes better
-- don't push charname around when changing origin
-- attr display is bugged
+X don't push charname around when changing origin
+X attr display is bugged
+- optimize skill and artifacts panel
 
 -- ISSUES
 - small issue: tooltips from talents expand the page

@@ -20,8 +20,8 @@ export class Artifacts extends React.Component {
 			<Text text="Click the + button to add artifacts." className="text-faded"/>
 		</div> : null
 
-        return <Container className="skills">
-            <div className="flexbox-horizontal-list" style={{margin: "10px", height: "100%", position: "relative"}}>
+        return <Container className="artifacts">
+            <div className="flexbox-horizontal-list" style={{margin: "10px", position: "relative"}}>
                 {artifacts}
                 <Icon className="button" borderless={true} img={"add"} size="64px" onClick={()=>{this.props.app.setState({popup: "artifacts"})}}/>
 

@@ -291,7 +291,7 @@ class AspectListing extends React.Component {
 		// only add :hover class if this is clickable (there is 1 'fake' instance of this component, used as a header)
 		let extraClass = this.props.onClick ? "hoverable" : ""
 		let dropdownIcon = this.state.beingHovered && this.props.onClick && this.props.interactable ? 
-		<div className="aspect-dropdown-button" onClick={(e)=>{e.stopPropagation(); this.props.onContextMenu(e)}}>
+		<div className="aspect-dropdown-button button" onClick={(e)=>{e.stopPropagation(); this.props.onContextMenu(e)}}>
 			<Icon img={"dropdown"} size="24px"/>
 		</div> : null
 

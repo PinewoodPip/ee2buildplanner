@@ -16,6 +16,7 @@ import { ArtifactsPopup } from "./artifacts.js"
 import * as miscData from "./miscData.js"
 import { ExportMenu } from './buildsDropdown';
 import { clone } from 'underscore';
+import { InstrumentsPopup } from './instruments';
 
 const axios = require('axios').default;
 
@@ -47,7 +48,7 @@ class App extends React.Component {
       metadata: null, // metadata for builds loaded from file. not always present
 
       config: {
-        highlightSkillKeywords: false,
+        highlightSkillKeywords: true,
         author: "",
         hasSeenSaveAlert: false,
       },
@@ -70,7 +71,7 @@ class App extends React.Component {
       // textarea text
       text:  `This is a text field. You can write whatever you want here.
 
-==============================
+===========================
 
 You can use this space to take notes, explain your build's usage, strengths/weaknesses, desired gear, etc.
 
@@ -240,6 +241,7 @@ There is no character limit and it will be saved when you save the build.`,
       physique: build.physique,
       text: build.text,
       lw: build.lw,
+      instrument: build.instrument,
       
       skills: build.skills,
       artifacts: build.artifacts,
@@ -453,8 +455,20 @@ There is no character limit and it will be saved when you save the build.`,
 
   closePopupPanel() {this.setState({popup: null})}
 
+  secretProgress = 0
   handleKeyPress(e) {
     if (e.key === "Escape") {this.closePopupPanel()}
+    else {
+      if (e.key === miscData.secret.charAt(this.secretProgress)) {
+        this.secretProgress++
+        if (this.secretProgress >= miscData.secret.length) {
+          this.setState({popup: "instrument"})
+        }
+      }
+      else {
+        this.secretProgress = 0
+      }
+    }
   }
 
   getCurrentBuild(compressed=false) {
@@ -479,6 +493,7 @@ There is no character limit and it will be saved when you save the build.`,
       physique: state.physique,
       text: state.text,
       lw: state.lw,
+      intrument: state.instrument,
       
       skills: state.skills,
       artifacts: state.artifacts,
@@ -551,6 +566,7 @@ There is no character limit and it will be saved when you save the build.`,
         case "artifacts": {popup = <ArtifactsPopup app={this}/>; break}
         case "export": {popup = <ExportMenu app={this}/>}
         case "config": {popup = <Config app={this}/>; break;}
+        case "instrument": {popup = <InstrumentsPopup app={this}/>; break;}
         // case "featuredBuilds": {popup = <}
         default: {break}
       }

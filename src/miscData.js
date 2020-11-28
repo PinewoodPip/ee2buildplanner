@@ -93,6 +93,23 @@ export const origins = {
 	}
 }
 
+export const secret = "escapistisbesttalent"
+
+export const instruments = {
+	bansuri: {
+		name: "Bansuri"
+	},
+	tambura: {
+		name: "Tambura"
+	},
+	oud: {
+		name: "Oud"
+	},
+	cello: {
+		name: "Cello"
+	},
+}
+
 export const talents = {
 	dwarvenGuile: {
 		name: "Dwarwen Guile",
