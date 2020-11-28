@@ -13,8 +13,6 @@ export function Dropdown(props) {
 		options.push(<option key={x} value={x}>{props.options[x]}</option>)
 	}
 
-	console.log(props.selected)
-
 	return <select onChange={props.onChange} value={props.selected}>
 		{options}
 	</select>

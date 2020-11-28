@@ -135,7 +135,7 @@ export class Game {
 
   maximizeAttribute(id) {
     let state = cloneDeep(this.app.state.attributes)
-    
+
     let max = this.app.state.lw ? miscData.maxNaturalAttributeInvestment/2 : miscData.maxNaturalAttributeInvestment
 
     let pointsLeft = Math.max(this.maxNaturalAttributePoints - this.totalAttributePointsSpent, 0)
@@ -480,7 +480,7 @@ export class Game {
     let realResEarth = (
       stats.flexStat.EARTHRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
     )
-    let realResPoison = this.app.state.physique.lifeType != "undead" ? (
+    let realResPoison = this.app.state.physique.lifeType !== "undead" ? (
       stats.flexStat.POISONRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
     ) : 200
     let realResWater = (
@@ -497,7 +497,7 @@ export class Game {
     stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
 
     // todo fix
-    if (this.app.state.physique.lifeType != "undead")
+    if (this.app.state.physique.lifeType !== "undead")
       stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
     else
       stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: realResPoison}

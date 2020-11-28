@@ -15,9 +15,9 @@ X show game's names for abilities in sidebar\
 X close button
 - rip game UI buttons
 - add margin to the main interface
-- top bar
+X top bar
 - import unselectable css
-- escape key to close popups
+X escape key to close popups
 - search bars
 - fix janky css layouts everywhere
 
@@ -92,7 +92,7 @@ X prevent contextmenus from overflowing
 X align embs displays
 - changelog in config
 X add lifeType selection
-- add instrument easter egg
+X add instrument easter egg
 X add metadata to saved build list, like author, build role and keywords
 X save config to localstoarge
 - add scrollbar to builds dropdown
@@ -110,9 +110,14 @@ X show hint in aspect panel when empty
 - make clickboxes of subnodes better
 X don't push charname around when changing origin
 X attr display is bugged
-- optimize skill and artifacts panel
+X optimize skill and artifacts panel
+- remove bouncing shield arena
+- option for alternate ascension layout, where the nodes screen takes up the whole thing, leaving more space for notes
 
 -- ISSUES
+- escapist does not grant its skill
+-- also applies to anything else that grants skills I guess. Except proto
+- skills that are once-per-combat show -1 CD
 - small issue: tooltips from talents expand the page
 - text are edits are lost if you do not unblur before leaving page
 - deleting a build doesn't unload it - is this an issue?
@@ -121,4 +126,3 @@ X attr display is bugged
 - skills dont show if they directly apply stacks (ex. aero touch)
 - tooltip for enrage is MASSIVE
 - too many keywords ina build prob causes some issue in the builds dropdown
-- min/max attribute option is laggy

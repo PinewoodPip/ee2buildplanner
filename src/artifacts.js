@@ -7,6 +7,9 @@ import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
 
 export class Artifacts extends React.Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return (utils.propObjectHasChanged(this.props.info, nextProps.info))
+    }
     render() {
         let artifacts = []
         for (let x in this.props.app.state.artifacts) {
@@ -15,7 +18,7 @@ export class Artifacts extends React.Component {
         }
 
         // if build has no artifacts, show a message explaining this element's purpose
-		let usabilityTip = this.props.app.state.artifacts.length == 0 ?
+		let usabilityTip = this.props.app.state.artifacts.length === 0 ?
 		<div className="absolute-centered" style={{bottom: "90%", width: "100%"}}>
 			<Text text="Click the + button to add artifacts." className="text-faded"/>
 		</div> : null

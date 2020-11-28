@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text, FlairedCheckbox, Dropdown, PopupHeader } from "./genericComponents.js"
+import { Icon, Container, Text, PopupHeader } from "./genericComponents.js"
 import * as miscData from "./miscData.js"
 
 export function InstrumentsPopup(props) {

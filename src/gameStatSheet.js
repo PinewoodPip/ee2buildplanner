@@ -15,8 +15,8 @@ function IncrementButton(props) {
 
 function CivilAbility(props) {
 	let func = (increment) => {game.changeCivil(props.id, increment)}
-	let disabledDecrement = game.app.state.civils[props.id] == 0
-	let disabledIncrement = game.app.state.civils[props.id] == 10 // todo change later when we add equips
+	let disabledDecrement = game.app.state.civils[props.id] === 0
+	let disabledIncrement = game.app.state.civils[props.id] === 10 // todo change later when we add equips
 
 	return (
 	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
@@ -149,8 +149,8 @@ function CombatAbilities(props) {
 }
 
 function Attribute(props) {
-	let disabledIncrement = game.attributeIsMaxed(props.id)
-	let disabledDecrement = game.app.state.attributes[props.id] == 0
+	let disabledIncrement = game.attributeIsMaxed(props.id) || game.totalAttributePointsSpent >= game.maxNaturalAttributePoints
+	let disabledDecrement = game.app.state.attributes[props.id] === 0
 
 	let func = (increment) => {
 		game.changeAttribute(props.id, increment)
@@ -209,7 +209,6 @@ class SkillAbilities extends React.Component {
 		let index = 0;
 		for (let x in game.skills.sorted) {
 			let statName = miscData.skillAbilityList[index]
-			console.log(game.app.stats)
 			if (x === "Source")
 				continue
 

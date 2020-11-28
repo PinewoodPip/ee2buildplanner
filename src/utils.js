@@ -1,3 +1,4 @@
+import { Base64 } from "js-base64";
 import { game } from "./App.js"
 
 
@@ -12,6 +13,10 @@ export function hasKey(obj, key) {
   if (obj == null)
     return false
   return Object.keys(obj).includes(key)
+}
+
+export function propObjectHasChanged(oldObj, newObj) {
+  return Base64.encode(JSON.stringify(oldObj)) !== Base64.encode(JSON.stringify(newObj))
 }
 
 export function capitalize(string) {

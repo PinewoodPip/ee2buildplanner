@@ -10,10 +10,8 @@ import { TextField } from './components';
 
 export class CharacterProfile extends React.Component {
 	changeRace(e) {
-		console.log(e.target.value)
 		let state = cloneDeep(this.props.app.state.physique)
 		state.race = e.target.value.toLowerCase()
-		console.log(e.target.value)
 		this.props.app.setState({physique: state})
 	}
 
@@ -85,12 +83,12 @@ export function Portrait(props) {
 		let elements = []
 		for (let x in miscData.portraits) {
 			elements.push(
-				<Icon className="button" img={miscData.portraits[x]} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portrait: miscData.portraits[x]})}}/>
+				<Icon key={x} className="button" img={miscData.portraits[x]} style={{height: "100px", width: "80px"}} onClick={()=>{props.app.setState({portrait: miscData.portraits[x]})}}/>
 			)
 		}
 
 		let realElements = [
-			<div className="flexbox-horizontal flex-wrap" style={{maxWidth: "600px"}}>
+			<div key={-1} className="flexbox-horizontal flex-wrap" style={{maxWidth: "600px"}}>
 				{elements}
 			</div>
 		]

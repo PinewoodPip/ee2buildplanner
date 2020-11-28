@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import cloneDeep from 'lodash.clonedeep';
-import { Beforeunload, useBeforeunload } from 'react-beforeunload';
+import { Beforeunload} from 'react-beforeunload';
 import { uuid } from 'uuidv4';
 import { Base64 } from 'js-base64';
 
@@ -22,7 +22,7 @@ const axios = require('axios').default;
 
 const SAVE_PROTOCOL = 0
 const APP_VERSION = {major: 0, minor: 0, revision: 0}
-export const APP_DATE = "16/11/2020" // european format
+export const APP_DATE = "28/11/2020" // european format
 const URL_PROTOCOL = 0
 
 class App extends React.Component {
@@ -65,7 +65,7 @@ class App extends React.Component {
       origin: "custom",
       physique: {
         race: "lizard",
-        // gender: "female",
+        gender: "male",
         lifeType: "alive",
       },
       // textarea text
@@ -176,7 +176,7 @@ There is no character limit and it will be saved when you save the build.`,
         }
       }
       for (let x in this.state.abilities) {
-        if (this.state.abilities[x] > 5 && x != "Polymorph") {
+        if (this.state.abilities[x] > 5 && x !== "Polymorph") {
           newState.abilities[x] = 5
           adjusted = true;
         }
@@ -192,7 +192,7 @@ There is no character limit and it will be saved when you save the build.`,
     try {
       let build = JSON.parse(f)
       console.log(Object.keys(build.metadata).length)
-      if (build.metadata.format != SAVE_PROTOCOL)
+      if (build.metadata.format !== SAVE_PROTOCOL)
         throw "";
       this.loadBuild(null, build)
     }
@@ -330,9 +330,9 @@ There is no character limit and it will be saved when you save the build.`,
   toggle(key, value, obj=null) {
     let state = cloneDeep(this.state)
     
-    if (typeof state[key] == "array") {
+    if (typeof state[key] === "array") {
       if (state[key].includes(value))
-        state[key] = state[key].filter((e)=>{return e != value})
+        state[key] = state[key].filter((e)=>{return e !== value})
       else
         state[key].push(value)
     }
@@ -427,7 +427,7 @@ There is no character limit and it will be saved when you save the build.`,
         const urlParams = new URLSearchParams(window.location.search)
         let urlVersion = urlParams.get("urlv")
         if (urlVersion) {
-          if (urlVersion != URL_PROTOCOL) {
+          if (urlVersion !== URL_PROTOCOL) {
             window.alert("You're trying to load a build using an older url format. Ask Pip to implement this already.")
           }
           else {
@@ -564,7 +564,7 @@ There is no character limit and it will be saved when you save the build.`,
         case "stats": {popup = <Boosts app={this}/>; break}
         case "keywords": {popup = <Keywords app={this}/>; break}
         case "artifacts": {popup = <ArtifactsPopup app={this}/>; break}
-        case "export": {popup = <ExportMenu app={this}/>}
+        case "export": {popup = <ExportMenu app={this}/>; break}
         case "config": {popup = <Config app={this}/>; break;}
         case "instrument": {popup = <InstrumentsPopup app={this}/>; break;}
         // case "featuredBuilds": {popup = <}

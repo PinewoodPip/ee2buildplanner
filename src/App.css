@@ -18,11 +18,6 @@ select {
   cursor: pointer;
 }
 
-/* yeah nvm this just seems unstyleable. */
-/* option {
-  cursor: pointer;
-} */
-
 .absolute {
   position: relative;
 }
@@ -380,8 +375,10 @@ hr {width: 85%;}
 
 .skill-icon:hover {
   /* background-color: brown; */
-  outline: 2px rgb(40, 87, 40) solid;
-  background-color: rgb(40, 87, 40);
+  outline: 2px rgb(70, 70, 70) solid;
+  background-color: rgb(70, 70, 70);
+  filter: brightness(120%);
+  cursor: pointer;
   /* border-color: red; */
 }
 

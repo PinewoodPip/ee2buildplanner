@@ -108,7 +108,6 @@ export class Config extends React.Component {
 		let state = clone(this.props.app.state.config)
 		state[id] = val
 		this.props.app.setState({config: state})
-		console.log(state)
 	}
 
 	render() {
@@ -147,6 +146,11 @@ export class Config extends React.Component {
 class Skills extends React.Component {
 	openSkillBook() {
 		this.props.app.setState({popup: "skillbook"})
+	}
+
+	// only rerender this if anything related to skills has changed
+	shouldComponentUpdate(nextProps, nextState) {
+		return (utils.propObjectHasChanged(this.props.info, nextProps.info))
 	}
 
 	async reorderSkill(e, id, movement) {
@@ -211,14 +215,16 @@ class Skills extends React.Component {
 
 export class MainInterface extends React.Component {
 	render() {
+		let appState = this.props.app.state
+		let skillsInfo = {origin: appState.origin, skills: appState.skills, race: appState.physique.race, lifeType: appState.physique.lifeType, coreNodes: appState.coreNodes}
 		return <div>
 			<TopBar app={this.props.app}/>
 			<div className="flexbox-horizontal">
 				<div style={{margin: "25px"}}>
 					<div className="flexbox-horizontal flex-align-start" style={{height: "150px"}}>
 						<CharacterProfile app={this.props.app}/>
-						<Skills app={this.props.app}/>
-						<Artifacts app={this.props.app}/>
+						<Skills app={this.props.app} info={skillsInfo}/>
+						<Artifacts app={this.props.app} info={{artifacts: appState.artifacts}}/>
 					</div>
 
 					{/* todo remove this and just use a container as the parent */}

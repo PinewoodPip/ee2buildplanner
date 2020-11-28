@@ -130,7 +130,7 @@ function SkillTooltip(props) {
 	for (let x in skill.TieredStatuses) {
 		let status = skill.TieredStatuses[x]
 		if (status in miscData.statusNames) {
-			let text = parser(utils.format("<p>Applies <span class='{0}'>{1}</span></p>", miscData.mappings.statusCSS[status], miscData.statusNames[status]))
+			let text = parser(utils.format("<p key='" + status + "'>Applies <span class='{0}'>{1}</span></p>", miscData.mappings.statusCSS[status], miscData.statusNames[status]))
 			// statuses.push(<Text key={status} text={text}/>)
 			statuses.push(text)
 		}
