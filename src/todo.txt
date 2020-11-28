@@ -111,7 +111,7 @@ X show hint in aspect panel when empty
 X don't push charname around when changing origin
 X attr display is bugged
 X optimize skill and artifacts panel
-Z remove bouncing shield arena
+X remove bouncing shield arena
 - option for alternate ascension layout, where the nodes screen takes up the whole thing, leaving more space for notes
 
 -- ISSUES

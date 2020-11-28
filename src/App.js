@@ -158,9 +158,22 @@ There is no character limit and it will be saved when you save the build.`,
     this.setState({physique: state})
   }
 
-  // recalculate stats anytime the state changes. far more performant that calling getStats() for any component that needs them
-  async componentDidUpdate(prevProps, prevState) {
-    this.stats = game.getStats();
+  relevantProps = ["skills", "artifacts", "aspects", "coreNodes", "attributes", "abilities", "civils", "talents", "lw", "physique", "origin", "buffs"]
+
+  shouldComponentUpdate(nextProps, nextState) {
+    let current = {}
+    let newState = {}
+    for (let x in this.relevantProps) {
+      let prop = this.relevantProps[x]
+      current[prop] = this.state[prop]
+      newState[prop] = nextState[prop]
+    }
+
+    // only recalculate stats if a relevant state prop changes
+    if (utils.propObjectHasChanged(current, newState)) {
+      this.stats = game.getStats();
+    }
+    return true;
   }
 
   async toggleLoneWolf() {
@@ -580,7 +593,7 @@ There is no character limit and it will be saved when you save the build.`,
       }
 
       let contextMenu = null
-      if (this.state.contextMenu.element != null) {
+      if (this.state.contextMenu && this.state.contextMenu.element != null) {
         contextMenu = <ContextMenu app={this}>{this.state.contextMenu.element}</ContextMenu>
       }
 

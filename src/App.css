@@ -384,12 +384,10 @@ hr {width: 85%;}
 }
 
 .skill-icon:hover {
-  /* background-color: brown; */
   outline: 2px rgb(70, 70, 70) solid;
   background-color: rgb(70, 70, 70);
   filter: brightness(120%);
   cursor: pointer;
-  /* border-color: red; */
 }
 
 .skill-icon:hover img {

@@ -144,14 +144,14 @@ export class Game {
 
     state[id] = points
 
-    this.app.setState({attributes: state})
+    this.app.setState({attributes: state, contextMenu: null})
   }
 
   async minimizeAttribute(id) {
     let state = cloneDeep(this.app.state.attributes)
     state[id] = 0
 
-    this.app.setState({attributes: state})
+    this.app.setState({attributes: state, contextMenu: null})
   }
 
   attributeIsMaxed(id) {

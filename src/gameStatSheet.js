@@ -148,44 +148,52 @@ function CombatAbilities(props) {
 	)
 }
 
-function Attribute(props) {
-	let disabledIncrement = game.attributeIsMaxed(props.id) || game.totalAttributePointsSpent >= game.maxNaturalAttributePoints
-	let disabledDecrement = game.app.state.attributes[props.id] === 0
-
-	let func = (increment) => {
-		game.changeAttribute(props.id, increment)
+class Attribute extends React.Component {
+	shouldComponentUpdate(nextProps, nextState) {
+		// todo
+		return true
 	}
 
-	let attrName = game.mappings.attributeNames[props.id]
+	render() {
+		let props = this.props
+		let disabledIncrement = game.attributeIsMaxed(props.id) || game.totalAttributePointsSpent >= game.maxNaturalAttributePoints
+		let disabledDecrement = game.app.state.attributes[props.id] === 0
 
-	// todo fix this
-	let total = game.getStats().realStats[props.id].amount
+		let func = (increment) => {
+			game.changeAttribute(props.id, increment)
+		}
 
-	let menu = [
-		<Text text="Choose option:"/>,
-		<Text text="Max out" onClick={()=>{game.maximizeAttribute(props.id)}}/>,
-		<Text text="Remove all" onClick={()=>{game.minimizeAttribute(props.id)}}/>,
-	]
+		let attrName = game.mappings.attributeNames[props.id]
 
-	return (
-		<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
-			<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
-				<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
-				<div style={{width: "5px"}}/>
-				<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
-					<Text text={attrName}/>
-					<Tooltip content={utils.format("Attribute Points invested: {0}", game.app.state.attributes[props.id])}>
-						<Text text={utils.format("{0}", total)}/>
-					</Tooltip>
+		// todo fix this
+		let total = game.getStats().realStats[props.id].amount
+
+		let menu = [
+			<Text key={0} text="Choose option:"/>,
+			<Text key={1} text="Max out" onClick={()=>{game.maximizeAttribute(props.id)}}/>,
+			<Text key={2} text="Remove all" onClick={()=>{game.minimizeAttribute(props.id)}}/>,
+		]
+
+		return (
+			<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
+				<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
+					<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
+					<div style={{width: "5px"}}/>
+					<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
+						<Text text={attrName}/>
+						<Tooltip content={utils.format("Attribute Points invested: {0}", game.app.state.attributes[props.id])}>
+							<Text text={utils.format("{0}", total)}/>
+						</Tooltip>
+					</div>
+				</div>
+
+				<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
+					<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
+					<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
 				</div>
 			</div>
-
-			<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}} onContextMenu={(e)=>{game.app.contextMenu(menu, e)}}>
-				<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
-				<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
-			</div>
-		</div>
-	)
+		)
+	}
 }
 
 class SkillAbilities extends React.Component {

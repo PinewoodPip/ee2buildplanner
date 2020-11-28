@@ -166,11 +166,7 @@ export function ContextMenu(props) {
   let top = window.innerHeight > (info.position.y + window.innerHeight/3) ? info.position.y : info.position.y - window.innerHeight/3
 
   return (
-    <div className="context context-menu" onMouseLeave={()=>{props.app.closeContext()}} style={{left: left, top: top}} ref={element => {
-		if (!element)
-			return
-		return (element.getBoundingClientRect())
-	}}>
+    <div className="context context-menu" onMouseLeave={()=>{props.app.closeContext()}} style={{left: left, top: top}}>
       {childs}
     </div>
   )
