@@ -113,6 +113,7 @@ X attr display is bugged
 X optimize skill and artifacts panel
 X remove bouncing shield arena
 - option for alternate ascension layout, where the nodes screen takes up the whole thing, leaving more space for notes
+- fix skill ability bonuses lagging behind
 
 -- ISSUES
 - escapist does not grant its skill

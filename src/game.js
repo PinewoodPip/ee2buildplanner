@@ -159,7 +159,9 @@ export class Game {
     return this.app.state.attributes[id] >= cap
   }
 
-  getStats() {
+  getStats(nextState=null) {
+    let state = nextState ? nextState : this.app.state
+
     function addStat(stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {
         // stat total
@@ -222,9 +224,9 @@ export class Game {
     }
 
     // stats from ascension
-    for (let x in this.app.state.aspects) {
-      let asp = this.ascension.getReferenceById(this.app.state.aspects[x].id)
-      let build = this.app.state.aspects[x].nodes
+    for (let x in state.aspects) {
+      let asp = this.ascension.getReferenceById(state.aspects[x].id)
+      let build = state.aspects[x].nodes
 
       for (let z in asp.nodes) {
         for (let v in asp.nodes[z].parent) {
@@ -245,7 +247,7 @@ export class Game {
     }
 
     // artifact innate stat boosts
-    this.app.state.artifacts.forEach(element => {
+    state.artifacts.forEach(element => {
       let boosts = miscData.artifactBoosts[element]
       if (boosts && "innate" in boosts) {
         boosts.innate.forEach(e => {
@@ -272,11 +274,12 @@ export class Game {
     // cache
     this.app.keywords = keywords
 
-    return this.getRealStats(stats);
+    return this.getRealStats(stats, nextState);
   }
 
-  getRealStats(stats) { // calculate real, absolute amounts of stats
-
+  getRealStats(stats, nextState=null) { // calculate real, absolute amounts of stats
+    let state = nextState ? nextState : this.app.state
+    
     function addStat(stat) {
       if (utils.hasKey(stats[stat.type], stat.id)) {
         // stat total
@@ -304,52 +307,43 @@ export class Game {
     }
 
     // artifact special toggleable effects.
-    this.app.state.buffs.forEach(id => {
+    state.buffs.forEach(id => {
       let data = miscData.statuses[id]
       if (data.type === "special") {
         switch(data.id) {
           case "PIP_Artifact_DrogsLuck": {
             let investmentBonus = 15 + (2 * stats.flexStat.FireSpecialist.amount) + (4 * game.app.state.civils.luckycharm)
 
-            // stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Intelligence", value: investmentBonus, source: "Drog's Luck"})
-            // stats.extendedStat.PercAttributeIncrease_Wits.amount += investmentBonus
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Wits", value: investmentBonus, source: "Drog's Luck"})
             break;
           }
           case "PIP_Artifact_EyeOfTheStorm": {
             let investmentBonus = 25 + (2.5 * stats.flexStat.airSpecialist.amount)
 
-            // stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Finesse", value: investmentBonus, source: "Eye of the Storm"})
             break;
           }
           case "PIP_Artifact_Kudzu": {
-            // stats.flexStat.POISONRESISTANCE.amount += 20
-            // stats.flexStat.EARTHRESISTANCE.amount += 10
-            // stats.flexStat.PHYSICALRESISTANCE.amount += 10
             addStat({type: "flexStat", id: "POISONRESISTANCE", value: 20, source: "Kudzu"})
             addStat({type: "flexStat", id: "EARTHRESISTANCE", value: 10, source: "Kudzu"})
             addStat({type: "flexStat", id: "PHYSICALRESISTANCE", value: 10, source: "Kudzu"})
             break;
           }
           case "PIP_Artifact_Leviathan": {
-            // lmao why did i even think of this
-            // stats.flexStat.MOVEMENT.amount += 0.5
             addStat({type: "flexStat", id: "MOVEMENT", value: 0.5, source: "Leviathan"})
             break;
           }
           case "PIP_Artifact_Onslaught": {
             let investmentBonus = 3 * (Math.min(0, stats.flexStat.MOVEMENT.amount - 2))
-            // stats.extendedStat.PercAttributeIncrease_Finesse.amount += investmentBonus
-            // stats.extendedStat.PercAttributeIncrease_Intelligence.amount += investmentBonus
+
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Finesse", value: investmentBonus, source: "Onslaught"})
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Intelligence", value: investmentBonus, source: "Onslaught"})
             break;
           }
           case "PIP_Artifact_PrismaticBarrier": {
             let resBonus = 3 * stats.flexStat.Perseverance.amount
-            // stats.flexStat.EleResistance.amount += resBonus
+            
             addStat({type: "flexStat", id: "EleResistance", value: resBonus, source: "Prismatic Barrier"})
             break;
           }
@@ -358,8 +352,6 @@ export class Game {
             let dmgBoost = 10 * force
             let movementBoost = 0.3 * force
 
-            // stats.flexStat.DAMAGEBOOST.amount += dmgBoost
-            // stats.flexStat.MOVEMENT.amount += movementBoost
             addStat({type: "flexStat", id: "DAMAGEBOOST", value: dmgBoost, source: "Urgency"})
             addStat({type: "flexStat", id: "MOVEMENT", value: movementBoost, source: "Urgency"})
             break;
@@ -371,8 +363,6 @@ export class Game {
               - 10
             )
 
-            // stats.flexStat.DODGEBOOST.amount += 1 * fin
-            // stats.flexStat.ACCURACYBOOST.amount += -0.5 * fin
             addStat({type: "flexStat", id: "DODGEBOOST", value: 1 * fin, source: "Vertigo"})
             addStat({type: "flexStat", id: "ACCURACYBOOST", value: -0.5 * fin, source: "Vertigo"})
 
@@ -381,15 +371,11 @@ export class Game {
           case "PIP_Talent_Guerrilla": {
             let boost = 40 + (3 * (stats.flexStat.RogueLore.amount + game.app.state.abilities.RogueLore))
 
-            // stats.flexStat.DAMAGEBOOST.amount += boost
-
             addStat({type: "flexStat", id: "DAMAGEBOOST", value: boost, source: "Guerrilla"})
 
             break;
           }
           case "PIP_Talent_Hothead": {
-            // stats.flexStat.CRITICALCHANCE.amount += 10
-            // stats.flexStat.ACCURACYBOOST.amount += 10
 
             addStat({type: "flexStat", id: "CRITICALCHANCE", value: 10, source: "Hothead"})
             addStat({type: "flexStat", id: "ACCURACYBOOST", value: 10, source: "Hothead"})
@@ -399,10 +385,6 @@ export class Game {
         }
       }
     })
-
-    // function getRealBaseAttribute(stats, id) {
-    //   let manualInvestment = 
-    // }
 
     function getInvestedAttribute(id) {
       let investmentMult = (game.app.state.lw) ? 2 : 1
@@ -420,7 +402,6 @@ export class Game {
       )
     }
 
-    // these are not initialized like normal stats, so we add the default amount manaully
     let invested = {
       str: getInvestedAttribute("str"),
       fin: getInvestedAttribute("fin"),
@@ -430,6 +411,7 @@ export class Game {
       wits: getInvestedAttribute("wits"),
     }
 
+    // these are not initialized like normal stats, so we add the default amount manaully
     let realStr = (
       miscData.stats.realStats.str.default +
       invested.str +
@@ -480,7 +462,7 @@ export class Game {
     let realResEarth = (
       stats.flexStat.EARTHRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
     )
-    let realResPoison = this.app.state.physique.lifeType !== "undead" ? (
+    let realResPoison = state.physique.lifeType !== "undead" ? (
       stats.flexStat.POISONRESISTANCE.amount + stats.flexStat.EleResistance.amount + stats.flexStat.AllResistance.amount
     ) : 200
     let realResWater = (
@@ -497,7 +479,7 @@ export class Game {
     stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
 
     // todo fix
-    if (this.app.state.physique.lifeType !== "undead")
+    if (state.physique.lifeType !== "undead")
       stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
     else
       stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: realResPoison}
@@ -505,8 +487,8 @@ export class Game {
     stats.realStats["res_air"] = {type: "realStats", id: "res_air", amount: this.applyDR(realResAir)}
 
     // abilities
-    let abilities = this.app.state.abilities
-    let mult = this.app.state.lw ? 2 : 1
+    let abilities = state.abilities
+    let mult = state.lw ? 2 : 1
     stats.realStats["warfare"] = {type: "realStats", id: "warfare", amount: (
       stats.flexStat.WarriorLore.amount + abilities.WarriorLore * mult
     )}
@@ -558,7 +540,7 @@ export class Game {
     )}
 
     // status effect boosts
-    this.app.state.buffs.forEach(id => {
+    state.buffs.forEach(id => {
       let data = miscData.statuses[id]
       if (data.type !== "special") {
         data.boosts.forEach(e => {

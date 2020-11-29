@@ -39,28 +39,33 @@ function CivilAbility(props) {
 		)
 }
 
-function Ability(props) {
-	let func = (increment) => {game.changeAbility(props.id, increment)}
-	let naturalAmount = game.app.state.abilities[props.id]
-	if (game.app.state.lw && props.id !== "Polymorph")
-		naturalAmount *= 2
-	let amountText = utils.format((game.app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), naturalAmount, game.app.stats.flexStat[props.id].amount)
+class Ability extends React.Component {
+	render() {
+		let func = (increment) => {game.changeAbility(props.id, increment)}
+		let app = this.props.app
+		let props = this.props
+		// let stats = game.getStats()
+		let naturalAmount = game.app.state.abilities[props.id]
+		if (game.app.state.lw && props.id !== "Polymorph")
+			naturalAmount *= 2
+		let amountText = utils.format((app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), naturalAmount, app.stats.flexStat[props.id].amount)
 
-	return	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
-			<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
-				<Icon className="" img={game.mappings.abilityImages[props.id]} size="24px"/>
-				<div style={{width: "5px"}}/>
-				<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
-					<Text text={utils.format("{0}:", miscData.mappings.abilityNames[props.id])}/>
-					<Text text={amountText}/>
+		return	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
+				<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
+					<Icon className="" img={game.mappings.abilityImages[props.id]} size="24px"/>
+					<div style={{width: "5px"}}/>
+					<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
+						<Text text={utils.format("{0}:", miscData.mappings.abilityNames[props.id])}/>
+						<Text text={amountText}/>
+					</div>
+				</div>
+
+				<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}}>
+					<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}}/>
+					<IncrementButton img={"add_point"} onClick={()=>{func(1)}}/>
 				</div>
 			</div>
-
-			<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}}>
-				<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}}/>
-				<IncrementButton img={"add_point"} onClick={()=>{func(1)}}/>
-			</div>
-		</div>
+	}
 }
 
 function CivilAbilities(props) {
@@ -135,15 +140,15 @@ function CombatAbilities(props) {
 	return (
 		<Container className="flexbox-vertical flex-align-start full-size" name="Attributes" noBg>
 			<Text text={utils.format("{0} points spent", game.investedAbilities)} className={textClass}/>
-			<Ability id="DualWielding"/>
-			<Ability id="Ranged"/>
-			<Ability id="SingleHanded"/>
-			<Ability id="TwoHanded"/>
+			<Ability app={props.app} id="DualWielding"/>
+			<Ability app={props.app} id="Ranged"/>
+			<Ability app={props.app} id="SingleHanded"/>
+			<Ability app={props.app} id="TwoHanded"/>
 			{/* Defensive */}
 			<hr/>
-			<Ability id="Leadership"/>
-			<Ability id="Perseverance"/>
-			<Ability id="PainReflection"/>
+			<Ability app={props.app} id="Leadership"/>
+			<Ability app={props.app} id="Perseverance"/>
+			<Ability app={props.app} id="PainReflection"/>
 		</Container>
 	)
 }
@@ -221,8 +226,7 @@ class SkillAbilities extends React.Component {
 				continue
 
 			skillAbilities.push(
-				// todo fix this to also consider bonuses
-				<Ability key={x} id={statName} className={this.hasAnyRelevantSkill(x) || this.props.app.state.abilities[x] > 0 ? "highlighted-bg" : ""}/>
+				<Ability app={this.props.app} key={x} id={statName} className={this.hasAnyRelevantSkill(x) || this.props.app.state.abilities[x] > 0 ? "highlighted-bg" : ""}/>
 			)
 
 			index++;
@@ -237,6 +241,9 @@ class SkillAbilities extends React.Component {
 
 // todo rename this component; holds far more than just attributes now
 export class Attributes extends React.Component {
+	shouldComponentUpdate(nextProps, nextState) {
+		return true
+	}
 	render() {
         let remaining = game.maxNaturalAttributePoints - game.totalAttributePointsSpent
         

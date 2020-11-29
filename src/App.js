@@ -171,8 +171,10 @@ There is no character limit and it will be saved when you save the build.`,
 
     // only recalculate stats if a relevant state prop changes
     if (utils.propObjectHasChanged(current, newState)) {
-      this.stats = game.getStats();
+      // we have to send the next state to this func, otherwise stat caluculations lag behing
+      this.stats = game.getStats(nextState);
     }
+
     return true;
   }
 
