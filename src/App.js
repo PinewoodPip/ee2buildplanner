@@ -293,6 +293,8 @@ There is no character limit and it will be saved when you save the build.`,
   }
 
   get currentBuildIsStored() {
+    if (!window.localStorage.getItem("savedBuilds"))
+      return false
     return Object.keys(JSON.parse(window.localStorage.getItem("savedBuilds"))).includes(this.state.id)
   }
 
