@@ -327,7 +327,7 @@ There is no character limit and it will be saved when you save the build.`,
       this.forceUpdate()
 
       if (!this.state.config.hasSeenSaveAlert) {
-        window.alert("Build saved. Saving also happens automatically when you close the tab.")
+        window.alert("Build saved. Saving also happens automatically for builds you've saved before when you close the tab.")
   
         let config = cloneDeep(this.state.config)
         config.hasSeenSaveAlert = true;

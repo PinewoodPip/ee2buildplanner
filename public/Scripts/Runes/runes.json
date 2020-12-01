@@ -1,0 +1,1415 @@
+{
+  "Flame_Small": {
+    "id": "Flame_Small",
+    "material": "Flame",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Fire_9",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Fire": "9"
+    }
+  },
+  "Flame_Medium": {
+    "id": "Flame_Medium",
+    "material": "Flame",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Fire_11",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Fire": "11"
+    }
+  },
+  "Flame_Large": {
+    "id": "Flame_Large",
+    "material": "Flame",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Fire_13",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Fire": "13"
+    }
+  },
+  "Flame_Giant": {
+    "id": "Flame_Giant",
+    "material": "Flame",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Fire_15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Fire": "15"
+    }
+  },
+  "Frost_Small": {
+    "id": "Frost_Small",
+    "material": "Frost",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Water_9",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Water": "9"
+    }
+  },
+  "Frost_Medium": {
+    "id": "Frost_Medium",
+    "material": "Frost",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Water_11",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Water": "11"
+    }
+  },
+  "Frost_Large": {
+    "id": "Frost_Large",
+    "material": "Frost",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Water_13",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Water": "13"
+    }
+  },
+  "Frost_Giant": {
+    "id": "Frost_Giant",
+    "material": "Frost",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Water_15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Water": "15"
+    }
+  },
+  "Thunder_Small": {
+    "id": "Thunder_Small",
+    "material": "Thunder",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Air_9",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Air": "9"
+    }
+  },
+  "Thunder_Medium": {
+    "id": "Thunder_Medium",
+    "material": "Thunder",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Air_11",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Air": "11"
+    }
+  },
+  "Thunder_Large": {
+    "id": "Thunder_Large",
+    "material": "Thunder",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Air_13",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Air": "13"
+    }
+  },
+  "Thunder_Giant": {
+    "id": "Thunder_Giant",
+    "material": "Thunder",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Air_15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Air": "15"
+    }
+  },
+  "Rock_Small": {
+    "id": "Rock_Small",
+    "material": "Rock",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Earth_9",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Earth": "9"
+    }
+  },
+  "Rock_Medium": {
+    "id": "Rock_Medium",
+    "material": "Rock",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Earth_11",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Earth": "11"
+    }
+  },
+  "Rock_Large": {
+    "id": "Rock_Large",
+    "material": "Rock",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Earth_13",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Earth": "13"
+    }
+  },
+  "Rock_Giant": {
+    "id": "Rock_Giant",
+    "material": "Rock",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Earth_15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Earth": "15"
+    }
+  },
+  "Venom_Small": {
+    "id": "Venom_Small",
+    "material": "Venom",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Poison_9",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Poison": "9"
+    }
+  },
+  "Venom_Medium": {
+    "id": "Venom_Medium",
+    "material": "Venom",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Poison_11",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Poison": "11"
+    }
+  },
+  "Venom_Large": {
+    "id": "Venom_Large",
+    "material": "Venom",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Poison_13",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Poison": "13"
+    }
+  },
+  "Venom_Giant": {
+    "id": "Venom_Giant",
+    "material": "Venom",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Poison_15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Poison": "15"
+    }
+  },
+  "Masterwork_Small": {
+    "id": "Masterwork_Small",
+    "material": "Masterwork",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Small",
+    "armorEffect": "_Boost_Armor_PhysBoost15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_SMALL"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "15"
+    }
+  },
+  "Masterwork_Medium": {
+    "id": "Masterwork_Medium",
+    "material": "Masterwork",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Medium",
+    "armorEffect": "_Boost_Armor_PhysBoost18",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "18"
+    }
+  },
+  "Masterwork_Large": {
+    "id": "Masterwork_Large",
+    "material": "Masterwork",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Large",
+    "armorEffect": "_Boost_Armor_PhysBoost21",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_LARGE"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "21"
+    }
+  },
+  "Masterwork_Giant": {
+    "id": "Masterwork_Giant",
+    "material": "Masterwork",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Giant",
+    "armorEffect": "_Boost_Armor_PhysBoost25",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_GIANT"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "25"
+    }
+  },
+  "Bloodstone_Small": {
+    "id": "Bloodstone_Small",
+    "material": "Bloodstone",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Small",
+    "armorEffect": "_Boost_Armor_Initiative_3",
+    "weaponEffect_boosts": {
+      "IntelligenceBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_INTPERC_15"
+    },
+    "armorEffect_boosts": {
+      "Initiative": "3"
+    }
+  },
+  "Bloodstone_Medium": {
+    "id": "Bloodstone_Medium",
+    "material": "Bloodstone",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Medium",
+    "armorEffect": "_Boost_Armor_Initiative_4",
+    "weaponEffect_boosts": {
+      "IntelligenceBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_INTPERC_20"
+    },
+    "armorEffect_boosts": {
+      "Initiative": "4"
+    }
+  },
+  "Bloodstone_Large": {
+    "id": "Bloodstone_Large",
+    "material": "Bloodstone",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Large",
+    "armorEffect": "_Boost_Armor_Initiative_5",
+    "weaponEffect_boosts": {
+      "IntelligenceBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_INTPERC_25"
+    },
+    "armorEffect_boosts": {
+      "Initiative": "5"
+    }
+  },
+  "Bloodstone_Giant": {
+    "id": "Bloodstone_Giant",
+    "material": "Bloodstone",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Giant",
+    "armorEffect": "_Boost_Armor_Initiative_6",
+    "weaponEffect_boosts": {
+      "IntelligenceBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_INTPERC_30"
+    },
+    "armorEffect_boosts": {
+      "Initiative": "6"
+    }
+  },
+  "Ruby_Small": {
+    "id": "Ruby_Small",
+    "material": "Ruby",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Small",
+    "armorEffect": "_Boost_Armor_Rune_Ruby_Small",
+    "weaponEffect_boosts": {
+      "Leadership": "1",
+      "Fire": "9"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESFIRE_2"
+    }
+  },
+  "Ruby_Medium": {
+    "id": "Ruby_Medium",
+    "material": "Ruby",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Ruby_Medium",
+    "weaponEffect_boosts": {
+      "Leadership": "2",
+      "Fire": "13"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESFIRE_3"
+    }
+  },
+  "Ruby_Large": {
+    "id": "Ruby_Large",
+    "material": "Ruby",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Large",
+    "armorEffect": "_Boost_Armor_Rune_Ruby_Large",
+    "weaponEffect_boosts": {
+      "Leadership": "3",
+      "Fire": "17"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESFIRE_4"
+    }
+  },
+  "Ruby_Giant": {
+    "id": "Ruby_Giant",
+    "material": "Ruby",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Ruby_Giant",
+    "weaponEffect_boosts": {
+      "Leadership": "4",
+      "Fire": "21"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESFIRE_5"
+    }
+  },
+  "Lapis_Small": {
+    "id": "Lapis_Small",
+    "material": "Lapis",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_HarriedThresh_Small",
+    "armorEffect": "_Boost_Armor_MagicBoost15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_HARRIEDTHRESH_SMALL"
+    },
+    "armorEffect_boosts": {
+      "MagicArmorBoost": "15"
+    }
+  },
+  "Lapis_Medium": {
+    "id": "Lapis_Medium",
+    "material": "Lapis",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_HarriedThresh_Medium",
+    "armorEffect": "_Boost_Armor_MagicBoost18",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_HARRIEDTHRESH_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "MagicArmorBoost": "18"
+    }
+  },
+  "Lapis_Large": {
+    "id": "Lapis_Large",
+    "material": "Lapis",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_HarriedThresh_Large",
+    "armorEffect": "_Boost_Armor_MagicBoost21",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_HARRIEDTHRESH_LARGE"
+    },
+    "armorEffect_boosts": {
+      "MagicArmorBoost": "21"
+    }
+  },
+  "Lapis_Giant": {
+    "id": "Lapis_Giant",
+    "material": "Lapis",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_HarriedThresh_Giant",
+    "armorEffect": "_Boost_Armor_MagicBoost25",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_HARRIEDTHRESH_GIANT"
+    },
+    "armorEffect_boosts": {
+      "MagicArmorBoost": "25"
+    }
+  },
+  "Pearl_Small": {
+    "id": "Pearl_Small",
+    "material": "Pearl",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Small",
+    "armorEffect": "_Boost_Armor_Rune_Pearl_Small",
+    "weaponEffect_boosts": {
+      "MemoryBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_MEMPERC_15"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_MAGIC_4.5"
+    }
+  },
+  "Pearl_Medium": {
+    "id": "Pearl_Medium",
+    "material": "Pearl",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Pearl_Medium",
+    "weaponEffect_boosts": {
+      "MemoryBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_MEMPERC_20"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_MAGIC_6"
+    }
+  },
+  "Pearl_Large": {
+    "id": "Pearl_Large",
+    "material": "Pearl",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Large",
+    "armorEffect": "_Boost_Armor_Rune_Pearl_Large",
+    "weaponEffect_boosts": {
+      "MemoryBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_MEMPERC_25"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_MAGIC_7.5"
+    }
+  },
+  "Pearl_Giant": {
+    "id": "Pearl_Giant",
+    "material": "Pearl",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Pearl_Giant",
+    "weaponEffect_boosts": {
+      "MemoryBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_MEMPERC_30"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_MAGIC_9"
+    }
+  },
+  "Sapphire_Small": {
+    "id": "Sapphire_Small",
+    "material": "Sapphire",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Small",
+    "armorEffect": "_Boost_Armor_Rune_Sapphire_Small",
+    "weaponEffect_boosts": {
+      "DualWielding": "1",
+      "Water": "9"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESWATER_2"
+    }
+  },
+  "Sapphire_Medium": {
+    "id": "Sapphire_Medium",
+    "material": "Sapphire",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Sapphire_Medium",
+    "weaponEffect_boosts": {
+      "DualWielding": "2",
+      "Water": "13"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESWATER_3"
+    }
+  },
+  "Sapphire_Large": {
+    "id": "Sapphire_Large",
+    "material": "Sapphire",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Large",
+    "armorEffect": "_Boost_Armor_Rune_Sapphire_Large",
+    "weaponEffect_boosts": {
+      "DualWielding": "3",
+      "Water": "17"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESWATER_4"
+    }
+  },
+  "Sapphire_Giant": {
+    "id": "Sapphire_Giant",
+    "material": "Sapphire",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Sapphire_Giant",
+    "weaponEffect_boosts": {
+      "DualWielding": "4",
+      "Water": "21"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESWATER_5"
+    }
+  },
+  "Silver_Small": {
+    "id": "Silver_Small",
+    "material": "Silver",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Silver_Small",
+    "armorEffect": "_Boost_Armor_Rune_Silver_Small",
+    "weaponEffect_boosts": {
+      "WitsBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_WITPERC_15"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_ALLARMOR_2.5"
+    }
+  },
+  "Silver_Medium": {
+    "id": "Silver_Medium",
+    "material": "Silver",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Silver_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Silver_Medium",
+    "weaponEffect_boosts": {
+      "WitsBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_WITPERC_20"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_ALLARMOR_3.5"
+    }
+  },
+  "Silver_Large": {
+    "id": "Silver_Large",
+    "material": "Silver",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Silver_Large",
+    "armorEffect": "_Boost_Armor_Rune_Silver_Large",
+    "weaponEffect_boosts": {
+      "WitsBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_WITPERC_25"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_ALLARMOR_4.5"
+    }
+  },
+  "Silver_Giant": {
+    "id": "Silver_Giant",
+    "material": "Silver",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Silver_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Silver_Giant",
+    "weaponEffect_boosts": {
+      "WitsBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_WITPERC_30"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_ALLARMOR_5.5"
+    }
+  },
+  "Clay_Small": {
+    "id": "Clay_Small",
+    "material": "Clay",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Clay_Small",
+    "armorEffect": "_Boost_Armor_Rune_Clay_Small",
+    "weaponEffect_boosts": {
+      "TwoHanded": "1",
+      "Earth": "9"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESEARTH_2"
+    }
+  },
+  "Clay_Medium": {
+    "id": "Clay_Medium",
+    "material": "Clay",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Clay_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Clay_Medium",
+    "weaponEffect_boosts": {
+      "TwoHanded": "2",
+      "Earth": "13"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESEARTH_3"
+    }
+  },
+  "Clay_Large": {
+    "id": "Clay_Large",
+    "material": "Clay",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Clay_Large",
+    "armorEffect": "_Boost_Armor_Rune_Clay_Large",
+    "weaponEffect_boosts": {
+      "TwoHanded": "3",
+      "Earth": "17"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESEARTH_4"
+    }
+  },
+  "Clay_Giant": {
+    "id": "Clay_Giant",
+    "material": "Clay",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Clay_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Clay_Giant",
+    "weaponEffect_boosts": {
+      "TwoHanded": "4",
+      "Earth": "21"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESEARTH_5"
+    }
+  },
+  "Granite_Small": {
+    "id": "Granite_Small",
+    "material": "Granite",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Granite_Small",
+    "armorEffect": "_Boost_Armor_Rune_Granite_Small",
+    "weaponEffect_boosts": {
+      "Perseverance": "1",
+      "Physical": "3"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPHYS_0.5"
+    }
+  },
+  "Granite_Medium": {
+    "id": "Granite_Medium",
+    "material": "Granite",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Granite_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Granite_Medium",
+    "weaponEffect_boosts": {
+      "Perseverance": "2",
+      "Physical": "4"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPHYS_1"
+    }
+  },
+  "Granite_Large": {
+    "id": "Granite_Large",
+    "material": "Granite",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Granite_Large",
+    "armorEffect": "_Boost_Armor_Rune_Granite_Large",
+    "weaponEffect_boosts": {
+      "Perseverance": "3",
+      "Physical": "5"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPHYS_1.5"
+    }
+  },
+  "Granite_Giant": {
+    "id": "Granite_Giant",
+    "material": "Granite",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Granite_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Granite_Giant",
+    "weaponEffect_boosts": {
+      "Perseverance": "4",
+      "Physical": "6"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPHYS_2"
+    }
+  },
+  "Iron_Small": {
+    "id": "Iron_Small",
+    "material": "Iron",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Iron_Small",
+    "armorEffect": "_Boost_Armor_Rune_Iron_Small",
+    "weaponEffect_boosts": {
+      "StrengthBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_STRPERC_15"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_PHYS_4.5"
+    }
+  },
+  "Iron_Medium": {
+    "id": "Iron_Medium",
+    "material": "Iron",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Iron_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Iron_Medium",
+    "weaponEffect_boosts": {
+      "StrengthBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_STRPERC_20"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_PHYS_6"
+    }
+  },
+  "Iron_Large": {
+    "id": "Iron_Large",
+    "material": "Iron",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Iron_Large",
+    "armorEffect": "_Boost_Armor_Rune_Iron_Large",
+    "weaponEffect_boosts": {
+      "StrengthBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_STRPERC_25"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_PHYS_7.5"
+    }
+  },
+  "Iron_Giant": {
+    "id": "Iron_Giant",
+    "material": "Iron",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Iron_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Iron_Giant",
+    "weaponEffect_boosts": {
+      "StrengthBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_STRPERC_30"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_PHYS_9"
+    }
+  },
+  "Bone_Small": {
+    "id": "Bone_Small",
+    "material": "Bone",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Bone_Small",
+    "armorEffect": "_Boost_Armor_Vitality_12",
+    "weaponEffect_boosts": {
+      "LifeSteal": "5"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_LIFESTEAL_5"
+    },
+    "armorEffect_boosts": {
+      "VitalityBoost": "12"
+    }
+  },
+  "Bone_Medium": {
+    "id": "Bone_Medium",
+    "material": "Bone",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Bone_Medium",
+    "armorEffect": "_Boost_Armor_Vitality_14",
+    "weaponEffect_boosts": {
+      "LifeSteal": "7"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_LIFESTEAL_7"
+    },
+    "armorEffect_boosts": {
+      "VitalityBoost": "14"
+    }
+  },
+  "Bone_Large": {
+    "id": "Bone_Large",
+    "material": "Bone",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Bone_Large",
+    "armorEffect": "_Boost_Armor_Vitality_16",
+    "weaponEffect_boosts": {
+      "LifeSteal": "10"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_LIFESTEAL_10"
+    }
+  },
+  "Bone_Giant": {
+    "id": "Bone_Giant",
+    "material": "Bone",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Bone_Giant",
+    "armorEffect": "_Boost_Armor_Vitality_16",
+    "weaponEffect_boosts": {
+      "LifeSteal": "14"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_LIFESTEAL_14"
+    },
+    "armorEffect_boosts": {
+      "VitalityBoost": "16"
+    }
+  },
+  "Obsidian_Small": {
+    "id": "Obsidian_Small",
+    "material": "Obsidian",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Piercing_9",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_ELE_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Piercing": "9"
+    }
+  },
+  "Obsidian_Medium": {
+    "id": "Obsidian_Medium",
+    "material": "Obsidian",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Piercing_11",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_ELE_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Piercing": "11"
+    }
+  },
+  "Obsidian_Large": {
+    "id": "Obsidian_Large",
+    "material": "Obsidian",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Piercing_13",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_ELE_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Piercing": "13"
+    }
+  },
+  "Obsidian_Giant": {
+    "id": "Obsidian_Giant",
+    "material": "Obsidian",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Piercing_15",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_RUNERESIST_ELE_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Piercing": "15"
+    }
+  },
+  "Onyx_Small": {
+    "id": "Onyx_Small",
+    "material": "Onyx",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Small",
+    "armorEffect": "_Boost_Armor_Rune_Onyx_Small",
+    "weaponEffect_boosts": {
+      "PainReflection": "1",
+      "Piercing": "9"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPIERCE_2"
+    }
+  },
+  "Onyx_Medium": {
+    "id": "Onyx_Medium",
+    "material": "Onyx",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Onyx_Medium",
+    "weaponEffect_boosts": {
+      "PainReflection": "2",
+      "Piercing": "13"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPIERCE_3"
+    }
+  },
+  "Onyx_Large": {
+    "id": "Onyx_Large",
+    "material": "Onyx",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Large",
+    "armorEffect": "_Boost_Armor_Rune_Onyx_Large",
+    "weaponEffect_boosts": {
+      "PainReflection": "3",
+      "Piercing": "17"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPIERCE_4"
+    }
+  },
+  "Onyx_Giant": {
+    "id": "Onyx_Giant",
+    "material": "Onyx",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Onyx_Giant",
+    "weaponEffect_boosts": {
+      "PainReflection": "4",
+      "Piercing": "21"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPIERCE_5"
+    }
+  },
+  "Steel_Small": {
+    "id": "Steel_Small",
+    "material": "Steel",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_BatteredThresh_Small",
+    "armorEffect": "_Boost_Armor_Resistance_Phys_1",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_BATTEREDTHRESH_SMALL"
+    },
+    "armorEffect_boosts": {
+      "Physical": "1"
+    }
+  },
+  "Steel_Medium": {
+    "id": "Steel_Medium",
+    "material": "Steel",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_BatteredThresh_Medium",
+    "armorEffect": "_Boost_Armor_Resistance_Phys_2",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_BATTEREDTHRESH_MEDIUM"
+    },
+    "armorEffect_boosts": {
+      "Physical": "2"
+    }
+  },
+  "Steel_Large": {
+    "id": "Steel_Large",
+    "material": "Steel",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_BatteredThresh_Large",
+    "armorEffect": "_Boost_Armor_Resistance_Phys_3",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_BATTEREDTHRESH_LARGE"
+    },
+    "armorEffect_boosts": {
+      "Physical": "3"
+    }
+  },
+  "Steel_Giant": {
+    "id": "Steel_Giant",
+    "material": "Steel",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_BatteredThresh_Giant",
+    "armorEffect": "_Boost_Armor_Resistance_Phys_4",
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_BATTEREDTHRESH_GIANT"
+    },
+    "armorEffect_boosts": {
+      "Physical": "4"
+    }
+  },
+  "Gold_Small": {
+    "id": "Gold_Small",
+    "material": "Gold",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Dodge_7",
+    "armorEffect": "_Boost_Armor_Dodge_3",
+    "weaponEffect_boosts": {
+      "DodgeBoost": "7"
+    },
+    "armorEffect_boosts": {
+      "DodgeBoost": "3"
+    }
+  },
+  "Gold_Medium": {
+    "id": "Gold_Medium",
+    "material": "Gold",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Dodge_9",
+    "armorEffect": "_Boost_Armor_Dodge_4",
+    "weaponEffect_boosts": {
+      "DodgeBoost": "9"
+    },
+    "armorEffect_boosts": {
+      "DodgeBoost": "4"
+    }
+  },
+  "Gold_Large": {
+    "id": "Gold_Large",
+    "material": "Gold",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Dodge_12",
+    "armorEffect": "_Boost_Armor_Dodge_5",
+    "weaponEffect_boosts": {
+      "DodgeBoost": "12"
+    },
+    "armorEffect_boosts": {
+      "DodgeBoost": "5"
+    }
+  },
+  "Gold_Giant": {
+    "id": "Gold_Giant",
+    "material": "Gold",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Dodge_15",
+    "armorEffect": "_Boost_Armor_Dodge_6",
+    "weaponEffect_boosts": {
+      "DodgeBoost": "15"
+    },
+    "armorEffect_boosts": {
+      "DodgeBoost": "6"
+    }
+  },
+  "TigersEye_Small": {
+    "id": "TigersEye_Small",
+    "material": "TigersEye",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Small",
+    "armorEffect": "_Boost_Armor_PhysMagicBoost9",
+    "weaponEffect_boosts": {
+      "FinesseBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_FINPERC_15"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "9",
+      "MagicArmorBoost": "9"
+    }
+  },
+  "TigersEye_Medium": {
+    "id": "TigersEye_Medium",
+    "material": "TigersEye",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Medium",
+    "armorEffect": "_Boost_Armor_PhysMagicBoost11",
+    "weaponEffect_boosts": {
+      "FinesseBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_FINPERC_20"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "11",
+      "MagicArmorBoost": "11"
+    }
+  },
+  "TigersEye_Large": {
+    "id": "TigersEye_Large",
+    "material": "TigersEye",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Large",
+    "armorEffect": "_Boost_Armor_PhysMagicBoost13",
+    "weaponEffect_boosts": {
+      "FinesseBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_FINPERC_25"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "13",
+      "MagicArmorBoost": "13"
+    }
+  },
+  "TigersEye_Giant": {
+    "id": "TigersEye_Giant",
+    "material": "TigersEye",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Giant",
+    "armorEffect": "_Boost_Armor_PhysMagicBoost15",
+    "weaponEffect_boosts": {
+      "FinesseBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_FINPERC_30"
+    },
+    "armorEffect_boosts": {
+      "ArmorBoost": "15",
+      "MagicArmorBoost": "15"
+    }
+  },
+  "Topaz_Small": {
+    "id": "Topaz_Small",
+    "material": "Topaz",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Small",
+    "armorEffect": "_Boost_Armor_Rune_Topaz_Small",
+    "weaponEffect_boosts": {
+      "Ranged": "1",
+      "Air": "9"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESAIR_2"
+    }
+  },
+  "Topaz_Medium": {
+    "id": "Topaz_Medium",
+    "material": "Topaz",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Topaz_Medium",
+    "weaponEffect_boosts": {
+      "Ranged": "2",
+      "Air": "13"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESAIR_3"
+    }
+  },
+  "Topaz_Large": {
+    "id": "Topaz_Large",
+    "material": "Topaz",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Large",
+    "armorEffect": "_Boost_Armor_Rune_Topaz_Large",
+    "weaponEffect_boosts": {
+      "Ranged": "3",
+      "Air": "17"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESAIR_4"
+    }
+  },
+  "Topaz_Giant": {
+    "id": "Topaz_Giant",
+    "material": "Topaz",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Topaz_Giant",
+    "weaponEffect_boosts": {
+      "Ranged": "4",
+      "Air": "21"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESAIR_5"
+    }
+  },
+  "Emerald_Small": {
+    "id": "Emerald_Small",
+    "material": "Emerald",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Small",
+    "armorEffect": "_Boost_Armor_Rune_Emerald_Small",
+    "weaponEffect_boosts": {
+      "SingleHanded": "1",
+      "Poison": "9"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPOISON_2"
+    }
+  },
+  "Emerald_Medium": {
+    "id": "Emerald_Medium",
+    "material": "Emerald",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Emerald_Medium",
+    "weaponEffect_boosts": {
+      "SingleHanded": "2",
+      "Poison": "13"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPOISON_3"
+    }
+  },
+  "Emerald_Large": {
+    "id": "Emerald_Large",
+    "material": "Emerald",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Large",
+    "armorEffect": "_Boost_Armor_Rune_Emerald_Large",
+    "weaponEffect_boosts": {
+      "SingleHanded": "3",
+      "Poison": "17"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPOISON_4"
+    }
+  },
+  "Emerald_Giant": {
+    "id": "Emerald_Giant",
+    "material": "Emerald",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Emerald_Giant",
+    "weaponEffect_boosts": {
+      "SingleHanded": "4",
+      "Poison": "21"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_MAXRESPOISON_5"
+    }
+  },
+  "Jade_Small": {
+    "id": "Jade_Small",
+    "material": "Jade",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_Rune_Jade_Small",
+    "armorEffect": "_Boost_Armor_Rune_Jade_Small",
+    "weaponEffect_boosts": {
+      "ConstitutionBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_CONPERC_15"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_LIFE_3"
+    }
+  },
+  "Jade_Medium": {
+    "id": "Jade_Medium",
+    "material": "Jade",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_Rune_Jade_Medium",
+    "armorEffect": "_Boost_Armor_Rune_Jade_Medium",
+    "weaponEffect_boosts": {
+      "ConstitutionBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_CONPERC_20"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_LIFE_4"
+    }
+  },
+  "Jade_Large": {
+    "id": "Jade_Large",
+    "material": "Jade",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_Rune_Jade_Large",
+    "armorEffect": "_Boost_Armor_Rune_Jade_Large",
+    "weaponEffect_boosts": {
+      "ConstitutionBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_CONPERC_25"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_LIFE_5"
+    }
+  },
+  "Jade_Giant": {
+    "id": "Jade_Giant",
+    "material": "Jade",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_Rune_Jade_Giant",
+    "armorEffect": "_Boost_Armor_Rune_Jade_Giant",
+    "weaponEffect_boosts": {
+      "ConstitutionBoost": "1"
+    },
+    "real_weaponEffect": {
+      "prop": "AMER_DELDUM_CONPERC_30"
+    },
+    "real_armorEffect": {
+      "prop": "AMER_DELDUM_REGEN_LIFE_6"
+    }
+  },
+  "Malachite_Small": {
+    "id": "Malachite_Small",
+    "material": "Malachite",
+    "size": "Small",
+    "weaponEffect": "_Boost_Weapon_CriticalChance_7",
+    "armorEffect": "_Boost_Armor_MovementSpeed_20",
+    "weaponEffect_boosts": {
+      "CriticalChance": "7"
+    },
+    "armorEffect_boosts": {
+      "Movement": "20"
+    }
+  },
+  "Malachite_Medium": {
+    "id": "Malachite_Medium",
+    "material": "Malachite",
+    "size": "Medium",
+    "weaponEffect": "_Boost_Weapon_CriticalChance_9",
+    "armorEffect": "_Boost_Armor_MovementSpeed_30",
+    "weaponEffect_boosts": {
+      "CriticalChance": "9"
+    },
+    "armorEffect_boosts": {
+      "Movement": "30"
+    }
+  },
+  "Malachite_Large": {
+    "id": "Malachite_Large",
+    "material": "Malachite",
+    "size": "Large",
+    "weaponEffect": "_Boost_Weapon_CriticalChance_12",
+    "armorEffect": "_Boost_Armor_MovementSpeed_40",
+    "weaponEffect_boosts": {
+      "CriticalChance": "12"
+    },
+    "armorEffect_boosts": {
+      "Movement": "40"
+    }
+  },
+  "Malachite_Giant": {
+    "id": "Malachite_Giant",
+    "material": "Malachite",
+    "size": "Giant",
+    "weaponEffect": "_Boost_Weapon_CriticalChance_15",
+    "armorEffect": "_Boost_Armor_MovementSpeed_50",
+    "weaponEffect_boosts": {
+      "CriticalChance": "15"
+    },
+    "armorEffect_boosts": {
+      "Movement": "50"
+    }
+  }
+}
