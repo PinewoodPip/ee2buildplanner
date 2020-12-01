@@ -248,7 +248,7 @@ export class Attributes extends React.Component {
 	render() {
         let remaining = game.maxNaturalAttributePoints - game.totalAttributePointsSpent
         
-		return <TabbedContainer style={{minWidth: "300px", height: "100%"}}>
+		return <TabbedContainer app={this.props.app} style={{minWidth: "300px", height: "100%"}}>
 			<Container name="Attributes" noBg className="flexbox-vertical flex-align-start full-size">
 				<Text text={utils.format("{0} Remaining", remaining)} className={remaining < 0 ? "overflowed" : ""}/>
 

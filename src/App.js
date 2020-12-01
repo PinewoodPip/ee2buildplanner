@@ -270,6 +270,10 @@ There is no character limit and it will be saved when you save the build.`,
       abilities: build.abilities,
       civils: build.civils,
       talents: new Set(build.talents),
+
+      // remove popups/sidebar
+      popup: null,
+      sidebar: null,
     })
   }
 
@@ -474,7 +478,7 @@ There is no character limit and it will be saved when you save the build.`,
     });
   }
 
-  closePopupPanel() {this.setState({popup: null})}
+  closePopupPanel() {this.setState({popup: null, sidebar: null})}
 
   secretProgress = 0
   handleKeyPress(e) {

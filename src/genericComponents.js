@@ -182,12 +182,13 @@ export class FileButton extends React.Component {
 		event.stopPropagation();
 		event.preventDefault();
 		var file = event.target.files[0];
+
 		return file.text()
 	}
 	render() {
 		return(
 			<div className="flexbox-horizontal import-build button" onClick={() => {this.upload.click()}} disabled={(this.props.disabled)}>
-				<Icon size="32px" img="export"/>
+				<Icon size="32px" img="import"/>
 				<Text text="Import build"/>
 			<input id="myInput"
 				type="file"
@@ -216,10 +217,13 @@ export function Sidebar(props) {
 		style.right = "0"
 
 	return (
-		<div className="sidebar-overlay" onClick={()=>props.app.setState({sidebar: null})}>
+		<div className="sidebar-overlay flexbox-horizontal">
 			<Container noBg className="sidebar" style={style}>
 				{props.children}
 			</Container>
+
+			{/* the clickable element that removes the sidebar */}
+			<div className="flex-grow" style={{height: "100%"}} onClick={()=>props.app.setState({sidebar: null})}/>
 		</div>
 	)
 }

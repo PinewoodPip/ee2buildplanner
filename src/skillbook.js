@@ -122,7 +122,7 @@ function SkillTooltip(props) {
 	let actionInfo = <div className="flexbox-horizontal flex-align-centered">
 		<Text text={skill.ActionPoints}/>
 		<Icon size="32px" img="action_point" className=""/>
-		<Text text={skill.Cooldown + " CD"}/>
+		<Text text={(skill.Cooldown == -1 ? "Once per combat" : skill.Cooldown + " CD")}/>
 	</div>
 
 	// statuses
