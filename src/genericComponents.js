@@ -3,6 +3,7 @@ import React from 'react';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { cloneDeep } from "lodash"
+// import "animate.css"
 
 import { game } from "./App.js"
 import * as utils from "./utils.js"
@@ -68,6 +69,10 @@ export class TabbedContainer extends React.Component {
 				<div style={{height: "15px"}}/>
 				
                 {this.props.children[this.state.index]}
+
+				{/* todo remove this from here to make this component generic */}
+				<GreenButton text="View Stats" onClick={() => {this.props.app.setState({popup: "stats"})}} style={{marginBottom: "15px"}}/>
+				<div style={{height: "16px"}}/>
             </Container>
     }
 }
@@ -200,4 +205,21 @@ export function PopupHeader(props) {
 		<Text text={props.text} className={"flex-grow"}/>
 		<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
 	</div>
+}
+
+export function Sidebar(props) {
+	let style = {}
+	
+	if (props.side == "left")
+		style.left = "0"
+	else
+		style.right = "0"
+
+	return (
+		<div className="sidebar-overlay" onClick={()=>props.app.setState({sidebar: null})}>
+			<Container noBg className="sidebar" style={style}>
+				{props.children}
+			</Container>
+		</div>
+	)
 }

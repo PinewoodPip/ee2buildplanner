@@ -125,10 +125,11 @@ function Talents(props) {
 	let className = props.app.state.talents.size > miscData.maxTalents ? "overflowed" : ""
 	
 	return (
-		<Container className="flexbox-vertical flex-align-start skill-abilities" noBg>
+		// using full-size class here screws things up, the tooltip's are probably to blame
+		<Container className="flexbox-vertical flex-align-start" noBg>
 			<Text text={utils.format("{0} chosen", props.app.state.talents.size)} className={className}/>
 			{/* wtf... using a % height down below causes the dropdown to be pushed up */}
-			<Container className="flexbox-vertical flex-align-start wrap-y" noBg style={{height: "400px", width: "100%"}}>
+			<Container className="flexbox-vertical flex-align-start wrap-y" noBg style={{height: "350px", width: "100%"}}>
 				{talents}
 			</Container>
 		</Container>
@@ -267,7 +268,7 @@ export class Attributes extends React.Component {
 			<Container name="Civil Abilities" noBg className="flexbox-vertical flex-align-start full-size">
 				<CivilAbilities app={this.props.app} noBg/>
 			</Container>
-			<Container name="Talents" noBg className="flexbox-vertical flex-align-start">
+			<Container name="Talents" noBg className="flexbox-vertical flex-align-start full-size">
 				<Talents app={this.props.app} noBg/>
 			</Container>
 		</TabbedContainer>

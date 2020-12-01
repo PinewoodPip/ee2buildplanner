@@ -109,6 +109,28 @@ export class Game {
     return amount
   }
 
+  // get amount of ascension points the build uses. If the last X nodes of an aspect are set to 'any', they are ignored for this count.
+  get nodeCount() {
+    let count = 0
+    for (let x in this.app.state.aspects) {
+      let nodes = cloneDeep(this.app.state.aspects[x].nodes)
+      nodes.reverse()
+      let countNulls = false
+      for (let z in nodes) {
+        if (nodes[z] != null)
+          countNulls = true
+        if (nodes[z] != null || countNulls) {
+          count++
+        }
+      }
+    }
+    return count
+  }
+
+  get maxAscensionPoints() {
+    return 5 + this.app.state.config.buildLevel
+  }
+
   async changeAttribute(id, increment) {
     let attrs = cloneDeep(this.app.state.attributes)
     let maxInvestment = miscData.maxNaturalAttributeInvestment

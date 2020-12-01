@@ -73,7 +73,7 @@ function TopBar(props) {
 				<div style={{width: "10px"}}/>
 
 				<div className="flexbox-horizontal flex-align-start" style={{width: "33%"}}>
-					<GreenButton text="View builds" onClick={(e) => {props.app.contextMenu([<BuildsDropdown app={props.app}/>], e)}}/>
+					<GreenButton text="View builds" onClick={(e) => {props.app.sidebar(<BuildsDropdown app={props.app}/>, "left")}}/>
 					<div style={{width: "10px"}}/>
 
 					<div style={{position: "relative"}}>
@@ -224,6 +224,7 @@ export class MainInterface extends React.Component {
 	render() {
 		let appState = this.props.app.state
 		let skillsInfo = {origin: appState.origin, skills: appState.skills, race: appState.physique.race, lifeType: appState.physique.lifeType, coreNodes: appState.coreNodes}
+		let ascData = {aspects: appState.aspects, coreNode: appState.coreNodes, selectedAspect: appState.selectedAspect}
 		return <div>
 			<TopBar app={this.props.app}/>
 			<div className="flexbox-horizontal">
@@ -239,7 +240,7 @@ export class MainInterface extends React.Component {
 
 					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
 						<Attributes app={this.props.app}/>
-						<Ascension app={this.props.app}/>
+						<Ascension data={ascData} app={this.props.app}/>
 						<TextField app={this.props.app} lastValue={this.props.app.state.id} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}} stateKey="text" textareaClass="textarea"/>
 					</div>
 				</div>

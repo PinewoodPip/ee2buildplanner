@@ -113,7 +113,8 @@ X attr display is bugged
 X optimize skill and artifacts panel
 X remove bouncing shield arena
 - option for alternate ascension layout, where the nodes screen takes up the whole thing, leaving more space for notes
-- fix skill ability bonuses lagging behind
+X fix skill ability bonuses lagging behind
+X track node count
 
 -- ISSUES
 - escapist does not grant its skill
@@ -127,3 +128,4 @@ X remove bouncing shield arena
 - tooltip for enrage is MASSIVE
 - too many keywords ina build prob causes some issue in the builds dropdown
 - "save build" button doesn't instantly update its color warning
+- defiance has a lot of redundant text in the keywords screen

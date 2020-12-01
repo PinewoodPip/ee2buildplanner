@@ -8,8 +8,8 @@ import { Base64 } from 'js-base64';
 import * as utils from "./utils.js"
 import { Game } from "./game.js"
 import { AscensionPopup, Keywords } from "./ascensionComponents.js"
-import { Config, MainInterface } from "./components.js"
-import { Popup, ContextMenu } from "./genericComponents.js"
+import { Config, MainInterface, TextField } from "./components.js"
+import { Popup, ContextMenu, Sidebar } from "./genericComponents.js"
 import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"
 import { ArtifactsPopup } from "./artifacts.js"
@@ -31,6 +31,7 @@ class App extends React.Component {
     this.state = {
       ready: false,
       popup: null,
+      sidebar: null,
       skillbookCategory: "Warrior",
       selectedAspect: null,
       currentFamily: "force",
@@ -51,6 +52,7 @@ class App extends React.Component {
         highlightSkillKeywords: true,
         author: "",
         hasSeenSaveAlert: false,
+        buildLevel: 21,
       },
 
       // should these be saved?
@@ -546,6 +548,10 @@ There is no character limit and it will be saved when you save the build.`,
     }
   }
 
+  sidebar(element, position="left") {
+    this.setState({sidebar: {element: element, position: position}})
+  }
+
   getBuildURL() {
     // note: this takes a str, don't pass the object itself
     console.log(Base64.encode(JSON.stringify(this.getCurrentBuild(true))).length)
@@ -599,10 +605,18 @@ There is no character limit and it will be saved when you save the build.`,
         contextMenu = <ContextMenu app={this}>{this.state.contextMenu.element}</ContextMenu>
       }
 
+      let sidebar = null
+      if (this.state.sidebar && this.state.sidebar.position) {
+        sidebar = <Sidebar app={this} side={this.state.sidebar.position}>
+          {this.state.sidebar.element}
+        </Sidebar>
+      }
+
       return (
         // tabindex is needed to catch key presses. Outline disables the ugly outline when the element is focused
         <Beforeunload onBeforeunload={(e)=>{this.saveConfig(); this.saveBuild(e, true)}}>
           <div className="App" tabIndex={-1} style={{outline: "none"}} onKeyDown={(e)=>{this.handleKeyPress(e)}}>
+            {sidebar}
             {contextMenu}
             {popup}
             <MainInterface app={this}/>

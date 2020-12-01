@@ -12,7 +12,12 @@ export class Ascension extends React.Component {
 		this.props.app.setState({selectedAspect: this.props.app.state.aspects.indexOf(asp)})
 	}
 
+	shouldComponentUpdate(nextProps, nextState) {
+		return utils.propObjectHasChanged(this.props.data, nextProps.data)
+	}
+
 	render() {
+		let nodeCount = game.nodeCount
 		let aspects = []
 		for (let x in this.props.app.state.aspects) {
 			let asp = this.props.app.state.aspects[x]
@@ -33,7 +38,7 @@ export class Ascension extends React.Component {
 
 		return <Container style={{height: "100%"}}>
 			<div className="flexbox-horizontal">
-				<div className="flexbox-vertical ascension flex-align-start">
+				<div className="flexbox-vertical ascension flex-align-start wrap-y">
 					<AspectListing keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>
 					<hr/>
 
@@ -51,13 +56,18 @@ export class Ascension extends React.Component {
 						<Embodiments amounts={game.ascension.getTotalRewards()}/>
 					</div>
 
-					<div style={{height: "10px"}}/>
+					<Tooltip content="The late nodes of an Aspect that are set to 'any' do not count towards this counter. You can use that to declare unfinished/dipped Aspects." placement="bottom">
+						<Text text={utils.format("{0} Ascension Points used", nodeCount)} className={nodeCount > game.maxAscensionPoints ? "overflowed" : ""}/>
+					</Tooltip>
+
+					<div style={{height: "5px"}}/>
 
 					<Flourish style={{marginBottom: "15px"}}/>
 
-					<GreenButton text="Add Aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
-					<GreenButton text="View Stats" onClick={() => {this.props.app.setState({popup: "stats"})}}/>
-					<GreenButton text="View Keywords" onClick={() => {this.props.app.setState({popup: "keywords"})}}/>
+					<div className="flexbox-horizontal">
+						<GreenButton text="Add Aspect..." onClick={() => {this.props.app.setState({popup: "ascension"})}}/>
+						<GreenButton text="View Keywords" onClick={() => {this.props.app.setState({popup: "keywords"})}}/>
+					</div>
 				</div>
 				<div className="aspect-preview">
 					{currentAspect}
@@ -150,9 +160,11 @@ export function AscensionPopup(props) {
 
 					<div style={{height: "10px"}}/>
 
-					<div className="sticky-bottom">
-						<GreenButton text="Add aspect" onClick={() => {addAspect()}}/>
-					</div>
+					{props.app.state.currentlyViewedAspect.id ? (
+						<div className="sticky-bottom">
+							<GreenButton text="Add Aspect" onClick={() => {addAspect()}}/>
+						</div>
+					) : null}
 				</div>
 			</div>
 		</Container>
@@ -321,7 +333,7 @@ function AscensionFamilyButton(props) {
 	return (
 		<div className="flexbox-horizontal flex-align-start full-width ascension-family" onClick={()=>{props.app.setState({currentFamily: props.family.toLowerCase()})}}>
 			<Embodiment type={props.family.toLowerCase()} amount={""}/>
-			<Text text={props.family}/>
+			<Text text={utils.capitalize(props.family)}/>
 		</div>
 	)
 }
