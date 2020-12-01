@@ -203,22 +203,12 @@ hr {width: 85%;}
   margin: 0 10px 0 10px
 }
 
-.flex-align-centered {
-  justify-content: center;
-}
-
-.flex-align-space-evenly {
-  justify-content: space-evenly !important;
-}
-
-.flex-align-space-between {
-  justify-content: space-between !important;
-}
-
+.flex-align-centered {justify-content: center;}
+.flex-align-space-evenly {justify-content: space-evenly !important;}
+.flex-align-space-between {justify-content: space-between !important;}
 /* this had a different name before, hope we didnt screw anything up */
-.flex-align-space-around {
-  justify-content: space-around !important;
-}
+.flex-align-space-around {justify-content: space-around !important;}
+.flex-row-reverse {flex-direction: row-reverse;}
 
 .margin-horizontal {
   margin: 0 3px 0 3px;
@@ -447,7 +437,8 @@ hr {width: 85%;}
 
 .aspect-preview {
   width: 300px;
-  height: 450px;
+  height: 500px;
+  /* height: 100%; */
   margin-right: 25px;
   /* overflow: scroll; */
   overflow-y: scroll;

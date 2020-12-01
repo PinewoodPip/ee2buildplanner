@@ -47,13 +47,13 @@ export class Ascension extends React.Component {
 					<hr/>
 
 					<CoreButtons app={this.props.app}/>
-					<div className={"flexbox-horizontal flex-align-centered "}>
-						<Text text={"Reqs:"} style={{width: "100px"}}/>
-						<Embodiments highlightUnmet={true} amounts={game.ascension.getTotalRequirements()}/>
-					</div>
 					<div className="flexbox-horizontal flex-align-centered">
 						<Text text={"Rewards:"} style={{width: "100px"}}/>
 						<Embodiments amounts={game.ascension.getTotalRewards()}/>
+					</div>
+					<div className={"flexbox-horizontal flex-align-centered "}>
+						<Text text={"Reqs:"} style={{width: "100px"}}/>
+						<Embodiments highlightUnmet={true} amounts={game.ascension.getTotalRequirements()}/>
 					</div>
 
 					<Tooltip content="The late nodes of an Aspect that are set to 'any' do not count towards this counter. You can use that to declare unfinished/dipped Aspects." placement="bottom">
@@ -80,7 +80,8 @@ export class Ascension extends React.Component {
 export function AscensionPopup(props) {
 	let familyButtons = []
 	for (let x in game.ascension.aspects) {
-		familyButtons.push(<AscensionFamilyButton key={x} family={x} app={props.app}/>)
+		if (x != "special")
+			familyButtons.push(<AscensionFamilyButton key={x} family={x} app={props.app}/>)
 	}
 
 	function changeCurrentlyViewedAspect(asp) {

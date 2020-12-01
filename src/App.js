@@ -14,15 +14,16 @@ import { Boosts } from "./statsDisplay.js"
 import { SkillBook } from "./skillbook.js"
 import { ArtifactsPopup } from "./artifacts.js"
 import * as miscData from "./miscData.js"
-import { ExportMenu } from './buildsDropdown';
+import { ExportMenu, FeaturedBuilds } from './buildsDropdown';
 import { clone } from 'underscore';
 import { InstrumentsPopup } from './instruments';
 
 const axios = require('axios').default;
 
 const SAVE_PROTOCOL = 0
-const APP_VERSION = {major: 0, minor: 0, revision: 0}
-export const APP_DATE = "28/11/2020" // european format
+const APP_VERSION = {major: 0, minor: 1, revision: 0}
+export const APP_DATE = "1st Dec 20" // european format
+export const MOD_VERSION = "Patch 87 (2nd Nov 20)"
 const URL_PROTOCOL = 0
 
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
     super()
     this.state = {
       ready: false,
+      buildGallery: null,
       popup: null,
       sidebar: null,
       skillbookCategory: "Warrior",
@@ -281,6 +283,10 @@ There is no character limit and it will be saved when you save the build.`,
     return JSON.parse(window.localStorage.getItem("savedBuilds"))
   }
 
+  getFeaturedBuilds() {
+    return this.state.buildGallery
+  }
+
   saveConfig() {
     window.localStorage.setItem("config", JSON.stringify(this.state.config))
   }
@@ -314,13 +320,17 @@ There is no character limit and it will be saved when you save the build.`,
     // save which build we were last using, so we can load it next time the app is opened
     window.localStorage.setItem("lastBuild", save.id)
 
-    if (!tabIsBeingClosed && !this.state.config.hasSeenSaveAlert) {
-      window.alert("Build saved. Saving also happens automatically when you close the tab.")
+    if (!tabIsBeingClosed) {
+      this.forceUpdate()
 
-      let config = cloneDeep(this.state.config)
-      config.hasSeenSaveAlert = true;
-
-      this.setState({config: config})
+      if (!this.state.config.hasSeenSaveAlert) {
+        window.alert("Build saved. Saving also happens automatically when you close the tab.")
+  
+        let config = cloneDeep(this.state.config)
+        config.hasSeenSaveAlert = true;
+  
+        this.setState({config: config})
+      }
     }
     
     // return e.returnValue = "Aasdasd"
@@ -471,6 +481,21 @@ There is no character limit and it will be saved when you save the build.`,
             catch {window.alert("Your last build could not be loaded.")}
           }
         }
+
+        // load featured builds
+        let buildPromises = []
+        for (let x in miscData.featuredBuilds) {
+          buildPromises.push(axios.get("/BuildGallery/" + miscData.featuredBuilds[x] + ".json"))
+        }
+        axios.all(buildPromises)
+          .then((answers) => {
+            let map = {}
+            answers.forEach((e, i) => {
+              map[miscData.featuredBuilds[i]] = e.data 
+            })
+            game.app.setState({buildGallery: map})
+          })
+          .catch(() => {window.alert("The build gallery did not load properly. Try refreshing or notify Pip.")})
       }.bind(this))
       .catch((error) => {
         alert("The app did not load properly. Try refreshing.")
@@ -596,7 +621,6 @@ There is no character limit and it will be saved when you save the build.`,
         case "export": {popup = <ExportMenu app={this}/>; break}
         case "config": {popup = <Config app={this}/>; break;}
         case "instrument": {popup = <InstrumentsPopup app={this}/>; break;}
-        // case "featuredBuilds": {popup = <}
         default: {break}
       }
 

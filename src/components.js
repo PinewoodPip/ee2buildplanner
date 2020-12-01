@@ -11,8 +11,8 @@ import { CharacterProfile } from "./characterProfile.js"
 import { Skill } from "./skillbook.js"
 import { Attributes } from "./gameStatSheet.js"
 import { Artifacts } from './artifacts.js';
-import { BuildsDropdown } from './buildsDropdown.js';
-import { APP_DATE } from "./App.js"
+import { BuildsDropdown, FeaturedBuilds } from './buildsDropdown.js';
+import { APP_DATE, MOD_VERSION } from "./App.js"
 import * as utils from "./utils.js"
 
 export class TextField extends React.Component {
@@ -92,9 +92,9 @@ function TopBar(props) {
 				</div>
 
 				<div className="flexbox-horizontal flex-align-end" style={{width: "33%"}}>
-					<GreenButton text="Featured Builds" onClick={()=>{props.app.setState({popup: "featuredBuilds"})}}/>
+					<GreenButton text="Build Gallery" onClick={()=>{props.app.sidebar(<FeaturedBuilds app={props.app}/>, "right")}}/>
 					<div style={{width: "10px"}}/>
-					<GreenButton text="Config" onClick={()=>{props.app.setState({popup: "config"})}}/>
+					<GreenButton text="Config &amp; Info" onClick={()=>{props.app.setState({popup: "config"})}}/>
 				</div>
 
 				<div style={{width: "10px"}}/>
@@ -145,6 +145,7 @@ export class Config extends React.Component {
 				<Text text="Most graphic assets made by Larian."/>
 				<hr/>
 				<Text text={utils.format("App version: {0}", APP_DATE)}/>
+				<Text text={utils.format("For mod version: {0}", MOD_VERSION)}/>
 			</div>
 		</Container>
 	}

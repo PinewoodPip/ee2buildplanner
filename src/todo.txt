@@ -119,15 +119,14 @@ X track node count
 -- ISSUES
 - escapist does not grant its skill
 -- also applies to anything else that grants skills I guess. Except proto
-- skills that are once-per-combat show -1 CD
 - small issue: tooltips from talents expand the page
-- text are edits are lost if you do not unblur before leaving page
+- text are edits are lost if you do not unblur (click anything else) before leaving page
 - deleting a build doesn't unload it - is this an issue?
 - skills dont show if they directly apply stacks (ex. aero touch)
 - tooltip for enrage is MASSIVE
-- too many keywords ina build prob causes some issue in the builds dropdown
+- too many keywords in a build prob causes some issue in the builds dropdown
 - "save build" button doesn't instantly update its color warning
 - defiance has a lot of redundant text in the keywords screen
 - some builds store a 'null' keyword
-- can't override author once it's set
+- can't override author once it's set for a build
 - config author field is wonky

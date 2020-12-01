@@ -210,14 +210,14 @@ export function PopupHeader(props) {
 
 export function Sidebar(props) {
 	let style = {}
-	
-	if (props.side == "left")
-		style.left = "0"
-	else
-		style.right = "0"
+
+	console.log(props.side)
+
+	// reverse element order for right-sided sidebars
+	let extraClass = props.side == "right" ? "flex-row-reverse" : ""
 
 	return (
-		<div className="sidebar-overlay flexbox-horizontal">
+		<div className={"sidebar-overlay flexbox-horizontal " + extraClass}>
 			<Container noBg className="sidebar" style={style}>
 				{props.children}
 			</Container>

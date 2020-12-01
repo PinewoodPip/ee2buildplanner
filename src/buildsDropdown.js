@@ -50,7 +50,7 @@ class Build extends React.Component {
         }
 
         return (
-            <div className="flexbox-horizontal flex-align-space-between build-entry button" style={{position: "relative"}} onClick={()=>{props.app.loadBuild(props.data.id)}} onContextMenu={deleteBuild.bind(this)} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
+            <div className="flexbox-horizontal flex-align-space-between build-entry button" style={{position: "relative"}} onClick={()=>{props.app.loadBuild(props.data.id, (props.fullBuild ? props.data : null))}} onContextMenu={deleteBuild.bind(this)} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
                 {roleDisplay}
 
                 <Icon img={props.data.portrait} style={{width: "80px", height: "100px", outline: "1px solid rgb(70, 70, 70)"}}/>
@@ -62,7 +62,7 @@ class Build extends React.Component {
                     {buildRoleInfo}
                 </div>
 
-                {this.state.beingHovered ? (
+                {this.state.beingHovered && !props.undeletable ? (
                     <Icon className="button absolute-center-vertical" img={"trash_can"} onClick={deleteBuild.bind(this)} size="32px" style={{right: "0px"}}/>
                 ) : null}
             </div>
@@ -78,13 +78,43 @@ export function BuildsDropdown(props) {
     }
 
 	return (
-		<Container className="flexbox-vertical builds-dropdown" noBg>
-            <Text text="Saved Builds"/>
+		<Container className="flexbox-vertical builds-dropdown flex-align-start wrap-y" noBg>
+            <div style={{height: "20px"}}/>
+
+            <Text text="Saved Builds" style={{fontSize: "18px"}}/>
             <Flourish style={{marginBottom: "15px"}}/>
 
 			{builds}
 
             <FileButton text="Import Build" func={(f)=>{props.app.importBuild(f)}}/>
+		</Container>
+	)
+}
+
+export function FeaturedBuilds(props) {
+    let buildsList = game.app.getFeaturedBuilds()
+    if (!buildsList)
+        return <Container className="flexbox-vertical builds-dropdown flex-align-start wrap-y" noBg>
+            <Text text="The Build Gallery could not be loaded. Try refreshing."/>
+        </Container>
+
+    let builds = []
+    for (let x in buildsList) {
+        builds.push(<Build fullBuild undeletable key={x} data={buildsList[x]} app={props.app}/>)
+    }
+
+	return (
+		<Container className="flexbox-vertical builds-dropdown flex-align-start wrap-y" noBg>
+            <div style={{height: "20px"}}/>
+
+            <Text text="Build Gallery" style={{fontSize: "18px"}}/>
+            <Flourish style={{marginBottom: "15px"}}/>
+
+			{builds}
+
+            <div style={{height: "10px"}}/>
+            <Text text="Message @Pip#1249 on the Discord if you want your build added here!"/>
+
 		</Container>
 	)
 }

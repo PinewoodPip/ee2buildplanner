@@ -1,3 +1,7 @@
+export const featuredBuilds = [
+	"test",
+]
+
 export const races = {
 	human: {
 		name: "Human",
