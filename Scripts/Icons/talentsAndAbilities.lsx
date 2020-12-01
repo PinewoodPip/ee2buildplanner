@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" time="1527160622" />
+    <version major="3" minor="5" revision="0" build="12" />
+    <region id="IconUVList">
+        <node id="root">
+            <children>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Aerotheurge" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Bartering" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_DualWielding" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Geomancer" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Huntsman" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Hydrosophist" type="22" />
+                    <attribute id="U1" value="0.312744" type="6" />
+                    <attribute id="U2" value="0.374756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Leadership" type="22" />
+                    <attribute id="U1" value="0.375244" type="6" />
+                    <attribute id="U2" value="0.437256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Loremaster" type="22" />
+                    <attribute id="U1" value="0.437744" type="6" />
+                    <attribute id="U2" value="0.499756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_LuckyCharm" type="22" />
+                    <attribute id="U1" value="0.500244" type="6" />
+                    <attribute id="U2" value="0.562256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Necromancy" type="22" />
+                    <attribute id="U1" value="0.562744" type="6" />
+                    <attribute id="U2" value="0.624756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_PainReflection" type="22" />
+                    <attribute id="U1" value="0.625244" type="6" />
+                    <attribute id="U2" value="0.687256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Perseverance" type="22" />
+                    <attribute id="U1" value="0.687744" type="6" />
+                    <attribute id="U2" value="0.749756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Persuasion" type="22" />
+                    <attribute id="U1" value="0.750244" type="6" />
+                    <attribute id="U2" value="0.812256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Polymorph" type="22" />
+                    <attribute id="U1" value="0.812744" type="6" />
+                    <attribute id="U2" value="0.874756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Pyrokinetic" type="22" />
+                    <attribute id="U1" value="0.875244" type="6" />
+                    <attribute id="U2" value="0.937256" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Ranged" type="22" />
+                    <attribute id="U1" value="0.937744" type="6" />
+                    <attribute id="U2" value="0.999756" type="6" />
+                    <attribute id="V1" value="0.000244141" type="6" />
+                    <attribute id="V2" value="0.0622559" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Scoundrel" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_SingleHanded" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Sneaking" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Summoning" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Telekinesis" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Thievery" type="22" />
+                    <attribute id="U1" value="0.312744" type="6" />
+                    <attribute id="U2" value="0.374756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_TwoHanded" type="22" />
+                    <attribute id="U1" value="0.375244" type="6" />
+                    <attribute id="U2" value="0.437256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Ability_Warfare" type="22" />
+                    <attribute id="U1" value="0.437744" type="6" />
+                    <attribute id="U2" value="0.499756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Attribute_Constitution" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Attribute_Finesse" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Attribute_Intelligence" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Attribute_Memory" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Attribute_Strength" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Attribute_Wits" type="22" />
+                    <attribute id="U1" value="0.312744" type="6" />
+                    <attribute id="U2" value="0.374756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Barbarian_inv" type="22" />
+                    <attribute id="U1" value="0.500244" type="6" />
+                    <attribute id="U2" value="0.562256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Bloodbound_inv" type="22" />
+                    <attribute id="U1" value="0.562744" type="6" />
+                    <attribute id="U2" value="0.624756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_ChampionDriftwood_inv" type="22" />
+                    <attribute id="U1" value="0.625244" type="6" />
+                    <attribute id="U2" value="0.687256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_ChampionFortJoy_inv" type="22" />
+                    <attribute id="U1" value="0.687744" type="6" />
+                    <attribute id="U2" value="0.749756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_DwarfFriend_inv" type="22" />
+                    <attribute id="U1" value="0.812744" type="6" />
+                    <attribute id="U2" value="0.874756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Dwarf_inv" type="22" />
+                    <attribute id="U1" value="0.750244" type="6" />
+                    <attribute id="U2" value="0.812256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_ElfFriend_inv" type="22" />
+                    <attribute id="U1" value="0.437744" type="6" />
+                    <attribute id="U2" value="0.499756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Elf_inv" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Female_inv" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Hero_inv" type="22" />
+                    <attribute id="U1" value="0.375244" type="6" />
+                    <attribute id="U2" value="0.437256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Human_inv" type="22" />
+                    <attribute id="U1" value="0.437744" type="6" />
+                    <attribute id="U2" value="0.499756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Jester_inv" type="22" />
+                    <attribute id="U1" value="0.500244" type="6" />
+                    <attribute id="U2" value="0.562256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Lizard_inv" type="22" />
+                    <attribute id="U1" value="0.562744" type="6" />
+                    <attribute id="U2" value="0.624756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Male_inv" type="22" />
+                    <attribute id="U1" value="0.625244" type="6" />
+                    <attribute id="U2" value="0.687256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_MonsterSlayer_inv" type="22" />
+                    <attribute id="U1" value="0.687744" type="6" />
+                    <attribute id="U2" value="0.749756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Mystic_inv" type="22" />
+                    <attribute id="U1" value="0.750244" type="6" />
+                    <attribute id="U2" value="0.812256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Noble_inv" type="22" />
+                    <attribute id="U1" value="0.812744" type="6" />
+                    <attribute id="U2" value="0.874756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Outlaw_inv" type="22" />
+                    <attribute id="U1" value="0.875244" type="6" />
+                    <attribute id="U2" value="0.937256" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Promised_inv" type="22" />
+                    <attribute id="U1" value="0.937744" type="6" />
+                    <attribute id="U2" value="0.999756" type="6" />
+                    <attribute id="V1" value="0.312744" type="6" />
+                    <attribute id="V2" value="0.374756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Scholar_inv" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.375244" type="6" />
+                    <attribute id="V2" value="0.437256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Soldier_inv" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.375244" type="6" />
+                    <attribute id="V2" value="0.437256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_TheOne_inv" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.375244" type="6" />
+                    <attribute id="V2" value="0.437256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Undead_inv" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.375244" type="6" />
+                    <attribute id="V2" value="0.437256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Tag_Villain_inv" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.375244" type="6" />
+                    <attribute id="V2" value="0.437256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_AllSkilledUp" type="22" />
+                    <attribute id="U1" value="0.875244" type="6" />
+                    <attribute id="U2" value="0.937256" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Ambidextrous" type="22" />
+                    <attribute id="U1" value="0.937744" type="6" />
+                    <attribute id="U2" value="0.999756" type="6" />
+                    <attribute id="V1" value="0.0627441" type="6" />
+                    <attribute id="V2" value="0.124756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_AncestralKnowledge" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_ArrowRecovery" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_AvoidOpportunists" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_BiggerAndBetter" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_ComebackKid" type="22" />
+                    <attribute id="U1" value="0.312744" type="6" />
+                    <attribute id="U2" value="0.374756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_CorpseEater" type="22" />
+                    <attribute id="U1" value="0.375244" type="6" />
+                    <attribute id="U2" value="0.437256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Demon" type="22" />
+                    <attribute id="U1" value="0.500244" type="6" />
+                    <attribute id="U2" value="0.562256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_DwarvenGuile" type="22" />
+                    <attribute id="U1" value="0.562744" type="6" />
+                    <attribute id="U2" value="0.624756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_ElementalAffinity" type="22" />
+                    <attribute id="U1" value="0.625244" type="6" />
+                    <attribute id="U2" value="0.687256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_ElementalRanger" type="22" />
+                    <attribute id="U1" value="0.687744" type="6" />
+                    <attribute id="U2" value="0.749756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Escapist" type="22" />
+                    <attribute id="U1" value="0.750244" type="6" />
+                    <attribute id="U2" value="0.812256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Executioner" type="22" />
+                    <attribute id="U1" value="0.812744" type="6" />
+                    <attribute id="U2" value="0.874756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_FarOutMan" type="22" />
+                    <attribute id="U1" value="0.875244" type="6" />
+                    <attribute id="U2" value="0.937256" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_FiveStarDiner" type="22" />
+                    <attribute id="U1" value="0.937744" type="6" />
+                    <attribute id="U2" value="0.999756" type="6" />
+                    <attribute id="V1" value="0.125244" type="6" />
+                    <attribute id="V2" value="0.187256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_GlassCannon" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Guerrilla" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Hothead" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_IceKing" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Ingenious" type="22" />
+                    <attribute id="U1" value="0.250244" type="6" />
+                    <attribute id="U2" value="0.312256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Leech" type="22" />
+                    <attribute id="U1" value="0.312744" type="6" />
+                    <attribute id="U2" value="0.374756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_LivingArmour" type="22" />
+                    <attribute id="U1" value="0.375244" type="6" />
+                    <attribute id="U2" value="0.437256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_LoneWolf" type="22" />
+                    <attribute id="U1" value="0.437744" type="6" />
+                    <attribute id="U2" value="0.499756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Mnemonic" type="22" />
+                    <attribute id="U1" value="0.500244" type="6" />
+                    <attribute id="U2" value="0.562256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_MorningPerson" type="22" />
+                    <attribute id="U1" value="0.562744" type="6" />
+                    <attribute id="U2" value="0.624756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Opportunist" type="22" />
+                    <attribute id="U1" value="0.625244" type="6" />
+                    <attribute id="U2" value="0.687256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_ParryMaster" type="22" />
+                    <attribute id="U1" value="0.687744" type="6" />
+                    <attribute id="U2" value="0.749756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_PetPal" type="22" />
+                    <attribute id="U1" value="0.750244" type="6" />
+                    <attribute id="U2" value="0.812256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_PictureOfHealth" type="22" />
+                    <attribute id="U1" value="0.812744" type="6" />
+                    <attribute id="U2" value="0.874756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Quest_GhostTree" type="22" />
+                    <attribute id="U1" value="0.875244" type="6" />
+                    <attribute id="U2" value="0.937256" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Quest_Rooted" type="22" />
+                    <attribute id="U1" value="0.937744" type="6" />
+                    <attribute id="U2" value="0.999756" type="6" />
+                    <attribute id="V1" value="0.187744" type="6" />
+                    <attribute id="V2" value="0.249756" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Quest_SpidersKiss" type="22" />
+                    <attribute id="U1" value="0.000244141" type="6" />
+                    <attribute id="U2" value="0.0622559" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Quest_TradeSecrets" type="22" />
+                    <attribute id="U1" value="0.0627441" type="6" />
+                    <attribute id="U2" value="0.124756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Refined" type="22" />
+                    <attribute id="U1" value="0.125244" type="6" />
+                    <attribute id="U2" value="0.187256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_SavageSortilege" type="22" />
+                    <attribute id="U1" value="0.187744" type="6" />
+                    <attribute id="U2" value="0.249756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Slingshot" type="22" />
+                    <attribute id="U1" value="0.312744" type="6" />
+                    <attribute id="U2" value="0.374756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_SpellSong" type="22" />
+                    <attribute id="U1" value="0.375244" type="6" />
+                    <attribute id="U2" value="0.437256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Stench" type="22" />
+                    <attribute id="U1" value="0.437744" type="6" />
+                    <attribute id="U2" value="0.499756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Sturdy" type="22" />
+                    <attribute id="U1" value="0.500244" type="6" />
+                    <attribute id="U2" value="0.562256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_The_Pawn" type="22" />
+                    <attribute id="U1" value="0.562744" type="6" />
+                    <attribute id="U2" value="0.624756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Thrifty" type="22" />
+                    <attribute id="U1" value="0.625244" type="6" />
+                    <attribute id="U2" value="0.687256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Torturer" type="22" />
+                    <attribute id="U1" value="0.687744" type="6" />
+                    <attribute id="U2" value="0.749756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Unstable" type="22" />
+                    <attribute id="U1" value="0.750244" type="6" />
+                    <attribute id="U2" value="0.812256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_WalkItOff" type="22" />
+                    <attribute id="U1" value="0.812744" type="6" />
+                    <attribute id="U2" value="0.874756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_WhatARush" type="22" />
+                    <attribute id="U1" value="0.875244" type="6" />
+                    <attribute id="U2" value="0.937256" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Talent_Zombie" type="22" />
+                    <attribute id="U1" value="0.937744" type="6" />
+                    <attribute id="U2" value="0.999756" type="6" />
+                    <attribute id="V1" value="0.250244" type="6" />
+                    <attribute id="V2" value="0.312256" type="6" />
+                </node>
+            </children>
+        </node>
+    </region>
+    <region id="TextureAtlasInfo">
+        <node id="root">
+            <children>
+                <node id="TextureAtlasIconSize">
+                    <attribute id="Height" value="128" type="4" />
+                    <attribute id="Width" value="128" type="4" />
+                </node>
+                <node id="TextureAtlasPath">
+                    <attribute id="Path" value="Public/Shared/Assets/Textures/Icons/talentsAndAbilities.dds" type="20" />
+                    <attribute id="UUID" value="b7e764f7-f7f2-4e57-abef-b837dba22bc3" type="22" />
+                </node>
+                <node id="TextureAtlasTextureSize">
+                    <attribute id="Height" value="2048" type="4" />
+                    <attribute id="Width" value="2048" type="4" />
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

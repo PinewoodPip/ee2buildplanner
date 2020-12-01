@@ -1,0 +1,621 @@
+{
+  "absence": {
+    "id": "absence",
+    "name": "Absence",
+    "description": "When you manually sneak, recover 1 AP. When you kill a non-summon enemy, you can cast Absence for free until the end of your turn, which applies up to Dazzled II for 2 turns to enemies within 4m, makes you Invisible until the end of your turn, and makes you sneak",
+    "icon": "AMER_UNI_Boots_Leather_A"
+  },
+  "abyss": {
+    "id": "abyss",
+    "name": "Abyss",
+    "description": "When you perform a Violent Strike, activate Paucity. This item has no armor",
+    "icon": "AMER_UNI_Chest_Plate_A"
+  },
+  "adamant": {
+    "id": "adamant",
+    "name": "Adamant",
+    "description": "After activating Ward, you may cast a second Shields Up skill that costs 2 AP for 1 turn",
+    "icon": "AMER_UNI_Shield_B"
+  },
+  "amaranthinebulwark": {
+    "id": "amaranthinebulwark",
+    "name": "Amaranthine Bulwark",
+    "description": "Your Ward grants an additional +12% Physical resistance (+1% per Inertia embodied)",
+    "icon": "AMER_UNI_Shield_A"
+  },
+  "angelsegg": {
+    "id": "angelsegg",
+    "name": "Angel's Egg",
+    "description": "When you activate Purity, cast a Supernova that only harms enemies. When an ally you can see dies while you have Purity active, as a 1AP reaction, cast this Supernova at its location",
+    "icon": "AMER_UNI_Amulet_F"
+  },
+  "antediluviancarapace": {
+    "id": "antediluviancarapace",
+    "name": "Antediluvian Carapace",
+    "description": "+2% (+0.5% per Perseverance) maximum Air, Earth, Fire, and Water resistances",
+    "icon": "AMER_UNI_Chest_Plate_B"
+  },
+  "apothecarysguile": {
+    "id": "apothecarysguile",
+    "name": "Apothecary's Guile",
+    "description": "Increase the duration of Poisoned statuses you apply by 1 turn. Once per round, when you perform a basic attack or skill from sneak that directly targets a Poisoned enemy, damage them with a Curare skill that applies up to Weakened II for 2 turns",
+    "icon": "AMER_UNI_Gloves_Leather_A"
+  },
+  "arcturus": {
+    "id": "arcturus",
+    "name": "Arcturus",
+    "description": "Whenever you perform a Centurion reaction, activate Ward. Your Ward grants an additional +5% to Physical and Piercing resistances",
+    "icon": "AMER_UNI_Amulet_B"
+  },
+  "austerity": {
+    "id": "austerity",
+    "name": "Austerity",
+    "description": "+20% Physical and Piercing resistance. At the start of your turn suffer Water damage equal to 25% of your total Vitality",
+    "icon": "AMER_UNI_Ring_F"
+  },
+  "blackglassbrand": {
+    "id": "blackglassbrand",
+    "name": "Blackglass Brand",
+    "description": "When an attack misses you, apply Brittle and up to Vulnerable III for 2 turns to the attacker. Gain +1 free Centurion reaction per round",
+    "icon": "AMER_UNI_Sword_E"
+  },
+  "bloodforge": {
+    "id": "bloodforge",
+    "name": "Bloodforge",
+    "description": "At the start of your turn, restore 25% of your total Physical and Magic Armor, and receive piercing damage equal to 15% of your total Vitality",
+    "icon": "AMER_UNI_Chest_Plate_F"
+  },
+  "bountyhunter": {
+    "id": "bountyhunter",
+    "name": "Bounty Hunter",
+    "description": "When you perform a basic attack from stealth, apply Bounty Hunter for 2 turns: -6% all resistances (-1.5% per Scoundrel)",
+    "icon": "AMER_UNI_Chest_Leather_A"
+  },
+  "carnality": {
+    "id": "carnality",
+    "name": "Carnality",
+    "description": "+30% Air, Earth, Fire, Water, and Poison resistance At the start of your turn, suffer Piercing damage equal to 15% of your total Vitality",
+    "icon": "AMER_UNI_Ring_G"
+  },
+  "cataclysm": {
+    "id": "cataclysm",
+    "name": "Cataclysm",
+    "description": "Once per round, when you score a critical hit on a Scorched character, cast Supernova",
+    "icon": "AMER_UNI_Dagger_B"
+  },
+  "charity": {
+    "id": "charity",
+    "name": "Charity",
+    "description": "When you affect a character with Benevolence, restore 10% (+1% per Inertia and Life embodied) of its total Vitality, Physical Armor, and Magic Armor",
+    "icon": "AMER_UNI_Gloves_Cloth_C"
+  },
+  "consecration": {
+    "id": "consecration",
+    "name": "Consecration",
+    "description": "Once per round, your Celestial reaction targeting an ally applies Soothing Cold for 2 turns, and creates a 2m blessed water surface beneath it",
+    "icon": "AMER_UNI_Boots_Plate_C"
+  },
+  "convergence": {
+    "id": "convergence",
+    "name": "Convergence",
+    "description": "When you perform a basic attack on an enemy with Charged, gain +100% accuracy while attacking and a 12% chance, per Charged enemy, to cast Lightning Bolt",
+    "icon": "AMER_UNI_Crossbow_B"
+  },
+  "coruscatingsilks": {
+    "id": "coruscatingsilks",
+    "name": "Coruscating Silks",
+    "description": "30% of physical damage suffered is instantly regenerated and suffered instead as Air; if armor is depleted, it cannot be recovered in this way",
+    "icon": "AMER_UNI_Chest_Robe_A"
+  },
+  "desperation": {
+    "id": "desperation",
+    "name": "Desperation",
+    "description": "Gain +1% movement speed per 1% of Vitality missing",
+    "icon": "AMER_UNI_Boots_Leather_B"
+  },
+  "dominion": {
+    "id": "dominion",
+    "name": "Dominion",
+    "description": "When an enemy you can see becomes Suffocated or Squelched, as a 1 AP reaction apply up to Subjugated III to them for 2 turns",
+    "icon": "AMER_UNI_Gloves_Plate_B"
+  },
+  "dread": {
+    "id": "dread",
+    "name": "Dread",
+    "description": "Once per round, when an enemy you can see becomes Terrified or Subjugated, gain Dread for 1 turn: +0.3% lifesteal per Strength and your Vitality Void deals additional damage equal to 1% of your total Vitality per Necromancer",
+    "icon": "AMER_UNI_Ring_C"
+  },
+  "drogsluck": {
+    "id": "drogsluck",
+    "name": "Drog's Luck",
+    "description": "While you are Scorched, gain +15% Power and Wits (+4% per Lucky Charm and +2% per Pyrokinetic)",
+    "icon": "AMER_UNI_Amulet_A"
+  },
+  "eclipse": {
+    "id": "eclipse",
+    "name": "Eclipse",
+    "description": "When Subjugated III or Terrified III expires naturally on an enemy you can see, as a 1 AP reaction apply Silenced for 2 turns, ignoring armor, to enemies within 5m of them",
+    "icon": "AMER_UNI_Staff_E"
+  },
+  "empyreanvestments": {
+    "id": "empyreanvestments",
+    "name": "Empyrean Vestments",
+    "description": "Instantly restore 5% (+0.75% per Memory over 10) of all damage suffered, up to a maximum of 30%. This restoration cannot occur on Armor if it is depleted",
+    "icon": "AMER_UNI_Chest_Cloth_A"
+  },
+  "ethertide": {
+    "id": "ethertide",
+    "name": "Ether Tide",
+    "description": "When Slowed III, Subjugated III, or Weakened III is applied to a non-boss enemy you can see, as a 1 AP reaction teleport them to your location and apply up to Squelched III for 2 turns",
+    "icon": "AMER_UNI_Gloves_Cloth_B"
+  },
+  "exaltation": {
+    "id": "exaltation",
+    "name": "Exaltation",
+    "description": "When an ally you can see, who is affected by Leadership but not Blessed, performs a Violent Strike, as a free reaction apply Blessed for 2 turns to them",
+    "icon": "AMER_UNI_Ring_B"
+  },
+  "expedition": {
+    "id": "expedition",
+    "name": "Expedition",
+    "description": "Default attacks with this weapon cost -2 AP. When you perform a basic attack, gain Windrun until the end of the current turn, granting +2.0 movement and +100% movement speed, but -75% damage",
+    "icon": "AMER_UNI_Bow_C"
+  },
+  "eyeofthestorm": {
+    "id": "eyeofthestorm",
+    "name": "Eye of the Storm",
+    "description": "When you become Charged, gain Eye of the Storm for 1 turn: +25% Finesse (+2.5% per Aerotheurge), and once per round, when you perform a Predator reaction, also cast Dazing Bolt",
+    "icon": "AMER_UNI_Ring_A"
+  },
+  "faceofthefallen": {
+    "id": "faceofthefallen",
+    "name": "Face of the Fallen",
+    "description": "Gain \"Face of the Fallen\" skill, which allows you to destroy corpses to activate your Voracity effects, as well as apply up to Terrified III to enemies within 6m of the corpse",
+    "icon": "AMER_UNI_Shield_D"
+  },
+  "famine": {
+    "id": "famine",
+    "name": "Famine",
+    "description": "Once per round when you trigger Paucity, pay 2 AP to cast Mosquito Swarm on all enemies in a 5m radius around you",
+    "icon": "AMER_UNI_Axe_B"
+  },
+  "fecundity": {
+    "id": "fecundity",
+    "name": "Fecundity",
+    "description": "When a non-summon character you can see dies in combat, as a 1 AP reaction summon a totem at their corpse",
+    "icon": "AMER_UNI_Ring_D"
+  },
+  "fistofdecay": {
+    "id": "fistofdecay",
+    "name": "Fist of Decay",
+    "description": "You may not equip shields. When you perform Sucker Punch, activate Vitality Void and apply up to Vulnerable III for 2 turns to your target",
+    "icon": "AMER_UNI_Gloves_Cloth_A"
+  },
+  "ghostflame": {
+    "id": "ghostflame",
+    "name": "Ghostflame",
+    "description": "Once per round, when you perform an Occultist reaction on an enemy with Vulnerable, remove Vulnerable and apply Epidemic of Fire for 1 turn per tier of Vulnerable removed",
+    "icon": "AMER_UNI_Amulet_C"
+  },
+  "giantsskull": {
+    "id": "giantsskull",
+    "name": "Giant's Skull",
+    "description": "20% of physical damage suffered is instantly regenerated and suffered instead as Earth; if armor is depleted, it cannot be recovered in this way",
+    "icon": "AMER_UNI_Helmet_Plate_C"
+  },
+  "glacier": {
+    "id": "glacier",
+    "name": "Glacier",
+    "description": "When you detonate Brittle on an enemy, apply up to Slowed II for 2 turns and deal Water damage equivalent to 5% of its total Vitality, to enemies within 5m of it",
+    "icon": "AMER_UNI_Mace_C"
+  },
+  "gluttony": {
+    "id": "gluttony",
+    "name": "Gluttony",
+    "description": "When a non-totem character dies you become up to Slowed II for 1 turn, but gain +4% lifesteal and +10% damage per corpse within 8m of you, for 2 turns",
+    "icon": "AMER_UNI_Spear_E"
+  },
+  "godspeed": {
+    "id": "godspeed",
+    "name": "Godspeed",
+    "description": "When you apply Hasted or Blessed, restore 10% (+3% per 0.25 of your Movement over 2.5) of the target's missing Magic and Physical Armor",
+    "icon": "AMER_UNI_Boots_Leather_C"
+  },
+  "goldforge": {
+    "id": "goldforge",
+    "name": "Goldforge",
+    "description": "While you have Prosperity, gain Volatile Armor: Whenever your armor receives damage, deal 30% of Physical Armor lost as Earth, and 30% of Magic Armor lost as Fire, to all other characters within 3m",
+    "icon": "AMER_UNI_Mace_D"
+  },
+  "golem": {
+    "id": "golem",
+    "name": "Golem",
+    "description": "If you have Prosperity active at the end of your turn, suffer damage equal to 90% of your total Vitality, split between Earth and Physical; enemies within 3m of you are similarly damaged, using 40% of your total Vitality",
+    "icon": "AMER_UNI_Axe_C"
+  },
+  "gramswordofgrief": {
+    "id": "gramswordofgrief",
+    "name": "Gram, Sword of Grief",
+    "description": "On the first Poisoned character you hit while performing a basic attack, remove Poisoned and deal Poison and Piercing damage to all characters other than you within 3m of them, both equivalent to the damage that would have been dealt over Poisoned's duration (up to 5 turns)",
+    "icon": "AMER_UNI_Sword_B"
+  },
+  "hibernaculum": {
+    "id": "hibernaculum",
+    "name": "Hibernaculum",
+    "description": "When you hit a Brittle enemy while performing a basic attack, cast Glaciate on them",
+    "icon": "AMER_UNI_Bow_B"
+  },
+  "impetus": {
+    "id": "impetus",
+    "name": "Impetus",
+    "description": "When you Haste an enemy, apply Impetus to them for X turns, where X is the duration of Hasted; when an enemy you can see becomes Hasted, do the same as a 1 AP reaction. Impetus deals Air damage, similar to Ruptured Tendons, when the afflicted character moves",
+    "icon": "AMER_UNI_Spear_D"
+  },
+  "infernalcontract": {
+    "id": "infernalcontract",
+    "name": "Infernal Contract",
+    "description": "Once per enemy, per round, when you damage a Bleeding enemy that is not Withered, remove Bleeding and apply Withered for 2 turns",
+    "icon": "AMER_UNI_Shield_C"
+  },
+  "ironmaiden": {
+    "id": "ironmaiden",
+    "name": "Iron Maiden",
+    "description": "15% of magic damage suffered is instantly regenerated and suffered instead as physical; if armor is depleted, it cannot be recovered in this way",
+    "icon": "AMER_UNI_Helmet_Plate_B"
+  },
+  "judgement": {
+    "id": "judgement",
+    "name": "Judgement",
+    "description": "Once per round when you perform a Violent Strike, also perform the following based on your highest of these Attributes: Finesse, Fan of Knives; Memory, Glaciate; Strength, Whirlwind; Wits, Ignition. If multiple Attributes share the highest value, perform each of their effects",
+    "icon": "AMER_UNI_Sword_D"
+  },
+  "kudzu": {
+    "id": "kudzu",
+    "name": "Kudzu",
+    "description": "When you or your summons explode a corpse, apply Poisoned for 2 turns to yourself. Then apply Poisoned and up to Slowed III for 2 turns to other characters within 5m of the corpse. While Poisoned gain +10% Earth, +20% Poison, and +10% Physical resistance",
+    "icon": "AMER_UNI_Boots_Cloth_A"
+  },
+  "lambentblade": {
+    "id": "lambentblade",
+    "name": "Lambent Blade",
+    "description": "When you hit an enemy while performing a basic attack: if it is Bleeding, apply Brittle for 1 turn; if it is Charged, apply Scorched for 1 turn; if it is Poisoned, apply Calcifying for 1 turn",
+    "icon": "AMER_UNI_Sword_A"
+  },
+  "leper": {
+    "id": "leper",
+    "name": "Leper",
+    "description": "When you or your summons score a critical hit, apply up to Vulnerable II to yourself and the target for 1 turn",
+    "icon": "AMER_UNI_Dagger_A"
+  },
+  "leviathan": {
+    "id": "leviathan",
+    "name": "Leviathan",
+    "description": "While Wet, gain +0.5 movement. When you perform a Violent Strike: Source Infusion 1: Teleport each non-boss enemy within 7m to a position nearest you where they can stand, and apply Wet to them and yourself for 3 turns",
+    "icon": "AMER_UNI_Mace_A"
+  },
+  "lightspire": {
+    "id": "lightspire",
+    "name": "Lightspire",
+    "description": "When you spend Source with at least 2 enemies within 5m of you, fire a Lightning Bolt at each of them",
+    "icon": "AMER_UNI_Spear_C"
+  },
+  "malice": {
+    "id": "malice",
+    "name": "Malice",
+    "description": "When you Source Infuse a skill while Scorched, it is considered infused with one more point--if you are capable of infusing at that amount--but you suffer 65% of your total Vitality and armors as Fire damage",
+    "icon": "AMER_UNI_Chest_Robe_C"
+  },
+  "malleusmaleficarum": {
+    "id": "malleusmaleficarum",
+    "name": "Malleus Maleficarum",
+    "description": "When a character you can see casts a Necromancy spell, cast Dazing Bolt on them as a 1 AP reaction",
+    "icon": "AMER_UNI_Mace_B"
+  },
+  "mirage": {
+    "id": "mirage",
+    "name": "Mirage",
+    "description": "When you dodge an attack, teleport behind the attacker, become Invisible until the end of its turn, and attempt to Sneak",
+    "icon": "AMER_UNI_Dagger_D"
+  },
+  "misery": {
+    "id": "misery",
+    "name": "Misery",
+    "description": "Whenever Vulnerable is applied to you, apply 2 Battered, and then up to Vulnerable III for 2 turns, to all enemies within 4m. When you become Poisoned, apply Vulnerable I to yourself for 1 turn",
+    "icon": "AMER_UNI_Helmet_Leather_A"
+  },
+  "momentum": {
+    "id": "momentum",
+    "name": "Momentum",
+    "description": "When you perform a basic attack: Source Infusion 1: Fire a piercing projectile per 0.75 movement you have, each dealing 10% of weapon damage",
+    "icon": "AMER_UNI_Crossbow_A"
+  },
+  "mountain": {
+    "id": "mountain",
+    "name": "Mountain",
+    "description": "When an un-Taunted enemy you can see scores a critical hit, or damages an allied character to 15% (+1.5% per your Strength) Vitality or less, as a 1 AP reaction, apply Taunted for 1 turn to them",
+    "icon": "AMER_UNI_Chest_Plate_C"
+  },
+  "necromancersraiment": {
+    "id": "necromancersraiment",
+    "name": "Necromancer's Raiment",
+    "description": "When an enemy you can see becomes Withered, as a 1 AP reaction, summon a corpse beneath them",
+    "icon": "AMER_UNI_Chest_Robe_B"
+  },
+  "nemesis": {
+    "id": "nemesis",
+    "name": "Nemesis",
+    "description": "When you attack a boss-type creature, you have a 7% chance for each tier of tiered statuses on it to activate Violent Strike",
+    "icon": "AMER_UNI_Chest_Leather_B"
+  },
+  "nightmare": {
+    "id": "nightmare",
+    "name": "Nightmare",
+    "description": "When a character you can see dies, as a 1 AP reaction, apply up to Terrified III (or up to Terrified II if it was a summon) for 2 turns to enemies within 5m of it. Then gain +5% Power per tier of Terrified on enemies in combat with you for 1 turn",
+    "icon": "AMER_UNI_Spear_B"
+  },
+  "nihility": {
+    "id": "nihility",
+    "name": "Nihility",
+    "description": "When you apply Terrified III, Vulnerable III, or Weakened III to an enemy, activate Vitality Void",
+    "icon": "AMER_UNI_Chest_Plate_E"
+  },
+  "obelisk": {
+    "id": "obelisk",
+    "name": "Obelisk",
+    "description": "Unlock Staff of Magus Source Infusions:<br>1: Also target enemies you can see within 2.5m of the primary target.<br>2: Also target enemies you can see within 13m and apply Dazzled II for 2 turns",
+    "icon": "AMER_UNI_Staff_D"
+  },
+  "occam": {
+    "id": "occam",
+    "name": "Occam",
+    "description": "While performing a basic attack, when you hit an enemy with 15% Vitality or less (7.5% for bosses), it dies. Source Infusion 1: Extend this effect to 30% Vitality (11% for bosses). Source Infusion 2: Extend this effect to 50% Vitality (15% for bosses)",
+    "icon": "AMER_UNI_Dagger_E"
+  },
+  "onslaught": {
+    "id": "onslaught",
+    "name": "Onslaught",
+    "description": "When a non-summon enemy dies, gain Onslaught for 2 turns, granting +3% Power and Finesse per 0.2 movement over 2.0",
+    "icon": "AMER_UNI_Boots_Plate_D"
+  },
+  "ouroboros": {
+    "id": "ouroboros",
+    "name": "Ouroboros",
+    "description": "When you damage yourself, instantly restore half that amount as Vitality",
+    "icon": "AMER_UNI_Chest_Leather_D"
+  },
+  "paragon": {
+    "id": "paragon",
+    "name": "Paragon",
+    "description": "Your Vitality Void now activates on non-summon allies instead of yourself, using their Vitality, and dealing 25% (+4% per Leadership) of its damage, up to 65%. After moving 3 or more stacks of Battered or Harried via Benevolence in a round, activate Vitality Void",
+    "icon": "AMER_UNI_Helmet_Cloth_C",
+    "creatorIsAwesome": true
+  },
+  "pariah": {
+    "id": "pariah",
+    "name": "Pariah",
+    "description": "When you become Battered or Harried, gain Pariah for 1 turn, granting +4.5% Constitution per stack of Battered and +4.5% Power per stack of Harried",
+    "icon": "AMER_UNI_Wand_E"
+  },
+  "pestilence": {
+    "id": "pestilence",
+    "name": "Pestilence",
+    "description": "When Poisoned ends on an enemy you can see, as a 1 AP reaction, apply Poisoned for 2 turns to it. When you apply Poisoned, deal Piercing damage and apply Bleeding for 2 turns to enemies within 2m of that target",
+    "icon": "AMER_UNI_Spear_A"
+  },
+  "prismaticbarrier": {
+    "id": "prismaticbarrier",
+    "name": "Prismatic Barrier",
+    "description": "While Prosperity is active, gain +3% elemental resistance per Perseverance",
+    "icon": "AMER_UNI_Shield_E"
+  },
+  "prophecy": {
+    "id": "prophecy",
+    "name": "Prophecy",
+    "description": "When you become Prepared, recover 1 more AP, and for 1 turn gain +3% dodge per Telekinesis and +0.25% dodge per initiative",
+    "icon": "AMER_UNI_Ring_E"
+  },
+  "pyre": {
+    "id": "pyre",
+    "name": "Pyre",
+    "description": "When you or your summons explode a corpse, grant the Firebrand aura (as-per the Firebrand skill) for 2 turns to whoever exploded it",
+    "icon": "AMER_UNI_Gloves_Plate_C"
+  },
+  "rapture": {
+    "id": "rapture",
+    "name": "Rapture",
+    "description": "Once per round, when you perform a Celestial reaction, activate Purity; or, if Purity has remaining cooldown duration, remove one turn from it instead",
+    "icon": "AMER_UNI_Wand_C"
+  },
+  "redorison": {
+    "id": "redorison",
+    "name": "Red Orison",
+    "description": "When an ally performs a Celestial reaction on an ally you can see, as a 1AP reaction, apply Blessed for 2 turns to that target. When an ally performs an Occultist reaction on an enemy you can see, as a 1AP reaction, apply Cursed for 2 turns to that target",
+    "icon": "AMER_UNI_Gloves_Leather_C"
+  },
+  "rodofabeyance": {
+    "id": "rodofabeyance",
+    "name": "Rod of Abeyance",
+    "description": "When you activate Abeyance, apply up to Weakened II for 2 turns to enemies within 5m. When you abey 60% or more of your total Vitality, your reactions do not cost AP while Abeyance is active",
+    "icon": "AMER_UNI_Wand_D"
+  },
+  "rodofcommand": {
+    "id": "rodofcommand",
+    "name": "Rod of Command",
+    "description": "When you perform a Violent Strike on an enemy with Ataxia, apply up to Subjugated III for 2 turns",
+    "icon": "AMER_UNI_Wand_A"
+  },
+  "rodofconviction": {
+    "id": "rodofconviction",
+    "name": "Rod of Conviction",
+    "description": "When you perform Shields Up, gain Volatile Armor for 2 turns: When damaged, deal physical damage equivalent to 50% of the physical armor lost, to characters within 3m",
+    "icon": "AMER_UNI_Wand_B"
+  },
+  "salamander": {
+    "id": "salamander",
+    "name": "Salamander",
+    "description": "20% of physical damage suffered is instantly regenerated and suffered instead as Fire; if armor is depleted, it cannot be recovered in this way",
+    "icon": "AMER_UNI_Boots_Plate_B"
+  },
+  "sanguineharvest": {
+    "id": "sanguineharvest",
+    "name": "Sanguine Harvest",
+    "description": "When you heal an ally while casting a skill, you have a 5% chance per Memory over 10 to activate Violent Strike on them. This effect may only occur once per round on each ally",
+    "icon": "AMER_UNI_Wand_F"
+  },
+  "seraph": {
+    "id": "seraph",
+    "name": "Seraph",
+    "description": "Gain +1 free Celestial reaction per round. Your Celestial reactions on allies grant +1 turn of Source generation to the target",
+    "icon": "AMER_UNI_Amulet_D"
+  },
+  "serenity": {
+    "id": "serenity",
+    "name": "Serenity",
+    "description": "When you activate Purity, remove all tiered statuses from yourself. Then restore 15% of your Vitality and armors",
+    "icon": "AMER_UNI_Helmet_Cloth_A"
+  },
+  "silkclimb": {
+    "id": "silkclimb",
+    "name": "Silkclimb",
+    "description": "When you receive damage exceeding 20% of your total Vitality, create a 3m web surface on yourself, applying up to Slowed II to characters within, and teleport up to 4m away from the damage source, to a valid location you can see",
+    "icon": "AMER_UNI_Boots_Cloth_B"
+  },
+  "smother": {
+    "id": "smother",
+    "name": "Smother",
+    "description": "When you manually sneak, recover 1 AP. When performing basic attacks from Sneak, apply up to Subjugated III for 2 turns, to enemies you hit",
+    "icon": "AMER_UNI_Helmet_Leather_B"
+  },
+  "thebutchersdisciple": {
+    "id": "thebutchersdisciple",
+    "name": "The Butcher's Disciple",
+    "description": "When your offhand is free, gain 1% Critical Chance per Strength over ten",
+    "icon": "AMER_UNI_Axe_D"
+  },
+  "thebutcherswill": {
+    "id": "thebutcherswill",
+    "name": "The Butcher's Will",
+    "description": "When you perform a Violent strike, deal irresistible Physical damage equivalent to 10% (+0.35% per Strength over 10) of the target's current Vitality. This damage is halved against boss-type enemies",
+    "icon": "AMER_UNI_Gloves_Leather_B"
+  },
+  "thecannibal": {
+    "id": "thecannibal",
+    "name": "The Cannibal",
+    "description": "When you perform a basic attack on an ally, apply Feast to them and yourself for 3 turns. Feast grants +5% damage and +2% lifesteal per character with Feast. As a 1 AP reaction at the end of their turn, characters with Feast cast Mosquito Swarm on the nearest character they can see within 13m, spreading Feast if it is an ally",
+    "icon": "AMER_UNI_Staff_A"
+  },
+  "thechthonian": {
+    "id": "thechthonian",
+    "name": "The Chthonian",
+    "description": "When you perform a basic attack, you have a 15% chance (+1% per Strength over 10) to also deal 60% of weapon damage in a 25 degree, 10m long cone",
+    "icon": "AMER_UNI_Axe_E"
+  },
+  "thecrucible": {
+    "id": "thecrucible",
+    "name": "The Crucible",
+    "description": "When you cast Corpse Explosion, apply Immolation for 2 turns to characters within 4m of your target",
+    "icon": "AMER_UNI_Mace_E"
+  },
+  "thejaguar": {
+    "id": "thejaguar",
+    "name": "The Jaguar",
+    "description": "At the start of each round, gain +3 Initiative per Bleeding enemy. Your Bleeding statuses deal double damage. While sneaking, gain +2 movement and +2 AP maximum",
+    "icon": "AMER_UNI_Chest_Cloth_B"
+  },
+  "thelocustcrown": {
+    "id": "thelocustcrown",
+    "name": "The Locust Crown",
+    "description": "Whenever an enemy you can see becomes Withered, apply Corroding for 1 turn to them as a free reaction",
+    "icon": "AMER_UNI_Helmet_Cloth_B"
+  },
+  "thesavage": {
+    "id": "thesavage",
+    "name": "The Savage",
+    "description": "When you perform a basic attack with 3 or more enemies within 4m of you, also perform a Whirlwind You suffer a -1 penalty (or -2 for Lone Wolves) to Aerotheurge, Geomancer, Hydrosophist, Necromancer, Pyrokinetic, and Summoning",
+    "icon": "AMER_UNI_Staff_B"
+  },
+  "thevault": {
+    "id": "thevault",
+    "name": "The Vault",
+    "description": "Whenever you have at least 3 AP as a combat round begins (before your turn), gain 1 turn of Source Generation. When gaining a Source point, restore 0.75% of total Physical Armor per Strength and 0.75% of total Magic Armor per Memory",
+    "icon": "AMER_UNI_Chest_Plate_D"
+  },
+  "thirst": {
+    "id": "thirst",
+    "name": "Thirst",
+    "description": "Once during any action, when you score a critical hit on a Bleeding enemy, recover 1 AP and lose 1 Constitution for 1 turn. This penalty stacks, and its duration resets upon stacking",
+    "icon": "AMER_UNI_Dagger_F"
+  },
+  "thornhalo": {
+    "id": "thornhalo",
+    "name": "Thorn Halo",
+    "description": "15% of magic damage suffered is instantly regenerated and suffered instead as piercing; if armor is depleted, it cannot be recovered in this way",
+    "icon": "AMER_UNI_Helmet_Plate_D"
+  },
+  "trample": {
+    "id": "trample",
+    "name": "Trample",
+    "description": "Increase the duration of Bleeding statuses you apply by 1 turn. After using a \"rush\"-type skill, apply to enemies within 3m: 1 Battered per Bleeding enemy hit during the rush, and up to Ataxia III",
+    "icon": "AMER_UNI_Boots_Plate_A"
+  },
+  "tundra": {
+    "id": "tundra",
+    "name": "Tundra",
+    "description": "20% of physical damage suffered is instantly regenerated and suffered instead as Water; if armor is depleted, it cannot be recovered in this way",
+    "icon": "AMER_UNI_Helmet_Plate_A"
+  },
+  "urgency": {
+    "id": "urgency",
+    "name": "Urgency",
+    "description": "For the first 30 seconds of your turn, you have +0.3 movement and +10% damage per Force embodied; gain 7 more seconds whenever you use a skill",
+    "icon": "AMER_UNI_Chest_Leather_C"
+  },
+  "vertigo": {
+    "id": "vertigo",
+    "name": "Vertigo",
+    "description": "+20% invested Finesse. When you perform a basic attack, apply Drunk to yourself for 1 turn. While Drunk, each point of Finesse over ten grants +1% more dodge but -0.5% accuracy",
+    "icon": "AMER_UNI_Axe_A"
+  },
+  "vortex": {
+    "id": "vortex",
+    "name": "Vortex",
+    "description": "Once per round, when you activate Vitality Void and no targets are hit by it, it instead hits the nearest enemy you can see within 8m. Then, if that enemy is not a boss, try to teleport it to a position nearest you where it can stand. If Paucity is not active for you, pay 15% of your total Vitality to activate this effect",
+    "icon": "AMER_UNI_Boots_Cloth_C"
+  },
+  "wendigo": {
+    "id": "wendigo",
+    "name": "Wendigo",
+    "description": "Gain +1 free Predator reaction per round. Whenever you hit a Brittle target during a Predator reaction, apply up to Ataxia III for 2 turns, then cause Brittle to detonate",
+    "icon": "AMER_UNI_Amulet_E"
+  },
+  "wintersgrasp": {
+    "id": "wintersgrasp",
+    "name": "Winter's Grasp",
+    "description": "Once per round, when you hit a Brittle enemy while performing a basic attack, remove surfaces within 3m of it and create ice in that space. Then shatter the ice (as per the \"Shatter\" spell, ~50% of its damage)",
+    "icon": "AMER_UNI_Gloves_Plate_A"
+  },
+  "wraith": {
+    "id": "wraith",
+    "name": "Wraith",
+    "description": "Once while performing a basic attack, when you hit, recover 1 AP and teleport behind a random enemy (excluding this target) you can see within 8m. Basic attacks can never cost less than 2AP",
+    "icon": "AMER_UNI_Dagger_G"
+  },
+  "zeal": {
+    "id": "zeal",
+    "name": "Zeal",
+    "description": "When you perform All In or Flurry, recover 2AP. Then perform basic attacks, each recovering half their cost, randomly targeting characters within range until you no longer have sufficient AP. Basic attacks can never cost less than 2AP",
+    "icon": "AMER_UNI_Sword_C"
+  },
+  "zenith": {
+    "id": "zenith",
+    "name": "Zenith",
+    "description": "When you hit an enemy while performing a basic attack, you have a 30% chance to launch a Fireball at it",
+    "icon": "AMER_UNI_Bow_A"
+  },
+  "zodiac": {
+    "id": "zodiac",
+    "name": "Zodiac",
+    "description": "When you perform a Celestial reaction, emulate the effects of Chain Lightning on that target. When an ally performs a Celestial reaction on a target you can see, do the same as a free reaction",
+    "icon": "AMER_UNI_Staff_C"
+  }
+}
