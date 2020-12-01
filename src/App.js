@@ -25,6 +25,7 @@ const APP_VERSION = {major: 0, minor: 1, revision: 0}
 export const APP_DATE = "1st Dec 20" // european format
 export const MOD_VERSION = "Patch 87 (2nd Nov 20)"
 const URL_PROTOCOL = 0
+const RESOURCE_PREPPEND = "/ee2buildplanner"
 
 class App extends React.Component {
   constructor() {
@@ -419,11 +420,11 @@ There is no character limit and it will be saved when you save the build.`,
 
     // load game data
     let requests = [
-      "/Scripts/Artifacts/artifacts.json",
-      "/Scripts/Ascension/ascension.json",
-      "/Scripts/Skills/Output/skills.json",
-      "/Scripts/Ascension/tsk_export.json",
-      "/Scripts/numerical_ids.json",
+      RESOURCE_PREPPEND + "/Scripts/Artifacts/artifacts.json",
+      RESOURCE_PREPPEND + "/Scripts/Ascension/ascension.json",
+      RESOURCE_PREPPEND + "/Scripts/Skills/Output/skills.json",
+      RESOURCE_PREPPEND + "/Scripts/Ascension/tsk_export.json",
+      RESOURCE_PREPPEND + "/Scripts/numerical_ids.json",
     ]
     let promises = []
 
@@ -485,7 +486,7 @@ There is no character limit and it will be saved when you save the build.`,
         // load featured builds
         let buildPromises = []
         for (let x in miscData.featuredBuilds) {
-          buildPromises.push(axios.get("/BuildGallery/" + miscData.featuredBuilds[x] + ".json"))
+          buildPromises.push(axios.get(RESOURCE_PREPPEND + "/BuildGallery/" + miscData.featuredBuilds[x] + ".json"))
         }
         axios.all(buildPromises)
           .then((answers) => {
