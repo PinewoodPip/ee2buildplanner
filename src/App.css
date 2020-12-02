@@ -436,11 +436,8 @@ hr {width: 85%;}
 }
 
 .aspect-preview {
-  width: 300px;
+  width: 270px;
   height: 500px;
-  /* height: 100%; */
-  margin-right: 25px;
-  /* overflow: scroll; */
   overflow-y: scroll;
 }
 
@@ -493,14 +490,14 @@ hr {width: 85%;}
 }
 
 .skills {
-  /* border: 1px solid black; */
-  width: 613px;
+  /* width: 613px; */
+  width: 670px;
   height: 100%;
 }
 
 .artifacts {
   /* border: 1px solid black; */
-  width: 370px;
+  width: 297px;
   height: 100%;
 }
 

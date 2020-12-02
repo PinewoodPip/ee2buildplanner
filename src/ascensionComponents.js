@@ -37,7 +37,7 @@ export class Ascension extends React.Component {
 			currentAspect = <Text text="When you click on an Aspect, its nodes will show up here." style={{width: "80%"}} className="text-faded"/>
 
 		return <Container style={{height: "100%"}}>
-			<div className="flexbox-horizontal">
+			<div className="flexbox-horizontal flex-align-space-between">
 				<div className="flexbox-vertical ascension flex-align-start wrap-y">
 					<AspectListing keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>
 					<hr/>
