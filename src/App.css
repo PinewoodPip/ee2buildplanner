@@ -436,7 +436,7 @@ hr {width: 85%;}
 }
 
 .aspect-preview {
-  width: 270px;
+  width: 276px;
   height: 500px;
   overflow-y: scroll;
 }
@@ -491,7 +491,7 @@ hr {width: 85%;}
 
 .skills {
   /* width: 613px; */
-  width: 670px;
+  width: 677px;
   height: 100%;
 }
 
@@ -591,6 +591,9 @@ option {border: none;}
 .text-faded {color: rgb(109, 109, 109) !important}
 
 /*  */
+
+.bg-si-2 {background-color: rgb(102, 174, 241);}
+.bg-si-3 {background-color: rgb(75, 142, 204);}
 
 .popup-cover {
   position: fixed;

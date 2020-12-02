@@ -11,8 +11,6 @@ class Build extends React.Component {
 
     render() {
         let props = this.props
-        let title = props.data.author !== game.app.state.config.author ? "{0} by {1}" : "{0}"
-        title = utils.format(title, props.data.metadata.name, props.data.metadata.author)
 
         // build role info
         let role = miscData.buildRoles[props.data.metadata.role.toLowerCase()]
@@ -50,12 +48,14 @@ class Build extends React.Component {
         }
 
         return (
-            <div className="flexbox-horizontal flex-align-space-between build-entry button" style={{position: "relative"}} onClick={()=>{props.app.loadBuild(props.data.id, (props.fullBuild ? props.data : null))}} onContextMenu={deleteBuild.bind(this)} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
+            <div className="flexbox-horizontal flex-align-space-between build-entry button" style={{position: "relative"}} onClick={()=>{props.app.loadBuild(props.data.id, (props.fullBuild ? props.data : null), true)}} onContextMenu={deleteBuild.bind(this)} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
                 {roleDisplay}
 
                 <Icon img={props.data.portrait} style={{width: "80px", height: "100px", outline: "1px solid rgb(70, 70, 70)"}}/>
                 <div className="flexbox-vertical flex-align-centered flex-grow">
-                    <Text text={title}/>
+                    <Text text={props.data.metadata.name}/>
+
+                    {props.data.metadata.author != "" ? <Text text={"by " + props.data.metadata.author}/> : null}
 
                     <div style={{height: "5px"}}/>
 

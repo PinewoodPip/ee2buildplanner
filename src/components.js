@@ -82,6 +82,8 @@ function TopBar(props) {
 					</div>
 					<div style={{width: "10px"}}/>
 					<GreenButton text="Export build" onClick={()=>{props.app.exportBuild()}}/>
+					<div style={{width: "10px"}}/>
+					<GreenButton text="New Build" onClick={(e) => {props.app.newBuild()}}/>
 				</div>
 
 				<div className="flexbox-vertical flex-align-centered flex-grow">
@@ -231,7 +233,7 @@ export class MainInterface extends React.Component {
 		let appState = this.props.app.state
 		let skillsInfo = {origin: appState.origin, skills: appState.skills, race: appState.physique.race, lifeType: appState.physique.lifeType, coreNodes: appState.coreNodes}
 		let ascData = {aspects: appState.aspects, coreNode: appState.coreNodes, selectedAspect: appState.selectedAspect}
-		let statPanelData = {attributes: appState.attributes, abilities: appState.abilities, civils: appState.civils, talents: Array.from(appState.talents), aspects: appState.aspects, buffs: Array.from(appState.buffs)}
+		let statPanelData = {attributes: appState.attributes, abilities: appState.abilities, civils: appState.civils, talents: Array.from(appState.talents), aspects: appState.aspects, buffs: Array.from(appState.buffs), skills: appState.skills}
 		return <div>
 			<TopBar app={this.props.app}/>
 			<div className="flexbox-horizontal">

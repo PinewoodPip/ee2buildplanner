@@ -24,7 +24,7 @@ function CivilAbility(props) {
 				<Icon className="" img={game.mappings.civilIcons[props.id]} size="24px"/>
 				<div style={{width: "5px"}}/>
 				<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
-					<Text text={utils.format("{0}:", miscData.mappings.civilNames[props.id])}/>
+					<Text text={utils.format("{0}", miscData.mappings.civilNames[props.id])}/>
 					<Tooltip content={utils.format("Civil Points invested: {0}", game.app.state.civils[props.id])}>
 						<Text text={utils.format("{0}", game.app.state.civils[props.id])}/>
 					</Tooltip>
@@ -46,17 +46,40 @@ class Ability extends React.Component {
 		let props = this.props
 		// let stats = game.getStats()
 		let naturalAmount = game.app.state.abilities[props.id]
+		let isSkillAbility = Object.keys(miscData.mappings.skillAbilityToSkillDocName).includes(props.id)
 		if (game.app.state.lw && props.id !== "Polymorph")
 			naturalAmount *= 2
 		let amountText = utils.format((app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), naturalAmount, app.stats.flexStat[props.id].amount)
+
+		let totalAmount = naturalAmount + app.stats.flexStat[props.id].amount
+
+		let tooltip = <div className="flexbox-vertical">
+			<Text text={miscData.statTooltips[props.id]}/>
+			
+			{isSkillAbility ? <hr/> : null}
+			{isSkillAbility ? <Text text={miscData.statTooltips.skillabilitygeneric}/> : null}
+		</div>
+
+		let infusion = null
+		// if (isSkillAbility) {
+		// 	if (totalAmount >= 9)
+		// 		infusion = <Text text="♦♦♦" className="text-si-symbol"/>
+		// 	else if (totalAmount >= 5)
+		// 		infusion = <Text text="♦♦" className="text-si-symbol"/>
+		// }
 
 		return	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
 				<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
 					<Icon className="" img={game.mappings.abilityImages[props.id]} size="24px"/>
 					<div style={{width: "5px"}}/>
 					<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
-						<Text text={utils.format("{0}:", miscData.mappings.abilityNames[props.id])}/>
-						<Text text={amountText}/>
+						<Tooltip content={tooltip} placement="bottom">
+							<Text text={utils.format("{0}", miscData.mappings.abilityNames[props.id])}/>
+						</Tooltip>
+
+						{infusion}
+
+						<Text text={amountText} className="flex-grow" style={{textAlign: "right"}}/>
 					</div>
 				</div>
 
@@ -173,6 +196,10 @@ class Attribute extends React.Component {
 		// todo fix this
 		let total = game.getStats().realStats[props.id].amount
 
+		let tooltip = <div className="flexbox-vertical">
+			<Text text={miscData.statTooltips[props.id]}/>
+		</div>
+
 		let menu = [
 			<Text key={0} text="Choose option:"/>,
 			<Text key={1} text="Max out" onClick={()=>{game.maximizeAttribute(props.id)}}/>,
@@ -185,7 +212,9 @@ class Attribute extends React.Component {
 					<Icon className="" img={game.mappings.attributeIcons[props.id]} size="24px"/>
 					<div style={{width: "5px"}}/>
 					<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
-						<Text text={attrName}/>
+						<Tooltip content={tooltip} placement="bottom">
+							<Text text={attrName}/>
+						</Tooltip>
 						<Tooltip content={utils.format("Attribute Points invested: {0}", game.app.state.attributes[props.id])}>
 							<Text text={utils.format("{0}", total)}/>
 						</Tooltip>
@@ -226,7 +255,7 @@ class SkillAbilities extends React.Component {
 				continue
 
 			skillAbilities.push(
-				<Ability app={this.props.app} key={x} id={statName} className={this.hasAnyRelevantSkill(x) || this.props.app.state.abilities[x] > 0 ? "highlighted-bg" : ""}/>
+				<Ability app={this.props.app} key={x} id={statName} className={this.hasAnyRelevantSkill(x) || this.props.app.state.abilities[statName] > 0 ? "highlighted-bg" : ""}/>
 			)
 
 			index++;
@@ -246,7 +275,6 @@ export class Attributes extends React.Component {
 	}
 
 	render() {
-		console.log("t")
         let remaining = game.maxNaturalAttributePoints - game.totalAttributePointsSpent
         
 		return <TabbedContainer app={this.props.app} style={{minWidth: "300px", height: "100%"}}>

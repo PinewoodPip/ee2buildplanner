@@ -120,18 +120,17 @@ X track node count
 - show chosen talents at the top
 - add links to featured builds
 X factor in crit and dmg boost from power
-- fix incons desc
 - remove unused art
 - warn when not enough memory for spells
-- allow reordering of skills
-- add "move to front/back" for asp
-- "new build" button
+X "new build" button
 - add runes to artifact screen ? it would make sense to have them both in the same container, as it would save space and you don't have all that many artifacts usually
 X aerotherghe init bonus and others
 - add tooltips to abilities
 - check if all stats have categories
 - fix inconsistency with "choose option"/"select an option"
 - allow clicking outside area of popups to close them - use an onclick wrapper on inner div to accomplish
+- saving builds from gallery should give them a new guid
+- show sp icons next to skill abilities with enough points
 
 -- ISSUES
 - CUSTOM SCROLLBARS DO NOT WORK IN FIREFOX AND EDGE (probably only work on chrome. that sucks)
@@ -151,6 +150,5 @@ X aerotherghe init bonus and others
 - some skills are missing icons, because they are on different sheets (easy fix)
 - some stats do not have friendly names yet, ex. Battered_StackInfluence_Enemy
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
-- if the author name field is unset, "by {empty}" is still appended in saved builds menu
 - i forgot to change the goddamn tab name and icon like i always do
 - loading builds from the gallery and saving them should change their guid to prevent wonkyness

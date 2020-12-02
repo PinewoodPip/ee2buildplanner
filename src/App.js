@@ -64,15 +64,16 @@ class App extends React.Component {
 
       // stuff that is saved
       id: uuid(),
-      name: "Lindsay Lohan",
+      name: "Custom Character",
       portrait: "human_m",
       customPortrait: null,
       origin: "custom",
       physique: {
-        race: "lizard",
+        race: "human",
         gender: "male",
         lifeType: "alive",
       },
+      instrument: null,
       // textarea text
       text:  `This is a text field. You can write whatever you want here.
 
@@ -214,11 +215,23 @@ There is no character limit and it will be saved when you save the build.`,
       console.log(Object.keys(build.metadata).length)
       if (build.metadata.format !== SAVE_PROTOCOL)
         throw "";
-      this.loadBuild(null, build)
+      this.loadBuild(null, build, true)
     }
     catch {
       window.alert("The file you chose is not a valid build.")
     }
+  }
+
+  // get currentBuildChangesAreSaved() {
+  //   return utils.propObjectHasChanged(this.getCurrentBuild())
+  // }
+
+  newBuild() {
+    if (!window.confirm("Confirm whether you want to get a fresh build."))
+      return
+    let newBuild = cloneDeep(miscData.emptyBuild)
+    newBuild.id = uuid()
+    this.setState(newBuild)
   }
 
   exportBuild() {
@@ -231,7 +244,9 @@ There is no character limit and it will be saved when you save the build.`,
   }
 
   // todo more error handling
-  loadBuild(id, fullBuild=null) {
+  loadBuild(id, fullBuild=null, manual=false) {
+    if (manual && !window.confirm("Load this build? Changes to your current one will be lost if unsaved."))
+      return
     let build;
     if (!fullBuild) {
       build = window.localStorage.getItem("savedBuilds")

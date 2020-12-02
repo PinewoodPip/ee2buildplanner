@@ -240,7 +240,7 @@ export const talents = {
 	},
 	inconspicuous: {
 		name: "Inconspicuous",
-		description: "With Inconspicuous, melee opponents find you less attractive in combat and, as you enter combat, you sneak and become invisible until the end of your first turn. However, everyone&apos;s attitude towards you decreases by 15.",
+		description: "With Inconspicuous, melee opponents find you less attractive in combat and, as you enter combat, you sneak and become invisible until the end of your first turn. However, everyone's attitude towards you decreases by 15.",
 	},
 	leech: {
 		name: "Leech",
@@ -2054,3 +2054,105 @@ export const buildRoles = {
 }
 
 export const embodimentTypesEnum = ["force", "entropy", "form", "inertia", "life"]
+
+export const emptyBuild = {
+	id: null,
+	name: "Custom Character",
+	portrait: "human_m",
+	customPortrait: null,
+	origin: "custom",
+	physique: {
+        race: "human",
+        gender: "male",
+        lifeType: "alive",
+    },
+	text: `This is a text field. You can write whatever you want here.
+
+===========================
+
+You can use this space to take notes, explain your build's usage, strengthsweaknesses, desired gear, etc.
+
+There is no character limit and it will be saved when you save the build.`,
+	lw: false,
+	intrument: null,
+	
+	skills: [],
+	artifacts: [],
+	
+	aspects: [],
+	coreNodes: {
+        force: false,
+        entropy: false,
+        form: false,
+        inertia: false,
+        life: false,
+    },
+
+	attributes: {
+        str: 0,
+        fin: 0,
+        pwr: 0,
+        con: 0,
+        mem: 0,
+        wits: 0,
+    },
+	abilities: {
+        DualWielding: 0,
+        Ranged: 0,
+        SingleHanded: 0,
+        TwoHanded: 0,
+        Leadership: 0,
+        Perseverance: 0,
+        PainReflection: 0,
+        WarriorLore: 0,
+        WaterSpecialist: 0,
+        EarthSpecialist: 0,
+        Necromancy: 0,
+        RogueLore: 0,
+        RangerLore: 0,
+        FireSpecialist: 0,
+        Summoning: 0,
+        AirSpecialist: 0,
+        Polymorph: 0,
+    },
+	civils: {
+        thievery: 0,
+        luckycharm: 0,
+        bartering: 0,
+        sneaking: 0,
+        persuasion: 0,
+        telekinesis: 0,
+        loremaster: 0,
+    },
+	talents: new Set(),
+  }
+
+export const statTooltips = {
+	"str": "Strength determines the limit of your muscle; how heavily armed and armored you can comfortably be, as well as how much you can lift or carry. Each point adds: +3% physical and magic armour.",
+	"fin": "Finesse governs how nimble, precise, and efficient you are. Each point adds: +0.5% dodge. +2.5% chance to recover 1 AP when performing basic attacks. If you have more than a 100% chance to recover AP in this way, that surplus becomes your chance to recover 2 AP instead. AP recovery from basic attacks may never reduce the net-cost to less than 2 AP.",
+	"pwr": "Power measures the honing of your skills; how deadly you are with the tools you have acquired. Each point adds: +1% damage--or 2.5% when you aren't wielding a shield. +1% critical chance.",
+	"con": "Constitution determines your hardiness. Each point adds: +6% base vitality.",
+	"mem": "Memory governs your ability to memorize skill techniques before entering battle. Each point adds: +1 memory slot.",
+	"wits": "Wits determines how perceptive and alert you are; how effectively you can expose weaknesses in an opponent. Each point adds: Your attacks and skills apply an additional 3.5% of a Battered or Harried stack to targets they damage. +1 initiative. Improves your ability to detect traps and find hidden treasures.",
+
+	"DualWielding": "Each point of Dual-Wielding increases damage by 3% (multiplicative) and dodge by 2% while using two one-handed weapons.",
+	"Ranged": "Each point of Ranged increases damage by 3% (multiplicative) and critical chance by 1% when using bows and crossbows.",
+	"SingleHanded": "Each point of Single-Handed increases damage by 3% (multiplicative) and accuracy by 5% when using a single one-handed weapon.",
+	"TwoHanded": "Each point of Two-Handed increases damage by 3% (multiplicative) and critical multiplier by 2% when using two-handed melee weapons.",
+	"Leadership": "Leadership grants your Presence bonuses as well as 2% dodge and 2% damage per point to allies within 13m radius and line-of-sight.",
+	"Perseverance": "Perseverance improves your hardiness under prolonged pressure. Each point raises all resistances by 1.5 points, and increases how much damage you can take before being Battered or Harried by 10%",
+	"PainReflection": "Retribution reflects 5% damage received per point to the damage's owner.",
+
+	"AirSpecialist": "Each point of Aerotheurge grants 2 initiative.",
+	"EarthSpecialist": "Each point of Geomancer grants 3% extra Physical Armor restoration caused by you.",
+	"RangerLore": "Each point of Huntsman increases accuracy by 1%.",
+	"WaterSpecialist": "Each point of Hydrosophist grants 3% extra Magic Armor and Vitality restoration caused by you.",
+	"Necromancy": "Each point of Necromancer grants 1% Lifesteal. Lifesteal only activates on damage dealt to Vitality.",
+	"Polymorph": "Each point of Polymorph grants 1 Attribute Point.",
+	"FireSpecialist": "Each point of Pyrokinetic increases damage from Power by an extra 4% when directly targetting Scorched characters.",
+	"WarriorLore": "Each point of Warfare increases critical chance by 1% when you're Flanked or when you target Flanked characters with Warfare skills.",
+	"RogueLore": "Each point of Scoundrel increases movement by 0.2m.",
+	"Summoning": "Each point of Summoning increases Vitality, Damage, Physical and Magic Armor of summons by 5%.",
+
+	"skillabilitygeneric": "Skill Ability points increase your damage with any relevant skill by 2% and increase damage from Power by 4% per point when manually casting skills from the respective school. Additionally, you unlock additional tiers of Source Infusions at 5 and 9 points."
+}
