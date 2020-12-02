@@ -3,1413 +3,2193 @@
     "id": "Flame_Small",
     "material": "Flame",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Fire_9",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 9
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Fire": "9"
-    }
+    "weaponBoostString": "+1 free Elementalist reaction per round"
   },
   "Flame_Medium": {
     "id": "Flame_Medium",
     "material": "Flame",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Fire_11",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_EleCrit",
+          "keyword": "Elementalist",
+          "keywordBoon": "mutator",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 11
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Fire": "11"
-    }
+    "weaponBoostString": "+1 free Elementalist reaction per round.<br> +15% critical chance while performing Elementalist reactions"
   },
   "Flame_Large": {
     "id": "Flame_Large",
     "material": "Flame",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Fire_13",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_EleCrit",
+          "keyword": "Elementalist",
+          "keywordBoon": "mutator",
+          "value": 30
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 13
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Fire": "13"
-    }
+    "weaponBoostString": "+1 free Elementalist reaction per round.<br> +30% critical chance while performing Elementalist reactions"
   },
   "Flame_Giant": {
     "id": "Flame_Giant",
     "material": "Flame",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Flame_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Fire_15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FLAME_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_EleCrit",
+          "keyword": "Elementalist",
+          "keywordBoon": "mutator",
+          "value": 45
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 15
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Fire": "15"
-    }
+    "weaponBoostString": "+1 free Elementalist reaction per round.<br> +45% critical chance while performing Elementalist reactions"
   },
   "Frost_Small": {
     "id": "Frost_Small",
     "material": "Frost",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Water_9",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 9
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Water": "9"
-    }
+    "weaponBoostString": "+1 free Celestial reaction per round"
   },
   "Frost_Medium": {
     "id": "Frost_Medium",
     "material": "Frost",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Water_11",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CelestialVitality",
+          "keyword": "Celestial",
+          "keywordBoon": "mutator",
+          "value": 7
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 11
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Water": "11"
-    }
+    "weaponBoostString": "+1 free Celestial reaction per round.<br> Celestial reactions heal another 7% Vitality"
   },
   "Frost_Large": {
     "id": "Frost_Large",
     "material": "Frost",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Water_13",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CelestialVitality",
+          "keyword": "Celestial",
+          "keywordBoon": "mutator",
+          "value": 14
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 13
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Water": "13"
-    }
+    "weaponBoostString": "+1 free Celestial reaction per round.<br> Celestial reactions heal another 14% Vitality"
   },
   "Frost_Giant": {
     "id": "Frost_Giant",
     "material": "Frost",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Frost_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Water_15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_FROST_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CelestialVitality",
+          "keyword": "Celestial",
+          "keywordBoon": "mutator",
+          "value": 21
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 15
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Water": "15"
-    }
+    "weaponBoostString": "+1 free Celestial reaction per round.<br> Celestial reactions heal another 21% Vitality"
   },
   "Thunder_Small": {
     "id": "Thunder_Small",
     "material": "Thunder",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Air_9",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 9
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Air": "9"
-    }
+    "weaponBoostString": "+1 free Predator reaction per round"
   },
   "Thunder_Medium": {
     "id": "Thunder_Medium",
     "material": "Thunder",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Air_11",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_PredatorPowerDamage",
+          "keyword": "Predator",
+          "keywordBoon": "mutator",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 11
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Air": "11"
-    }
+    "weaponBoostString": "+1 free Predator reaction per round.<br> +15% damage from Power while performing a Predator reaction"
   },
   "Thunder_Large": {
     "id": "Thunder_Large",
     "material": "Thunder",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Air_13",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_PredatorPowerDamage",
+          "keyword": "Predator",
+          "keywordBoon": "mutator",
+          "value": 30
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 13
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Air": "13"
-    }
+    "weaponBoostString": "+1 free Predator reaction per round.<br> +30% damage from Power while performing a Predator reaction"
   },
   "Thunder_Giant": {
     "id": "Thunder_Giant",
     "material": "Thunder",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Air_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Air_15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_AIR_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_PredatorPowerDamage",
+          "keyword": "Predator",
+          "keywordBoon": "mutator",
+          "value": 45
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 15
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Air": "15"
-    }
+    "weaponBoostString": "+1 free Predator reaction per round.<br> +45% damage from Power while performing a Predator reaction"
   },
   "Rock_Small": {
     "id": "Rock_Small",
     "material": "Rock",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Earth_9",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 9
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Earth": "9"
-    }
+    "weaponBoostString": "+1 free Centurion reaction per round"
   },
   "Rock_Medium": {
     "id": "Rock_Medium",
     "material": "Rock",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Earth_11",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CenturionRestoreArmor",
+          "keyword": "Centurion",
+          "keywordBoon": "mutator",
+          "value": 5
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 11
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Earth": "11"
-    }
+    "weaponBoostString": "+1 free Centurion reaction per round.<br> Restore 5% of missing armor when performing a Centurion reaction"
   },
   "Rock_Large": {
     "id": "Rock_Large",
     "material": "Rock",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Earth_13",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CenturionRestoreArmor",
+          "keyword": "Centurion",
+          "keywordBoon": "mutator",
+          "value": 10
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 13
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Earth": "13"
-    }
+    "weaponBoostString": "+1 free Centurion reaction per round.<br> Restore 10% of missing armor when performing a Centurion reaction"
   },
   "Rock_Giant": {
     "id": "Rock_Giant",
     "material": "Rock",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Earth_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Earth_15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_EARTH_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CenturionRestoreArmor",
+          "keyword": "Centurion",
+          "keywordBoon": "mutator",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 15
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Earth": "15"
-    }
+    "weaponBoostString": "+1 free Centurion reaction per round.<br> Restore 15% of missing armor when performing a Centurion reaction"
   },
   "Venom_Small": {
     "id": "Venom_Small",
     "material": "Venom",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Poison_9",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 9
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Poison": "9"
-    }
+    "weaponBoostString": "+1 free Occultist reaction per round"
   },
   "Venom_Medium": {
     "id": "Venom_Medium",
     "material": "Venom",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Poison_11",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_OccultistInstantDamage",
+          "keyword": "Occultist",
+          "keywordBoon": "mutator",
+          "value": 50
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 11
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Poison": "11"
-    }
+    "weaponBoostString": "+1 free Occultist reaction per round.<br> Occultist reactions instantly deal 50% of their base end-damage"
   },
   "Venom_Large": {
     "id": "Venom_Large",
     "material": "Venom",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Poison_13",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_OccultistInstantDamage",
+          "keyword": "Occultist",
+          "keywordBoon": "mutator",
+          "value": 75
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 13
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Poison": "13"
-    }
+    "weaponBoostString": "+1 free Occultist reaction per round.<br> Occultist reactions instantly deal 75% of their base end-damage"
   },
   "Venom_Giant": {
     "id": "Venom_Giant",
     "material": "Venom",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneDummy_Venom_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Poison_15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNEDUMMY_VENOM_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_OccultistInstantDamage",
+          "keyword": "Occultist",
+          "keywordBoon": "mutator",
+          "value": 100
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 15
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Poison": "15"
-    }
+    "weaponBoostString": "+1 free Occultist reaction per round.<br> Occultist reactions instantly deal 100% of their base end-damage"
   },
   "Masterwork_Small": {
     "id": "Masterwork_Small",
     "material": "Masterwork",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Small",
-    "armorEffect": "_Boost_Armor_PhysBoost15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 6
+        }
+      ],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "ArmorBoost": "15"
-    }
+    "weaponBoostString": "-6% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
   },
   "Masterwork_Medium": {
     "id": "Masterwork_Medium",
     "material": "Masterwork",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Medium",
-    "armorEffect": "_Boost_Armor_PhysBoost18",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 8
+        }
+      ],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "ArmorBoost": "18"
-    }
+    "weaponBoostString": "-8% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
   },
   "Masterwork_Large": {
     "id": "Masterwork_Large",
     "material": "Masterwork",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Large",
-    "armorEffect": "_Boost_Armor_PhysBoost21",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 10
+        }
+      ],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "ArmorBoost": "21"
-    }
+    "weaponBoostString": "-10% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
   },
   "Masterwork_Giant": {
     "id": "Masterwork_Giant",
     "material": "Masterwork",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Physical_Giant",
-    "armorEffect": "_Boost_Armor_PhysBoost25",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_PHYSICAL_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 12
+        }
+      ],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "ArmorBoost": "25"
-    }
+    "weaponBoostString": "-12% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
   },
   "Bloodstone_Small": {
     "id": "Bloodstone_Small",
     "material": "Bloodstone",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Small",
-    "armorEffect": "_Boost_Armor_Initiative_3",
-    "weaponEffect_boosts": {
-      "IntelligenceBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 3
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_INTPERC_15"
-    },
-    "armorEffect_boosts": {
-      "Initiative": "3"
-    }
+    "weaponBoostString": "+15% invested Power"
   },
   "Bloodstone_Medium": {
     "id": "Bloodstone_Medium",
     "material": "Bloodstone",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Medium",
-    "armorEffect": "_Boost_Armor_Initiative_4",
-    "weaponEffect_boosts": {
-      "IntelligenceBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 4
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_INTPERC_20"
-    },
-    "armorEffect_boosts": {
-      "Initiative": "4"
-    }
+    "weaponBoostString": "+20% invested Power"
   },
   "Bloodstone_Large": {
     "id": "Bloodstone_Large",
     "material": "Bloodstone",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Large",
-    "armorEffect": "_Boost_Armor_Initiative_5",
-    "weaponEffect_boosts": {
-      "IntelligenceBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 5
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_INTPERC_25"
-    },
-    "armorEffect_boosts": {
-      "Initiative": "5"
-    }
+    "weaponBoostString": "+25% invested Power"
   },
   "Bloodstone_Giant": {
     "id": "Bloodstone_Giant",
     "material": "Bloodstone",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Bloodstone_Giant",
-    "armorEffect": "_Boost_Armor_Initiative_6",
-    "weaponEffect_boosts": {
-      "IntelligenceBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 6
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_INTPERC_30"
-    },
-    "armorEffect_boosts": {
-      "Initiative": "6"
-    }
+    "weaponBoostString": "+30% invested Power"
   },
   "Ruby_Small": {
     "id": "Ruby_Small",
     "material": "Ruby",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Small",
-    "armorEffect": "_Boost_Armor_Rune_Ruby_Small",
-    "weaponEffect_boosts": {
-      "Leadership": "1",
-      "Fire": "9"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESFIRE_2"
-    }
+    "armorBoostString": "+2% Maximum Fire Resistance"
   },
   "Ruby_Medium": {
     "id": "Ruby_Medium",
     "material": "Ruby",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Ruby_Medium",
-    "weaponEffect_boosts": {
-      "Leadership": "2",
-      "Fire": "13"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESFIRE_3"
-    }
+    "armorBoostString": "+3% Maximum Fire Resistance"
   },
   "Ruby_Large": {
     "id": "Ruby_Large",
     "material": "Ruby",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Large",
-    "armorEffect": "_Boost_Armor_Rune_Ruby_Large",
-    "weaponEffect_boosts": {
-      "Leadership": "3",
-      "Fire": "17"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESFIRE_4"
-    }
+    "armorBoostString": "+4% Maximum Fire Resistance"
   },
   "Ruby_Giant": {
     "id": "Ruby_Giant",
     "material": "Ruby",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Ruby_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Ruby_Giant",
-    "weaponEffect_boosts": {
-      "Leadership": "4",
-      "Fire": "21"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESFIRE_5"
-    }
+    "armorBoostString": "+5% Maximum Fire Resistance"
   },
   "Lapis_Small": {
     "id": "Lapis_Small",
     "material": "Lapis",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_HarriedThresh_Small",
-    "armorEffect": "_Boost_Armor_MagicBoost15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_HARRIEDTHRESH_SMALL"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "MagicArmorBoost": "15"
-    }
+    "weaponBoostString": "-18% to target's Harried threshold for your damage"
   },
   "Lapis_Medium": {
     "id": "Lapis_Medium",
     "material": "Lapis",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_HarriedThresh_Medium",
-    "armorEffect": "_Boost_Armor_MagicBoost18",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_HARRIEDTHRESH_MEDIUM"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "MagicArmorBoost": "18"
-    }
+    "weaponBoostString": "-22% to target's Harried threshold for your damage"
   },
   "Lapis_Large": {
     "id": "Lapis_Large",
     "material": "Lapis",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_HarriedThresh_Large",
-    "armorEffect": "_Boost_Armor_MagicBoost21",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_HARRIEDTHRESH_LARGE"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "MagicArmorBoost": "21"
-    }
+    "weaponBoostString": "-26% to target's Harried threshold for your damage"
   },
   "Lapis_Giant": {
     "id": "Lapis_Giant",
     "material": "Lapis",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_HarriedThresh_Giant",
-    "armorEffect": "_Boost_Armor_MagicBoost25",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_HARRIEDTHRESH_GIANT"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "MagicArmorBoost": "25"
-    }
+    "weaponBoostString": "-30% to target's Harried threshold for your damage"
   },
   "Pearl_Small": {
     "id": "Pearl_Small",
     "material": "Pearl",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Small",
-    "armorEffect": "_Boost_Armor_Rune_Pearl_Small",
-    "weaponEffect_boosts": {
-      "MemoryBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 4.5
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_MEMPERC_15"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_MAGIC_4.5"
-    }
+    "weaponBoostString": "+15% invested Memory",
+    "armorBoostString": "+4.5% missing Magic Armor Regeneration (50% maximum)"
   },
   "Pearl_Medium": {
     "id": "Pearl_Medium",
     "material": "Pearl",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Pearl_Medium",
-    "weaponEffect_boosts": {
-      "MemoryBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 6
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_MEMPERC_20"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_MAGIC_6"
-    }
+    "weaponBoostString": "+20% invested Memory",
+    "armorBoostString": "+6% missing Magic Armor Regeneration (50% maximum)"
   },
   "Pearl_Large": {
     "id": "Pearl_Large",
     "material": "Pearl",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Large",
-    "armorEffect": "_Boost_Armor_Rune_Pearl_Large",
-    "weaponEffect_boosts": {
-      "MemoryBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 7.5
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_MEMPERC_25"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_MAGIC_7.5"
-    }
+    "weaponBoostString": "+25% invested Memory",
+    "armorBoostString": "+7.5% missing Magic Armor Regeneration (50% maximum)"
   },
   "Pearl_Giant": {
     "id": "Pearl_Giant",
     "material": "Pearl",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Pearl_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Pearl_Giant",
-    "weaponEffect_boosts": {
-      "MemoryBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 9
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_MEMPERC_30"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_MAGIC_9"
-    }
+    "weaponBoostString": "+30% invested Memory",
+    "armorBoostString": "+9% missing Magic Armor Regeneration (50% maximum)"
   },
   "Sapphire_Small": {
     "id": "Sapphire_Small",
     "material": "Sapphire",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Small",
-    "armorEffect": "_Boost_Armor_Rune_Sapphire_Small",
-    "weaponEffect_boosts": {
-      "DualWielding": "1",
-      "Water": "9"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESWATER_2"
-    }
+    "armorBoostString": "+2% Maximum Water Resistance"
   },
   "Sapphire_Medium": {
     "id": "Sapphire_Medium",
     "material": "Sapphire",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Sapphire_Medium",
-    "weaponEffect_boosts": {
-      "DualWielding": "2",
-      "Water": "13"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESWATER_3"
-    }
+    "armorBoostString": "+3% Maximum Water Resistance"
   },
   "Sapphire_Large": {
     "id": "Sapphire_Large",
     "material": "Sapphire",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Large",
-    "armorEffect": "_Boost_Armor_Rune_Sapphire_Large",
-    "weaponEffect_boosts": {
-      "DualWielding": "3",
-      "Water": "17"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESWATER_4"
-    }
+    "armorBoostString": "+4% Maximum Water Resistance"
   },
   "Sapphire_Giant": {
     "id": "Sapphire_Giant",
     "material": "Sapphire",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Sapphire_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Sapphire_Giant",
-    "weaponEffect_boosts": {
-      "DualWielding": "4",
-      "Water": "21"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESWATER_5"
-    }
+    "armorBoostString": "+5% Maximum Water Resistance"
   },
   "Silver_Small": {
     "id": "Silver_Small",
     "material": "Silver",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Silver_Small",
-    "armorEffect": "_Boost_Armor_Rune_Silver_Small",
-    "weaponEffect_boosts": {
-      "WitsBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_WITPERC_15"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_ALLARMOR_2.5"
-    }
+    "weaponBoostString": "+15% invested Wits",
+    "armorBoostString": "+2.5% missing All Armor Regeneration (50% maximum)"
   },
   "Silver_Medium": {
     "id": "Silver_Medium",
     "material": "Silver",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Silver_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Silver_Medium",
-    "weaponEffect_boosts": {
-      "WitsBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_WITPERC_20"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_ALLARMOR_3.5"
-    }
+    "weaponBoostString": "+20% invested Wits",
+    "armorBoostString": "+3.5% missing All Armor Regeneration (50% maximum)"
   },
   "Silver_Large": {
     "id": "Silver_Large",
     "material": "Silver",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Silver_Large",
-    "armorEffect": "_Boost_Armor_Rune_Silver_Large",
-    "weaponEffect_boosts": {
-      "WitsBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_WITPERC_25"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_ALLARMOR_4.5"
-    }
+    "weaponBoostString": "+25% invested Wits",
+    "armorBoostString": "+4.5% missing All Armor Regeneration (50% maximum)"
   },
   "Silver_Giant": {
     "id": "Silver_Giant",
     "material": "Silver",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Silver_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Silver_Giant",
-    "weaponEffect_boosts": {
-      "WitsBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_WITPERC_30"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_ALLARMOR_5.5"
-    }
+    "weaponBoostString": "+30% invested Wits",
+    "armorBoostString": "+5.5% missing All Armor Regeneration (50% maximum)"
   },
   "Clay_Small": {
     "id": "Clay_Small",
     "material": "Clay",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Clay_Small",
-    "armorEffect": "_Boost_Armor_Rune_Clay_Small",
-    "weaponEffect_boosts": {
-      "TwoHanded": "1",
-      "Earth": "9"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESEARTH_2"
-    }
+    "armorBoostString": "+2% Maximum Earth Resistance"
   },
   "Clay_Medium": {
     "id": "Clay_Medium",
     "material": "Clay",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Clay_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Clay_Medium",
-    "weaponEffect_boosts": {
-      "TwoHanded": "2",
-      "Earth": "13"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESEARTH_3"
-    }
+    "armorBoostString": "+3% Maximum Earth Resistance"
   },
   "Clay_Large": {
     "id": "Clay_Large",
     "material": "Clay",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Clay_Large",
-    "armorEffect": "_Boost_Armor_Rune_Clay_Large",
-    "weaponEffect_boosts": {
-      "TwoHanded": "3",
-      "Earth": "17"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESEARTH_4"
-    }
+    "armorBoostString": "+4% Maximum Earth Resistance"
   },
   "Clay_Giant": {
     "id": "Clay_Giant",
     "material": "Clay",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Clay_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Clay_Giant",
-    "weaponEffect_boosts": {
-      "TwoHanded": "4",
-      "Earth": "21"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESEARTH_5"
-    }
+    "armorBoostString": "+5% Maximum Earth Resistance"
   },
   "Granite_Small": {
     "id": "Granite_Small",
     "material": "Granite",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Granite_Small",
-    "armorEffect": "_Boost_Armor_Rune_Granite_Small",
-    "weaponEffect_boosts": {
-      "Perseverance": "1",
-      "Physical": "3"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPHYS_0.5"
-    }
+    "armorBoostString": "+0.5% Maximum Physical Resistance"
   },
   "Granite_Medium": {
     "id": "Granite_Medium",
     "material": "Granite",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Granite_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Granite_Medium",
-    "weaponEffect_boosts": {
-      "Perseverance": "2",
-      "Physical": "4"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 2
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPHYS_1"
-    }
+    "armorBoostString": "+1% Maximum Physical Resistance"
   },
   "Granite_Large": {
     "id": "Granite_Large",
     "material": "Granite",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Granite_Large",
-    "armorEffect": "_Boost_Armor_Rune_Granite_Large",
-    "weaponEffect_boosts": {
-      "Perseverance": "3",
-      "Physical": "5"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 3
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPHYS_1.5"
-    }
+    "armorBoostString": "+1.5% Maximum Physical Resistance"
   },
   "Granite_Giant": {
     "id": "Granite_Giant",
     "material": "Granite",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Granite_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Granite_Giant",
-    "weaponEffect_boosts": {
-      "Perseverance": "4",
-      "Physical": "6"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 4
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPHYS_2"
-    }
+    "armorBoostString": "+2% Maximum Physical Resistance"
   },
   "Iron_Small": {
     "id": "Iron_Small",
     "material": "Iron",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Iron_Small",
-    "armorEffect": "_Boost_Armor_Rune_Iron_Small",
-    "weaponEffect_boosts": {
-      "StrengthBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 4.5
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_STRPERC_15"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_PHYS_4.5"
-    }
+    "weaponBoostString": "+15% invested Strength",
+    "armorBoostString": "+4.5% missing Physical Armor Regeneration (50% maximum)"
   },
   "Iron_Medium": {
     "id": "Iron_Medium",
     "material": "Iron",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Iron_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Iron_Medium",
-    "weaponEffect_boosts": {
-      "StrengthBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 6
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_STRPERC_20"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_PHYS_6"
-    }
+    "weaponBoostString": "+20% invested Strength",
+    "armorBoostString": "+6% missing Physical Armor Regeneration (50% maximum)"
   },
   "Iron_Large": {
     "id": "Iron_Large",
     "material": "Iron",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Iron_Large",
-    "armorEffect": "_Boost_Armor_Rune_Iron_Large",
-    "weaponEffect_boosts": {
-      "StrengthBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 7.5
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_STRPERC_25"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_PHYS_7.5"
-    }
+    "weaponBoostString": "+25% invested Strength",
+    "armorBoostString": "+7.5% missing Physical Armor Regeneration (50% maximum)"
   },
   "Iron_Giant": {
     "id": "Iron_Giant",
     "material": "Iron",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Iron_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Iron_Giant",
-    "weaponEffect_boosts": {
-      "StrengthBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 9
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_STRPERC_30"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_PHYS_9"
-    }
+    "weaponBoostString": "+30% invested Strength",
+    "armorBoostString": "+9% missing Physical Armor Regeneration (50% maximum)"
   },
   "Bone_Small": {
     "id": "Bone_Small",
     "material": "Bone",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Bone_Small",
-    "armorEffect": "_Boost_Armor_Vitality_12",
-    "weaponEffect_boosts": {
-      "LifeSteal": "5"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 5
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_LIFESTEAL_5"
-    },
-    "armorEffect_boosts": {
-      "VitalityBoost": "12"
-    }
+    "weaponBoostString": "+5% Lifesteal"
   },
   "Bone_Medium": {
     "id": "Bone_Medium",
     "material": "Bone",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Bone_Medium",
-    "armorEffect": "_Boost_Armor_Vitality_14",
-    "weaponEffect_boosts": {
-      "LifeSteal": "7"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 7
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_LIFESTEAL_7"
-    },
-    "armorEffect_boosts": {
-      "VitalityBoost": "14"
-    }
+    "weaponBoostString": "+7% Lifesteal"
   },
   "Bone_Large": {
     "id": "Bone_Large",
     "material": "Bone",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Bone_Large",
-    "armorEffect": "_Boost_Armor_Vitality_16",
-    "weaponEffect_boosts": {
-      "LifeSteal": "10"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 10
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_LIFESTEAL_10"
-    }
+    "weaponBoostString": "+10% Lifesteal"
   },
   "Bone_Giant": {
     "id": "Bone_Giant",
     "material": "Bone",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Bone_Giant",
-    "armorEffect": "_Boost_Armor_Vitality_16",
-    "weaponEffect_boosts": {
-      "LifeSteal": "14"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 14
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_LIFESTEAL_14"
-    },
-    "armorEffect_boosts": {
-      "VitalityBoost": "16"
-    }
+    "weaponBoostString": "+14% Lifesteal"
   },
   "Obsidian_Small": {
     "id": "Obsidian_Small",
     "material": "Obsidian",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Piercing_9",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_ELE_SMALL"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 6
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 9
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Piercing": "9"
-    }
+    "weaponBoostString": "-6% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
   },
   "Obsidian_Medium": {
     "id": "Obsidian_Medium",
     "material": "Obsidian",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Piercing_11",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_ELE_MEDIUM"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 8
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 11
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Piercing": "11"
-    }
+    "weaponBoostString": "-8% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
   },
   "Obsidian_Large": {
     "id": "Obsidian_Large",
     "material": "Obsidian",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Piercing_13",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_ELE_LARGE"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 10
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 13
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Piercing": "13"
-    }
+    "weaponBoostString": "-10% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
   },
   "Obsidian_Giant": {
     "id": "Obsidian_Giant",
     "material": "Obsidian",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_RuneResist_Ele_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Piercing_15",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_RUNERESIST_ELE_GIANT"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 12
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 15
+        }
+      ]
     },
-    "armorEffect_boosts": {
-      "Piercing": "15"
-    }
+    "weaponBoostString": "-12% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
   },
   "Onyx_Small": {
     "id": "Onyx_Small",
     "material": "Onyx",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Small",
-    "armorEffect": "_Boost_Armor_Rune_Onyx_Small",
-    "weaponEffect_boosts": {
-      "PainReflection": "1",
-      "Piercing": "9"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPIERCE_2"
-    }
+    "armorBoostString": "+2% Maximum Piercing Resistance"
   },
   "Onyx_Medium": {
     "id": "Onyx_Medium",
     "material": "Onyx",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Onyx_Medium",
-    "weaponEffect_boosts": {
-      "PainReflection": "2",
-      "Piercing": "13"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPIERCE_3"
-    }
+    "armorBoostString": "+3% Maximum Piercing Resistance"
   },
   "Onyx_Large": {
     "id": "Onyx_Large",
     "material": "Onyx",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Large",
-    "armorEffect": "_Boost_Armor_Rune_Onyx_Large",
-    "weaponEffect_boosts": {
-      "PainReflection": "3",
-      "Piercing": "17"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPIERCE_4"
-    }
+    "armorBoostString": "+4% Maximum Piercing Resistance"
   },
   "Onyx_Giant": {
     "id": "Onyx_Giant",
     "material": "Onyx",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Onyx_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Onyx_Giant",
-    "weaponEffect_boosts": {
-      "PainReflection": "4",
-      "Piercing": "21"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPIERCE_5"
-    }
+    "armorBoostString": "+5% Maximum Piercing Resistance"
   },
   "Steel_Small": {
     "id": "Steel_Small",
     "material": "Steel",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_BatteredThresh_Small",
-    "armorEffect": "_Boost_Armor_Resistance_Phys_1",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_BATTEREDTHRESH_SMALL"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "Physical": "1"
-    }
+    "weaponBoostString": "-18% to target's Battered threshold for your damage"
   },
   "Steel_Medium": {
     "id": "Steel_Medium",
     "material": "Steel",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_BatteredThresh_Medium",
-    "armorEffect": "_Boost_Armor_Resistance_Phys_2",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_BATTEREDTHRESH_MEDIUM"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "Physical": "2"
-    }
+    "weaponBoostString": "-22% to target's Battered threshold for your damage"
   },
   "Steel_Large": {
     "id": "Steel_Large",
     "material": "Steel",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_BatteredThresh_Large",
-    "armorEffect": "_Boost_Armor_Resistance_Phys_3",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_BATTEREDTHRESH_LARGE"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "Physical": "3"
-    }
+    "weaponBoostString": "-26% to target's Battered threshold for your damage"
   },
   "Steel_Giant": {
     "id": "Steel_Giant",
     "material": "Steel",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_BatteredThresh_Giant",
-    "armorEffect": "_Boost_Armor_Resistance_Phys_4",
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_BATTEREDTHRESH_GIANT"
+    "boosts": {
+      "weapon": [],
+      "armor": []
     },
-    "armorEffect_boosts": {
-      "Physical": "4"
-    }
+    "weaponBoostString": "-30% to target's Battered threshold for your damage"
   },
   "Gold_Small": {
     "id": "Gold_Small",
     "material": "Gold",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Dodge_7",
-    "armorEffect": "_Boost_Armor_Dodge_3",
-    "weaponEffect_boosts": {
-      "DodgeBoost": "7"
-    },
-    "armorEffect_boosts": {
-      "DodgeBoost": "3"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 7
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 3
+        }
+      ]
     }
   },
   "Gold_Medium": {
     "id": "Gold_Medium",
     "material": "Gold",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Dodge_9",
-    "armorEffect": "_Boost_Armor_Dodge_4",
-    "weaponEffect_boosts": {
-      "DodgeBoost": "9"
-    },
-    "armorEffect_boosts": {
-      "DodgeBoost": "4"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 9
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 4
+        }
+      ]
     }
   },
   "Gold_Large": {
     "id": "Gold_Large",
     "material": "Gold",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Dodge_12",
-    "armorEffect": "_Boost_Armor_Dodge_5",
-    "weaponEffect_boosts": {
-      "DodgeBoost": "12"
-    },
-    "armorEffect_boosts": {
-      "DodgeBoost": "5"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 12
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 5
+        }
+      ]
     }
   },
   "Gold_Giant": {
     "id": "Gold_Giant",
     "material": "Gold",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Dodge_15",
-    "armorEffect": "_Boost_Armor_Dodge_6",
-    "weaponEffect_boosts": {
-      "DodgeBoost": "15"
-    },
-    "armorEffect_boosts": {
-      "DodgeBoost": "6"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 6
+        }
+      ]
     }
   },
   "TigersEye_Small": {
     "id": "TigersEye_Small",
     "material": "TigersEye",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Small",
-    "armorEffect": "_Boost_Armor_PhysMagicBoost9",
-    "weaponEffect_boosts": {
-      "FinesseBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_FINPERC_15"
-    },
-    "armorEffect_boosts": {
-      "ArmorBoost": "9",
-      "MagicArmorBoost": "9"
-    }
+    "weaponBoostString": "+15% invested Finesse"
   },
   "TigersEye_Medium": {
     "id": "TigersEye_Medium",
     "material": "TigersEye",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Medium",
-    "armorEffect": "_Boost_Armor_PhysMagicBoost11",
-    "weaponEffect_boosts": {
-      "FinesseBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_FINPERC_20"
-    },
-    "armorEffect_boosts": {
-      "ArmorBoost": "11",
-      "MagicArmorBoost": "11"
-    }
+    "weaponBoostString": "+20% invested Finesse"
   },
   "TigersEye_Large": {
     "id": "TigersEye_Large",
     "material": "TigersEye",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Large",
-    "armorEffect": "_Boost_Armor_PhysMagicBoost13",
-    "weaponEffect_boosts": {
-      "FinesseBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_FINPERC_25"
-    },
-    "armorEffect_boosts": {
-      "ArmorBoost": "13",
-      "MagicArmorBoost": "13"
-    }
+    "weaponBoostString": "+25% invested Finesse"
   },
   "TigersEye_Giant": {
     "id": "TigersEye_Giant",
     "material": "TigersEye",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_TigersEye_Giant",
-    "armorEffect": "_Boost_Armor_PhysMagicBoost15",
-    "weaponEffect_boosts": {
-      "FinesseBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_FINPERC_30"
-    },
-    "armorEffect_boosts": {
-      "ArmorBoost": "15",
-      "MagicArmorBoost": "15"
-    }
+    "weaponBoostString": "+30% invested Finesse"
   },
   "Topaz_Small": {
     "id": "Topaz_Small",
     "material": "Topaz",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Small",
-    "armorEffect": "_Boost_Armor_Rune_Topaz_Small",
-    "weaponEffect_boosts": {
-      "Ranged": "1",
-      "Air": "9"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESAIR_2"
-    }
+    "armorBoostString": "+2% Maximum Air Resistance"
   },
   "Topaz_Medium": {
     "id": "Topaz_Medium",
     "material": "Topaz",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Topaz_Medium",
-    "weaponEffect_boosts": {
-      "Ranged": "2",
-      "Air": "13"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESAIR_3"
-    }
+    "armorBoostString": "+3% Maximum Air Resistance"
   },
   "Topaz_Large": {
     "id": "Topaz_Large",
     "material": "Topaz",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Large",
-    "armorEffect": "_Boost_Armor_Rune_Topaz_Large",
-    "weaponEffect_boosts": {
-      "Ranged": "3",
-      "Air": "17"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESAIR_4"
-    }
+    "armorBoostString": "+4% Maximum Air Resistance"
   },
   "Topaz_Giant": {
     "id": "Topaz_Giant",
     "material": "Topaz",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Topaz_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Topaz_Giant",
-    "weaponEffect_boosts": {
-      "Ranged": "4",
-      "Air": "21"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESAIR_5"
-    }
+    "armorBoostString": "+5% Maximum Air Resistance"
   },
   "Emerald_Small": {
     "id": "Emerald_Small",
     "material": "Emerald",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Small",
-    "armorEffect": "_Boost_Armor_Rune_Emerald_Small",
-    "weaponEffect_boosts": {
-      "SingleHanded": "1",
-      "Poison": "9"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPOISON_2"
-    }
+    "armorBoostString": "+2% Maximum Poison Resistance"
   },
   "Emerald_Medium": {
     "id": "Emerald_Medium",
     "material": "Emerald",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Emerald_Medium",
-    "weaponEffect_boosts": {
-      "SingleHanded": "2",
-      "Poison": "13"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPOISON_3"
-    }
+    "armorBoostString": "+3% Maximum Poison Resistance"
   },
   "Emerald_Large": {
     "id": "Emerald_Large",
     "material": "Emerald",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Large",
-    "armorEffect": "_Boost_Armor_Rune_Emerald_Large",
-    "weaponEffect_boosts": {
-      "SingleHanded": "3",
-      "Poison": "17"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPOISON_4"
-    }
+    "armorBoostString": "+4% Maximum Poison Resistance"
   },
   "Emerald_Giant": {
     "id": "Emerald_Giant",
     "material": "Emerald",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Emerald_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Emerald_Giant",
-    "weaponEffect_boosts": {
-      "SingleHanded": "4",
-      "Poison": "21"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
     },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_MAXRESPOISON_5"
-    }
+    "armorBoostString": "+5% Maximum Poison Resistance"
   },
   "Jade_Small": {
     "id": "Jade_Small",
     "material": "Jade",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_Rune_Jade_Small",
-    "armorEffect": "_Boost_Armor_Rune_Jade_Small",
-    "weaponEffect_boosts": {
-      "ConstitutionBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 3
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_CONPERC_15"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_LIFE_3"
-    }
+    "weaponBoostString": "+15% invested Constitution",
+    "armorBoostString": "+3% missing Vitality Regeneration (50% maximum)"
   },
   "Jade_Medium": {
     "id": "Jade_Medium",
     "material": "Jade",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_Rune_Jade_Medium",
-    "armorEffect": "_Boost_Armor_Rune_Jade_Medium",
-    "weaponEffect_boosts": {
-      "ConstitutionBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 4
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_CONPERC_20"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_LIFE_4"
-    }
+    "weaponBoostString": "+20% invested Constitution",
+    "armorBoostString": "+4% missing Vitality Regeneration (50% maximum)"
   },
   "Jade_Large": {
     "id": "Jade_Large",
     "material": "Jade",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_Rune_Jade_Large",
-    "armorEffect": "_Boost_Armor_Rune_Jade_Large",
-    "weaponEffect_boosts": {
-      "ConstitutionBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 5
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_CONPERC_25"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_LIFE_5"
-    }
+    "weaponBoostString": "+25% invested Constitution",
+    "armorBoostString": "+5% missing Vitality Regeneration (50% maximum)"
   },
   "Jade_Giant": {
     "id": "Jade_Giant",
     "material": "Jade",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_Rune_Jade_Giant",
-    "armorEffect": "_Boost_Armor_Rune_Jade_Giant",
-    "weaponEffect_boosts": {
-      "ConstitutionBoost": "1"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 6
+        }
+      ]
     },
-    "real_weaponEffect": {
-      "prop": "AMER_DELDUM_CONPERC_30"
-    },
-    "real_armorEffect": {
-      "prop": "AMER_DELDUM_REGEN_LIFE_6"
-    }
+    "weaponBoostString": "+30% invested Constitution",
+    "armorBoostString": "+6% missing Vitality Regeneration (50% maximum)"
   },
   "Malachite_Small": {
     "id": "Malachite_Small",
     "material": "Malachite",
     "size": "Small",
-    "weaponEffect": "_Boost_Weapon_CriticalChance_7",
-    "armorEffect": "_Boost_Armor_MovementSpeed_20",
-    "weaponEffect_boosts": {
-      "CriticalChance": "7"
-    },
-    "armorEffect_boosts": {
-      "Movement": "20"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 7
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 20
+        }
+      ]
     }
   },
   "Malachite_Medium": {
     "id": "Malachite_Medium",
     "material": "Malachite",
     "size": "Medium",
-    "weaponEffect": "_Boost_Weapon_CriticalChance_9",
-    "armorEffect": "_Boost_Armor_MovementSpeed_30",
-    "weaponEffect_boosts": {
-      "CriticalChance": "9"
-    },
-    "armorEffect_boosts": {
-      "Movement": "30"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 9
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 30
+        }
+      ]
     }
   },
   "Malachite_Large": {
     "id": "Malachite_Large",
     "material": "Malachite",
     "size": "Large",
-    "weaponEffect": "_Boost_Weapon_CriticalChance_12",
-    "armorEffect": "_Boost_Armor_MovementSpeed_40",
-    "weaponEffect_boosts": {
-      "CriticalChance": "12"
-    },
-    "armorEffect_boosts": {
-      "Movement": "40"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 12
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 40
+        }
+      ]
     }
   },
   "Malachite_Giant": {
     "id": "Malachite_Giant",
     "material": "Malachite",
     "size": "Giant",
-    "weaponEffect": "_Boost_Weapon_CriticalChance_15",
-    "armorEffect": "_Boost_Armor_MovementSpeed_50",
-    "weaponEffect_boosts": {
-      "CriticalChance": "15"
-    },
-    "armorEffect_boosts": {
-      "Movement": "50"
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 50
+        }
+      ]
     }
   }
 }
