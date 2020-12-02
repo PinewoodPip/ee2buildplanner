@@ -1475,7 +1475,8 @@ export const stats = {
 
 		// other
 		RESISTDEATH: {
-			display: "Resists Death: {0}"
+			display: "Resists Natural Death: {0}",
+			bool: true,
 		},
 	},
 	extendedStat: {

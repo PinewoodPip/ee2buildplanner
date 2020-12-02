@@ -156,7 +156,6 @@ function CombatAbilities(props) {
 
 class Attribute extends React.Component {
 	shouldComponentUpdate(nextProps, nextState) {
-		// todo
 		return true
 	}
 
@@ -243,9 +242,11 @@ class SkillAbilities extends React.Component {
 // todo rename this component; holds far more than just attributes now
 export class Attributes extends React.Component {
 	shouldComponentUpdate(nextProps, nextState) {
-		return true
+		return utils.propObjectHasChanged(this.props.data, nextProps.data)
 	}
+
 	render() {
+		console.log("t")
         let remaining = game.maxNaturalAttributePoints - game.totalAttributePointsSpent
         
 		return <TabbedContainer app={this.props.app} style={{minWidth: "300px", height: "100%"}}>

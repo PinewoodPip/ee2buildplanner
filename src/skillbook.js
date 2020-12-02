@@ -35,7 +35,7 @@ export class Skill extends React.Component {
 		className += (this.props.data.Hidden) ? " transparent" : ""
 
 		return <SkillTooltip data={this.props.data}>
-			<Icon img={img} className={"skill-icon " + className} size={"64px"} onClick={this.toggleSkill.bind(this)} style={this.props.style} onContextMenu={this.props.onContextMenu}>
+			<Icon img={img} className={"skill-icon " + className} size={"64px"} onClick={this.props.forSkillbook ? this.toggleSkill.bind(this) : this.props.onContextMenu} style={this.props.style} onContextMenu={this.props.onContextMenu}>
 
 			</Icon>
 		</SkillTooltip>
@@ -193,7 +193,7 @@ export function SkillBook(props) {
 
 		// don't show special skills
 		if (!skill.Hidden)
-			skills.push(<Skill key={x} data={skill} app={props.app}/>)
+			skills.push(<Skill forSkillbook key={x} data={skill} app={props.app}/>)
 	}
 
 	return (

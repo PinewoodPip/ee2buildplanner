@@ -10,11 +10,29 @@ export class Artifacts extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
         return (utils.propObjectHasChanged(this.props.info, nextProps.info))
     }
+
+    getContextMenu(id) {
+        let props = this.props
+        function reorder(movement) {
+            props.app.setState({artifacts: utils.reorderElementInArray(props.app.state.artifacts, id, movement), contextMenu: null})
+        }
+        return [
+            <Text key={0} text="Choose option:"/>,
+            <Text key={1} text="Remove" onClick={()=>{this.props.app.setState({artifacts: this.props.app.state.artifacts.filter((e)=>{return e != id}), contextMenu: null})}}/>,
+            <Text key={2} text="Move left" onClick={()=>{reorder(-1)}}/>,
+            <Text key={3} text="Move right" onClick={()=>{reorder(1)}}/>,
+            <Text key={4} text="Move to front" onClick={()=>{reorder(-9999)}}/>,
+            <Text key={5} text="Move to back" onClick={()=>{reorder(9999)}}/>,
+        ]
+    }
+
     render() {
         let artifacts = []
         for (let x in this.props.app.state.artifacts) {
             let art = game.getArtifact(this.props.app.state.artifacts[x])
-            artifacts.push(<Artifact key={x} data={art} onClick={()=>{game.removeArtifact(art.id)}}/>)
+            let func = (e)=>{this.props.app.contextMenu(this.getContextMenu(art.id), e)}
+            
+            artifacts.push(<Artifact key={x} data={art} onClick={func} onContextMenu={func}/>)
         }
 
         // if build has no artifacts, show a message explaining this element's purpose
@@ -75,6 +93,6 @@ function Artifact(props) {
         <Text text={props.data.description}/>
     </div>
     return <Tooltip content={tooltip} placement="right">
-        <Icon className="button artifact" img={props.data.icon} size="64px" onClick={props.onClick}/>
+        <Icon className="button artifact" img={props.data.icon} size="64px" onClick={props.onClick} onContextMenu={props.onContextMenu}/>
     </Tooltip>
 }

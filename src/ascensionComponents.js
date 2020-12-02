@@ -275,13 +275,21 @@ function Aspect(props) {
 	let keywordDisplay = []
 
 	let func = null
-	if (props.interactable) {
+	if (props.interactable) { // context menu
+		let reorderFunc = (move) => {
+			game.app.setState({aspects: utils.reorderElementInArray(game.app.state.aspects, game.ascension.getBuildAspectById(asp.id), move), contextMenu: null})
+		}
+
 		let elements = [
 			<Text key={1} text="Select option:"/>,
 			<Text key={2} text="Remove" onClick={(e)=>{game.ascension.removeAspect(e, asp.id)}}/>,
-			<Text key={3} text="Move up" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, -1)}}/>,
-			<Text key={4} text="Move down" onClick={(e)=>{game.ascension.moveAspect(e, asp.id, 1)}}/>
+			<Text key={3} text="Move up" onClick={(e)=>{reorderFunc(-1)}}/>,
+			<Text key={4} text="Move down" onClick={(e)=>{reorderFunc(1)}}/>,
+			<Text key={5} text="Move to top" onClick={(e)=>{reorderFunc(-99999)}}/>,
+			<Text key={6} text="Move to bottom" onClick={(e)=>{reorderFunc(99999)}}/>,
 		]
+
+		// onContextMenu prop func
 		func = (e) => {props.app.contextMenu(
 			elements, e
 		)}

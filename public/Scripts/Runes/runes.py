@@ -8,8 +8,6 @@ consumes = open("Status_CONSUME.txt")
 
 REMOVE_SCAFFOLDING_KEYS = True
 
-# lifesteal on bone runes is repeated
-
 # todo check viality boost
 # check why 1 bone rune does not have the boost in output
 # bone rune gives same vit?
@@ -476,15 +474,14 @@ RUNES = [
     "Flame", "Frost", "Thunder", "Rock", "Venom", "Masterwork", "Bloodstone", "Ruby", "Lapis", "Pearl", "Sapphire", "Silver", "Clay", "Granite", "Iron", "Bone", "Obsidian", "Onyx", "Steel", "Gold", "TigersEye", "Topaz", "Emerald", "Jade", "Malachite",
 ]
 
+# data entries/properties to ignore in the .txt files
 IGNORED_PROPERTIES = [
     "Value",
     "ExtraProperties",
     "Physical",
 ]
 
-runeRegex = re.compile(
-    'new entry "LOOT_Rune_(?P<material>.*)_(?P<size>.*)"'
-)
+runeRegex = re.compile('new entry "LOOT_Rune_(?P<material>.*)_(?P<size>.*)"')
 
 weaponEffectRegex = re.compile('data "RuneEffectWeapon" "(?P<effect>.*)"')
 armorEffectRegex = re.compile('data "RuneEffectUpperbody" "(?P<effect>.*)"')
@@ -511,7 +508,6 @@ for line in data.readlines():
 
         boostToRuneDict[effect] = currentRune["id"]
 
-        # currentRune = None
     elif armorEffectRegex.search(line) and currentRune:
         effect = armorEffectRegex.search(line).groupdict()["effect"]
         runes[currentRune["id"]]["armorEffect"] = effect

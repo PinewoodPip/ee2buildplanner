@@ -1,6 +1,14 @@
 import { Base64 } from "js-base64";
+import { clone } from "underscore";
 import { game } from "./App.js"
 
+export function reorderElementInArray(arr, ele, movement, isSet=false) {
+  let newArr = clone(arr)
+  let newIndex = newArr.indexOf(ele) + movement
+  newArr = newArr.filter((e)=>{return e != ele})
+  newArr.splice(newIndex, 0, ele)
+  return newArr
+}
 
 // import all images from a folder in /src/ and map them to an object
 export function importAll(r) {

@@ -161,15 +161,18 @@ class Skills extends React.Component {
 		return (utils.propObjectHasChanged(this.props.info, nextProps.info))
 	}
 
-	async reorderSkill(e, id, movement) {
-		let state = cloneDeep(this.props.app.state.skills)
-		let index = this.props.app.state.skills.indexOf(id) + movement
-		state = state.filter((x)=>{return x !== id})
-	
-		state.splice(index, 0, id)
-	
-		await this.props.app.closeContext()
-		this.props.app.setState({skills: state})
+	reorderSkill(id, movement) {
+		this.props.app.setState({
+			skills: utils.reorderElementInArray(this.props.app.state.skills, id, movement),
+			contextMenu: null,
+		})
+	}
+
+	removeSkill(id) {
+		this.props.app.setState({
+			skills: this.props.app.state.skills.filter((e) => {return e != id}),
+			contextMenu: null,
+		})
 	}
 
 	render() {
@@ -198,10 +201,11 @@ class Skills extends React.Component {
 
 			let contextMenu = (!skill.Hidden) ? (e)=>{this.props.app.contextMenu([
 				<Text text="Select option:"/>,
-				<Text text="Move left" onClick={(e)=>{this.reorderSkill(e, skill.id, -1)}}/>,
-				<Text text="Move right" onClick={(e)=>{this.reorderSkill(e, skill.id, 1)}}/>,
-				<Text text="Move to front" onClick={(e)=>{this.reorderSkill(e, skill.id, -1000000)}}/>,
-				<Text text="Move to back" onClick={(e)=>{this.reorderSkill(e, skill.id, 10000000)}}/>,
+				<Text text="Remove" onClick={(e)=>{this.removeSkill(skill.id)}}/>,
+				<Text text="Move left" onClick={(e)=>{this.reorderSkill(skill.id, -1)}}/>,
+				<Text text="Move right" onClick={(e)=>{this.reorderSkill(skill.id, 1)}}/>,
+				<Text text="Move to front" onClick={(e)=>{this.reorderSkill(skill.id, -1000000)}}/>,
+				<Text text="Move to back" onClick={(e)=>{this.reorderSkill(skill.id, 10000000)}}/>,
 			], e)} : (e)=>{e.preventDefault()}
 
 			skills.push(<Skill key={x} data={skill} app={this.props.app} highlight="false" onContextMenu={contextMenu}/>)
@@ -223,9 +227,11 @@ class Skills extends React.Component {
 
 export class MainInterface extends React.Component {
 	render() {
+		// these are actually only used to check if a component should update. when it does, it uses a reference to App to get the state. todo rework
 		let appState = this.props.app.state
 		let skillsInfo = {origin: appState.origin, skills: appState.skills, race: appState.physique.race, lifeType: appState.physique.lifeType, coreNodes: appState.coreNodes}
 		let ascData = {aspects: appState.aspects, coreNode: appState.coreNodes, selectedAspect: appState.selectedAspect}
+		let statPanelData = {attributes: appState.attributes, abilities: appState.abilities, civils: appState.civils, talents: Array.from(appState.talents), aspects: appState.aspects, buffs: Array.from(appState.buffs)}
 		return <div>
 			<TopBar app={this.props.app}/>
 			<div className="flexbox-horizontal">
@@ -240,7 +246,7 @@ export class MainInterface extends React.Component {
 					<div style={{height: "30px"}}/>
 
 					<div className="flexbox-horizontal flex-align-start" style={{height: "500px"}}>
-						<Attributes app={this.props.app}/>
+						<Attributes app={this.props.app} data={statPanelData}/>
 						<Ascension data={ascData} app={this.props.app}/>
 						<TextField app={this.props.app} lastValue={this.props.app.state.id} onBlur={(e)=>{this.props.app.setState({text: e.target.value})}} stateKey="text" textareaClass="textarea"/>
 					</div>

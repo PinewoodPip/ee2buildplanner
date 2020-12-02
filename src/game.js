@@ -182,6 +182,7 @@ export class Game {
   }
 
   getStats(nextState=null) {
+    // use the param state object if one is provided, else fallback to current state. The point of this is to pass the next state from App.shouldComponentUpdate() so stats can be recalculated BEFORE components are re-rendered, avoiding the issue of certain stat calculations falling behind.
     let state = nextState ? nextState : this.app.state
 
     function addStat(stat) {
@@ -532,6 +533,9 @@ export class Game {
     stats.realStats["pyrokinetic"] = {type: "realStats", id: "pyrokinetic", amount: (
       stats.flexStat.FireSpecialist.amount + abilities.FireSpecialist * mult
     )}
+    stats.realStats["aerotheurge"] = {type: "realStats", id: "aerotheurge", amount: (
+      stats.flexStat.AirSpecialist.amount + abilities.AirSpecialist * mult
+    )}
     stats.realStats["summoning"] = {type: "realStats", id: "summoning", amount: (
       stats.flexStat.Summoning.amount + abilities.Summoning * mult
     )}
@@ -576,7 +580,18 @@ export class Game {
     stats.flexStat.PHYSICALARMORBOOST.amount += (3 * (stats.realStats.str.amount - 10))
     stats.flexStat.MAGICARMORBOOST.amount += (3 * (stats.realStats.str.amount - 10))
     stats.flexStat.DODGEBOOST.amount += (0.5 * (stats.realStats.fin.amount - 10))
+    // todo shield consideration
     stats.flexStat.DAMAGEBOOST.amount += (2.5 * (stats.realStats.pwr.amount - 10))
+    stats.flexStat.CRITICALCHANCE.amount += stats.realStats.pwr.amount - 10
+    stats.flexStat.INITIATIVE.amount += stats.realStats.wits.amount - 10
+
+    // extra stats from abilities
+    stats.flexStat.INITIATIVE.amount += 2 * stats.realStats.aerotheurge.amount
+    stats.flexStat.ACCURACYBOOST.amount += stats.realStats.huntsman.amount
+    stats.flexStat.LIFESTEAL.amount += stats.realStats.necromancer.amount
+    stats.flexStat.MOVEMENT.amount += 0.2 * stats.realStats.scoundrel.amount
+
+    stats.flexStat.DODGEBOOST.amount += 2 * stats.realStats.dualwielding.amount
 
     return stats
   }

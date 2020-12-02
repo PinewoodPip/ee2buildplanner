@@ -126,7 +126,8 @@ X track node count
 - allow reordering of skills
 - add "move to front/back" for asps
 - add runes to artifact screen ? it would make sense to have them both in the same container, as it would save space and you don't have all that many artifacts usually
-- aerotherghe init bonus
+X aerotherghe init bonus and others
+- add tooltips to abilities
 - check if all stats have categories
 - fix inconsistency with "choose option"/"select an option"
 - allow clicking outside area of popups to close them - use an onclick wrapper on inner div to accomplish
