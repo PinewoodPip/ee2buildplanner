@@ -103,6 +103,10 @@ body {
   
 }
 
+.compact-text {
+  margin: 3px;
+}
+
 .flexbox-wrap {
   display: flex;
   /* align-items: center; */

@@ -108,6 +108,7 @@ relevantParams = [
     "Damage Multiplier",
     "Damage Range",
     "DamageType",
+    "Memory Cost",
 
     # manually-added properties
     "TieredStatuses",

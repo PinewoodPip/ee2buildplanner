@@ -129,6 +129,8 @@ X add tooltips to abilities
 - allow clicking outside area of popups to close them - use an onclick wrapper on inner div to accomplish
 X saving builds from gallery should give them a new guid
 - MAYBE LATER - show sp icons next to skill abilities with enough points
+- runes
+X show skill reqs
 
 -- ISSUES
 - CUSTOM SCROLLBARS DO NOT WORK IN FIREFOX AND EDGE (probably only work on chrome. that sucks)

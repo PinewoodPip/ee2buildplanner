@@ -60,24 +60,23 @@ function SkillTooltip(props) {
 	let skill = props.data
 	let desc = skill.DescriptionRef.split("Source Infusions:")
 	let ability = game.mappings.abilityNames[skill.Ability]
+	let colorHighlighting = {
+		"Pyrokinetic": "text-pyro",
+		"Geomancer": "text-geo",
+		"Aerotheurge": "text-aero",
+		"Hydrosophist": "text-water",
+		"Warfare": "text-warfare",
+		"Huntsman": "text-huntsman",
+		"Polymorph": "text-poly",
+		"Summoning": "text-summon",
+		"Scoundrel": "text-rogue",
+		"Necromancer": "text-necro",
+	}
 
 	if (desc.length > 1) {
 		desc = [
 			desc[0],
 		]
-
-		let colorHighlighting = {
-			"Pyrokinetic": "text-pyro",
-			"Geomancer": "text-geo",
-			"Aerotheurge": "text-aero",
-			"Hydrosophist": "text-water",
-			"Warfare": "text-warfare",
-			"Huntsman": "text-huntsman",
-			"Polymorph": "text-poly",
-			"Summoning": "text-summon",
-			"Scoundrel": "text-rogue",
-			"Necromancer": "text-necro",
-		}
 
 		let infusionText = [
 			skill.DescriptionRef.split(`1:`)[1],
@@ -125,12 +124,37 @@ function SkillTooltip(props) {
 		<Text text={(skill.Cooldown == -1 ? "Once per combat" : skill.Cooldown + " CD")}/>
 	</div>
 
+	// memorization requirements
+	let reqDisplay = []
+	if (skill.MemorizationRequirements) {
+		let reqs = skill.MemorizationRequirements.split("; ")
+		for (let x in reqs) {
+			let stat = miscData.mappings.abilityNames[reqs[x].split(" ")[0]]
+			let amount = reqs[x].split(" ")[1]
+			console.log(colorHighlighting[stat])
+
+			let text = parser(utils.format("<p class='compact-text' key='" + x + "'>Requires <span class='{0}'>{1} {2}</span></p>", colorHighlighting[stat], amount, stat))
+
+			reqDisplay.push(text)
+
+			// reqDisplay.push(<Text key={x} overrideColor className={colorHighlighting[stat]} text={utils.format("Requires {0} {1}", amount, stat)}/>)
+		}
+	}
+	let memoryCost = null
+	// es-lint-disable-next-line
+	if (skill["Memory Cost"] && skill["Memory Cost"] != "0") {
+		memoryCost = <div className="flexbox-horizontal flex-align-centered">
+			{/* <Icon size="14px" img="memory_white"/> */}
+			<Text text={utils.format("Requires {0} Memory Slot{1}", skill["Memory Cost"], parseInt(skill["Memory Cost"]) > 1 ? "s" : "")}/>
+		</div>
+	}
+
 	// statuses
 	let statuses = []
 	for (let x in skill.TieredStatuses) {
 		let status = skill.TieredStatuses[x]
 		if (status in miscData.statusNames) {
-			let text = parser(utils.format("<p key='" + status + "'>Applies <span class='{0}'>{1}</span></p>", miscData.mappings.statusCSS[status], miscData.statusNames[status]))
+			let text = parser(utils.format("<p class='compact-text' key='" + status + "'>Applies <span class='{0}'>{1}</span></p>", miscData.mappings.statusCSS[status], miscData.statusNames[status]))
 			// statuses.push(<Text key={status} text={text}/>)
 			statuses.push(text)
 		}
@@ -158,21 +182,23 @@ function SkillTooltip(props) {
 
 	let tooltip = <div className="flexbox-vertical">
 		<Text text={skill.DisplayNameRef} style={{fontSize: "17px", fontWeight: "bold"}}/>
-		{/* <Text text={skill.id} className="text-small"/> */}
+
+		{/* school icon and name */}
 		<div className="flexbox-horizontal flex-align-centered">
 			<Icon size="20px" img={abilityIcon} className=""/>
 			<div style={{width: "5px"}}/>
-			<Text text={schoolName} style={{fontSize: "13px"}}/>
+			<Text overrideColor className={colorHighlighting[schoolName]} text={schoolName} style={{fontSize: "13px"}}/>
 		</div>
 
-		{/* <div style={{height: "10px"}}/> */}
+		{actionInfo}
 
 		<div className="text-si">
 			{realDesc}
 		</div>
 
-		{actionInfo}
 		{statusesDisplay}
+		{reqDisplay}
+		{memoryCost}
 	</div>
 	return (
 		<Tooltip content={tooltip} placement="right">

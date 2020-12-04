@@ -21,7 +21,7 @@ export function Dropdown(props) {
 
 // text wrapper component. has support for dark mode on/off toggle
 export function Text(props) {
-	let extraClass = game.app.state.darkMode ? "dark-mode-text" : ""
+	let extraClass = game.app.state.darkMode && !props.overrideColor ? "dark-mode-text" : ""
 	return <p style={props.style} className={extraClass + " text " + props.className} onClick={props.onClick}>{props.text}</p>
 }
 
