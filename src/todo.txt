@@ -132,7 +132,6 @@ X saving builds from gallery should give them a new guid
 
 -- ISSUES
 - CUSTOM SCROLLBARS DO NOT WORK IN FIREFOX AND EDGE (probably only work on chrome. that sucks)
-- THERE IS NO WARNING FOR LOADING A BUILD WHILE YOUR CURRENT ONE IS UNSAVED !!!!!!!!
 - escapist does not grant its skill
 	also applies to anything else that grants skills I guess. Except proto
 - small issue: tooltips from talents expand the page (meaning they lengthen it and make an ugly scrollbar appear)

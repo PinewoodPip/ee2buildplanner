@@ -2,6 +2,45 @@ export const featuredBuilds = [
 	"test",
 ]
 
+// a handedness of 0 means a weapon can only be put in the offhand
+export const weapons = {
+	sword: {
+		name: "Melee",
+		handedness: 1,
+		icon: null,
+	},
+	bow: {
+		name: "Bows",
+		handedness: 2,
+		icon: null,
+	},
+	twohander: {
+		name: "2Hander",
+		handedness: 2,
+		icon: null,
+	},
+	wand: {
+		name: "Wand",
+		handedness: 1,
+		icon: null,
+	},
+	dagger: {
+		name: "Dagger",
+		handedness: 1,
+		icon: null,
+	},
+	shield: {
+		name: "Shield",
+		handedness: 0,
+		icon: null,
+	},
+	none: {
+		name: "None",
+		handedness: 1,
+		icon: null,
+	},
+}
+
 export const races = {
 	human: {
 		name: "Human",

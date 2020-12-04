@@ -474,7 +474,7 @@ hr {width: 85%;}
 
 .role-display {
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   left: 0;
   width: 80px;
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0));
@@ -535,7 +535,6 @@ option {border: none;}
 .portrait {
   width: 108px;
   height: 135px;
-  /* border: 1px black solid; */
 }
 
 .skill-listing {

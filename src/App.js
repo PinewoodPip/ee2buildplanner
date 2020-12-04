@@ -84,6 +84,7 @@ You can use this space to take notes, explain your build's usage, strengths/weak
 There is no character limit and it will be saved when you save the build.`, 
       lw: false,
       role: "dps",
+      weapons: {mainhand: "sword", offhand: "none"},
 
       skills: [], // todo make these sets
       artifacts: [],
@@ -277,6 +278,7 @@ There is no character limit and it will be saved when you save the build.`,
       text: build.text,
       lw: build.lw,
       instrument: build.instrument,
+      weapons: build.weapons,
       
       skills: build.skills,
       artifacts: build.artifacts,
@@ -577,6 +579,7 @@ There is no character limit and it will be saved when you save the build.`,
       text: state.text,
       lw: state.lw,
       intrument: state.instrument,
+      weapons: state.weapons,
       
       skills: state.skills,
       artifacts: state.artifacts,

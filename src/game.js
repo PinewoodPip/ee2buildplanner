@@ -127,6 +127,8 @@ export class Game {
     return count
   }
 
+  get hasFreeOffhand() {console.log("t");return miscData.weapons[this.app.state.weapons.mainhand].handedness != 2}
+
   get maxAscensionPoints() {
     return 5 + this.app.state.config.buildLevel
   }

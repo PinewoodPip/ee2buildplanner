@@ -15,13 +15,18 @@ export class CharacterProfile extends React.Component {
 		this.props.app.setState({physique: state})
 	}
 
-    render() {
-		// build role options
-		let roleOptions = {}
-		for (let x in miscData.buildRoles) {
-			roleOptions[x] = miscData.buildRoles[x].name
+	changeWeapon(hand, id) {
+		let state = cloneDeep(this.props.app.state.weapons)
+		state[hand] = id
+
+		if (miscData.weapons[id].handedness == 2) {
+			state.offhand = "none"
 		}
 
+		this.props.app.setState({weapons: state})
+	}
+
+    render() {
 		// origin dropdown options
 		let originOptions = {}
 		for (let x in miscData.origins) {
@@ -33,6 +38,23 @@ export class CharacterProfile extends React.Component {
 		let raceOptions = {}
 		for (let x in game.races) {
 			raceOptions[x] = game.races[x].name
+		}
+
+		// weapon options
+		let mainWeapons = {}
+		let offhands = {}
+		for (let x in miscData.weapons) {
+			let wep = miscData.weapons[x]
+			if (wep.handedness != 0) {
+				mainWeapons[x] = wep.name
+			}
+			else {
+				offhands[x] = wep.name
+			}
+
+			if (wep.handedness != 2) {
+				offhands[x] = wep.name
+			}
 		}
 
 		let lifeTypes = {alive: miscData.lifeType.living.name, undead: miscData.lifeType.undead.name}
@@ -66,7 +88,15 @@ export class CharacterProfile extends React.Component {
 
 						<div style={{height: "2px"}}/>
 
-						{/* <Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/> */}
+						<div className="flexbox-horizontal flex-align-center">
+							<Dropdown options={mainWeapons} onChange={(e)=>{this.changeWeapon("mainhand", e.target.value)}} selected={this.props.app.state.weapons.mainhand}/>
+
+							<div style={{width: "2px"}}/>
+
+							{game.hasFreeOffhand ? (
+								<Dropdown options={offhands} onChange={(e)=>{this.changeWeapon("offhand", e.target.value)}} selected={this.props.app.state.weapons.offhand}/>
+							) : null}
+						</div>
 					</div>
 
 					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
@@ -116,7 +146,7 @@ export function Portrait(props) {
 
 			<Icon className={"portrait" + (props.app.state.origin === "custom" ? " button" : "")} img={props.app.state.portrait} style={{width: "108px", height: "135px"}} onClick={changePortrait} onContextMenu={changePortrait}/>
 
-			<div className="role-display flexbox-horizontal button" style={{width: "100px"}} onContextMenu={roleMenu} onClick={roleMenu}>
+			<div className="role-display flexbox-horizontal button" style={{width: "100px", bottom: "5px"}} onContextMenu={roleMenu} onClick={roleMenu}>
 				<Icon className="" size="25px" img={role.icon}/>
 				<Text text={role.name}/>
 			</div>
