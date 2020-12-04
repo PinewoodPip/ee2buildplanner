@@ -176,7 +176,7 @@ export function Keywords(props) {
 	let keywordButtons = []
 	for (let x in props.app.keywords) {
 		let func = () => {props.app.setState({currentKeyword: x})}
-		let element = <TabButton key={x} img={game.mappings.keywordImages[x]} text={game.mappings.keywordNames[x]} func={func} chosen={props.app.state.currentKeyword === x}/>
+		let element = <TabButton key={Math.random()} img={game.mappings.keywordImages[x]} text={game.mappings.keywordNames[x]} func={func} chosen={props.app.state.currentKeyword === x}/>
 
 		keywordButtons.push(element)
 	}
@@ -184,12 +184,12 @@ export function Keywords(props) {
 	let activators = []
 	let mutators = []
 
-	activators.push(<Text text={<b>Activators</b>}/>)
-	mutators.push(<Text text={<b>Mutators</b>}/>)
+	activators.push(<Text key={-999} text={<b>Activators</b>}/>)
+	mutators.push(<Text key={-998} text={<b>Mutators</b>}/>)
 
 	for (let x in props.app.keywords[props.app.state.currentKeyword]) {
 		let keyword = props.app.keywords[props.app.state.currentKeyword][x]
-		let element = <Text text={game.getDisplayString(game.app.stats[keyword.type][keyword.id])}/>
+		let element = <Text key={Math.random()} text={game.getDisplayString(game.app.stats[keyword.type][keyword.id])}/>
 
 		if (keyword.keywordBoon === "activator")
 			activators.push(element)
@@ -207,7 +207,7 @@ export function Keywords(props) {
 	else {
 		display = [
 			activators,
-			<hr/>,
+			<hr key={-997}/>,
 			mutators]
 	}
 	

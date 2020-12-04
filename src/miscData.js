@@ -1402,12 +1402,14 @@ export const stats = {
 		},
 		INITIATIVE: {
 			display: "Initiative: {0}",
+			default: 10,
 		},
 		LIFESTEAL: {
 			display: "Lifesteal: {0}%",
 		},
 		MOVEMENT: {
-			display: "Movement: +{0}m"
+			display: "Movement: {0}m",
+			default: 2.5
 		},
 
 		VITALITYBOOST: {
@@ -1564,7 +1566,7 @@ export const stats = {
 			display: "Missing Physical Armor Regen: {0}%"
 		},
 		Regen_MagicArmor: {
-			display: "Missing Magical Armor regen: {0}%"
+			display: "Missing Magical Armor Regen: {0}%"
 		},
 
 		// voracity
@@ -1635,10 +1637,10 @@ export const stats = {
 			display: "B/H Threshold: +{0} ???"
 		},
 		Battered_StackInfluence_Enemy: {
-			display: "Battered_StackInfluence_Enemy: {0}"
+			display: "Extra Battered applied per attack: {0}"
 		},
 		Harried_StackInfluence_Enemy: {
-			display: "Harried_StackInfluence_Enemy: {0}"
+			display: "Extra Harried applied per attack: {0}"
 		},
 		IgnoreShieldPowerPenalty: {
 			display: "Shield Power penalty removed: {0}",
@@ -1848,7 +1850,7 @@ export const statCategories = {
 		{type: "extendedStat", id: "PercAttributeIncrease_Memory"},
 		{type: "extendedStat", id: "PercAttributeIncrease_Wits"},
 	],
-	"General Boosts": [
+	"General Stats": [
 		{type: "flexStat", id: "DAMAGEBOOST"},
 		{type: "flexStat", id: "CRITICALCHANCE"},
 		{type: "flexStat", id: "ACCURACYBOOST"},

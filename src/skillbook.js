@@ -131,7 +131,6 @@ function SkillTooltip(props) {
 		for (let x in reqs) {
 			let stat = miscData.mappings.abilityNames[reqs[x].split(" ")[0]]
 			let amount = reqs[x].split(" ")[1]
-			console.log(colorHighlighting[stat])
 
 			let text = parser(utils.format("<p class='compact-text' key='" + x + "'>Requires <span class='{0}'>{1} {2}</span></p>", colorHighlighting[stat], amount, stat))
 
