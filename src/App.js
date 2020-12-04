@@ -77,7 +77,7 @@ class App extends React.Component {
       // textarea text
       text:  `This is a text field. You can write whatever you want here.
 
-===========================
+================================
 
 You can use this space to take notes, explain your build's usage, strengths/weaknesses, desired gear, etc.
 
@@ -244,7 +244,7 @@ There is no character limit and it will be saved when you save the build.`,
   }
 
   // todo more error handling
-  loadBuild(id, fullBuild=null, manual=false) {
+  loadBuild(id, fullBuild=null, manual=false, forceNewId=false) {
     if (manual && !window.confirm("Load this build? Changes to your current one will be lost if unsaved."))
       return
     let build;
@@ -268,7 +268,7 @@ There is no character limit and it will be saved when you save the build.`,
     this.setState({
       metadata: build.metadata,
       role: build.metadata.role,
-      id: build.id,
+      id: forceNewId ? uuid() : build.id,
       name: build.metadata.name,
       portrait: build.portrait,
       customPortrait: build.customPortrait,
@@ -460,9 +460,6 @@ There is no character limit and it will be saved when you save the build.`,
 
         this.stats = game.getStats()
 
-        // start rendering once all data is ready
-        this.setState({ready: true})
-
         // check for corrupted save storage
         try {
           Object.keys(this.getSavedBuilds())
@@ -476,30 +473,6 @@ There is no character limit and it will be saved when you save the build.`,
         if (savedConfig)
           await this.setState({config: JSON.parse(savedConfig)})
 
-        // check if we're using a build url
-        const urlParams = new URLSearchParams(window.location.search)
-        let urlVersion = urlParams.get("urlv")
-        if (urlVersion) {
-          if (urlVersion !== URL_PROTOCOL) {
-            window.alert("You're trying to load a build using an older url format. Ask Pip to implement this already.")
-          }
-          else {
-            try {
-              this.loadBuild(null, this.decodeURLBuild(urlParams.get("build")))
-            }
-            catch {window.alert("The build in the URL could not be loaded.")}
-          }
-        }
-        else {
-          // load the last build the user was working on, if it exists
-          let lastBuildId = window.localStorage.getItem("lastBuild")
-          if (lastBuildId && utils.hasKey(this.getSavedBuilds(), lastBuildId)) {
-            console.log(this.getSavedBuilds()[lastBuildId])
-            try {this.loadBuild(lastBuildId)}
-            catch {window.alert("Your last build could not be loaded.")}
-          }
-        }
-
         // load featured builds
         let buildPromises = []
         for (let x in miscData.featuredBuilds) {
@@ -512,6 +485,35 @@ There is no character limit and it will be saved when you save the build.`,
               map[miscData.featuredBuilds[i]] = e.data 
             })
             game.app.setState({buildGallery: map})
+
+            // check if we're using a build url
+            const urlParams = new URLSearchParams(window.location.search)
+            let url = urlParams.get("build")
+            if (url) {
+              if (miscData.featuredBuilds.includes(url)) {
+                try {
+                  this.loadBuild(null, this.getFeaturedBuilds()[url], false, true)
+                }
+                catch {
+                  window.alert("The build from the URL could not be loaded.")
+                }
+              }
+              else {
+                window.alert("The build in the URL is not valid.")
+              }
+            }
+            else {
+              // load the last build the user was working on, if it exists
+              let lastBuildId = window.localStorage.getItem("lastBuild")
+              if (lastBuildId && utils.hasKey(this.getSavedBuilds(), lastBuildId)) {
+                console.log(this.getSavedBuilds()[lastBuildId])
+                try {this.loadBuild(lastBuildId)}
+                catch {window.alert("Your last build could not be loaded.")}
+              }
+            }
+
+            // start rendering once all data is ready
+            this.setState({ready: true})
           })
           .catch(() => {window.alert("The build gallery did not load properly. Try refreshing or notify Pip.")})
       }.bind(this))
@@ -537,6 +539,19 @@ There is no character limit and it will be saved when you save the build.`,
         this.secretProgress = 0
       }
     }
+  }
+
+  // copy a featured build's link to clipboard
+  copyBuildLink(featuredBuildId) {
+    // jesus i hate web development sometimes
+    let dummy = document.createElement("textarea")
+    document.body.append(dummy)
+    dummy.value = "https://pinewood.team/ee2buildplanner?build=" + featuredBuildId
+    dummy.select()
+    document.execCommand("copy")
+    document.body.removeChild(dummy)
+
+    window.alert("Link copied.")
   }
 
   getCurrentBuild(compressed=false) {

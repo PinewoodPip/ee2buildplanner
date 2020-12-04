@@ -131,17 +131,28 @@ function Talents(props) {
 		talents.push(<Talent key={x} data={talent} chosen={true}/>)
 	}
 
+	talents.push(<hr key={-999}/>)
+
+	// as well as chosen talents
+	props.app.state.talents.forEach(e => {
+		let talent = miscData.talents[e]
+		let func = () => {props.app.toggleTalent(e)}
+
+		talents.push(<Talent key={e} func={func} data={talent} chosen/>)
+	})
+
 	// display all normal talents
 	for (let x in miscData.talents) {
 		let talent = miscData.talents[x]
 
-		if (talent.unselectable)
+		// skip hidden and selected talents
+		if (talent.unselectable || props.app.state.talents.has(x))
 			continue
 
 		let func = () => {props.app.toggleTalent(x)}
 
 		// not 100% sure why we need a flexbox to make this full-width
-		talents.push(<Talent key={x} func={func} data={talent} chosen={props.app.talents.has(x)}/>)
+		talents.push(<Talent key={x} func={func} data={talent}/>)
 	}
 
 	// use red text highlight if we pick too many talents

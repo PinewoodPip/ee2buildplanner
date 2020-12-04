@@ -57,7 +57,7 @@ export class TextField extends React.Component {
 function TopBar(props) {
 	function onContext(e) {
 		props.app.contextMenu([
-			<Text key={0} text="Choose an option:"/>,
+			<Text key={0} text="Select option:"/>,
 			<Text key={1} text="Save as a new build" onClick={async (e) => {
 				await props.app.setState({id: uuid()})
 				props.app.saveBuild()
@@ -74,19 +74,19 @@ function TopBar(props) {
 
 				<div className="flexbox-horizontal flex-align-start" style={{width: "33%"}}>
 					<GreenButton text="View builds" onClick={(e) => {props.app.sidebar(<BuildsDropdown app={props.app}/>, "left")}}/>
-					<div style={{width: "10px"}}/>
+					<div style={{width: "5px"}}/>
 
 					<div style={{position: "relative"}}>
 						<GreenButton className={extraSaveButtonClass} text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
 						<Icon className="button absolute-center-vertical" img={"dropdown"} onClick={(e)=>{e.stopPropagation(); onContext(e)}} style={{right: "3px"}}/>
 					</div>
-					<div style={{width: "10px"}}/>
+					<div style={{width: "5x"}}/>
 					<GreenButton text="Export build" onClick={()=>{props.app.exportBuild()}}/>
-					<div style={{width: "10px"}}/>
+					<div style={{width: "5px"}}/>
 					<GreenButton text="New Build" onClick={(e) => {props.app.newBuild()}}/>
 				</div>
 
-				<div className="flexbox-vertical flex-align-centered flex-grow">
+				<div className="flexbox-vertical flex-align-centered flex-grow" style={{zIndex: "999"}}>
 					<Flourish className="flipped-y"/>
 					<Text text="Pip's Build Planner" style={{margin: "-5px", fontSize: "18px"}}/>
 					{/* <Icon img="flourish"/> */}
@@ -95,11 +95,11 @@ function TopBar(props) {
 
 				<div className="flexbox-horizontal flex-align-end" style={{width: "33%"}}>
 					<GreenButton text="Build Gallery" onClick={()=>{props.app.sidebar(<FeaturedBuilds app={props.app}/>, "right")}}/>
-					<div style={{width: "10px"}}/>
+					<div style={{width: "5px"}}/>
 					<GreenButton text="Config &amp; Info" onClick={()=>{props.app.setState({popup: "config"})}}/>
 				</div>
 
-				<div style={{width: "10px"}}/>
+				<div style={{width: "5px"}}/>
 			</div>
 			<div className="top-bar-bottom"/>
 		</div>

@@ -24,6 +24,10 @@ class Build extends React.Component {
             )
         }
 
+        let linkButton = props.isForGallery ? (
+            <Icon className="button absolute-center-vertical" img="link" onClick={(e)=>{e.stopPropagation(); props.app.copyBuildLink(props.featuredBuildId)}} size="32px" style={{right: "0px"}}/>
+        ) : null
+
         let roleDisplay = <div className="role-display flexbox-horizontal">
             <Icon className="" size="25px" img={role.icon}/>
             <Text text={role.name}/>
@@ -48,7 +52,7 @@ class Build extends React.Component {
         }
 
         return (
-            <div className="flexbox-horizontal flex-align-space-between build-entry button" style={{position: "relative"}} onClick={()=>{props.app.loadBuild(props.data.id, (props.fullBuild ? props.data : null), true)}} onContextMenu={deleteBuild.bind(this)} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
+            <div className="flexbox-horizontal flex-align-space-between build-entry button" style={{position: "relative"}} onClick={()=>{props.app.loadBuild(props.data.id, (props.fullBuild ? props.data : null), true, props.isForGallery)}} onContextMenu={deleteBuild.bind(this)} onMouseEnter={()=>{this.setState({beingHovered: true})}} onMouseLeave={()=>{this.setState({beingHovered: false})}}>
                 {roleDisplay}
 
                 <Icon img={props.data.portrait} style={{width: "80px", height: "100px", outline: "1px solid rgb(70, 70, 70)"}}/>
@@ -62,8 +66,13 @@ class Build extends React.Component {
                     {buildRoleInfo}
                 </div>
 
+                {/* buttons that appear on hover */}
                 {this.state.beingHovered && !props.undeletable ? (
                     <Icon className="button absolute-center-vertical" img={"trash_can"} onClick={deleteBuild.bind(this)} size="32px" style={{right: "0px"}}/>
+                ) : null}
+
+                {this.state.beingHovered && props.isForGallery ? (
+                    linkButton
                 ) : null}
             </div>
         )
@@ -100,7 +109,7 @@ export function FeaturedBuilds(props) {
 
     let builds = []
     for (let x in buildsList) {
-        builds.push(<Build fullBuild undeletable key={x} data={buildsList[x]} app={props.app}/>)
+        builds.push(<Build featuredBuildId={x} fullBuild isForGallery undeletable key={x} data={buildsList[x]} app={props.app}/>)
     }
 
 	return (
