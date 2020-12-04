@@ -37,7 +37,7 @@ select {
   width: 100%;
   height: 100%;
   margin: 0;
-  transform: translate(-50%, -97.5%);
+  transform: translate(-50%, -93%);
 }
 
 .absolute-center-vertical {
@@ -474,9 +474,10 @@ hr {width: 85%;}
 
 .role-display {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 0;
   width: 80px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0));
   /* background-color: rgba(70, 70, 70, 0.2); */
 }
 
@@ -534,7 +535,7 @@ option {border: none;}
 .portrait {
   width: 108px;
   height: 135px;
-  border: 1px black solid;
+  /* border: 1px black solid; */
 }
 
 .skill-listing {

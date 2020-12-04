@@ -66,7 +66,7 @@ export class CharacterProfile extends React.Component {
 
 						<div style={{height: "2px"}}/>
 
-						<Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/>
+						{/* <Dropdown options={roleOptions} onChange={(e)=>{this.props.app.setState({role: e.target.value})}} selected={this.props.app.state.role}/> */}
 					</div>
 
 					<FlairedCheckbox text={"Lone Wolf"} ticked={this.props.app.state.lw} onChange={(e)=>{this.props.app.toggleLoneWolf()}}/>
@@ -95,11 +95,33 @@ export function Portrait(props) {
 
 		props.app.contextMenu(realElements, e)
 	}
-	return (
-		<div className="portrait button" style={{position: "relative"}} onContextMenu={changePortrait} onClick={changePortrait}>
-			<Icon img={props.app.state.portrait} style={{width: "108px", height: "135px"}}/>
 
-			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "150px"}} className="portrait-frame" alt={""}/>
+	let role = miscData.buildRoles[props.app.state.role]
+
+	let roleOptions = []
+	roleOptions.push(<Text key={-1} text="Select option:"/>)
+	for (let x in miscData.buildRoles) {
+		let func = ()=>{props.app.setState({role: x, contextMenu: null})}
+		let role = miscData.buildRoles[x]
+		roleOptions.push(<div key={x} className="flexbox-horizontal flex-align-start" onClick={func} onContextMenu={func}>
+			<Icon className="" size="25px" img={role.icon}/>
+			<Text text={role.name} className="flex-grow"/>
+		</div>)
+	}
+
+	let roleMenu = (e)=>{e.stopPropagation();props.app.contextMenu(roleOptions, e)}
+
+	return (
+		<div className="portrait" style={{position: "relative"}}>
+
+			<Icon className={"portrait" + (props.app.state.origin === "custom" ? " button" : "")} img={props.app.state.portrait} style={{width: "108px", height: "135px"}} onClick={changePortrait} onContextMenu={changePortrait}/>
+
+			<div className="role-display flexbox-horizontal button" style={{width: "100px"}} onContextMenu={roleMenu} onClick={roleMenu}>
+				<Icon className="" size="25px" img={role.icon}/>
+				<Text text={role.name}/>
+			</div>
+
+			<img src={utils.getImage("portrait_frame")} style={{width: "120px", height: "155px", pointerEvents: "none"}} className="portrait-frame" alt={""}/>
 		</div>
 	)
 }

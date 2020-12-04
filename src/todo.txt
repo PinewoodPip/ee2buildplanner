@@ -88,37 +88,35 @@ X fancify scrollbars
 X improve attributes panel
 - basic weapon choice box
 X prevent contextmenus from overflowing
-- featured builds
+X featured builds
 X align embs displays
 - changelog in config
 X add lifeType selection
 X add instrument easter egg
 X add metadata to saved build list, like author, build role and keywords
 X save config to localstoarge
-- add scrollbar to builds dropdown
+X add scrollbar to builds dropdown
 - make sidebars for the build lists - one element which is the sidebar, other transparent element that has onClick that closes it
 X make the character name box just be a textfield
 X when lw overflow is fixed, bring the abilities to their max rather than half their real value
 X add delete-move buttons to aspect listing when hovering overr it
 X pointer cursor for core nodes
-- add remove option to skill contextmenu
+X add remove option to skill contextmenu
 X only show alert on saving once
 - "fresh new build" button
-- show effects of combat abils
-- loading build should close dropdown
+X show effects of combat abils
+X loading build should close dropdown
 X show hint in aspect panel when empty
 - make clickboxes of subnodes better
 X don't push charname around when changing origin
 X attr display is bugged
 X optimize skill and artifacts panel
 X remove bouncing shield arena
-- option for alternate ascension layout, where the nodes screen takes up the whole thing, leaving more space for notes
 X fix skill ability bonuses lagging behind
 X track node count
 - show instrument somewhere
-- add button to expand textarea
 X show chosen talents at the top
-- add links to featured builds
+X add links to featured builds
 X factor in crit and dmg boost from power
 - remove unused art
 - warn when not enough memory for spells
