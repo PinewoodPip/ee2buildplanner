@@ -38,7 +38,7 @@ export class Artifacts extends React.Component {
         // if build has no artifacts, show a message explaining this element's purpose
 		let usabilityTip = this.props.app.state.artifacts.length === 0 ?
 		<div className="absolute-centered" style={{bottom: "90%", width: "100%"}}>
-			<Text text="Click the + button to add artifacts." className="text-faded"/>
+			<Text text="Click the + button to add Artifacts." className="text-faded"/>
 		</div> : null
 
         return <Container className="artifacts">

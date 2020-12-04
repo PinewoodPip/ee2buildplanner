@@ -25,7 +25,7 @@ class Build extends React.Component {
         }
 
         let linkButton = props.isForGallery ? (
-            <Icon className="button absolute-center-vertical" img="link" onClick={(e)=>{e.stopPropagation(); props.app.copyBuildLink(props.featuredBuildId)}} size="32px" style={{right: "0px"}}/>
+            <Icon className="button absolute-center-vertical" img="copy_link" onClick={(e)=>{e.stopPropagation(); props.app.copyBuildLink(props.featuredBuildId)}} size="32px" style={{right: "0px", outline: "1px solid gray"}}/>
         ) : null
 
         let roleDisplay = <div className="role-display flexbox-horizontal">

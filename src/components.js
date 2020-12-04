@@ -81,7 +81,7 @@ function TopBar(props) {
 						<Icon className="button absolute-center-vertical" img={"dropdown"} onClick={(e)=>{e.stopPropagation(); onContext(e)}} style={{right: "3px"}}/>
 					</div>
 					<div style={{width: "5x"}}/>
-					<GreenButton text="Export build" onClick={()=>{props.app.exportBuild()}}/>
+					<GreenButton text="Export Build" onClick={()=>{props.app.exportBuild()}}/>
 					<div style={{width: "5px"}}/>
 					<GreenButton text="New Build" onClick={(e) => {props.app.newBuild()}}/>
 				</div>
@@ -146,8 +146,13 @@ export class Config extends React.Component {
 				<Text text="Epic Encounters 2 mod and app design help by Ameranth &amp; Elric."/>
 				<Text text="Most graphic assets made by Larian."/>
 				<hr/>
-				<Text text={utils.format("App version: {0}", APP_DATE)}/>
+				<div className="flexbox-horizontal flex-align-centered">
+					<Text text={utils.format("App version: {0}", APP_DATE)}/>
+					<div style={{width: "5px"}}/>
+					<a href="https://pinewood.team/ee2buildplanner/changelog.txt">(Changelog)</a>
+				</div>
 				<Text text={utils.format("For mod version: {0}", MOD_VERSION)}/>
+				<a href="https://pinewood.team/ee2buildplanner/known_issues.txt">List of known issues and planned features</a>
 			</div>
 		</Container>
 	}

@@ -1,5 +1,6 @@
 export const featuredBuilds = [
 	"test",
+	"dominatrix",
 ]
 
 // a handedness of 0 means a weapon can only be put in the offhand

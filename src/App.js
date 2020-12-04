@@ -21,8 +21,8 @@ import { InstrumentsPopup } from './instruments';
 const axios = require('axios').default;
 
 const SAVE_PROTOCOL = 0
-const APP_VERSION = {major: 0, minor: 1, revision: 0}
-export const APP_DATE = "1st Dec 20" // european format
+const APP_VERSION = {major: 0, minor: 9, revision: 0}
+export const APP_DATE = "4th Dec 20"
 export const MOD_VERSION = "Patch 87 (2nd Nov 20)"
 const URL_PROTOCOL = 0
 const RESOURCE_PREPPEND = "/ee2buildplanner"
@@ -30,7 +30,7 @@ const RESOURCE_PREPPEND = "/ee2buildplanner"
 class App extends React.Component {
   constructor() {
     super()
-    this.state = {
+    this.state = { // todo more some stuff to lower components, like current tabs in popups
       ready: false,
       buildGallery: null,
       popup: null,
@@ -538,7 +538,7 @@ There is no character limit and it will be saved when you save the build.`,
         }
       }
       else {
-        this.secretProgress = 0
+        this.secretProgress = e.key === miscData.secret.charAt(0) ? miscData.secret.charAt(0) : 0
       }
     }
   }

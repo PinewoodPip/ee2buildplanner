@@ -1,26 +1,3 @@
--- Skillbook
-- Hide special skills like the origins summons
-- Highlight currently selected category
-- add ap and reqs to skill tooltips
-X better formatting for skill descs
-- push title/close button to the top of the container
-- fix text for skills that use weapon dmg but change the type
-- fix ruptured tendos damage
-X show game's names for abilities in sidebar\
-- underline "pay up to x ap" and "pay x more ap"
-- button to add skills should be faded out until you hover over it
-
--- General
-- panel showing chosen skills
-X close button
-- rip game UI buttons
-- add margin to the main interface
-X top bar
-- import unselectable css
-X escape key to close popups
-- search bars
-- fix janky css layouts everywhere
-
 -- Skill sheet
 X skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
 X make rhombe highlighted if you have any skill in the category
@@ -31,7 +8,7 @@ X show bonuses from ascensions
 -- Top bar
 X name of the app
 X save/load buttons
-- featured builds gallery
+X featured builds gallery
 X options (like turning off formatting)
 
 -- Ascension
@@ -51,10 +28,9 @@ X emb bopnuses from tier 2s
 X after adding an asp, switch to it
 X tooltips for keywords
 
-- changing nodes doesnt instantly refresh rews
 - fix splendor double ignition being considered a keyword
 
-- atrs add stats like dodge
+X atrs add stats like dodge
 X dont rely on containedKeywords for determining keywords, as those also include free charges?
 X txt field
 X dropdown with multiple builds
@@ -62,6 +38,7 @@ X saving/exporting
 X attr picker
 
 - add the rest of statuses
+	which ones???
 X hide hidden skills
 X add ap and statuses to skill descs
 
@@ -125,29 +102,9 @@ X "new build" button
 X aerotherghe init bonus and others
 X add tooltips to abilities
 - check if all stats have categories
-- fix inconsistency with "choose option"/"select an option"
+X fix inconsistency with "choose option"/"select an option"
 - allow clicking outside area of popups to close them - use an onclick wrapper on inner div to accomplish
 X saving builds from gallery should give them a new guid
 - MAYBE LATER - show sp icons next to skill abilities with enough points
 - runes
 X show skill reqs
-
--- ISSUES
-- CUSTOM SCROLLBARS DO NOT WORK IN FIREFOX AND EDGE (probably only work on chrome. that sucks)
-- escapist does not grant its skill
-	also applies to anything else that grants skills I guess. Except proto
-- small issue: tooltips from talents expand the page (meaning they lengthen it and make an ugly scrollbar appear)
-- text are edits are lost if you do not unblur (click anything else) before leaving page/popup
-- deleting a build doesn't unload it - is this an issue?
-- skills dont show if they directly apply stacks (ex. aero touch)
-- tooltip for enrage is MASSIVE - prob also happens for a few other skills that didnt have their <font> tags pruned. these aren't supposed to be supported anymore though weirdchamp
-- too many keywords in a build prob causes some issue in the builds dropdown
-- defiance has a lot of redundant text in the keywords screen
-- some builds store a 'null' keyword
-- can't override author once it's set for a build
-- config author field is wonky, needs 2 keystrokes to start adding input
-- some skills are missing icons, because they are on different sheets (easy fix)
-- some stats do not have friendly names yet, ex. Battered_StackInfluence_Enemy
-- context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
-
-- on low width resolutions, new build button is only clickable from the left

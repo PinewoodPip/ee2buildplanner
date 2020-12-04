@@ -1,0 +1,7 @@
+------------ PLANNED FEATURES ------------
+- Drag and drop reordering for skills, artifacts and aspects
+- Slide-in animation for sidebars
+- Equipment menu where you can manage equipment modifiers and runes
+- Armor runes
+- Runes in general
+- Revamped stats screen

@@ -211,8 +211,6 @@ export function PopupHeader(props) {
 export function Sidebar(props) {
 	let style = {}
 
-	console.log(props.side)
-
 	// reverse element order for right-sided sidebars
 	let extraClass = props.side == "right" ? "flex-row-reverse" : ""
 
