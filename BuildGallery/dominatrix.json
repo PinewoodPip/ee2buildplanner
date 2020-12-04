@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "name": "Dominatrix",
+    "portrait": "human_f",
+    "author": "PinewoodPip",
+    "role": "dps",
+    "keywords": [
+      "Wither",
+      "Adaptation",
+      "Prosperity"
+    ],
+    "format": 0,
+    "appVersion": {
+      "major": 0,
+      "minor": 1,
+      "revision": 0
+    }
+  },
+  "id": "ce76709e-252e-4fcd-bae2-5bfacfb8de46",
+  "name": "Dominatrix",
+  "portrait": "human_f",
+  "customPortrait": null,
+  "origin": "custom",
+  "weapons": {"mainhand": "dagger", "offhand": "dagger"},
+  "physique": {
+    "race": "human",
+    "gender": "male",
+    "lifeType": "alive"
+  },
+  "text": "================================\n\nThe Dominatrix is a DPS Wither build which unleashes the true power of SI3 Fire Whip, shredding entire encounters with no mercy and leaving any stragglers debilitated from Wither.\n\nThis is a very fragile glass cannon build which relies on nuking the enemy in one fell swoop.\n\n=============Rollout============\n\nLike other mage builds, the Dominatrix needs Source Rushing to be most effective. Your first turn should be spent casting Prototrophize as well as using Source Vampirism. You should have enough initiative to go first or second, but you should delay your first turn so your teammates can prepare a corpse for you to munch.\n\nTODO REST OF DESCRIPTION",
+  "lw": false,
+  "skills": [
+    "Target_FireWhip",
+    "Target_Haste",
+    "Target_BurnMyEyes",
+    "Shout_Adrenaline",
+    "Target_BloatedCorpse",
+    "Rain_Blood",
+    "Target_BlackShroud"
+  ],
+  "artifacts": [
+    "thirst"
+  ],
+  "aspects": [
+    {
+      "family": "entropy",
+      "id": "Decay",
+      "nodes": [
+        null,
+        null,
+        "2",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "family": "entropy",
+      "id": "TheImp",
+      "nodes": [
+        "2",
+        "2",
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "family": "entropy",
+      "id": "TheSupplicant",
+      "nodes": [
+        "2",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "family": "form",
+      "id": "TheBasilisk",
+      "nodes": [
+        "2",
+        "1",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "family": "force",
+      "id": "TheSerpent",
+      "nodes": [
+        "1",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "family": "entropy",
+      "id": "Death",
+      "nodes": [
+        "0",
+        "3",
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "coreNodes": {
+    "force": true,
+    "entropy": true,
+    "form": true,
+    "inertia": true,
+    "life": true
+  },
+  "attributes": {
+    "str": 0,
+    "fin": 0,
+    "pwr": 30,
+    "con": 0,
+    "mem": 0,
+    "wits": 23
+  },
+  "abilities": {
+    "DualWielding": 0,
+    "Ranged": 0,
+    "SingleHanded": 0,
+    "TwoHanded": 0,
+    "Leadership": 0,
+    "Perseverance": 0,
+    "PainReflection": 0,
+    "WarriorLore": 0,
+    "WaterSpecialist": 0,
+    "EarthSpecialist": 0,
+    "Necromancy": 0,
+    "RogueLore": 0,
+    "RangerLore": 0,
+    "FireSpecialist": 10,
+    "Summoning": 0,
+    "AirSpecialist": 0,
+    "Polymorph": 10
+  },
+  "civils": {
+    "thievery": 0,
+    "luckycharm": 0,
+    "bartering": 0,
+    "sneaking": 5,
+    "persuasion": 0,
+    "telekinesis": 0,
+    "loremaster": 0
+  },
+  "talents": [
+    "elementalAffinity",
+    "hothead",
+    "inconspicuous",
+    "savageSortilege",
+    "allSkilledUp"
+  ]
+}

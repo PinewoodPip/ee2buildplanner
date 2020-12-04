@@ -1,0 +1,110 @@
+-- Skill sheet
+X skill ability display, that lets you choose si levels and gets highlighted if you have skills that belong to the category.
+X make rhombe highlighted if you have any skill in the category
+X combat abilities
+X show bonuses from ascensions
+- clicking on a skill name should open the skillbook
+
+-- Top bar
+X name of the app
+X save/load buttons
+X featured builds gallery
+X options (like turning off formatting)
+
+-- Ascension
+X truncate long node descs
+X show reqs in asc browser
+X when reqs are unmet only highlight the unmet embs
+X popup showing all the options
+X tab showing your aspects
+X tab showing all your keywords
+X show node index before the text
+X add right click menu to change nodes
+X in the asc name display icons of keywords contained in chosen subnodes
+X add "any" option for subnodes
+X prevent adding an asp twice
+X rclick to remove asps
+X emb bopnuses from tier 2s
+X after adding an asp, switch to it
+X tooltips for keywords
+
+- fix splendor double ignition being considered a keyword
+
+X atrs add stats like dodge
+X dont rely on containedKeywords for determining keywords, as those also include free charges?
+X txt field
+X dropdown with multiple builds
+X saving/exporting
+X attr picker
+
+- add the rest of statuses
+	which ones???
+X hide hidden skills
+X add ap and statuses to skill descs
+
+X attributes from poly
+- warn when not enough str to wear armor for level ?
+
+-- NEW TODO
+X numerical combat ability and skill point allocation
+X warn when you pick too many talents
+X lone wolf
+X bonuses from talents
+X origins
+- on abilities, on right click allow to add custom bonus
+- set build level
+- open skillbook when skill ability is clicked
+X look into why changing nodes doesnt immediately update
+X show natural inv attributes in tooltip
+X reordering skills
+- show sources of stats
+X add the core
+X fix text field not being loaded
+- highlight save button is a build is unsaved, make "save as new" into a dropdown button
+X fancify scrollbars
+X improve attributes panel
+- basic weapon choice box
+X prevent contextmenus from overflowing
+X featured builds
+X align embs displays
+- changelog in config
+X add lifeType selection
+X add instrument easter egg
+X add metadata to saved build list, like author, build role and keywords
+X save config to localstoarge
+X add scrollbar to builds dropdown
+- make sidebars for the build lists - one element which is the sidebar, other transparent element that has onClick that closes it
+X make the character name box just be a textfield
+X when lw overflow is fixed, bring the abilities to their max rather than half their real value
+X add delete-move buttons to aspect listing when hovering overr it
+X pointer cursor for core nodes
+X add remove option to skill contextmenu
+X only show alert on saving once
+- "fresh new build" button
+X show effects of combat abils
+X loading build should close dropdown
+X show hint in aspect panel when empty
+- make clickboxes of subnodes better
+X don't push charname around when changing origin
+X attr display is bugged
+X optimize skill and artifacts panel
+X remove bouncing shield arena
+X fix skill ability bonuses lagging behind
+X track node count
+- show instrument somewhere
+X show chosen talents at the top
+X add links to featured builds
+X factor in crit and dmg boost from power
+- remove unused art
+- warn when not enough memory for spells
+X "new build" button
+- add runes to artifact screen ? it would make sense to have them both in the same container, as it would save space and you don't have all that many artifacts usually
+X aerotherghe init bonus and others
+X add tooltips to abilities
+- check if all stats have categories
+X fix inconsistency with "choose option"/"select an option"
+- allow clicking outside area of popups to close them - use an onclick wrapper on inner div to accomplish
+X saving builds from gallery should give them a new guid
+- MAYBE LATER - show sp icons next to skill abilities with enough points
+- runes
+X show skill reqs

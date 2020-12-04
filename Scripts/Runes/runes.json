@@ -1,0 +1,2195 @@
+{
+  "Flame_Small": {
+    "id": "Flame_Small",
+    "material": "Flame",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Elementalist reaction per round"
+  },
+  "Flame_Medium": {
+    "id": "Flame_Medium",
+    "material": "Flame",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_EleCrit",
+          "keyword": "Elementalist",
+          "keywordBoon": "mutator",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 11
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Elementalist reaction per round.<br> +15% critical chance while performing Elementalist reactions"
+  },
+  "Flame_Large": {
+    "id": "Flame_Large",
+    "material": "Flame",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_EleCrit",
+          "keyword": "Elementalist",
+          "keywordBoon": "mutator",
+          "value": 30
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 13
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Elementalist reaction per round.<br> +30% critical chance while performing Elementalist reactions"
+  },
+  "Flame_Giant": {
+    "id": "Flame_Giant",
+    "material": "Flame",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Elementalist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_EleCrit",
+          "keyword": "Elementalist",
+          "keywordBoon": "mutator",
+          "value": 45
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 15
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Elementalist reaction per round.<br> +45% critical chance while performing Elementalist reactions"
+  },
+  "Frost_Small": {
+    "id": "Frost_Small",
+    "material": "Frost",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Celestial reaction per round"
+  },
+  "Frost_Medium": {
+    "id": "Frost_Medium",
+    "material": "Frost",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CelestialVitality",
+          "keyword": "Celestial",
+          "keywordBoon": "mutator",
+          "value": 7
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 11
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Celestial reaction per round.<br> Celestial reactions heal another 7% Vitality"
+  },
+  "Frost_Large": {
+    "id": "Frost_Large",
+    "material": "Frost",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CelestialVitality",
+          "keyword": "Celestial",
+          "keywordBoon": "mutator",
+          "value": 14
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 13
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Celestial reaction per round.<br> Celestial reactions heal another 14% Vitality"
+  },
+  "Frost_Giant": {
+    "id": "Frost_Giant",
+    "material": "Frost",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Celestial",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CelestialVitality",
+          "keyword": "Celestial",
+          "keywordBoon": "mutator",
+          "value": 21
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 15
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Celestial reaction per round.<br> Celestial reactions heal another 21% Vitality"
+  },
+  "Thunder_Small": {
+    "id": "Thunder_Small",
+    "material": "Thunder",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Predator reaction per round"
+  },
+  "Thunder_Medium": {
+    "id": "Thunder_Medium",
+    "material": "Thunder",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_PredatorPowerDamage",
+          "keyword": "Predator",
+          "keywordBoon": "mutator",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 11
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Predator reaction per round.<br> +15% damage from Power while performing a Predator reaction"
+  },
+  "Thunder_Large": {
+    "id": "Thunder_Large",
+    "material": "Thunder",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_PredatorPowerDamage",
+          "keyword": "Predator",
+          "keywordBoon": "mutator",
+          "value": 30
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 13
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Predator reaction per round.<br> +30% damage from Power while performing a Predator reaction"
+  },
+  "Thunder_Giant": {
+    "id": "Thunder_Giant",
+    "material": "Thunder",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Predator",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_PredatorPowerDamage",
+          "keyword": "Predator",
+          "keywordBoon": "mutator",
+          "value": 45
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 15
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Predator reaction per round.<br> +45% damage from Power while performing a Predator reaction"
+  },
+  "Rock_Small": {
+    "id": "Rock_Small",
+    "material": "Rock",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Centurion reaction per round"
+  },
+  "Rock_Medium": {
+    "id": "Rock_Medium",
+    "material": "Rock",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CenturionRestoreArmor",
+          "keyword": "Centurion",
+          "keywordBoon": "mutator",
+          "value": 5
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 11
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Centurion reaction per round.<br> Restore 5% of missing armor when performing a Centurion reaction"
+  },
+  "Rock_Large": {
+    "id": "Rock_Large",
+    "material": "Rock",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CenturionRestoreArmor",
+          "keyword": "Centurion",
+          "keywordBoon": "mutator",
+          "value": 10
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 13
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Centurion reaction per round.<br> Restore 10% of missing armor when performing a Centurion reaction"
+  },
+  "Rock_Giant": {
+    "id": "Rock_Giant",
+    "material": "Rock",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Centurion",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_CenturionRestoreArmor",
+          "keyword": "Centurion",
+          "keywordBoon": "mutator",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 15
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Centurion reaction per round.<br> Restore 15% of missing armor when performing a Centurion reaction"
+  },
+  "Venom_Small": {
+    "id": "Venom_Small",
+    "material": "Venom",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Occultist reaction per round"
+  },
+  "Venom_Medium": {
+    "id": "Venom_Medium",
+    "material": "Venom",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_OccultistInstantDamage",
+          "keyword": "Occultist",
+          "keywordBoon": "mutator",
+          "value": 50
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 11
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Occultist reaction per round.<br> Occultist reactions instantly deal 50% of their base end-damage"
+  },
+  "Venom_Large": {
+    "id": "Venom_Large",
+    "material": "Venom",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_OccultistInstantDamage",
+          "keyword": "Occultist",
+          "keywordBoon": "mutator",
+          "value": 75
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 13
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Occultist reaction per round.<br> Occultist reactions instantly deal 75% of their base end-damage"
+  },
+  "Venom_Giant": {
+    "id": "Venom_Giant",
+    "material": "Venom",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "FreeReactionCharge_AMER_Occultist",
+          "value": 1
+        },
+        {
+          "type": "specialLogic",
+          "id": "PIP_Rune_OccultistInstantDamage",
+          "keyword": "Occultist",
+          "keywordBoon": "mutator",
+          "value": 100
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 15
+        }
+      ]
+    },
+    "weaponBoostString": "+1 free Occultist reaction per round.<br> Occultist reactions instantly deal 100% of their base end-damage"
+  },
+  "Masterwork_Small": {
+    "id": "Masterwork_Small",
+    "material": "Masterwork",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 6
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "-6% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Masterwork_Medium": {
+    "id": "Masterwork_Medium",
+    "material": "Masterwork",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 8
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "-8% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Masterwork_Large": {
+    "id": "Masterwork_Large",
+    "material": "Masterwork",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 10
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "-10% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Masterwork_Giant": {
+    "id": "Masterwork_Giant",
+    "material": "Masterwork",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_PhysResReductionOnHit",
+          "value": 12
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "-12% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Bloodstone_Small": {
+    "id": "Bloodstone_Small",
+    "material": "Bloodstone",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 3
+        }
+      ]
+    },
+    "weaponBoostString": "+15% invested Power"
+  },
+  "Bloodstone_Medium": {
+    "id": "Bloodstone_Medium",
+    "material": "Bloodstone",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 4
+        }
+      ]
+    },
+    "weaponBoostString": "+20% invested Power"
+  },
+  "Bloodstone_Large": {
+    "id": "Bloodstone_Large",
+    "material": "Bloodstone",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 5
+        }
+      ]
+    },
+    "weaponBoostString": "+25% invested Power"
+  },
+  "Bloodstone_Giant": {
+    "id": "Bloodstone_Giant",
+    "material": "Bloodstone",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Intelligence",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "INTELLIGENCE",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "INITIATIVE",
+          "value": 6
+        }
+      ]
+    },
+    "weaponBoostString": "+30% invested Power"
+  },
+  "Ruby_Small": {
+    "id": "Ruby_Small",
+    "material": "Ruby",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Fire Resistance"
+  },
+  "Ruby_Medium": {
+    "id": "Ruby_Medium",
+    "material": "Ruby",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+3% Maximum Fire Resistance"
+  },
+  "Ruby_Large": {
+    "id": "Ruby_Large",
+    "material": "Ruby",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+4% Maximum Fire Resistance"
+  },
+  "Ruby_Giant": {
+    "id": "Ruby_Giant",
+    "material": "Ruby",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Leadership",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "FIRERESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+5% Maximum Fire Resistance"
+  },
+  "Lapis_Small": {
+    "id": "Lapis_Small",
+    "material": "Lapis",
+    "size": "Small",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-18% to target's Harried threshold for your damage"
+  },
+  "Lapis_Medium": {
+    "id": "Lapis_Medium",
+    "material": "Lapis",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-22% to target's Harried threshold for your damage"
+  },
+  "Lapis_Large": {
+    "id": "Lapis_Large",
+    "material": "Lapis",
+    "size": "Large",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-26% to target's Harried threshold for your damage"
+  },
+  "Lapis_Giant": {
+    "id": "Lapis_Giant",
+    "material": "Lapis",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-30% to target's Harried threshold for your damage"
+  },
+  "Pearl_Small": {
+    "id": "Pearl_Small",
+    "material": "Pearl",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 4.5
+        }
+      ]
+    },
+    "weaponBoostString": "+15% invested Memory",
+    "armorBoostString": "+4.5% missing Magic Armor Regeneration (50% maximum)"
+  },
+  "Pearl_Medium": {
+    "id": "Pearl_Medium",
+    "material": "Pearl",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 6
+        }
+      ]
+    },
+    "weaponBoostString": "+20% invested Memory",
+    "armorBoostString": "+6% missing Magic Armor Regeneration (50% maximum)"
+  },
+  "Pearl_Large": {
+    "id": "Pearl_Large",
+    "material": "Pearl",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 7.5
+        }
+      ]
+    },
+    "weaponBoostString": "+25% invested Memory",
+    "armorBoostString": "+7.5% missing Magic Armor Regeneration (50% maximum)"
+  },
+  "Pearl_Giant": {
+    "id": "Pearl_Giant",
+    "material": "Pearl",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Memory",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "MEMORY",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+30% invested Memory",
+    "armorBoostString": "+9% missing Magic Armor Regeneration (50% maximum)"
+  },
+  "Sapphire_Small": {
+    "id": "Sapphire_Small",
+    "material": "Sapphire",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Water Resistance"
+  },
+  "Sapphire_Medium": {
+    "id": "Sapphire_Medium",
+    "material": "Sapphire",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+3% Maximum Water Resistance"
+  },
+  "Sapphire_Large": {
+    "id": "Sapphire_Large",
+    "material": "Sapphire",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+4% Maximum Water Resistance"
+  },
+  "Sapphire_Giant": {
+    "id": "Sapphire_Giant",
+    "material": "Sapphire",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DualWielding",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "WATERRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+5% Maximum Water Resistance"
+  },
+  "Silver_Small": {
+    "id": "Silver_Small",
+    "material": "Silver",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+15% invested Wits",
+    "armorBoostString": "+2.5% missing All Armor Regeneration (50% maximum)"
+  },
+  "Silver_Medium": {
+    "id": "Silver_Medium",
+    "material": "Silver",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+20% invested Wits",
+    "armorBoostString": "+3.5% missing All Armor Regeneration (50% maximum)"
+  },
+  "Silver_Large": {
+    "id": "Silver_Large",
+    "material": "Silver",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+25% invested Wits",
+    "armorBoostString": "+4.5% missing All Armor Regeneration (50% maximum)"
+  },
+  "Silver_Giant": {
+    "id": "Silver_Giant",
+    "material": "Silver",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Wits",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "WITS",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+30% invested Wits",
+    "armorBoostString": "+5.5% missing All Armor Regeneration (50% maximum)"
+  },
+  "Clay_Small": {
+    "id": "Clay_Small",
+    "material": "Clay",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Earth Resistance"
+  },
+  "Clay_Medium": {
+    "id": "Clay_Medium",
+    "material": "Clay",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+3% Maximum Earth Resistance"
+  },
+  "Clay_Large": {
+    "id": "Clay_Large",
+    "material": "Clay",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+4% Maximum Earth Resistance"
+  },
+  "Clay_Giant": {
+    "id": "Clay_Giant",
+    "material": "Clay",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "TwoHanded",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "EARTHRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+5% Maximum Earth Resistance"
+  },
+  "Granite_Small": {
+    "id": "Granite_Small",
+    "material": "Granite",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+0.5% Maximum Physical Resistance"
+  },
+  "Granite_Medium": {
+    "id": "Granite_Medium",
+    "material": "Granite",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 2
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+1% Maximum Physical Resistance"
+  },
+  "Granite_Large": {
+    "id": "Granite_Large",
+    "material": "Granite",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 3
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+1.5% Maximum Physical Resistance"
+  },
+  "Granite_Giant": {
+    "id": "Granite_Giant",
+    "material": "Granite",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Perseverance",
+          "value": 4
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Physical Resistance"
+  },
+  "Iron_Small": {
+    "id": "Iron_Small",
+    "material": "Iron",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 4.5
+        }
+      ]
+    },
+    "weaponBoostString": "+15% invested Strength",
+    "armorBoostString": "+4.5% missing Physical Armor Regeneration (50% maximum)"
+  },
+  "Iron_Medium": {
+    "id": "Iron_Medium",
+    "material": "Iron",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 6
+        }
+      ]
+    },
+    "weaponBoostString": "+20% invested Strength",
+    "armorBoostString": "+6% missing Physical Armor Regeneration (50% maximum)"
+  },
+  "Iron_Large": {
+    "id": "Iron_Large",
+    "material": "Iron",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 7.5
+        }
+      ]
+    },
+    "weaponBoostString": "+25% invested Strength",
+    "armorBoostString": "+7.5% missing Physical Armor Regeneration (50% maximum)"
+  },
+  "Iron_Giant": {
+    "id": "Iron_Giant",
+    "material": "Iron",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Strength",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "STRENGTH",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "+30% invested Strength",
+    "armorBoostString": "+9% missing Physical Armor Regeneration (50% maximum)"
+  },
+  "Bone_Small": {
+    "id": "Bone_Small",
+    "material": "Bone",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 5
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+5% Lifesteal"
+  },
+  "Bone_Medium": {
+    "id": "Bone_Medium",
+    "material": "Bone",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 7
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+7% Lifesteal"
+  },
+  "Bone_Large": {
+    "id": "Bone_Large",
+    "material": "Bone",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 10
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+10% Lifesteal"
+  },
+  "Bone_Giant": {
+    "id": "Bone_Giant",
+    "material": "Bone",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "LIFESTEAL",
+          "value": 14
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+14% Lifesteal"
+  },
+  "Obsidian_Small": {
+    "id": "Obsidian_Small",
+    "material": "Obsidian",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 6
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 9
+        }
+      ]
+    },
+    "weaponBoostString": "-6% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Obsidian_Medium": {
+    "id": "Obsidian_Medium",
+    "material": "Obsidian",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 8
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 11
+        }
+      ]
+    },
+    "weaponBoostString": "-8% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Obsidian_Large": {
+    "id": "Obsidian_Large",
+    "material": "Obsidian",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 10
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 13
+        }
+      ]
+    },
+    "weaponBoostString": "-10% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Obsidian_Giant": {
+    "id": "Obsidian_Giant",
+    "material": "Obsidian",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PIP_EleResReductionOnHit",
+          "value": 12
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 15
+        }
+      ]
+    },
+    "weaponBoostString": "-12% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn"
+  },
+  "Onyx_Small": {
+    "id": "Onyx_Small",
+    "material": "Onyx",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Piercing Resistance"
+  },
+  "Onyx_Medium": {
+    "id": "Onyx_Medium",
+    "material": "Onyx",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+3% Maximum Piercing Resistance"
+  },
+  "Onyx_Large": {
+    "id": "Onyx_Large",
+    "material": "Onyx",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+4% Maximum Piercing Resistance"
+  },
+  "Onyx_Giant": {
+    "id": "Onyx_Giant",
+    "material": "Onyx",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "PainReflection",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "PIERCINGRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+5% Maximum Piercing Resistance"
+  },
+  "Steel_Small": {
+    "id": "Steel_Small",
+    "material": "Steel",
+    "size": "Small",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-18% to target's Battered threshold for your damage"
+  },
+  "Steel_Medium": {
+    "id": "Steel_Medium",
+    "material": "Steel",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-22% to target's Battered threshold for your damage"
+  },
+  "Steel_Large": {
+    "id": "Steel_Large",
+    "material": "Steel",
+    "size": "Large",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-26% to target's Battered threshold for your damage"
+  },
+  "Steel_Giant": {
+    "id": "Steel_Giant",
+    "material": "Steel",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [],
+      "armor": []
+    },
+    "weaponBoostString": "-30% to target's Battered threshold for your damage"
+  },
+  "Gold_Small": {
+    "id": "Gold_Small",
+    "material": "Gold",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 7
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 3
+        }
+      ]
+    }
+  },
+  "Gold_Medium": {
+    "id": "Gold_Medium",
+    "material": "Gold",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 9
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 4
+        }
+      ]
+    }
+  },
+  "Gold_Large": {
+    "id": "Gold_Large",
+    "material": "Gold",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 12
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 5
+        }
+      ]
+    }
+  },
+  "Gold_Giant": {
+    "id": "Gold_Giant",
+    "material": "Gold",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "DODGEBOOST",
+          "value": 6
+        }
+      ]
+    }
+  },
+  "TigersEye_Small": {
+    "id": "TigersEye_Small",
+    "material": "TigersEye",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+15% invested Finesse"
+  },
+  "TigersEye_Medium": {
+    "id": "TigersEye_Medium",
+    "material": "TigersEye",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+20% invested Finesse"
+  },
+  "TigersEye_Large": {
+    "id": "TigersEye_Large",
+    "material": "TigersEye",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+25% invested Finesse"
+  },
+  "TigersEye_Giant": {
+    "id": "TigersEye_Giant",
+    "material": "TigersEye",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Finesse",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "FINESSE",
+          "value": 1
+        }
+      ],
+      "armor": []
+    },
+    "weaponBoostString": "+30% invested Finesse"
+  },
+  "Topaz_Small": {
+    "id": "Topaz_Small",
+    "material": "Topaz",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Air Resistance"
+  },
+  "Topaz_Medium": {
+    "id": "Topaz_Medium",
+    "material": "Topaz",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+3% Maximum Air Resistance"
+  },
+  "Topaz_Large": {
+    "id": "Topaz_Large",
+    "material": "Topaz",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+4% Maximum Air Resistance"
+  },
+  "Topaz_Giant": {
+    "id": "Topaz_Giant",
+    "material": "Topaz",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "Ranged",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "AIRRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+5% Maximum Air Resistance"
+  },
+  "Emerald_Small": {
+    "id": "Emerald_Small",
+    "material": "Emerald",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 1
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 9
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+2% Maximum Poison Resistance"
+  },
+  "Emerald_Medium": {
+    "id": "Emerald_Medium",
+    "material": "Emerald",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 2
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 13
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+3% Maximum Poison Resistance"
+  },
+  "Emerald_Large": {
+    "id": "Emerald_Large",
+    "material": "Emerald",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 3
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 17
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+4% Maximum Poison Resistance"
+  },
+  "Emerald_Giant": {
+    "id": "Emerald_Giant",
+    "material": "Emerald",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "SingleHanded",
+          "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "POISONRESISTANCE",
+          "value": 21
+        }
+      ],
+      "armor": []
+    },
+    "armorBoostString": "+5% Maximum Poison Resistance"
+  },
+  "Jade_Small": {
+    "id": "Jade_Small",
+    "material": "Jade",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 3
+        }
+      ]
+    },
+    "weaponBoostString": "+15% invested Constitution",
+    "armorBoostString": "+3% missing Vitality Regeneration (50% maximum)"
+  },
+  "Jade_Medium": {
+    "id": "Jade_Medium",
+    "material": "Jade",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 20
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 4
+        }
+      ]
+    },
+    "weaponBoostString": "+20% invested Constitution",
+    "armorBoostString": "+4% missing Vitality Regeneration (50% maximum)"
+  },
+  "Jade_Large": {
+    "id": "Jade_Large",
+    "material": "Jade",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 25
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 5
+        }
+      ]
+    },
+    "weaponBoostString": "+25% invested Constitution",
+    "armorBoostString": "+5% missing Vitality Regeneration (50% maximum)"
+  },
+  "Jade_Giant": {
+    "id": "Jade_Giant",
+    "material": "Jade",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "extendedStat",
+          "id": "PercAttributeIncrease_Constitution",
+          "value": 30
+        },
+        {
+          "type": "flexStat",
+          "id": "CONSTITUTION",
+          "value": 1
+        }
+      ],
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_Life",
+          "value": 6
+        }
+      ]
+    },
+    "weaponBoostString": "+30% invested Constitution",
+    "armorBoostString": "+6% missing Vitality Regeneration (50% maximum)"
+  },
+  "Malachite_Small": {
+    "id": "Malachite_Small",
+    "material": "Malachite",
+    "size": "Small",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 7
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 20
+        }
+      ]
+    }
+  },
+  "Malachite_Medium": {
+    "id": "Malachite_Medium",
+    "material": "Malachite",
+    "size": "Medium",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 9
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 30
+        }
+      ]
+    }
+  },
+  "Malachite_Large": {
+    "id": "Malachite_Large",
+    "material": "Malachite",
+    "size": "Large",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 12
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 40
+        }
+      ]
+    }
+  },
+  "Malachite_Giant": {
+    "id": "Malachite_Giant",
+    "material": "Malachite",
+    "size": "Giant",
+    "boosts": {
+      "weapon": [
+        {
+          "type": "flexStat",
+          "id": "CRITICALCHANCE",
+          "value": 15
+        }
+      ],
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "MOVEMENT",
+          "value": 50
+        }
+      ]
+    }
+  }
+}

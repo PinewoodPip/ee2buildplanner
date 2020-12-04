@@ -24,6 +24,7 @@
   "portrait": "beast",
   "customPortrait": null,
   "origin": "beast",
+  "weapons": {"mainhand": "twohander", "offhand": "none"},
   "physique": {
     "race": "dwarf",
     "gender": "male",

@@ -1,0 +1,28 @@
+------------ KNOWN ISSUES ------------
+
+- CUSTOM SCROLLBARS DO NOT WORK IN FIREFOX AND EDGE (probably only work on chrome. that sucks)
+- escapist does not grant its skill
+	also applies to anything else that grants skills I guess. Except proto
+- small issue: tooltips from talents expand the page (meaning they lengthen it and make an ugly scrollbar appear)
+- text are edits are lost if you do not unblur (click anything else) before leaving page/popup
+- deleting a build doesn't unload it - is this an issue?
+- skills dont show if they directly apply stacks (ex. aero touch)
+- tooltip for enrage is MASSIVE - prob also happens for a few other skills that didnt have their <font> tags pruned. these aren't supposed to be supported anymore though weirdchamp
+- too many keywords in a build prob causes some issue in the builds dropdown
+- defiance has a lot of redundant text in the keywords screen
+- some builds store a 'null' keyword
+- can't override author once it's set for a build
+- config author & character name text fields are wonky, need 2 keystrokes to start adding input
+- some stats do not have friendly names yet
+- context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
+- most artifacts do not have periods at the end of their descriptions
+- on low width resolutions, the new build button is only clickable from the left
+
+------------ PLANNED FEATURES ------------
+- Drag and drop reordering for skills, artifacts and aspects
+- Slide-in animation for sidebars
+- Equipment menu where you can manage equipment modifiers and runes
+- Armor runes
+- Runes in general
+- Revamped, clearer stats screen
+- Cleaned-up releases of the scripts used to parse game data
