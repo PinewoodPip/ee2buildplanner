@@ -16,10 +16,11 @@
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
 - most artifacts do not have periods at the end of their descriptions
 - on low width resolutions, the new build button is only clickable from the left
-- in the keywords screen, clicking on a keyword that has talent-granted boons will crash the app if you haven't modified your aspects since loading the app (possibly fixed now)
 - some rune boosts are shown twice on tooltip
 - some places don't have correct rounding, showing a ridiculous amount of decimals
 - you can put newlines in the character and author name fields
+- changing +embodiment subnodes sometimes crashes the app
+	no idea how to reproduce this consistently
 
 ------------ PLANNED FEATURES ------------
 - Drag and drop reordering for skills, artifacts and aspects

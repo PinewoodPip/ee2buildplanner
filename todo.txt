@@ -28,7 +28,7 @@ X emb bopnuses from tier 2s
 X after adding an asp, switch to it
 X tooltips for keywords
 
-- fix splendor double ignition being considered a keyword
+X fix splendor double ignition being considered a keyword
 
 X atrs add stats like dodge
 X dont rely on containedKeywords for determining keywords, as those also include free charges?
