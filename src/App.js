@@ -22,7 +22,7 @@ const axios = require('axios').default;
 
 const SAVE_PROTOCOL = 0
 const APP_VERSION = {major: 0, minor: 9, revision: 0}
-export const APP_DATE = "4th Dec 20"
+export const APP_DATE = "7th Dec 20"
 export const MOD_VERSION = "Patch 87 (2nd Nov 20)"
 const URL_PROTOCOL = 0
 const RESOURCE_PREPPEND = "/ee2buildplanner"
