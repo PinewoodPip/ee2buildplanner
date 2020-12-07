@@ -364,6 +364,7 @@ for line in ascData.readlines():
                     "value": float(value),
                     "keyword": keyword,
                     "keywordBoon": keywordBoonType,
+                    "string": removeTrailingUnderscores("AMER_UI_Ascension_" + search["family"] + "_" + search["id"] + "_Node_" + str(nodeIndex) + "_" + str(subIndex)),
                 })
 
             elif key == "extraStatusApplication":

@@ -604,11 +604,12 @@ export const playerAttributes = 43
 export const maxNaturalAttributeInvestment = 30
 export const maxTalents = 8 // 5 base, +1 from Karon, +2 from Sworn
 
-// these stat types use strings from the game instead of ones defined by us. Used for non-quantifiable script triggers.
+// these stat types use strings from the game instead of ones defined by us. Used mostly for non-quantifiable script triggers.
 export const statTypesWithGameStrings = [
 	"specialLogic",
 	"statusExtension",
-	"extraStatusApplication"
+	"extraStatusApplication",
+	"scalingExtension",
   ]
 
 // list of artifacts that grant stats, and which ones. some are toggleable, others are always active
@@ -1635,7 +1636,8 @@ export const stats = {
 			bool: true,
 		},
 		BattHarr_Threshold_Sum_Self_Both: {
-			display: "B/H Threshold: +{0} ???"
+			display: "B/H Threshold: {0}x Max Vitality",
+			default: 0.075,
 		},
 		Battered_StackInfluence_Enemy: {
 			display: "Extra Battered applied per attack: {0}"

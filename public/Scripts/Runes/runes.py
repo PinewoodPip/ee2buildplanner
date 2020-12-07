@@ -7,6 +7,7 @@ armors = open("Armor.txt")
 consumes = open("Status_CONSUME.txt")
 
 REMOVE_SCAFFOLDING_KEYS = True
+ALLOWED_SIZES = ["Giant"]
 
 # todo check viality boost
 # check why 1 bone rune does not have the boost in output
@@ -413,58 +414,66 @@ DELDUMS = {
     # resistance reduction
     "AMER_DELDUM_RUNERESIST_PHYSICAL_SMALL": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_PhysResReductionOnHit",
             "value": 6,
+            "string": "AMER_DELDUM_RUNERESIST_PHYSICAL_SMALL",
         },
     ],
     "AMER_DELDUM_RUNERESIST_PHYSICAL_MEDIUM": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_PhysResReductionOnHit",
             "value": 8,
+            "string": "AMER_DELDUM_RUNERESIST_PHYSICAL_MEDIUM",
         },
     ],
     "AMER_DELDUM_RUNERESIST_PHYSICAL_LARGE": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_PhysResReductionOnHit",
             "value": 10,
+            "string": "AMER_DELDUM_RUNERESIST_PHYSICAL_LARGE",
         },
     ],
     "AMER_DELDUM_RUNERESIST_PHYSICAL_GIANT": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_PhysResReductionOnHit",
             "value": 12,
+            "string": "AMER_DELDUM_RUNERESIST_PHYSICAL_GIANT",
         },
     ],
     "AMER_DELDUM_RUNERESIST_ELE_SMALL": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_EleResReductionOnHit",
             "value": 6,
+            "string": "AMER_DELDUM_RUNERESIST_ELE_SMALL",
         },
     ],
     "AMER_DELDUM_RUNERESIST_ELE_MEDIUM": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_EleResReductionOnHit",
             "value": 8,
+            "string": "AMER_DELDUM_RUNERESIST_ELE_MEDIUM",
         },
     ],
     "AMER_DELDUM_RUNERESIST_ELE_LARGE": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_EleResReductionOnHit",
             "value": 10,
+            "string": "AMER_DELDUM_RUNERESIST_ELE_LARGE",
         },
     ],
     "AMER_DELDUM_RUNERESIST_ELE_GIANT": [
         {
-            "type": "extendedStat",
+            "type": "specialLogic",
             "id": "PIP_EleResReductionOnHit",
             "value": 12,
+            "string": "AMER_DELDUM_RUNERESIST_ELE_GIANT",
         },
     ],
 }
@@ -495,7 +504,7 @@ for line in data.readlines():
         rune = runeRegex.search(line).groupdict()
         runeId = rune["material"] + "_" + rune["size"]
 
-        if rune["material"] != "Frame":
+        if rune["material"] != "Frame" and rune["size"] in ALLOWED_SIZES:
             currentRune = {
                 "id": runeId,
                 "material": rune["material"],
@@ -604,6 +613,9 @@ for key in statuses:
 # convert rune boosts to the format we use in the app
 for key in runes:
     rune = runes[key]
+    rune["name"] = rune["material"].capitalize() + " Rune"
+    rune["icon"] = "Item_LOOT_Rune_" + rune["material"] + "_" + rune["size"]
+
     rune["boosts"] = {"weapon": [], "armor": []}
     if "real_weaponEffect" in rune:
         if rune["real_weaponEffect"]["prop"] in DELDUMS:

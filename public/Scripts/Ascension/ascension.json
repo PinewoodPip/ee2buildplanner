@@ -5409,7 +5409,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": 2.5,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_0"
               },
               {
                 "type": "scalingExtension",
@@ -5419,7 +5420,8 @@
                 "id": "PercAttributeIncrease_Intelligence",
                 "value": 2.5,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_0"
               },
               {
                 "type": "scalingExtension",
@@ -5429,7 +5431,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": 2.5,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_0"
               },
               {
                 "type": "scalingExtension",
@@ -5439,7 +5442,8 @@
                 "id": "PercAttributeIncrease_Intelligence",
                 "value": 2.5,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_0"
               },
               {
                 "type": "scalingExtension",
@@ -5449,7 +5453,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": 2.5,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_0"
               },
               {
                 "type": "scalingExtension",
@@ -5459,7 +5464,8 @@
                 "id": "PercAttributeIncrease_Intelligence",
                 "value": 2.5,
                 "keyword": "Paucity",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_0"
               }
             ],
             [
@@ -5471,7 +5477,8 @@
                 "id": "Stat_ACCURACYBOOST",
                 "value": -2.5,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_1"
               },
               {
                 "type": "scalingExtension",
@@ -5481,7 +5488,8 @@
                 "id": "Stat_ACCURACYBOOST",
                 "value": -2.5,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_1"
               },
               {
                 "type": "scalingExtension",
@@ -5491,7 +5499,8 @@
                 "id": "Stat_ACCURACYBOOST",
                 "value": -2.5,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_3_1"
               }
             ]
           ],
@@ -5524,7 +5533,8 @@
                 "id": "PercAttributeIncrease_Constitution",
                 "value": -1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_4_1"
               },
               {
                 "type": "scalingExtension",
@@ -5534,7 +5544,8 @@
                 "id": "PercAttributeIncrease_Constitution",
                 "value": -1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_4_1"
               },
               {
                 "type": "scalingExtension",
@@ -5544,7 +5555,8 @@
                 "id": "PercAttributeIncrease_Constitution",
                 "value": -1.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Entropy_Decay_Node_4_1"
               },
               {
                 "type": "statusExtension",
@@ -7056,7 +7068,8 @@
                 "id": "Stat_MOVEMENTBOOST",
                 "value": -1.5,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_3_2"
               },
               {
                 "type": "scalingExtension",
@@ -7066,7 +7079,8 @@
                 "id": "Stat_MOVEMENTBOOST",
                 "value": -1.5,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheBasilisk_Node_3_2"
               }
             ],
             [
@@ -7282,7 +7296,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": 1.5,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_Doppelganger_Node_2_4"
               }
             ]
           ],
@@ -8778,7 +8793,8 @@
                 "id": "Stat_CRITICALCHANCE",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_1_2"
               }
             ],
             [
@@ -8888,7 +8904,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": -2.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_3_1"
               },
               {
                 "type": "scalingExtension",
@@ -8898,7 +8915,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": -2.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_3_1"
               },
               {
                 "type": "scalingExtension",
@@ -8908,7 +8926,8 @@
                 "id": "PercAttributeIncrease_Wits",
                 "value": -2.0,
                 "keyword": "Wither",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Form_TheRitual_Node_3_1"
               },
               {
                 "type": "statusExtension",
@@ -10256,7 +10275,8 @@
                 "id": "Regen_BothArmor",
                 "value": 1.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_TheCasque_Node_2_3"
               }
             ]
           ],
@@ -11944,7 +11964,8 @@
                 "id": "Stat_SpecialCase_AllResistance",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_4_1"
               },
               {
                 "type": "scalingExtension",
@@ -11954,7 +11975,8 @@
                 "id": "Stat_SpecialCase_AllResistance",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_4_1"
               },
               {
                 "type": "scalingExtension",
@@ -11964,7 +11986,8 @@
                 "id": "Stat_SpecialCase_AllResistance",
                 "value": 1.0,
                 "keyword": "Ward",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Champion_Node_4_1"
               }
             ]
           ],
@@ -12155,7 +12178,8 @@
                 "id": "BattHarr_Threshold_Sum_Self_Both",
                 "value": 0.0015,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Inertia_Fortress_Node_2_1"
               }
             ],
             [
@@ -14053,7 +14077,8 @@
                 "id": "Stat_MOVEMENT",
                 "value": 10.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Pegasus_Node_2_2"
               },
               {
                 "type": "flexStat",
@@ -14756,7 +14781,8 @@
                 "id": "Stat_MOVEMENT",
                 "value": 10.0,
                 "keyword": "Presence",
-                "keywordBoon": "mutator"
+                "keywordBoon": "mutator",
+                "string": "AMER_UI_Ascension_Life_Hope_Node_1_3"
               }
             ]
           ],

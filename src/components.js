@@ -19,7 +19,7 @@ export class TextField extends React.Component {
 	constructor() {super(); this.state = {text: ""}}
 	lastId;
 	shouldComponentUpdate(nextProps, nextState) {
-		if (nextProps.text !== this.state.text) {
+		if (nextProps.text !== this.state.text || nextState !== this.state) {
 			return true
 		}
 		return false
@@ -238,7 +238,7 @@ export class MainInterface extends React.Component {
 		let appState = this.props.app.state
 		let skillsInfo = {origin: appState.origin, skills: appState.skills, race: appState.physique.race, lifeType: appState.physique.lifeType, coreNodes: appState.coreNodes}
 		let ascData = {aspects: appState.aspects, coreNode: appState.coreNodes, selectedAspect: appState.selectedAspect}
-		let statPanelData = {attributes: appState.attributes, abilities: appState.abilities, civils: appState.civils, talents: Array.from(appState.talents), aspects: appState.aspects, buffs: Array.from(appState.buffs), skills: appState.skills}
+		let statPanelData = {attributes: appState.attributes, abilities: appState.abilities, civils: appState.civils, talents: Array.from(appState.talents), aspects: appState.aspects, buffs: Array.from(appState.buffs), skills: appState.skills, runes: appState.runes}
 		return <div>
 			<TopBar app={this.props.app}/>
 			<div className="flexbox-horizontal">
@@ -246,7 +246,7 @@ export class MainInterface extends React.Component {
 					<div className="flexbox-horizontal flex-align-start" style={{height: "150px"}}>
 						<CharacterProfile app={this.props.app}/>
 						<Skills app={this.props.app} info={skillsInfo}/>
-						<Artifacts app={this.props.app} info={{artifacts: appState.artifacts}}/>
+						<Artifacts app={this.props.app} info={{artifacts: appState.artifacts, runes: appState.runes}}/>
 					</div>
 
 					{/* todo remove this and just use a container as the parent */}

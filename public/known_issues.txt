@@ -3,7 +3,7 @@
 - CUSTOM SCROLLBARS DO NOT WORK IN FIREFOX AND EDGE (probably only work on chrome. that sucks)
 - escapist does not grant its skill
 	also applies to anything else that grants skills I guess. Except proto
-- small issue: tooltips from talents expand the page (meaning they lengthen it and make an ugly scrollbar appear)
+- tooltips from talents expand the page (meaning they lengthen it and make an ugly scrollbar appear)
 - text are edits are lost if you do not unblur (click anything else) before leaving page/popup
 - deleting a build doesn't unload it - is this an issue?
 - skills dont show if they directly apply stacks (ex. aero touch)
@@ -12,17 +12,18 @@
 - defiance has a lot of redundant text in the keywords screen
 - some builds store a 'null' keyword
 - can't override author once it's set for a build
-- config author & character name text fields are wonky, need 2 keystrokes to start adding input
 - some stats do not have friendly names yet
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
 - most artifacts do not have periods at the end of their descriptions
 - on low width resolutions, the new build button is only clickable from the left
+- in the keywords screen, clicking on a keyword that has talent-granted boons will crash the app if you haven't modified your aspects since loading the app (possibly fixed now)
+- some rune boosts are shown twice on tooltip
+- some places don't have correct rounding, showing a ridiculous amount of decimals
 
 ------------ PLANNED FEATURES ------------
 - Drag and drop reordering for skills, artifacts and aspects
 - Slide-in animation for sidebars
 - Equipment menu where you can manage equipment modifiers and runes
 - Armor runes
-- Runes in general
 - Revamped, clearer stats screen
 - Cleaned-up releases of the scripts used to parse game data

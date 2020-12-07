@@ -8,8 +8,8 @@ export function InstrumentsPopup(props) {
     let instruments = []
     function changeInstrument(id) {props.app.setState({instrument: id, popup: null})}
     for (let x in miscData.instruments) {
-        instruments.push(<Tooltip content={miscData.instruments[x].name} placement="bottom">
-            <Icon style={{outline: "1px solid whitesmoke"}} className="button" key={x} img={x} size="64px" onClick={x => {changeInstrument(x)}}/>
+        instruments.push(<Tooltip key={x} content={miscData.instruments[x].name} placement="bottom">
+            <Icon style={{outline: "1px solid whitesmoke"}} className="button" img={x} size="64px" onClick={x => {changeInstrument(x)}}/>
         </Tooltip>)
     }
 

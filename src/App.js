@@ -141,6 +141,7 @@ There is no character limit and it will be saved when you save the build.`,
       },
 
       talents: new Set(),
+      runes: [],
     }
   }
 
@@ -165,7 +166,7 @@ There is no character limit and it will be saved when you save the build.`,
     this.setState({physique: state})
   }
 
-  relevantProps = ["skills", "artifacts", "aspects", "coreNodes", "attributes", "abilities", "civils", "talents", "lw", "physique", "origin", "buffs"]
+  relevantProps = ["skills", "artifacts", "aspects", "coreNodes", "attributes", "abilities", "civils", "talents", "lw", "physique", "origin", "buffs", "runes"]
 
   shouldComponentUpdate(nextProps, nextState) {
     let current = {}
@@ -282,6 +283,7 @@ There is no character limit and it will be saved when you save the build.`,
       
       skills: build.skills,
       artifacts: build.artifacts,
+      runes: build.runes ? build.runes : [],
       
       aspects: build.aspects,
       coreNodes: build.coreNodes,
@@ -444,6 +446,7 @@ There is no character limit and it will be saved when you save the build.`,
       RESOURCE_PREPPEND + "/Scripts/Skills/Output/skills.json",
       RESOURCE_PREPPEND + "/Scripts/Ascension/tsk_export.json",
       RESOURCE_PREPPEND + "/Scripts/numerical_ids.json",
+      RESOURCE_PREPPEND + "/Scripts/Runes/runes.json",
     ]
     let promises = []
 
@@ -459,6 +462,7 @@ There is no character limit and it will be saved when you save the build.`,
         game.ascension.specialStrings = responses[3].data
         game.ascension.app = this
         game.numericalIDs = responses[4].data
+        game.runes = responses[5].data
 
         this.stats = game.getStats()
 
@@ -583,6 +587,7 @@ There is no character limit and it will be saved when you save the build.`,
       
       skills: state.skills,
       artifacts: state.artifacts,
+      runes: state.runes,
       
       aspects: state.aspects,
       coreNodes: state.coreNodes,
@@ -661,7 +666,7 @@ There is no character limit and it will be saved when you save the build.`,
       }
 
       if (this.state.popup != null) {
-        popup = <Popup element={popup}/>
+        popup = <Popup app={this} element={popup}/>
       }
 
       let contextMenu = null

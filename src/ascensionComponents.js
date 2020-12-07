@@ -175,6 +175,9 @@ export function AscensionPopup(props) {
 export function Keywords(props) {
 	let keywordButtons = []
 	for (let x in props.app.keywords) {
+		console.log(props.app.keywords)
+		if (x == "null")
+			continue
 		let func = () => {props.app.setState({currentKeyword: x})}
 		let element = <TabButton key={Math.random()} img={game.mappings.keywordImages[x]} text={game.mappings.keywordNames[x]} func={func} chosen={props.app.state.currentKeyword === x}/>
 
@@ -187,9 +190,17 @@ export function Keywords(props) {
 	activators.push(<Text key={-999} text={<b>Activators</b>}/>)
 	mutators.push(<Text key={-998} text={<b>Mutators</b>}/>)
 
+	let stringsUsed = [] // used to avoid duplicates - some nodes apply multiple stats for single node effects like scaling statuses with force, ent, form etc. so we avoid displaying them more than once
 	for (let x in props.app.keywords[props.app.state.currentKeyword]) {
 		let keyword = props.app.keywords[props.app.state.currentKeyword][x]
-		let element = <Text key={Math.random()} text={game.getDisplayString(game.app.stats[keyword.type][keyword.id])}/>
+		console.log(props.app.keywords[props.app.state.currentKeyword])
+		let text = game.getDisplayString(game.app.stats[keyword.type][keyword.id])
+		if (stringsUsed.includes(text))
+			continue
+		
+		
+		let element = <Text key={Math.random()} text={text}/>
+		stringsUsed.push(text)
 
 		if (keyword.keywordBoon === "activator")
 			activators.push(element)
@@ -205,10 +216,17 @@ export function Keywords(props) {
 		display = <Text text="Click a keyword on the left to show its actvators and mutators."/>
 	}
 	else {
+		if (activators.length == 1) {
+			activators.push(<Text key={-3} text={utils.format("You have no {0} activators.", props.app.state.currentKeyword)} className="text-faded"/>)
+		}
+		if (mutators.length == 1) {
+			<Text key={-2} text={utils.format("You have no {0} mutators.", props.app.state.currentKeyword)} className="text-faded"/>
+		}
 		display = [
 			activators,
 			<hr key={-997}/>,
-			mutators]
+			mutators,
+		]
 	}
 	
 	return (

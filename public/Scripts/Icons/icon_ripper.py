@@ -11,12 +11,15 @@ TALENTS_AND_ABILITIES_LSX = "talentsAndAbilities.lsx"
 PORTRAITS = "Portraits_DOS2_MainPL_Icons.png"
 PORTRAITS_LSX = "Portraits_DOS2_MainPL_Icons.lsx"
 
+RUNES_LARIAN = "Icons_DOS2_Runes.png"
+RUNES_LARIAN_LSX = "Icons_DOS2_Runes.lsx"
+
 PORTRAITS_ORIGINS = "Generated_1301db3d-1f54-4e98-9be5-5094030916e4_Icons.png"
 PORTRAITS_ORIGINS_LSX = "Generated_1301db3d-1f54-4e98-9be5-5094030916e4_Icons.lsx"
 
-img = Image.open(PORTRAITS_ORIGINS)
-data = open(PORTRAITS_ORIGINS_LSX)
-pixel = 0.0004882825 / 2 # this is how much % of the width or height a pixel is. Used to figure out pixel values of each icon from its UV mapping
+img = Image.open(RUNES_LARIAN)
+data = open(RUNES_LARIAN_LSX)
+pixel = 0.0004882825 * 2 # this is how much % of the width or height a pixel is. Used to figure out pixel values of each icon from its UV mapping
 # it is the first U1 value in the lsx times 2, because the UV seems to reference the center of a pixel
 
 # note: for ~1000x1000 files you have to multiple pixel size by 2

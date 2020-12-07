@@ -284,7 +284,7 @@ export class Game {
     })
 
     // boosts from talents
-    this.app.talents.forEach(id => {
+    state.talents.forEach(id => {
       let talent = miscData.talents[id]
 
       if ("boosts" in talent) {
@@ -294,6 +294,17 @@ export class Game {
           tryToAddKeyword(boost)
         })
       }
+    })
+
+    // boosts from runes
+    state.runes.forEach(e => {
+      let rune = game.runes[e.id]
+
+      rune.boosts[e.slot].forEach(boost => {
+        boost.source = "Rune"
+        addStat(boost)
+        tryToAddKeyword(boost)
+      })
     })
 
     // cache
@@ -331,20 +342,92 @@ export class Game {
       }
     }
 
+    function getInvestedAttribute(id) {
+      let investmentMult = (game.app.state.lw) ? 2 : 1
+      let flexStatIDs = {
+        "str": "STRENGTH",
+        "fin": "FINESSE",
+        "pwr": "INTELLIGENCE",
+        "con": "CONSTITUTION",
+        "mem": "MEMORY",
+        "wits": "WITS",
+      }
+      return (
+        (game.app.state.attributes[id] +
+        stats["flexStat"][flexStatIDs[id]].amount) * investmentMult
+      )
+    }
+
+    // abilities
+    let abilities = state.abilities
+    let mult = state.lw ? 2 : 1
+    stats.realStats["warfare"] = {type: "realStats", id: "warfare", amount: (
+      stats.flexStat.WarriorLore.amount + abilities.WarriorLore * mult
+    )}
+    stats.realStats["hydrosophist"] = {type: "realStats", id: "hydrosophist", amount: (
+      stats.flexStat.WaterSpecialist.amount + abilities.WaterSpecialist * mult
+    )}
+    stats.realStats["geomancer"] = {type: "realStats", id: "geomancer", amount: (
+      stats.flexStat.EarthSpecialist.amount + abilities.EarthSpecialist * mult
+    )}
+    stats.realStats["necromancer"] = {type: "realStats", id: "necromancer", amount: (
+      stats.flexStat.Necromancy.amount + abilities.Necromancy * mult
+    )}
+    stats.realStats["scoundrel"] = {type: "realStats", id: "scoundrel", amount: (
+      stats.flexStat.RogueLore.amount + abilities.RogueLore * mult
+    )}
+    stats.realStats["huntsman"] = {type: "realStats", id: "huntsman", amount: (
+      stats.flexStat.RangerLore.amount + abilities.RangerLore * mult
+    )}
+    stats.realStats["pyrokinetic"] = {type: "realStats", id: "pyrokinetic", amount: (
+      stats.flexStat.FireSpecialist.amount + abilities.FireSpecialist * mult
+    )}
+    stats.realStats["aerotheurge"] = {type: "realStats", id: "aerotheurge", amount: (
+      stats.flexStat.AirSpecialist.amount + abilities.AirSpecialist * mult
+    )}
+    stats.realStats["summoning"] = {type: "realStats", id: "summoning", amount: (
+      stats.flexStat.Summoning.amount + abilities.Summoning * mult
+    )}
+    // poly gets no boost from lw
+    stats.realStats["polymorph"] = {type: "realStats", id: "polymorph", amount: (
+      stats.flexStat.Polymorph.amount + abilities.Polymorph
+    )}
+    stats.realStats["dualwielding"] = {type: "realStats", id: "dualwielding", amount: (
+      stats.flexStat.DualWielding.amount + abilities.DualWielding * mult
+    )}
+    stats.realStats["ranged"] = {type: "realStats", id: "ranged", amount: (
+      stats.flexStat.Ranged.amount + abilities.Ranged * mult
+    )}
+    stats.realStats["singlehanded"] = {type: "realStats", id: "singlehanded", amount: (
+      stats.flexStat.SingleHanded.amount + abilities.SingleHanded * mult
+    )}
+    stats.realStats["twohanded"] = {type: "realStats", id: "twohanded", amount: (
+      stats.flexStat.TwoHanded.amount + abilities.TwoHanded * mult
+    )}
+    stats.realStats["leadership"] = {type: "realStats", id: "leadership", amount: (
+      stats.flexStat.Leadership.amount + abilities.Leadership * mult
+    )}
+    stats.realStats["perseverance"] = {type: "realStats", id: "perseverance", amount: (
+      stats.flexStat.Perseverance.amount + abilities.Perseverance * mult
+    )}
+    stats.realStats["retribution"] = {type: "realStats", id: "retribution", amount: (
+      stats.flexStat.PainReflection.amount + abilities.PainReflection * mult
+    )}
+
     // artifact special toggleable effects.
     state.buffs.forEach(id => {
       let data = miscData.statuses[id]
       if (data.type === "special") {
         switch(data.id) {
           case "PIP_Artifact_DrogsLuck": {
-            let investmentBonus = 15 + (2 * stats.flexStat.FireSpecialist.amount) + (4 * game.app.state.civils.luckycharm)
+            let investmentBonus = 15 + (2 * stats.realStats.pyrokinetic.amount) + (4 * game.app.state.civils.luckycharm)
 
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Intelligence", value: investmentBonus, source: "Drog's Luck"})
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Wits", value: investmentBonus, source: "Drog's Luck"})
             break;
           }
           case "PIP_Artifact_EyeOfTheStorm": {
-            let investmentBonus = 25 + (2.5 * stats.flexStat.airSpecialist.amount)
+            let investmentBonus = 25 + (2.5 * stats.realStats.aerotheurge.amount)
 
             addStat({type: "extendedStat", id: "PercAttributeIncrease_Finesse", value: investmentBonus, source: "Eye of the Storm"})
             break;
@@ -367,7 +450,7 @@ export class Game {
             break;
           }
           case "PIP_Artifact_PrismaticBarrier": {
-            let resBonus = 3 * stats.flexStat.Perseverance.amount
+            let resBonus = 3 * stats.realStats.perseverance.amount
             
             addStat({type: "flexStat", id: "EleResistance", value: resBonus, source: "Prismatic Barrier"})
             break;
@@ -382,6 +465,7 @@ export class Game {
             break;
           }
           case "PIP_Artifact_Vertigo": {
+            // todo use our func instead
             let fin = (
               stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin +
               (stats["flexStat"]["FINESSE"].amount + game.app.state.attributes.fin - 10)*(stats["extendedStat"].PercAttributeIncrease_Finesse.amount/100)
@@ -394,7 +478,7 @@ export class Game {
             break;
           }
           case "PIP_Talent_Guerrilla": {
-            let boost = 40 + (3 * (stats.flexStat.RogueLore.amount + game.app.state.abilities.RogueLore))
+            let boost = 40 + (3 * (stats.realStats.scoundrel.amount))
 
             addStat({type: "flexStat", id: "DAMAGEBOOST", value: boost, source: "Guerrilla"})
 
@@ -410,22 +494,6 @@ export class Game {
         }
       }
     })
-
-    function getInvestedAttribute(id) {
-      let investmentMult = (game.app.state.lw) ? 2 : 1
-      let flexStatIDs = {
-        "str": "STRENGTH",
-        "fin": "FINESSE",
-        "pwr": "INTELLIGENCE",
-        "con": "CONSTITUTION",
-        "mem": "MEMORY",
-        "wits": "WITS",
-      }
-      return (
-        (game.app.state.attributes[id] +
-        stats["flexStat"][flexStatIDs[id]].amount) * investmentMult
-      )
-    }
 
     let invested = {
       str: getInvestedAttribute("str"),
@@ -503,69 +571,12 @@ export class Game {
     stats.realStats["res_water"] = {type: "realStats", id: "res_water", amount: this.applyDR(realResWater)}
     stats.realStats["res_earth"] = {type: "realStats", id: "res_earth", amount: this.applyDR(realResEarth)}
 
-    // todo fix
     if (state.physique.lifeType !== "undead")
       stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: this.applyDR(realResPoison)}
     else
       stats.realStats["res_poison"] = {type: "realStats", id: "res_poison", amount: realResPoison}
 
     stats.realStats["res_air"] = {type: "realStats", id: "res_air", amount: this.applyDR(realResAir)}
-
-    // abilities
-    let abilities = state.abilities
-    let mult = state.lw ? 2 : 1
-    stats.realStats["warfare"] = {type: "realStats", id: "warfare", amount: (
-      stats.flexStat.WarriorLore.amount + abilities.WarriorLore * mult
-    )}
-    stats.realStats["hydrosophist"] = {type: "realStats", id: "hydrosophist", amount: (
-      stats.flexStat.WaterSpecialist.amount + abilities.WaterSpecialist * mult
-    )}
-    stats.realStats["geomancer"] = {type: "realStats", id: "geomancer", amount: (
-      stats.flexStat.EarthSpecialist.amount + abilities.EarthSpecialist * mult
-    )}
-    stats.realStats["necromancer"] = {type: "realStats", id: "necromancer", amount: (
-      stats.flexStat.Necromancy.amount + abilities.Necromancy * mult
-    )}
-    stats.realStats["scoundrel"] = {type: "realStats", id: "scoundrel", amount: (
-      stats.flexStat.RogueLore.amount + abilities.RogueLore * mult
-    )}
-    stats.realStats["huntsman"] = {type: "realStats", id: "huntsman", amount: (
-      stats.flexStat.RangerLore.amount + abilities.RangerLore * mult
-    )}
-    stats.realStats["pyrokinetic"] = {type: "realStats", id: "pyrokinetic", amount: (
-      stats.flexStat.FireSpecialist.amount + abilities.FireSpecialist * mult
-    )}
-    stats.realStats["aerotheurge"] = {type: "realStats", id: "aerotheurge", amount: (
-      stats.flexStat.AirSpecialist.amount + abilities.AirSpecialist * mult
-    )}
-    stats.realStats["summoning"] = {type: "realStats", id: "summoning", amount: (
-      stats.flexStat.Summoning.amount + abilities.Summoning * mult
-    )}
-    // poly gets no boost from lw
-    stats.realStats["polymorph"] = {type: "realStats", id: "polymorph", amount: (
-      stats.flexStat.Polymorph.amount + abilities.Polymorph
-    )}
-    stats.realStats["dualwielding"] = {type: "realStats", id: "dualwielding", amount: (
-      stats.flexStat.DualWielding.amount + abilities.DualWielding * mult
-    )}
-    stats.realStats["ranged"] = {type: "realStats", id: "ranged", amount: (
-      stats.flexStat.Ranged.amount + abilities.Ranged * mult
-    )}
-    stats.realStats["singlehanded"] = {type: "realStats", id: "singlehanded", amount: (
-      stats.flexStat.SingleHanded.amount + abilities.SingleHanded * mult
-    )}
-    stats.realStats["twohanded"] = {type: "realStats", id: "twohanded", amount: (
-      stats.flexStat.TwoHanded.amount + abilities.TwoHanded * mult
-    )}
-    stats.realStats["leadership"] = {type: "realStats", id: "leadership", amount: (
-      stats.flexStat.Leadership.amount + abilities.Leadership * mult
-    )}
-    stats.realStats["perseverance"] = {type: "realStats", id: "perseverance", amount: (
-      stats.flexStat.Perseverance.amount + abilities.Perseverance * mult
-    )}
-    stats.realStats["retribution"] = {type: "realStats", id: "retribution", amount: (
-      stats.flexStat.PainReflection.amount + abilities.PainReflection * mult
-    )}
 
     // status effect boosts
     state.buffs.forEach(id => {
@@ -619,6 +630,9 @@ export class Game {
   getDisplayString(stat) {
     let isArtifactBoost = stat.id.search("PIP_Artifact_") > -1
     let isTalentBoost = stat.id.search("PIP_Talent") > -1
+
+    // if a single stat source is passed instead of a total'd one, use the single value
+    stat.amount = stat.amount ? stat.amount : stat.value;
 
     if (isArtifactBoost) {
       // artifact boosts use the Artifact's description

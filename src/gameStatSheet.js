@@ -68,13 +68,15 @@ class Ability extends React.Component {
 		// 		infusion = <Text text="♦♦" className="text-si-symbol"/>
 		// }
 
+		let onTextClick = isSkillAbility ? ()=>{props.app.setState({popup: "skillbook", skillbookCategory: miscData.mappings.skillAbilityToSkillDocName[props.id]})} : null
+
 		return	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
 				<div className="flexbox-horizontal flex-align-start" style={{width: "80%"}}>
 					<Icon className="" img={game.mappings.abilityImages[props.id]} size="24px"/>
 					<div style={{width: "5px"}}/>
 					<div className="flexbox-horizontal flex-align-space-between" style={{width: "70%"}}>
 						<Tooltip content={tooltip} placement="bottom">
-							<Text text={utils.format("{0}", miscData.mappings.abilityNames[props.id])}/>
+							<Text text={utils.format("{0}", miscData.mappings.abilityNames[props.id])} onClick={onTextClick} className={isSkillAbility ? "button" : ""}/>
 						</Tooltip>
 
 						{infusion}
