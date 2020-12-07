@@ -53,21 +53,21 @@ X bonuses from talents
 X origins
 - on abilities, on right click allow to add custom bonus
 - set build level
-- open skillbook when skill ability is clicked
+X open skillbook when skill ability is clicked
 X look into why changing nodes doesnt immediately update
 X show natural inv attributes in tooltip
 X reordering skills
 - show sources of stats
 X add the core
 X fix text field not being loaded
-- highlight save button is a build is unsaved, make "save as new" into a dropdown button
+X highlight save button is a build is unsaved, make "save as new" into a dropdown button
 X fancify scrollbars
 X improve attributes panel
-- basic weapon choice box
+X basic weapon choice box
 X prevent contextmenus from overflowing
 X featured builds
 X align embs displays
-- changelog in config
+X changelog in config
 X add lifeType selection
 X add instrument easter egg
 X add metadata to saved build list, like author, build role and keywords
@@ -80,7 +80,7 @@ X add delete-move buttons to aspect listing when hovering overr it
 X pointer cursor for core nodes
 X add remove option to skill contextmenu
 X only show alert on saving once
-- "fresh new build" button
+X "fresh new build" button
 X show effects of combat abils
 X loading build should close dropdown
 X show hint in aspect panel when empty
@@ -106,5 +106,15 @@ X fix inconsistency with "choose option"/"select an option"
 - allow clicking outside area of popups to close them - use an onclick wrapper on inner div to accomplish
 X saving builds from gallery should give them a new guid
 - MAYBE LATER - show sp icons next to skill abilities with enough points
-- runes
+X runes
 X show skill reqs
+
+X remove duplicate entries in keywords screen
+
+- keywords screen is 1 state behind and this can causes crashes
+	seems like this only happens to talent keywords
+
+X fix artifacts to scale with realstats, like drogs luck
+	these are a problem cause they depend on realstats but also add investment bonus... just recalc afterwards?
+X add scalingExtension strings
+- fix duplicate rune tooltips

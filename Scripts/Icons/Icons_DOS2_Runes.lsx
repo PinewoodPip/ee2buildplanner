@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<save>
+    <header version="2" time="1503999721" />
+    <version major="3" minor="1" revision="2" build="23" />
+    <region id="IconUVList">
+        <node id="root">
+            <children>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="01" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="02" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="03" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="04" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="05" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="06" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="07" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="08" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="09" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Giant" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Giant_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Giant_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Giant_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Large" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Large_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Large_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Large_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Medium" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Medium_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Medium_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Medium_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Small" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Small_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Small_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Flame_Small_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frame_Mystic" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frame_Power" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Giant" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Giant_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Giant_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Giant_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Large" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Large_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Large_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Large_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Medium" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Medium_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Medium_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Medium_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Small" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Small_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Small_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Frost_Small_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.187988" type="6" />
+                    <attribute id="V2" value="0.249512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Giant" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Giant_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Giant_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Giant_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Large" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Large_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Large_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Large_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Medium" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Medium_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Medium_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Medium_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Small" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Small_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Small_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Masterwork_Small_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Giant" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Giant_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Giant_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Giant_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Large" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Large_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Large_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Large_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Medium" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Medium_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Medium_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Medium_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Small" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Small_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Small_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Rock_Small_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Giant" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Giant_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Giant_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Giant_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Large" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Large_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.500488" type="6" />
+                    <attribute id="U2" value="0.562012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Large_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.562988" type="6" />
+                    <attribute id="U2" value="0.624512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Large_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Medium" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Medium_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Medium_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Medium_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.625488" type="6" />
+                    <attribute id="U2" value="0.687012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Small" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.312988" type="6" />
+                    <attribute id="V2" value="0.374512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Small_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Small_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Thunder_Small_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.125488" type="6" />
+                    <attribute id="V2" value="0.187012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Giant" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Giant_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Giant_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Giant_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Large" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Large_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Large_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Large_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.000488281" type="6" />
+                    <attribute id="V2" value="0.0620117" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Medium" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Medium_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Medium_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.250488" type="6" />
+                    <attribute id="U2" value="0.312012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Medium_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Small" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.250488" type="6" />
+                    <attribute id="V2" value="0.312012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Small_Framed_Mystic" type="22" />
+                    <attribute id="U1" value="0.375488" type="6" />
+                    <attribute id="U2" value="0.437012" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Small_Framed_Power" type="22" />
+                    <attribute id="U1" value="0.437988" type="6" />
+                    <attribute id="U2" value="0.499512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_LOOT_Rune_Venom_Small_Framed_Transforming" type="22" />
+                    <attribute id="U1" value="0.312988" type="6" />
+                    <attribute id="U2" value="0.374512" type="6" />
+                    <attribute id="V1" value="0.0629883" type="6" />
+                    <attribute id="V2" value="0.124512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_F" type="22" />
+                    <attribute id="U1" value="0.687988" type="6" />
+                    <attribute id="U2" value="0.749512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_FF" type="22" />
+                    <attribute id="U1" value="0.750488" type="6" />
+                    <attribute id="U2" value="0.812012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_FFF" type="22" />
+                    <attribute id="U1" value="0.812988" type="6" />
+                    <attribute id="U2" value="0.874512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_EFF" type="22" />
+                    <attribute id="U1" value="0.875488" type="6" />
+                    <attribute id="U2" value="0.937012" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_EF" type="22" />
+                    <attribute id="U1" value="0.937988" type="6" />
+                    <attribute id="U2" value="0.999512" type="6" />
+                    <attribute id="V1" value="0.375488" type="6" />
+                    <attribute id="V2" value="0.437012" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_EEF" type="22" />
+                    <attribute id="U1" value="0.000488281" type="6" />
+                    <attribute id="U2" value="0.0620117" type="6" />
+                    <attribute id="V1" value="0.437988" type="6" />
+                    <attribute id="V2" value="0.499512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_E" type="22" />
+                    <attribute id="U1" value="0.0629883" type="6" />
+                    <attribute id="U2" value="0.124512" type="6" />
+                    <attribute id="V1" value="0.437988" type="6" />
+                    <attribute id="V2" value="0.499512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_EE" type="22" />
+                    <attribute id="U1" value="0.125488" type="6" />
+                    <attribute id="U2" value="0.187012" type="6" />
+                    <attribute id="V1" value="0.437988" type="6" />
+                    <attribute id="V2" value="0.499512" type="6" />
+                </node>
+                <node id="IconUV">
+                    <attribute id="MapKey" value="Item_RuneSlot_Overlay_EEE" type="22" />
+                    <attribute id="U1" value="0.187988" type="6" />
+                    <attribute id="U2" value="0.249512" type="6" />
+                    <attribute id="V1" value="0.437988" type="6" />
+                    <attribute id="V2" value="0.499512" type="6" />
+                </node>
+            </children>
+        </node>
+    </region>
+    <region id="TextureAtlasInfo">
+        <node id="root">
+            <children>
+                <node id="TextureAtlasIconSize">
+                    <attribute id="Height" value="64" type="4" />
+                    <attribute id="Width" value="64" type="4" />
+                </node>
+                <node id="TextureAtlasPath">
+                    <attribute id="Path" value="Public/Shared/Assets/Textures/Icons/Icons_DOS2_Runes.dds" type="29" />
+                    <attribute id="UUID" value="73795ff9-4cb7-416d-8435-93678aae1e8b" type="22" />
+                </node>
+                <node id="TextureAtlasTextureSize">
+                    <attribute id="Height" value="1024" type="4" />
+                    <attribute id="Width" value="1024" type="4" />
+                </node>
+            </children>
+        </node>
+    </region>
+</save>
