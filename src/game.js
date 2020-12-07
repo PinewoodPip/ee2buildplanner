@@ -238,7 +238,7 @@ export class Game {
           utils.tryToPush(keywords, keywordObj.keyword, {id: node.id, type: node.type, keyword: keywordObj.keyword, keywordBoon: keywordObj.keywordBoon, refString: node.string})
         })
       }
-      else if (utils.hasKey(node, "keyword")) {
+      else if (utils.hasKey(node, "keyword") && node.keyword !== null) {
         if (utils.hasKey(keywords, node.keyword)) {
           keywords[node.keyword].push({id: node.id, type: node.type, keyword: node.keyword, keywordBoon: node.keywordBoon, refString: node.string})
         }
