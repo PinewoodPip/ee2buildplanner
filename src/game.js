@@ -619,10 +619,11 @@ export class Game {
 
   // apply diminishing returns; used for resistances in the game, if the setting is on
   applyDR(statAmount) {
-    if (!this.app.state.DR)
+    if (this.app.state.config.dr === 0)
       return statAmount
 
-    let effectivenessReduction = statAmount / (statAmount + this.app.state.DRAmount)
+    let effectivenessReduction = statAmount / (statAmount + this.app.state.config.dr)
+
     return utils.round(statAmount * (1 - effectivenessReduction), this.app.state.rounding)
   }
 
@@ -632,7 +633,7 @@ export class Game {
     let isTalentBoost = stat.id.search("PIP_Talent") > -1
 
     // if a single stat source is passed instead of a total'd one, use the single value
-    stat.amount = stat.amount ? stat.amount : stat.value;
+    stat.amount = stat.amount != null ? stat.amount : stat.value;
 
     if (isArtifactBoost) {
       // artifact boosts use the Artifact's description

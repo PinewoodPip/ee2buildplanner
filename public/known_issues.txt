@@ -10,7 +10,7 @@
 - tooltip for enrage is MASSIVE - prob also happens for a few other skills that didnt have their <font> tags pruned. these aren't supposed to be supported anymore though weirdchamp
 - too many keywords in a build prob causes some issue in the builds dropdown
 - defiance has a lot of redundant text in the keywords screen
-- some builds store a 'null' keyword
+- some builds store a 'null' keyword in the json (possibly from effects like sortilege on staff attack)
 - can't override author once it's set for a build
 - some stats do not have friendly names yet
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
@@ -19,6 +19,7 @@
 - in the keywords screen, clicking on a keyword that has talent-granted boons will crash the app if you haven't modified your aspects since loading the app (possibly fixed now)
 - some rune boosts are shown twice on tooltip
 - some places don't have correct rounding, showing a ridiculous amount of decimals
+- you can put newlines in the character and author name fields
 
 ------------ PLANNED FEATURES ------------
 - Drag and drop reordering for skills, artifacts and aspects

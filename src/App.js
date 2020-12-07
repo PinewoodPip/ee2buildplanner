@@ -43,8 +43,6 @@ class App extends React.Component {
         position: null,
         element: null,
       },
-      DRAmount: 100,
-      DR: true,
       rounding: 2,
       currentKeyword: "Abeyance",
       darkMode: true,
@@ -55,7 +53,8 @@ class App extends React.Component {
         highlightSkillKeywords: true,
         author: "",
         hasSeenSaveAlert: false,
-        buildLevel: 21,
+        buildLevel: 21, // todo
+        dr: 100,
       },
 
       // should these be saved?

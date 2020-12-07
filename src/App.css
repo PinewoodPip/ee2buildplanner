@@ -474,8 +474,9 @@ hr {width: 85%;}
 
 .author-field {
   width: 150px !important;
-  height: 25px !important;
+  height: 18px !important;
   outline: 1px rgb(70, 70, 70) solid;
+  resize: none;
 }
 
 .role-display {

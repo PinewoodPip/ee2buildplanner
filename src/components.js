@@ -129,13 +129,23 @@ export class Config extends React.Component {
 
 			<div style={{height: "20px"}}/>
 
-			<div className="flexbox-vertical flex-grow">
+			<div className="flexbox-vertical">
 				{/* <FlairedCheckbox text="Highlight keywords in skill tooltips" ticked={config.highlightSkillKeywords} onChange={(e)=>{this.toggleSetting(e, "highlightSkillKeywords")}}/> */}
 				<Tooltip content="The name that will be shown when you share your builds with other people." placement="bottom">
 					<div className="flexbox-horizontal">
 						<Text text="Build author name:"/>
+						{/* <div style={{width: "10px"}}/> */}
+						<TextField lastValue={config.author} app={this.props.app} onBlur={(e) => {this.setConfigValue("author", e.target.value)}} text={config.author} textareaClass="author-field" noBg stateKey="config" stateSubKey="author"/>
+					</div>
+				</Tooltip>
+
+				<div style={{height: "20px"}}/>
+
+				<Tooltip content="Diminishing Returns for resistances. Use 0 to disable." placement="bottom">
+					<div className="flexbox-horizontal">
+						<Text text="Resistance DR:"/>
 						<div style={{width: "10px"}}/>
-						<TextField lastValue={config.author} app={this.props.app} onBlur={(e) => {this.setConfigValue("author", e.target.value)}} text={config.author} className="author-field" noBg stateKey="config" stateSubKey="author"/>
+						<input style={{width: "40px"}} type="number" min={0} step={1} value={config.dr} onChange={(e)=>{this.setConfigValue("dr", parseInt(e.target.value))}}/>
 					</div>
 				</Tooltip>
 			</div>

@@ -59,7 +59,7 @@ class Build extends React.Component {
                 <div className="flexbox-vertical flex-align-centered flex-grow">
                     <Text text={props.data.metadata.name}/>
 
-                    {props.data.metadata.author != "" ? <Text text={"by " + props.data.metadata.author}/> : null}
+                    {props.data.metadata.author != "" && (props.data.metadata.author !== game.app.state.config.author || props.isForGallery) ? <Text text={"by " + props.data.metadata.author}/> : null}
 
                     <div style={{height: "5px"}}/>
 

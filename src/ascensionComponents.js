@@ -216,11 +216,11 @@ export function Keywords(props) {
 		display = <Text text="Click a keyword on the left to show its actvators and mutators."/>
 	}
 	else {
-		if (activators.length == 1) {
-			activators.push(<Text key={-3} text={utils.format("You have no {0} activators.", props.app.state.currentKeyword)} className="text-faded"/>)
+		if (activators.length === 1) {
+			activators.push(<Text key={-3} text={utils.format("You have no {0} activators.", miscData.mappings.keywordNames[props.app.state.currentKeyword])} className="text-faded"/>)
 		}
 		if (mutators.length == 1) {
-			<Text key={-2} text={utils.format("You have no {0} mutators.", props.app.state.currentKeyword)} className="text-faded"/>
+			mutators.push(<Text key={-2} text={utils.format("You have no {0} mutators.", miscData.mappings.keywordNames[props.app.state.currentKeyword])} className="text-faded"/>)
 		}
 		display = [
 			activators,
