@@ -7,10 +7,8 @@
 - text are edits are lost if you do not unblur (click anything else) before leaving page/popup
 - deleting a build doesn't unload it - is this an issue?
 - skills dont show if they directly apply stacks (ex. aero touch)
-- tooltip for enrage is MASSIVE - prob also happens for a few other skills that didnt have their <font> tags pruned. these aren't supposed to be supported anymore though weirdchamp
 - too many keywords in a build prob causes some issue in the builds dropdown
 - defiance has a lot of redundant text in the keywords screen
-- some builds store a 'null' keyword in the json (possibly from effects like sortilege on staff attack)
 - can't override author once it's set for a build
 - some stats do not have friendly names yet
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
@@ -24,6 +22,7 @@
 
 ------------ PLANNED FEATURES ------------
 - Drag and drop reordering for skills, artifacts and aspects
+- Search bar for skills, aspects & artifacts/runes
 - Slide-in animation for sidebars
 - Equipment menu where you can manage equipment modifiers and runes
 - Armor runes
