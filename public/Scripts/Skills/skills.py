@@ -188,7 +188,6 @@ bannedStrings = [
     "Bane",
     "Enemy",
     "Target_Quest_PermanentSoulMate",
-    # "Artifact",
     
     # vanilla leftovers
     "SmokeCover",
@@ -269,43 +268,46 @@ def hasBannedString(string):
 def prettifySkillDescription(string):
     if not REMOVE_HTML_FORMATTING:
         return string
-    
-    # filter out the initial formatting tag, and replace the br one with newline character
-    string = descRegex.search(value).groupdict()["FullText"]
 
-    string = value.replace("<br>", "\n")
+    TIERED_STATUS_STRINGS = [
+        "Tiered statuses apply up to tier 3 and reduce resistances; see your journal for a full description.",
 
-    # next, filter out inner formatting tags
-    newVal = ""
-    pause = False
-    for char in string:
-        if char == "<": # if a formatting tag starts, wait until it ends
-            pause = True
-        elif char == ">":
-            pause = False
-        elif not pause: # if we're not in a formatting tag, add the character
-            newVal += char
-
-    # AHHHH THIS INCONSISTENCY IS KILLING ME
-    newVal = newVal.replace("Aerothurge", "Aerotheurge")
-
-    if REMOVE_SOURCE_INFUSIONS_TEXT:
-        newVal = newVal.split("\n\nSource Infusions:")[0]
+        "<font color='c80030'>Ataxia III</font> consumes 7 Battered:<br>Target slowed and is Disarmed.</font>",
+        "<font color='7f25d4'>Subjugated III</font> consumes 7 Battered:<br>Target suffers damage when attacking this status' owner, making it less likely to do so; reduces AP recovery.</font>",
+        "<font color='b823cb'>Vulnerable III</font> consumes 7 Battered:<br>Target is easier to Batter or Harry, and suffers damage from healing.</font>",
+        "<font color='b823cb'>Terrified III</font> consumes 7 Harried:<br>Target loses attack of opportunity and spends AP fleeing.</font>",
+        "<font color='797980'>Dazzled III</font> consumes 7 Harried:<br>Target has reduced accuracy, dodge, and is Blinded.</font>",
+        "<font color='c80030'>Slowed III</font> consumes 7 Harried:<br>Target has reduced movement and AP recovery.</font>",
+        "<font color='797980'>Squelched III</font> consumes 7 Harried:<br>Target loses AP when using movement skills and is Silenced.</font>",
+        "<font color='639594'>Weakened III</font> consumes 7 Battered:<br>Target's damage is reduced.</font>",
+    ]
 
     if REMOVE_TIERED_EFFECT_HINT:
-        newVal = newVal.replace("\n\nTiered statuses apply up to tier 3 and reduce resistances; see your journal for a full description.", "")
-        newVal = newVal.replace("\nTiered statuses apply up to tier 3 and reduce resistances; see your journal for a full description.", "")
+        for entry in TIERED_STATUS_STRINGS:
+            string = string.replace(entry, "")
+    
+    # filter out the initial formatting tag, and replace the br ones with newline character
+    string = string.replace("<br>", "\n")
+    string = string.replace("size='18'", "")
+    string = string.replace("size=\"18\"", "")
+    string = string.replace("size=\"12\"", "size=\"1\"")
+    string = string.replace("<img src='Icon_BulletPoint'>", "")
 
-        newVal = newVal.replace("\nSubjugated III consumes 7 Battered:\nTarget suffers damage when attacking this status' owner, making it less likely to do so; reduces AP recovery.", "")
-        newVal = newVal.replace("\nVulnerable III consumes 7 Battered:\nTarget is easier to Batter or Harry, and suffers damage from healing.", "")
-        newVal = newVal.replace("\nAtaxia III consumes 7 Battered:\nTarget slowed and is Disarmed.", "")
-        newVal = newVal.replace("\nTerrified III consumes 7 Harried:\nTarget loses attack of opportunity and spends AP fleeing.", "")
-        newVal = newVal.replace("\nDazzled III consumes 7 Harried:\nTarget has reduced accuracy, dodge, and is Blinded.", "")
-        newVal = newVal.replace("\nSlowed III consumes 7 Harried:\nTarget has reduced movement and AP recovery.", "")
-        newVal = newVal.replace("\nSquelched III consumes 7 Harried:\nTarget loses AP when using movement skills and is Silenced.", "")
-        newVal = newVal.replace("\nWeakened III consumes 7 Battered:\nTarget's damage is reduced.", "")
+    HTMLRegex = re.compile("(</*?font(.*?>)?)")
 
-    return (newVal)
+    # AHHHH THIS INCONSISTENCY IS KILLING ME
+    string = string.replace("Aerothurge", "Aerotheurge")
+
+    if REMOVE_SOURCE_INFUSIONS_TEXT:
+        string = string.split("\n\nSource Infusions:")[0]
+
+    # next, filter out inner formatting tags
+    search = HTMLRegex.search(string)
+    if search:
+        for match in search.groups():
+            string = string.replace(match, "")
+
+    return (string)
 
 def highlightKeywords(string):
 
@@ -480,10 +482,10 @@ def replaceParamsInDescription(skill):
     return highlightKeywords(desc)
 
 skills = {}
-allSkills = {} # actually has all skills
+allSkills = {}
 currentSkill = None
 ignore = False
-descRegex = re.compile('<font size=\'19\'>(?P<FullText>.*)</font>')
+descRegex = re.compile('<font size=(\'|\")19(\'|\")>(?P<FullText>.*)</font>') # 2 vanilla skills use " instead of '
 
 for folder in folders:
     for skillType in skillTypes:

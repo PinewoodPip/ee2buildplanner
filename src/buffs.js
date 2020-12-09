@@ -1,13 +1,15 @@
 import './App.css';
 import React from 'react';
 
-import { Icon } from "./genericComponents.js"
+import { Icon, Tooltip } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
 
 function Buff(props) {
     let className = (game.app.state.buffs.has(props.data.id)) ? "activated button" : "button"
-    return <Icon size="32px" className={className} img={props.data.icon} onClick={()=>{game.toggleBuff(props.data.id)}}/>
+    return <Tooltip content={props.data.name}>
+        <Icon size="32px" className={className} img={props.data.icon} onClick={()=>{game.toggleBuff(props.data.id)}}/>
+    </Tooltip>
 }
 
 export function BuffBar(props) {

@@ -58,7 +58,7 @@ class App extends React.Component {
       },
 
       // should these be saved?
-      statCategories: new Set(),
+      statCategory: null,
       buffs: new Set(),
 
       // stuff that is saved
@@ -404,16 +404,6 @@ There is no character limit and it will be saved when you save the build.`,
 
     console.log(state)
     this.setState(state)
-  }
-
-  // should just make a generic method for updating these...
-  toggleStatCategory(id) {
-    let state = cloneDeep(this.state.statCategories)
-    if (state.has(id))
-      state.delete(id)
-    else
-      state.add(id)
-    this.setState({statCategories: state})
   }
 
   contextMenu(element, e) {

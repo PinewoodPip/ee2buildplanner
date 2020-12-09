@@ -80,6 +80,7 @@ function TopBar(props) {
 						<GreenButton className={extraSaveButtonClass} text="Save Build" onClick={(e) => {props.app.saveBuild()}} onContextMenu={(e)=>{onContext(e)}}/>
 						<Icon className="button absolute-center-vertical" img={"dropdown"} onClick={(e)=>{e.stopPropagation(); onContext(e)}} style={{right: "3px"}}/>
 					</div>
+					
 					<div style={{width: "5x"}}/>
 					<GreenButton text="Export Build" onClick={()=>{props.app.exportBuild()}}/>
 					<div style={{width: "5px"}}/>

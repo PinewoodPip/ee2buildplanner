@@ -1204,29 +1204,26 @@ export const statusNames = {
 }
 
 export const statuses = {
-	// PIP_Artifact_AntediluvianCarapace: {
-	// 	type: "special",
-	// 	id: "PIP_Artifact_AntediluvianCarapace"
-	// },
-	PIP_Artifact_DrogsLuck: {type: "special", id: "PIP_Artifact_DrogsLuck", icon: "AMER_UNI_Amulet_A"},
-	// PIP_Artifact_Expedition: {type: "special", id: "PIP_Artifact_Expedition"},
-	PIP_Artifact_EyeOfTheStorm: {type: "special", id: "PIP_Artifact_EyeOfTheStorm", icon: "AMER_UNI_Ring_A"},
-	PIP_Artifact_Kudzu: {type: "special", id: "PIP_Artifact_Kudzu", icon: "AMER_UNI_Boots_Cloth_A"},
-	PIP_Artifact_Leviathan: {type: "special", id: "PIP_Artifact_Leviathan", icon: "AMER_UNI_Mace_A"},
-	PIP_Artifact_Onslaught: {type: "special", id: "PIP_Artifact_Onslaught", icon: "AMER_UNI_Boots_Plate_D"},
-	PIP_Artifact_PrismaticBarrier: {type: "special", id: "PIP_Artifact_PrismaticBarrier", icon: "AMER_UNI_Shield_E"},
-	PIP_Artifact_Urgency: {type: "special", id: "PIP_Artifact_Urgency", icon: "AMER_UNI_Chest_Leather_C"},
-	PIP_Artifact_Vertigo: {type: "special", id: "PIP_Artifact_Vertigo", icon: "AMER_UNI_Axe_A"},
+	PIP_Artifact_DrogsLuck: {name: "Drog's Luck", type: "special", id: "PIP_Artifact_DrogsLuck", icon: "AMER_UNI_Amulet_A"},
+	PIP_Artifact_EyeOfTheStorm: {name: "Eye of The Storm", type: "special", id: "PIP_Artifact_EyeOfTheStorm", icon: "AMER_UNI_Ring_A"},
+	PIP_Artifact_Kudzu: {name: "Kudzu", type: "special", id: "PIP_Artifact_Kudzu", icon: "AMER_UNI_Boots_Cloth_A"},
+	PIP_Artifact_Leviathan: {name: "Leviathan", type: "special", id: "PIP_Artifact_Leviathan", icon: "AMER_UNI_Mace_A"},
+	PIP_Artifact_Onslaught: {name: "Onslaught", type: "special", id: "PIP_Artifact_Onslaught", icon: "AMER_UNI_Boots_Plate_D"},
+	PIP_Artifact_PrismaticBarrier: {name: "Prismatic Barrier", type: "special", id: "PIP_Artifact_PrismaticBarrier", icon: "AMER_UNI_Shield_E"},
+	PIP_Artifact_Urgency: {name: "Urgency", type: "special", id: "PIP_Artifact_Urgency", icon: "AMER_UNI_Chest_Leather_C"},
+	PIP_Artifact_Vertigo: {name: "Vertigo", type: "special", id: "PIP_Artifact_Vertigo", icon: "AMER_UNI_Axe_A"},
 
-	PIP_Talent_Guerrilla: {type: "special", id: "PIP_Talent_Guerrilla", icon: "Talent_Guerrilla"},
+	PIP_Talent_Guerrilla: {name: "Guerrilla", type: "special", id: "PIP_Talent_Guerrilla", icon: "Talent_Guerrilla"},
 
 	PIP_Talent_Hothead: {
+		name: "Hothead",
 		type: "special",
 		id: "PIP_Talent_Hothead",
 		icon: "Talent_Hothead",
 	},
 
 	PeaceOfMind: {
+		name: "Clear Mind",
 		type: "normal",
 		id: "PeaceOfMind",
 		icon: "Skill_Fire_BurnMyEyes",
@@ -1239,13 +1236,8 @@ export const statuses = {
 	}
 }
 
+// selectable portraits
 export const portraits = [
-	// "ifan",
-	// "lohse",
-	// "sebille",
-	// "red_prince",
-	// "beast",
-	// "fane",
 	"human_m",
 	"human_f",
 	"elf_m",
@@ -1260,6 +1252,7 @@ export const portraits = [
 	"obama",
 ]
 
+// strings for displaying stats, as well as their default amounts (undefined = 0)
 export const stats = {
 	realStats: {
 		str: {
@@ -1743,28 +1736,27 @@ export const stats = {
 
 }
 
+// categories shown in the stats screen and lists of the stats they show
 export const statCategories = {
-	"Resistance Bonuses": [
-		{type: "flexStat", id: "AllResistance"},
-		{type: "flexStat", id: "PHYSICALRESISTANCE"},
-		{type: "flexStat", id: "PIERCINGRESISTANCE"},
-		{type: "flexStat", id: "EleResistance"},
-		{type: "flexStat", id: "FIRERESISTANCE"},
-		{type: "flexStat", id: "WATERRESISTANCE"},
-		{type: "flexStat", id: "EARTHRESISTANCE"},
-		{type: "flexStat", id: "AIRRESISTANCE"},
-		{type: "flexStat", id: "POISONRESISTANCE"},
+	"General Stats": [
+		{type: "flexStat", id: "DAMAGEBOOST"},
+		{type: "flexStat", id: "CRITICALCHANCE"},
+		{type: "flexStat", id: "ACCURACYBOOST"},
+		{type: "flexStat", id: "DODGEBOOST"},
+		{type: "flexStat", id: "INITIATIVE"},
+		{type: "flexStat", id: "LIFESTEAL"},
+		{type: "flexStat", id: "MOVEMENT"},
+		{type: "flexStat", id: "VITALITYBOOST"},
+		{type: "flexStat", id: "PHYSICALARMOR"},
+		{type: "flexStat", id: "PHYSICALARMORBOOST"},
+		{type: "flexStat", id: "MAGICARMOR"},
+		{type: "flexStat", id: "MAGICARMORBOOST"},
+		// {type: "extendedStat", id: "Voracity_Life"},
+		// {type: "extendedStat", id: "Voracity_BothArmor"},
+		{type: "extendedStat", id: "BattHarr_Threshold_Sum_Self_Both"},
+		{type: "flexStat", id: "RESISTDEATH"},
 	],
-	"Real Resistances": [
-		{type: "realStats", id: "res_physical"},
-		{type: "realStats", id: "res_piercing"},
-		{type: "realStats", id: "res_fire"},
-		{type: "realStats", id: "res_water"},
-		{type: "realStats", id: "res_earth"},
-		{type: "realStats", id: "res_air"},
-		{type: "realStats", id: "res_poison"},
-	],
-	"Real Attributes": [
+	"Total Attributes": [
 		{type: "realStats", id: "str"},
 		{type: "realStats", id: "fin"},
 		{type: "realStats", id: "pwr"},
@@ -1772,7 +1764,7 @@ export const statCategories = {
 		{type: "realStats", id: "mem"},
 		{type: "realStats", id: "wits"},
 	],
-	"Real Abilities": [
+	"Total Abilities": [
 		{type: "realStats", id: "dualwielding"},
 		{type: "realStats", id: "ranged"},
 		{type: "realStats", id: "singlehanded"},
@@ -1791,6 +1783,15 @@ export const statCategories = {
 		{type: "realStats", id: "aerotheurge"},
 		{type: "realStats", id: "polymorph"},
 	],
+	"Total Resistances": [
+		{type: "realStats", id: "res_physical"},
+		{type: "realStats", id: "res_piercing"},
+		{type: "realStats", id: "res_fire"},
+		{type: "realStats", id: "res_water"},
+		{type: "realStats", id: "res_earth"},
+		{type: "realStats", id: "res_air"},
+		{type: "realStats", id: "res_poison"},
+	],
 	"Skill Ability Bonuses": [
 		{type: "flexStat", id: "AirSpecialist"},
 		{type: "flexStat", id: "EarthSpecialist"},
@@ -1802,6 +1803,36 @@ export const statCategories = {
 		{type: "flexStat", id: "RogueLore"},
 		{type: "flexStat", id: "Summoning"},
 		{type: "flexStat", id: "WarriorLore"},
+	],
+	"Combat Ability Bonuses": [
+		{type: "flexStat", id: "DualWielding"},
+		{type: "flexStat", id: "Ranged"},
+		{type: "flexStat", id: "SingleHanded"},
+		{type: "flexStat", id: "TwoHanded"},
+		{type: "flexStat", id: "Leadership"},
+		{type: "flexStat", id: "Perseverance"},
+		{type: "flexStat", id: "PainReflection"},
+	],
+	"Resistance Bonuses": [
+		{type: "flexStat", id: "AllResistance"},
+		{type: "flexStat", id: "PHYSICALRESISTANCE"},
+		{type: "flexStat", id: "PIERCINGRESISTANCE"},
+		{type: "flexStat", id: "EleResistance"},
+		{type: "flexStat", id: "FIRERESISTANCE"},
+		{type: "flexStat", id: "WATERRESISTANCE"},
+		{type: "flexStat", id: "EARTHRESISTANCE"},
+		{type: "flexStat", id: "AIRRESISTANCE"},
+		{type: "flexStat", id: "POISONRESISTANCE"},
+	],
+	"Regeneration": [
+		{type: "extendedStat", id: "Regen_Life"},
+		{type: "extendedStat", id: "Regen_PhysicalArmor"},
+		{type: "extendedStat", id: "Regen_MagicArmor"},
+
+		{type: "extendedStat", id: "Voracity_Life"},
+		{type: "extendedStat", id: "Voracity_BothArmor"},
+		{type: "extendedStat", id: "Voracity_PhysArmor"},
+		{type: "extendedStat", id: "Voracity_MagicArmor"},
 	],
 	"Summoning": [
 		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
@@ -1819,25 +1850,6 @@ export const statCategories = {
 		{type: "extendedStat", id: "SummonStat_ExtendedStat_Voracity_Life"},
 		{type: "specialLogic", id: "Ascension_SummonLimitTo2"},
 	],
-	"Regeneration": [
-		{type: "extendedStat", id: "Regen_Life"},
-		{type: "extendedStat", id: "Regen_PhysicalArmor"},
-		{type: "extendedStat", id: "Regen_MagicArmor"},
-
-		{type: "extendedStat", id: "Voracity_Life"},
-		{type: "extendedStat", id: "Voracity_BothArmor"},
-		{type: "extendedStat", id: "Voracity_PhysArmor"},
-		{type: "extendedStat", id: "Voracity_MagicArmor"},
-	],
-	"Combat Ability Bonuses": [
-		{type: "flexStat", id: "DualWielding"},
-		{type: "flexStat", id: "Ranged"},
-		{type: "flexStat", id: "SingleHanded"},
-		{type: "flexStat", id: "TwoHanded"},
-		{type: "flexStat", id: "Leadership"},
-		{type: "flexStat", id: "Perseverance"},
-		{type: "flexStat", id: "PainReflection"},
-	],
 	"Free Reactions": [
 		{type: "extendedStat", id: "FreeReactionCharge_AMER_Centurion"},
 		{type: "extendedStat", id: "FreeReactionCharge_AMER_Elementalist"},
@@ -1852,24 +1864,6 @@ export const statCategories = {
 		{type: "extendedStat", id: "PercAttributeIncrease_Constitution"},
 		{type: "extendedStat", id: "PercAttributeIncrease_Memory"},
 		{type: "extendedStat", id: "PercAttributeIncrease_Wits"},
-	],
-	"General Stats": [
-		{type: "flexStat", id: "DAMAGEBOOST"},
-		{type: "flexStat", id: "CRITICALCHANCE"},
-		{type: "flexStat", id: "ACCURACYBOOST"},
-		{type: "flexStat", id: "DODGEBOOST"},
-		{type: "flexStat", id: "INITIATIVE"},
-		{type: "flexStat", id: "LIFESTEAL"},
-		{type: "flexStat", id: "MOVEMENT"},
-		{type: "flexStat", id: "VITALITYBOOST"},
-		{type: "flexStat", id: "PHYSICALARMOR"},
-		{type: "flexStat", id: "PHYSICALARMORBOOST"},
-		{type: "flexStat", id: "MAGICARMOR"},
-		{type: "flexStat", id: "MAGICARMORBOOST"},
-		// {type: "extendedStat", id: "Voracity_Life"},
-		// {type: "extendedStat", id: "Voracity_BothArmor"},
-		{type: "extendedStat", id: "BattHarr_Threshold_Sum_Self_Both"},
-		{type: "flexStat", id: "RESISTDEATH"},
 	],
 	"Miscellaneous": [
 		{type: "extendedStat", id: "SourceGen_AddPointsGranted"},
@@ -2122,6 +2116,7 @@ There is no character limit and it will be saved when you save the build.`,
 	
 	skills: [],
 	artifacts: [],
+	runes: [],
 	
 	aspects: [],
 	coreNodes: {
@@ -2198,5 +2193,5 @@ export const statTooltips = {
 	"RogueLore": "Each point of Scoundrel increases movement by 0.2m.",
 	"Summoning": "Each point of Summoning increases Vitality, Damage, Physical and Magic Armor of summons by 5%.",
 
-	"skillabilitygeneric": "Skill Ability points increase your damage with any relevant skill by 2% and increase damage from Power by 4% per point when manually casting skills from the respective school. Additionally, you unlock additional tiers of Source Infusions at 5 and 9 points."
+	"skillabilitygeneric": "Skill Ability points increase your damage with any relevant skill by 2% and increase damage from Power by 4% per point when manually casting skills from the respective school. Additionally, you unlock extra tiers of Source Infusions at 5 and 9 points."
 }

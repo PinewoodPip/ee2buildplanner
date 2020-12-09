@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text, Icon, Container, TabButton } from "./genericComponents.js"
+import { Text, Icon, Container, TabButton, PopupHeader } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -19,7 +19,7 @@ function StatTab(props) {
 	return (
 		<div style={{maxHeight: "500px", width: props.width, height: "unset", marginBottom: "20px"}} className="flexbox-vertical flex-align-start">
 			<div style={{position: "relative"}}>
-				<Text text={props.name} className="sticky-top"/>
+				<Text text={props.name}/>
 			</div>
 			<hr/>
 			{props.elements}
@@ -39,8 +39,6 @@ export class Boosts extends React.Component {
 		let boosts = []
 		let stats = game.getStats() // todo fix
 		let statStrings = {}
-
-		console.log(stats.realStats)
 
 		// literally all the stats as strings
 		for (let x in stats) {
@@ -69,9 +67,9 @@ export class Boosts extends React.Component {
 		// categorize stat boosts to display them in different boxes
 		let categorizedBoosts = {}
 		for (let x in miscData.statCategories) { // for each category defined above
-			let categoryIsChosen = (props.app.state.statCategories.has(x))
+			let categoryIsChosen = (props.app.state.statCategory == x)
 
-			categoryElements.push(<TabButton key={x} chosen={categoryIsChosen} func={()=>{game.app.toggleStatCategory(x)}} text={utils.capitalize(x)}/>)
+			categoryElements.push(<TabButton key={x} chosen={categoryIsChosen} func={()=>{game.app.setState({statCategory: x})}} text={utils.capitalize(x)}/>)
 
 			if (!categoryIsChosen)
 				continue
@@ -81,7 +79,6 @@ export class Boosts extends React.Component {
 
 			for (let z in statsToCategorize) { // for each stat in category
 				let statToCategorize = statsToCategorize[z]
-				// let stat = stats[statToCategorize.type][statToCategorize.id] // the stat in the build
 				
 				
 				if (utils.hasKey(statStrings, statToCategorize.type) && utils.hasKey(statStrings[statToCategorize.type], statToCategorize.id)) {
@@ -99,31 +96,24 @@ export class Boosts extends React.Component {
 		}
 
 		return (
-			<Container className="flexbox-vertical flex-align-start skillbook">
-				<div className="flexbox-horizontal flex-align-end full-width bar">
-					<Text text={"Boosts"} className={"flex-grow"}/>
-					<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
-				</div>
-
-				<div style={{height: "20px"}}/>
+			<Container className="flexbox-vertical flex-align-start" style={{width: "700px", height: "600px"}}>
+				<PopupHeader text="Stats" app={props.app}/>
 
 				<BuffBar app={props.app}/>
 
 				<hr/>
 
-				<div className="flexbox-horizontal flex-wrap flex-align-space-evenly" style={{alignItems: "flex-start"}}>
-					<div className="flexbox-vertical flex-align-start" style={{width: "20%"}}>
+				<div className="flexbox-horizontal flex-wrap flex-align-space-evenly">
+					<div className="flexbox-vertical flex-align-start" style={{width: "25%"}}>
 						{categoryElements}
 					</div>
-					<div className="flexbox-horizontal stat-sheets flex-wrap" style={{width: "70%", height: "500px"}}>
+
+					{/* <div className="flex-grow"/> */}
+
+					<div className="flexbox-horizontal flex-wrap wrap-y" style={{width: "65%", height: "500px", alignItems: "start"}}>
 						
 						{statSheets}
 
-						{/* <div style={{maxHeight: "500px", width: "500px"}} className="flexbox-vertical flex-align-start wrap-y">
-							<Text text="Temp place for other stats"/>
-							<hr/>
-							{boosts}
-						</div> */}
 					</div>
 				</div>
 			</Container>

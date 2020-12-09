@@ -163,12 +163,6 @@ div::-webkit-scrollbar {
   flex-grow: 1;
 }
 
-.stat-sheets {
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow-y: scroll;
-}
-
 hr {width: 85%;}
 
 .aspect {
