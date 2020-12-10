@@ -1247,9 +1247,10 @@ export const portraits = [
 	"lizard_m",
 	"lizard_f",
 	"magister_waifu",
+	"knight",
 	"pip",
 	"derpy_bald_guy",
-	"obama",
+	// "obama",
 ]
 
 // strings for displaying stats, as well as their default amounts (undefined = 0)

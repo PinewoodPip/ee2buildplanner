@@ -1,2 +1,8 @@
+--- 10th Dec 20 (v0.9.1)
+- Fixed portraits having 1 row of erroneous pixels at the bottom
+- Replaced Obama portrait choice with a knight
+    - Gentleman who previously have bestowed Obama upon their builds will be able to keep him
+- Cleaned up the icon ripper python script, available here:
+
 --- 9th Dec 20 (v0.9.0)
 - Initial release for testing.
