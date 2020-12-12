@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text, Tooltip, TabButton } from "./genericComponents.js"
+import { Icon, Container, Text, Tooltip, TabButton, TooltipHeader } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -129,7 +129,9 @@ export class ArtifactsPopup extends React.Component {
 
 function Artifact(props) {
     let tooltip = <div className="flexbox-vertical">
-        <Text text={<b>{props.data.name}</b>}/>
+        <TooltipHeader>
+            <Text text={<b>{props.data.name}</b>}/>
+        </TooltipHeader>
         <Text text={props.data.description}/>
     </div>
     return <Tooltip content={tooltip} placement="right">
@@ -144,14 +146,16 @@ function Rune(props) {
             game.getDisplayString(e)
             boosts.push(<Text key={i} text={game.getDisplayString(e)}/>)
         })
-        if (rune.weaponBoostString)
+        if (rune.weaponBoostString && rune.boosts.weapon.length === 0) // only show this string if a stat for it does not exist
             boosts.push(<Text key={-1} text={rune.weaponBoostString}/>)
         return boosts;
     }
 
     let tooltip = <div className="flexbox-vertical">
-        <Text text={<b>{props.data.name}</b>}/>
-        {/* <hr/> */}
+        <TooltipHeader>
+            <Text text={<b>{props.data.name}</b>}/>
+        </TooltipHeader>
+
         {getRuneDescription(props.data)}
     </div>
 

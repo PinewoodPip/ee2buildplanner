@@ -78,6 +78,8 @@ function SkillTooltip(props) {
 			desc[0],
 		]
 
+		desc.push(<hr key={-1} className="dark-hr"/>)
+
 		let infusionText = [
 			skill.DescriptionRef.split(`1:`)[1],
 			skill.DescriptionRef.split(`2 (requires 5 <span class='${colorHighlighting[ability]}'>${ability}</span>):`)[1],
@@ -107,7 +109,10 @@ function SkillTooltip(props) {
 
 	let realDesc = []
 	for (let x in desc) {
-		realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
+		if (!React.isValidElement(desc[x]))
+			realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
+		else
+			realDesc.push(desc[x])
 		// let re = />.*</
 		// if (game.app.state.config.highlightSkillKeywords)
 		// 	realDesc.push(parser("<p key='" + x + "'>" + desc[x] + "</p>"))
@@ -118,9 +123,9 @@ function SkillTooltip(props) {
 	}
 
 	// action point cost and cooldown
-	let actionInfo = <div className="flexbox-horizontal flex-align-centered">
-		<Text text={skill.ActionPoints}/>
-		<Icon size="32px" img="action_point" className=""/>
+	let actionInfo = <div className="flexbox-horizontal flex-align-centered" style={{maxWidth: "300px", width: "unset"}}>
+		<Text text={skill.ActionPoints} style={{width: "6px", textAlign: "right"}}/>
+		<Icon size="32px" img="action_point" style={{margin: "0 -7px"}}/>
 		<Text text={(skill.Cooldown == -1 ? "Once per combat" : skill.Cooldown + " CD")}/>
 	</div>
 
@@ -135,8 +140,6 @@ function SkillTooltip(props) {
 			let text = parser(utils.format("<p class='compact-text' key='" + x + "'>Requires <span class='{0}'>{1} {2}</span></p>", colorHighlighting[stat], amount, stat))
 
 			reqDisplay.push(text)
-
-			// reqDisplay.push(<Text key={x} overrideColor className={colorHighlighting[stat]} text={utils.format("Requires {0} {1}", amount, stat)}/>)
 		}
 	}
 	let memoryCost = null
@@ -154,7 +157,7 @@ function SkillTooltip(props) {
 		let status = skill.TieredStatuses[x]
 		if (status in miscData.statusNames) {
 			let text = parser(utils.format("<p class='compact-text' key='" + status + "'>Applies <span class='{0}'>{1}</span></p>", miscData.mappings.statusCSS[status], miscData.statusNames[status]))
-			// statuses.push(<Text key={status} text={text}/>)
+
 			statuses.push(text)
 		}
 	}
@@ -180,24 +183,28 @@ function SkillTooltip(props) {
 	}
 
 	let tooltip = <div className="flexbox-vertical">
-		<Text text={skill.DisplayNameRef} style={{fontSize: "17px", fontWeight: "bold"}}/>
+		{/* header */}
+		<div className="flexbox-vertical tooltip-header">
+			<Text text={skill.DisplayNameRef} style={{fontSize: "17px", fontWeight: "bold"}}/>
 
-		{/* school icon and name */}
-		<div className="flexbox-horizontal flex-align-centered">
-			<Icon size="20px" img={abilityIcon} className=""/>
-			<div style={{width: "5px"}}/>
-			<Text overrideColor className={colorHighlighting[schoolName]} text={schoolName} style={{fontSize: "13px"}}/>
+			{/* school icon and name */}
+			<div className="flexbox-horizontal flex-align-centered tooltip-header">
+				<Icon size="20px" img={abilityIcon} className=""/>
+				<div style={{width: "5px"}}/>
+				<Text overrideColor className={colorHighlighting[schoolName]} text={schoolName} style={{fontSize: "13px"}}/>
+				{actionInfo}
+			</div>
 		</div>
-
-		{actionInfo}
 
 		<div className="text-si">
 			{realDesc}
 		</div>
 
-		{statusesDisplay}
-		{reqDisplay}
-		{memoryCost}
+		<div className="tooltip-bottom flexbox-vertical flex-align-centered">
+			{statusesDisplay}
+			{reqDisplay}
+			{memoryCost}
+		</div>
 	</div>
 	return (
 		<Tooltip content={tooltip} placement="right">

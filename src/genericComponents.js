@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
-import Tippy from '@tippyjs/react';
+// import Tippy from '@tippyjs/react';
+import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { cloneDeep } from "lodash"
 // import "animate.css"
@@ -144,11 +145,28 @@ export function Popup(props) {
   )
 }
 
+export function TooltipHeader(props) {
+	return (
+		<div className="flexbox-vertical tooltip-header">
+            {props.children}
+        </div>
+	)
+}
+
 export class Tooltip extends React.Component {
 	render() {
 		let placement = (this.props.placement != null) ? this.props.placement : "bottom"
 		return (
-		  <Tippy content={this.props.content} placement={placement} duration="0">
+		  <Tippy content={this.props.content} placement={placement} duration="0"
+			render={attrs => (
+				<div>
+					{/* check if content prop is a valid element; if it's not, make it into a <Text> */}
+					<div className="styled-tooltip">
+						{React.isValidElement(this.props.content) ? this.props.content : <Text text={this.props.content}/>}
+					</div>
+				</div>
+			)}
+		  >
 			<span>
 			  {this.props.children}
 			</span>
@@ -192,6 +210,7 @@ export class FileButton extends React.Component {
 				<Text text="Import build"/>
 			<input id="myInput"
 				type="file"
+				accept=".json"
 				ref={(ref) => this.upload = ref}
 				style={{display: 'none'}}
 				onChange={async (e) => {let file = await this.getFile.bind(this)(e); this.props.func(file)}}

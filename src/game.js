@@ -52,9 +52,7 @@ export class Game {
   changeCivil(id, increment) {
     let state = cloneDeep(this.app.state.civils)
     let civil = state[id]
-    if (civil + increment > 10)
-      state[id] = 10
-    else if (civil + increment < 0)
+    if (civil + increment < 0)
       state[id] = 0
     else
       state[id] = civil + increment
@@ -116,14 +114,21 @@ export class Game {
       let nodes = cloneDeep(this.app.state.aspects[x].nodes)
       nodes.reverse()
       let countNulls = false
+
       for (let z in nodes) {
-        if (nodes[z] != null)
+        if (nodes[z] != null) // on the first non-null subnode we find, start counting
           countNulls = true
         if (nodes[z] != null || countNulls) {
           count++
         }
       }
     }
+
+    // add core nodes
+    for (let node in this.app.state.coreNodes) {
+      count += (this.app.state.coreNodes[node]) ? 1 : 0
+    }
+
     return count
   }
 
@@ -144,13 +149,9 @@ export class Game {
     if (attr + increment < 0)
       return
     
-    // don't restrict point retrievement if we're in the negatives (happens when you remove the bigger and better talent)
-    if (this.maxNaturalAttributePoints - this.totalAttributePointsSpent > 0 || increment > 0) {
-      if (this.totalAttributePointsSpent + increment > this.maxNaturalAttributePoints)
+    // we don't restrict point retrievement if we're in the negatives (happens when you remove the bigger and better talent)
+      if (attr + increment > maxInvestment && increment > 0)
         return;
-      if (attr + increment > maxInvestment)
-        return;
-    }
 
     attrs[id] += increment
 
@@ -989,12 +990,12 @@ export class Ascension {
         tooltip.push(
           <div key={x} onContextMenu={func} onClick={func}>
             <Text key={Math.random()} text={parentText}/>
-            <Text key={Math.random()} text={subNodeText}/>
+            <Text key={Math.random()} text={subNodeText} className="node-button"/>
           </div>)
       }
       else {
         tooltip.push(<Text key={Math.random()} text={parentText}/>)
-			  tooltip.push(<Text key={Math.random()} text={subNodeText}/>)
+			  tooltip.push(<Text key={Math.random()} text={subNodeText} className="node-button"/>)
       }
     }
 

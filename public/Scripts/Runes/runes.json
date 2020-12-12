@@ -189,7 +189,7 @@
         {
           "type": "flexStat",
           "id": "INTELLIGENCE",
-          "value": 1
+          "value": 2
         }
       ],
       "armor": [
@@ -253,7 +253,7 @@
         {
           "type": "flexStat",
           "id": "MEMORY",
-          "value": 1
+          "value": 2
         }
       ],
       "armor": [
@@ -306,7 +306,7 @@
         {
           "type": "flexStat",
           "id": "WITS",
-          "value": 1
+          "value": 2
         }
       ],
       "armor": []
@@ -371,7 +371,7 @@
         {
           "type": "flexStat",
           "id": "STRENGTH",
-          "value": 1
+          "value": 2
         }
       ],
       "armor": [
@@ -502,7 +502,7 @@
         {
           "type": "flexStat",
           "id": "FINESSE",
-          "value": 1
+          "value": 2
         }
       ],
       "armor": []
@@ -571,7 +571,7 @@
         {
           "type": "flexStat",
           "id": "CONSTITUTION",
-          "value": 1
+          "value": 2
         }
       ],
       "armor": [

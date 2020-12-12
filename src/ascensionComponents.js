@@ -34,7 +34,7 @@ export class Ascension extends React.Component {
 			currentAspect = game.ascension.getAspectElement(this.props.app.state.aspects[this.props.app.state.selectedAspect], true)
 
 		if (currentAspect == null)
-			currentAspect = <Text text="When you click on an Aspect, its nodes will show up here." style={{width: "80%"}} className="text-faded"/>
+			currentAspect = <Text text="When you click on an Aspect, its nodes will show up here." style={{width: "100%", paddingTop: "10px"}} className="text-faded"/>
 
 		return <Container style={{height: "100%"}}>
 			<div className="flexbox-horizontal flex-align-space-between">
@@ -175,7 +175,6 @@ export function AscensionPopup(props) {
 export function Keywords(props) {
 	let keywordButtons = []
 	for (let x in props.app.keywords) {
-		console.log(props.app.keywords)
 		if (x == "null")
 			continue
 		let func = () => {props.app.setState({currentKeyword: x})}
@@ -208,6 +207,7 @@ export function Keywords(props) {
 			mutators.push(element)
 	}
 
+	let currentKeyword = props.app.state.currentKeyword
 	let display;
 	if (keywordButtons.length === 0) {
 		display = <Text text="You have no keywords in your build."/>
@@ -216,6 +216,15 @@ export function Keywords(props) {
 		display = <Text text="Click a keyword on the left to show its actvators and mutators."/>
 	}
 	else {
+		// basic explanation of the keyword, if it has one
+		let basicEffect = null
+		if (props.app.state.currentKeyword in miscData.basicKeywordEffects) {
+			basicEffect = <div className="flexbox-vertical" style={{height: "unset"}}>
+				<Text key={-20} text={miscData.basicKeywordEffects[currentKeyword]}/>
+				{miscData.reactions.includes(currentKeyword) ? <Text key={-21} text={miscData.reactionExplanation}/> : null}
+			</div>
+		}
+
 		if (activators.length === 1) {
 			activators.push(<Text key={-3} text={utils.format("You have no {0} activators.", miscData.mappings.keywordNames[props.app.state.currentKeyword])} className="text-faded"/>)
 		}
@@ -223,6 +232,11 @@ export function Keywords(props) {
 			mutators.push(<Text key={-2} text={utils.format("You have no {0} mutators.", miscData.mappings.keywordNames[props.app.state.currentKeyword])} className="text-faded"/>)
 		}
 		display = [
+			<Text key={-19} text={<b>{miscData.mappings.keywordNames[currentKeyword]}</b>} style={{fontSize: "120%"}}/>,
+			basicEffect,
+
+			<div style={{height: "15px"}}/>,
+
 			activators,
 			<hr key={-997}/>,
 			mutators,
@@ -323,6 +337,7 @@ function Aspect(props) {
 	)
 }
 
+// the aspect entries on the left side of the main ascension panel, which show the aspect name and keywords
 class AspectListing extends React.Component {
 	constructor() {super(); this.state = {beingHovered: false}}
 
@@ -358,7 +373,7 @@ function Keyword(props) {
 
 function AscensionFamilyButton(props) {
 	return (
-		<div className="flexbox-horizontal flex-align-start full-width ascension-family" onClick={()=>{props.app.setState({currentFamily: props.family.toLowerCase()})}}>
+		<div className="flexbox-horizontal flex-align-start full-width ascension-family button" onClick={()=>{props.app.setState({currentFamily: props.family.toLowerCase()})}}>
 			<Embodiment type={props.family.toLowerCase()} amount={""}/>
 			<Text text={utils.capitalize(props.family)}/>
 		</div>

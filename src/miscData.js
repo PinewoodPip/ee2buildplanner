@@ -1732,6 +1732,28 @@ export const stats = {
 		Ascension_Prosperity_MUTA_ScorchAppliesCharged: {
 			referenceString: "AMER_UI_Ascension_Life_Splendor_Node_3_1",
 			strings: ["", "If you have Prosperity when you apply Scorched to an enemy, also apply Charged for 1 turn."]
+		},
+		// runes
+		PIP_EleResReductionOnHit: {
+			display: "-{0}% Elemental Resistances on targets you hit with attacks and spells, until the end of your turn."
+		},
+		PIP_PhysResReductionOnHit: {
+			display: "-{0}% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn."
+		},
+		PIP_Rune_EleCrit: {
+			display: "+{0}% critical chance while performing Elementalist reactions."
+		},
+		PIP_Rune_PredatorPowerDamage: {
+			display: "+{0}% damage from Power while performing a Predator reaction."
+		},
+		PIP_Rune_OccultistInstantDamage: {
+			display: "Occultist reactions instantly deal {0}% of their base end-damage."
+		},
+		PIP_Rune_CelestialVitality: {
+			display: "Celestial reactions heal another {0}% Vitality."
+		},
+		PIP_Rune_CenturionRestoreArmor: {
+			display: "Restore {0}% of missing armor when performing a Centurion reaction."
 		}
 	},
 
@@ -2196,3 +2218,22 @@ export const statTooltips = {
 
 	"skillabilitygeneric": "Skill Ability points increase your damage with any relevant skill by 2% and increase damage from Power by 4% per point when manually casting skills from the respective school. Additionally, you unlock extra tiers of Source Infusions at 5 and 9 points."
 }
+
+export const basicKeywordEffects = {
+	Abeyance: "When Abeyance activates, it instantly heals whatever damage it activated from; at the start of your next turn, suffer that amount +15% as unresistable damage, split evenly between your armors and Vitality. Any remaining damage to armor is instead dealt to Vitality.",
+	Adaptation: "When Adaptation is activated, gain or lose up to 30% of your maximum Physical or Magic Armor until their current values equilibrate; loss occurs from the higher of the two values and restoration occurs to the lower of the two values. Additionally, gain a stacking Adaptation status, which lasts for 1 turn, stacks up to 10 and grants +2.5% to FIN, CON, POW, and WIT per stack.",
+	Benevolence: "When Benevolence is activated, remove 2 stacks of Battered and Harried from the target and move half these stacks (rounded up) onto yourself. Restore 5% of your missing Vitality per stack of Battered or Harried removed this way.",
+	Celestial: "1 AP reaction that restores 15% of target's Vitality (+2% per Life embodied).",
+	Centurion: "1 AP reaction that performs a basic attack on a target within weapon range.",
+	// Defiance: "",
+	Elementalist: "1 AP reaction, deals elemental damage to all characters within 2m of the reaction's target. When you perform an Elementalist reaction, suffer damage of the reaction's type, equivalent to 10% of your maximum Vitality for each stack of Elementalist you have. Then gain 1 stack of Elementalist, or 2 if using the same element twice in a row.",
+	Occultist: "1 AP reaction, apply Bane for 2 turns. Bane deals Physical damage to the target at the beginning of their turn. When Bane ends, it deals its base damage +5% per Battered or Harried that the target suffered over its duration.",
+	Paucity: "While active, Paucity grants +15% lifesteal (+2% per Entropy).",
+	Predator: "1 AP reaction that performs a basic attack on a target within weapon range. If this attack is performed with a melee weapon, it has +30% critical chance. Additionally, if this attack is performed with a dagger, attempt to sneak afterward.",
+	Presence: "Presence is considered active on any allies that are affected by your Leadership.",
+	// Prosperity: ""
+}
+
+export const reactions = ["Celestial", "Centurion", "Occultist", "Predator", "Elementalist"]
+
+export const reactionExplanation = "Reactions are performed automatically when their conditions are satisfied, and can only be performed when it is not the reacting character's turn."

@@ -14,6 +14,10 @@
   filter: brightness(70%);
 }
 
+.node-button {cursor: pointer;}
+.node-button:hover {filter: brightness(80%);}
+.node-button:active {filter: brightness(70%);}
+
 select {
   cursor: pointer;
 }
@@ -107,7 +111,10 @@ a {color: rgb(123, 207, 235)}
 
 .compact-text {
   margin: 3px;
+  text-align: center;
 }
+
+.dark-hr {border-color: rgb(107, 107, 107);}
 
 .flexbox-wrap {
   display: flex;
@@ -167,6 +174,30 @@ hr {width: 85%;}
 
 .aspect {
   min-height: 32px;
+}
+
+.tooltip-header {
+  background-color: #494949;
+  margin: 0 -21px;
+  width: 100%;
+}
+
+.tooltip-bottom {
+  background-color: #252525;
+  margin: 0 -21px;
+  width: 100%;
+}
+
+.styled-tooltip {
+  background-color: #333333;
+  max-width: 400px;
+  color: whitesmoke;
+  font-size: 90%;
+  border: 1px solid rgb(139, 139, 139);
+}
+
+.styled-tooltip p {
+  margin: 5px 7px;
 }
 
 .aspect-dropdown-button {
@@ -281,6 +312,7 @@ hr {width: 85%;}
   min-width: 150px;
   min-height: 70px;
   z-index: 999999;
+  border: 1px solid rgb(139, 139, 139);
 }
 
 .wrap-y {
@@ -301,9 +333,10 @@ hr {width: 85%;}
 
 .context-option-noninteractable {
   max-width: 350px;
-  padding: 5px;
+  padding: 2px 5px;
   text-overflow: ellipsis;
   z-index: 999999;
+  background-color: #1f1f1f;
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -317,7 +350,7 @@ hr {width: 85%;}
 
 .context-option:hover {
   background-color: rgb(70, 70, 70);
-  outline: 1px solid black;
+  outline: 1px solid rgb(139, 139, 139);
 }
 
 .unselectable {
@@ -558,7 +591,7 @@ option {border: none;}
 .text-geo {color: rgb(168, 127, 65)}
 .text-aero {color: rgb(125, 127, 243)}
 .text-water {color: rgb(53, 201, 238)}
-.text-warfare {color: rgb(175, 104, 104)}
+.text-warfare {color: rgb(197, 102, 102)}
 .text-huntsman {color: rgb(73, 180, 82)}
 .text-poly {color: rgb(207, 199, 90)}
 .text-summon {color: rgb(175, 140, 255)}

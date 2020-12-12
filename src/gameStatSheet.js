@@ -9,14 +9,13 @@ import * as miscData from "./miscData.js"
 function IncrementButton(props) {
 	let className = props.disabled ? "disabled" : "button"
 	return (
-		<Icon onContextMenu={props.onContextMenu} img={props.img} onClick={props.onClick} className={className} size="24px"/>
+		<Icon onContextMenu={props.onContextMenu} img={props.img} onClick={props.disabled ? null : props.onClick} className={className} size="24px"/>
 	)
 }
 
 function CivilAbility(props) {
 	let func = (increment) => {game.changeCivil(props.id, increment)}
 	let disabledDecrement = game.app.state.civils[props.id] === 0
-	let disabledIncrement = game.app.state.civils[props.id] === 10 // todo change later when we add equips
 
 	return (
 	<div className={"flexbox-horizontal margin-vertical " + props.className} style={{width: "95%"}}>
@@ -33,7 +32,7 @@ function CivilAbility(props) {
 
 			<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}}>
 				<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
-				<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
+				<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={false}/>
 			</div>
 		</div>
 		)
@@ -50,6 +49,9 @@ class Ability extends React.Component {
 		if (game.app.state.lw && props.id !== "Polymorph")
 			naturalAmount *= 2
 		let amountText = utils.format((app.stats.flexStat[props.id].amount > 0 ? "{0} (+{1})" : "{0}"), naturalAmount, app.stats.flexStat[props.id].amount)
+
+		let disabledDecrement = game.app.state.abilities[props.id] === 0
+		let disabledIncrement = game.app.state.abilities[props.id] >= ((game.app.state.lw) ? 5 : 10)
 
 		let totalAmount = naturalAmount + app.stats.flexStat[props.id].amount
 
@@ -86,8 +88,8 @@ class Ability extends React.Component {
 				</div>
 
 				<div className="flexbox-horizontal flex-align-centered" style={{width: "20%"}}>
-					<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}}/>
-					<IncrementButton img={"add_point"} onClick={()=>{func(1)}}/>
+					<IncrementButton img={"remove_point"} onClick={()=>{func(-1)}} disabled={disabledDecrement}/>
+					<IncrementButton img={"add_point"} onClick={()=>{func(1)}} disabled={disabledIncrement}/>
 				</div>
 			</div>
 	}
@@ -197,7 +199,7 @@ class Attribute extends React.Component {
 
 	render() {
 		let props = this.props
-		let disabledIncrement = game.attributeIsMaxed(props.id) || game.totalAttributePointsSpent >= game.maxNaturalAttributePoints
+		let disabledIncrement = game.attributeIsMaxed(props.id)
 		let disabledDecrement = game.app.state.attributes[props.id] === 0
 
 		let func = (increment) => {
@@ -228,7 +230,7 @@ class Attribute extends React.Component {
 						<Tooltip content={tooltip} placement="bottom">
 							<Text text={attrName}/>
 						</Tooltip>
-						<Tooltip content={utils.format("Attribute Points invested: {0}", game.app.state.attributes[props.id])}>
+						<Tooltip content={utils.format("Attribute Points manually invested: {0}/{1}", game.app.state.attributes[props.id], game.app.state.lw ? 15 : 30)}>
 							<Text text={utils.format("{0}", total)}/>
 						</Tooltip>
 					</div>
