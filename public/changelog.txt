@@ -5,6 +5,7 @@
 - Core nodes now count towards points spent
 - Ability +/- buttons now grey out when unavailable
 - Civils are no longer capped
+- Link and delete buttons now have a tooltip
 - You can now go into the negatives with your attribute point spending (but you still cannot go above 30 manually invested in each attribute)
 - Fixed LW checkbox not immediately updating some displays
 - Fixed portraits having 1 row of erroneous pixels at the bottom

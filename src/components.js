@@ -154,6 +154,7 @@ export class Config extends React.Component {
 			<div className="flexbox-vertical">
 				<hr/>
 				<Text text="App made by PinewoodPip in React."/>
+				<a href="https://github.com/PinewoodPip/ee2buildplanner">Github Repository</a>
 				<Text text="Epic Encounters 2 mod and app design help by Ameranth &amp; Elric."/>
 				<Text text="Most graphic assets made by Larian."/>
 				<hr/>

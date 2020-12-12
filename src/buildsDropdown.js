@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import { Icon, Container, Text, FileButton, Flourish } from "./genericComponents.js"
+import { Icon, Container, Text, FileButton, Flourish, Tooltip } from "./genericComponents.js"
 import { game } from "./App.js"
 import * as utils from "./utils.js"
 import * as miscData from "./miscData.js"
@@ -25,7 +25,9 @@ class Build extends React.Component {
         }
 
         let linkButton = props.isForGallery ? (
-            <Icon className="button absolute-center-vertical" img="copy_link" onClick={(e)=>{e.stopPropagation(); props.app.copyBuildLink(props.featuredBuildId)}} size="32px" style={{right: "0px", outline: "1px solid gray"}}/>
+            <Tooltip content="Copy Link">
+                <Icon className="button absolute-center-vertical" img="copy_link" onClick={(e)=>{e.stopPropagation(); props.app.copyBuildLink(props.featuredBuildId)}} size="32px" style={{right: "0px", outline: "1px solid gray"}}/>
+            </Tooltip>
         ) : null
 
         let roleDisplay = <div className="role-display flexbox-horizontal">
@@ -68,7 +70,9 @@ class Build extends React.Component {
 
                 {/* buttons that appear on hover */}
                 {this.state.beingHovered && !props.undeletable ? (
-                    <Icon className="button absolute-center-vertical" img={"trash_can"} onClick={deleteBuild.bind(this)} size="32px" style={{right: "0px"}}/>
+                    <Tooltip content="Delete Build">
+                        <Icon className="button absolute-center-vertical" img={"trash_can"} onClick={deleteBuild.bind(this)} size="32px" style={{right: "0px"}}/>
+                    </Tooltip>
                 ) : null}
 
                 {this.state.beingHovered && props.isForGallery ? (
