@@ -14,7 +14,6 @@
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
 - most artifacts do not have periods at the end of their descriptions
 - on low width resolutions, the new build button is only clickable from the left
-- some rune boosts are shown twice on tooltip
 - some places don't have correct rounding, showing a ridiculous amount of decimals
 - you can put newlines in the character and author name fields
 - changing subnodes sometimes crashes the app
