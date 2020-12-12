@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ee2buildplanner/static/css/main.98a4f0ac.chunk.css",
-    "main.js": "/ee2buildplanner/static/js/main.fc36ebbf.chunk.js",
-    "main.js.map": "/ee2buildplanner/static/js/main.fc36ebbf.chunk.js.map",
+    "main.css": "/ee2buildplanner/static/css/main.38e3662e.chunk.css",
+    "main.js": "/ee2buildplanner/static/js/main.b65e746b.chunk.js",
+    "main.js.map": "/ee2buildplanner/static/js/main.b65e746b.chunk.js.map",
     "runtime-main.js": "/ee2buildplanner/static/js/runtime-main.4c315aab.js",
     "runtime-main.js.map": "/ee2buildplanner/static/js/runtime-main.4c315aab.js.map",
     "static/css/2.3ca2e7a5.chunk.css": "/ee2buildplanner/static/css/2.3ca2e7a5.chunk.css",
-    "static/js/2.6ed143a7.chunk.js": "/ee2buildplanner/static/js/2.6ed143a7.chunk.js",
-    "static/js/2.6ed143a7.chunk.js.map": "/ee2buildplanner/static/js/2.6ed143a7.chunk.js.map",
+    "static/js/2.d78debca.chunk.js": "/ee2buildplanner/static/js/2.d78debca.chunk.js",
+    "static/js/2.d78debca.chunk.js.map": "/ee2buildplanner/static/js/2.d78debca.chunk.js.map",
     "index.html": "/ee2buildplanner/index.html",
     "static/css/2.3ca2e7a5.chunk.css.map": "/ee2buildplanner/static/css/2.3ca2e7a5.chunk.css.map",
-    "static/css/main.98a4f0ac.chunk.css.map": "/ee2buildplanner/static/css/main.98a4f0ac.chunk.css.map",
-    "static/js/2.6ed143a7.chunk.js.LICENSE.txt": "/ee2buildplanner/static/js/2.6ed143a7.chunk.js.LICENSE.txt",
+    "static/css/main.38e3662e.chunk.css.map": "/ee2buildplanner/static/css/main.38e3662e.chunk.css.map",
+    "static/js/2.d78debca.chunk.js.LICENSE.txt": "/ee2buildplanner/static/js/2.d78debca.chunk.js.LICENSE.txt",
     "static/media/363.png": "/ee2buildplanner/static/media/363.0a31eff1.png",
     "static/media/365.png": "/ee2buildplanner/static/media/365.74eeeae0.png",
     "static/media/367.png": "/ee2buildplanner/static/media/367.d7d287ae.png",
@@ -98,8 +98,8 @@
     "static/media/copy_link.svg": "/ee2buildplanner/static/media/copy_link.3e969da2.svg",
     "static/media/dagger.png": "/ee2buildplanner/static/media/dagger.8d848e43.png",
     "static/media/derpy_bald_guy.png": "/ee2buildplanner/static/media/derpy_bald_guy.d6c2b026.png",
-    "static/media/dwarf_f.png": "/ee2buildplanner/static/media/dwarf_f.9f2530b1.png",
-    "static/media/dwarf_m.png": "/ee2buildplanner/static/media/dwarf_m.439b7339.png",
+    "static/media/dwarf_f.png": "/ee2buildplanner/static/media/dwarf_f.b27a03fd.png",
+    "static/media/dwarf_m.png": "/ee2buildplanner/static/media/dwarf_m.643b7014.png",
     "static/media/fane.png": "/ee2buildplanner/static/media/fane.3e5f3e99.png",
     "static/media/frame.png": "/ee2buildplanner/static/media/frame.9cf80e43.png",
     "static/media/frame_corner_bottom_left.png": "/ee2buildplanner/static/media/frame_corner_bottom_left.fe0b986b.png",
@@ -114,6 +114,7 @@
     "static/media/ifan.png": "/ee2buildplanner/static/media/ifan.bda56a22.png",
     "static/media/import.svg": "/ee2buildplanner/static/media/import.e060bc66.svg",
     "static/media/incarnate.png": "/ee2buildplanner/static/media/incarnate.70efc54b.png",
+    "static/media/knight.png": "/ee2buildplanner/static/media/knight.5fc783d9.png",
     "static/media/lohse.png": "/ee2buildplanner/static/media/lohse.90710622.png",
     "static/media/memory_white.png": "/ee2buildplanner/static/media/memory_white.8e7f6792.png",
     "static/media/obama.png": "/ee2buildplanner/static/media/obama.49a7faaa.png",
@@ -125,8 +126,8 @@
   "entrypoints": [
     "static/js/runtime-main.4c315aab.js",
     "static/css/2.3ca2e7a5.chunk.css",
-    "static/js/2.6ed143a7.chunk.js",
-    "static/css/main.98a4f0ac.chunk.css",
-    "static/js/main.fc36ebbf.chunk.js"
+    "static/js/2.d78debca.chunk.js",
+    "static/css/main.38e3662e.chunk.css",
+    "static/js/main.b65e746b.chunk.js"
   ]
 }

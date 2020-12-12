@@ -1,2 +1,18 @@
+--- 12th Dec 20 (v0.9.1)
+- Improved tooltip visuals
+- Aspect subnodes & embodiment family buttons now show the pointer cursor when hovered over
+- Keywords panel now shows the basic effect of keywords
+- Core nodes now count towards points spent
+- Ability +/- buttons now grey out when unavailable
+- Civils are no longer capped
+- Link and delete buttons now have a tooltip
+- You can now go into the negatives with your attribute point spending (but you still cannot go above 30 manually invested in each attribute)
+- Fixed LW checkbox not immediately updating some displays
+- Fixed portraits having 1 row of erroneous pixels at the bottom
+- Replaced Obama portrait choice with a knight
+    - Gentlemen who have previously bestowed Obama upon their builds will be able to keep him
+
+- Cleaned up the icon exporter python script, available here: https://github.com/PinewoodPip/ee2buildplanner/blob/master/public/Scripts/Icons/icon_ripper.py
+
 --- 9th Dec 20 (v0.9.0)
 - Initial release for testing.

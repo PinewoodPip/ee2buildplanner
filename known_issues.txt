@@ -14,11 +14,10 @@
 - context menu for subnodes has weird clickboxes (I think the issue is that only the text is clickable, not the whole div)
 - most artifacts do not have periods at the end of their descriptions
 - on low width resolutions, the new build button is only clickable from the left
-- some rune boosts are shown twice on tooltip
 - some places don't have correct rounding, showing a ridiculous amount of decimals
 - you can put newlines in the character and author name fields
-- changing +embodiment subnodes sometimes crashes the app
-	no idea how to reproduce this consistently
+- changing subnodes sometimes crashes the app
+	no idea how to reproduce this consistently. This might be only happening in a dev environment when a file is reloaded with a context menu open
 
 ------------ PLANNED FEATURES ------------
 - Drag and drop reordering for skills, artifacts and aspects
@@ -28,3 +27,5 @@
 - Armor runes
 - Revamped, clearer stats screen
 - Cleaned-up releases of the scripts used to parse game data
+- Vitality calculations?
+- Show keyword basic effects in keywords screen.

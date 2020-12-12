@@ -15,6 +15,10 @@ ALLOWED_SIZES = ["Giant"]
 
 # excluded are masterwork, maxvit
 
+# these stats are qualifiers in the data files and not absolute values
+QUALIFIERS = ["STRENGTH", "FINESSE", "INTELLIGENCE", "CONSTITUTION", "MEMORY", "WITS"]
+QUALIFIER_VALUE = 2 # thankfully, all the qualifiers on rune boosts translate to the same value in game: +2 points.
+
 # dict to translate weapon boosts to flexStat IDs
 REAL_STAT_IDS = {
     "StrengthBoost": "STRENGTH",
@@ -535,7 +539,7 @@ currentWeapon = None
 for txt in [0, 1]:
     f = files[txt]
     boostType = boostTypes[txt]
-    # todo distinguish between wep boosts and armor boosts
+
     for line in f.readlines():
         if weaponEntryRegex.search(line):
             currentWeapon = weaponEntryRegex.search(line).groupdict()["id"]
@@ -610,6 +614,25 @@ for key in statuses:
             }
         ]
 
+def addRegularBoosts(rune, key):
+    if key + "Effect_boosts" not in rune:
+        return
+        
+    for statId in rune[key + "Effect_boosts"]:
+        if statId in REAL_STAT_IDS:
+            stat = REAL_STAT_IDS[statId]
+            value = int(rune[key + "Effect_boosts"][statId])
+
+            # translate qualifiers to real value
+            if stat in QUALIFIERS:
+                value = QUALIFIER_VALUE
+            
+            rune["boosts"][key] += [{
+                "type": "flexStat",
+                "id": stat,
+                "value": value
+            }]
+
 # convert rune boosts to the format we use in the app
 for key in runes:
     rune = runes[key]
@@ -627,22 +650,9 @@ for key in runes:
             rune["boosts"]["armor"] += DELDUMS[rune["real_armorEffect"]["prop"]]
         rune["armorBoostString"] = statuses[rune["real_armorEffect"]["prop"]]
 
-    if "weaponEffect_boosts" in rune:
-        for statId in rune["weaponEffect_boosts"]:
-            if statId in REAL_STAT_IDS:
-                rune["boosts"]["weapon"] += [{
-                    "type": "flexStat",
-                    "id": REAL_STAT_IDS[statId],
-                    "value": int(rune["weaponEffect_boosts"][statId])
-                }]
-    if "armorEffect_boosts" in rune:
-        for statId in rune["armorEffect_boosts"]:
-            if statId in REAL_STAT_IDS:
-                rune["boosts"]["armor"] += [{
-                    "type": "flexStat",
-                    "id": REAL_STAT_IDS[statId],
-                    "value": int(rune["armorEffect_boosts"][statId])
-                }]
+
+    addRegularBoosts(rune, "weapon")
+    addRegularBoosts(rune, "armor")
 
     # remove keys we do not need in the final output
     scaffoldingKeys = ["weaponEffect_boosts", "armorEffect_boosts", "real_weaponEffect", "real_armorEffect", "armorEffect", "weaponEffect"]
