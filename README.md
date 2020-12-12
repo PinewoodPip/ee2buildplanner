@@ -7,9 +7,9 @@ Hosted at <https://www.pinewood.team/ee2buildplanner/>
 Features:
 - Skill viewer, featuring correctly formatted tooltips with accurate in-game stats
 - Ascension functionality:
-- - Add aspects and choose subnodes
-- - View node effects, embodiment requirements and rewards
-- - View all of your build's keyword activators and mutators at quick glance - including keyword boons from Artifacts
+    - Add aspects and choose subnodes
+    - View node effects, embodiment requirements and rewards
+    - View all of your build's keyword activators and mutators at quick glance - including keyword boons from Artifacts
 - Attribute/ability/civils/talents trackers
 - Artifacts and runes
 - Tally counters for stat boosts from Ascension, attributes, etc.
