@@ -6,6 +6,9 @@
 - Core nodes now count towards points spent
 - Ability +/- buttons now grey out when unavailable
 - Civils are no longer capped
+- Coatings now say they add level-based damage instead of weapon-based
+- Fixed the way chaos damage is displayed
+- Fixed Closed Circuit description
 - Link and delete buttons now have a tooltip
 - You can now go into the negatives with your attribute point spending (but you still cannot go above 30 manually invested in each attribute)
 - Fixed LW checkbox not immediately updating some displays

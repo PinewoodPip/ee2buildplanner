@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ee2buildplanner/static/css/main.8d4d0a76.chunk.css",
+    "main.css": "/ee2buildplanner/static/css/main.1fad5691.chunk.css",
     "main.js": "/ee2buildplanner/static/js/main.5cbd96d4.chunk.js",
     "main.js.map": "/ee2buildplanner/static/js/main.5cbd96d4.chunk.js.map",
     "runtime-main.js": "/ee2buildplanner/static/js/runtime-main.4c315aab.js",
@@ -10,7 +10,7 @@
     "static/js/2.fb3b286d.chunk.js.map": "/ee2buildplanner/static/js/2.fb3b286d.chunk.js.map",
     "index.html": "/ee2buildplanner/index.html",
     "static/css/2.3ca2e7a5.chunk.css.map": "/ee2buildplanner/static/css/2.3ca2e7a5.chunk.css.map",
-    "static/css/main.8d4d0a76.chunk.css.map": "/ee2buildplanner/static/css/main.8d4d0a76.chunk.css.map",
+    "static/css/main.1fad5691.chunk.css.map": "/ee2buildplanner/static/css/main.1fad5691.chunk.css.map",
     "static/js/2.fb3b286d.chunk.js.LICENSE.txt": "/ee2buildplanner/static/js/2.fb3b286d.chunk.js.LICENSE.txt",
     "static/media/363.png": "/ee2buildplanner/static/media/363.0a31eff1.png",
     "static/media/365.png": "/ee2buildplanner/static/media/365.74eeeae0.png",
@@ -127,7 +127,7 @@
     "static/js/runtime-main.4c315aab.js",
     "static/css/2.3ca2e7a5.chunk.css",
     "static/js/2.fb3b286d.chunk.js",
-    "static/css/main.8d4d0a76.chunk.css",
+    "static/css/main.1fad5691.chunk.css",
     "static/js/main.5cbd96d4.chunk.js"
   ]
 }
