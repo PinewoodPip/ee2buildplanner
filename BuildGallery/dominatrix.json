@@ -1,52 +1,77 @@
 {
   "metadata": {
-    "name": "Dominatrix",
+    "name": "The Dominatrix",
     "portrait": "human_f",
-    "author": "PinewoodPip",
+    "author": "Pip",
     "role": "dps",
     "keywords": [
       "Wither",
-      "Adaptation",
-      "Prosperity"
+      "Adaptation"
     ],
     "format": 0,
     "appVersion": {
-      "major": 0,
-      "minor": 1,
+      "major": 1,
+      "minor": 0,
       "revision": 0
     }
   },
-  "id": "ce76709e-252e-4fcd-bae2-5bfacfb8de46",
-  "name": "Dominatrix",
+  "id": "978cce31-a925-4139-aa49-15bc7559393e",
+  "name": "The Dominatrix",
   "portrait": "human_f",
   "customPortrait": null,
   "origin": "custom",
-  "weapons": {"mainhand": "dagger", "offhand": "dagger"},
   "physique": {
     "race": "human",
     "gender": "male",
     "lifeType": "alive"
   },
-  "text": "================================\n\nThe Dominatrix is a DPS Wither build which unleashes the true power of SI3 Fire Whip, shredding entire encounters with no mercy and leaving any stragglers debilitated from Wither.\n\nThis is a very fragile glass cannon build which relies on nuking the enemy in one fell swoop.\n\n=============Rollout============\n\nLike other mage builds, the Dominatrix needs Source Rushing to be most effective. Your first turn should be spent casting Prototrophize as well as using Source Vampirism. You should have enough initiative to go first or second, but you should delay your first turn so your teammates can prepare a corpse for you to munch.\n\nTODO REST OF DESCRIPTION",
+  "text": "================================\n\nThe Dominatrix is a fragile DPS Wither Mage build which unleashes the true power of SI3 Fire Whip, shredding entire encounters with no mercy and leaving any stragglers debilitated from Wither.\n\n\n============Ascension===========\n\nYou can start building the Dominatrix once you unlock your third SP slot, which can be done as soon as you reach Reaper's Coast. Start by rushing Decay for Haruspicy and use it for generic source-rushing spellcasting until you can get Imp's Wither trigger - then you can start transitioning into the build's final form:\n\n- A full Core to gain Prototrophize and +2 to all Embodiments\n- Serpent to amass critical chance\n- Imp to gain this build's signature Wither trigger (on Subjugated), as well as Vulnerable II for Wither.\n- Supplicant to gain +Power from Adaptation. This only works well if you have other party members that can give you stacks, or a totem summoner which will proc Supplicant 3.1 (+2 Adaptation stacks when an ally dies). If you don't, pick Accursed Vessel instead for utility.\n- Decay, which grants incredibly powerful Wither debuffs: -Constitution (reducing enemy health massively), -Accuracy, Corroding (a VERY powerful DoT), as well as +20% invested Power.\n\nIt's a bit unlikely that you will run into situations where an enemy lives long enough for -Accuracy to be relevant, but if you do (against some bosses), it will be of great help - often you'll make enemies reach the 5% lower bound on hit chance. Corroding will also drain away their physical armor and vitality quite nicely.\n\nOnce you have everything else, dip into Death to gain another +20% invested Power in the lategame.\n\n\n======Rollout & Playstyle=======\n\nLike other mage builds, the Dominatrix needs Source Rushing to be most effective. Your first turn should be spent casting Prototrophize as well as using Source Vampirism. You should have enough initiative to go first or second, but you should delay your first turn so your teammates can prepare a corpse for you to munch. Be sure to also get Hasted and Clear-Minded by your allies.\n\nAdditionally, you will need a fire surface for you to stand on, for Elemental Affinity. You can create this easily with grenades or with a lizard's Fire Breath. Avoid Fireballing yourself to accomplish this, as it will surely result in your own death.\n\nWhen the second round starts, your Aero party member should cast Vacuum Aura SI3 for best results. When the Dominatrix's turn comes, you can SI3 Fire Whip and start shredding the enemy team. Simply keep spamming Fire Whip until you're done; it should not take long to kill everyone, especially if you've grouped them up with Vacuum Aura. If you have Adrenaline, use it to finish off weak enemies if you run out of AP.\n\nMake sure to directly target enemies when possible, as doing so activates the extra bonus damage from Pyrokinetic. Also try to boost your AP recovery as high as possible (Favorable Wind SI3 and Haste SI3) to maximize whips per turn.\n\n=========Stats & Talents========\nPower and Wits (for Initiative) will be your main attributes. You must go for 100% critical chance, especially if using Thirst.\n\nBe sure to pump Pyrokinetic as high as possible, and remember that directly targetting enemies with Pyro spells will grant you extra damage. Do not prioritize doing this over getting as many enemies within your whip's range as possible, however.\n\nUse leftover ability points on Polymorph to gain more attribute points, or other schools for utility (see the skills section).\n\nAs for talents, you'll want:\n- Inconspicuous, so you can start the battle invisible. Once you start whipping, aggro won't be a problem thanks to Subjugated, but during the first round you'll want to stay entirely concealed.\n- Glass Cannon, for maximum turn AP. You'll never be hit, so the downsides do not matter.\n- Elemental Affinity, to reduce the cost of your whips by 1 AP. Very important.\n- Savage Sortilege, obviously.\n\nOther good talents to have (go for these if you become Sworn):\n- Bigger and Better\n- All Skilled Up (if you want some utility skills; might be good if you have uncooperative allies)\n- What a Rush, especially when playing with Pariah\n\nYou might also want to get +2 Power from Spider's Kiss as well as +5 Power from the academy in Nameless Isle.\n\nAstrologer's Gaze is useless for this build; you'll be dishing more than enough damage for maxing Harried stacks.\n\n=============Gear============\nYou'll want to be dual-wielding Artifacts to gain access to as many rune slots as possible.\nThe best runes for the Dominatrix to have are:\n- Bloodstone, for +invested Power\n- Malachite, for +15% crit\n- Obsidian, for magic resistance reduction\n- Silver, for more Wits (not 100% necessary)\n\nThe best weapon Artifacts for this build are Thirst (AP cost reduction) and Pariah (more invested Power).\n\nIf you use Thirst, this build skyrockets in power with just a bit extra effort. Thirst grants 1 AP every time an action deals a crit on any bleeding enemy. This means every Fire Whip cast that hits a bleeding enemy will effectively cost 1 AP less, allowing you to whip for just 1 AP if you have Elemental Affinity.\n\nFor applying bleeding to enemies, the easiest options are Raining Blood and Nailbomb Grenades. Preferably you'll want your other party members to apply Bleeding for you, so you can have as much AP as possible for whipping.\n\nAs for gear modifiers, you'll want to max out critical damage to +50% on your main weapon (this stat does not work in offhands). If you want to, you can also get +4 Pyrokinetic and +Power on as much gear as possible. If you have to use grenades to create fire or apply bleeding (either yourself or an ally), you should get the grenade recovery modifier which appears on belts and gloves.\n\nAs for armor Artifacts, the following are good to look out for:\nOnslaught, Drog's Luck, Jaguar, Ouroboros (if you have to throw a grenade on yourself for a fire surface), Urgency, Prophecy (if you don't go first in initiative, or if you use Morning Person)\nFor allies: Necromancer's Raiment, Bounty Hunter, Ether Tide (wouldn't 100% recommend unless you're playing this build casually, as it will displace enemies if you're using Vacuum Aura SI3),\n\n=============Skills============\nFire Whip, Adrenaline, Haste and Peace of Mind are all you need, though preferably you'll have your other party members apply the buffs for you.\n\nIf you have ability points to spare, you could also get Black Shroud (to help other party members), Earthquake (for mass-Terrified) and Worm Tremor (for mass-Squelched, though Vacuum Aura SI3 will already accomplish this). Your innate memory slots from levelling will be enough to slot all of these. If you get extra memory from gear, consider slotting in some status cleansers in case other party members need them.\n\nEmpowered Incandescent Ray deals less damage per AP (even with Thirst), so it's not even viable as a single-target alternative.",
   "lw": false,
+  "weapons": {
+    "mainhand": "dagger",
+    "offhand": "dagger"
+  },
   "skills": [
     "Target_FireWhip",
     "Target_Haste",
     "Target_BurnMyEyes",
     "Shout_Adrenaline",
     "Target_BloatedCorpse",
-    "Rain_Blood",
-    "Target_BlackShroud"
+    "Target_BlackShroud",
+    "Rain_Blood"
   ],
   "artifacts": [
-    "thirst"
+    "thirst",
+    "pariah",
+    "onslaught",
+    "urgency",
+    "thejaguar",
+    "drogsluck"
+  ],
+  "runes": [
+    {
+      "id": "Obsidian_Giant",
+      "slot": "weapon"
+    },
+    {
+      "id": "Bloodstone_Giant",
+      "slot": "weapon"
+    },
+    {
+      "id": "Malachite_Giant",
+      "slot": "weapon"
+    },
+    {
+      "id": "Silver_Giant",
+      "slot": "weapon"
+    }
   ],
   "aspects": [
     {
       "family": "entropy",
       "id": "Decay",
       "nodes": [
-        null,
+        "1",
         null,
         "2",
         "1",
@@ -69,19 +94,9 @@
       "id": "TheSupplicant",
       "nodes": [
         "2",
-        "1",
+        "0",
         "0",
         "0"
-      ]
-    },
-    {
-      "family": "form",
-      "id": "TheBasilisk",
-      "nodes": [
-        "2",
-        "1",
-        "1",
-        "2"
       ]
     },
     {
@@ -99,7 +114,7 @@
       "nodes": [
         "0",
         "3",
-        null,
+        "2",
         null,
         null
       ]
@@ -118,7 +133,7 @@
     "pwr": 30,
     "con": 0,
     "mem": 0,
-    "wits": 23
+    "wits": 28
   },
   "abilities": {
     "DualWielding": 0,
@@ -132,7 +147,7 @@
     "WaterSpecialist": 0,
     "EarthSpecialist": 0,
     "Necromancy": 0,
-    "RogueLore": 0,
+    "RogueLore": 1,
     "RangerLore": 0,
     "FireSpecialist": 10,
     "Summoning": 0,
@@ -141,7 +156,7 @@
   },
   "civils": {
     "thievery": 0,
-    "luckycharm": 0,
+    "luckycharm": 10,
     "bartering": 0,
     "sneaking": 5,
     "persuasion": 0,
@@ -150,9 +165,10 @@
   },
   "talents": [
     "elementalAffinity",
-    "hothead",
     "inconspicuous",
     "savageSortilege",
-    "allSkilledUp"
+    "biggerAndBetter",
+    "glassCannon",
+    "whatARush"
   ]
 }

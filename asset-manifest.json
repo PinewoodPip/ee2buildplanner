@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ee2buildplanner/static/css/main.8d4d0a76.chunk.css",
-    "main.js": "/ee2buildplanner/static/js/main.6fc47cec.chunk.js",
-    "main.js.map": "/ee2buildplanner/static/js/main.6fc47cec.chunk.js.map",
+    "main.js": "/ee2buildplanner/static/js/main.5cbd96d4.chunk.js",
+    "main.js.map": "/ee2buildplanner/static/js/main.5cbd96d4.chunk.js.map",
     "runtime-main.js": "/ee2buildplanner/static/js/runtime-main.4c315aab.js",
     "runtime-main.js.map": "/ee2buildplanner/static/js/runtime-main.4c315aab.js.map",
     "static/css/2.3ca2e7a5.chunk.css": "/ee2buildplanner/static/css/2.3ca2e7a5.chunk.css",
@@ -128,6 +128,6 @@
     "static/css/2.3ca2e7a5.chunk.css",
     "static/js/2.fb3b286d.chunk.js",
     "static/css/main.8d4d0a76.chunk.css",
-    "static/js/main.6fc47cec.chunk.js"
+    "static/js/main.5cbd96d4.chunk.js"
   ]
 }
