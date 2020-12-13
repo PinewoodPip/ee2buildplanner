@@ -1,5 +1,6 @@
---- 12th Dec 20 (v0.9.1)
+--- 13th Dec 20 (v0.9.1)
 - Improved tooltip visuals
+- Added armor runes
 - Aspect subnodes & embodiment family buttons now show the pointer cursor when hovered over
 - Keywords panel now shows the basic effect of keywords
 - Core nodes now count towards points spent
