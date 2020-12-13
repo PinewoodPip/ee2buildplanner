@@ -1,6 +1,6 @@
 {
   "name": "ee2buildplanner",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "http://pinewoodpip.github.io/ee2buildplanner/",
   "private": true,
   "dependencies": {

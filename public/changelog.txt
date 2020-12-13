@@ -1,4 +1,4 @@
---- 13th Dec 20 (v0.9.1)
+--- 13th Dec 20 (v1.0.0) - Full release !
 - Improved tooltip visuals
 - Added armor runes
 - Aspect subnodes & embodiment family buttons now show the pointer cursor when hovered over
@@ -12,6 +12,8 @@
 - Fixed portraits having 1 row of erroneous pixels at the bottom
 - Replaced Obama portrait choice with a knight
     - Gentlemen who have previously bestowed Obama upon their builds will be able to keep him
+
+- Added Dominatrix build to the gallery
 
 - Cleaned up the icon exporter python script, available here: https://github.com/PinewoodPip/ee2buildplanner/blob/master/public/Scripts/Icons/icon_ripper.py
 

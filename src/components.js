@@ -157,6 +157,7 @@ export class Config extends React.Component {
 				<a href="https://github.com/PinewoodPip/ee2buildplanner">Github Repository</a>
 				<Text text="Epic Encounters 2 mod and app design help by Ameranth &amp; Elric."/>
 				<Text text="Most graphic assets made by Larian."/>
+				<Text text="Special thanks to the EE community. <3"/>
 				<hr/>
 				<div className="flexbox-horizontal flex-align-centered">
 					<Text text={utils.format("App version: {0}", APP_DATE)}/>

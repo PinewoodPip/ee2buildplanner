@@ -21,7 +21,7 @@ import { InstrumentsPopup } from './instruments';
 const axios = require('axios').default;
 
 const SAVE_PROTOCOL = 0
-const APP_VERSION = {major: 0, minor: 9, revision: 1}
+const APP_VERSION = {major: 1, minor: 0, revision: 0}
 export const APP_DATE = "13th Dec 20"
 export const MOD_VERSION = "Patch 87 (2nd Nov 20)"
 const URL_PROTOCOL = 0

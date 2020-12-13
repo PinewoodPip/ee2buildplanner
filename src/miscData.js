@@ -1,5 +1,4 @@
 export const featuredBuilds = [
-	"test",
 	"dominatrix",
 ]
 
@@ -1546,7 +1545,7 @@ export const stats = {
 			display: "Invested Finesse: +{0}%"
 		},
 		PercAttributeIncrease_Intelligence: {
-			display: "Inested Power: +{0}%"
+			display: "Invested Power: +{0}%"
 		},
 		PercAttributeIncrease_Constitution: {
 			display: "Invested Constitution: +{0}%"

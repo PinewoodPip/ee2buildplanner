@@ -18,6 +18,7 @@
 - you can put newlines in the character and author name fields
 - changing subnodes sometimes crashes the app
 	no idea how to reproduce this consistently. This might be only happening in a dev environment when a file is reloaded with a context menu open
+- Attributes from runes count as invested
 
 ------------ PLANNED FEATURES ------------
 - Drag and drop reordering for skills, artifacts and aspects
@@ -25,5 +26,7 @@
 - Slide-in animation for sidebars
 - Equipment menu where you can manage equipment modifiers and runes
 - Revamped, clearer stats screen
+- A way to make the text field fullscreen for easier reading
 - Cleaned-up releases of the scripts used to parse game data
+- Show investment bonuses when you hover over the attributes in the attributes panel
 - Vitality calculations?
