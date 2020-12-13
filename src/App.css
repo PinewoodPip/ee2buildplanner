@@ -393,18 +393,9 @@ hr {width: 85%;}
   height: 100%;
 }
 
-.icon {
-  /* border: 1px darkslategray solid; */
-}
-
-.skill-icon {
-  /* border: 3px darkslategray solid; */
-  /* height: "64px"; */
-}
-
 .skill-selected {
-  outline: 2px lightseagreen solid;
-  background-color: lightseagreen;
+  outline: 2px rgb(116, 116, 116) solid;
+  background-color:  rgb(116, 116, 116);
 }
 
 .skill-icon:hover {
@@ -412,10 +403,6 @@ hr {width: 85%;}
   background-color: rgb(70, 70, 70);
   filter: brightness(120%);
   cursor: pointer;
-}
-
-.skill-icon:hover img {
-  /* filter: brightness(150%); */
 }
 
 .skillbook {

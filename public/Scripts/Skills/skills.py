@@ -163,7 +163,7 @@ hiddenSkills = [
     
     "Shout_AMER_Core_GenerateSource",
 
-    "Shout_ElectricFence", # old closed circuit spell
+    "Shout_ElectricFence_NEW", # old closed circuit spell
     "Target_DemonicBargain_Wealth",
     "Summon_Cat",
     "Summon_Condor",
@@ -426,7 +426,7 @@ def replaceParamsInDescription(skill):
                     if "Damage Multiplier" in realSource.keys():
                         damage += realSource["Damage Multiplier"]
                     elif "Damage" in realSource.keys(): # used in weapon boosts
-                        damage += "(Weapon-based) "
+                        damage += "(Level-based) "
                     else:
                         damage += "(UNKNOWN)"
 
@@ -440,9 +440,15 @@ def replaceParamsInDescription(skill):
                         damage += "% Weapon Damage"
                     else:
                         if "DamageType" in realSource.keys():
-                            damage += "% " + realSource["DamageType"] + " Damage"
+                            if realSource["DamageType"] == "Chaos":
+                                damage += "% "
+                            else:
+                                damage += "% " + realSource["DamageType"] + " Damage"
                         elif "Damage Type" in realSource.keys():
-                            damage += realSource["Damage Type"] + " Damage"
+                            if realSource["Damage Type"] == "Chaos":
+                                damage += "% "
+                            else:
+                                damage += realSource["Damage Type"] + " Damage"
                         else:
                             damage += "UNKNOWN DAMAGE TYPE"
                     realValues.append(damage)
