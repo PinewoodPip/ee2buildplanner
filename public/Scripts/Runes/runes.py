@@ -1,5 +1,4 @@
-import re
-import json
+import re, json, copy
 
 data = open("Object.txt")
 weapons = open("Weapon.txt")
@@ -9,15 +8,10 @@ consumes = open("Status_CONSUME.txt")
 REMOVE_SCAFFOLDING_KEYS = True
 ALLOWED_SIZES = ["Giant"]
 
-# todo check viality boost
-# check why 1 bone rune does not have the boost in output
-# bone rune gives same vit?
-
-# excluded are masterwork, maxvit
 
 # these stats are qualifiers in the data files and not absolute values
 QUALIFIERS = ["STRENGTH", "FINESSE", "INTELLIGENCE", "CONSTITUTION", "MEMORY", "WITS"]
-QUALIFIER_VALUE = 2 # thankfully, all the qualifiers on rune boosts translate to the same value in game: +2 points.
+QUALIFIER_VALUE = 2 # thankfully, all the qualifiers on giant rune boosts translate to the same value in game: +2 points.
 
 # dict to translate weapon boosts to flexStat IDs
 REAL_STAT_IDS = {
@@ -32,10 +26,9 @@ REAL_STAT_IDS = {
     "Air": "AIRRESISTANCE",
     "Earth": "EARTHRESISTANCE",
     "Poison": "POISONRESISTANCE",
+    "Physical": "PHYSICALRESISTANCE",
     "Initiative": "INITIATIVE",
     "Leadership": "Leadership",
-    # "ArmorBoost": "PHYSICALARMORBOOST",
-    # "MagicArmorBoost": "MAGICARMORBOOST",
     "DualWielding": "DualWielding",
     "TwoHanded": "TwoHanded",
     "Perseverance": "Perseverance",
@@ -43,13 +36,16 @@ REAL_STAT_IDS = {
     "Ranged": "Ranged",
     "SingleHanded": "SingleHanded",
 
-    # "VitalityBoost": "VITALITYBOOST",
     "Piercing": "PIERCINGRESISTANCE",
     "PainReflection": "PainReflection",
     "DodgeBoost": "DODGEBOOST",
 
     "CriticalChance": "CRITICALCHANCE",
     "Movement": "MOVEMENT",
+
+    "VitalityBoost": "VitalityQualifierBoost",
+    "ArmorBoost": "LocalPhysArmorBoost",
+    "MagicArmorBoost": "LocalMagicArmorBoost",
 }
 
 # special modifiers handled by script. this dict assigns them the data format we use in the app
@@ -358,63 +354,63 @@ DELDUMS = {
         }
     ],
     # magic armor regen
-    "AMER_DELDUM_REGEN_MAGIC_4.5": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_MagicArmor",
-            "value": 4.5,
-        },
-    ],
-    "AMER_DELDUM_REGEN_MAGIC_6": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_MagicArmor",
-            "value": 6,
-        },
-    ],
-    "AMER_DELDUM_REGEN_MAGIC_7.5": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_MagicArmor",
-            "value": 7.5,
-        },
-    ],
-    "AMER_DELDUM_REGEN_MAGIC_9": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_MagicArmor",
-            "value": 9,
-        },
-    ],
-    # physical armor regen
-    "AMER_DELDUM_REGEN_PHYS_4.5": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_PhysicalArmor",
-            "value": 4.5,
-        },
-    ],
-    "AMER_DELDUM_REGEN_PHYS_6": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_PhysicalArmor",
-            "value": 6,
-        },
-    ],
-    "AMER_DELDUM_REGEN_PHYS_7.5": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_PhysicalArmor",
-            "value": 7.5,
-        },
-    ],
-    "AMER_DELDUM_REGEN_PHYS_9": [
-        {
-            "type": "extendedStat",
-            "id": "Regen_PhysicalArmor",
-            "value": 9,
-        },
-    ],
+    # "AMER_DELDUM_REGEN_MAGIC_4.5": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_MagicArmor",
+    #         "value": 4.5,
+    #     },
+    # ],
+    # "AMER_DELDUM_REGEN_MAGIC_6": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_MagicArmor",
+    #         "value": 6,
+    #     },
+    # ],
+    # "AMER_DELDUM_REGEN_MAGIC_7.5": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_MagicArmor",
+    #         "value": 7.5,
+    #     },
+    # ],
+    # "AMER_DELDUM_REGEN_MAGIC_9": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_MagicArmor",
+    #         "value": 9,
+    #     },
+    # ],
+    # # physical armor regen
+    # "AMER_DELDUM_REGEN_PHYS_4.5": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_PhysicalArmor",
+    #         "value": 4.5,
+    #     },
+    # ],
+    # "AMER_DELDUM_REGEN_PHYS_6": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_PhysicalArmor",
+    #         "value": 6,
+    #     },
+    # ],
+    # "AMER_DELDUM_REGEN_PHYS_7.5": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_PhysicalArmor",
+    #         "value": 7.5,
+    #     },
+    # ],
+    # "AMER_DELDUM_REGEN_PHYS_9": [
+    #     {
+    #         "type": "extendedStat",
+    #         "id": "Regen_PhysicalArmor",
+    #         "value": 9,
+    #     },
+    # ],
     # resistance reduction
     "AMER_DELDUM_RUNERESIST_PHYSICAL_SMALL": [
         {
@@ -491,7 +487,7 @@ RUNES = [
 IGNORED_PROPERTIES = [
     "Value",
     "ExtraProperties",
-    "Physical",
+    # "Physical",
 ]
 
 runeRegex = re.compile('new entry "LOOT_Rune_(?P<material>.*)_(?P<size>.*)"')
@@ -593,7 +589,7 @@ for key in statuses:
     if formatting.search(statuses[key]):
         statuses[key] = formatting.search(statuses[key]).groupdict()["content"]
 
-# add investment statuses automatically
+# add investment and regen statuses automatically to the deldums dict
 investmentRegex = re.compile('AMER_DELDUM_(?P<attr>.*)PERC_(?P<value>.*)')
 attrs = {
     "STR": "Strength",
@@ -603,16 +599,60 @@ attrs = {
     "MEM": "Memory",
     "WIT": "Wits"
 }
+
+regenRegex = re.compile('AMER_DELDUM_REGEN_(?P<Type>.*)_(?P<Value>.*)')
+regenTypes = {
+    "ALLARMOR": [
+        {
+            "type": "extendedStat",
+            "id": "Regen_PhysicalArmor",
+            "value": None,
+        },
+        {
+            "type": "extendedStat",
+            "id": "Regen_MagicArmor",
+            "value": None,
+        },
+    ],
+    "LIFE": [
+        {
+            "type": "extendedStat",
+            "id": "Regen_Life",
+            "value": None,
+        },
+    ],
+    "PHYS": [
+        {
+            "type": "extendedStat",
+            "id": "Regen_PhysicalArmor",
+            "value": None,
+        },
+    ],
+    "MAGIC": [
+        {
+            "type": "extendedStat",
+            "id": "Regen_MagicArmor",
+            "value": None,
+        },
+    ]
+}
+
 for key in statuses:
     search = investmentRegex.search(key)
+    regenSearch = regenRegex.search(key)
     if search:
         DELDUMS[key] = [
             {
                 "type": "extendedStat",
                 "id": "PercAttributeIncrease_" + attrs[search.groupdict()["attr"]],
-                "value": int(search.groupdict()["value"])
+                "value": float(search.groupdict()["value"])
             }
         ]
+    elif regenSearch:
+        obj = regenTypes[regenSearch.groupdict()["Type"]]
+        for boost in obj:
+            boost["value"] = float(regenSearch.groupdict()["Value"])
+        DELDUMS[key] = obj
 
 def addRegularBoosts(rune, key):
     if key + "Effect_boosts" not in rune:
@@ -626,6 +666,10 @@ def addRegularBoosts(rune, key):
             # translate qualifiers to real value
             if stat in QUALIFIERS:
                 value = QUALIFIER_VALUE
+
+            # for some reason, movement here is expressed in cm
+            if stat == "MOVEMENT":
+                value = value / 100
             
             rune["boosts"][key] += [{
                 "type": "flexStat",

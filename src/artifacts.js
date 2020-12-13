@@ -47,7 +47,7 @@ export class Artifacts extends React.Component {
             let rune = game.runes[this.props.app.state.runes[x].id]
             let func = (e)=>{this.props.app.contextMenu(this.getContextMenu(this.props.app.state.runes[x], "runes"), e)}
 
-            runes.push(<Rune data={rune} key={-1-x} onClick={func} onContextMenu={func}/>)
+            runes.push(<Rune slot={this.props.app.state.runes[x].slot} data={rune} key={-1-x} onClick={func} onContextMenu={func}/>)
         }
 
         // if build has no artifacts, show a message explaining this element's purpose
@@ -82,7 +82,17 @@ export class ArtifactsPopup extends React.Component {
         }
 
         state.push({id: id, slot: slot,})
-        this.props.app.setState({runes: state})
+        this.props.app.setState({runes: state, contextMenu: null})
+    }
+
+    openRuneContextMenu(e, rune) {
+        let contextMenu = [
+            <Text key={0} text="Select option:"/>,
+            <Text key={1} text="Add as weapon rune" onClick={()=>{this.addRune(rune.id, "weapon")}}/>,
+            <Text key={2} text= "Add as armor rune" onClick={()=>{this.addRune(rune.id, "armor")}}/>,
+        ]
+
+        this.props.app.contextMenu(contextMenu, e)
     }
 
     render() {
@@ -103,7 +113,7 @@ export class ArtifactsPopup extends React.Component {
         else {
             for (let x in game.runes) {
                 let rune = game.runes[x]
-                artifacts.push(<Rune data={rune} key={x} onClick={()=>{this.addRune(rune.id)}}/>)
+                artifacts.push(<Rune data={rune} key={x} onClick={(e)=>{this.openRuneContextMenu(e, rune)}}/>)
             }
         }
 
@@ -139,16 +149,38 @@ function Artifact(props) {
     </Tooltip>
 }
 
+// todo optimization and cleanup
 function Rune(props) {
     function getRuneDescription(rune) {
-        let boosts = []
+        let weaponBoosts = []
         rune.boosts.weapon.forEach((e, i) => {
-            game.getDisplayString(e)
-            boosts.push(<Text key={i} text={game.getDisplayString(e)}/>)
+            weaponBoosts.push(<Text key={i} text={game.getDisplayString(e)}/>)
         })
         if (rune.weaponBoostString && rune.boosts.weapon.length === 0) // only show this string if a stat for it does not exist
-            boosts.push(<Text key={-1} text={rune.weaponBoostString}/>)
-        return boosts;
+            weaponBoosts.push(<Text key={-1} text={rune.weaponBoostString}/>)
+
+        let armorBoosts = []
+        rune.boosts.armor.forEach((e, i) => {
+            armorBoosts.push(<Text key={i} text={game.getDisplayString(e)}/>)
+        })
+
+        if (rune.armorBoostString && rune.boosts.armor.length === 0) // only show this string if a stat for it does not exist
+            armorBoosts.push(<Text key={-1} text={rune.armorBoostString}/>)
+        
+        // only render the parts that are relevant if slot prop was passed (used in the build runes display to determine where the rune was slotted)
+        return <div className="flexbox-vertical">
+            {(!props.slot || props.slot === "weapon") ? <div className="flexbox-vertical">
+                <Text text={<b>{"In weapon:"}</b>}/>
+                {weaponBoosts}
+            </div> : null}
+            
+            {!props.slot ? <hr/> : null}
+
+            {(!props.slot || props.slot === "armor") ? <div className="flexbox-vertical">
+                <Text text={<b>{"In armor:"}</b>}/>
+                {armorBoosts}
+            </div> : null}
+        </div>;
     }
 
     let tooltip = <div className="flexbox-vertical">
@@ -159,7 +191,17 @@ function Rune(props) {
         {getRuneDescription(props.data)}
     </div>
 
+    let slotIcons = {
+        "weapon": "sword",
+        "armor": "role_tank"
+    }
+
+    let slotIcon = (props.slot ? <Icon className="absolutely-positioned" style={{bottom: 0, right: 0, pointerEvents: "none"}} img={slotIcons[props.slot]} size="30px"/> : null)
+
     return <Tooltip content={tooltip} placement="right">
-        <Icon className="button artifact" img={props.data.icon} size="64px" onClick={props.onClick} onContextMenu={props.onContextMenu}/>
+        <div style={{position: "relative"}}>
+            <Icon className="button artifact" img={props.data.icon} size="64px" onClick={props.onClick} onContextMenu={props.onContextMenu} style={{position: "relative"}}/>
+            {slotIcon}
+        </div>
     </Tooltip>
 }

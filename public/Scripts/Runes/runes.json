@@ -169,7 +169,13 @@
           "string": "AMER_DELDUM_RUNERESIST_PHYSICAL_GIANT"
         }
       ],
-      "armor": []
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "LocalPhysArmorBoost",
+          "value": 25
+        }
+      ]
     },
     "weaponBoostString": "-12% Physical and Piercing Resistance on targets you hit with attacks and spells, until the end of your turn"
   },
@@ -184,7 +190,7 @@
         {
           "type": "extendedStat",
           "id": "PercAttributeIncrease_Intelligence",
-          "value": 30
+          "value": 30.0
         },
         {
           "type": "flexStat",
@@ -233,7 +239,13 @@
     "icon": "Item_LOOT_Rune_Lapis_Giant",
     "boosts": {
       "weapon": [],
-      "armor": []
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "LocalMagicArmorBoost",
+          "value": 25
+        }
+      ]
     },
     "weaponBoostString": "-30% to target's Harried threshold for your damage"
   },
@@ -248,7 +260,7 @@
         {
           "type": "extendedStat",
           "id": "PercAttributeIncrease_Memory",
-          "value": 30
+          "value": 30.0
         },
         {
           "type": "flexStat",
@@ -260,7 +272,7 @@
         {
           "type": "extendedStat",
           "id": "Regen_MagicArmor",
-          "value": 9
+          "value": 9.0
         }
       ]
     },
@@ -301,7 +313,7 @@
         {
           "type": "extendedStat",
           "id": "PercAttributeIncrease_Wits",
-          "value": 30
+          "value": 30.0
         },
         {
           "type": "flexStat",
@@ -309,7 +321,18 @@
           "value": 2
         }
       ],
-      "armor": []
+      "armor": [
+        {
+          "type": "extendedStat",
+          "id": "Regen_PhysicalArmor",
+          "value": 5.5
+        },
+        {
+          "type": "extendedStat",
+          "id": "Regen_MagicArmor",
+          "value": 5.5
+        }
+      ]
     },
     "weaponBoostString": "+30% invested Wits",
     "armorBoostString": "+5.5% missing All Armor Regeneration (50% maximum)"
@@ -349,6 +372,11 @@
           "type": "flexStat",
           "id": "Perseverance",
           "value": 4
+        },
+        {
+          "type": "flexStat",
+          "id": "PHYSICALRESISTANCE",
+          "value": 6
         }
       ],
       "armor": []
@@ -366,7 +394,7 @@
         {
           "type": "extendedStat",
           "id": "PercAttributeIncrease_Strength",
-          "value": 30
+          "value": 30.0
         },
         {
           "type": "flexStat",
@@ -378,7 +406,7 @@
         {
           "type": "extendedStat",
           "id": "Regen_PhysicalArmor",
-          "value": 9
+          "value": 9.0
         }
       ]
     },
@@ -399,7 +427,13 @@
           "value": 14
         }
       ],
-      "armor": []
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "VitalityQualifierBoost",
+          "value": 16
+        }
+      ]
     },
     "weaponBoostString": "+14% Lifesteal"
   },
@@ -459,7 +493,13 @@
     "icon": "Item_LOOT_Rune_Steel_Giant",
     "boosts": {
       "weapon": [],
-      "armor": []
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "PHYSICALRESISTANCE",
+          "value": 4
+        }
+      ]
     },
     "weaponBoostString": "-30% to target's Battered threshold for your damage"
   },
@@ -497,7 +537,7 @@
         {
           "type": "extendedStat",
           "id": "PercAttributeIncrease_Finesse",
-          "value": 30
+          "value": 30.0
         },
         {
           "type": "flexStat",
@@ -505,7 +545,18 @@
           "value": 2
         }
       ],
-      "armor": []
+      "armor": [
+        {
+          "type": "flexStat",
+          "id": "LocalPhysArmorBoost",
+          "value": 15
+        },
+        {
+          "type": "flexStat",
+          "id": "LocalMagicArmorBoost",
+          "value": 15
+        }
+      ]
     },
     "weaponBoostString": "+30% invested Finesse"
   },
@@ -566,7 +617,7 @@
         {
           "type": "extendedStat",
           "id": "PercAttributeIncrease_Constitution",
-          "value": 30
+          "value": 30.0
         },
         {
           "type": "flexStat",
@@ -578,7 +629,7 @@
         {
           "type": "extendedStat",
           "id": "Regen_Life",
-          "value": 6
+          "value": 6.0
         }
       ]
     },
@@ -603,7 +654,7 @@
         {
           "type": "flexStat",
           "id": "MOVEMENT",
-          "value": 50
+          "value": 0.5
         }
       ]
     }

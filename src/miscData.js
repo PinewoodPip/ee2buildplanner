@@ -1515,6 +1515,10 @@ export const stats = {
 			display: "Resists Natural Death: {0}",
 			bool: true,
 		},
+
+		LocalPhysArmorBoost: {display: "Local Physical Armor: +{0}%"},
+		LocalMagicArmorBoost: {display: "Local Magical Armor: +{0}%"},
+		VitalityQualifierBoost: {display: "Base Vitality Boost: +{0} Qualifier"},
 	},
 	extendedStat: {
 		// free reaction charges

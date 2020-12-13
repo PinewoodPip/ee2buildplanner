@@ -24,8 +24,6 @@
 - Search bar for skills, aspects & artifacts/runes
 - Slide-in animation for sidebars
 - Equipment menu where you can manage equipment modifiers and runes
-- Armor runes
 - Revamped, clearer stats screen
 - Cleaned-up releases of the scripts used to parse game data
 - Vitality calculations?
-- Show keyword basic effects in keywords screen.

@@ -215,9 +215,10 @@ hr {width: 85%;}
   text-align: center;
 }
 
-/* .aspect:hover {
-  background-color: rgb(70, 70, 70);
-} */
+.absolutely-positioned {
+  position: absolute;
+  text-align: center;
+}
 
 .flex-align-end {
   justify-content: flex-end !important;

@@ -2,7 +2,7 @@ Build planner app for [Epic Encounters 2](https://docs.google.com/document/d/1du
 
 Hosted at <https://www.pinewood.team/ee2buildplanner/>
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.PNG)
 
 Features:
 - Skill viewer, featuring correctly formatted tooltips with accurate in-game stats
