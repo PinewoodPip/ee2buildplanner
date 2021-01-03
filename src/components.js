@@ -26,7 +26,18 @@ export class TextField extends React.Component {
 	}
 
 	onChange(e) {
-		this.setState({text: e.target.value});
+		let string = e.target.value
+		let isNewLine = false;
+
+		if (string.includes("\n")) {
+			isNewLine = true;
+
+			if (this.props.onEnterKey)
+				this.props.onEnterKey(string.replace("\n", ""))
+		}
+
+		if (!isNewLine)
+			this.setState({text: e.target.value});
 		e.preventDefault()
 	}
 

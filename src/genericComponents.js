@@ -8,6 +8,7 @@ import { cloneDeep } from "lodash"
 
 import { game } from "./App.js"
 import * as utils from "./utils.js"
+import { TextField } from './components';
 
 export function Dropdown(props) {
 	let options = []
@@ -195,6 +196,84 @@ export function ContextMenu(props) {
   )
 }
 
+export class SearchBar extends React.Component {
+	constructor() {super(); this.state = {text: ""}}
+
+	componentDidMount() {
+		this.searchSystem = new SearchSystem(this.props.data)
+	}
+
+	search(query) {
+		console.log(query)
+		this.props.parentElement.setState({
+			searchResults: this.searchSystem.getResults(query),
+			isSearching: true,
+		})
+	}
+
+	render() {
+		return <div className="flexbox-horizontal search-bar-parent">
+			<Icon img="search" size="30px"/>
+			<TextField className="search-bar" textareaClass="search-bar-inner" style={{padding: 0}} noBg app={this.props.app} lastValue={this.props.parentElement.state.search} onBlur={(e)=>{this.search(e.target.value)}} stateKey="text" textareaClass="search-bar-inner" onEnterKey={e => {this.search(e)}}/>
+		</div>
+	}
+}
+
+class SearchSystem {
+	constructor(data) {
+		this.data = data;
+		for (let x in this.data) {
+			this.data[x] = this.data[x].toLowerCase()
+		}
+	}
+
+	getResults(query, allWordsMustBeContained=true) {
+		console.log(this.data)
+		let words = query.trim().toLowerCase().split(" ").filter(e => {return e !== ""})
+
+		if (words.includes("mutator") || words.includes("activator")) {
+			words.indexOf("mutator")
+		}
+
+		for (let i in words) {
+			let word = words[i]
+
+			if ((word === "mutator" || word === "activator") && i > 0) {
+				words[i] = words[i - 1] + "_" + word
+				words[i - 1] = ""
+			}
+		}
+
+		words = words.filter(e => {return e != ""})
+
+		console.log(words)
+
+		let results = []
+
+		if (utils.isEmptyString(query))
+			return []
+
+		// item is key of object data
+		for (let item in this.data) {
+			let matches = 0
+
+			for (let word in words) {
+				if (this.data[item].includes(words[word])) {
+					matches++;
+					let matchesAll = matches === words.length
+					if (!allWordsMustBeContained || matchesAll) {
+						results.push(item)
+						break
+					}
+				}
+			}
+		}
+
+		console.log(results)
+		return results
+	}
+}
+
 export class FileButton extends React.Component {
 	async getFile(event) {
 		event.stopPropagation();
@@ -203,6 +282,7 @@ export class FileButton extends React.Component {
 
 		return file.text()
 	}
+
 	render() {
 		return(
 			<div className="flexbox-horizontal import-build button" onClick={() => {this.upload.click()}} disabled={(this.props.disabled)}>
@@ -221,10 +301,18 @@ export class FileButton extends React.Component {
 }
 
 export function PopupHeader(props) {
-	return <div className="flexbox-horizontal flex-align-end full-width bar">
-		<Text text={props.text} className={"flex-grow"}/>
-		<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
-	</div>
+	if (!props.additionalElement)
+		return <div className="flexbox-horizontal flex-align-end full-width bar">
+			<Text text={props.text} className={"flex-grow"}/>
+			<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+		</div>
+	else {
+		return <div className="flexbox-horizontal flex-align-end full-width bar">
+			<Text text={props.text} className={"flex-grow"} style={{margin: "0 45px"}}/>
+			{props.additionalElement}
+			<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
+		</div>
+	}
 }
 
 export function Sidebar(props) {

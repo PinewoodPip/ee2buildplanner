@@ -801,12 +801,27 @@ export class Ascension {
     return null
   }
 
+  // TODO GODDAMN REWORK THIS
   // get all keywords of an aspect, as well as the keywords the user gets from their chosen subnodes
   getKeywordsInAspectBuild(asp) {
     let ref = this.getReferenceById(asp.id)
 
     let keywords = new Set() // all keywords that this aspect can offer
     let keywordsInBuild = [] // keywords contained in the subnodes the user has chosen
+
+    let betterInfo = {}
+
+    function updateKeywordInfo(keyword, boonType) {
+      if (!boonType)
+        return
+
+      if (Object.keys(betterInfo).includes(keyword)) {
+        betterInfo[keyword][boonType] = true
+      }
+      else {
+        betterInfo[keyword] = {mutator: boonType === "mutator", activator: boonType === "activator"}
+      }
+    }
 
     // go through all the nodes of this aspect and find keywords
     for (let x in ref.nodes) {
@@ -837,18 +852,23 @@ export class Ascension {
           let statBoost = node.subNodes[v][z]
           if ((miscData.boostsWithKeywords.includes(statBoost.type)) && statBoost.keyword != null) {
             keywords.add(statBoost.keyword)
+
+            updateKeywordInfo(statBoost.keyword, statBoost.keywordBoon)
           }
 
           if (utils.hasKey(miscData.nodesWithExtraKeywords, statBoost.id)) {
             for (let v in miscData.nodesWithExtraKeywords[statBoost.id]) {
               keywords.add(miscData.nodesWithExtraKeywords[statBoost.id][v])
+
+              // are all of these mutator tho? todo
+              updateKeywordInfo(miscData.nodesWithExtraKeywords[statBoost.id][v], "mutator")
             }
           }
         }
       }
     }
 
-    return {allKeywords: keywords, keywordsGotten: keywordsInBuild}
+    return {allKeywords: keywords, keywordsGotten: keywordsInBuild, betterInfo: betterInfo}
   }
 
   // get an aspect from the user's build by id

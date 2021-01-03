@@ -143,6 +143,31 @@ a {color: rgb(123, 207, 235)}
   /* margin: 15px; */
 }
 
+.search-bar-parent img {
+  margin: 0 10px;
+}
+
+.search-bar {
+  display: flex;
+  width: auto;
+  background-color: rgb(70, 70, 70);
+  height: 30px !important;
+  margin: 0 20px;
+}
+
+.search-bar-inner {
+  padding: 0 !important;
+  line-height: 30px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 100%;
+  border: none;
+  margin: 0 20px;
+  font-size: 130%;
+  color: whitesmoke;
+}
+
 ::-webkit-scrollbar-thumb {
   margin: 5px 0;
   border: solid;
@@ -174,6 +199,7 @@ hr {width: 85%;}
 
 .aspect {
   min-height: 32px;
+  padding: 2px 0;
 }
 
 .tooltip-header {

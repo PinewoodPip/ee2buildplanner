@@ -5,7 +5,7 @@ import { clone } from 'underscore';
 import { game } from "./App.js"
 import * as miscData from "./miscData.js"
 import * as utils from "./utils.js"
-import { Tooltip, Container, Text, Icon, TabButton, GreenButton, Flourish } from "./genericComponents.js"
+import { Tooltip, Container, Text, Icon, TabButton, GreenButton, Flourish, SearchBar, PopupHeader } from "./genericComponents.js"
 
 export class Ascension extends React.Component {
 	changeCurrentAspect(asp) {
@@ -77,99 +77,144 @@ export class Ascension extends React.Component {
 	}
 }
 
-export function AscensionPopup(props) {
-	let familyButtons = []
-	for (let x in game.ascension.aspects) {
-		if (x != "special")
-			familyButtons.push(<AscensionFamilyButton key={x} family={x} app={props.app}/>)
+export class AscensionPopup extends React.Component {
+	constructor() {
+		super();
+		this.state = {searchResults: [], isSearching: false}
 	}
 
-	function changeCurrentlyViewedAspect(asp) {
-		let obj;
-		if (game.ascension.hasAspect(asp)) {
-			obj = {currentlyViewedAspect: game.ascension.getBuildAspectById(asp.id)}
-		}
-		else {
-			obj = {currentlyViewedAspect: {family: props.app.state.currentFamily, id: asp.id, nodes: []}}
+	render() {
+		// todo move to ascension class
+		let searchData = {}
+		for (let family in game.ascension.aspects) {
+			for (let id in game.ascension.aspects[family]) {
+				let asp = game.ascension.aspects[family][id]
+				let keywordsInfo = game.ascension.getKeywordsInAspectBuild(asp).betterInfo
+				let mutaActi = []
+				let keywords = []
 
-			for (let x in game.ascension.aspects[props.app.state.currentFamily][asp.id].nodes) {
-				obj.currentlyViewedAspect.nodes.push(null)
+				for (let x in keywordsInfo) {
+					keywords.push(x)
+
+					for (let prop in keywordsInfo[x]) {
+						if (keywordsInfo[x][prop])
+							mutaActi.push(x + "_" + prop)
+					}
+				}
+
+				// allow searching by id, namme, keywod names, keyword ids
+				let keywordNames = []
+				keywords.forEach(e => {
+					keywordNames.push(miscData.mappings.keywordNames[e])
+				})
+
+				searchData[id] = "".concat([id, asp.name, ...keywords, ...keywordNames, ...mutaActi]).replace(/,/g, " ")
+
 			}
 		}
 
-		props.app.setState(obj)
-	}
-
-	// this should be an Ascension method
-	function addAspect() {
-		var cloneDeep = require('lodash.clonedeep');
-		let currentlyViewed = props.app.state.currentlyViewedAspect
-		if (currentlyViewed.id == null)
-			return;
-
-		// just close the interface if this asp is already in the build
-		if (game.ascension.hasAspect(currentlyViewed)) {
-			props.app.setState({popup: null})
-			return;
+		let props = this.props
+		let familyButtons = []
+		for (let x in game.ascension.aspects) {
+			if (x != "special")
+				familyButtons.push(<AscensionFamilyButton key={x} family={x} app={props.app}/>)
 		}
 
-		let asps = cloneDeep(props.app.state.aspects)
-		asps.push({
-			family: currentlyViewed.family,
-			id: currentlyViewed.id,
-			nodes: currentlyViewed.nodes,
-		})
+		function changeCurrentlyViewedAspect(asp) {
+			let obj;
+			if (game.ascension.hasAspect(asp)) {
+				obj = {currentlyViewedAspect: game.ascension.getBuildAspectById(asp.id)}
+			}
+			else {
+				obj = {currentlyViewedAspect: {family: asp.family, id: asp.id, nodes: []}}
 
-		props.app.setState({aspects: asps, selectedAspect: props.app.state.aspects.length, popup: null})
-	}
+				for (let x in game.ascension.aspects[asp.family][asp.id].nodes) {
+					obj.currentlyViewedAspect.nodes.push(null)
+				}
+			}
 
-	let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
-
-	let asps = []
-	asps.push(<AspectListing key="header" keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>)
-	asps.push(<hr key={Math.random()}/>)
-	for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
-		let asp = game.ascension.aspects[props.app.state.currentFamily][x]
-
-		asps.push(<Aspect key={x} id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
-
-		if (miscData.aspectsAfterWePutAnHrToMakeThingsLookNice.includes(x)) {
-			asps.push(<hr key={Math.random()}/>)
+			props.app.setState(obj)
 		}
-		
+
+		// this should be an Ascension method
+		function addAspect() {
+			var cloneDeep = require('lodash.clonedeep');
+			let currentlyViewed = props.app.state.currentlyViewedAspect
+			if (currentlyViewed.id == null)
+				return;
+
+			// just close the interface if this asp is already in the build
+			if (game.ascension.hasAspect(currentlyViewed)) {
+				props.app.setState({popup: null})
+				return;
+			}
+
+			let asps = cloneDeep(props.app.state.aspects)
+			asps.push({
+				family: currentlyViewed.family,
+				id: currentlyViewed.id,
+				nodes: currentlyViewed.nodes,
+			})
+
+			props.app.setState({aspects: asps, selectedAspect: props.app.state.aspects.length, popup: null})
+		}
+
+		let currentAspect = game.ascension.getAspectElement(props.app.state.currentlyViewedAspect, true, "preview-edit")
+
+		let asps = []
+		asps.push(<AspectListing key="header" keywords={<Text text={"Keywords"}/>} name={"Aspect"}/>)
+		asps.push(<hr key={Math.random()}/>)
+
+		if (!this.state.isSearching) {
+			for (let x in game.ascension.aspects[props.app.state.currentFamily]) {
+				let asp = game.ascension.aspects[props.app.state.currentFamily][x]
+
+				asps.push(<Aspect key={x} id={x} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
+
+				if (miscData.aspectsAfterWePutAnHrToMakeThingsLookNice.includes(x)) {
+					asps.push(<hr key={Math.random()}/>)
+				}
+				
+			}
+		}
+		else {
+			this.state.searchResults.forEach(e => {
+				let asp = game.ascension.getReferenceById(e)
+
+				asps.push(<Aspect key={e} id={e} app={props.app} onClick={() => {changeCurrentlyViewedAspect(asp)}}/>)
+			})
+		}
+
+		return (
+			<Container className="flexbox-vertical flex-align-start skillbook">
+				<PopupHeader app={props.app} text="Ascension" additionalElement={<SearchBar data={searchData} parentElement={this} app={this}/>}/>
+
+				<div style={{height: "20px"}}/>
+
+
+				<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
+					<div className="flexbox-vertical flex-align-start" style={{width: "15%"}}>
+						{familyButtons}
+					</div>
+					<div className="flexbox-vertical flex-align-start aspect-listing" style={{width: "40%"}}>
+						{asps}
+					</div>
+
+					<div className="flexbox-vertical aspect-preview">
+						{currentAspect}
+
+						<div style={{height: "10px"}}/>
+
+						{props.app.state.currentlyViewedAspect.id ? (
+							<div className="sticky-bottom">
+								<GreenButton text="Add Aspect" onClick={() => {addAspect()}}/>
+							</div>
+						) : null}
+					</div>
+				</div>
+			</Container>
+		)
 	}
-
-	return (
-		<Container className="flexbox-vertical flex-align-start skillbook">
-			<div className="flexbox-horizontal flex-align-end full-width bar">
-				<Text text={"Ascension"} className={"flex-grow"}/>
-				<Icon className="button" img={"close"} size="32px" onClick={()=>{props.app.setState({popup: null})}} app={props.app}/>
-			</div>
-
-			<div style={{height: "20px"}}/>
-
-			<div className="flexbox-horizontal flex-align-space-evenly full-width lateral-margin" style={{height: "100%"}}>
-				<div className="flexbox-vertical flex-align-start" style={{width: "15%"}}>
-					{familyButtons}
-				</div>
-				<div className="flexbox-vertical flex-align-start aspect-listing" style={{width: "40%"}}>
-					{asps}
-				</div>
-
-				<div className="flexbox-vertical aspect-preview">
-					{currentAspect}
-
-					<div style={{height: "10px"}}/>
-
-					{props.app.state.currentlyViewedAspect.id ? (
-						<div className="sticky-bottom">
-							<GreenButton text="Add Aspect" onClick={() => {addAspect()}}/>
-						</div>
-					) : null}
-				</div>
-			</div>
-		</Container>
-	)
 }
 
 export function Keywords(props) {

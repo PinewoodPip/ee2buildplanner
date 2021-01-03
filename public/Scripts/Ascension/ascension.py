@@ -169,7 +169,7 @@ for line in f.readlines():
             text = prettifyDescription(search["text"])
 
             if search["id"] not in ascensions[search["family"]].keys():
-                ascensions[search["family"]][search["id"]] = {"id": search["id"], "name": text, "nodes": [], "nodesText": []}
+                ascensions[search["family"]][search["id"]] = {"id": search["id"], "family": search["family"], "name": text, "nodes": [], "nodesText": []}
             
             if reg == "nodes":
                 # text

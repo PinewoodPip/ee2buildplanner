@@ -2,6 +2,7 @@
   "force": {
     "TheFalcon": {
       "id": "TheFalcon",
+      "family": "force",
       "name": "The Falcon",
       "nodes": [
         {
@@ -255,6 +256,7 @@
     },
     "TheHatchet": {
       "id": "TheHatchet",
+      "family": "force",
       "name": "The Hatchet",
       "nodes": [
         {
@@ -521,6 +523,7 @@
     },
     "TheHornet": {
       "id": "TheHornet",
+      "family": "force",
       "name": "The Hornet",
       "nodes": [
         {
@@ -673,6 +676,7 @@
     },
     "TheSerpent": {
       "id": "TheSerpent",
+      "family": "force",
       "name": "The Serpent",
       "nodes": [
         {
@@ -824,6 +828,7 @@
     },
     "TheArcanist": {
       "id": "TheArcanist",
+      "family": "force",
       "name": "The Arcanist",
       "nodes": [
         {
@@ -1066,6 +1071,7 @@
     },
     "TheArcher": {
       "id": "TheArcher",
+      "family": "force",
       "name": "The Archer",
       "nodes": [
         {
@@ -1357,6 +1363,7 @@
     },
     "TheManticore": {
       "id": "TheManticore",
+      "family": "force",
       "name": "The Manticore",
       "nodes": [
         {
@@ -1618,6 +1625,7 @@
     },
     "TheScorpion": {
       "id": "TheScorpion",
+      "family": "force",
       "name": "The Scorpion",
       "nodes": [
         {
@@ -1828,6 +1836,7 @@
     },
     "TheTiger": {
       "id": "TheTiger",
+      "family": "force",
       "name": "The Tiger",
       "nodes": [
         {
@@ -2082,6 +2091,7 @@
     },
     "TheConqueror": {
       "id": "TheConqueror",
+      "family": "force",
       "name": "The Conqueror",
       "nodes": [
         {
@@ -2344,6 +2354,7 @@
     },
     "TheKraken": {
       "id": "TheKraken",
+      "family": "force",
       "name": "The Kraken",
       "nodes": [
         {
@@ -2572,6 +2583,7 @@
     },
     "Wrath": {
       "id": "Wrath",
+      "family": "force",
       "name": "Wrath",
       "nodes": [
         {
@@ -2855,6 +2867,7 @@
   "entropy": {
     "TheCrow": {
       "id": "TheCrow",
+      "family": "entropy",
       "name": "The Crow",
       "nodes": [
         {
@@ -3006,6 +3019,7 @@
     },
     "TheFly": {
       "id": "TheFly",
+      "family": "entropy",
       "name": "The Fly",
       "nodes": [
         {
@@ -3318,6 +3332,7 @@
     },
     "TheVulture": {
       "id": "TheVulture",
+      "family": "entropy",
       "name": "The Vulture",
       "nodes": [
         {
@@ -3564,6 +3579,7 @@
     },
     "TheWolf": {
       "id": "TheWolf",
+      "family": "entropy",
       "name": "The Wolf",
       "nodes": [
         {
@@ -3710,6 +3726,7 @@
     },
     "BloodApe": {
       "id": "BloodApe",
+      "family": "entropy",
       "name": "Blood Ape",
       "nodes": [
         {
@@ -4009,6 +4026,7 @@
     },
     "Extinction": {
       "id": "Extinction",
+      "family": "entropy",
       "name": "Extinction",
       "nodes": [
         {
@@ -4230,6 +4248,7 @@
     },
     "TheImp": {
       "id": "TheImp",
+      "family": "entropy",
       "name": "The Imp",
       "nodes": [
         {
@@ -4480,6 +4499,7 @@
     },
     "TheHyena": {
       "id": "TheHyena",
+      "family": "entropy",
       "name": "The Hyena",
       "nodes": [
         {
@@ -4740,6 +4760,7 @@
     },
     "TheSupplicant": {
       "id": "TheSupplicant",
+      "family": "entropy",
       "name": "The Supplicant",
       "nodes": [
         {
@@ -4976,6 +4997,7 @@
     },
     "Death": {
       "id": "Death",
+      "family": "entropy",
       "name": "Death",
       "nodes": [
         {
@@ -5247,6 +5269,7 @@
     },
     "Decay": {
       "id": "Decay",
+      "family": "entropy",
       "name": "Decay",
       "nodes": [
         {
@@ -5642,6 +5665,7 @@
     },
     "Demilich": {
       "id": "Demilich",
+      "family": "entropy",
       "name": "Demilich",
       "nodes": [
         {
@@ -5991,6 +6015,7 @@
   "form": {
     "TheChalice": {
       "id": "TheChalice",
+      "family": "form",
       "name": "The Chalice",
       "nodes": [
         {
@@ -6230,6 +6255,7 @@
     },
     "TheKey": {
       "id": "TheKey",
+      "family": "form",
       "name": "The Key",
       "nodes": [
         {
@@ -6519,6 +6545,7 @@
     },
     "TheNautilus": {
       "id": "TheNautilus",
+      "family": "form",
       "name": "The Nautilus",
       "nodes": [
         {
@@ -6693,6 +6720,7 @@
     },
     "TheSilkworm": {
       "id": "TheSilkworm",
+      "family": "form",
       "name": "The Silkworm",
       "nodes": [
         {
@@ -6877,6 +6905,7 @@
     },
     "TheBasilisk": {
       "id": "TheBasilisk",
+      "family": "form",
       "name": "The Basilisk",
       "nodes": [
         {
@@ -7157,6 +7186,7 @@
     },
     "Doppelganger": {
       "id": "Doppelganger",
+      "family": "form",
       "name": "Doppelganger",
       "nodes": [
         {
@@ -7467,6 +7497,7 @@
     },
     "TheDragon": {
       "id": "TheDragon",
+      "family": "form",
       "name": "The Dragon",
       "nodes": [
         {
@@ -7789,6 +7820,7 @@
     },
     "TheGryphon": {
       "id": "TheGryphon",
+      "family": "form",
       "name": "The Gryphon",
       "nodes": [
         {
@@ -8035,6 +8067,7 @@
     },
     "Wealth": {
       "id": "Wealth",
+      "family": "form",
       "name": "Wealth",
       "nodes": [
         {
@@ -8358,6 +8391,7 @@
     },
     "Cerberus": {
       "id": "Cerberus",
+      "family": "form",
       "name": "Cerberus",
       "nodes": [
         {
@@ -8691,6 +8725,7 @@
     },
     "TheRitual": {
       "id": "TheRitual",
+      "family": "form",
       "name": "The Ritual",
       "nodes": [
         {
@@ -9071,6 +9106,7 @@
     },
     "Sphinx": {
       "id": "Sphinx",
+      "family": "form",
       "name": "Sphinx",
       "nodes": [
         {
@@ -9324,6 +9360,7 @@
   "inertia": {
     "TheArmadillo": {
       "id": "TheArmadillo",
+      "family": "inertia",
       "name": "The Armadillo",
       "nodes": [
         {
@@ -9494,6 +9531,7 @@
     },
     "TheAuroch": {
       "id": "TheAuroch",
+      "family": "inertia",
       "name": "The Auroch",
       "nodes": [
         {
@@ -9654,6 +9692,7 @@
     },
     "TheCrab": {
       "id": "TheCrab",
+      "family": "inertia",
       "name": "The Crab",
       "nodes": [
         {
@@ -9883,6 +9922,7 @@
     },
     "TheGuardsman": {
       "id": "TheGuardsman",
+      "family": "inertia",
       "name": "The Guardsman",
       "nodes": [
         {
@@ -10141,6 +10181,7 @@
     },
     "TheCasque": {
       "id": "TheCasque",
+      "family": "inertia",
       "name": "The Casque",
       "nodes": [
         {
@@ -10430,6 +10471,7 @@
     },
     "TheCenturion": {
       "id": "TheCenturion",
+      "family": "inertia",
       "name": "The Centurion",
       "nodes": [
         {
@@ -10724,6 +10766,7 @@
     },
     "TheGladiator": {
       "id": "TheGladiator",
+      "family": "inertia",
       "name": "The Gladiator",
       "nodes": [
         {
@@ -11013,6 +11056,7 @@
     },
     "TheHippopotamus": {
       "id": "TheHippopotamus",
+      "family": "inertia",
       "name": "The Hippopotamus",
       "nodes": [
         {
@@ -11249,6 +11293,7 @@
     },
     "TheRhinoceros": {
       "id": "TheRhinoceros",
+      "family": "inertia",
       "name": "The Rhinoceros",
       "nodes": [
         {
@@ -11483,6 +11528,7 @@
     },
     "TheArena": {
       "id": "TheArena",
+      "family": "inertia",
       "name": "The Arena",
       "nodes": [
         {
@@ -11765,6 +11811,7 @@
     },
     "Champion": {
       "id": "Champion",
+      "family": "inertia",
       "name": "Champion",
       "nodes": [
         {
@@ -12048,6 +12095,7 @@
     },
     "Fortress": {
       "id": "Fortress",
+      "family": "inertia",
       "name": "Fortress",
       "nodes": [
         {
@@ -12316,6 +12364,7 @@
   "life": {
     "TheBeetle": {
       "id": "TheBeetle",
+      "family": "life",
       "name": "The Beetle",
       "nodes": [
         {
@@ -12487,6 +12536,7 @@
     },
     "TheHind": {
       "id": "TheHind",
+      "family": "life",
       "name": "The Hind",
       "nodes": [
         {
@@ -12760,6 +12810,7 @@
     },
     "TheLizard": {
       "id": "TheLizard",
+      "family": "life",
       "name": "The Lizard",
       "nodes": [
         {
@@ -12920,6 +12971,7 @@
     },
     "TheRabbit": {
       "id": "TheRabbit",
+      "family": "life",
       "name": "The Rabbit",
       "nodes": [
         {
@@ -13166,6 +13218,7 @@
     },
     "TheEnchantress": {
       "id": "TheEnchantress",
+      "family": "life",
       "name": "The Enchantress",
       "nodes": [
         {
@@ -13414,6 +13467,7 @@
     },
     "TheHuntress": {
       "id": "TheHuntress",
+      "family": "life",
       "name": "The Huntress",
       "nodes": [
         {
@@ -13693,6 +13747,7 @@
     },
     "TheNymph": {
       "id": "TheNymph",
+      "family": "life",
       "name": "The Nymph",
       "nodes": [
         {
@@ -13952,6 +14007,7 @@
     },
     "Pegasus": {
       "id": "Pegasus",
+      "family": "life",
       "name": "Pegasus",
       "nodes": [
         {
@@ -14207,6 +14263,7 @@
     },
     "TheStag": {
       "id": "TheStag",
+      "family": "life",
       "name": "The Stag",
       "nodes": [
         {
@@ -14440,6 +14497,7 @@
     },
     "TheGoddess": {
       "id": "TheGoddess",
+      "family": "life",
       "name": "The Goddess",
       "nodes": [
         {
@@ -14687,6 +14745,7 @@
     },
     "Hope": {
       "id": "Hope",
+      "family": "life",
       "name": "Hope",
       "nodes": [
         {
@@ -14960,6 +15019,7 @@
     },
     "Splendor": {
       "id": "Splendor",
+      "family": "life",
       "name": "Splendor",
       "nodes": [
         {
